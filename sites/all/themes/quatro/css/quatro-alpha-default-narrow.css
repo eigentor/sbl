@@ -1,0 +1,282 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+/*------------------------------------*\
+	NAVIGATIONS CSS
+\*------------------------------------*/
+.zone-menu .block-nice-menus {
+  float: left;
+  margin-bottom: 0;
+}
+ul#main-menu,
+.zone-menu ul.nice-menu,
+.zone-menu ul.menu,
+.zone-submenu ul.menu {
+  text-align: left;
+}
+.zone-menu ul.menu li a {
+  text-transform: none;
+  padding: 7px 13px;
+}
+
+/* User menu */
+.block-system-user-menu {
+  width: auto;
+  margin-top: 30px;
+  float: right;
+}
+
+/* Footer menu */
+.zone-footer .block-menu {
+  width: auto;
+  text-align: right;
+}
+.zone-footer .block-menu .content ul.menu {
+  float: left;
+}
+.zone-footer ul.menu li a {
+  padding: 0px 10px;
+}
+
+/* Mobile CSS */
+#block-om-maximenu-om-maximenu-1 {
+  display: none;
+}
+.zone-submenu-wrapper,
+.block-nice-menus,
+.zone-menu .block-menu-block,
+.zone-branding .block-search,
+.zone-branding .block-system-user-menu {
+  display: block;
+}
+
+/*------------------------------------*\
+	PAGE CSS
+\*------------------------------------*/
+/* Header */
+.branding-data {
+  width: 200px;
+  text-align: left;
+  padding-top: 20px;
+}
+
+h1.title {
+  font-size: 160%;
+}
+.zone-content-wrapper h2.block-title {
+  font-size: 140%;
+}
+
+/*------------------------------------*\
+	NEWS CSS
+\*------------------------------------*/
+
+/* Block slideshow */
+.view-article-slideshow .views-field-field-image {
+  width: 180px;
+  margin-right: 20px;
+  text-align: left;
+}
+.view-article-slideshow .views-field-title {
+  float: left;
+  width: auto;
+  text-align: left;
+  padding-top: 20px;
+}
+.view-article-slideshow .views-field-title a {
+  font-size: 120%;
+  line-height: 1.2
+}
+.view-article-slideshow .attachment .views-field-field-image {
+  width: 50px;
+}
+.view-article-slideshow  .attachment .views-field-title {
+  float: none;
+  padding-top: 0px;
+}
+.view-article-slideshow .views-slideshow-pager-fields {
+  margin-top: -40px;
+  padding-bottom: 10px;
+}
+
+/* List articles */
+.view-list-articles .views-field-field-image,
+.view-list-articles .views-field-field-image img {
+  width: 180px;
+}
+article.node-article.node-teaser .node-title a {
+  font-size: 110%;
+}
+.field-name-field-related-news {
+  width: 180px;
+}
+
+/* Block breaking news */
+.block.block-breaking-news {
+  padding: 0;
+}
+.block-breaking-news h2.block-title {
+  float: left;
+  border: none;
+  width: auto;
+  margin: 10px 10px 10px 0;
+}
+.block-breaking-news .content {
+  float: left;
+  width: 550px;
+}
+.block-breaking-news .content .views-field-title a {
+  padding-top: 10px;
+}
+
+
+/*------------------------------------*\
+	PHOTO CSS
+\*------------------------------------*/
+/* List Photos */
+.view-list-photos .views-row {
+  width: 140px;
+  clear: none;
+  margin: 10px;
+}
+.view-list-photos.view-list-photos-horizolntal .views-row {
+  width: 150px;
+}
+.view-list-photos .views-row-1,
+.view-list-photos .views-row-4,
+.view-list-photos .views-row-7,
+.view-list-photos .views-row-10,
+.view-list-photos .views-row-13,
+.view-list-photos .views-row-16,
+.view-list-photos .views-row-19 {
+  margin-left: 0;
+  clear: left;
+}
+.view-list-photos .views-row-3,
+.view-list-photos .views-row-6,
+.view-list-photos .views-row-9,
+.view-list-photos .views-row-12,
+.view-list-photos .views-row-15,
+.view-list-photos .views-row-18,
+.view-list-photos .views-row-21 {
+  margin-right: 0;
+}
+
+/* Photo Detail */
+.galleryformatter .gallery-slides,
+.galleryformatter .gallery-slides img {
+  width: 480px;
+}
+
+/*------------------------------------*\
+	VIDEO CSS
+\*------------------------------------*/
+/* List Videos */
+.view-list-videos .views-row {
+  width: 146px;
+  clear: none;
+  margin: 10px;
+}
+.view-list-videos .views-row-1,
+.view-list-videos .views-row-4,
+.view-list-videos .views-row-7,
+.view-list-videos .views-row-10,
+.view-list-videos .views-row-13,
+.view-list-videos .views-row-16,
+.view-list-videos .views-row-19 {
+  margin-left: 0;
+  clear: left;
+}
+.view-list-videos .views-row-3,
+.view-list-videos .views-row-6,
+.view-list-videos .views-row-9,
+.view-list-videos .views-row-12,
+.view-list-videos .views-row-15,
+.view-list-videos .views-row-18,
+.view-list-videos .views-row-21 {
+  margin-right: 0;
+}
+
+/* Latest Video */
+.block-video-block .jcarousel-skin-default .jcarousel-container-horizontal {
+  width: 460px;
+  padding: 10px 20px;
+}
+.block-video-block .jcarousel-skin-default .jcarousel-clip-horizontal {
+  width: 460px;
+}
+.block-video-block .jcarousel-skin-default .jcarousel-item {
+  width: 145px;
+  margin: 0 5px;
+}
+
+/* Video node */
+article.node-video .field-name-field-media iframe {
+  height: 300px;
+}
+
+/*------------------------------------*\
+	BLOCK CSS
+\*------------------------------------*/
+/* Block search */
+.block-search {
+  float: right;
+  margin-top: 23px;
+  width: 200px;
+}
+
+/* Block login */
+.block-login input.form-text {
+  width: 138px;
+}
+
+.block-login .item-list ul li {
+  margin-left: 0;
+  list-style: none;
+}
+
+
+/* Footer block */
+.block.block-social-icons {
+  text-align: right;
+  clear: right;
+  width: auto;
+  border: none;
+  padding: 0;
+}
+
+/* Contact form */
+.contact-form .form-item label {
+  font-size: 110%;
+  font-weight: bold;
+}
+.contact-form .form-actions {
+  margin-left: 10px;
+}
+/*------------------------------------*\
+	OTHER STYLE CSS
+\*------------------------------------*/
+.one-half, .one-third, .two-third, .three-fourth, .one-fourth {
+    float: left;
+    margin-bottom: 20px;
+	padding: 0;
+    margin-right: 4%;
+    position: relative;
+}
+
+.one-half.last, .one-third.last, .two-third.last, .three-fourth.last, .one-fourth.last {
+  margin-right: 0;
+}
+.one-half {
+  width: 48%;
+}
+.one-third {
+  width: 30.6666%;
+}
+.two-third {
+  width: 65.3332%;
+}
+.one-fourth {
+  width: 22%;
+}
+.three-fourth {
+  width: 74%;
+}

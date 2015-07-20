@@ -1,0 +1,640 @@
+@charset "utf-8";
+/* CSS Document */
+/*------------------------------------*\
+	RESET
+\*------------------------------------*/
+article.node ul, article.node ol {
+  margin: 0 60px 1.846em 0;
+}
+pre,
+div.code {
+  border-right: 5px solid #b70000;
+  border-left: none;
+}
+blockquote {
+  padding-right: 60px;
+  background: url(../images/blockquote-rtl.png) 100% 0 no-repeat;
+  padding-left: 0;
+}
+
+/*------------------------------------*\
+	Pages CSS
+\*------------------------------------*/
+#name-and-slogan /* Wrapper for website name and slogan */ {
+  float: right;
+}
+
+
+ul.links li {
+  padding: 0 0 0 1em; /* LTR */
+}
+li.comment-add a,
+li.comment-add a.active {
+  float: left;
+}
+li.comment_forbidden {
+  float: left;
+}
+
+.item-list .pager li /* Each page number in the pager list */ {
+  margin:20px 0 0 5px;
+}
+.feed-link img {
+  padding: 0 5px 5px 0;
+}
+
+/*------------------------------------*\
+	NAVIGATION CSS
+\*------------------------------------*/
+#navigation ul.links, /* Main menu and secondary menu links */
+#navigation .content ul /* Menu block links */ {
+  text-align: right; /* LTR */
+}
+
+#navigation ul.links li, /* A simple method to get navigation links to appear in one line. */
+#navigation .content li {
+  float: right; /* LTR */
+  padding: 0 0 0 10px; /* LTR */
+}
+
+/*
+ * Main menu links
+ */
+ul#main-menu,
+.zone-menu ul.menu {
+  float: right;
+}
+
+/* Search menu item */
+.zone-menu ul.nice-menu li.menu-path-search { 
+  float: left;
+}
+
+.zone-menu ul.nice-menu ul {
+  text-align: right;
+}
+
+/* Split menu */
+.zone-submenu ul.menu {
+  float: right;
+}
+
+/* Mobile menu */
+ul#om-menu-mobile-menu li.om-leaf {
+  float: right;
+}
+ul#om-menu-mobile-menu li.om-leaf .om-link {
+  float: right;
+}
+ul#om-menu-mobile-menu li.om-leaf #menu-item-menu {
+  background: url(../images/icon-menu-menu.png) 95% center no-repeat;
+  padding-left: 0;
+  padding-right: 42px;
+}
+ul#om-menu-mobile-menu li.om-leaf #menu-item-search {
+  background: url(../images/icon-menu-search.png) 95% center no-repeat;
+  padding-left: 0;
+  padding-right: 35px;
+}
+ul#om-menu-mobile-menu li.om-leaf #menu-item-account {
+  background: url(../images/icon-menu-account.png) 95% center no-repeat;
+  padding-left: 0;
+  padding-right: 35px;
+}
+
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-menu {
+  background: #9c0000 url(../images/icon-menu-menu.png) 95% center no-repeat;
+}
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-search {
+  background: #9c0000 url(../images/icon-menu-search.png) 95% center no-repeat;
+}
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-account {
+  background: #9c0000 url(../images/icon-menu-account.png) 95% center no-repeat;
+}
+
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content {
+  float: right;
+}
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content .block {
+  float: right;
+}
+
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu {
+  margin: 0 10px 0 0;
+}
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li a {
+  background: url(../images/menu-collapse-icon.png) 100% center no-repeat;
+  padding: 0px 15px 0 0px;
+}
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li.collapsed a,
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li.collapsed.active-trail a.active-trail,
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li.collapsed a:hover,
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li.collapsed a.active {
+  background: url(../images/menu-expand-icon.png) 100% center no-repeat;
+}
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li.active-trail a.active-trail,
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li a:hover,
+#block-om-maximenu-om-maximenu-1 .om-maximenu-content ul.menu li a.active {
+  background: url(../images/menu-collapse-icon.png) 100% center no-repeat;
+}
+
+.om-maximenu-content ul.menu ul.menu {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.ui-accordion .ui-accordion-header span.accordion-link {
+  padding: 0.5em;
+  padding-right: 2.2em;
+}
+
+/* User menu */
+.block-system-user-menu {
+  float: left;
+}
+.block-system-user-menu ul.menu {
+  float: left;
+}
+
+.block-system-user-menu ul.menu a {
+  float: right;
+  border-right: none;
+  border-left: 1px solid #e1c0c0;
+}
+
+/*------------------------------------*\
+	NODES CSS
+\*------------------------------------*/
+.node ul.links /* Node links. See also the ul.links declaration in the pages.css. */ {
+  margin-right: 0;
+}
+
+/* Services Links */
+.service-links ul.links {
+  float: right;
+}
+.service-links ul.links li {
+  float: right;
+  padding-right: 0;
+  padding-left: 20px;
+}
+
+/* Article node form */
+#edit-field-intro { clear: right; }
+
+/*------------------------------------*\
+	FIELDS CSS
+\*------------------------------------*/
+.field-type-taxonomy-term-reference .field-items .field-item {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+.field-name-field-image {
+  float: right;
+  margin: 10px 0 30px 20px;
+}
+
+/*------------------------------------*\
+	COMMENTS CSS
+\*------------------------------------*/
+
+article.comment header {
+  float: right;
+}
+
+article.comment h3 /* Comment title */ {
+  margin: 0px 0 0px 10px;
+  float: right;
+}
+
+.new /* "New" marker for comments that are new for the current user */ {
+  margin-right: 0;
+  margin-left: 10px;
+}
+.comments div.indented {
+  margin-left: 0;
+  margin-right: 50px;
+}
+.page-node .comment .user-picture /* The picture of the comment author */ {
+  float: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+.comment nav.links /* Comment links. See also the ul.links declaration in the pages.css. */ {
+  margin-right: 0;
+  text-align: left;
+}
+
+/*------------------------------------*\
+	NEWS CSS
+\*------------------------------------*/
+.flexslider .view-title,
+.flexslider .view-body {
+  float: right;
+  clear: right;
+}
+/* Slideshow */
+.view-article-slideshow .view-content {
+  float: right;
+}
+.view-article-slideshow .views-field-field-image {
+  float: right;
+}
+.view-article-slideshow .views-field-title {
+  float: right;
+}
+
+.view-article-slideshow .attachment {
+  float: right;
+}
+.view-article-slideshow .attachment .views-field-field-image {
+  float: left;
+  margin-left: 0;
+  margin-right: 20px;
+}
+.view-article-slideshow .attachment .views-field-title {
+  text-align: right;
+}
+.view-article-slider-large .views-field-title {
+  float: right;
+}
+.view-article-slider-large .views-field-title a {
+  float: right;
+}
+.view-article-slider-large .flex-control-nav {
+  float: left;
+  right: auto;
+  left: 10px;
+}
+/* List Articles */
+.view-list-articles .views-field-field-image .field-topic {
+  left: auto;
+  right: 5px;
+  float: right;
+}
+.view-list-articles .views-field-field-image {
+  float: right;
+  margin: 0 0 0 30px;
+}
+
+/* News home page */
+.block-topic-news.block-topic-news-list .view-content,
+.block-topic-news.block-topic-news-large .view-content,
+.block-topic-news .view-content {
+  float: right;
+}
+.block-topic-news .view-content .views-field-field-image {
+  float: right;
+  margin: 15px 0 15px 20px;
+}
+.block-topic-news.block-topic-news-list .view-content .views-field-field-image {
+  margin: 0 0 0 20px;
+}
+.block-topic-news.block-topic-news-large .attachment,
+.block-topic-news .attachment {
+  float: right;
+}
+
+.block-topic-news .attachment .view-content .views-field-field-image {
+  float: right;
+  margin: 0 0 0 20px;
+}
+.block-topic-news .more-link {
+  right: auto;
+  left: 0;
+}
+.block-topic-news .more-link a {
+  background: url(../images/view-more.png) left center no-repeat;
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+/* Block breaking news */
+.block-breaking-news .content .views-field-title a {
+  float: right;
+}
+
+/* Recent news */
+.main .field-field-image img {
+  float: right;
+  clear: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
+.views-field-service-links ul.links {
+  float: right;
+}
+.views-field-service-links ul.links li {
+  float: right;
+}
+
+/* Article detail */
+.header-info .article-create-date,
+.header-info .article-author,
+.header-info .article-tags {
+  float: right;
+}
+.header-info i,
+.header-info label,
+.header-info .field-name-field-tags {
+  float:right;
+  padding-left: 5px;
+  padding-right: 0;
+}
+article.node-photos.node-teaser ul.links li,
+article.node-video.node-teaser ul.links li,
+article.node-article.node-teaser ul.links li {
+  float: right;
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+article.node-photos.node-teaser ul.links li.node-readmore,
+article.node-video.node-teaser ul.links li.node-readmore,
+article.node-article.node-teaser ul.links li.node-readmore {
+  float: left;
+  padding-right: 0;
+  padding-left: 0px;
+}
+
+article.node-photos.node-teaser ul.links .field-type-taxonomy-term-reference,
+article.node-video.node-teaser ul.links .field-type-taxonomy-term-reference,
+article.node-article.node-teaser .field-type-taxonomy-term-reference {
+  clear: right;
+}
+
+article.node-video.node-teaser .field-name-field-video,
+article.node-photos.node-teaser .field-name-field-images {
+  float: left;
+  margin: 10px 20px 10px 0;
+}
+article.node-article .field-name-field-addthis,
+article.node-video .field-name-field-addthis,
+article.node-photos .field-name-field-addthis {
+  float: left;
+  text-align: left;
+}
+.field-name-field-related-news {
+  float: left;
+  clear: left;
+  margin: 20px 20px 20px 0;
+}
+.page-node .user-picture {
+  float: right;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Block More news */
+.view-more-news .views-row .views-field-field-image {
+  float: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/* Block About Author */
+#block-views-author-block .views-field-picture {
+  float: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/* Block Latest news */
+.block-latest-news .views-row .views-field-field-image img,
+.block-most-read .views-row .views-field-field-image img {
+  float: right;
+  margin: 7px 0 0 15px;
+}
+.block-latest-news .more-link {
+  right: auto;
+  left: 10px;
+}
+
+/*------------------------------------*\
+	PHOTO CSS
+\*------------------------------------*/
+/* List Photos */
+.view-list-photos .views-exposed-form {
+  float: left;
+}
+.view-list-photos .views-exposed-widget label,
+.view-list-photos .views-exposed-widget .views-widget {
+  float: right;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* Photo detail */
+article.node-photos .field-name-field-images {
+  float: right;
+}
+.galleryformatter {
+  float: right;
+}
+.galleryformatter .gallery-slides .shownext span {
+  float: right;
+  left: auto;
+  right: 10px;
+}
+.galleryformatter .prev-slide,
+.galleryformatter .next-slide,
+.galleryformatter .gallery-thumbs .back,
+.galleryformatter .gallery-thumbs .forward {
+  float: right;
+  left: auto;
+  right: 0;
+}
+.galleryformatter .prev-slide,
+.galleryformatter .gallery-thumbs .back {
+  left: auto;
+  right: 10px;
+}
+
+.galleryformatter .next-slide,
+.galleryformatter .gallery-thumbs .forward {
+  right: auto;
+  left: 10px;
+}
+
+/*------------------------------------*\
+	VIDEO CSS
+\*------------------------------------*/
+/* List video */
+.view-list-videos .views-exposed-form {
+  float: left;
+}
+.view-list-videos .views-exposed-widget label,
+.view-list-videos .views-exposed-widget .views-widget {
+  float: right;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.view-list-videos .views-row {
+  float: right;
+}
+
+/*------------------------------------*\
+	BLOCKS CSS
+\*------------------------------------*/
+/* Divider */
+.full-width,
+.one-half,
+.one-third,
+.two-third,
+.three-fourth,
+.one-fourth {
+  float: right;
+}
+.views-field-view-node a,
+li.node-readmore a {
+  float: left;
+}
+
+/* Header */
+.branding-data {
+  float: right;
+}
+
+/* Block search */
+.block-search {
+  float: right;
+}
+.block-search input.form-submit {
+  right: auto;
+  left: 5px;
+  text-indent: -100px;
+}
+
+/* Block poll */
+.block-poll ul.links {
+  margin: 10px 20px 10px 0;
+}
+
+/* Block list */
+.block-list ul li {
+  padding: 2px 15px 2px 0;
+  background: url(../images/bullet-news.jpg) 100% 13px no-repeat;
+}
+
+/* Contact form */
+.contact-form .form-item {
+  float: right;
+}
+.contact-form .form-actions {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+
+/*------------------------------------*\
+	USER PROFILE
+\*------------------------------------*/
+.profile .field-name-field-user-name {
+  float: right;
+}
+.profile .field-name-field-user-about-us {
+  clear: right;
+}
+.profile .user-picture {
+  margin: 0 2em 0 0;
+}
+/*------------------------------------*\
+	FORMS CSS
+\*------------------------------------*/
+
+.form-item input.form-text {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+#search-form .form-type-textfield label {
+  margin-right: 0;
+  margin-left: 10px;
+}
+/*
+ * Drupal's default login form block
+ */
+#user-login-form {
+  text-align: right; /* LTR */
+}
+
+
+html.js #user-login-form li.openid-link,
+#user-login-form li.openid-link /* The "Log in using OpenID" link. */ {
+  margin-left: 0;
+  margin-right: -20px; /* LTR */ /* Un-do some of the padding on the ul list. */
+}
+
+
+
+form th {
+  text-align: right; /* LTR */
+  padding-right: 0;
+  padding-left: 1em; /* LTR */
+}
+
+/*------------------------------------*\
+	TABS CSS
+\*------------------------------------*/
+ul.primary {
+  padding: 0 10px 0 0; /* LTR */
+}
+
+ul.primary li {
+  float: right; /* LTR */
+}
+
+ul.secondary {
+  padding: 0 5px 0 0; /* LTR */
+}
+
+ul.secondary li {
+  float: right; /* LTR */
+  border-left: none; /* LTR */
+}
+
+/* Vertical Tab */
+.block-tabs-vertical.ui-tabs .ui-tabs-nav {
+  float: right;
+}
+.block-tabs-vertical.ui-tabs .ui-tabs-panel {
+  float: right;
+}
+.block-tabs-vertical.ui-tabs .ui-tabs-nav li.ui-state-active {
+  border: 1px solid #e8e8e8;
+  border-left: none;
+}
+
+/* Block accordion */
+.ui-accordion ul.menu ul {
+  margin-left:0;
+  margin-right: 20px;
+}
+.ui-accordion ul.menu li span.nolink,
+.ui-accordion ul.menu li a {
+  background: url(../images/bullet.png) 100% center no-repeat;
+  padding-left: 0;
+  padding-right: 20px;
+}
+.field-group-accordion {
+  float: right;
+}
+.ui-accordion .ui-accordion-header {
+  padding: 15px 35px 15px 20px;
+}
+.ui-accordion .ui-accordion-header .ui-icon {
+  left: auto;
+  right: 10px;
+}
+/* Toggle */
+.toggle_area .toggle_item .toggle_label {
+  border: 1px solid #e8e8e8;
+  background: #fff url(../images/accordion-bullet.png) 95% center no-repeat;
+  padding: 13px 40px 13px 13px;
+}
+.toggle_area .toggle_item .toggle_label.active {
+  background: #fff url(../images/accordion-bullet-active.png) 95% center no-repeat;
+}

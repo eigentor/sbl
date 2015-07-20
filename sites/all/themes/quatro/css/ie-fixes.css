@@ -1,0 +1,32 @@
+/* $Id: ie-fexes.css,v 1.0.0 2012/01/06 08:18:15 symphonythemes Exp $ */
+
+.item-list .pager .pager-current,
+.item-list .pager li a,
+.section-content .block-inner,
+.section-footer .region-footer-first-inner,
+.section-footer .region-footer-second-inner,
+.region-content-inner,
+.views-field-view-node a,
+li.node-readmore a,
+.block-search .form-item input.form-text,
+.view-article-slideshow .view-content,
+.form-item input.form-text,
+.form-item textarea.form-textarea,
+button, input[type="reset"], input[type="submit"], input[type="button"] {
+  behavior: url(/sites/all/themes/quatro/PIE.htc)
+}
+.view-slideshow .views-slideshow-cycle-main-frame,
+.view-slideshow .views-slideshow-cycle-main-frame .views-slideshow-cycle-main-frame-row {
+  width: 680px;
+  height: 302px;
+  float: left;
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,23 @@
+/* $Id: red-style.css,v 1.0.0 2010/01/29 08:18:15 symphonythemes Exp $ */
+
+.item-list .pager li,
+ul#main-menu li,
+.block-system-user-menu ul.menu li,
+.block-user-menu ul li,
+.region-user-first ul.menu li,
+.block-social .content ul li,
+.zone-footer ul.menu li,
+.field-name-field-tags .field-item,
+article.node-product .field-name-commerce-price .field-label,
+article.node-product .field-name-commerce-price .field-items,
+article.node-product .commerce-add-to-cart .attribute-widgets,
+article.node-product .commerce-add-to-cart .form-item-quantity,
+article.node-product .commerce-add-to-cart .form-submit,
+article.node-product .commerce-add-to-cart .form-item-quantity,
+article.node-product .attribute-widgets .form-item,
+.block-slideshow .views-slideshow-pager-fields .views-slideshow-pager-field-item,
+.field-name-field-event-time .field-label, .field-name-field-event-price .field-label, .field-name-field-event-location .field-label, .field-name-field-event-contact .field-label, .field-name-field-event-time .field-items, .field-name-field-event-price .field-items, .field-name-field-event-location .field-items, .field-name-field-event-contact .field-items {
+  zoom: 1;
+  *display:inline;
+}
+

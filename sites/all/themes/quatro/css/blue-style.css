@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* CSS Document */
+/*------------------------------------*\
+	RESET
+\*------------------------------------*/
+a,
+a:link,
+a:visited {
+  color:#1db6b6;
+  text-decoration: none;
+}
+a:focus,
+a:hover,
+a:active {
+  color: #333;
+}
+h1, h2, h3, h4 {
+  color:#1db6b6;
+}
+pre,
+div.code {
+  border-left: 5px solid #1db6b6;
+}
+.highlight {
+  background: #1db6b6;
+}
+li a.active {
+  color: #1db6b6;
+}
+
+/*------------------------------------*\
+	Pages CSS
+\*------------------------------------*/
+.item-list .pager .pager-current,
+.item-list .pager li a:hover {
+  background: #1db6b6;
+  border: 1px solid #1db6b6;
+  color: #fff;
+}
+
+/*  Zone branding  */
+.zone-branding-wrapper,
+.zone-menu-wrapper {
+  background-color: #1db6b6;
+}
+/* Zone submenu */
+.zone-submenu-wrapper {
+  background-color: #0b898a;
+}
+
+
+/*------------------------------------*\
+	NAVIGATION CSS
+\*------------------------------------*/
+/*
+ * Main menu links
+ */
+
+ul#main-menu li a:hover,
+ul#main-menu li a.active:hover,
+ul#main-menu li a.active,
+.zone-menu ul.menu li a:hover,
+.zone-menu ul.menu li a.active:hover,
+.zone-menu ul.menu li a.active,
+.zone-menu ul.menu li.active-trail a {
+  background-color: #0b898a;
+}
+
+.zone-menu ul.nice-menu li.active-trail a,
+.zone-menu ul.nice-menu li a.active,
+.zone-menu ul.nice-menu li a:hover,
+.zone-menu ul.nice-menu li.over a {
+  background-color: #0b898a;
+}
+.zone-menu ul.nice-menu ul {
+  border: none ;
+  background-color: #0b898a;
+}
+
+/* Search menu item */
+.zone-menu ul.nice-menu li.menu-path-search { 
+  background-color: #0b898a;
+}
+
+/* User menu */
+.block-system-user-menu ul.menu a {
+  border-right: 1px solid #c7e5e5;
+  color: #c7e5e5;
+}
+.block-system-user-menu ul li.last a {
+  border: none;
+}
+.block-system-user-menu ul.menu a:hover,
+.block-system-user-menu ul.menu a.active {
+  color: #fff;
+}
+
+/* Footer menu */
+.zone-footer .block-menu {
+  border-bottom: 2px solid #1db6b6;
+}
+.zone-footer ul.menu li a:hover,
+.zone-footer ul.menu li a.active {
+  color: #1db6b6;
+}
+
+/* Mobile menu */
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-menu {
+  background: #065959 url(../images/icon-menu-menu.png) 10px center no-repeat;
+}
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-search {
+  background: #065959 url(../images/icon-menu-search.png) 10px center no-repeat;
+}
+ul#om-menu-mobile-menu li.om-leaf.open #menu-item-account {
+  background: #065959 url(../images/icon-menu-account.png) 10px center no-repeat;
+}
+
+.ui-accordion .ui-accordion-header span.accordion-link,
+.ui-accordion .ui-accordion-header a.accordion-link {
+  color: #1db6b6;
+}
+
+/*------------------------------------*\
+	BLOCKS CSS
+\*------------------------------------*/
+
+h2.block-title {
+  border-bottom: 2px solid #1db6b6;
+}
+.views-field-view-node a:hover,
+li.node-readmore a:hover {
+  color: #1db6b6;
+}
+article.node-article.node-teaser .node-title a:hover,
+article.node-photos.node-teaser .node-title a:hover,
+.view-article-slideshow .attachment .views-field-title a:hover,
+.block-topic-news .view-content .views-field-title a:hover,
+.block-topic-news .attachment .more-link a:hover,
+.block-breaking-news h2.block-title,
+.block-breaking-news .content .views-field-title a:hover,
+article.node-article.node-teaser .node-title a:hover,
+.block-latest-news .views-row .views-field-title a:hover,
+.block-most-read .views-row .views-field-title a:hover,
+.block-video-block .views-field-title a:hover,
+.block-comments-recent-block li a:hover {
+  color: #1db6b6;
+}
+
+/* Block slideshow */
+.view-list-photos .views-slideshow-pager-fields .views-slideshow-pager-field-item.active,
+.view-article-slideshow .views-slideshow-pager-fields .views-slideshow-pager-field-item.active {
+  background: url(../images/blue/slideshow-nav-active.png) 0 0 no-repeat;
+}
+.view-list-photos .views-row .views-field-title a:hover { color: #1db6b6; }
+
+/* Multimedia */
+.block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal:hover {
+  background: url(../images/blue/jcarousel-prev-hover.png) 0 0 no-repeat;
+}
+.block-video-block .jcarousel-skin-default .jcarousel-next-horizontal:hover {
+  background: url(../images/blue/jcarousel-next-hover.png) 0 0 no-repeat;
+}
+/*------------------------------------*\
+	FORMS CSS
+\*------------------------------------*/
+button, input[type="reset"], input[type="submit"], input[type="button"] { background: none repeat scroll 0 0 #1db6b6; }
+input.form-submit:hover,
+.section-content .block-simplenews .block-inner input.form-submit:hover {
+  background-color: #0b898a; /*url(../images/blue/button-hover.png) 0 center repeat-x;*/
+}
+.section-content .block-simplenews .block-inner input.form-submit {
+  background-color: #1db6b6; /*url("../images/blue/button-hover.png") repeat-x scroll 0 center rgba(0, 0, 0, 0);*/
+}
+ul.primary li.active a,
+ul.primary li.active a:hover,
+ul.primary li.active a:focus {
+  background-color: #1db6b6;
+}

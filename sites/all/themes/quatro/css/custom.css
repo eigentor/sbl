@@ -1,0 +1,89 @@
+@charset "utf-8";
+/* CSS Document */
+/*------------------------------------*\
+	Eigene Definitionen
+\*------------------------------------*/
+
+
+/*------------------------------------*\
+	Logos der Bundesligavereine
+\*------------------------------------*/
+
+.logos {
+width:800px !important;
+height:35px;
+}
+
+.grid-small {
+display: inline;
+  float: left;
+  position: relative;
+  margin-left: 8px;
+  margin-right: 8px;
+
+}
+
+.container-16 .grid-small {
+  width: 32px;
+}
+
+.container-16 .grid-small img {
+  opacity:0.5;
+}
+
+.container-16 .grid-small img:hover {
+  opacity:1;
+}
+
+/*------------------------------------*\
+	Menü
+\*------------------------------------*/
+
+.zone-menu ul.nice-menu { /* Hintergrundfarbe der Menüleiste */
+background-color:black;
+border:1px solid white;
+}
+
+.branding-data {
+padding: 10px 0 !important;
+}
+
+/*------------------------------------*\
+	Social Media
+\*------------------------------------*/
+
+#container_twitter {
+display:none;
+}
+
+#container_facebook {
+display:block;
+}
+
+#schalter_fb {
+font-weight:bold;
+color:white !important;
+width:100px !important;
+height:20px;
+padding:2px;
+background-color:#f18000;
+border:1px solid black;
+text-align:center;
+float:left;
+margin-top:10px;
+cursor:pointer;
+}
+
+#schalter_tw {
+font-weight:bold;
+color:white !important;
+width:100px !important;
+height:20px;
+padding:2px;
+background-color:#000;
+border:1px solid black;
+text-align:center;
+float:right;
+margin-top:10px;
+cursor:pointer;
+}

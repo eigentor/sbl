@@ -1,0 +1,146 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+/*------------------------------------*\
+	NAVIGATIONS CSS
+\*------------------------------------*/
+.zone-menu .block-nice-menus {
+  float: right;
+}
+ul#main-menu,
+.zone-menu ul.nice-menu,
+.zone-menu ul.menu,
+.zone-submenu ul.menu {
+  text-align: right;
+}
+
+/* User menu */
+.block-system-user-menu {
+  float: left;
+}
+
+/* Footer menu */
+.zone-footer .block-menu {
+  text-align: left;
+}
+.zone-footer .block-menu .content ul.menu {
+  float: right;
+}
+
+/*------------------------------------*\
+	PAGE CSS
+\*------------------------------------*/
+/* Header */
+.branding-data {
+  text-align: right;
+}
+
+/*------------------------------------*\
+	NEWS CSS
+\*------------------------------------*/
+
+/* Block slideshow */
+.view-article-slideshow .views-field-field-image {
+  margin-right: 0;
+  margin-left: 20px;
+  text-align: right;
+}
+.view-article-slideshow .views-field-title {
+  float: right;
+  text-align: right;
+}
+
+/* Block breaking news */
+.block.block-breaking-news {
+  padding: 0;
+}
+.block-breaking-news h2.block-title {
+  float: right;
+  margin: 10px 0 10px 10px;
+}
+.block-breaking-news .content {
+  float: right;
+}
+
+/*------------------------------------*\
+	PHOTO CSS
+\*------------------------------------*/
+/* List Photos */
+.view-list-photos .views-row-1,
+.view-list-photos .views-row-4,
+.view-list-photos .views-row-7,
+.view-list-photos .views-row-10,
+.view-list-photos .views-row-13,
+.view-list-photos .views-row-16,
+.view-list-photos .views-row-19 {
+  margin-right: 0;
+  clear: none;
+  clear: right;
+}
+.view-list-photos .views-row-3,
+.view-list-photos .views-row-6,
+.view-list-photos .views-row-9,
+.view-list-photos .views-row-12,
+.view-list-photos .views-row-15,
+.view-list-photos .views-row-18,
+.view-list-photos .views-row-21 {
+  margin-left: 0;
+}
+
+
+/*------------------------------------*\
+	VIDEO CSS
+\*------------------------------------*/
+/* List Videos */
+
+.view-list-videos .views-row-1,
+.view-list-videos .views-row-4,
+.view-list-videos .views-row-7,
+.view-list-videos .views-row-10,
+.view-list-videos .views-row-13,
+.view-list-videos .views-row-16,
+.view-list-videos .views-row-19 {
+  margin-right: 0;
+  clear: none;
+  clear: right;
+}
+.view-list-videos .views-row-3,
+.view-list-videos .views-row-6,
+.view-list-videos .views-row-9,
+.view-list-videos .views-row-12,
+.view-list-videos .views-row-15,
+.view-list-videos .views-row-18,
+.view-list-videos .views-row-21 {
+  margin-left: 0;
+}
+
+/*------------------------------------*\
+	BLOCK CSS
+\*------------------------------------*/
+/* Block search */
+.block-search {
+  float: left;
+}
+
+/* Block login */
+.block-login .item-list ul li {
+  margin-right: 0;
+}
+
+
+/* Footer block */
+.block.block-social-icons {
+  text-align: left;
+  clear: none;
+  clear: left;
+}
+
+/*------------------------------------*\
+	OTHER STYLE CSS
+\*------------------------------------*/
+.one-half, .one-third, .two-third, .three-fourth, .one-fourth {
+    float: right;
+    margin-left: 4%;
+}
+
+.one-half.last, .one-third.last, .two-third.last, .three-fourth.last, .one-fourth.last {
+  margin-left: 0;
+}
