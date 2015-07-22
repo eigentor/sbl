@@ -1,0 +1,4 @@
+name = SBL Calculate Points
+description = Calculate points for the Chess Bundsliga Management
+package = Schach-Bundesliga
+core = 7.x

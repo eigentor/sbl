@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the sbl_Ligaverwaltung feature.
+ */
+
+include_once 'sbl_ligaverwaltung.features.inc';

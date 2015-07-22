@@ -1,0 +1,81 @@
+<?php
+/**
+ * @file
+ * sbl_ligaverwaltung.field_group.inc
+ */
+
+/**
+ * Implements hook_field_group_info().
+ */
+function sbl_ligaverwaltung_field_group_info() {
+  $export = array();
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_players|node|match|form';
+  $field_group->group_name = 'group_players';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'match';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Spieler',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_mt_spieler_1',
+      1 => 'field_spieler_2',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'open',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-players field-group-div',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_players|node|match|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_teams|node|match|form';
+  $field_group->group_name = 'group_teams';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'match';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Mannschaften',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_mt_mannschaft_1',
+      1 => 'field_mt_mannschaft_2',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Mannschaften',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-teams field-group-div',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_teams|node|match|form'] = $field_group;
+
+  return $export;
+}
