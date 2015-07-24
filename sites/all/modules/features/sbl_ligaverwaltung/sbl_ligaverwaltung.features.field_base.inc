@@ -134,6 +134,9 @@ function sbl_ligaverwaltung_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
+          'test_field_behavior' => array(
+            'status' => 0,
+          ),
           'views-select-list' => array(
             'status' => 0,
           ),
@@ -143,7 +146,9 @@ function sbl_ligaverwaltung_field_default_field_bases() {
           'property' => 'title',
           'type' => 'property',
         ),
-        'target_bundles' => array(),
+        'target_bundles' => array(
+          'spieler' => 'spieler',
+        ),
       ),
       'target_type' => 'node',
     ),
@@ -323,6 +328,86 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_tm_board_points_team_1'
+  $field_bases['field_tm_board_points_team_1'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tm_board_points_team_1',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 0,
+        2 => 0.5,
+        3 => 1,
+        4 => 1.5,
+        5 => 2,
+        6 => 2.5,
+        7 => 3,
+        8 => 3.5,
+        9 => 4,
+        10 => 4.5,
+        11 => 5,
+        12 => 5.5,
+        13 => 6,
+        14 => 6.5,
+        15 => 7,
+        16 => 7.5,
+        17 => 8,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_tm_board_points_team_2'
+  $field_bases['field_tm_board_points_team_2'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tm_board_points_team_2',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 0,
+        2 => 0.5,
+        3 => 1,
+        4 => 1.5,
+        5 => 2,
+        6 => 2.5,
+        7 => 3,
+        8 => 3.5,
+        9 => 4,
+        10 => 4.5,
+        11 => 5,
+        12 => 5.5,
+        13 => 6,
+        14 => 6.5,
+        15 => 7,
+        16 => 7.5,
+        17 => 8,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_tm_game'
   $field_bases['field_tm_game'] = array(
     'active' => 1,
@@ -343,48 +428,6 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'field_collection',
-  );
-
-  // Exported field_base: 'field_tm_points_team_1'
-  $field_bases['field_tm_points_team_1'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tm_points_team_1',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_tm_points_team_2'
-  $field_bases['field_tm_points_team_2'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tm_points_team_2',
-    'indexes' => array(
-      'format' => array(
-        0 => 'format',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
   );
 
   // Exported field_base: 'field_tm_team_1'

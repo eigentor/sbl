@@ -65,13 +65,13 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_tm_team_points_tm_2']['table'] = 'field_data_field_tm_team_points_tm_2';
   $handler->display->display_options['fields']['field_tm_team_points_tm_2']['field'] = 'field_tm_team_points_tm_2';
   $handler->display->display_options['fields']['field_tm_team_points_tm_2']['label'] = 'Mannschaftspunkte Gastmannschaft';
-  /* Field: Content: Brettpunkte Mannschaft 1 */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_tm_points_team_1']['id'] = 'field_tm_points_team_1';
   $handler->display->display_options['fields']['field_tm_points_team_1']['table'] = 'field_data_field_tm_points_team_1';
   $handler->display->display_options['fields']['field_tm_points_team_1']['field'] = 'field_tm_points_team_1';
   $handler->display->display_options['fields']['field_tm_points_team_1']['label'] = 'Brettpunkte Heimmannschaft';
   $handler->display->display_options['fields']['field_tm_points_team_1']['element_label_colon'] = FALSE;
-  /* Field: Content: Brettpunkte Mannschaft 2 */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_tm_points_team_2']['id'] = 'field_tm_points_team_2';
   $handler->display->display_options['fields']['field_tm_points_team_2']['table'] = 'field_data_field_tm_points_team_2';
   $handler->display->display_options['fields']['field_tm_points_team_2']['field'] = 'field_tm_points_team_2';
@@ -100,6 +100,24 @@ function sbl_ligaverwaltung_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'admin/mannschafts-matches';
+  $translatables['mannchaftsmatches'] = array(
+    t('Master'),
+    t('Mannchaftsmatches Übersicht für Admin'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Title'),
+    t('Heimmannschaft'),
+    t('Gastmannschaft'),
+    t('Mannschaftspunkte Heimmannschaft'),
+    t('Mannschaftspunkte Gastmannschaft'),
+    t('Brettpunkte Heimmannschaft'),
+    t('Brettpunkte Gastmannschaft'),
+    t('Page'),
+  );
   $export['mannchaftsmatches'] = $view;
 
   $view = new view();
@@ -172,49 +190,27 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Global: PHP */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
   $handler->display->display_options['fields']['php']['label'] = 'Mannschaftspunkte';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_value'] = 'return team_list_calculate_team_points($row->nid);';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '6';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '$a = $row1->php;
-$b = $row2->php;
-if ($a == $b) {
-  return 0;
-}
-return ($a > $b) ? -1 : 1;';
-  /* Field: Global: PHP */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
   $handler->display->display_options['fields']['php_1']['table'] = 'views';
   $handler->display->display_options['fields']['php_1']['field'] = 'php';
   $handler->display->display_options['fields']['php_1']['label'] = 'Brettpunkte';
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_1']['php_value'] = 'return team_list_calculate_board_points($row->nid);';
-  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '6';
-  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '$a = $row1->php;
-$b = $row2->php;
-if ($a == $b) {
-  return 0;
-}
-return ($a > $b) ? -1 : 1;';
-  /* Sort criterion: Sortieren nach Mannschaftspunkten */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['php']['id'] = 'php';
   $handler->display->display_options['sorts']['php']['table'] = 'views';
   $handler->display->display_options['sorts']['php']['field'] = 'php';
   $handler->display->display_options['sorts']['php']['ui_name'] = 'Sortieren nach Mannschaftspunkten';
-  $handler->display->display_options['sorts']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['sorts']['php']['php_sort'] = 'return team_list_sort_by_team_points($row1->php, $row2->php);';
-  /* Sort criterion: Sortieren nach Brettpunkten */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['php_1']['id'] = 'php_1';
   $handler->display->display_options['sorts']['php_1']['table'] = 'views';
   $handler->display->display_options['sorts']['php_1']['field'] = 'php';
   $handler->display->display_options['sorts']['php_1']['ui_name'] = 'Sortieren nach Brettpunkten';
-  $handler->display->display_options['sorts']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['sorts']['php_1']['php_sort'] = 'return team_list_sort_by_board_points($row1->php_1, $row2->php_1);';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -233,6 +229,20 @@ return ($a > $b) ? -1 : 1;';
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'tabelle';
+  $translatables['teams_leaderbord'] = array(
+    t('Master'),
+    t('Rangliste Mannschaften'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Title'),
+    t('Mannschaftspunkte'),
+    t('Brettpunkte'),
+    t('Page'),
+  );
   $export['teams_leaderbord'] = $view;
 
   return $export;
