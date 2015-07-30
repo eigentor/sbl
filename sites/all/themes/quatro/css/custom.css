@@ -4,6 +4,18 @@
 	Eigene Definitionen
 \*------------------------------------*/
 
+.field-name-field-article-teasertext {
+display:none;
+}
+
+h2 .block-title {
+text-transform:none !important;
+}
+
+h1.title {
+font-variant:small-caps;
+color:#999;
+}
 
 /*------------------------------------*\
 	Logos der Bundesligavereine
@@ -87,3 +99,115 @@ float:right;
 margin-top:10px;
 cursor:pointer;
 }
+
+/*------------------------------------*\
+	JCarousel
+\*------------------------------------*/
+
+
+.block-video-block .jcarousel-skin-default .jcarousel-container-horizontal {
+
+}
+
+/*------------------------------------*\
+	Slider
+\*------------------------------------*/
+
+
+.div_slider_title_large {
+ background-color:#80110d;
+ width:100%;
+ height:40px;
+ color:white !important;
+font-size:18px;
+ }
+ .div_slider_title_large .slider_title_large {
+padding:10px;
+ }
+ 
+ .slider_title_large a {
+ color:white !important;
+ font-weight:bold;
+ }
+.views_slideshow_pager_field_item {
+padding-top:10px;
+border-bottom:1px solid #757575;
+min-height:71px;
+display:block;
+border-collapse:collapse;
+}
+
+.views_slideshow_pager_field_item:hover {
+background-color:#bebebe;
+}
+.views_slideshow_pager_field_item a{
+color:black !important;
+font-weight:bold;
+}
+
+.views_slideshow_pager_field_item:after{
+content: ".";
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.views_slideshow_pager_field_item img{
+float:left;
+margin:0 5px 0 0;
+}
+
+.views-slideshow-cycle-main-frame {
+float:left;
+margin-right:20px;
+}
+
+.views-slideshow-cycle-main-frame .views-field-field-image{
+max-width:100%;
+}
+.skin-default {
+border-top:1px solid #757575;
+border-right:1px solid #757575;
+border-left:1px solid #757575;
+}
+
+.views-field-field-slider-linktext {
+font-variant:small-caps;
+text-align:center;
+}
+
+.views-field-field-slider-linktext a{
+color:black !important;
+font-size:20px;
+}
+
+@media only screen and (max-width: 850px) { 
+
+.views_slideshow_cycle_main {
+  width: 100%;
+  float: left;
+}
+
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame {
+  width: 100% !important;
+  height: auto;
+}
+
+.views_slideshow_cycle_main .views-slideshow-cycle-main-frame-row {
+  width: 100% !important;
+  height: auto;
+}
+.views_slideshow_cycle_main .field-content {
+  max-width: 100%;
+  width: 100%;
+}
+
+.views_slideshow_cycle_main .field-content img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+}
+

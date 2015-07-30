@@ -2145,8 +2145,9 @@ h2.block-title {
   margin-bottom: 0.5em;
   border-bottom: 2px solid #b70000;
   font-weight: bold;
-  font-size: 150%;
-  text-transform: uppercase;
+  font-size: 160%;
+  /*text-transform: uppercase;*/
+  font-variant:small-caps;
   font-family: "Open Sans Condensed", Arial,Helvetica,Verdana,sans-serif;
 }
 
