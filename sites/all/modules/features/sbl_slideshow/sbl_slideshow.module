@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SBL_Slideshow feature.
+ */
+
+include_once 'sbl_slideshow.features.inc';
