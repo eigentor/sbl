@@ -2154,23 +2154,23 @@ h2.block-title {
 .block-red h2.block-title {
   border-bottom: 2px solid #b70000;
 }
-.block-blue h2.block-title {
-  border-bottom: 2px solid #1db6b6;
+.block-spielberichte h2.block-title { /* Spielberichte */
+  border-bottom: 2px solid #3b9319;
 }
 .block-green h2.block-title {
   border-bottom: 2px solid #00ff66;
 }
-.block-purple h2.block-title {
-  border-bottom: 2px solid #9966cc;
+.block-klubnews h2.block-title { /*Klubnews */
+  border-bottom: 2px solid #1DB6B6;
 }
 .block-yellow h2.block-title {
   border-bottom: 2px solid #ffcc00;
 }
-.block-pink h2.block-title {
-  border-bottom: 2px solid #ff0066;
+.block-schachnews h2.block-title { /*Schachnews */
+  border-bottom: 2px solid #FC0;
 }
-.block-orange h2.block-title {
-  border-bottom: 2px solid #ff3300;
+.block-bundesliga h2.block-title { /*Bundesliga */
+  border-bottom: 2px solid #f18000;
 }
 .block-grey h2.block-title {
   border-bottom: 2px solid #666;

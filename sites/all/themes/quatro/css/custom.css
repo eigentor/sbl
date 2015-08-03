@@ -17,6 +17,31 @@ font-variant:small-caps;
 color:#999;
 }
 
+.line-height-1 {
+margin-bottom:0.8em !important;
+}
+
+#thin {
+border-top: 1px dotted #000;
+border-right: none;
+border-bottom: none;
+border-left: none;
+margin-top:5px;
+}
+
+a.grey {
+color:#666 !important;
+}
+a.grey:hover{
+text-decoration:underline;
+}
+
+a.fotostrecken {
+color:#666 !important;
+font-size:0.95em;
+font-weight:bold;
+}
+
 /*------------------------------------*\
 	Logos der Bundesligavereine
 \*------------------------------------*/
@@ -45,6 +70,30 @@ display: inline;
 
 .container-16 .grid-small img:hover {
   opacity:1;
+}
+
+/*------------------------------------*\
+	Aktuelles
+\*------------------------------------*/
+
+.topic-127 { /*Bundesliga */
+background-color:#f18000 !important;
+}
+
+.topic-128 { /*Spielberichte */
+background-color:#3b9319 !important;
+}
+
+.topic-129 { /*Ulis Kommentar */
+background-color:#123590 !important;
+}
+
+.topic-130 { /*Schachnews */
+background-color:#FC0 !important;
+}
+
+.topic-131 { /*Klubnews */
+background-color:#1DB6B6 !important;
 }
 
 /*------------------------------------*\
@@ -104,82 +153,21 @@ cursor:pointer;
 	JCarousel
 \*------------------------------------*/
 
+.field-slideshow-wrapper {
+background-color:#2F3541;
+color:white;
+border:1px solid #f18000;
+padding:5px;
+}
 
+.field-slideshow-carousel-wrapper {
+padding-top:8px;
+border-top:1px dotted white;
+}
 .block-video-block .jcarousel-skin-default .jcarousel-container-horizontal {
 
 }
 
-/*------------------------------------*\
-	Slider
-\*------------------------------------*/
-
-
-.div_slider_title_large {
- background-color:#80110d;
- width:100%;
- height:40px;
- color:white !important;
-font-size:18px;
- }
- .div_slider_title_large .slider_title_large {
-padding:10px;
- }
- 
- .slider_title_large a {
- color:white !important;
- font-weight:bold;
- }
-.views_slideshow_pager_field_item {
-padding-top:10px;
-border-bottom:1px solid #757575;
-min-height:71px;
-display:block;
-border-collapse:collapse;
-}
-
-.views_slideshow_pager_field_item:hover {
-background-color:#bebebe;
-}
-.views_slideshow_pager_field_item a{
-color:black !important;
-font-weight:bold;
-}
-
-.views_slideshow_pager_field_item:after{
-content: ".";
-height: 0;
-clear: both;
-visibility: hidden;
-}
-
-.views_slideshow_pager_field_item img{
-float:left;
-margin:0 5px 0 0;
-}
-
-.views-slideshow-cycle-main-frame {
-float:left;
-margin-right:20px;
-}
-
-.views-slideshow-cycle-main-frame .views-field-field-image{
-max-width:100%;
-}
-.skin-default {
-border-top:1px solid #757575;
-border-right:1px solid #757575;
-border-left:1px solid #757575;
-}
-
-.views-field-field-slider-linktext {
-font-variant:small-caps;
-text-align:center;
-}
-
-.views-field-field-slider-linktext a{
-color:black !important;
-font-size:20px;
-}
 
 @media only screen and (max-width: 850px) { 
 
