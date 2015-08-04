@@ -1,7 +1,7 @@
 name = SBL_Kontext
 description = Kontext(e)
 core = 7.x
-package = Features
+package = Schach-Bundesliga
 dependencies[] = block
 dependencies[] = context
 dependencies[] = ctools
