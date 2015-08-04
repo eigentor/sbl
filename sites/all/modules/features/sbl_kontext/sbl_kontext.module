@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SBL_Kontext feature.
+ */
+
+include_once 'sbl_kontext.features.inc';
