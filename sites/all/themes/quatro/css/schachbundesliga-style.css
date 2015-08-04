@@ -6,7 +6,7 @@
 a,
 a:link,
 a:visited {
-  color:#ea7a37;
+  color:#f18000;
   text-decoration: none;
 }
 a:focus,
@@ -15,17 +15,17 @@ a:active {
   color: #333;
 }
 h1, h2, h3, h4 {
-  color:#ea7a37;
+  color:#f18000;
 }
 pre,
 div.code {
-  border-color: #ea7a37;
+  border-color: #f18000;
 }
 .highlight {
-  background: #ea7a37;
+  background: #f18000;
 }
 li a.active {
-  color: #ea7a37;
+  color: #f18000;
 }
 
 /*------------------------------------*\
@@ -41,7 +41,7 @@ li a.active {
 
 /*  Zone branding  */
 .zone-branding-wrapper {
-  /* background-color: #ea7a37; */
+  /* background-color: #f18000; */
   background:linear-gradient( #e7d7bd, #f18e00);
 }
 
@@ -107,11 +107,11 @@ ul#main-menu li a.active,
 
 /* Footer menu */
 .zone-footer .block-menu {
-  border-bottom: 2px solid #ea7a37;
+  border-bottom: 2px solid #f18000;
 }
 .zone-footer ul.menu li a:hover,
 .zone-footer ul.menu li a.active {
-  color: #ea7a37;
+  color: #f18000;
 }
 
 /* Mobile menu */
@@ -127,7 +127,7 @@ ul#om-menu-mobile-menu li.om-leaf.open #menu-item-account {
 
 .ui-accordion .ui-accordion-header span.accordion-link,
 .ui-accordion .ui-accordion-header a.accordion-link {
-  color: #ea7a37;
+  color: #f18000;
 }
 
 /*------------------------------------*\
@@ -135,12 +135,12 @@ ul#om-menu-mobile-menu li.om-leaf.open #menu-item-account {
 \*------------------------------------*/
 
 h2.block-title {
-  border-bottom: 2px solid #ea7a37;
+  border-bottom: 2px solid #F18000;
 }
 
 .views-field-view-node a:hover,
 li.node-readmore a:hover {
-  color: #ea7a37;
+  color: #f18000;
 }
 
 article.node-article.node-teaser .node-title a:hover,
@@ -155,7 +155,7 @@ article.node-article.node-teaser .node-title a:hover,
 .block-most-read .views-row .views-field-title a:hover,
 .block-video-block .views-field-title a:hover,
 .block-comments-recent-block li a:hover {
-  color: #ea7a37;
+  color: #f18000;
 }
 
 /* Block slideshow */
@@ -163,7 +163,7 @@ article.node-article.node-teaser .node-title a:hover,
 .view-article-slideshow .views-slideshow-pager-fields .views-slideshow-pager-field-item.active {
   background: url(../images/orange/slideshow-nav-active.png) 0 0 no-repeat;
 }
-.view-list-photos .views-row .views-field-title a:hover { color: #ea7a37; }
+.view-list-photos .views-row .views-field-title a:hover { color: #f18000; }
 
 /* Multimedia */
 .block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal:hover {
@@ -176,18 +176,18 @@ article.node-article.node-teaser .node-title a:hover,
 	FORMS CSS
 \*------------------------------------*/
 
-button, input[type="reset"], input[type="submit"], input[type="button"] { background: none repeat scroll 0 0 #ea7a37; }
+button, input[type="reset"], input[type="submit"], input[type="button"] { background: none repeat scroll 0 0 #f18000; }
 .section-content .block-simplenews .block-inner input.form-submit:hover, 
 input.form-submit:hover {
   background-color: #CC5E1E;
 }
 
 .section-content .block-simplenews .block-inner input.form-submit {
-  background-color: #ea7a37;
+  background-color: #f18000;
 }
 
 ul.primary li.active a,
 ul.primary li.active a:hover,
 ul.primary li.active a:focus {
-  background-color: #ea7a37;
+  background-color: #f18000;
 }
