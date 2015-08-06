@@ -12,7 +12,6 @@ dependencies[] = file
 dependencies[] = image
 dependencies[] = juicebox
 dependencies[] = list
-dependencies[] = media
 dependencies[] = node
 dependencies[] = options
 dependencies[] = sbl_ligaverwaltung
