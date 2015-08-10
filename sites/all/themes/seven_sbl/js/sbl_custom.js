@@ -16,7 +16,6 @@ jQuery(document).ready(
         {
 		var pgn_location=jQuery('a[href$=".pgn"]:first').attr('href');
 		if(pgn_location && pgn_location.length > 5) {
-		alert(pgn_location);
 		var pgn='[pgn pgnData=' + pgn_location + ']<a href=' + pgn_location + '>PGN</a>[/pgn]';
 		jQuery("#edit-field-pgn-implementierung-und-0-value").val(pgn);
 		}
