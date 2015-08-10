@@ -271,6 +271,35 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
+  // Exported field_base: 'field_single_match_result'
+  $field_bases['field_single_match_result'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_single_match_result',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 1,
+        2 => 0,
+        3 => '=',
+        4 => '+/-',
+        5 => '-/+',
+        6 => '-/-',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_sp_verein'
   $field_bases['field_sp_verein'] = array(
     'active' => 1,

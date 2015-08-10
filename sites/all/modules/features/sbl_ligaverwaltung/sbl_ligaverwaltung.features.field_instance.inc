@@ -104,7 +104,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -136,7 +136,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -175,7 +175,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -209,7 +209,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -241,7 +241,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -273,7 +273,39 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_tm_game-field_single_match_result'
+  $field_instances['field_collection_item-field_tm_game-field_single_match_result'] = array(
+    'bundle' => 'field_tm_game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_single_match_result',
+    'label' => 'Ergebnis',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 0,
     ),
   );
 
@@ -727,6 +759,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Brettpunkte Mannschaft 1');
   t('Brettpunkte Mannschaft 2');
   t('Einzelspiel');
+  t('Ergebnis');
   t('Mannschaft 1');
   t('Mannschaft 2');
   t('Mannschaftspunkte Mannschaft 1');

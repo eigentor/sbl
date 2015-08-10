@@ -16,24 +16,28 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
   $ds_layout->entity_type = 'field_collection_item';
   $ds_layout->bundle = 'field_tm_game';
   $ds_layout->view_mode = 'form';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_2col_stacked';
   $ds_layout->settings = array(
     'regions' => array(
+      'header' => array(
+        0 => 'field_single_match_result',
+      ),
       'left' => array(
-        0 => 'field_mt_player_1',
-        1 => 'field_mt_color_player_1',
-        2 => 'field_mt_points_player_1',
+        1 => 'field_mt_player_1',
+        2 => 'field_mt_color_player_1',
+        3 => 'field_mt_points_player_1',
       ),
       'right' => array(
-        3 => 'field_mt_player_2',
-        4 => 'field_mt_color_player_2',
-        5 => 'field_mt_points_player_2',
+        4 => 'field_mt_player_2',
+        5 => 'field_mt_color_player_2',
+        6 => 'field_mt_points_player_2',
       ),
       'hidden' => array(
-        6 => '_add_existing_field',
+        7 => '_add_existing_field',
       ),
     ),
     'fields' => array(
+      'field_single_match_result' => 'header',
       'field_mt_player_1' => 'left',
       'field_mt_color_player_1' => 'left',
       'field_mt_points_player_1' => 'left',
@@ -44,8 +48,10 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
     ),
     'classes' => array(),
     'wrappers' => array(
+      'header' => 'div',
       'left' => 'div',
       'right' => 'div',
+      'footer' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
