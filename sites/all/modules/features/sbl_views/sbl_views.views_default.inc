@@ -1519,7 +1519,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'photos' => 'photos',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
+  /* Filter criterion: Content: Newsbereich (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -1806,7 +1806,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['field_klublogo']['field'] = 'field_klublogo';
   $handler->display->display_options['fields']['field_klublogo']['label'] = '';
   $handler->display->display_options['fields']['field_klublogo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_klublogo']['alter']['text'] = '<img src="sites/default/files/klublogos/[field_klublogo-value]" class="klublogo" />';
+  $handler->display->display_options['fields']['field_klublogo']['alter']['text'] = '<img src="/sites/default/files/klublogos/[field_klublogo-value]" class="klublogo" />';
   $handler->display->display_options['fields']['field_klublogo']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -2007,7 +2007,7 @@ function sbl_views_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<img src="sites/default/files/klublogos/[field_klublogo-value]" class="klublogo" />'),
+    t('<img src="/sites/default/files/klublogos/[field_klublogo-value]" class="klublogo" />'),
     t('<a href="[path]" class="grey">[title]</a>&nbsp;&nbsp;<a href="[path"]>[mehr]</a><hr id="thin" />'),
     t('Page'),
     t('[field_alternatives_vorschaubild]'),
@@ -2067,7 +2067,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Content statistics: Total views */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['totalcount']['id'] = 'totalcount';
   $handler->display->display_options['sorts']['totalcount']['table'] = 'node_counter';
   $handler->display->display_options['sorts']['totalcount']['field'] = 'totalcount';
@@ -2946,7 +2946,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'photos' => 'photos',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
+  /* Filter criterion: Content: Newsbereich (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -3026,6 +3026,12 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3976,7 +3982,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'video' => 'video',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
+  /* Filter criterion: Content: Newsbereich (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -4059,8 +4065,8 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'video';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Fotostrecken und Videos JCarousel */
+  $handler = $view->new_display('block', 'Fotostrecken und Videos JCarousel', 'block');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '15';
@@ -4144,6 +4150,85 @@ function sbl_views_views_default_views() {
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['block_description'] = 'Video und Foto Block - JCarousel';
+
+  /* Display: Fotostrecken und Videos Sidebar */
+  $handler = $view->new_display('block', 'Fotostrecken und Videos Sidebar', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'block-latest-photos';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'flexslider';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Media */
+  $handler->display->display_options['fields']['field_media']['id'] = 'field_media';
+  $handler->display->display_options['fields']['field_media']['table'] = 'field_data_field_media';
+  $handler->display->display_options['fields']['field_media']['field'] = 'field_media';
+  $handler->display->display_options['fields']['field_media']['label'] = '';
+  $handler->display->display_options['fields']['field_media']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_media']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_media']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_media']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_media']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_media']['settings'] = array(
+    'file_view_mode' => 'default',
+  );
+  /* Field: Content: Bilder */
+  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
+  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['empty'] = '[field_media]';
+  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_images']['settings'] = array(
+    'image_style' => 'photo_featured',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_images']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '';
+  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  $handler->display->display_options['fields']['counter']['reverse'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'photos' => 'photos',
+    'video' => 'video',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['block_description'] = 'Fotostrecken und Videos Sidebar';
   $translatables['video'] = array(
     t('Master'),
     t('Aktuelle Fotostrecken und Videos'),
@@ -4167,8 +4252,10 @@ function sbl_views_views_default_views() {
     t('<i class="fa fa-comments-o"></i> [comment_count]'),
     t('.'),
     t(','),
-    t('Block'),
+    t('Fotostrecken und Videos JCarousel'),
     t('Video und Foto Block - JCarousel'),
+    t('Fotostrecken und Videos Sidebar'),
+    t('[field_media]'),
   );
   $export['video'] = $view;
 

@@ -177,6 +177,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'allowed_types' => array(
           0 => 'image',
         ),
+        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(
             'attach' => 0,
@@ -202,6 +203,48 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_auf_startseite_anteasern'
+  $field_instances['node-article-field_auf_startseite_anteasern'] = array(
+    'bundle' => 'article',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Anklicken, wenn der Artikel im Contentslider auf der Startseite angezeigt werden soll. Macht keinen Sinn bei Artikeln ohne großes Contentbild',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_auf_startseite_anteasern',
+    'label' => 'Auf Startseite anteasern',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
       'weight' => 5,
     ),
   );
@@ -265,6 +308,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'allowed_types' => array(
           0 => 'image',
         ),
+        'browser_plugins' => array(),
         'filefield_sources' => array(
           'filefield_sources' => array(),
           'source_attach' => array(
@@ -283,7 +327,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -359,7 +403,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -396,7 +440,123 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_pgn_implementierung'
+  $field_instances['node-article-field_pgn_implementierung'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pgn_implementierung',
+    'label' => 'Alle Partien zum Nachspielen am Bildschirm:',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'pgn_converter' => 'pgn_converter',
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -7,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => -8,
+            ),
+            'xbbcode' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 1,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_pgn_upload'
+  $field_instances['node-article-field_pgn_upload'] = array(
+    'bundle' => 'article',
+    'deleted' => 0,
+    'description' => 'Uploadfeld für eine PGN-Datei. Wird eine PGN hochgeladen, wird ein PartieViewer am Ende des Artikels angezeigt',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pgn_upload',
+    'label' => 'PGN Download',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'pgn',
+      'file_extensions' => 'pgn',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 16,
     ),
   );
 
@@ -486,45 +646,6 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_teasertext_startseite'
-  $field_instances['node-article-field_teasertext_startseite'] = array(
-    'bundle' => 'article',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Teasertext für die Verwendung im Content-Slider auf der Startseite. Nur verwenden, wenn der Beitrag im Slider angezeigt werden soll',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_teasertext_startseite',
-    'label' => 'Teasertext Startseite',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 80,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-article-field_video_file'
   $field_instances['node-article-field_video_file'] = array(
     'bundle' => 'article',
@@ -573,6 +694,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
           'image' => 0,
           'video' => 'video',
         ),
+        'browser_plugins' => array(),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -1252,9 +1374,12 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Addthis');
   t('Addthis Bottom');
+  t('Alle Partien zum Nachspielen am Bildschirm:');
   t('Alternatives Bild, das in der Artikelvorschau angezeigt wird. Wird nur angezeigt, wenn das große Artikelbild nicht vorhanden ist');
   t('Alternatives Vorschaubild');
+  t('Anklicken, wenn der Artikel im Contentslider auf der Startseite angezeigt werden soll. Macht keinen Sinn bei Artikeln ohne großes Contentbild');
   t('Artikelbild (Kopfbereich)');
+  t('Auf Startseite anteasern');
   t('Bilder');
   t('Body');
   t('CBV Datei');
@@ -1268,10 +1393,10 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Newsbereich Fotostrecken');
   t('Optionales Feld. Nur auswählen, wenn es sich um einen Artikel aus dem Bereich News -> Bundesliga handelt.');
   t('PGN Datei');
+  t('PGN Download');
   t('Tags');
-  t('Teasertext Startseite');
-  t('Teasertext für die Verwendung im Content-Slider auf der Startseite. Nur verwenden, wenn der Beitrag im Slider angezeigt werden soll');
   t('Titel eines oder mehrer Videos. Nur ausfüllen, wenn es auch tatsächlich Videos zum Artikel gibt.');
+  t('Uploadfeld für eine PGN-Datei. Wird eine PGN hochgeladen, wird ein PartieViewer am Ende des Artikels angezeigt');
   t('Video File');
   t('Video Titel');
   t('Zuordnung');
