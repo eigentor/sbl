@@ -237,6 +237,50 @@ function sbl_kontext_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'aktuell_kolumnen';
+  $context->description = '';
+  $context->tag = 'article';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'aktuell/kolumnen' => 'aktuell/kolumnen',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-18' => array(
+          'module' => 'block',
+          'delta' => '18',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'views-photos-block_1' => array(
+          'module' => 'views',
+          'delta' => 'photos-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'simplenews-120' => array(
+          'module' => 'simplenews',
+          'delta' => '120',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('article');
+  $export['aktuell_kolumnen'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'aktuell_schachnews';
   $context->description = '';
   $context->tag = 'article';
@@ -377,6 +421,56 @@ function sbl_kontext_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('article');
   $export['aktuell_ulis_kommentar'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'aktuell_ullis_randnotizen';
+  $context->description = '';
+  $context->tag = 'article';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'aktuell/ullis-randnotizen' => 'aktuell/ullis-randnotizen',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-video-block_1' => array(
+          'module' => 'views',
+          'delta' => 'video-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'block-18' => array(
+          'module' => 'block',
+          'delta' => '18',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'views-photos-block_1' => array(
+          'module' => 'views',
+          'delta' => 'photos-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'simplenews-120' => array(
+          'module' => 'simplenews',
+          'delta' => '120',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('article');
+  $export['aktuell_ullis_randnotizen'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
