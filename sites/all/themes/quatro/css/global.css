@@ -1287,12 +1287,15 @@ article.node .flexslider ul, article.node .flexslider ol {
 */
 
 .view-list-articles .views-field-field-image .field-topic {
-  position: absolute;
+  /*position: absolute;*/
   top: 5px;
   left: 5px;
   float: left;
   padding: 5px 10px;
   background: #b70000;
+ -webkit-box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
 }
 .view-list-articles .views-field-field-image .topic-1 {
   background: #ffcc00; /* Travel Topic - Term ID = 1 */
