@@ -1,0 +1,4 @@
+name = SBL Form Helper
+description = Form Alters and other form processing for several forms
+package = Schach-Bundesliga
+core = 7.x

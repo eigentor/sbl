@@ -1,0 +1,15 @@
+<?php
+
+function sbl_form_helper_init() {
+
+
+$module_path = drupal_get_path('module', 'sbl_form_helper');
+
+$path = drupal_get_path_alias($_GET['q']);
+$path_array = explode('/', $path);
+
+// Add a JS file to set several field values depending on other field values.
+// Conditional fields did not work.
+drupal_add_js($module_path . '/js/form_team_match.js');
+
+}
