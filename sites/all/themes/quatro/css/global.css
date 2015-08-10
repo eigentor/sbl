@@ -1326,6 +1326,9 @@ box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
 }
 .view-list-articles .views-field-field-image img {
   margin: 0;
+   -webkit-box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
 }
 .view-list-articles .views-field-title {
   padding-bottom: 10px;
