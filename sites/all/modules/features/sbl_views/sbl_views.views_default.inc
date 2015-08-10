@@ -1137,7 +1137,7 @@ function sbl_views_views_default_views() {
   $export['aktuell_spielberichte'] = $view;
 
   $view = new view();
-  $view->name = 'clone_of_aktuell_bundesliga';
+  $view->name = 'aktuell_ullis_randnotizen';
   $view->description = '';
   $view->tag = 'articles';
   $view->base_table = 'node';
@@ -1402,7 +1402,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '25';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['block_description'] = 'Ullis Randnotizen - Block Sidebar';
-  $translatables['clone_of_aktuell_bundesliga'] = array(
+  $translatables['aktuell_ullis_randnotizen'] = array(
     t('Master'),
     t('Ullis Randnotizen'),
     t('more'),
@@ -1431,7 +1431,7 @@ function sbl_views_views_default_views() {
     t('Ullis Randnotizen - Block Sidebar'),
     t('<img src="sites/default/files/ullis-randnotizen/ulrich-geilmann.jpg" />'),
   );
-  $export['clone_of_aktuell_bundesliga'] = $view;
+  $export['aktuell_ullis_randnotizen'] = $view;
 
   $view = new view();
   $view->name = 'clone_of_aktuell_ulis_kommentar';
