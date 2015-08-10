@@ -1,0 +1,25 @@
+/**
+ * @file
+ * CSS for pre.pgn4web and iframe.pgn4web.
+ */
+pre.pgn4web,
+iframe.pgn4web {
+  border: 1px solid #999;
+  border-radius:10px;
+  margin: 0;
+  padding: 0;
+  width: 98%;
+  height: 100%;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+/* Frame with a single game. */
+iframe.pgn4web-single {
+}
+
+/* Frame with multiple games. */
+iframe.pgn4web-multiple {
+   height:500px; /* More room for dropdown list. */
+}

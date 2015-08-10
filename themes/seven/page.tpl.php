@@ -1,4 +1,7 @@
-
+<?php
+$path = "http://localhost/misc/custom.js";
+drupal_add_js($path);
+?>
   <div id="branding" class="clearfix">
     <?php print $breadcrumb; ?>
     <?php print render($title_prefix); ?>
