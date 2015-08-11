@@ -1255,7 +1255,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['label'] = '';
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_alternatives_vorschaubild']['empty'] = '<img src="/sites/default/files/ullis-randnotizen/ulrich-geilmann.jpg" />';
+  $handler->display->display_options['fields']['field_alternatives_vorschaubild']['empty'] = '<img src="/sites/all/themes/quatro/images/ullis-randnotizen/ulrich-geilmann.jpg" />';
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['settings'] = array(
@@ -1367,7 +1367,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['alter']['text'] = '<img src="sites/default/files/ullis-randnotizen/ulrich-geilmann.jpg" />';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image']['empty'] = '<img src="/sites/default/files/ullis-randnotizen/ulrich-geilmann.jpg" />';
+  $handler->display->display_options['fields']['field_image']['empty'] = '<img src="/sites/all/themes/quatro/images/ullis-randnotizen/ulrich-geilmann.jpg" />';
   $handler->display->display_options['fields']['field_image']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
@@ -1419,7 +1419,7 @@ function sbl_views_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Page'),
-    t('<img src="/sites/default/files/ullis-randnotizen/ulrich-geilmann.jpg" />'),
+    t('<img src="/sites/all/themes/quatro/images/ullis-randnotizen/ulrich-geilmann.jpg" />'),
     t('[field_alternatives_vorschaubild]'),
     t('<i class="fa fa-clock-o"></i> [created]'),
     t('<i class="fa fa-comments-o"></i> [comment_count]'),
@@ -1816,7 +1816,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'photos' => 'photos',
   );
-  /* Filter criterion: Content: Newsbereich (field_topic) */
+  /* Filter criterion: Content: Topic (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -2215,7 +2215,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['field_klublogo']['field'] = 'field_klublogo';
   $handler->display->display_options['fields']['field_klublogo']['label'] = '';
   $handler->display->display_options['fields']['field_klublogo']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_klublogo']['alter']['text'] = '<img src="/sites/default/files/klublogos/[field_klublogo-value]" class="klublogo" />&nbsp;&nbsp;[field_klublogo]';
+  $handler->display->display_options['fields']['field_klublogo']['alter']['text'] = '<img src="/sites/all/themes/quatro/images/klublogos/[field_klublogo-value]" class="klublogo" />&nbsp;&nbsp;[field_klublogo]';
   $handler->display->display_options['fields']['field_klublogo']['alter']['path'] = 'vereine/fc-bayern-muenchen';
   $handler->display->display_options['fields']['field_klublogo']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
@@ -2267,6 +2267,33 @@ function sbl_views_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Klublogo */
+  $handler->display->display_options['fields']['field_klublogo']['id'] = 'field_klublogo';
+  $handler->display->display_options['fields']['field_klublogo']['table'] = 'field_data_field_klublogo';
+  $handler->display->display_options['fields']['field_klublogo']['field'] = 'field_klublogo';
+  $handler->display->display_options['fields']['field_klublogo']['label'] = '';
+  $handler->display->display_options['fields']['field_klublogo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_klublogo']['alter']['text'] = '<img src="/sites/all/themes/quatro/images/klublogos/[field_klublogo-value]" class="klublogo" />';
+  $handler->display->display_options['fields']['field_klublogo']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[path]" class="grey">[title]</a>&nbsp;&nbsp;<a href="[path"]>[mehr]</a><hr id="thin" />';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['block_description'] = 'Block Klubnews Aktuelles';
 
   /* Display: Block */
@@ -2287,6 +2314,33 @@ function sbl_views_views_default_views() {
   );
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  /* Field: Content: Klublogo */
+  $handler->display->display_options['fields']['field_klublogo']['id'] = 'field_klublogo';
+  $handler->display->display_options['fields']['field_klublogo']['table'] = 'field_data_field_klublogo';
+  $handler->display->display_options['fields']['field_klublogo']['field'] = 'field_klublogo';
+  $handler->display->display_options['fields']['field_klublogo']['label'] = '';
+  $handler->display->display_options['fields']['field_klublogo']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_klublogo']['alter']['text'] = '<img src="/sites/all/themes/quatro/images/klublogos/[field_klublogo-value]" class="klublogo" alt="[field_klublogo]" />';
+  $handler->display->display_options['fields']['field_klublogo']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<a href="[path]" class="grey">[title]</a>&nbsp;&nbsp;<a href="[path]">[mehr]</a><hr id="thin" />';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['block_description'] = 'Block Klubnews Startseite';
   $translatables['klubnews'] = array(
     t('Master'),
@@ -2312,11 +2366,14 @@ function sbl_views_views_default_views() {
     t('<i class="fa fa-comments-o"></i> [comment_count]'),
     t('.'),
     t(','),
-    t('<img src="/sites/default/files/klublogos/[field_klublogo-value]" class="klublogo" />&nbsp;&nbsp;[field_klublogo]'),
+    t('<img src="/sites/all/themes/quatro/images/klublogos/[field_klublogo-value]" class="klublogo" />&nbsp;&nbsp;[field_klublogo]'),
     t('[mehr]&nbsp;&nbsp;&nbsp;<i class="fa fa-caret-right icon-caret-right"></i>'),
     t('Block'),
+    t('<img src="/sites/all/themes/quatro/images/klublogos/[field_klublogo-value]" class="klublogo" />'),
     t('Block Klubnews Aktuelles'),
     t('Aus den Vereinen'),
+    t('<img src="/sites/all/themes/quatro/images/klublogos/[field_klublogo-value]" class="klublogo" alt="[field_klublogo]" />'),
+    t('<a href="[path]" class="grey">[title]</a>&nbsp;&nbsp;<a href="[path]">[mehr]</a><hr id="thin" />'),
     t('Block Klubnews Startseite'),
   );
   $export['klubnews'] = $view;
@@ -3071,7 +3128,7 @@ function sbl_views_views_default_views() {
     'comment_count' => 'comment_count',
   );
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
-  /* Field: Content: Newsbereich */
+  /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
@@ -3240,7 +3297,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Newsbereich */
+  /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
@@ -3450,14 +3507,13 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: PGN Datei */
+  /* Field: Content: PGN Datei (Download) */
   $handler->display->display_options['fields']['field_pgn_datei']['id'] = 'field_pgn_datei';
   $handler->display->display_options['fields']['field_pgn_datei']['table'] = 'field_data_field_pgn_datei';
   $handler->display->display_options['fields']['field_pgn_datei']['field'] = 'field_pgn_datei';
   $handler->display->display_options['fields']['field_pgn_datei']['label'] = '';
   $handler->display->display_options['fields']['field_pgn_datei']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_pgn_datei']['alter']['text'] = '<a href="[field_pgn_datei]" class="grey"><img src="/sites/default/files/icons/pgn.jpg" class="shadowed" /></a>';
+  $handler->display->display_options['fields']['field_pgn_datei']['alter']['text'] = '<div class="float-links"><a href="[field_pgn_datei]" class="grey" title="PGN Download"><img src="/sites/all/themes/quatro/images/icons/pgn.jpg" class="shadowed" /></a></div><a href="[field_pgn_datei]" title="PGN Download" class="grey">PGN Download</a>';
   $handler->display->display_options['fields']['field_pgn_datei']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pgn_datei']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pgn_datei']['type'] = 'file_url_plain';
@@ -3467,10 +3523,18 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['field_cbv_datei']['field'] = 'field_cbv_datei';
   $handler->display->display_options['fields']['field_cbv_datei']['label'] = '';
   $handler->display->display_options['fields']['field_cbv_datei']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_cbv_datei']['alter']['text'] = '<a href="[field_cbv_datei]" class="grey"><img src="/sites/default/files/icons/cbv.jpg" class="shadowed" /></a>';
+  $handler->display->display_options['fields']['field_cbv_datei']['alter']['text'] = '<div class="float-links"><a href="[field_cbv_datei]" class="grey"><img src="/sites/all/themes/quatro/images/icons/cbv.jpg" class="shadowed" /></a></div><a href="[field_cbv_datei]" class="grey">CBV Download</a>';
   $handler->display->display_options['fields']['field_cbv_datei']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cbv_datei']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_cbv_datei']['type'] = 'file_url_plain';
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['alter']['text'] = '<div class="float-links"><a href="[path]" title="Partien am Bildschirm nachspielen"><img src="/sites/all/themes/quatro/images/icons/replay_games.png" /></a></div><a href="[path]" title="Partien am Bildschirm nachspielen" class="grey">Online nachspielen</a>';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -3511,8 +3575,9 @@ function sbl_views_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<a href="[field_pgn_datei]" class="grey"><img src="/sites/default/files/icons/pgn.jpg" class="shadowed" /></a>'),
-    t('<a href="[field_cbv_datei]" class="grey"><img src="/sites/default/files/icons/cbv.jpg" class="shadowed" /></a>'),
+    t('<div class="float-links"><a href="[field_pgn_datei]" class="grey" title="PGN Download"><img src="/sites/all/themes/quatro/images/icons/pgn.jpg" class="shadowed" /></a></div><a href="[field_pgn_datei]" title="PGN Download" class="grey">PGN Download</a>'),
+    t('<div class="float-links"><a href="[field_cbv_datei]" class="grey"><img src="/sites/all/themes/quatro/images/icons/cbv.jpg" class="shadowed" /></a></div><a href="[field_cbv_datei]" class="grey">CBV Download</a>'),
+    t('<div class="float-links"><a href="[path]" title="Partien am Bildschirm nachspielen"><img src="/sites/all/themes/quatro/images/icons/replay_games.png" /></a></div><a href="[path]" title="Partien am Bildschirm nachspielen" class="grey">Online nachspielen</a>'),
     t('Page'),
   );
   $export['partiedownload'] = $view;
@@ -3590,7 +3655,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'photos' => 'photos',
   );
-  /* Filter criterion: Content: Newsbereich (field_topic) */
+  /* Filter criterion: Content: Topic (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -4626,7 +4691,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'video' => 'video',
   );
-  /* Filter criterion: Content: Newsbereich (field_topic) */
+  /* Filter criterion: Content: Topic (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -4661,25 +4726,25 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   /* Field: Content: Media */
-  $handler->display->display_options['fields']['field_media']['id'] = 'field_media';
-  $handler->display->display_options['fields']['field_media']['table'] = 'field_data_field_media';
-  $handler->display->display_options['fields']['field_media']['field'] = 'field_media';
-  $handler->display->display_options['fields']['field_media']['label'] = '';
-  $handler->display->display_options['fields']['field_media']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_media']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_media']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_media']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_media']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_media']['settings'] = array(
-    'file_view_mode' => 'media_preview',
+  $handler->display->display_options['fields']['field_media_1']['id'] = 'field_media_1';
+  $handler->display->display_options['fields']['field_media_1']['table'] = 'field_data_field_media';
+  $handler->display->display_options['fields']['field_media_1']['field'] = 'field_media';
+  $handler->display->display_options['fields']['field_media_1']['label'] = '';
+  $handler->display->display_options['fields']['field_media_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_media_1']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_media_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_1']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_media_1']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_media_1']['settings'] = array(
+    'file_view_mode' => 'preview',
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -4697,7 +4762,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['created']['alter']['text'] = '<i class="fa fa-clock-o"></i> [created]';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'custom';
-  $handler->display->display_options['fields']['created']['custom_date_format'] = 'M d, Y';
+  $handler->display->display_options['fields']['created']['custom_date_format'] = 'd. M Y';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';

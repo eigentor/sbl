@@ -484,7 +484,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'default_order_wrapper' => array(
           'formats' => array(
             'ds_code' => array(
-              'weight' => -7,
+              'weight' => -5,
             ),
             'filtered_html' => array(
               'weight' => -9,
@@ -493,13 +493,13 @@ function sbl_inhaltsytpen_field_default_field_instances() {
               'weight' => -10,
             ),
             'pgn_converter' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
               'weight' => -8,
             ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
             'xbbcode' => array(
-              'weight' => -10,
+              'weight' => -7,
             ),
           ),
         ),
@@ -643,6 +643,45 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       ),
       'type' => 'taxonomy_autocomplete',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_teasertext_startseite'
+  $field_instances['node-article-field_teasertext_startseite'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Teasertext für die Verwendung im Content-Slider auf der Startseite. Nur verwenden, wenn der Beitrag im Slider angezeigt werden soll',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_teasertext_startseite',
+    'label' => 'Teasertext Startseite',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 80,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -868,7 +907,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 41,
+      'weight' => 3,
     ),
   );
 
@@ -880,9 +919,8 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'file',
         'settings' => array(),
-        'type' => 'file_default',
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -931,21 +969,23 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 44,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-partiendownload-field_pgn_datei'
-  $field_instances['node-partiendownload-field_pgn_datei'] = array(
+  // Exported field_instance:
+  // 'node-partiendownload-field_gesamt_pgn_implementierung'
+  $field_instances['node-partiendownload-field_gesamt_pgn_implementierung'] = array(
     'bundle' => 'partiendownload',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'file',
+        'label' => 'above',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'file_default',
+        'type' => 'text_default',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -956,8 +996,81 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'field_name' => 'field_gesamt_pgn_implementierung',
+    'label' => 'Alle Partien zum Nachspielen am Bildschirm',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 0,
+          'pgn_converter' => 'pgn_converter',
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 1,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-partiendownload-field_pgn_datei'
+  $field_instances['node-partiendownload-field_pgn_datei'] = array(
+    'bundle' => 'partiendownload',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
     'field_name' => 'field_pgn_datei',
-    'label' => 'PGN Datei',
+    'label' => 'PGN Datei (Download)',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
@@ -970,31 +1083,10 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 0,
-            'reference' => 0,
-            'remote' => 0,
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 42,
+      'weight' => 4,
     ),
   );
 
@@ -1374,6 +1466,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Addthis');
   t('Addthis Bottom');
+  t('Alle Partien zum Nachspielen am Bildschirm');
   t('Alle Partien zum Nachspielen am Bildschirm:');
   t('Alternatives Bild, das in der Artikelvorschau angezeigt wird. Wird nur angezeigt, wenn das große Artikelbild nicht vorhanden ist');
   t('Alternatives Vorschaubild');
@@ -1392,9 +1485,11 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Newsbereich');
   t('Newsbereich Fotostrecken');
   t('Optionales Feld. Nur auswählen, wenn es sich um einen Artikel aus dem Bereich News -> Bundesliga handelt.');
-  t('PGN Datei');
+  t('PGN Datei (Download)');
   t('PGN Download');
   t('Tags');
+  t('Teasertext Startseite');
+  t('Teasertext für die Verwendung im Content-Slider auf der Startseite. Nur verwenden, wenn der Beitrag im Slider angezeigt werden soll');
   t('Titel eines oder mehrer Videos. Nur ausfüllen, wenn es auch tatsächlich Videos zum Artikel gibt.');
   t('Uploadfeld für eine PGN-Datei. Wird eine PGN hochgeladen, wird ein PartieViewer am Ende des Artikels angezeigt');
   t('Video File');

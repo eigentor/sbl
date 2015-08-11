@@ -79,6 +79,13 @@ display: inline;
 margin-bottom:10px;
 }
 
+.float-links {
+display: inline;
+  float: left;
+  position: relative;
+  margin-right: 8px;
+  margin-top:5px;
+}
 .container-16 .grid-small {
   width: 32px;
 }
