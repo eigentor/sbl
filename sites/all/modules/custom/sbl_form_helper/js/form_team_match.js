@@ -6,24 +6,14 @@
     attach: function (context, settings) {
       // Set the points per player on the team match node form dependent on the other player
 
-     //$('form#team-match-node-form .field-name-field-single-match-result select.form-select').change(function(){
-     //   var single_match_result = $('form#team-match-node-form .field-name-field-single-match-result select.form-select').val();
-     //   $('form#team-match-node-form .field-name-field-mt-points-player-1 select.form-select').val(single_match_result);
-     //   console.log(single_match_result);
-     // });
-
-      //function to set player points depending on single game result
+     //function to set player points depending on single game result
 
       function set_single_game_player_points(single_game_result_select, player_points_select, points_matching_array) {
         $(single_game_result_select).change(function(){
           // get the value from the result selector
           var single_match_result = $(this).val();
           // set the player points to the matching value
-          //$(player_1_points_select).val(single_match_result);
-          //$(player_points_select).hide();
-
-          for(var key in points_matching_array) {
-            //console.log("key " + key + " has value " + points_matching_array[key]);
+         for(var key in points_matching_array) {
             if(single_match_result === key) {
               //console.log(points_matching_array[key]);
               var value = points_matching_array[key];
@@ -40,6 +30,7 @@
 
       //create arrays for matching game result values to player points
       var match_result_player_1_points = {};
+      match_result_player_1_points['_none'] = '_none';
       match_result_player_1_points['1'] = 1;
       match_result_player_1_points['2'] = 2;
       match_result_player_1_points['3'] = 3;
@@ -49,6 +40,7 @@
 
       //create arrays for matching game result values to player points
       var match_result_player_2_points = {};
+      match_result_player_2_points['_none'] = '_none';
       match_result_player_2_points['1'] = 2;
       match_result_player_2_points['2'] = 1;
       match_result_player_2_points['3'] = 3;
