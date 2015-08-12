@@ -13,3 +13,26 @@ $path_array = explode('/', $path);
 drupal_add_js($module_path . '/js/form_team_match.js');
 
 }
+
+/**
+ * Implementaion of hook_form_FORM_ID_alter
+ * Alter the node form for team matches
+ */
+function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $form_id) {
+  // Add board numbering for single games in the team-match node form
+  foreach ($form['field_tm_game'][LANGUAGE_NONE] as $delta => $field) {
+    if (is_numeric($delta)) {
+      $board_number = $delta + 1;
+      $form['field_tm_game'][LANGUAGE_NONE][$delta]['#prefix'] = '<span class="board-number game-' . $board_number . '">Brett ' . $board_number . '</span>';
+    }
+  }
+}
+
+// Alter multiple value field collection forms
+function sbl_form_helper_field_widget_form_alter(&$element, &$form_state, $context) {
+  if(isset($element['#bundle'])) {
+    if ("field_tm_game" == $element['#bundle']) {
+      //dpm($element);
+    }
+  }
+}

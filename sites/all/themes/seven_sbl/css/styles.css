@@ -5,3 +5,26 @@ display:none !important;
 .form-item-field-gesamt-pgn-implementierung-und-0-value,#edit-field-gesamt-pgn-implementierung-und-0-value {
 display:none !important;
 }
+form#team-match-node-form #edit-field-tm-game td {
+  padding-top: 14px;
+  padding-bottom: 18px;
+}
+form#team-match-node-form #edit-field-tm-game .field-name-field-single-match-result {
+  width: 40%;
+  margin-bottom: 3px;
+  padding-bottom: 7px;
+  border: 1px solid #ddd;
+  /*background: #FCFCF9;*/
+  padding: 8px;
+}
+form#team-match-node-form #edit-field-tm-game .field-name-field-single-match-result label {
+  color: #555;
+  font-size: 1.2em;
+  margin-bottom: 3px;
+}
+form#team-match-node-form #edit-field-tm-game .field-name-field-mt-player-1,
+form#team-match-node-form #edit-field-tm-game .field-name-field-mt-player-2,
+form#team-match-node-form #edit-field-tm-game .field-name-field-mt-color-player-1,
+form#team-match-node-form #edit-field-tm-game .field-name-field-mt-color-player-2 {
+  margin-bottom: 5px;
+}
