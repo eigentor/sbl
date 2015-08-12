@@ -66,6 +66,21 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_fide_id'
+  $field_bases['field_fide_id'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_fide_id',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_mt_color_player_1'
   $field_bases['field_mt_color_player_1'] = array(
     'active' => 1,
@@ -303,7 +318,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
   // Exported field_base: 'field_sp_verein'
   $field_bases['field_sp_verein'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_sp_verein',

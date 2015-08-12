@@ -393,13 +393,60 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-spieler-field_fide_id'
+  $field_instances['node-spieler-field_fide_id'] = array(
+    'bundle' => 'spieler',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fide_id',
+    'label' => 'Fide-ID',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
     ),
   );
 
   // Exported field_instance: 'node-spieler-field_sp_verein'
   $field_instances['node-spieler-field_sp_verein'] = array(
     'bundle' => 'spieler',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -426,15 +473,16 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_sp_verein',
     'label' => 'Verein',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => -3,
+      'weight' => 3,
     ),
   );
 
@@ -760,6 +808,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Brettpunkte Mannschaft 2');
   t('Einzelspiel');
   t('Ergebnis');
+  t('Fide-ID');
   t('Mannschaft 1');
   t('Mannschaft 2');
   t('Mannschaftspunkte Mannschaft 1');
