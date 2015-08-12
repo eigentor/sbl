@@ -1,6 +1,7 @@
 name = SBL_Views
 core = 7.x
 package = Schach-Bundesliga
+dependencies[] = field_collection_views
 dependencies[] = flexslider_views
 dependencies[] = jcarousel
 dependencies[] = page_title
