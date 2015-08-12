@@ -103,7 +103,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 2,
     ),
   );
@@ -135,7 +135,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 5,
     ),
   );
@@ -240,7 +240,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 3,
     ),
   );
@@ -272,7 +272,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 6,
     ),
   );
@@ -567,10 +567,10 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'above',
         'module' => 'field_collection',
         'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
+          'add' => 'Hinzufügen',
+          'delete' => 'Löschen',
           'description' => TRUE,
-          'edit' => 'Edit',
+          'edit' => 'Bearbeiten',
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
@@ -709,7 +709,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 4,
     ),
   );
@@ -746,7 +746,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(),
-      'type' => 'options_buttons',
+      'type' => 'options_select',
       'weight' => 8,
     ),
   );
