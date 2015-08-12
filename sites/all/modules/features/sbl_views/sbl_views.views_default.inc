@@ -1816,7 +1816,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'photos' => 'photos',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
+  /* Filter criterion: Content: Newsbereich (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -3128,7 +3128,7 @@ function sbl_views_views_default_views() {
     'comment_count' => 'comment_count',
   );
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
-  /* Field: Content: Topic */
+  /* Field: Content: Newsbereich */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
@@ -3297,7 +3297,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Topic */
+  /* Field: Content: Newsbereich */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
@@ -3655,7 +3655,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'photos' => 'photos',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
+  /* Filter criterion: Content: Newsbereich (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -3763,13 +3763,12 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
   $handler->display->display_options['filters']['tid']['value'] = array(
-    128 => '128',
-    131 => '131',
-    132 => '132',
     127 => '127',
+    128 => '128',
     129 => '129',
     130 => '130',
-    135 => '135',
+    131 => '131',
+    132 => '132',
   );
   $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
@@ -4691,7 +4690,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'video' => 'video',
   );
-  /* Filter criterion: Content: Topic (field_topic) */
+  /* Filter criterion: Content: Newsbereich (field_topic) */
   $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
@@ -4967,6 +4966,181 @@ function sbl_views_views_default_views() {
     t('[field_media]'),
   );
   $export['video'] = $view;
+
+  $view = new view();
+  $view->name = 'vorstand';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Vorstand';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Impressum';
+  $handler->display->display_options['css_class'] = 'view-list-photos';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
+  /* Relationship: User: Vorstandsdaten (field_vorstandsdaten) */
+  $handler->display->display_options['relationships']['field_vorstandsdaten_value']['id'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['relationships']['field_vorstandsdaten_value']['table'] = 'field_data_field_vorstandsdaten';
+  $handler->display->display_options['relationships']['field_vorstandsdaten_value']['field'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['relationships']['field_vorstandsdaten_value']['delta'] = '-1';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  /* Field: Field collection item: Klarname */
+  $handler->display->display_options['fields']['field_klarname']['id'] = 'field_klarname';
+  $handler->display->display_options['fields']['field_klarname']['table'] = 'field_data_field_klarname';
+  $handler->display->display_options['fields']['field_klarname']['field'] = 'field_klarname';
+  $handler->display->display_options['fields']['field_klarname']['relationship'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['fields']['field_klarname']['label'] = '';
+  $handler->display->display_options['fields']['field_klarname']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['field_klarname']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Funktion */
+  $handler->display->display_options['fields']['field_funktion']['id'] = 'field_funktion';
+  $handler->display->display_options['fields']['field_funktion']['table'] = 'field_data_field_funktion';
+  $handler->display->display_options['fields']['field_funktion']['field'] = 'field_funktion';
+  $handler->display->display_options['fields']['field_funktion']['relationship'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['fields']['field_funktion']['label'] = '';
+  $handler->display->display_options['fields']['field_funktion']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Strasse */
+  $handler->display->display_options['fields']['field_strasse']['id'] = 'field_strasse';
+  $handler->display->display_options['fields']['field_strasse']['table'] = 'field_data_field_strasse';
+  $handler->display->display_options['fields']['field_strasse']['field'] = 'field_strasse';
+  $handler->display->display_options['fields']['field_strasse']['relationship'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['fields']['field_strasse']['label'] = '';
+  $handler->display->display_options['fields']['field_strasse']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: PLZ Ort */
+  $handler->display->display_options['fields']['field_plz_ort']['id'] = 'field_plz_ort';
+  $handler->display->display_options['fields']['field_plz_ort']['table'] = 'field_data_field_plz_ort';
+  $handler->display->display_options['fields']['field_plz_ort']['field'] = 'field_plz_ort';
+  $handler->display->display_options['fields']['field_plz_ort']['relationship'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['fields']['field_plz_ort']['label'] = '';
+  $handler->display->display_options['fields']['field_plz_ort']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Telefon */
+  $handler->display->display_options['fields']['field_telefon']['id'] = 'field_telefon';
+  $handler->display->display_options['fields']['field_telefon']['table'] = 'field_data_field_telefon';
+  $handler->display->display_options['fields']['field_telefon']['field'] = 'field_telefon';
+  $handler->display->display_options['fields']['field_telefon']['relationship'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['fields']['field_telefon']['label'] = '';
+  $handler->display->display_options['fields']['field_telefon']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_telefon']['alter']['text'] = '<i class="fa fa-phone"></i> [field_telefon]';
+  $handler->display->display_options['fields']['field_telefon']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: E-Mail */
+  $handler->display->display_options['fields']['field_e_mail']['id'] = 'field_e_mail';
+  $handler->display->display_options['fields']['field_e_mail']['table'] = 'field_data_field_e_mail';
+  $handler->display->display_options['fields']['field_e_mail']['field'] = 'field_e_mail';
+  $handler->display->display_options['fields']['field_e_mail']['relationship'] = 'field_vorstandsdaten_value';
+  $handler->display->display_options['fields']['field_e_mail']['label'] = '';
+  $handler->display->display_options['fields']['field_e_mail']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_e_mail']['alter']['text'] = '<i class="fa fa-mail"></i> <a href="mailto:[field_e_mail]">E-Mail</a>';
+  $handler->display->display_options['fields']['field_e_mail']['element_label_colon'] = FALSE;
+  /* Sort criterion: Field collection item: Sortierung (field_sortierung) */
+  $handler->display->display_options['sorts']['field_sortierung_value']['id'] = 'field_sortierung_value';
+  $handler->display->display_options['sorts']['field_sortierung_value']['table'] = 'field_data_field_sortierung';
+  $handler->display->display_options['sorts']['field_sortierung_value']['field'] = 'field_sortierung_value';
+  $handler->display->display_options['sorts']['field_sortierung_value']['relationship'] = 'field_vorstandsdaten_value';
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    6 => '6',
+  );
+
+  /* Display: Vorstand */
+  $handler = $view->new_display('page', 'Vorstand', 'page');
+  $handler->display->display_options['path'] = 'schachbundesliga/vorstand';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Vorstand';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Impressum */
+  $handler = $view->new_display('page_with_page_title', 'Impressum', 'page_with_page_title_1');
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<strong>Schachbundesliga e.V., c/o Rainer Polzin, Blücherplatz 2, 10961 Berlin</strong>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="clearfix"></div>
+Der Schachbundesliga e.V. wird durch zwei vertretungsberechtigte Vorstandmitglieder gemeinsam vertreten.
+Registergericht: Amtsgericht Charlottenburg
+Registernummer: VR 26494 B
+
+<strong>Haftungsausschluss:</strong>
+Der Schachbundesliga e.V. übernimmt keine Haftung für die Inhalte externer Links.
+Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+Für die Richtigkeit und Vollständigkeit von schachbundesliga.de wird keine Haftung übernommen. Sie dient lediglich der Information.
+
+Für namentlich gekennzeichnete Beiträge liegt die Verantwortung beim Autor oder bei der Autorin.';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
+  $handler->display->display_options['path'] = 'impressum';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Impressum';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'menu-footer-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['vorstand'] = array(
+    t('Master'),
+    t('Impressum'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('field collection item from field_vorstandsdaten'),
+    t('<i class="fa fa-phone"></i> [field_telefon]'),
+    t('<i class="fa fa-mail"></i> <a href="mailto:[field_e_mail]">E-Mail</a>'),
+    t('Vorstand'),
+    t('<strong>Schachbundesliga e.V., c/o Rainer Polzin, Blücherplatz 2, 10961 Berlin</strong>'),
+    t('<div class="clearfix"></div>
+Der Schachbundesliga e.V. wird durch zwei vertretungsberechtigte Vorstandmitglieder gemeinsam vertreten.
+Registergericht: Amtsgericht Charlottenburg
+Registernummer: VR 26494 B
+
+<strong>Haftungsausschluss:</strong>
+Der Schachbundesliga e.V. übernimmt keine Haftung für die Inhalte externer Links.
+Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+Für die Richtigkeit und Vollständigkeit von schachbundesliga.de wird keine Haftung übernommen. Sie dient lediglich der Information.
+
+Für namentlich gekennzeichnete Beiträge liegt die Verantwortung beim Autor oder bei der Autorin.'),
+  );
+  $export['vorstand'] = $view;
 
   return $export;
 }

@@ -23,4 +23,5 @@ features[views_view][] = textblock_startseite
 features[views_view][] = topic_cuture
 features[views_view][] = topic_trending
 features[views_view][] = video
+features[views_view][] = vorstand
 features_exclude[dependencies][ctools] = ctools
