@@ -66,7 +66,7 @@ function sbl_feeds_importer_feeds_importer_default() {
           4 => array(
             'source' => 'ID_NUMBER',
             'target' => 'field_fide_id',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
         ),
         'update_existing' => '2',
