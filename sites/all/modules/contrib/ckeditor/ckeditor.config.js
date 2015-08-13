@@ -27,7 +27,7 @@ CKEDITOR.editorConfig = function(config) {
   // [#1762328] Uncomment the line below to protect <code> tags in CKEditor (hide them in wysiwyg mode).
   // config.protectedSource.push(/<code>[\s\S]*?<\/code>/gi);
   config.extraPlugins = '';
-
+ 
   /*
     * Append here extra CSS rules that should be applied into the editing area.
     * Example:
@@ -74,7 +74,7 @@ Drupal.settings.cke_toolbar_DrupalAdvanced = [
   ['Cut','Copy','Paste','PasteText','PasteFromWord','-','SpellChecker', 'Scayt'],
   ['Undo','Redo','Find','Replace','-','SelectAll'],
   ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar'],
-  ['Maximize', 'ShowBlocks'],
+  ['Maximize', 'ShowBlocks',],
   '/',
   ['Format'],
   ['Bold','Italic','Underline','Strike','-','Subscript','Superscript','-','RemoveFormat'],

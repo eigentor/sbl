@@ -8,7 +8,7 @@
   <?php print render($title_suffix); ?>
   <?php if ($display_submitted): ?>
      <div class="header-info">
-        <div class="article-create-date"><i class="fa fa-clock-o themecolor-text"></i><span class="label"><?php print t("Create"); ?>: </span><?php print date('d.m.Y - H:i',$node->created); ?></div>
+        <div class="article-create-date"><i class="fa fa-clock-o themecolor-text"></i><span class="label"><?php print t("Created"); ?>: </span><?php print date('d.m.Y',$node->created); ?></div>
         <div class="article-author"><i class="fa fa-user themecolor-text"></i><span class="label"><?php print t("Author"); ?>: </span><?php print $node->name; ?></div>
         <div class="article-addthis"><?php print render($content['field_addthis']); ?></div>
         
