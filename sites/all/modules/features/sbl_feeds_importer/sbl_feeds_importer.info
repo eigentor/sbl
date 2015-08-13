@@ -1,0 +1,12 @@
+name = SBL Feeds Importer
+description = Feeds Importer um Inhalte wie Spieler zu importieren
+core = 7.x
+package = Schach-Bundesliga
+dependencies[] = ctools
+dependencies[] = feeds
+dependencies[] = feeds_tamper
+dependencies[] = feeds_tamper_ui
+dependencies[] = feeds_ui
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features[feeds_importer][] = import_players
