@@ -83,8 +83,9 @@ margin-bottom:10px;
 display: inline;
   float: left;
   position: relative;
-  margin-right: 8px;
+  margin-right: 20px;
   margin-top:5px;
+  text-align:center;
 }
 .container-16 .grid-small {
   width: 32px;
@@ -96,6 +97,45 @@ display: inline;
 
 .container-16 .grid-small img:hover {
   opacity:1;
+}
+
+/*------------------------------------*\
+	Eingebettete Fotostrecke
+\*------------------------------------*/
+
+.field-name-field-fotostrecke .header-info {
+ display:none !important;
+}
+
+.field-name-field-fotostrecke {
+ margin-bottom:15px;
+}
+
+.field-name-field-fotostrecke h2 {
+font-size:1.2em;
+}
+
+.field-name-field-fotostrecke .field-label {
+
+}
+
+.field-name-field-fotostrecke .field-items {
+ width:100%;
+ text-align:center;´
+}
+.field-name-field-fotostrecke article img {
+padding:0 5px 0;
+}
+
+.field-name-field-fotostrecke article {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+ padding: 10px 0;
+  margin-bottom: 5px;
+}
+
+.field-name-field-fotostrecke :after {
+clear:both;
 }
 
 /*------------------------------------*\
