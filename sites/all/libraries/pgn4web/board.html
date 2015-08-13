@@ -30,6 +30,10 @@ body {
   padding: 0px;
 }
 
+#gameSite {
+display:none !important;
+}
+
 body {
   font-family: sans-serif;
   color: black;
@@ -1275,7 +1279,7 @@ function customFunctionOnPgnGameLoad() {
   }
 
   if (theObj = document.getElementById("siteDateSpacer")) {
-    if ((gameSite[currentGame] != undefined) &&
+	  if ((gameSite[currentGame] != undefined) &&
         (gameSite[currentGame] !== "") &&
         (gameDate[currentGame] != undefined) &&
         (gameDate[currentGame] !== "")) {
