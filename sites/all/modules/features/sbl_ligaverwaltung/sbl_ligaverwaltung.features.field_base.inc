@@ -260,6 +260,90 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
+  // Exported field_base: 'field_pl_acad_title'
+  $field_bases['field_pl_acad_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pl_acad_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_pl_first_name'
+  $field_bases['field_pl_first_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pl_first_name',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_pl_last_name'
+  $field_bases['field_pl_last_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pl_last_name',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_pl_master_title'
+  $field_bases['field_pl_master_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pl_master_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_saison'
   $field_bases['field_saison'] = array(
     'active' => 1,
@@ -472,6 +556,72 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_tm_saison'
+  $field_bases['field_tm_saison'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tm_saison',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'saison',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
+  // Exported field_base: 'field_tm_spieltag'
+  $field_bases['field_tm_spieltag'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tm_spieltag',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1 => 1,
+        2 => 2,
+        3 => 3,
+        4 => 4,
+        5 => 5,
+        6 => 6,
+        7 => 7,
+        8 => 8,
+        9 => 9,
+        10 => 10,
+        11 => 11,
+        12 => 12,
+        13 => 13,
+        14 => 14,
+        15 => 15,
+        16 => 16,
+        17 => 17,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_tm_team_1'
