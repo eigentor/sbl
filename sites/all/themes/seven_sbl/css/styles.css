@@ -38,3 +38,8 @@ form#team-match-node-form #edit-field-tm-game .player-points {
   margin-left: 2em;
   font-size: 1.2em;
 }
+
+/* Keep Masquerade block from blocking other elements */
+#block-masquerade-masquerade {
+  clear: both;
+}
