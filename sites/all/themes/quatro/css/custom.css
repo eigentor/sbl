@@ -32,6 +32,16 @@ margin-top:15px;
 a.grey {
 color:#666 !important;
 }
+
+.blue  {
+color:#333366 !important;
+}
+
+#blue {
+border: 1px solid #333366 !important;
+height: 1px;
+}
+
 a.grey:hover{
 text-decoration:underline;
 }
@@ -87,6 +97,16 @@ display: inline;
   margin-top:5px;
   text-align:center;
 }
+
+.float-links-icons {
+display: inline;
+  float: left;
+  position: relative;
+  width:33%;
+  margin-top:5px;
+  text-align:center;
+}
+
 .container-16 .grid-small {
   width: 32px;
 }
@@ -240,6 +260,15 @@ border-top:1px dotted white;
 .views_slideshow_cycle_main {
   width: 100%;
   float: left;
+}
+
+.float-links-icons {
+display: inline;
+  float: left;
+  position: relative;
+  margin-right:15px;
+  margin-top:5px;
+  text-align:center;
 }
 
 .views_slideshow_cycle_main .views-slideshow-cycle-main-frame {
