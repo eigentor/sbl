@@ -44,16 +44,26 @@ function sbl_feeds_importer_feeds_importer_default() {
         'authorize' => 1,
         'mappings' => array(
           0 => array(
+            'source' => 'Kombinierter Name',
+            'target' => 'title',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'Akad. Titel',
+            'target' => 'field_pl_acad_title',
+            'unique' => FALSE,
+          ),
+          2 => array(
             'source' => 'Nachname',
             'target' => 'field_pl_last_name',
             'unique' => FALSE,
           ),
-          1 => array(
+          3 => array(
             'source' => 'Vorname',
             'target' => 'field_pl_first_name',
             'unique' => FALSE,
           ),
-          2 => array(
+          4 => array(
             'source' => 'ID_NUMBER',
             'target' => 'field_fide_id',
             'unique' => FALSE,
