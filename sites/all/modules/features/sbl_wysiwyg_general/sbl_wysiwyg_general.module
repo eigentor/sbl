@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SBL Wysiwyg und allgemeine Seiteneinstellungen feature.
+ */
+
+include_once 'sbl_wysiwyg_general.features.inc';
