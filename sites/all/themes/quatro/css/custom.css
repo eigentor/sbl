@@ -4,6 +4,20 @@
 	Eigene Definitionen
 \*------------------------------------*/
 
+/* Ausrichtungsklassen für Bilder */
+.image-left {
+  float: left;
+  margin-top: 5px;
+}
+.image-right {
+  float: right;
+  margin-top: 5px;
+}
+.image-center {
+  display: block;
+  margin: auto;
+}
+
 .field-name-field-article-teasertext {
 display:none;
 }
