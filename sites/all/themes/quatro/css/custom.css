@@ -8,10 +8,12 @@
 .image-left {
   float: left;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 .image-right {
   float: right;
   margin-top: 5px;
+  margin-bottom: 5px;
 }
 .image-center {
   display: block;
