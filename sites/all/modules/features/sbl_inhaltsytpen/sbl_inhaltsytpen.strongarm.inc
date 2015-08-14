@@ -242,6 +242,12 @@ function sbl_inhaltsytpen_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'fotostrecken' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -249,10 +255,10 @@ function sbl_inhaltsytpen_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '15',
         ),
       ),
       'display' => array(),
@@ -375,6 +381,12 @@ function sbl_inhaltsytpen_strongarm() {
       ),
       'revision' => array(
         'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'fotostrecken' => array(
+        'custom_settings' => TRUE,
       ),
     ),
     'extra_fields' => array(

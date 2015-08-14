@@ -22,7 +22,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -37,20 +37,55 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 0,
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 9,
     ),
   );
 
@@ -71,7 +106,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
           'share_services' => 'facebook,twitter,googleplus,reddit,email,print',
         ),
         'type' => 'addthis_basic_toolbox',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -92,7 +127,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'addthis',
       'settings' => array(),
       'type' => 'addthis_button_widget',
-      'weight' => 10,
+      'weight' => 12,
     ),
   );
 
@@ -107,7 +142,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -128,7 +163,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'addthis',
       'settings' => array(),
       'type' => 'addthis_button_widget',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -142,7 +177,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -161,7 +196,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
-      'max_resolution' => '860x415',
+      'max_resolution' => '800x600',
       'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => FALSE,
@@ -171,39 +206,27 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
-          0 => 'public',
-          1 => 'private',
+          'private' => 'private',
+          'public' => 'public',
+          'soundcloud' => 0,
+          'vimeo' => 0,
+          'youtube' => 0,
         ),
         'allowed_types' => array(
-          0 => 'image',
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
         ),
-        'browser_plugins' => array(),
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 0,
-            'reference' => 0,
-            'remote' => 0,
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
         ),
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -222,7 +245,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -245,7 +268,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -327,7 +350,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -357,6 +380,40 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     'label' => 'Intro',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 0,
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -367,7 +424,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 8,
     ),
   );
 
@@ -382,7 +439,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -403,7 +460,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -440,7 +497,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -514,7 +571,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'rows' => 1,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 
@@ -556,7 +613,52 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 16,
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-article-field_related_gallery'
+  $field_instances['node-article-field_related_gallery'] = array(
+    'bundle' => 'article',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Auswählen, wenn es zu diesem Beitrag bereits eine Fotostrecke im Menüpunkt "Fotos" gibt.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'fotostrecken',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_related_gallery',
+    'label' => 'Fotostrecke',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'test_instance_behavior' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 7,
     ),
   );
 
@@ -604,7 +706,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 14,
     ),
   );
 
@@ -619,7 +721,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'inline',
@@ -642,7 +744,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -657,7 +759,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -696,7 +798,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -737,7 +839,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 15,
+      'weight' => 17,
     ),
   );
 
@@ -753,7 +855,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -777,7 +879,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'size' => 80,
       ),
       'type' => 'text_textfield',
-      'weight' => 14,
+      'weight' => 16,
     ),
   );
 
@@ -1104,6 +1206,12 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1151,6 +1259,12 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'type' => 'addthis_basic_toolbox',
         'weight' => 4,
       ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1188,6 +1302,12 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'type' => 'addthis_disabled',
         'weight' => 6,
       ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1208,6 +1328,48 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'settings' => array(),
       'type' => 'addthis_button_widget',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-photos-field_fotostrecken_saison'
+  $field_instances['node-photos-field_fotostrecken_saison'] = array(
+    'bundle' => 'photos',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fotostrecken_saison',
+    'label' => 'Saison',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
     ),
   );
 
@@ -1241,7 +1403,36 @@ function sbl_inhaltsytpen_field_default_field_instances() {
           'manual_config' => '',
           'show_debug_links' => 0,
           'thumb_style' => 'photo_detail_thumb',
-          'title_source' => '',
+          'title_source' => 'alt',
+        ),
+        'type' => 'juicebox_formatter',
+        'weight' => 0,
+      ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'module' => 'juicebox',
+        'settings' => array(
+          'apply_markup_filter' => 1,
+          'caption_source' => 'title',
+          'custom_parent_classes' => '',
+          'image_style' => 'juicebox_small',
+          'incompatible_file_action' => 'show_icon_and_link',
+          'jlib_backgroundColor' => '#2F3541',
+          'jlib_galleryHeight' => '400px',
+          'jlib_galleryWidth' => '100%',
+          'jlib_showExpandButton' => 1,
+          'jlib_showOpenButton' => 1,
+          'jlib_showThumbsButton' => 1,
+          'jlib_textColor' => 'rgba(255,255,255,1)',
+          'jlib_thumbFrameColor' => 'rgba(255,255,255,.5)',
+          'jlib_useFullscreenExpand' => 0,
+          'jlib_useThumbDots' => 0,
+          'linkurl_source' => '',
+          'linkurl_target' => '_blank',
+          'manual_config' => '',
+          'show_debug_links' => 0,
+          'thumb_style' => 'medium',
+          'title_source' => 'alt',
         ),
         'type' => 'juicebox_formatter',
         'weight' => 0,
@@ -1262,7 +1453,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     'label' => 'Bilder',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => 'photos',
       'file_extensions' => 'png gif jpg jpeg',
@@ -1276,27 +1467,6 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'filefield_sources' => array(
-          'filefield_sources' => array(
-            'attach' => 0,
-            'clipboard' => 0,
-            'imce' => 0,
-            'reference' => 0,
-            'remote' => 0,
-            'upload' => 'upload',
-          ),
-          'source_attach' => array(
-            'absolute' => 0,
-            'attach_mode' => 'move',
-            'path' => 'file_attach',
-          ),
-          'source_imce' => array(
-            'imce_mode' => 0,
-          ),
-          'source_reference' => array(
-            'autocomplete' => 0,
-          ),
-        ),
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -1317,6 +1487,12 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -1351,15 +1527,24 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   // Exported field_instance: 'node-photos-field_newsbereich_fotostrecken'
   $field_instances['node-photos-field_newsbereich_fotostrecken'] = array(
     'bundle' => 'photos',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 133,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'teaser' => array(
@@ -1399,6 +1584,12 @@ function sbl_inhaltsytpen_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'fotostrecken' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1425,43 +1616,6 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-photos-field_topic'
-  $field_instances['node-photos-field_topic'] = array(
-    'bundle' => 'photos',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'inline',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_topic',
-    'label' => 'Newsbereich',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Addthis');
@@ -1473,11 +1627,13 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Anklicken, wenn der Artikel im Contentslider auf der Startseite angezeigt werden soll. Macht keinen Sinn bei Artikeln ohne großes Contentbild');
   t('Artikelbild (Kopfbereich)');
   t('Auf Startseite anteasern');
+  t('Auswählen, wenn es zu diesem Beitrag bereits eine Fotostrecke im Menüpunkt "Fotos" gibt.');
   t('Bilder');
   t('Body');
   t('CBV Datei');
   t('Ein Bild für den Kopfbereich des Artikels. Mindestbreite 800 Pixel!');
   t('Enter a comma-separated list of words to describe your content.');
+  t('Fotostrecke');
   t('Inhaltstext');
   t('Intro');
   t('Introtext');
@@ -1487,6 +1643,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Optionales Feld. Nur auswählen, wenn es sich um einen Artikel aus dem Bereich News -> Bundesliga handelt.');
   t('PGN Datei (Download)');
   t('PGN Download');
+  t('Saison');
   t('Tags');
   t('Teasertext Startseite');
   t('Teasertext für die Verwendung im Content-Slider auf der Startseite. Nur verwenden, wenn der Beitrag im Slider angezeigt werden soll');

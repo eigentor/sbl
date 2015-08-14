@@ -1,0 +1,8 @@
+name = SBL Displays
+core = 7.x
+package = Schach-Bundesliga
+dependencies[] = ctools
+dependencies[] = ds
+features[ctools][] = ds:ds:1
+features[ds_view_modes][] = fotostrecken
+features[features_api][] = api:2

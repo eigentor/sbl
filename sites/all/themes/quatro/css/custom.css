@@ -123,38 +123,37 @@ display: inline;
 	Eingebettete Fotostrecke
 \*------------------------------------*/
 
-.field-name-field-fotostrecke .header-info {
+.field-name-field-related-gallery .header-info {
  display:none !important;
 }
 
-.field-name-field-fotostrecke {
+.field-name-field-related-gallery {
  margin-bottom:15px;
 }
 
-.field-name-field-fotostrecke h2 {
+.field-name-field-related-galleryh2 {
 font-size:1.2em;
 }
 
-.field-name-field-fotostrecke .field-label {
+.field-name-field-related-gallery .field-label {
 
 }
 
-.field-name-field-fotostrecke .field-items {
+.field-name-field-related-gallery .field-items {
  width:100%;
- text-align:center;´
 }
-.field-name-field-fotostrecke article img {
+.field-name-field-related-gallery article img {
 padding:0 5px 0;
 }
 
-.field-name-field-fotostrecke article {
+.field-name-field-related-gallery article {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
  padding: 10px 0;
   margin-bottom: 5px;
 }
 
-.field-name-field-fotostrecke :after {
+.field-name-field-related-gallery :after {
 clear:both;
 }
 

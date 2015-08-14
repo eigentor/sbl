@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SBL Displays feature.
+ */
+
+include_once 'sbl_displays.features.inc';
