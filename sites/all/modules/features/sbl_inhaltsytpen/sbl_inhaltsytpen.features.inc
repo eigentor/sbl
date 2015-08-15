@@ -50,6 +50,14 @@ function sbl_inhaltsytpen_node_info() {
       'title_label' => t('Titel'),
       'help' => '',
     ),
+    'video' => array(
+      'name' => t('Video'),
+      'base' => 'node_content',
+      'description' => t('Use <i>Video</i> to create a video from external sources such as Youtube or Vimeo'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;

@@ -843,19 +843,22 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-article-field_video_titel'
-  $field_instances['node-article-field_video_titel'] = array(
+  // Exported field_instance: 'node-article-field_videofeld'
+  $field_instances['node-article-field_videofeld'] = array(
     'bundle' => 'article',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Titel eines oder mehrer Videos. Nur ausfüllen, wenn es auch tatsächlich Videos zum Artikel gibt.',
+    'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
+        'label' => 'inline',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 1,
+          'view_mode' => 'eingebettete_videos',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 17,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -865,21 +868,23 @@ function sbl_inhaltsytpen_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video_titel',
-    'label' => 'Video Titel',
+    'field_name' => 'field_videofeld',
+    'label' => 'Videofeld',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'behaviors' => array(
+        'test_instance_behavior' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 80,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 16,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 20,
     ),
   );
 
@@ -1396,7 +1401,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
           'jlib_showThumbsButton' => 1,
           'jlib_textColor' => 'rgba(255,255,255,1)',
           'jlib_thumbFrameColor' => 'rgba(255,255,255,.5)',
-          'jlib_useFullscreenExpand' => 0,
+          'jlib_useFullscreenExpand' => 1,
           'jlib_useThumbDots' => 0,
           'linkurl_source' => '',
           'linkurl_target' => '_blank',
@@ -1425,7 +1430,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
           'jlib_showThumbsButton' => 1,
           'jlib_textColor' => 'rgba(255,255,255,1)',
           'jlib_thumbFrameColor' => 'rgba(255,255,255,.5)',
-          'jlib_useFullscreenExpand' => 0,
+          'jlib_useFullscreenExpand' => 1,
           'jlib_useThumbDots' => 0,
           'linkurl_source' => '',
           'linkurl_target' => '_blank',
@@ -1616,6 +1621,309 @@ function sbl_inhaltsytpen_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-video-body'
+  $field_instances['node-video-body'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'eingebettete_videos' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => FALSE,
+    'settings' => array(
+      'display_summary' => TRUE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_addthis'
+  $field_instances['node-video-field_addthis'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'addthis_displays',
+        'settings' => array(
+          'buttons_size' => 'addthis_16x16_style',
+          'counter_orientation' => 'horizontal',
+          'extra_css' => '',
+          'share_services' => 'facebook,twitter,googleplus,pinterest_share,reddit,googleplus,email,print',
+        ),
+        'type' => 'addthis_basic_toolbox',
+        'weight' => 4,
+      ),
+      'eingebettete_videos' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_addthis',
+    'label' => 'Addthis',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'addthis',
+      'settings' => array(),
+      'type' => 'addthis_button_widget',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_intro'
+  $field_instances['node-video-field_intro'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'eingebettete_videos' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 600,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_intro',
+    'label' => 'Intro',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_media'
+  $field_instances['node-video-field_media'] = array(
+    'bundle' => 'video',
+    'deleted' => 0,
+    'description' => 'Bitte wählen Sie hier das Video aus. Wenn Sie ein Youtube-Video einbetten möchten, wählen Sie die Registerkarte "Web" und fügen dann die URL des Videos per Copy & Paste ein',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 0,
+      ),
+      'eingebettete_videos' => array(
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_media',
+    'label' => 'Media',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'media',
+      'file_extensions' => 'mpeg mp4 avi flv mov',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'soundcloud' => 0,
+          'vimeo' => 'vimeo',
+          'youtube' => 'youtube',
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 0,
+          'video' => 'video',
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 0,
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 0,
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_tags'
+  $field_instances['node-video-field_tags'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'eingebettete_videos' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tags',
+    'label' => 'Tags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-video-field_videokategorie'
+  $field_instances['node-video-field_videokategorie'] = array(
+    'bundle' => 'video',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Kategorie, die am besten zum Thema des Videos passt. Es können mehrere Werte angegeben werden.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'eingebettete_videos' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_videokategorie',
+    'label' => 'Videokategorie',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Addthis');
@@ -1629,6 +1937,7 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Auf Startseite anteasern');
   t('Auswählen, wenn es zu diesem Beitrag bereits eine Fotostrecke im Menüpunkt "Fotos" gibt.');
   t('Bilder');
+  t('Bitte wählen Sie hier das Video aus. Wenn Sie ein Youtube-Video einbetten möchten, wählen Sie die Registerkarte "Web" und fügen dann die URL des Videos per Copy & Paste ein');
   t('Body');
   t('CBV Datei');
   t('Ein Bild für den Kopfbereich des Artikels. Mindestbreite 800 Pixel!');
@@ -1637,7 +1946,9 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Inhaltstext');
   t('Intro');
   t('Introtext');
+  t('Kategorie, die am besten zum Thema des Videos passt. Es können mehrere Werte angegeben werden.');
   t('Klublogo');
+  t('Media');
   t('Newsbereich');
   t('Newsbereich Fotostrecken');
   t('Optionales Feld. Nur auswählen, wenn es sich um einen Artikel aus dem Bereich News -> Bundesliga handelt.');
@@ -1647,10 +1958,10 @@ function sbl_inhaltsytpen_field_default_field_instances() {
   t('Tags');
   t('Teasertext Startseite');
   t('Teasertext für die Verwendung im Content-Slider auf der Startseite. Nur verwenden, wenn der Beitrag im Slider angezeigt werden soll');
-  t('Titel eines oder mehrer Videos. Nur ausfüllen, wenn es auch tatsächlich Videos zum Artikel gibt.');
   t('Uploadfeld für eine PGN-Datei. Wird eine PGN hochgeladen, wird ein PartieViewer am Ende des Artikels angezeigt');
   t('Video File');
-  t('Video Titel');
+  t('Videofeld');
+  t('Videokategorie');
   t('Zuordnung');
   t('Ähnliche Artikel');
 

@@ -138,6 +138,46 @@ display: inline;
 }
 
 /*------------------------------------*\
+	Eingebettete Videofelder
+\*------------------------------------*/
+
+.field-name-field-videofeld .header-info {
+ display:none !important;
+}
+
+.field-name-field-videofeld {
+ margin-bottom:15px;
+}
+
+.field-name-field-videofeld h2 {
+font-size:1.2em;
+}
+
+.field-name-field-videofeld .field-label {
+
+}
+
+.field-name-field-videofeld .field-items {
+ width:100%;
+}
+.field-name-field-videofeld article {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+ padding: 10px 0;
+  margin-bottom: 5px;
+}
+
+.field-name-field-videofeld .file-video-youtube {
+width:75%;
+height:75%;
+text-align:center;
+}
+
+.field-name-field-related-gallery :after {
+clear:both;
+}
+
+/*------------------------------------*\
 	Eingebettete Fotostrecke
 \*------------------------------------*/
 
@@ -149,7 +189,7 @@ display: inline;
  margin-bottom:15px;
 }
 
-.field-name-field-related-galleryh2 {
+.field-name-field-related-gallery h2 {
 font-size:1.2em;
 }
 

@@ -9,6 +9,29 @@
  */
 function sbl_inhaltsytpen_taxonomy_default_vocabularies() {
   return array(
+    'bilder_und_videos' => array(
+      'name' => 'Videokategorien',
+      'machine_name' => 'bilder_und_videos',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'news' => array(
       'name' => 'Aktuell',
       'machine_name' => 'news',
