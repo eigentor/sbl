@@ -216,7 +216,7 @@ function media_wysiwyg_token_to_markup($match, $wysiwyg = FALSE) {
       entity_prepare_view('file', array($file->fid => $file));
       $element['content'] += field_attach_view('file', $file, $tag_info['view_mode']);
     }
-    if (count(element_children($element['content'])) > 1) {
+    if (count(element_children($element['content'])) > 2) {
       // Add surrounding divs to group them together.
       // We dont want divs when there are no additional fields to allow files
       // to display inline with text, without breaking p tags.

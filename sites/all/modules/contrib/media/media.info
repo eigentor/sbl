@@ -1,5 +1,5 @@
 name = Media
-description = Provides the core Media API
+description = Provides the core Media API <a href="https://www.drupal.org/node/2357993#comment-9477873"><strong>https://www.drupal.org/node/2357993#comment-9477873</strong></a> Remove unwanted divs around media elements
 package = Media
 core = 7.x
 
