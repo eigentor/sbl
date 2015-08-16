@@ -22,6 +22,17 @@
   margin: auto;
 }
 
+.h150 {
+height:150px;
+}
+
+.gallery {
+position:absolute;
+top:10px;
+left:3px;
+color:white;
+}
+
 .field-name-field-article-teasertext {
 display:none;
 }
@@ -225,6 +236,10 @@ clear:both;
 /*------------------------------------*\
 	Aktuelles
 \*------------------------------------*/
+
+.kolumnen {
+color:#1DB6B6 !important;
+}
 
 .topic-127 { /*Bundesliga */
 background-color:#f18000 !important;
