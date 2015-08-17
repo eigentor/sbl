@@ -36,7 +36,7 @@ function sbl_inhaltsytpen_taxonomy_default_vocabularies() {
       'name' => 'Aktuell',
       'machine_name' => 'news',
       'description' => 'Taxonomie für "Aktuelles"',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

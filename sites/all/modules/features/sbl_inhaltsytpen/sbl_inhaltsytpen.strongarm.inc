@@ -307,10 +307,10 @@ function sbl_inhaltsytpen_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
       ),
       'display' => array(),
@@ -513,7 +513,7 @@ function sbl_inhaltsytpen_strongarm() {
           'weight' => '1',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(),

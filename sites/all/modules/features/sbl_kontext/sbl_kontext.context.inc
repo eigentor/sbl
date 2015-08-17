@@ -26,24 +26,6 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-aktuell_spielberichte-block_1' => array(
-          'module' => 'views',
-          'delta' => 'aktuell_spielberichte-block_1',
-          'region' => 'content_bottom_first',
-          'weight' => '-10',
-        ),
-        'views-aktuell_bundesliga-block_1' => array(
-          'module' => 'views',
-          'delta' => 'aktuell_bundesliga-block_1',
-          'region' => 'content_bottom_first',
-          'weight' => '-9',
-        ),
-        'views-a3a41b6dfbf2f5290c94681cecb9b43d' => array(
-          'module' => 'views',
-          'delta' => 'a3a41b6dfbf2f5290c94681cecb9b43d',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
         'views-klubnews-block_1' => array(
           'module' => 'views',
           'delta' => 'klubnews-block_1',

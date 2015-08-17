@@ -26,12 +26,33 @@
 height:150px;
 }
 
+/* Newsblöcke Breite überschreiben */
+
 .gallery {
 position:absolute;
-top:10px;
-left:3px;
+top:0px;
+left:0px;
+background-color:#333366;
 color:white;
+max-width:30px;
+height:auto;
+padding:3px;
 }
+
+#abstand {
+height:20px;
+}
+
+.block-bottom-line {
+padding: 15px 0px 15px;
+margin: 15px 0px 15px;
+border-top: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+width: 100%;
+float: left;
+clear: left;
+}
+
 
 .field-name-field-article-teasertext {
 display:none;
@@ -257,7 +278,7 @@ background-color:#123590 !important;
 background-color:#FC0 !important;
 }
 
-.topic-131 { /*Klubnews */
+.topic-131,.topic-252,.topic-251{ /*Kolumnen */
 background-color:#1DB6B6 !important;
 }
 
@@ -333,6 +354,23 @@ border-top:1px dotted white;
 
 }
 
+/*------------------------------------*\
+	Box-Effekt
+\*------------------------------------*/
+
+.box-shadow {
+border-radius: 15px; 
+-moz-border-radius: 15px; 
+-webkit-border-radius: 15px; 
+background-color:#eee;
+box-shadow:1px 1px 3px #707070;
+padding:8px;
+margin-bottom:20px;
+border:1px solid #1DB6B6;
+}
+/*------------------------------------*\
+	Vereinsicons
+\*------------------------------------*/
 
 @media only screen and (max-width: 850px) { 
 

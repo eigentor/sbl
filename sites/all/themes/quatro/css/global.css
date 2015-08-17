@@ -2157,28 +2157,29 @@ h2.block-title {
   font-family: "Open Sans Condensed", Arial,Helvetica,Verdana,sans-serif;
 }
 
-.block-red h2.block-title {
+.block-red h2.block-title,.block-red h2.pane-title {
   border-bottom: 2px solid #b70000;
 }
-.block-spielberichte h2.block-title { /* Spielberichte */
+.block-spielberichte h2.block-title,.block-spielberichte h2.pane-title { /* Spielberichte */
   border-bottom: 2px solid #3b9319;
 }
-.block-green h2.block-title {
+.block-green h2.block-title,.block-green h2.pane-title {
   border-bottom: 2px solid #00ff66;
 }
-.block-klubnews h2.block-title { /*Klubnews */
+.block-kolumnen h2.block-title,.block-kolumnen h2.pane-title { /*Kolumnen */
   border-bottom: 2px solid #1DB6B6;
+  color:#666;
 }
-.block-yellow h2.block-title {
+.block-yellow h2.block-title,.block-yellow h2.pane-title {
   border-bottom: 2px solid #ffcc00;
 }
-.block-schachnews h2.block-title { /*Schachnews */
+.block-schachnews h2.block-title,.block-schachnews h2.pane-title { /*Schachnews */
   border-bottom: 2px solid #FC0;
 }
-.block-bundesliga h2.block-title { /*Bundesliga */
+.block-bundesliga h2.block-title,.block-bundesliga h2.pane-title { /*Bundesliga */
   border-bottom: 2px solid #f18000;
 }
-.block-grey h2.block-title {
+.block-grey h2.block-title,.block-grey h2.pane-title {
   border-bottom: 2px solid #666;
 }
 
