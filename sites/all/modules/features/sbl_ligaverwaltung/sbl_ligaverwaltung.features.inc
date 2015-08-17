@@ -32,11 +32,11 @@ function sbl_ligaverwaltung_views_api($module = NULL, $api = NULL) {
 function sbl_ligaverwaltung_node_info() {
   $items = array(
     'mannschaft' => array(
-      'name' => t('Mannschaft'),
+      'name' => t('Verein'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'spieler' => array(

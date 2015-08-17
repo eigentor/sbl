@@ -456,6 +456,32 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_t_saison'
+  $field_bases['field_t_saison'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_t_saison',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'saison',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_tm_board_points_team_1'
   $field_bases['field_tm_board_points_team_1'] = array(
     'active' => 1,
