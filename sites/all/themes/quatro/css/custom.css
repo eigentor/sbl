@@ -22,11 +22,31 @@
   margin: auto;
 }
 
+
+/* Newsblöcke Breite und Höhe überschreiben */
+
 .h150 {
 height:150px;
 }
 
-/* Newsblöcke Breite überschreiben */
+/* Abstandhalter Blöcke */
+#abstand {
+background-color:#eee;
+width:100%;
+height:35px;
+position:absolute;
+left:0;
+}
+
+.abstand-unten {
+margin-bottom:35px;
+}
+
+.abstand-oben {
+padding-top:60px !important;
+border-bottom: 2px solid #336;
+}
+
 
 .gallery {
 position:absolute;
@@ -39,9 +59,6 @@ height:auto;
 padding:3px;
 }
 
-#abstand {
-height:20px;
-}
 
 .block-bottom-line {
 padding: 15px 0px 15px;
