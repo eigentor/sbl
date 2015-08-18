@@ -1,0 +1,9 @@
+name = SBL Import Content
+description = Subclasses for the Migrate module to import players and other content
+package = Schach-Bundesliga
+core = 7.x
+dependencies[] = migrate
+
+#  include the files that contain your Migrate classes
+files[] = migrations/players.inc
+files[] = migrations/players_season_data.inc

@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * The module file can be empty.
+ * Our hook_migrate is declared in sbl_import_content.migrate.inc
+ */
