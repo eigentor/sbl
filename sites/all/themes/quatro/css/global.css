@@ -1946,24 +1946,24 @@ article.node-photos .field-name-field-images {
 }
 .galleryformatter .prev-slide,
 .galleryformatter .gallery-thumbs .back {
-  background: url("../images/jcarousel-prev.png") no-repeat scroll 0 0;
+  background: url("../images/jcarousel-back.png") no-repeat scroll 0 0;
   left: 10px;
 }
 
 .galleryformatter .next-slide,
 .galleryformatter .gallery-thumbs .forward {
-  background: url("../images/jcarousel-next.png") no-repeat scroll 0 0;
+  background: url("../images/jcarousel-fwd.png") no-repeat scroll 0 0;
   right: 10px;
 }
 
 .galleryformatter .prev-slide:hover,
 .galleryformatter .gallery-thumbs .back:hover {
-  background: url("../images/jcarousel-prev-hover.png") no-repeat scroll 0 0;
+  background: url("../images/jcarousel-back-hover.png") no-repeat scroll 0 0;
 }
 
 .galleryformatter .next-slide:hover,
 .galleryformatter .gallery-thumbs .forward:hover {
-  background: url("../images/jcarousel-next-hover.png") no-repeat scroll 0 0;
+  background: url("../images/jcarousel-fwd-hover.png") no-repeat scroll 0 0;
 }
 
 /* Latest Photos */

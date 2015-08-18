@@ -60,6 +60,12 @@ function sbl_panels_default_page_manager_pages() {
     'style_settings' => array(
       'default' => NULL,
       'middle' => NULL,
+      'top' => NULL,
+      'left_above' => NULL,
+      'right_above' => NULL,
+      'left_below' => NULL,
+      'right_below' => NULL,
+      'bottom' => NULL,
     ),
   );
   $display->cache = array();
@@ -95,7 +101,10 @@ function sbl_panels_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'abstand-unten',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -231,7 +240,7 @@ function sbl_panels_default_page_manager_pages() {
         'identifier' => 'Beitrag',
         'keyword' => 'node',
         'name' => 'entity:node',
-        'entity_id' => '228',
+        'entity_id' => '244',
         'id' => 1,
       ),
     ),
@@ -253,7 +262,7 @@ function sbl_panels_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-0e8ba437-6545-45d1-a58c-3336d0fec94e';
+    $pane->pid = 'new-67e9168c-23ae-4d7a-912b-4620e561919e';
     $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:body';
@@ -279,9 +288,9 @@ function sbl_panels_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '0e8ba437-6545-45d1-a58c-3336d0fec94e';
-    $display->content['new-0e8ba437-6545-45d1-a58c-3336d0fec94e'] = $pane;
-    $display->panels['middle'][0] = 'new-0e8ba437-6545-45d1-a58c-3336d0fec94e';
+    $pane->uuid = '67e9168c-23ae-4d7a-912b-4620e561919e';
+    $display->content['new-67e9168c-23ae-4d7a-912b-4620e561919e'] = $pane;
+    $display->panels['middle'][0] = 'new-67e9168c-23ae-4d7a-912b-4620e561919e';
     $pane = new stdClass();
     $pane->pid = 'new-6d8e3f26-1f93-4053-aabe-9a9512d4f29d';
     $pane->panel = 'middle';
