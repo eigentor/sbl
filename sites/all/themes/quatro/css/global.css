@@ -2068,19 +2068,19 @@ article.node-photos .field-name-field-images {
   display: block;
 }
 .block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal {
-  background: url(../images/jcarousel-prev.png) 0 0 no-repeat;
+  background: url(../images/jcarousel-back.png) 0 0 no-repeat;
   left: 10px;
 }
 .block-video-block .jcarousel-skin-default .jcarousel-next-horizontal {
-  background: url(../images/jcarousel-next.png) 0 0 no-repeat;
+  background: url(../images/jcarousel-fwd.png) 0 0 no-repeat;
   right: 10px;
 }
 
 .block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal:hover {
-  background: url(../images/jcarousel-prev-hover.png) 0 0 no-repeat;
+  background: url(../images/jcarousel-back-hover.png) 0 0 no-repeat;
 }
 .block-video-block .jcarousel-skin-default .jcarousel-next-horizontal:hover {
-  background: url(../images/jcarousel-next-hover.png) 0 0 no-repeat;
+  background: url(../images/jcarousel-fwd-hover.png) 0 0 no-repeat;
 }
 .block-video-block .views-field-field-video {
   padding-bottom: 10px;

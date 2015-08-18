@@ -167,10 +167,10 @@ article.node-article.node-teaser .node-title a:hover,
 
 /* Multimedia */
 .block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal:hover {
-  background: url(../images/orange/jcarousel-prev-hover.png) 0 0 no-repeat;
+  background: url(../images/jcarousel-back-hover.png) 0 0 no-repeat;
 }
 .block-video-block .jcarousel-skin-default .jcarousel-next-horizontal:hover {
-  background: url(../images/orange/jcarousel-next-hover.png) 0 0 no-repeat;
+  background: url(../images/jcarousel-fwd-hover.png) 0 0 no-repeat;
 }
 /*------------------------------------*\
 	FORMS CSS
