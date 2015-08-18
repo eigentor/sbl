@@ -52,7 +52,7 @@ border-bottom: 2px solid #336;
 position:absolute;
 top:0px;
 left:0px;
-background-color:#333366;
+background-color:#f18000;
 color:white;
 max-width:30px;
 height:auto;
@@ -367,8 +367,58 @@ padding:5px;
 padding-top:8px;
 border-top:1px dotted white;
 }
-.block-video-block .jcarousel-skin-default .jcarousel-container-horizontal {
 
+/*Überschreiben der Höhen für Block Startseite */
+
+.block-video-block .jcarousel-skin-default .jcarousel-container-horizontal {
+    height: 190px !important;
+}
+
+.block-video-block .jcarousel-skin-default .jcarousel-item {
+    height: 260px !important;
+}
+
+.block-video-block .jcarousel-skin-default .jcarousel-next-horizontal, .block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal {
+    top: 35%;
+	width:25px;
+	height:28px;
+}
+
+.block-video-block .jcarousel-skin-default .jcarousel-next-horizontal {
+    right: -5px;
+}
+
+.block-video-block .jcarousel-skin-default .jcarousel-prev-horizontal {
+    left: -25px;
+}
+
+#jcarousel-video,#jcarousel-bild {
+position:relative;
+width:100%;
+}
+.video-icon {
+width:35px;
+height:35px;
+position:absolute;
+top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+z-index:999999;
+}
+
+.image-icon {
+width:30px;
+height:auto;
+position:absolute;
+color:white;
+background-color:#f18000;
+top:0;
+left:0;
+z-index:999999;
 }
 
 /*------------------------------------*\
