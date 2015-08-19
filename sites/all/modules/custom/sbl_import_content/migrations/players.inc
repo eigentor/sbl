@@ -16,7 +16,7 @@ class ImportPlayerMigration extends Migration {
       3 => array('combined_name', 'Kombinierter Name'),
       4 => array('fide_id', 'ID_NUMBER'),
     );
-    $this->source = new MigrateSourceCSV('sites/default/files/csv-import/players-1.csv', $columns);
+    $this->source = new MigrateSourceCSV('sites/default/files/csv-import/players-1.csv', $columns, array('header_rows' => 1));
 
     // Set up our destination. Since we migrate to a content type, the content type machine name "spieler" is given as an attribute.
     $this->destination = new MigrateDestinationNode('spieler');
