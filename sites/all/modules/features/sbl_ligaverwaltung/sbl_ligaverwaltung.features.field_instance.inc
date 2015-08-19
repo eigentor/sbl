@@ -876,7 +876,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sp_verein',
-    'label' => 'Saisondaten',
+    'label' => 'Saisondaten Spieler',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1304,7 +1304,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Punkte Spieler 1');
   t('Punkte Spieler 2');
   t('Saison');
-  t('Saisondaten');
+  t('Saisondaten Spieler');
   t('Spieler 1');
   t('Spieler 2');
   t('Spieltag');
