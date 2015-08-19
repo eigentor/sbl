@@ -31,7 +31,7 @@ function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $
 // Alter multiple value field collection forms
 //function sbl_form_helper_field_widget_form_alter(&$element, &$form_state, $context) {
 //  if(isset($element['#bundle'])) {
-//    if ("field_tm_game" == $element['#bundle']) {
+//    if ("field_sp_verein" == $element['#bundle']) {
 //      //dpm($element);
 //    }
 //  }
