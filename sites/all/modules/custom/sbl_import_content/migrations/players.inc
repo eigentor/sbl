@@ -37,6 +37,13 @@ class ImportPlayerMigration extends Migration {
       $this->addFieldMapping('field_pl_first_name', 'first_name');
       $this->addFieldMapping('field_pl_acad_title', 'acad_title');
       $this->addFieldMapping('title', 'combined_name');
-      $this->addFieldMapping('field_fide_id', 'fide_id');
+      $this->addFieldMapping('field_fide_id', 'fide_id')
+        ->callbacks(array($this, 'cleanFideid'));
+
+      // Trim the Fide ID and convert to Number
+      protected function cleanFideid($value) {
+       $value = trim($value, '1');
+        return $value;
+      }
   }
 }
