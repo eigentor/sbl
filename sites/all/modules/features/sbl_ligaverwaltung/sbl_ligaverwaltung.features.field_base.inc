@@ -281,6 +281,45 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_pl_country'
+  $field_bases['field_pl_country'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pl_country',
+    'indexes' => array(
+      'iso2' => array(
+        0 => 'iso2',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'countries',
+    'settings' => array(
+      'continents' => array(),
+      'countries' => array(),
+      'enabled' => 1,
+      'size' => 5,
+    ),
+    'translatable' => 0,
+    'type' => 'country',
+  );
+
+  // Exported field_base: 'field_pl_elo'
+  $field_bases['field_pl_elo'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pl_elo',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
   // Exported field_base: 'field_pl_first_name'
   $field_bases['field_pl_first_name'] = array(
     'active' => 1,

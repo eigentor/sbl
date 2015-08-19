@@ -45,6 +45,151 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'field_collection_item-field_sp_verein-field_pl_country'
+  $field_instances['field_collection_item-field_sp_verein-field_pl_country'] = array(
+    'bundle' => 'field_sp_verein',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'countries',
+        'settings' => array(
+          'countryiconset' => 'icon_shiny',
+          'property' => '',
+        ),
+        'type' => 'country_icon',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_pl_country',
+    'label' => 'Nation',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_sp_verein-field_pl_elo'
+  $field_instances['field_collection_item-field_sp_verein-field_pl_elo'] = array(
+    'bundle' => 'field_sp_verein',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_pl_elo',
+    'label' => 'ELO',
+    'required' => 0,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_sp_verein-field_pl_master_title'
+  $field_instances['field_collection_item-field_sp_verein-field_pl_master_title'] = array(
+    'bundle' => 'field_sp_verein',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_pl_master_title',
+    'label' => 'Meistertitel',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 'pgn_converter',
+          'plain_text' => 'plain_text',
+          'xbbcode' => 'xbbcode',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 5,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_sp_verein-field_saison'
   $field_instances['field_collection_item-field_sp_verein-field_saison'] = array(
     'bundle' => 'field_sp_verein',
@@ -72,7 +217,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 0,
     ),
   );
 
@@ -702,86 +847,12 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_pl_master_title'
-  $field_instances['node-spieler-field_pl_master_title'] = array(
-    'bundle' => 'spieler',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_pl_master_title',
-    'label' => 'Meistertitel',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'pgn_converter' => 'pgn_converter',
-          'plain_text' => 'plain_text',
-          'xbbcode' => 'xbbcode',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => -5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'pgn_converter' => array(
-              'weight' => -8,
-            ),
-            'plain_text' => array(
-              'weight' => -6,
-            ),
-            'xbbcode' => array(
-              'weight' => -7,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 10,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-spieler-field_sp_verein'
   $field_instances['node-spieler-field_sp_verein'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Alle Spielerdaten, die sich pro Saison ändern können.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -805,7 +876,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_sp_verein',
-    'label' => 'Verein',
+    'label' => 'Saisondaten',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1213,11 +1284,13 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Akademischer Titel');
+  t('Alle Spielerdaten, die sich pro Saison ändern können.');
   t('Body');
   t('Brettfarbe Spieler 1');
   t('Brettfarbe Spieler 2');
   t('Brettpunkte Mannschaft 1');
   t('Brettpunkte Mannschaft 2');
+  t('ELO');
   t('Einzelspiel');
   t('Ergebnis');
   t('Fide-ID');
@@ -1227,9 +1300,11 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Mannschaftspunkte Mannschaft 2');
   t('Meistertitel');
   t('Nachname');
+  t('Nation');
   t('Punkte Spieler 1');
   t('Punkte Spieler 2');
   t('Saison');
+  t('Saisondaten');
   t('Spieler 1');
   t('Spieler 2');
   t('Spieltag');
