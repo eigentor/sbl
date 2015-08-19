@@ -9,7 +9,7 @@
 /**
  * Implements hook_migrate_api().
  */
-function sbl_migrate_import_content_migrate_api() {
+function sbl_import_content_migrate_api() {
   $api = array(
     'api' => 2,
     'groups' => array(

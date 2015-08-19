@@ -258,7 +258,7 @@ function sbl_ligaverwaltung_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'path' => array(
           'weight' => '4',
