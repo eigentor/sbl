@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class ImportPlayerMigration
+ * Import Players and generate nodes of content type 'spieler' from the data.
+ */
+
 class ImportPlayerMigration extends Migration {
   public function __construct($arguments) {
     parent::__construct($arguments);
@@ -7,8 +12,7 @@ class ImportPlayerMigration extends Migration {
     // you like.
     $this->description = t('Import Schachbundesliga players from a CSV file');
 
-
-    // Create a MigrateSource object, which manages retrieving the input data.
+    // Choose the columns from the CSV file and write them into the $columns array
     $columns = array(
       0 => array('last_name', 'Nachname'),
       1 => array('first_name', 'First Name'),
@@ -16,6 +20,8 @@ class ImportPlayerMigration extends Migration {
       3 => array('combined_name', 'Kombinierter Name'),
       4 => array('fide_id', 'ID_NUMBER'),
     );
+
+    // Create a MigrateSource object, which manages retrieving the input data.
     $this->source = new MigrateSourceCSV('sites/default/files/csv-import/players-1.csv', $columns, array('header_rows' => 1));
 
     // Set up our destination. Since we migrate to a content type, the content type machine name "spieler" is given as an attribute.

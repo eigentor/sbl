@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class ImportPlayerSeasondataMigration
+ * Import the field collection for players season data into the 'spieler' content type
+ */
+
 class ImportPlayerSeasondataMigration extends Migration {
   public function __construct($arguments) {
     parent::__construct($arguments);
@@ -7,21 +12,28 @@ class ImportPlayerSeasondataMigration extends Migration {
     // you like.
     $this->description = t('Import Schachbundesliga players season data into a field collection inside the "spieler" content type from a CSV file');
 
+    // Make sure there have been player nodes imported before the field collection
+    $this->dependencies = array('import_players');
 
-    // Create a MigrateSource object, which manages retrieving the input data.
+    // Choose the columns from the CSV file and write them into the $columns array
     $columns = array(
       0 => array('season', 'Saison'),
-      1 => array('team', 'VER'),
+      //1 => array('team', 'VER'),
+      2 => array('fide_id', 'ID_NUMBER'),
       3 => array('master_title', 'TITLE'),
-      4 => array('country', 'COUNTRY'),
+      //4 => array('country', 'COUNTRY'),
       5 => array('elo_rating', 'RO'),
     );
+
+    // Create a MigrateSource object, which manages retrieving the input data.
     $this->source = new MigrateSourceCSV('sites/default/files/csv-import/players-season-data-1.csv', $columns, array('header_rows' => 1));
 
-    // Set up our destination. Since we migrate to a content type, the content type machine name "spieler" is given as an attribute.
-    $this->destination = new MigrateDestinationNode('spieler');
+    // Set up our destination. We need to attach the field collection to our host entity type, in this case a node
+    $this->destination = new MigrateDestinationFieldCollection(
+      'field_sp_verein',
+      array('host_entity_type' => 'node')
+    );
 
-    // Create a map object for tracking the relationships between source rows
     $this->map = new MigrateSQLMap($this->machineName,
       array(
         'fide_id' => array('type' => 'varchar',
@@ -30,22 +42,17 @@ class ImportPlayerSeasondataMigration extends Migration {
           'description' => 'Fide ID',
         ),
       ),
-      MigrateDestinationNode::getKeySchema()
+      MigrateDestinationFieldCollection::getKeySchema()
     );
 
-    $this->addFieldMapping('field_pl_last_name', 'last_name');
-    $this->addFieldMapping('field_pl_first_name', 'first_name');
-    $this->addFieldMapping('field_pl_acad_title', 'acad_title');
-    $this->addFieldMapping('title', 'combined_name');
-    $this->addFieldMapping('field_fide_id', 'fide_id')
-      ->callbacks(array($this, 'cleanFideid'));
+    // The link to the map field of the source migration: the Fide ID
+    $this->addFieldMapping('host_entity_id', 'fide_id')->sourceMigration('import_players');
+    // Field Mappings for the Field Collection fields
+    $this->addFieldMapping('field_saison', 'season');
+    //$this->addFieldMapping('field_fc_verein', 'team');
+    $this->addFieldMapping('field_pl_master_title', 'master_title');
+    //$this->addFieldMapping('field_pl_country', 'country');
+    $this->addFieldMapping('field_pl_elo', 'elo_rating');
 
-  }
-  // Trim the Fide ID and convert to Number
-  protected function cleanFideid($value) {
-    // Make sure there are no White Spaces before and after the Fide IDs when importing
-    $value = trim($value);
-    $value = preg_replace('/\s+/', '', $value);
-    return $value;
   }
 }
