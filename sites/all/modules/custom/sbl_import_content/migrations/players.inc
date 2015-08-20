@@ -40,10 +40,12 @@ class ImportPlayerMigration extends Migration {
       $this->addFieldMapping('field_fide_id', 'fide_id')
         ->callbacks(array($this, 'cleanFideid'));
 
-      // Trim the Fide ID and convert to Number
-      protected function cleanFideid($value) {
-       $value = trim($value, '1');
-        return $value;
-      }
+  }
+  // Trim the Fide ID and convert to Number
+  protected function cleanFideid($value) {
+    // Make sure there are no White Spaces before and after the Fide IDs when importing
+    $value = trim($value);
+    $value = preg_replace('/\s+/', '', $value);
+    return $value;
   }
 }

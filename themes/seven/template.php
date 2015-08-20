@@ -16,7 +16,6 @@ function seven_preprocess_maintenance_page(&$vars) {
  * Override or insert variables into the html template.
  */
 function seven_preprocess_html(&$vars) {
-  drupal_add_css(path_to_theme() . '/overrides.css', array('weight' => 999));
   // Add conditional CSS for IE8 and below.
   drupal_add_css(path_to_theme() . '/ie.css', array('group' => CSS_THEME, 'browsers' => array('IE' => 'lte IE 8', '!IE' => FALSE), 'weight' => 999, 'preprocess' => FALSE));
   // Add conditional CSS for IE7 and below.

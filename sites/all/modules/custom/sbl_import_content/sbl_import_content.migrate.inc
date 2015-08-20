@@ -23,6 +23,10 @@ function sbl_import_content_migrate_api() {
         'class_name' => 'ImportPlayerMigration',
         'group_name' => 'league_management',
       ),
+      'import_player_season_data' => array(
+        'class_name' => 'ImportPlayerSeasondataMigration',
+        'group_name' => 'league_management',
+      ),
     ),
   );
   return $api;
