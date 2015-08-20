@@ -18,7 +18,7 @@ class ImportPlayerSeasondataMigration extends Migration {
     // Choose the columns from the CSV file and write them into the $columns array
     $columns = array(
       0 => array('season', 'Saison'),
-      //1 => array('team', 'VER'),
+      1 => array('team', 'VER'),
       2 => array('fide_id', 'ID_NUMBER'),
       3 => array('master_title', 'TITLE'),
       //4 => array('country', 'COUNTRY'),
@@ -49,10 +49,56 @@ class ImportPlayerSeasondataMigration extends Migration {
     $this->addFieldMapping('host_entity_id', 'fide_id')->sourceMigration('import_players');
     // Field Mappings for the Field Collection fields
     $this->addFieldMapping('field_saison', 'season');
-    //$this->addFieldMapping('field_fc_verein', 'team');
+    $this->addFieldMapping('field_fc_verein', 'team')
+      ->callbacks(array($this, 'replaceTeamname'));
     $this->addFieldMapping('field_pl_master_title', 'master_title');
     //$this->addFieldMapping('field_pl_country', 'country');
     $this->addFieldMapping('field_pl_elo', 'elo_rating');
 
+  }
+
+  /**
+   * Function to replace team name Abbrevations with the full names
+   */
+  protected function replaceTeamname($value) {
+    $team_mapping = array (
+      'BAD' => 'OSG Baden-Baden',
+      'BAY' => 'FC Bayern München',
+      'DOR' => 'SC Hansa Dortmund',
+      'DRE' => 'USV TU Dresden',
+      'EMS' => 'SK Turm Emsdetten',
+      'EPP' => 'SC Eppingen',
+      'GRI' => 'SV Griesheim',
+      'HOC' => 'SV 1930 Hockenheim',
+      'HSK' => 'Hamburger SK',
+      'KAT' => 'SF Katernberg',
+      'MUL' => 'SV Mülheim Nord',
+      'ROS' => 'SSC Rostock 07',
+      'SFB' => 'SF Berlin 1903',
+      'SHA' => 'SK Schwäbisch Hall',
+      'SOL' => 'SG Solingen',
+      'TRI' => 'SG Trier',
+      'WBR' => 'Werder Bremen',
+    );
+    if(array_key_exists($value, $team_mapping)) {
+      $value = $team_mapping[$value];
+    }
+    // Get the Verein Node IDs from the node titles
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'mannschaft')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('title', $value)
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      $mannschaft_nids = array_keys($result['node']);
+      $value = $mannschaft_nids[0];
+    }
+
+    return $value;
   }
 }
