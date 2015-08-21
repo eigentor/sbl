@@ -279,7 +279,7 @@ function sbl_ligaverwaltung_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -306,6 +306,12 @@ function sbl_ligaverwaltung_strongarm() {
         'custom_settings' => FALSE,
       ),
       'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+      'eingebettete_videos' => array(
+        'custom_settings' => FALSE,
+      ),
+      'fotostrecken' => array(
         'custom_settings' => FALSE,
       ),
     ),

@@ -26,13 +26,6 @@ function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $
       $form['field_tm_game'][LANGUAGE_NONE][$delta]['#prefix'] = '<span class="board-number game-' . $board_number . '">Brett ' . $board_number . '</span>';
     }
   }
+  dpm($form);
 }
 
-// Alter multiple value field collection forms
-//function sbl_form_helper_field_widget_form_alter(&$element, &$form_state, $context) {
-//  if(isset($element['#bundle'])) {
-//    if ("field_sp_verein" == $element['#bundle']) {
-//      //dpm($element);
-//    }
-//  }
-//}
