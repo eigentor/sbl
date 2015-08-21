@@ -21,8 +21,10 @@ class ImportPlayerMigration extends Migration {
       4 => array('fide_id', 'ID_NUMBER'),
     );
 
+    $module_path = drupal_get_path('module', 'sbl_import_content');
+
     // Create a MigrateSource object, which manages retrieving the input data.
-    $this->source = new MigrateSourceCSV('sites/default/files/csv-import/players-1.csv', $columns, array('header_rows' => 1));
+    $this->source = new MigrateSourceCSV($module_path . '/csv/players-2014.csv', $columns, array('header_rows' => 1));
 
     // Set up our destination. Since we migrate to a content type, the content type machine name "spieler" is given as an attribute.
     $this->destination = new MigrateDestinationNode('spieler');

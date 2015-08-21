@@ -25,8 +25,10 @@ class ImportPlayerSeasondataMigration extends Migration {
       5 => array('elo_rating', 'RO'),
     );
 
+    $module_path = drupal_get_path('module', 'sbl_import_content');
+
     // Create a MigrateSource object, which manages retrieving the input data.
-    $this->source = new MigrateSourceCSV('sites/default/files/csv-import/players-season-data-1.csv', $columns, array('header_rows' => 1));
+    $this->source = new MigrateSourceCSV($module_path . '/csv/players-season-data-2014.csv', $columns, array('header_rows' => 1));
 
     // Set up our destination. We need to attach the field collection to our host entity type, in this case a node
     $this->destination = new MigrateDestinationFieldCollection(
