@@ -11,6 +11,22 @@
 
 function set_single_game_player_points(single_game_result_select, player_points_select, points_matching_array) {
   $(single_game_result_select).each(function(){
+    // execute the function on loading the form
+    // get the value from the result select
+      var single_match_result = $(this).val();
+      // set the player points to the matching value
+      for(var key in points_matching_array) {
+        if (single_match_result === key) {
+          var value = points_matching_array[key];
+          $(this).parents('td').find(player_points_select).val(value);
+          // display the value before the select
+          var current_text_value = $(this).parents('td').find(player_points_select + ' option:selected').text();
+          var formatted_text_value = '<span class="player-points">' + current_text_value + '</span>'
+          $(this).parents('td').find(player_points_select).prev('span.player-points').remove();
+          $(this).parents('td').find(player_points_select).before(formatted_text_value);
+        }
+      }
+    // then, execute the function when changing the select result for single game
     $(this).change(function(){
       // get the value from the result select
       var single_match_result = $(this).val();
