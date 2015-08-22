@@ -230,7 +230,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
         ),
         'view' => array(
           'args' => array(),
-          'display_name' => 'entityreference_1',
+          'display_name' => 'entityreference_2',
           'view_name' => 'filter_player_by_team',
         ),
       ),
