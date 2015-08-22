@@ -279,7 +279,7 @@ function sbl_ligaverwaltung_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -308,12 +308,6 @@ function sbl_ligaverwaltung_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
-      'eingebettete_videos' => array(
-        'custom_settings' => FALSE,
-      ),
-      'fotostrecken' => array(
-        'custom_settings' => FALSE,
-      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -321,10 +315,10 @@ function sbl_ligaverwaltung_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '12',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
