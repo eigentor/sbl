@@ -90,8 +90,25 @@ function sbl_ligaverwaltung_views_default_views() {
     'spieler' => 'spieler',
   );
 
-  /* Display: Entity Reference */
-  $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
+  /* Display: Filter Spieler 1 */
+  $handler = $view->new_display('entityreference', 'Filter Spieler 1', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'nid' => 'nid',
+    'title' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+
+  /* Display: Filter Spieler 2 */
+  $handler = $view->new_display('entityreference', 'Filter Spieler 2', 'entityreference_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
@@ -123,7 +140,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('last »'),
     t('field collection item from field_sp_verein'),
     t('Alle'),
-    t('Entity Reference'),
+    t('Filter Spieler 1'),
+    t('Filter Spieler 2'),
   );
   $export['filter_player_by_team'] = $view;
 
