@@ -146,6 +146,21 @@ function sbl_feeds_importer_feeds_importer_default() {
             'target' => 'field_collection_item:field_sp_verein:field_pl_country:iso3',
             'unique' => FALSE,
           ),
+          5 => array(
+            'source' => 'Jahres-ID',
+            'target' => 'field_year_id',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'TITLE',
+            'target' => 'field_pl_master_title',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'RO',
+            'target' => 'field_pl_elo',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'update_non_existent' => 'skip',
