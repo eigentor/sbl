@@ -23,6 +23,7 @@ class ImportPlayerSeasondataMigration extends Migration {
       3 => array('master_title', 'TITLE'),
       //4 => array('country', 'COUNTRY'),
       5 => array('elo_rating', 'RO'),
+      6 => array('year_id', 'Jahres-ID'),
     );
 
     $module_path = drupal_get_path('module', 'sbl_import_content');
@@ -56,6 +57,7 @@ class ImportPlayerSeasondataMigration extends Migration {
     $this->addFieldMapping('field_pl_master_title', 'master_title');
     //$this->addFieldMapping('field_pl_country', 'country');
     $this->addFieldMapping('field_pl_elo', 'elo_rating');
+    $this->addFieldMapping('field_year_id', 'year_id');
 
   }
 

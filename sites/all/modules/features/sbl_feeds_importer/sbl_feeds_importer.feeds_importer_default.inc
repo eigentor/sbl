@@ -118,7 +118,7 @@ function sbl_feeds_importer_feeds_importer_default() {
         'host_entity_type' => 'node',
         'is_field' => 1,
         'guid_field_name' => 'field_fide_id',
-        'identifier_field_name' => 'field_saison',
+        'identifier_field_name' => 'field_year_id',
         'mappings' => array(
           0 => array(
             'source' => 'ID_NUMBER',
@@ -126,7 +126,7 @@ function sbl_feeds_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
-            'source' => 'Saison',
+            'source' => 'Jahres-ID',
             'target' => 'identifier_field',
             'unique' => FALSE,
           ),
@@ -142,7 +142,7 @@ function sbl_feeds_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '1',
+        'update_existing' => '2',
         'update_non_existent' => 'skip',
         'input_format' => 'plain_text',
         'skip_hash_check' => 1,
