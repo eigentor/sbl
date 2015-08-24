@@ -564,7 +564,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -592,7 +592,230 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_captain_team'
+  $field_instances['node-mannschaft-field_captain_team'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_captain_team',
+    'label' => 'Mannschaftsführer',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 'pgn_converter',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'xbbcode' => 'xbbcode',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_chairman_club'
+  $field_instances['node-mannschaft-field_chairman_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_chairman_club',
+    'label' => 'Vorsitzender',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 'pgn_converter',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'xbbcode' => 'xbbcode',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_logo_team'
+  $field_instances['node-mannschaft-field_logo_team'] = array(
+    'bundle' => 'mannschaft',
+    'deleted' => 0,
+    'description' => 'Das Logo des Vereins.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_logo_team',
+    'label' => 'Logo Club',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'soundcloud' => 0,
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 1,
     ),
   );
 
@@ -605,10 +828,9 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -629,7 +851,64 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 41,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_venue_club'
+  $field_instances['node-mannschaft-field_venue_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_venue_club',
+    'label' => 'Spielort',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'DE' => 'DE',
+        ),
+        'default_country' => 'site_default',
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+          'address-optional' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 3,
     ),
   );
 
@@ -1578,14 +1857,17 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Brettfarbe Spieler 2');
   t('Brettpunkte Mannschaft 1');
   t('Brettpunkte Mannschaft 2');
+  t('Das Logo des Vereins.');
   t('Datum');
   t('ELO');
   t('Einzelspiel');
   t('Ergebnis');
   t('Fide-ID');
   t('Jahres-ID');
+  t('Logo Club');
   t('Mannschaft 1');
   t('Mannschaft 2');
+  t('Mannschaftsführer');
   t('Mannschaftspunkte Mannschaft 1');
   t('Mannschaftspunkte Mannschaft 2');
   t('Meistertitel');
@@ -1597,9 +1879,11 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Saisondaten Spieler');
   t('Spieler 1');
   t('Spieler 2');
+  t('Spielort');
   t('Spieltag');
   t('Verein');
   t('Vorname');
+  t('Vorsitzender');
   t('Wird nur für Identifikationszwecke der Saison beim Datenimport benötigt und im Formular nicht angezeigt.');
 
   return $field_instances;

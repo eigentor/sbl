@@ -31,6 +31,44 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_captain_team'
+  $field_bases['field_captain_team'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_captain_team',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_chairman_club'
+  $field_bases['field_chairman_club'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_chairman_club',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
+  );
+
   // Exported field_base: 'field_datum'
   $field_bases['field_datum'] = array(
     'active' => 1,
@@ -114,6 +152,28 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_logo_team'
+  $field_bases['field_logo_team'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_logo_team',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 0,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
   );
 
   // Exported field_base: 'field_mt_color_player_1'
@@ -841,6 +901,21 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_venue_club'
+  $field_bases['field_venue_club'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_venue_club',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'addressfield',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'addressfield',
   );
 
   // Exported field_base: 'field_year_id'
