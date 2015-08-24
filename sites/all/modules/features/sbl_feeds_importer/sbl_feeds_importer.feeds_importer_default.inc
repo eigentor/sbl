@@ -141,6 +141,11 @@ function sbl_feeds_importer_feeds_importer_default() {
             'target' => 'field_fc_verein:label',
             'unique' => FALSE,
           ),
+          4 => array(
+            'source' => 'COUNTRY',
+            'target' => 'field_collection_item:field_sp_verein:field_pl_country:iso3',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'update_non_existent' => 'skip',
