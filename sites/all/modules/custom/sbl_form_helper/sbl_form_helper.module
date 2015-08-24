@@ -26,6 +26,7 @@ function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $
       $form['field_tm_game'][LANGUAGE_NONE][$delta]['#prefix'] = '<span class="board-number game-' . $board_number . '">Brett ' . $board_number . '</span>';
     }
   }
+
 //  $players_disable = array(297,365,298);
 //  foreach ($form['field_tm_game'][LANGUAGE_NONE] as $delta => $field) {
 //    if (is_numeric($delta)) {
@@ -36,4 +37,15 @@ function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $
 //    }
 //  }
   //dpm($form_state);
+
+
+  // Filter the players by team with ajax
+//  $form['field_tm_team_1']['#ajax'] = array (
+//    'callback' => 'filter_players_team_1',
+//    // Wrapper: reload the entire field collection form when executing the ajax call
+//    'wrapper' => 'edit-field-tm-game',
+//  );
+   // dpm($form);
 }
+
+
