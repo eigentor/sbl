@@ -90,7 +90,7 @@ function sbl_feeds_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'player_team_mapping';
   $feeds_importer->config = array(
-    'name' => 'Spieler Vereinszuordnung',
+    'name' => 'Spieler Saisondaten',
     'description' => 'Zuordnung Spieler zu Vereinen pro Saison',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
@@ -159,6 +159,11 @@ function sbl_feeds_importer_feeds_importer_default() {
           7 => array(
             'source' => 'RO',
             'target' => 'field_pl_elo',
+            'unique' => FALSE,
+          ),
+          8 => array(
+            'source' => 'BNR',
+            'target' => 'field_pl_board_nr',
             'unique' => FALSE,
           ),
         ),
