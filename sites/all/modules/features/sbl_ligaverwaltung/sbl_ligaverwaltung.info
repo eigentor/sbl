@@ -171,6 +171,6 @@ features[variable][] = node_submitted_mannschaft
 features[variable][] = node_submitted_match
 features[variable][] = node_submitted_spieler
 features[variable][] = node_submitted_team_match
-features[views_view][] = filter_player_by_team
 features[views_view][] = mannchaftsmatches
+features[views_view][] = players
 features[views_view][] = teams_leaderbord
