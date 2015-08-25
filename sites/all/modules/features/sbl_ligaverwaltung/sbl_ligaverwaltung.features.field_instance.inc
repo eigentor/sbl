@@ -52,69 +52,37 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Das Brett, an dem der Spieler gesetzt ist.',
+    'description' => 'Das Brett, an dem der Spieler in der Mannschaft gesetzt ist.',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
         'weight' => 6,
       ),
     ),
     'entity_type' => 'field_collection_item',
     'field_name' => 'field_pl_board_nr',
-    'label' => 'Brett Nr.',
+    'label' => 'Brett-Nr.',
     'required' => 0,
     'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'pgn_converter' => 'pgn_converter',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-          'xbbcode' => 'xbbcode',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => -5,
-            ),
-            'filtered_html' => array(
-              'weight' => -9,
-            ),
-            'full_html' => array(
-              'weight' => -10,
-            ),
-            'pgn_converter' => array(
-              'weight' => -8,
-            ),
-            'php_code' => array(
-              'weight' => 11,
-            ),
-            'plain_text' => array(
-              'weight' => -6,
-            ),
-            'xbbcode' => array(
-              'weight' => -7,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 0,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 5,
-      ),
-      'type' => 'text_textfield',
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
       'weight' => 2,
     ),
   );
@@ -1926,12 +1894,12 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Akademischer Titel');
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
   t('Body');
-  t('Brett Nr.');
+  t('Brett-Nr.');
   t('Brettfarbe Spieler 1');
   t('Brettfarbe Spieler 2');
   t('Brettpunkte Mannschaft 1');
   t('Brettpunkte Mannschaft 2');
-  t('Das Brett, an dem der Spieler gesetzt ist.');
+  t('Das Brett, an dem der Spieler in der Mannschaft gesetzt ist.');
   t('Das Logo des Vereins.');
   t('Datum');
   t('ELO');
