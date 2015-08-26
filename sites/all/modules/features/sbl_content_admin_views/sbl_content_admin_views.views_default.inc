@@ -297,6 +297,12 @@ function sbl_content_admin_views_views_default_views() {
     6 => 0,
   );
   $handler->display->display_options['path'] = 'admin/players';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Spieler Übersicht';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['players_overview'] = array(
     t('Master'),
     t('Spieler pro Mannschaft und Saison'),
