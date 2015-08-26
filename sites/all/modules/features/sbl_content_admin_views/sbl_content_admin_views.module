@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SBL Übersichtsseiten für Inhalte feature.
+ */
+
+include_once 'sbl_content_admin_views.features.inc';
