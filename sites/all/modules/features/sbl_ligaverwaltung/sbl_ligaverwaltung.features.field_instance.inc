@@ -593,47 +593,41 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-body'
-  $field_instances['node-mannschaft-body'] = array(
+  // Exported field_instance: 'node-mannschaft-field_auf_startseite_anteasern'
+  $field_instances['node-mannschaft-field_auf_startseite_anteasern'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
+        'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'list_default',
+        'weight' => 8,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
+    'field_name' => 'field_auf_startseite_anteasern',
+    'label' => 'Auf Startseite anteasern',
     'required' => FALSE,
     'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'module' => 'text',
+      'module' => 'options',
       'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+        'display_label' => 0,
       ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'type' => 'options_onoff',
+      'weight' => 11,
     ),
   );
 
@@ -673,30 +667,30 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'plain_text' => 'plain_text',
           'xbbcode' => 'xbbcode',
         ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
         'default_order_wrapper' => array(
           'formats' => array(
             'ds_code' => array(
-              'weight' => -5,
+              'weight' => -45,
             ),
             'filtered_html' => array(
-              'weight' => -9,
+              'weight' => -50,
             ),
             'full_html' => array(
-              'weight' => -10,
+              'weight' => -49,
             ),
             'pgn_converter' => array(
-              'weight' => -8,
+              'weight' => -48,
             ),
             'php_code' => array(
-              'weight' => 11,
+              'weight' => -44,
             ),
             'plain_text' => array(
-              'weight' => -6,
+              'weight' => -46,
             ),
             'xbbcode' => array(
-              'weight' => -7,
+              'weight' => -47,
             ),
           ),
         ),
@@ -711,7 +705,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -743,38 +737,38 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'ds_code' => 'ds_code',
+          'ds_code' => 0,
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
-          'pgn_converter' => 'pgn_converter',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-          'xbbcode' => 'xbbcode',
+          'pgn_converter' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'xbbcode' => 0,
         ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
         'default_order_wrapper' => array(
           'formats' => array(
             'ds_code' => array(
-              'weight' => -5,
+              'weight' => -45,
             ),
             'filtered_html' => array(
-              'weight' => -9,
+              'weight' => -50,
             ),
             'full_html' => array(
-              'weight' => -10,
+              'weight' => -49,
             ),
             'pgn_converter' => array(
-              'weight' => -8,
+              'weight' => -48,
             ),
             'php_code' => array(
-              'weight' => 11,
+              'weight' => -44,
             ),
             'plain_text' => array(
-              'weight' => -6,
+              'weight' => -46,
             ),
             'xbbcode' => array(
-              'weight' => -7,
+              'weight' => -47,
             ),
           ),
         ),
@@ -789,7 +783,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -896,6 +890,63 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-mannschaft-field_travel_partner_club'
+  $field_instances['node-mannschaft-field_travel_partner_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_travel_partner_club',
+    'label' => 'Reisepartner',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-mannschaft-field_venue_club'
   $field_instances['node-mannschaft-field_venue_club'] = array(
     'bundle' => 'mannschaft',
@@ -949,6 +1000,141 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_web_admin_club'
+  $field_instances['node-mannschaft-field_web_admin_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_web_admin_club',
+    'label' => 'Internet-Verantwortlicher',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -45,
+            ),
+            'filtered_html' => array(
+              'weight' => -50,
+            ),
+            'full_html' => array(
+              'weight' => -49,
+            ),
+            'pgn_converter' => array(
+              'weight' => -48,
+            ),
+            'php_code' => array(
+              'weight' => -44,
+            ),
+            'plain_text' => array(
+              'weight' => -46,
+            ),
+            'xbbcode' => array(
+              'weight' => -47,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_website_club'
+  $field_instances['node-mannschaft-field_website_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_website_club',
+    'label' => 'Website',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
       'weight' => 3,
     ),
   );
@@ -1893,6 +2079,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Akademischer Titel');
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
+  t('Auf Startseite anteasern');
   t('Body');
   t('Brett-Nr.');
   t('Brettfarbe Spieler 1');
@@ -1906,6 +2093,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Einzelspiel');
   t('Ergebnis');
   t('Fide-ID');
+  t('Internet-Verantwortlicher');
   t('Jahres-ID');
   t('Logo Club');
   t('Mannschaft 1');
@@ -1918,6 +2106,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Nation');
   t('Punkte Spieler 1');
   t('Punkte Spieler 2');
+  t('Reisepartner');
   t('Saison');
   t('Saisondaten Spieler');
   t('Spieler 1');
@@ -1927,6 +2116,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Verein');
   t('Vorname');
   t('Vorsitzender');
+  t('Website');
   t('Wird nur für Identifikationszwecke der Saison beim Datenimport benötigt und im Formular nicht angezeigt.');
 
   return $field_instances;

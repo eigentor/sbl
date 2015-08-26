@@ -16,7 +16,6 @@ dependencies[] = list
 dependencies[] = media
 dependencies[] = node
 dependencies[] = options
-dependencies[] = sbl_ligaverwaltung
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text
