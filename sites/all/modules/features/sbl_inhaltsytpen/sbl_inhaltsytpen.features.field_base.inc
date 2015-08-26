@@ -251,7 +251,7 @@ function sbl_inhaltsytpen_field_default_field_bases() {
         'sv-muehlheim-nord.png' => 'SV Mühlheim Nord',
         'fc-bayern-muenchen.png' => 'FC Bayern München',
         'sk-norderstedt.png' => 'SK Norderstedt',
-        'schwaebisch-hall.pgn' => 'SK Schwäbisch Hall',
+        'schwaebisch-hall.png' => 'SK Schwäbisch Hall',
         'sg-solingen.png' => 'SG Solingen',
         'sg-trier.png' => 'SG Trier',
       ),

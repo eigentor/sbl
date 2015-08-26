@@ -21,6 +21,7 @@ features[features_api][] = api:2
 features[feeds_importer][] = import_players
 features[feeds_importer][] = player_team_mapping
 features[feeds_tamper][] = player_team_mapping-country-find_replace
+features[feeds_tamper][] = player_team_mapping-country-ned_replace
 features[feeds_tamper][] = player_team_mapping-ver-baden_kuerzel
 features[feeds_tamper][] = player_team_mapping-ver-bayern
 features[feeds_tamper][] = player_team_mapping-ver-dor_replace
