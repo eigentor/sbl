@@ -132,7 +132,7 @@ function sbl_ligaverwaltung_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Spieler pro Mannschaft und Saison';
+  $handler->display->display_options['title'] = 'Kader';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -190,9 +190,10 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
   $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
   $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['argument'] = '144';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
@@ -200,18 +201,39 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['id'] = 'field_fc_verein_target_id';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['table'] = 'field_data_field_fc_verein';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['field'] = 'field_fc_verein_target_id';
-  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary_options']['items_per_page'] = '25';
 
   /* Display: Block Spieler pro Mannschaft und Saison */
   $handler = $view->new_display('block', 'Block Spieler pro Mannschaft und Saison', 'block');
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'field_saison_tid' => array(
+      'type' => 'none',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Field collection item: Saison (field_saison)',
+    ),
+    'field_fc_verein_target_id' => array(
+      'type' => 'none',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Field collection item: Verein (field_fc_verein)',
+    ),
+  );
   $translatables['players'] = array(
     t('Master'),
-    t('Spieler pro Mannschaft und Saison'),
+    t('Kader'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -223,6 +245,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Name'),
     t('Alle'),
     t('Block Spieler pro Mannschaft und Saison'),
+    t('Content pane'),
+    t('View panes'),
   );
   $export['players'] = $view;
 
