@@ -25,6 +25,7 @@ features[ds_field_settings][] = node|mannschaft|full
 features[ds_fields][] = kader_team_current
 features[ds_layout_settings][] = field_collection_item|field_tm_game|default
 features[ds_layout_settings][] = field_collection_item|field_tm_game|form
+features[ds_layout_settings][] = node|mannschaft|full
 features[ds_layout_settings][] = node|team_match|form
 features[ds_layout_settings][] = node|team_match|full
 features[features_api][] = api:2

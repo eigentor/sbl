@@ -182,6 +182,60 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|mannschaft|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'mannschaft';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_2col_stacked';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'title',
+        1 => 'field_logo_team',
+      ),
+      'right' => array(
+        2 => 'field_venue_club',
+        3 => 'field_website_club',
+        4 => 'field_chairman_club',
+        5 => 'field_captain_team',
+        6 => 'field_web_admin_club',
+        7 => 'field_travel_partner_club',
+      ),
+      'footer' => array(
+        8 => 'kader_team_current',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'left',
+      'field_logo_team' => 'left',
+      'field_venue_club' => 'right',
+      'field_website_club' => 'right',
+      'field_chairman_club' => 'right',
+      'field_captain_team' => 'right',
+      'field_web_admin_club' => 'right',
+      'field_travel_partner_club' => 'right',
+      'kader_team_current' => 'footer',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => 0,
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|mannschaft|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|team_match|form';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'team_match';
