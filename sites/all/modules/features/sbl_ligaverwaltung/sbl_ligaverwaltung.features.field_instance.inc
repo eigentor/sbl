@@ -1248,7 +1248,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1474,6 +1474,73 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-spieler-field_pl_image'
+  $field_instances['node-spieler-field_pl_image'] = array(
+    'bundle' => 'spieler',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pl_image',
+    'label' => 'Bild',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 0,
+          'public' => 'public',
+          'soundcloud' => 0,
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+        ),
+      ),
+      'type' => 'media_generic',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-spieler-field_pl_last_name'
   $field_instances['node-spieler-field_pl_last_name'] = array(
     'bundle' => 'spieler',
@@ -1544,7 +1611,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -1587,7 +1654,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -2149,6 +2216,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Akademischer Titel');
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
   t('Auf Startseite anteasern');
+  t('Bild');
   t('Body');
   t('Brett-Nr.');
   t('Brettfarbe Spieler 1');
