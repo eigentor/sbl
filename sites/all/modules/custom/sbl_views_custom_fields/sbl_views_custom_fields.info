@@ -2,3 +2,8 @@ name = SBL Views Custom Fields
 description = Create custom Views handlers for our data
 package = Schach-Bundesliga
 core = 7.x
+
+dependencies[] = ctools
+
+; Views Handlers
+files[] = views/sbl_views_custom_fields_handler_handlername.inc

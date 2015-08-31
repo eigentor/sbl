@@ -1,1 +1,11 @@
 <?php
+
+/**
+ * Implements hook_views_api
+ */
+function sbl_views_custom_fields_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'sbl_views_custom_fields'),
+  );
+}
