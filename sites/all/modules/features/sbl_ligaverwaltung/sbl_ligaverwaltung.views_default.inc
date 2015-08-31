@@ -192,8 +192,8 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
   $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['argument'] = '144';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['code'] = 'return set_current_season();';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
@@ -207,9 +207,6 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary_options']['items_per_page'] = '25';
-
-  /* Display: Block Spieler pro Mannschaft und Saison */
-  $handler = $view->new_display('block', 'Block Spieler pro Mannschaft und Saison', 'block');
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -244,7 +241,6 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Brett'),
     t('Name'),
     t('Alle'),
-    t('Block Spieler pro Mannschaft und Saison'),
     t('Content pane'),
     t('View panes'),
   );
