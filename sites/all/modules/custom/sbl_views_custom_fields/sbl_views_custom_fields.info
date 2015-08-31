@@ -1,0 +1,4 @@
+name = SBL Views Custom Fields
+description = Create custom Views handlers for our data
+package = Schach-Bundesliga
+core = 7.x
