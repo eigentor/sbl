@@ -166,15 +166,6 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['relationships']['field_sp_verein_node']['table'] = 'field_collection_item';
   $handler->display->display_options['relationships']['field_sp_verein_node']['field'] = 'field_sp_verein_node';
   $handler->display->display_options['relationships']['field_sp_verein_node']['label'] = 'Node, der Field Collection field_sp_verein enthält';
-  /* Field: Field collection item: Brett-Nr. */
-  $handler->display->display_options['fields']['field_pl_board_nr']['id'] = 'field_pl_board_nr';
-  $handler->display->display_options['fields']['field_pl_board_nr']['table'] = 'field_data_field_pl_board_nr';
-  $handler->display->display_options['fields']['field_pl_board_nr']['field'] = 'field_pl_board_nr';
-  $handler->display->display_options['fields']['field_pl_board_nr']['label'] = 'Brett';
-  $handler->display->display_options['fields']['field_pl_board_nr']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -186,6 +177,48 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['sorts']['field_pl_board_nr_value']['id'] = 'field_pl_board_nr_value';
   $handler->display->display_options['sorts']['field_pl_board_nr_value']['table'] = 'field_data_field_pl_board_nr';
   $handler->display->display_options['sorts']['field_pl_board_nr_value']['field'] = 'field_pl_board_nr_value';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field collection item: Saison (field_saison) */
+  $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['code'] = 'return set_current_season();';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Content pane Spieler Liste pro Verein */
+  $handler = $view->new_display('panel_pane', 'Content pane Spieler Liste pro Verein', 'panel_pane_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Brett-Nr. */
+  $handler->display->display_options['fields']['field_pl_board_nr']['id'] = 'field_pl_board_nr';
+  $handler->display->display_options['fields']['field_pl_board_nr']['table'] = 'field_data_field_pl_board_nr';
+  $handler->display->display_options['fields']['field_pl_board_nr']['field'] = 'field_pl_board_nr';
+  $handler->display->display_options['fields']['field_pl_board_nr']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field collection item: Saison (field_saison) */
   $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
   $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
@@ -207,9 +240,65 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'field_saison_tid' => array(
+      'type' => 'none',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Field collection item: Saison (field_saison)',
+    ),
+    'field_fc_verein_target_id' => array(
+      'type' => 'none',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Field collection item: Verein (field_fc_verein)',
+    ),
+  );
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Content pane Spielerkarte Daten 1 */
+  $handler = $view->new_display('panel_pane', 'Content pane Spielerkarte Daten 1', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Meistertitel */
+  $handler->display->display_options['fields']['field_pl_master_title']['id'] = 'field_pl_master_title';
+  $handler->display->display_options['fields']['field_pl_master_title']['table'] = 'field_data_field_pl_master_title';
+  $handler->display->display_options['fields']['field_pl_master_title']['field'] = 'field_pl_master_title';
+  $handler->display->display_options['fields']['field_pl_master_title']['label'] = 'Titel';
+  $handler->display->display_options['fields']['field_pl_master_title']['hide_empty'] = TRUE;
+  /* Field: Field collection item: ELO */
+  $handler->display->display_options['fields']['field_pl_elo']['id'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['table'] = 'field_data_field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['field'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field collection item: Nation */
+  $handler->display->display_options['fields']['field_pl_country']['id'] = 'field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['table'] = 'field_data_field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['field'] = 'field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['label'] = 'Föderation';
+  $handler->display->display_options['fields']['field_pl_country']['type'] = 'country_icon';
+  $handler->display->display_options['fields']['field_pl_country']['settings'] = array(
+    'countryiconset' => 'icon_shiny',
+    'property' => 'name',
+  );
   $handler->display->display_options['argument_input'] = array(
     'field_saison_tid' => array(
       'type' => 'none',
@@ -238,11 +327,15 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Node, der Field Collection field_sp_verein enthält'),
-    t('Brett'),
     t('Name'),
     t('Alle'),
-    t('Content pane'),
+    t('Content pane Spieler Liste pro Verein'),
+    t('Brett-Nr.'),
     t('View panes'),
+    t('Content pane Spielerkarte Daten 1'),
+    t('Titel'),
+    t('ELO'),
+    t('Föderation'),
   );
   $export['players'] = $view;
 
