@@ -18,7 +18,7 @@ function sbl_ligaverwaltung_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'kader_team_current' => array(
-      'weight' => '8',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -192,22 +192,30 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
       'left' => array(
         0 => 'title',
         1 => 'field_logo_team',
+        2 => 'field_facebook',
+        3 => 'field_twitter_club',
+        4 => 'field_der_bundesliga_seit',
+        5 => 'field_groesste_erfolge',
       ),
       'right' => array(
-        2 => 'field_venue_club',
-        3 => 'field_website_club',
-        4 => 'field_chairman_club',
-        5 => 'field_captain_team',
-        6 => 'field_web_admin_club',
-        7 => 'field_travel_partner_club',
+        6 => 'field_venue_club',
+        7 => 'field_website_club',
+        8 => 'field_chairman_club',
+        9 => 'field_captain_team',
+        10 => 'field_web_admin_club',
+        11 => 'field_travel_partner_club',
       ),
       'footer' => array(
-        8 => 'kader_team_current',
+        12 => 'kader_team_current',
       ),
     ),
     'fields' => array(
       'title' => 'left',
       'field_logo_team' => 'left',
+      'field_facebook' => 'left',
+      'field_twitter_club' => 'left',
+      'field_der_bundesliga_seit' => 'left',
+      'field_groesste_erfolge' => 'left',
       'field_venue_club' => 'right',
       'field_website_club' => 'right',
       'field_chairman_club' => 'right',

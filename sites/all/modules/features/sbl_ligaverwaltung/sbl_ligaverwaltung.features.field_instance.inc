@@ -611,7 +611,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -633,7 +633,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 14,
     ),
   );
 
@@ -656,7 +656,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -718,7 +718,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -741,7 +741,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -803,7 +803,184 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_der_bundesliga_seit'
+  $field_instances['node-mannschaft-field_der_bundesliga_seit'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 13,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_der_bundesliga_seit',
+    'label' => 'In der Liga seit',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_facebook'
+  $field_instances['node-mannschaft-field_facebook'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'URL der Facebook-Präsenz des Klubs, sofern vorhanden',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 10,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_facebook',
+    'label' => 'Facebook',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_groesste_erfolge'
+  $field_instances['node-mannschaft-field_groesste_erfolge'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Bisherige Erfolge des Vereins (Meisterschaften, Pokalsiege etc.)',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_groesste_erfolge',
+    'label' => 'Größte Erfolge',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 6,
     ),
   );
 
@@ -828,7 +1005,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'medium',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -901,7 +1078,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -945,7 +1122,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -986,7 +1163,65 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_twitter_club'
+  $field_instances['node-mannschaft-field_twitter_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'URL der Twitterseite des Klubs, sofern vorhanden',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_twitter_club',
+    'label' => 'Twitter',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 5,
     ),
   );
 
@@ -1019,7 +1254,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 2,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1046,16 +1281,16 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'format_handlers' => array(
           'address' => 'address',
           'address-hide-country' => 'address-hide-country',
+          'organisation' => 'organisation',
           'address-hide-postal-code' => 0,
           'address-hide-street' => 0,
-          'organisation' => 0,
-          'name-full' => 0,
           'name-oneline' => 0,
+          'name-full' => 0,
           'address-optional' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
@@ -1078,7 +1313,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1140,7 +1375,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 10,
     ),
   );
 
@@ -1163,7 +1398,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 3,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1197,7 +1432,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'title_value' => '',
       'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
+      'validate_url' => 0,
     ),
     'widget' => array(
       'active' => 0,
@@ -1221,12 +1456,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1271,12 +1500,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1352,12 +1575,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1431,12 +1648,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 3,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1514,16 +1725,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'type' => 'image',
         'weight' => 7,
       ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 5,
-      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1588,12 +1789,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1674,12 +1869,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         ),
         'type' => 'field_collection_view',
         'weight' => 1,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2263,6 +2452,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
   t('Auf Startseite anteasern');
   t('Bild');
+  t('Bisherige Erfolge des Vereins (Meisterschaften, Pokalsiege etc.)');
   t('Body');
   t('Brett-Nr.');
   t('Brettfarbe Spieler 1');
@@ -2275,7 +2465,10 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('ELO');
   t('Einzelspiel');
   t('Ergebnis');
+  t('Facebook');
   t('Fide-ID');
+  t('Größte Erfolge');
+  t('In der Liga seit');
   t('Internet-Verantwortlicher');
   t('Jahres-ID');
   t('Logo Club');
@@ -2296,6 +2489,9 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Spieler 2');
   t('Spielort');
   t('Spieltag');
+  t('Twitter');
+  t('URL der Facebook-Präsenz des Klubs, sofern vorhanden');
+  t('URL der Twitterseite des Klubs, sofern vorhanden');
   t('Verein');
   t('Vorname');
   t('Vorsitzender');

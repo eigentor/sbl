@@ -98,6 +98,99 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_der_bundesliga_seit'
+  $field_bases['field_der_bundesliga_seit'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_der_bundesliga_seit',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        1980 => 1980,
+        1981 => 1981,
+        1982 => 1982,
+        1983 => 1983,
+        1984 => 1984,
+        1985 => 1985,
+        1986 => 1986,
+        1987 => 1987,
+        1988 => 1988,
+        1989 => 1989,
+        1990 => 1990,
+        1991 => 1991,
+        1992 => 1992,
+        1993 => 1993,
+        1994 => 1994,
+        1995 => 1995,
+        1996 => 1996,
+        1997 => 1997,
+        1998 => 1998,
+        1999 => 1999,
+        2000 => 2000,
+        2001 => 2001,
+        2002 => 2002,
+        2003 => 2003,
+        2004 => 2004,
+        2005 => 2005,
+        2006 => 2006,
+        2007 => 2007,
+        2008 => 2008,
+        2009 => 2009,
+        2010 => 2010,
+        2011 => 2011,
+        2012 => 2012,
+        2013 => 2013,
+        2014 => 2014,
+        2015 => 2015,
+        2016 => 2016,
+        2017 => 2017,
+        2018 => 2018,
+        2019 => 2019,
+        2020 => 2020,
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
+  // Exported field_base: 'field_facebook'
+  $field_bases['field_facebook'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_facebook',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
+  );
+
   // Exported field_base: 'field_fc_verein'
   $field_bases['field_fc_verein'] = array(
     'active' => 1,
@@ -152,6 +245,25 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_groesste_erfolge'
+  $field_bases['field_groesste_erfolge'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_groesste_erfolge',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_logo_team'
@@ -947,6 +1059,35 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_travel_partner_club',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'link',
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'link_field',
+  );
+
+  // Exported field_base: 'field_twitter_club'
+  $field_bases['field_twitter_club'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_twitter_club',
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
