@@ -44,7 +44,7 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
   $handler->weight = 0;
   $handler->conf = array(
     'title' => 'Mannschafts-Seite',
-    'no_blocks' => 0,
+    'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
@@ -60,7 +60,7 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     'panels_page_title' => '',
   );
   $display = new panels_display();
-  $display->layout = 'omega_12_twocol_6_6_bricks';
+  $display->layout = 'twocol_stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -72,6 +72,8 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
       'left_below' => NULL,
       'right_below' => NULL,
       'bottom' => NULL,
+      'left' => NULL,
+      'right' => NULL,
     ),
   );
   $display->cache = array();
@@ -80,8 +82,27 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-7dbe7b94-2212-4f83-acd8-8f1e9ee56c76';
+    $pane->panel = 'bottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'players-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7dbe7b94-2212-4f83-acd8-8f1e9ee56c76';
+    $display->content['new-7dbe7b94-2212-4f83-acd8-8f1e9ee56c76'] = $pane;
+    $display->panels['bottom'][0] = 'new-7dbe7b94-2212-4f83-acd8-8f1e9ee56c76';
+    $pane = new stdClass();
     $pane->pid = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
-    $pane->panel = 'left_above';
+    $pane->panel = 'left';
     $pane->type = 'views_panes';
     $pane->subtype = 'team_info-panel_pane_1';
     $pane->shown = TRUE;
@@ -97,7 +118,26 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = '5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
     $display->content['new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8'] = $pane;
-    $display->panels['left_above'][0] = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
+    $display->panels['left'][0] = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
+    $pane = new stdClass();
+    $pane->pid = 'new-fb140854-cd27-4853-bf25-d6ca21ff5a1f';
+    $pane->panel = 'right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'team_info-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'fb140854-cd27-4853-bf25-d6ca21ff5a1f';
+    $display->content['new-fb140854-cd27-4853-bf25-d6ca21ff5a1f'] = $pane;
+    $display->panels['right'][0] = 'new-fb140854-cd27-4853-bf25-d6ca21ff5a1f';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
   $handler->conf['display'] = $display;

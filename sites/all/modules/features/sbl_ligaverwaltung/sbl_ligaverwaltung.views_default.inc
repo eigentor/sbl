@@ -219,43 +219,44 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field collection item: Saison (field_saison) */
-  $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
-  $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
-  $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['code'] = 'return set_current_season();';
-  $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Field collection item: Verein (field_fc_verein) */
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['id'] = 'field_fc_verein_target_id';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['table'] = 'field_data_field_fc_verein';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['field'] = 'field_fc_verein_target_id';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_fc_verein_target_id']['default_argument_options']['index'] = '0';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field collection item: Saison (field_saison) */
+  $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['argument_input'] = array(
-    'field_saison_tid' => array(
-      'type' => 'none',
-      'context' => 'entity:node.field_addthis',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Field collection item: Saison (field_saison)',
-    ),
     'field_fc_verein_target_id' => array(
-      'type' => 'none',
+      'type' => 'panel',
       'context' => 'entity:node.field_addthis',
       'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
       'label' => 'Field collection item: Verein (field_fc_verein)',
+    ),
+    'field_saison_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '1',
+      'fixed' => '',
+      'label' => 'Field collection item: Saison (field_saison)',
     ),
   );
 
@@ -441,6 +442,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_venue_club']['id'] = 'field_venue_club';
   $handler->display->display_options['fields']['field_venue_club']['table'] = 'field_data_field_venue_club';
   $handler->display->display_options['fields']['field_venue_club']['field'] = 'field_venue_club';
+  $handler->display->display_options['fields']['field_venue_club']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_venue_club']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_venue_club']['settings'] = array(
     'use_widget_handlers' => 1,
@@ -452,7 +454,67 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_travel_partner_club']['id'] = 'field_travel_partner_club';
   $handler->display->display_options['fields']['field_travel_partner_club']['table'] = 'field_data_field_travel_partner_club';
   $handler->display->display_options['fields']['field_travel_partner_club']['field'] = 'field_travel_partner_club';
+  $handler->display->display_options['fields']['field_travel_partner_club']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_travel_partner_club']['click_sort_column'] = 'url';
+  /* Field: Content: Heimspiele */
+  $handler->display->display_options['fields']['field_heimspiele']['id'] = 'field_heimspiele';
+  $handler->display->display_options['fields']['field_heimspiele']['table'] = 'field_data_field_heimspiele';
+  $handler->display->display_options['fields']['field_heimspiele']['field'] = 'field_heimspiele';
+  $handler->display->display_options['fields']['field_heimspiele']['hide_empty'] = TRUE;
+  /* Field: Content: Vorsitzender */
+  $handler->display->display_options['fields']['field_chairman_club']['id'] = 'field_chairman_club';
+  $handler->display->display_options['fields']['field_chairman_club']['table'] = 'field_data_field_chairman_club';
+  $handler->display->display_options['fields']['field_chairman_club']['field'] = 'field_chairman_club';
+  $handler->display->display_options['fields']['field_chairman_club']['hide_empty'] = TRUE;
+  /* Field: Content: Mannschaftsführer */
+  $handler->display->display_options['fields']['field_captain_team']['id'] = 'field_captain_team';
+  $handler->display->display_options['fields']['field_captain_team']['table'] = 'field_data_field_captain_team';
+  $handler->display->display_options['fields']['field_captain_team']['field'] = 'field_captain_team';
+  $handler->display->display_options['fields']['field_captain_team']['hide_empty'] = TRUE;
+  /* Field: Content: Internet-Verantwortlicher */
+  $handler->display->display_options['fields']['field_web_admin_club']['id'] = 'field_web_admin_club';
+  $handler->display->display_options['fields']['field_web_admin_club']['table'] = 'field_data_field_web_admin_club';
+  $handler->display->display_options['fields']['field_web_admin_club']['field'] = 'field_web_admin_club';
+  $handler->display->display_options['fields']['field_web_admin_club']['hide_empty'] = TRUE;
+  /* Field: Content: Twitter */
+  $handler->display->display_options['fields']['field_twitter_club']['id'] = 'field_twitter_club';
+  $handler->display->display_options['fields']['field_twitter_club']['table'] = 'field_data_field_twitter_club';
+  $handler->display->display_options['fields']['field_twitter_club']['field'] = 'field_twitter_club';
+  $handler->display->display_options['fields']['field_twitter_club']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_twitter_club']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_twitter_club']['click_sort_column'] = 'url';
+  /* Field: Content: Website */
+  $handler->display->display_options['fields']['field_website_club']['id'] = 'field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['table'] = 'field_data_field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_website_club']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_website_club']['click_sort_column'] = 'url';
+  /* Field: Content: Facebook */
+  $handler->display->display_options['fields']['field_facebook']['id'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['table'] = 'field_data_field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook']['click_sort_column'] = 'url';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="website">[field_website_club]</div>
+<div class="facebook">[field_facebook]</div>
+<div class="twitter">[field_twitter_club]</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'panel',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Inhalt: Beitrags-ID',
+    ),
+  );
   $translatables['team_info'] = array(
     t('Master'),
     t('more'),
@@ -469,6 +531,16 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Content pane Verein Basisdaten 2'),
     t('Spielort'),
     t('Reisepartner'),
+    t('Heimspiele'),
+    t('Vorsitzender'),
+    t('Mannschaftsführer'),
+    t('Internet-Verantwortlicher'),
+    t('Twitter'),
+    t('Website'),
+    t('Facebook'),
+    t('<div class="website">[field_website_club]</div>
+<div class="facebook">[field_facebook]</div>
+<div class="twitter">[field_twitter_club]</div>'),
   );
   $export['team_info'] = $view;
 
