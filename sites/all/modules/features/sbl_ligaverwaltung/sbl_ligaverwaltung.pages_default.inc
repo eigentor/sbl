@@ -15,15 +15,13 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Mannschaftsseite';
   $page->admin_description = 'Zur Anzeige der Mannschaftsinfo pro Saison';
-  $page->path = 'verein/%team/%season';
+  $page->path = 'verein/!team/!season';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array(
     'team' => array(
-      'id' => '',
-      'identifier' => '',
-      'argument' => '',
       'settings' => array(),
+      'identifier' => 'No context',
     ),
     'season' => array(
       'id' => '',
@@ -58,6 +56,8 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     'access' => array(
       'logic' => 'and',
     ),
+    'panels_page_title_state' => 1,
+    'panels_page_title' => 'Joha',
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_6_6_bricks';
@@ -75,12 +75,31 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = ' ';
   $display->uuid = '23a9552e-1d74-4eb8-8776-9a668a586cd0';
   $display->content = array();
   $display->panels = array();
-  $display->hide_title = PANELS_TITLE_PANE;
-  $display->title_pane = '0';
+    $pane = new stdClass();
+    $pane->pid = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
+    $pane->panel = 'left_above';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'team_info-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
+    $display->content['new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8'] = $pane;
+    $display->panels['left_above'][0] = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['team_page'] = $page;

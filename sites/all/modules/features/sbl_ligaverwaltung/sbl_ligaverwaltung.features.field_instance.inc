@@ -593,56 +593,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-body'
-  $field_instances['node-mannschaft-body'] = array(
-    'bundle' => 'mannschaft',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-mannschaft-field_auf_startseite_anteasern'
   $field_instances['node-mannschaft-field_auf_startseite_anteasern'] = array(
     'bundle' => 'mannschaft',
@@ -655,13 +605,13 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -699,7 +649,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'above',
@@ -784,7 +734,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'above',
@@ -869,7 +819,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'above',
@@ -909,7 +859,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 10,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -967,7 +917,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -1031,6 +981,85 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_heimspiele'
+  $field_instances['node-mannschaft-field_heimspiele'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Alle Heimspiele des Vereins',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_heimspiele',
+    'label' => 'Heimspiele',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 'pgn_converter',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'xbbcode' => 'xbbcode',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 16,
     ),
   );
 
@@ -1122,13 +1151,13 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1165,7 +1194,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'above',
@@ -1229,7 +1258,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 11,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -1292,7 +1321,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
@@ -1356,7 +1385,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'above',
@@ -1441,7 +1470,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -2499,6 +2528,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Akademischer Titel');
+  t('Alle Heimspiele des Vereins');
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
   t('Auf Startseite anteasern');
   t('Bild');
@@ -2518,6 +2548,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Facebook');
   t('Fide-ID');
   t('Größte Erfolge');
+  t('Heimspiele');
   t('In der Liga seit');
   t('Internet-Verantwortlicher');
   t('Jahres-ID');

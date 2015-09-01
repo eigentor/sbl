@@ -355,8 +355,11 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Logo Club */
@@ -377,11 +380,32 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: In der Liga seit */
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['id'] = 'field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['table'] = 'field_data_field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['field'] = 'field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['hide_empty'] = TRUE;
+  /* Field: Content: Größte Erfolge */
+  $handler->display->display_options['fields']['field_groesste_erfolge']['id'] = 'field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['table'] = 'field_data_field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['field'] = 'field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -399,6 +423,16 @@ function sbl_ligaverwaltung_views_default_views() {
 
   /* Display: Content pane Verein Basisdaten 1 */
   $handler = $view->new_display('panel_pane', 'Content pane Verein Basisdaten 1', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'panel',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Inhalt: Beitrags-ID',
+    ),
+  );
   $translatables['team_info'] = array(
     t('Master'),
     t('more'),
@@ -407,13 +441,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('In der Liga seit'),
+    t('Größte Erfolge'),
+    t('Alle'),
     t('Content pane Verein Basisdaten 1'),
     t('View panes'),
   );

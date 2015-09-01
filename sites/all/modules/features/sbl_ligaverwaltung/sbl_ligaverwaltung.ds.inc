@@ -18,7 +18,7 @@ function sbl_ligaverwaltung_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'kader_team_current' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -204,9 +204,10 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
         9 => 'field_captain_team',
         10 => 'field_web_admin_club',
         11 => 'field_travel_partner_club',
+        12 => 'field_heimspiele',
       ),
       'footer' => array(
-        12 => 'kader_team_current',
+        13 => 'kader_team_current',
       ),
     ),
     'fields' => array(
@@ -222,6 +223,7 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
       'field_captain_team' => 'right',
       'field_web_admin_club' => 'right',
       'field_travel_partner_club' => 'right',
+      'field_heimspiele' => 'right',
       'kader_team_current' => 'footer',
     ),
     'classes' => array(),
