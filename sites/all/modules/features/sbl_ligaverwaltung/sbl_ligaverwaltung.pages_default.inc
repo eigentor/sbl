@@ -56,8 +56,8 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     'access' => array(
       'logic' => 'and',
     ),
-    'panels_page_title_state' => 1,
-    'panels_page_title' => 'Joha',
+    'panels_page_title_state' => 0,
+    'panels_page_title' => '',
   );
   $display = new panels_display();
   $display->layout = 'omega_12_twocol_6_6_bricks';

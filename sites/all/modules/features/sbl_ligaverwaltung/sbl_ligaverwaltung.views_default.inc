@@ -433,6 +433,26 @@ function sbl_ligaverwaltung_views_default_views() {
       'label' => 'Inhalt: Beitrags-ID',
     ),
   );
+
+  /* Display: Content pane Verein Basisdaten 2 */
+  $handler = $view->new_display('panel_pane', 'Content pane Verein Basisdaten 2', 'panel_pane_2');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Spielort */
+  $handler->display->display_options['fields']['field_venue_club']['id'] = 'field_venue_club';
+  $handler->display->display_options['fields']['field_venue_club']['table'] = 'field_data_field_venue_club';
+  $handler->display->display_options['fields']['field_venue_club']['field'] = 'field_venue_club';
+  $handler->display->display_options['fields']['field_venue_club']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_venue_club']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
+  /* Field: Content: Reisepartner */
+  $handler->display->display_options['fields']['field_travel_partner_club']['id'] = 'field_travel_partner_club';
+  $handler->display->display_options['fields']['field_travel_partner_club']['table'] = 'field_data_field_travel_partner_club';
+  $handler->display->display_options['fields']['field_travel_partner_club']['field'] = 'field_travel_partner_club';
+  $handler->display->display_options['fields']['field_travel_partner_club']['click_sort_column'] = 'url';
   $translatables['team_info'] = array(
     t('Master'),
     t('more'),
@@ -446,6 +466,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Alle'),
     t('Content pane Verein Basisdaten 1'),
     t('View panes'),
+    t('Content pane Verein Basisdaten 2'),
+    t('Spielort'),
+    t('Reisepartner'),
   );
   $export['team_info'] = $view;
 
