@@ -34,3 +34,33 @@ function quatro_alpha_page_structure_alter(&$vars) {
 
 }
 
+
+function quatro_preprocess_page(&$vars) {
+
+  // Set the page title for the "Verein" Panels Page
+  if (arg(0) == 'verein' && is_numeric(arg(1))) {
+    //dpm($vars);
+    $nid = arg(1);
+
+    // Search for the ticket matching the Rabattcode
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'mannschaft')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyCondition('nid', $nid, '=')
+      // Bypass node access
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+
+    $result = $query->execute();
+
+    // If a ticket was found, set the price field to the ticket price
+    if (isset($result['node'])) {
+      $node_ids = array_keys($result['node']);
+      $node_id = $node_ids[0];
+      $node = node_load($node_id);
+      drupal_set_title($node->title);
+    }
+  }
+}
