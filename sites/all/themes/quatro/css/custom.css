@@ -397,7 +397,6 @@ position:relative;
 width:100%;
 }
 
-
 .video-icon {
 width:35px;
 height:35px;
@@ -422,6 +421,62 @@ top:0;
 left:0;
 z-index:999999;
 }
+
+/*------------------------------------*\
+	Vereinsseiten
+\*------------------------------------*/
+
+.clearboth:before{
+content: ".";
+display: block;
+height: 0px;
+clear: both;
+visibility: hidden;
+}
+
+#teamseite .panel-col-first {
+width:33%;
+position:relative;
+padding:5px;
+margin:0;
+min-width:250px;
+height:100%;
+float:left;
+}
+
+#teamseite .panel-col-last {
+width:63%;
+position:relative;
+padding:5px;
+min-width:300px;
+height:100%;
+margin:0;
+}
+
+#teamseite h2 {
+padding-top:10px;
+margin-bottom:0.2em !important;
+}
+
+.one-fifth {
+    width: 10%;
+	margin-top: 25px;
+}
+.one-fifth,.two-fifth {
+    margin-right: 2%;
+	float: left;
+    margin-bottom: 15px;
+    padding: 0px;
+    position: relative;
+}
+.two-fifth {
+   width: 44%;
+}
+
+.margin10 {
+margin-bottom:10px;
+}
+
 
 /*------------------------------------*\
 	Box-Effekt
