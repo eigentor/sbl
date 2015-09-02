@@ -30,6 +30,45 @@ function sbl_ligaverwaltung_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function sbl_ligaverwaltung_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: spielerbild.
+  $styles['spielerbild'] = array(
+    'label' => 'Spielerbild',
+    'effects' => array(
+      36 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 175,
+          'height' => 250,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: vereinslogo.
+  $styles['vereinslogo'] = array(
+    'label' => 'Vereinslogo',
+    'effects' => array(
+      35 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 130,
+          'height' => 130,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function sbl_ligaverwaltung_node_info() {
