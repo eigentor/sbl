@@ -500,5 +500,11 @@ display: inline;
   margin-left: 15px;
   margin-bottom: 15px;
 }
+#block-views-team-info-block-1 .views-row a img {
+  opacity: 0.5;
+}
+#block-views-team-info-block-1 .views-row a:hover img {
+  opacity: 1;
+}
 
 
