@@ -256,6 +256,10 @@ function sbl_ligaverwaltung_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   /* Relationship: Field collection item: Entity with the Saisondaten Spieler (field_sp_verein) */
   $handler->display->display_options['relationships']['field_sp_verein_node']['id'] = 'field_sp_verein_node';
   $handler->display->display_options['relationships']['field_sp_verein_node']['table'] = 'field_collection_item';
@@ -297,6 +301,14 @@ function sbl_ligaverwaltung_views_default_views() {
 
   /* Display: Content pane Kader pro Verein */
   $handler = $view->new_display('panel_pane', 'Content pane Kader pro Verein', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="view-title">Kader [field_saison_1]</h2>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -306,16 +318,26 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Field collection item: Saison */
+  /* Field: Saison Term-ID */
   $handler->display->display_options['fields']['field_saison']['id'] = 'field_saison';
   $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
   $handler->display->display_options['fields']['field_saison']['field'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['ui_name'] = 'Saison Term-ID';
   $handler->display->display_options['fields']['field_saison']['label'] = '';
   $handler->display->display_options['fields']['field_saison']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_saison']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_saison']['alter']['text'] = '[field_saison-tid]';
   $handler->display->display_options['fields']['field_saison']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_saison']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Saison Jahreszahl (Term-Name) */
+  $handler->display->display_options['fields']['field_saison_1']['id'] = 'field_saison_1';
+  $handler->display->display_options['fields']['field_saison_1']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['fields']['field_saison_1']['field'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison_1']['ui_name'] = 'Saison Jahreszahl (Term-Name)';
+  $handler->display->display_options['fields']['field_saison_1']['label'] = '';
+  $handler->display->display_options['fields']['field_saison_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_saison_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_saison_1']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field collection item: Brett-Nr. */
   $handler->display->display_options['fields']['field_pl_board_nr']['id'] = 'field_pl_board_nr';
   $handler->display->display_options['fields']['field_pl_board_nr']['table'] = 'field_data_field_pl_board_nr';
@@ -418,6 +440,11 @@ function sbl_ligaverwaltung_views_default_views() {
     'countryiconset' => 'icon_shiny',
     'property' => 'name',
   );
+  /* Field: Field collection item: Saison */
+  $handler->display->display_options['fields']['field_saison']['id'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['fields']['field_saison']['field'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'panel',
@@ -449,6 +476,7 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Name'),
     t('Alle'),
     t('Content pane Kader pro Verein'),
+    t('<h2 class="view-title">Kader [field_saison_1]</h2>'),
     t('[field_saison-tid]'),
     t('Brett-Nr.'),
     t('View panes'),
@@ -456,6 +484,7 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Titel'),
     t('ELO'),
     t('Föderation'),
+    t('Saison'),
   );
   $export['players'] = $view;
 
@@ -478,7 +507,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -634,6 +663,67 @@ function sbl_ligaverwaltung_views_default_views() {
       'label' => 'Inhalt: Beitrags-ID',
     ),
   );
+
+  /* Display: Block Vereinslogos klein */
+  $handler = $view->new_display('block', 'Block Vereinslogos klein', 'block_1');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Logo Club */
+  $handler->display->display_options['fields']['field_logo_team']['id'] = 'field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['table'] = 'field_data_field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['field'] = 'field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['label'] = '';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_team']['alter']['path'] = 'verein/[nid]/144';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['link_class'] = 'tooltip';
+  $handler->display->display_options['fields']['field_logo_team']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo_team']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_team']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo_team']['settings'] = array(
+    'image_style' => 'vereinslogo_klein',
+    'image_link' => '',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mannschaft' => 'mannschaft',
+  );
+  /* Filter criterion: Content: Saison (field_t_saison) */
+  $handler->display->display_options['filters']['field_t_saison_tid']['id'] = 'field_t_saison_tid';
+  $handler->display->display_options['filters']['field_t_saison_tid']['table'] = 'field_data_field_t_saison';
+  $handler->display->display_options['filters']['field_t_saison_tid']['field'] = 'field_t_saison_tid';
+  $handler->display->display_options['filters']['field_t_saison_tid']['value'] = array(
+    144 => '144',
+  );
+  $handler->display->display_options['filters']['field_t_saison_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_t_saison_tid']['vocabulary'] = 'saison';
   $translatables['team_info'] = array(
     t('Master'),
     t('more'),
@@ -660,6 +750,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('<div class="website">[field_website_club]</div>
 <div class="facebook">[field_facebook]</div>
 <div class="twitter">[field_twitter_club]</div>'),
+    t('Block Vereinslogos klein'),
+    t('[title]'),
   );
   $export['team_info'] = $view;
 

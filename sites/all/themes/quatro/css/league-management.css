@@ -7,6 +7,7 @@ th {
 }
 
 /* Hide the h1 on the Verein Panel Page */
-.page-verein h1#page-title {
+.page-verein h1#page-title,
+.page-spieler h1#page-title {
   display: none;
 }

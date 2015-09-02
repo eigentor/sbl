@@ -490,3 +490,15 @@ display: inline;
 }
 }
 
+/* Block Vereinslogos */
+#block-views-team-info-block-1 {
+  float: right;
+  margin: 30px 0 15px;
+}
+#block-views-team-info-block-1 .views-row {
+  float: left;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+
