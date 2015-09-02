@@ -136,6 +136,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -232,6 +233,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -298,6 +300,13 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Field collection item: Field name */
+  $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['value'] = array(
+    'field_sp_verein' => 'field_sp_verein',
+  );
 
   /* Display: Content pane Kader pro Verein */
   $handler = $view->new_display('panel_pane', 'Content pane Kader pro Verein', 'panel_pane_1');
@@ -445,6 +454,85 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
   $handler->display->display_options['fields']['field_saison']['field'] = 'field_saison';
   $handler->display->display_options['fields']['field_saison']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field collection item: Saison (field_saison) */
+  $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'panel',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Inhalt: Beitrags-ID',
+    ),
+    'field_saison_tid' => array(
+      'type' => 'panel',
+      'context' => 'entity:node.field_addthis',
+      'context_optional' => 0,
+      'panel' => '1',
+      'fixed' => '',
+      'label' => 'Field collection item: Saison (field_saison)',
+    ),
+  );
+
+  /* Display: Content pane Spieler Saisonergebnisse Durchschnitt */
+  $handler = $view->new_display('panel_pane', 'Content pane Spieler Saisonergebnisse Durchschnitt', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Verein */
+  $handler->display->display_options['fields']['field_fc_verein']['id'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['table'] = 'field_data_field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['field'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field collection item: Saison (field_saison) */
+  $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['index'] = '2';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'panel',
@@ -485,6 +573,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('ELO'),
     t('Föderation'),
     t('Saison'),
+    t('Content pane Spieler Saisonergebnisse Durchschnitt'),
+    t('Verein'),
   );
   $export['players'] = $view;
 

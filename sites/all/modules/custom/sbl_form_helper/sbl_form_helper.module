@@ -52,5 +52,10 @@ function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $
 function set_current_season() {
   return 144;
 }
+function sbl_form_helper_views_query_alter(&$view, &$query) {
+  if ($view->name == 'single_games_player') {
+    //dpm($view);
+  }
+}
 
 
