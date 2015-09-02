@@ -142,6 +142,7 @@ features[field_instance][] = node-team_match-field_tm_team_points_tm_1
 features[field_instance][] = node-team_match-field_tm_team_points_tm_2
 features[image][] = spielerbild
 features[image][] = vereinslogo
+features[image][] = vereinslogo_klein
 features[node][] = mannschaft
 features[node][] = spieler
 features[node][] = team_match

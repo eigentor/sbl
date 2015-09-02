@@ -65,6 +65,21 @@ function sbl_ligaverwaltung_image_default_styles() {
     ),
   );
 
+  // Exported image style: vereinslogo_klein.
+  $styles['vereinslogo_klein'] = array(
+    'label' => 'Vereinslogo klein',
+    'effects' => array(
+      37 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 30,
+          'height' => 30,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   return $styles;
 }
 
