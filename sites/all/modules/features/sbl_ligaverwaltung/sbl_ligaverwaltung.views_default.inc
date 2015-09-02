@@ -295,9 +295,27 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: Content pane Spieler Liste pro Verein */
-  $handler = $view->new_display('panel_pane', 'Content pane Spieler Liste pro Verein', 'panel_pane_1');
+  /* Display: Content pane Kader pro Verein */
+  $handler = $view->new_display('panel_pane', 'Content pane Kader pro Verein', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Saison */
+  $handler->display->display_options['fields']['field_saison']['id'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['fields']['field_saison']['field'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['label'] = '';
+  $handler->display->display_options['fields']['field_saison']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_saison']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_saison']['alter']['text'] = '[field_saison-tid]';
+  $handler->display->display_options['fields']['field_saison']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_saison']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Field collection item: Brett-Nr. */
   $handler->display->display_options['fields']['field_pl_board_nr']['id'] = 'field_pl_board_nr';
   $handler->display->display_options['fields']['field_pl_board_nr']['table'] = 'field_data_field_pl_board_nr';
@@ -312,7 +330,10 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_sp_verein_node';
   $handler->display->display_options['fields']['title']['label'] = 'Name';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'spieler/[nid]/[field_saison]';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field collection item: Verein (field_fc_verein) */
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['id'] = 'field_fc_verein_target_id';
@@ -427,7 +448,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Node, der Field Collection field_sp_verein enthält'),
     t('Name'),
     t('Alle'),
-    t('Content pane Spieler Liste pro Verein'),
+    t('Content pane Kader pro Verein'),
+    t('[field_saison-tid]'),
     t('Brett-Nr.'),
     t('View panes'),
     t('Content pane Spielerkarte Daten 1'),
