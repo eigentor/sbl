@@ -1,0 +1,4 @@
+name = SBL Helper
+description = Verschiedene kleinere Funktionen, für die kein eigenes Modul lohnt
+package = Schach-Bundesliga
+core = 7.x

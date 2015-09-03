@@ -1,0 +1,28 @@
+<?php
+
+function set_current_season() {
+  return 144;
+}
+function sbl_form_helper_views_pre_execute(&$view) {
+  if ($view->name == 'single_games_player') {
+    //extracts the field collection items
+    //$query2 = db_select('field_collection_item', 'field_collection_item');
+    //dpm($view);
+//    $player_nid = arg(1) ;
+//
+//    $result = db_query("
+//      SELECT f.item_id
+//      FROM {field_collection_item} f
+//       LEFT JOIN {field_data_field_mt_player_1} fp
+//      ON f.item_id = fp.entity_id
+//      WHERE f.field_name = 'field_tm_game'
+//      AND fp.field_mt_player_1_target_id = :player_nid",
+//      array(':player_nid' => $player_nid)
+//    );
+
+//   foreach ($result as $record) {
+//     dpm($record->item_id);
+//   }
+    //dpm($result);
+  }
+}
