@@ -45,9 +45,10 @@ function filter_single_games_player($row) {
   $season_result = $season_query->execute();
 
 
-  if(!isset($single_game_player_1['field_collection_item']) && !isset($single_game_player_2['field_collection_item'])
-    && isset($season_result['node']) ) {
+  if(!isset($single_game_player_1['field_collection_item']) && !isset($single_game_player_2['field_collection_item'])) {
     return TRUE;
+  } elseif (!isset($season_result['node'])) {
+      return TRUE;
   }
 
 
