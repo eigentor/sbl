@@ -477,6 +477,17 @@ margin-bottom:0.2em !important;
 margin-bottom:10px;
 }
 
+.one-fourth-border {
+    width: 22.5%;
+	margin-top: 25px;
+	margin-right: 2%;
+	float: left;
+    margin-bottom: 15px;
+    padding: 0px;
+    position: relative;
+	text-align:center;
+	border:1px solid #666;
+}
 
 /*------------------------------------*\
 	Box-Effekt

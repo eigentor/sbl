@@ -5550,6 +5550,112 @@ function sbl_views_views_default_views() {
   $export['topic_trending'] = $view;
 
   $view = new view();
+  $view->name = 'vereinsuebersicht';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Vereinsübersicht';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Vereine der Schachbundesliga Saison 2015/16';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '16';
+  $handler->display->display_options['style_plugin'] = 'semanticviews_default';
+  $handler->display->display_options['style_options']['row']['class'] = 'one-fourth-border';
+  $handler->display->display_options['style_options']['row']['first_class'] = '';
+  $handler->display->display_options['style_options']['row']['striping_classes'] = '';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'verein/[nid]/144';
+  $handler->display->display_options['fields']['title']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Logo Club */
+  $handler->display->display_options['fields']['field_logo_team']['id'] = 'field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['table'] = 'field_data_field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['field'] = 'field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['label'] = '';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_team']['alter']['path'] = 'verein/[nid]/144';
+  $handler->display->display_options['fields']['field_logo_team']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo_team']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo_team']['settings'] = array(
+    'image_style' => 'vereinslogo',
+    'image_link' => '',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'mannschaft' => 'mannschaft',
+  );
+  /* Filter criterion: Content: Saison (field_t_saison) */
+  $handler->display->display_options['filters']['field_t_saison_tid']['id'] = 'field_t_saison_tid';
+  $handler->display->display_options['filters']['field_t_saison_tid']['table'] = 'field_data_field_t_saison';
+  $handler->display->display_options['filters']['field_t_saison_tid']['field'] = 'field_t_saison_tid';
+  $handler->display->display_options['filters']['field_t_saison_tid']['value'] = array(
+    144 => '144',
+  );
+  $handler->display->display_options['filters']['field_t_saison_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_t_saison_tid']['vocabulary'] = 'saison';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'vereine-der-bundesliga';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Teams';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['vereinsuebersicht'] = array(
+    t('Master'),
+    t('Vereine der Schachbundesliga Saison 2015/16'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('[title]'),
+    t('Page'),
+  );
+  $export['vereinsuebersicht'] = $view;
+
+  $view = new view();
   $view->name = 'video';
   $view->description = '';
   $view->tag = 'default';
