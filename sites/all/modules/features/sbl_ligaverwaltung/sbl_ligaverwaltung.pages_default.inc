@@ -122,6 +122,25 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     $display->content['new-42a8e869-d8d6-48ec-b208-dc094c0bab23'] = $pane;
     $display->panels['bottom'][1] = 'new-42a8e869-d8d6-48ec-b208-dc094c0bab23';
     $pane = new stdClass();
+    $pane->pid = 'new-8df637cd-b2f7-4372-8ad6-d48580d1511b';
+    $pane->panel = 'bottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'single_games_player-panel_pane_2';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '8df637cd-b2f7-4372-8ad6-d48580d1511b';
+    $display->content['new-8df637cd-b2f7-4372-8ad6-d48580d1511b'] = $pane;
+    $display->panels['bottom'][2] = 'new-8df637cd-b2f7-4372-8ad6-d48580d1511b';
+    $pane = new stdClass();
     $pane->pid = 'new-39ffd5ec-18df-4705-be9a-dd4db53481d2';
     $pane->panel = 'left';
     $pane->type = 'views_panes';
