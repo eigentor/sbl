@@ -795,6 +795,96 @@ function sbl_ligaverwaltung_views_default_views() {
 
   /* Display: Content pane Verein Basisdaten 1 */
   $handler = $view->new_display('panel_pane', 'Content pane Verein Basisdaten 1', 'panel_pane_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '1';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_facebook' => 'field_facebook',
+    'field_twitter_club' => 'field_twitter_club',
+    'field_website_club' => 'field_website_club',
+    'field_der_bundesliga_seit' => 'field_der_bundesliga_seit',
+  );
+  $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Logo Club */
+  $handler->display->display_options['fields']['field_logo_team']['id'] = 'field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['table'] = 'field_data_field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['field'] = 'field_logo_team';
+  $handler->display->display_options['fields']['field_logo_team']['label'] = '';
+  $handler->display->display_options['fields']['field_logo_team']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo_team']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_logo_team']['element_wrapper_class'] = 'two-fifth';
+  $handler->display->display_options['fields']['field_logo_team']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo_team']['settings'] = array(
+    'image_style' => 'vereinslogo',
+    'image_link' => '',
+  );
+  /* Field: Content: Facebook */
+  $handler->display->display_options['fields']['field_facebook']['id'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['table'] = 'field_data_field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
+  $handler->display->display_options['fields']['field_facebook']['label'] = '';
+  $handler->display->display_options['fields']['field_facebook']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook']['alter']['text'] = '<a href="[field_facebook-url]" class="tooltip" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_facebook']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_facebook']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_facebook']['element_wrapper_class'] = 'one-fifth';
+  $handler->display->display_options['fields']['field_facebook']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_facebook']['click_sort_column'] = 'url';
+  /* Field: Content: Twitter */
+  $handler->display->display_options['fields']['field_twitter_club']['id'] = 'field_twitter_club';
+  $handler->display->display_options['fields']['field_twitter_club']['table'] = 'field_data_field_twitter_club';
+  $handler->display->display_options['fields']['field_twitter_club']['field'] = 'field_twitter_club';
+  $handler->display->display_options['fields']['field_twitter_club']['label'] = '';
+  $handler->display->display_options['fields']['field_twitter_club']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_twitter_club']['alter']['text'] = '<a href="[field_twitter_club-url]" class="tooltip" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_twitter_club']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_class'] = 'one-fifth';
+  $handler->display->display_options['fields']['field_twitter_club']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_twitter_club']['click_sort_column'] = 'url';
+  /* Field: Content: Website */
+  $handler->display->display_options['fields']['field_website_club']['id'] = 'field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['table'] = 'field_data_field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['label'] = '';
+  $handler->display->display_options['fields']['field_website_club']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip" title="Website"><i class="fa fa-globe fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_website_club']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_website_club']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_website_club']['element_wrapper_class'] = 'one-fifth last';
+  $handler->display->display_options['fields']['field_website_club']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_website_club']['click_sort_column'] = 'url';
+  /* Field: Content: In der Liga seit */
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['id'] = 'field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['table'] = 'field_data_field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['field'] = 'field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_wrapper_class'] = 'margin10';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['hide_empty'] = TRUE;
+  /* Field: Content: Größte Erfolge */
+  $handler->display->display_options['fields']['field_groesste_erfolge']['id'] = 'field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['table'] = 'field_data_field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['field'] = 'field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['hide_empty'] = TRUE;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'panel',
@@ -808,11 +898,21 @@ function sbl_ligaverwaltung_views_default_views() {
 
   /* Display: Content pane Verein Basisdaten 2 */
   $handler = $view->new_display('panel_pane', 'Content pane Verein Basisdaten 2', 'panel_pane_2');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Spielort */
   $handler->display->display_options['fields']['field_venue_club']['id'] = 'field_venue_club';
   $handler->display->display_options['fields']['field_venue_club']['table'] = 'field_data_field_venue_club';
   $handler->display->display_options['fields']['field_venue_club']['field'] = 'field_venue_club';
+  $handler->display->display_options['fields']['field_venue_club']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_venue_club']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_venue_club']['element_wrapper_class'] = 'one-third';
   $handler->display->display_options['fields']['field_venue_club']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_venue_club']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_venue_club']['settings'] = array(
@@ -821,61 +921,38 @@ function sbl_ligaverwaltung_views_default_views() {
       'address' => 'address',
     ),
   );
-  /* Field: Content: Reisepartner */
-  $handler->display->display_options['fields']['field_travel_partner_club']['id'] = 'field_travel_partner_club';
-  $handler->display->display_options['fields']['field_travel_partner_club']['table'] = 'field_data_field_travel_partner_club';
-  $handler->display->display_options['fields']['field_travel_partner_club']['field'] = 'field_travel_partner_club';
-  $handler->display->display_options['fields']['field_travel_partner_club']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_travel_partner_club']['click_sort_column'] = 'url';
   /* Field: Content: Heimspiele */
   $handler->display->display_options['fields']['field_heimspiele']['id'] = 'field_heimspiele';
   $handler->display->display_options['fields']['field_heimspiele']['table'] = 'field_data_field_heimspiele';
   $handler->display->display_options['fields']['field_heimspiele']['field'] = 'field_heimspiele';
+  $handler->display->display_options['fields']['field_heimspiele']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_heimspiele']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_heimspiele']['element_wrapper_class'] = 'two-third last';
   $handler->display->display_options['fields']['field_heimspiele']['hide_empty'] = TRUE;
   /* Field: Content: Vorsitzender */
   $handler->display->display_options['fields']['field_chairman_club']['id'] = 'field_chairman_club';
   $handler->display->display_options['fields']['field_chairman_club']['table'] = 'field_data_field_chairman_club';
   $handler->display->display_options['fields']['field_chairman_club']['field'] = 'field_chairman_club';
+  $handler->display->display_options['fields']['field_chairman_club']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_chairman_club']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_chairman_club']['element_wrapper_class'] = 'one-third';
   $handler->display->display_options['fields']['field_chairman_club']['hide_empty'] = TRUE;
   /* Field: Content: Mannschaftsführer */
   $handler->display->display_options['fields']['field_captain_team']['id'] = 'field_captain_team';
   $handler->display->display_options['fields']['field_captain_team']['table'] = 'field_data_field_captain_team';
   $handler->display->display_options['fields']['field_captain_team']['field'] = 'field_captain_team';
+  $handler->display->display_options['fields']['field_captain_team']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_captain_team']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_captain_team']['element_wrapper_class'] = 'one-third';
   $handler->display->display_options['fields']['field_captain_team']['hide_empty'] = TRUE;
   /* Field: Content: Internet-Verantwortlicher */
   $handler->display->display_options['fields']['field_web_admin_club']['id'] = 'field_web_admin_club';
   $handler->display->display_options['fields']['field_web_admin_club']['table'] = 'field_data_field_web_admin_club';
   $handler->display->display_options['fields']['field_web_admin_club']['field'] = 'field_web_admin_club';
+  $handler->display->display_options['fields']['field_web_admin_club']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_web_admin_club']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_web_admin_club']['element_wrapper_class'] = 'one-third last';
   $handler->display->display_options['fields']['field_web_admin_club']['hide_empty'] = TRUE;
-  /* Field: Content: Twitter */
-  $handler->display->display_options['fields']['field_twitter_club']['id'] = 'field_twitter_club';
-  $handler->display->display_options['fields']['field_twitter_club']['table'] = 'field_data_field_twitter_club';
-  $handler->display->display_options['fields']['field_twitter_club']['field'] = 'field_twitter_club';
-  $handler->display->display_options['fields']['field_twitter_club']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_twitter_club']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_twitter_club']['click_sort_column'] = 'url';
-  /* Field: Content: Website */
-  $handler->display->display_options['fields']['field_website_club']['id'] = 'field_website_club';
-  $handler->display->display_options['fields']['field_website_club']['table'] = 'field_data_field_website_club';
-  $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
-  $handler->display->display_options['fields']['field_website_club']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_website_club']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_website_club']['click_sort_column'] = 'url';
-  /* Field: Content: Facebook */
-  $handler->display->display_options['fields']['field_facebook']['id'] = 'field_facebook';
-  $handler->display->display_options['fields']['field_facebook']['table'] = 'field_data_field_facebook';
-  $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
-  $handler->display->display_options['fields']['field_facebook']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_facebook']['click_sort_column'] = 'url';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="website">[field_website_club]</div>
-<div class="facebook">[field_facebook]</div>
-<div class="twitter">[field_twitter_club]</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'panel',
@@ -905,19 +982,18 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Content: Logo Club */
-  $handler->display->display_options['fields']['field_logo_team']['id'] = 'field_logo_team';
-  $handler->display->display_options['fields']['field_logo_team']['table'] = 'field_data_field_logo_team';
-  $handler->display->display_options['fields']['field_logo_team']['field'] = 'field_logo_team';
-  $handler->display->display_options['fields']['field_logo_team']['label'] = '';
-  $handler->display->display_options['fields']['field_logo_team']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_logo_team']['alter']['path'] = 'verein/[nid]/144';
-  $handler->display->display_options['fields']['field_logo_team']['alter']['alt'] = '[title]';
-  $handler->display->display_options['fields']['field_logo_team']['alter']['link_class'] = 'tooltip';
-  $handler->display->display_options['fields']['field_logo_team']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo_team']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_logo_team']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_logo_team']['settings'] = array(
+  /* Field: Content: Logo Icon */
+  $handler->display->display_options['fields']['field_logo_icon']['id'] = 'field_logo_icon';
+  $handler->display->display_options['fields']['field_logo_icon']['table'] = 'field_data_field_logo_icon';
+  $handler->display->display_options['fields']['field_logo_icon']['field'] = 'field_logo_icon';
+  $handler->display->display_options['fields']['field_logo_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['path'] = 'verein/[nid]/144';
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['link_class'] = 'tooltip';
+  $handler->display->display_options['fields']['field_logo_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_logo_icon']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo_icon']['settings'] = array(
     'image_style' => 'vereinslogo_klein',
     'image_link' => '',
   );
@@ -959,20 +1035,16 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Größte Erfolge'),
     t('Alle'),
     t('Content pane Verein Basisdaten 1'),
+    t('<a href="[field_facebook-url]" class="tooltip" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>'),
+    t('<a href="[field_twitter_club-url]" class="tooltip" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>'),
+    t('<a href="[field_website_club-url]" class="tooltip" title="Website"><i class="fa fa-globe fa-2x"></i></a>'),
     t('View panes'),
     t('Content pane Verein Basisdaten 2'),
     t('Spielort'),
-    t('Reisepartner'),
     t('Heimspiele'),
     t('Vorsitzender'),
     t('Mannschaftsführer'),
     t('Internet-Verantwortlicher'),
-    t('Twitter'),
-    t('Website'),
-    t('Facebook'),
-    t('<div class="website">[field_website_club]</div>
-<div class="facebook">[field_facebook]</div>
-<div class="twitter">[field_twitter_club]</div>'),
     t('Block Vereinslogos klein'),
     t('[title]'),
   );
