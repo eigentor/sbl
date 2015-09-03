@@ -3,26 +3,53 @@
 function set_current_season() {
   return 144;
 }
-function sbl_form_helper_views_pre_execute(&$view) {
-  if ($view->name == 'single_games_player') {
-    //extracts the field collection items
-    //$query2 = db_select('field_collection_item', 'field_collection_item');
-    //dpm($view);
-//    $player_nid = arg(1) ;
-//
-//    $result = db_query("
-//      SELECT f.item_id
-//      FROM {field_collection_item} f
-//       LEFT JOIN {field_data_field_mt_player_1} fp
-//      ON f.item_id = fp.entity_id
-//      WHERE f.field_name = 'field_tm_game'
-//      AND fp.field_mt_player_1_target_id = :player_nid",
-//      array(':player_nid' => $player_nid)
-//    );
 
-//   foreach ($result as $record) {
-//     dpm($record->item_id);
-//   }
-    //dpm($result);
+function filter_single_games_player($row) {
+  $player = arg(1);
+  $season = arg(2);
+
+  // Check if the field collection has the player as player 1, whose
+  // player's page is displayed
+  $single_game_query_player_1 = new EntityFieldQuery();
+
+  $single_game_query_player_1->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_tm_game')
+    ->propertyCondition('item_id', $row->field_mt_player_2)
+    ->fieldCondition('field_mt_player_1', 'target_id', $player)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $single_game_player_1 = $single_game_query_player_1->execute();
+
+  $single_game_query_player_2 = new EntityFieldQuery();
+
+  $single_game_query_player_2->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_tm_game')
+    ->propertyCondition('item_id', $row->field_mt_player_2)
+    ->fieldCondition('field_mt_player_2', 'target_id', $player)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $single_game_player_2 = $single_game_query_player_2->execute();
+
+  // Check also for the season
+  $season_query = new EntityFieldQuery();
+
+  $season_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'team_match')
+    ->propertyCondition('nid', $row->field_tm_spieltag)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $season_result = $season_query->execute();
+
+
+  if(!isset($single_game_player_1['field_collection_item']) && !isset($single_game_player_2['field_collection_item'])
+    && isset($season_result['node']) ) {
+    return TRUE;
   }
+
+
+
 }
