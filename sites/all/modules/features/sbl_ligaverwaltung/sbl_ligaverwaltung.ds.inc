@@ -329,7 +329,7 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
     'regions' => array(
       'header' => array(
         0 => 'field_tm_saison',
-        1 => 'field_tm_spieltag',
+        1 => 'field_tm_spieltag_1',
         2 => 'field_datum',
         3 => 'body',
       ),
@@ -349,7 +349,7 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_tm_saison' => 'header',
-      'field_tm_spieltag' => 'header',
+      'field_tm_spieltag_1' => 'header',
       'field_datum' => 'header',
       'body' => 'header',
       'field_tm_team_1' => 'left',
@@ -373,6 +373,8 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => 0,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
   );
   $export['node|team_match|full'] = $ds_layout;
 

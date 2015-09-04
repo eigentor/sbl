@@ -2350,52 +2350,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_spieltag'
-  $field_instances['node-team_match-field_tm_spieltag'] = array(
-    'bundle' => 'team_match',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tm_spieltag',
-    'label' => 'Spieltag',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => '',
-      ),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-team_match-field_tm_spieltag_1'
   $field_instances['node-team_match-field_tm_spieltag_1'] = array(
     'bundle' => 'team_match',
@@ -2412,9 +2366,10 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'list_default',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2425,7 +2380,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tm_spieltag_1',
-    'label' => 'Spieltag neu',
+    'label' => 'Spieltag',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -2679,7 +2634,6 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Spieler 2');
   t('Spielort');
   t('Spieltag');
-  t('Spieltag neu');
   t('Twitter');
   t('URL der Facebook-Präsenz des Klubs, sofern vorhanden');
   t('URL der Twitterseite des Klubs, sofern vorhanden');
