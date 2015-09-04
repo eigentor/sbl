@@ -590,7 +590,7 @@ function sbl_ligaverwaltung_views_default_views() {
   /* Display: Content pane Einzelspiele Heim */
   $handler = $view->new_display('panel_pane', 'Content pane Einzelspiele Heim', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Heimspiele';
+  $handler->display->display_options['title'] = 'Ergebnisse und Gegner';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Spieltag */
   $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
@@ -614,6 +614,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_mt_player_1']['table'] = 'field_data_field_mt_player_1';
   $handler->display->display_options['fields']['field_mt_player_1']['field'] = 'field_mt_player_1';
   $handler->display->display_options['fields']['field_mt_player_1']['label'] = '';
+  $handler->display->display_options['fields']['field_mt_player_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_mt_player_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_mt_player_1']['settings'] = array(
     'link' => 0,
@@ -669,77 +670,6 @@ function sbl_ligaverwaltung_views_default_views() {
       'label' => 'Inhalt: Saison (field_tm_saison)',
     ),
   );
-
-  /* Display: Content pane Einzelspiele auswärts */
-  $handler = $view->new_display('panel_pane', 'Content pane Einzelspiele auswärts', 'panel_pane_2');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_tm_spieltag']['id'] = 'field_tm_spieltag';
-  $handler->display->display_options['fields']['field_tm_spieltag']['table'] = 'field_data_field_tm_spieltag';
-  $handler->display->display_options['fields']['field_tm_spieltag']['field'] = 'field_tm_spieltag';
-  $handler->display->display_options['fields']['field_tm_spieltag']['relationship'] = 'field_tm_game_node';
-  /* Field: Content: Datum */
-  $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
-  $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
-  $handler->display->display_options['fields']['field_datum']['field'] = 'field_datum';
-  $handler->display->display_options['fields']['field_datum']['relationship'] = 'field_tm_game_node';
-  $handler->display->display_options['fields']['field_datum']['settings'] = array(
-    'format_type' => 'short_no_time',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Field collection item: Spieler 1 */
-  $handler->display->display_options['fields']['field_mt_player_1']['id'] = 'field_mt_player_1';
-  $handler->display->display_options['fields']['field_mt_player_1']['table'] = 'field_data_field_mt_player_1';
-  $handler->display->display_options['fields']['field_mt_player_1']['field'] = 'field_mt_player_1';
-  $handler->display->display_options['fields']['field_mt_player_1']['label'] = 'Gegner: Name';
-  $handler->display->display_options['fields']['field_mt_player_1']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field collection item: Spieler 2 (field_mt_player_2) */
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['id'] = 'field_mt_player_2_target_id';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['table'] = 'field_data_field_mt_player_2';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['field'] = 'field_mt_player_2_target_id';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_mt_player_2_target_id']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Saison (field_tm_saison) */
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['field'] = 'field_tm_saison_tid';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['relationship'] = 'field_tm_game_node';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['default_argument_options']['index'] = '2';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_tm_saison_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['argument_input'] = array(
-    'field_tm_saison_tid' => array(
-      'type' => 'panel',
-      'context' => 'entity:node.field_addthis',
-      'context_optional' => 0,
-      'panel' => '2',
-      'fixed' => '',
-      'label' => 'Inhalt: Saison (field_tm_saison)',
-    ),
-    'field_mt_player_2_target_id' => array(
-      'type' => 'panel',
-      'context' => 'entity:node.field_addthis',
-      'context_optional' => 0,
-      'panel' => '1',
-      'fixed' => '',
-      'label' => 'Field collection item: Spieler 2 (field_mt_player_2)',
-    ),
-  );
   $translatables['single_games_player'] = array(
     t('Master'),
     t('Auswärtsspiele'),
@@ -757,10 +687,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Gegner: Name'),
     t('Alle'),
     t('Content pane Einzelspiele Heim'),
-    t('Heimspiele'),
+    t('Ergebnisse und Gegner'),
     t('Spieltag'),
     t('View panes'),
-    t('Content pane Einzelspiele auswärts'),
   );
   $export['single_games_player'] = $view;
 
