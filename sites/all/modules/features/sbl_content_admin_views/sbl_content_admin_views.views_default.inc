@@ -160,6 +160,140 @@ function sbl_content_admin_views_views_default_views() {
   $export['content_overview'] = $view;
 
   $view = new view();
+  $view->name = 'mannchaftsmatches';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Mannchaftsmatches';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Mannchaftsmatches Übersicht für Admin';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Field: Content: Spieltag */
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['field'] = 'field_tm_spieltag_1';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Mannschaft 1 */
+  $handler->display->display_options['fields']['field_tm_team_1']['id'] = 'field_tm_team_1';
+  $handler->display->display_options['fields']['field_tm_team_1']['table'] = 'field_data_field_tm_team_1';
+  $handler->display->display_options['fields']['field_tm_team_1']['field'] = 'field_tm_team_1';
+  $handler->display->display_options['fields']['field_tm_team_1']['label'] = 'Heimmannschaft';
+  $handler->display->display_options['fields']['field_tm_team_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_team_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Mannschaft 2 */
+  $handler->display->display_options['fields']['field_tm_team_2']['id'] = 'field_tm_team_2';
+  $handler->display->display_options['fields']['field_tm_team_2']['table'] = 'field_data_field_tm_team_2';
+  $handler->display->display_options['fields']['field_tm_team_2']['field'] = 'field_tm_team_2';
+  $handler->display->display_options['fields']['field_tm_team_2']['label'] = 'Gastmannschaft';
+  $handler->display->display_options['fields']['field_tm_team_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_team_2']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Mannschaftspunkte Mannschaft 1 */
+  $handler->display->display_options['fields']['field_tm_team_points_tm_1']['id'] = 'field_tm_team_points_tm_1';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_1']['table'] = 'field_data_field_tm_team_points_tm_1';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_1']['field'] = 'field_tm_team_points_tm_1';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_1']['label'] = 'Mannschaftspunkte Heimmannschaft';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Mannschaftspunkte Mannschaft 2 */
+  $handler->display->display_options['fields']['field_tm_team_points_tm_2']['id'] = 'field_tm_team_points_tm_2';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_2']['table'] = 'field_data_field_tm_team_points_tm_2';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_2']['field'] = 'field_tm_team_points_tm_2';
+  $handler->display->display_options['fields']['field_tm_team_points_tm_2']['label'] = 'Mannschaftspunkte Gastmannschaft';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'team_match' => 'team_match',
+  );
+  /* Filter criterion: Content: Saison (field_tm_saison) */
+  $handler->display->display_options['filters']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['field'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['operator_id'] = 'field_tm_saison_tid_op';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['label'] = 'Saison';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['operator'] = 'field_tm_saison_tid_op';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['identifier'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_tm_saison_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['vocabulary'] = 'saison';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/mannschafts-matches';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Mannschaftsmatches Übersicht';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['mannchaftsmatches'] = array(
+    t('Master'),
+    t('Mannchaftsmatches Übersicht für Admin'),
+    t('more'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Spieltag'),
+    t('Title'),
+    t('Heimmannschaft'),
+    t('Gastmannschaft'),
+    t('Mannschaftspunkte Heimmannschaft'),
+    t('Mannschaftspunkte Gastmannschaft'),
+    t('Saison'),
+    t('Page'),
+  );
+  $export['mannchaftsmatches'] = $view;
+
+  $view = new view();
   $view->name = 'players_overview';
   $view->description = '';
   $view->tag = 'default';
