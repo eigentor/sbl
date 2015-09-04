@@ -511,6 +511,12 @@ function sbl_ligaverwaltung_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="view-title">Ergebnisse und Gegner [field_tm_saison]</h2>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   /* Relationship: Field collection item: Entity with the Einzelspiel (field_tm_game) */
   $handler->display->display_options['relationships']['field_tm_game_node']['id'] = 'field_tm_game_node';
   $handler->display->display_options['relationships']['field_tm_game_node']['table'] = 'field_collection_item';
@@ -590,8 +596,15 @@ function sbl_ligaverwaltung_views_default_views() {
   /* Display: Content pane Einzelspiele Heim */
   $handler = $view->new_display('panel_pane', 'Content pane Einzelspiele Heim', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Ergebnisse und Gegner';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Saison */
+  $handler->display->display_options['fields']['field_tm_saison']['id'] = 'field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison']['field'] = 'field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['fields']['field_tm_saison']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_saison']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_saison']['element_label_colon'] = FALSE;
   /* Field: Content: Spieltag */
   $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
   $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
@@ -627,14 +640,6 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_mt_player_2']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Saison */
-  $handler->display->display_options['fields']['field_tm_saison']['id'] = 'field_tm_saison';
-  $handler->display->display_options['fields']['field_tm_saison']['table'] = 'field_data_field_tm_saison';
-  $handler->display->display_options['fields']['field_tm_saison']['field'] = 'field_tm_saison';
-  $handler->display->display_options['fields']['field_tm_saison']['relationship'] = 'field_tm_game_node';
-  $handler->display->display_options['fields']['field_tm_saison']['label'] = '';
-  $handler->display->display_options['fields']['field_tm_saison']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_tm_saison']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -679,6 +684,7 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<h2 class="view-title">Ergebnisse und Gegner [field_tm_saison]</h2>'),
     t('Node that contains the field collection field_tm_game'),
     t('Spieler 1 referenziert in field_mt_player_1'),
     t('Spieler 2 referenziert in field_mt_player_2'),
@@ -687,7 +693,6 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Gegner: Name'),
     t('Alle'),
     t('Content pane Einzelspiele Heim'),
-    t('Ergebnisse und Gegner'),
     t('Spieltag'),
     t('View panes'),
   );
