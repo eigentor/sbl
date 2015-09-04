@@ -2082,7 +2082,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -2148,7 +2148,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'year_range' => '-6:+2',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -2296,7 +2296,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2346,7 +2346,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -2393,6 +2393,51 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-team_match-field_tm_spieltag_1'
+  $field_instances['node-team_match-field_tm_spieltag_1'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tm_spieltag_1',
+    'label' => 'Spieltag neu',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
     ),
   );
 
@@ -2634,6 +2679,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Spieler 2');
   t('Spielort');
   t('Spieltag');
+  t('Spieltag neu');
   t('Twitter');
   t('URL der Facebook-Präsenz des Klubs, sofern vorhanden');
   t('URL der Twitterseite des Klubs, sofern vorhanden');

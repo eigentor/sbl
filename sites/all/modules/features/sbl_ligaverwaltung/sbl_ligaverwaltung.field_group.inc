@@ -54,7 +54,7 @@ function sbl_ligaverwaltung_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Gastmannschaft',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_tm_board_points_team_2',
       1 => 'field_tm_team_2',
@@ -88,7 +88,7 @@ function sbl_ligaverwaltung_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Heimmannschaft',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_tm_board_points_team_1',
       1 => 'field_tm_team_1',

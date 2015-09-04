@@ -65,18 +65,21 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_tm_team_points_tm_2']['table'] = 'field_data_field_tm_team_points_tm_2';
   $handler->display->display_options['fields']['field_tm_team_points_tm_2']['field'] = 'field_tm_team_points_tm_2';
   $handler->display->display_options['fields']['field_tm_team_points_tm_2']['label'] = 'Mannschaftspunkte Gastmannschaft';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_tm_points_team_1']['id'] = 'field_tm_points_team_1';
-  $handler->display->display_options['fields']['field_tm_points_team_1']['table'] = 'field_data_field_tm_points_team_1';
-  $handler->display->display_options['fields']['field_tm_points_team_1']['field'] = 'field_tm_points_team_1';
-  $handler->display->display_options['fields']['field_tm_points_team_1']['label'] = 'Brettpunkte Heimmannschaft';
-  $handler->display->display_options['fields']['field_tm_points_team_1']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_tm_points_team_2']['id'] = 'field_tm_points_team_2';
-  $handler->display->display_options['fields']['field_tm_points_team_2']['table'] = 'field_data_field_tm_points_team_2';
-  $handler->display->display_options['fields']['field_tm_points_team_2']['field'] = 'field_tm_points_team_2';
-  $handler->display->display_options['fields']['field_tm_points_team_2']['label'] = 'Brettpunkte Gastmannschaft';
-  $handler->display->display_options['fields']['field_tm_points_team_2']['element_label_colon'] = FALSE;
+  /* Field: Content: Spieltag */
+  $handler->display->display_options['fields']['field_tm_spieltag']['id'] = 'field_tm_spieltag';
+  $handler->display->display_options['fields']['field_tm_spieltag']['table'] = 'field_data_field_tm_spieltag';
+  $handler->display->display_options['fields']['field_tm_spieltag']['field'] = 'field_tm_spieltag';
+  /* Field: Content: Spieltag neu */
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['field'] = 'field_tm_spieltag_1';
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = 'Anzahl Ergebnisse';
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  $handler->display->display_options['fields']['counter']['reverse'] = 0;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -114,8 +117,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Gastmannschaft'),
     t('Mannschaftspunkte Heimmannschaft'),
     t('Mannschaftspunkte Gastmannschaft'),
-    t('Brettpunkte Heimmannschaft'),
-    t('Brettpunkte Gastmannschaft'),
+    t('Spieltag'),
+    t('Spieltag neu'),
+    t('Anzahl Ergebnisse'),
     t('Page'),
   );
   $export['mannchaftsmatches'] = $view;
@@ -661,11 +665,11 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_mt_player_2']['settings'] = array(
     'link' => 0,
   );
-  /* Sort criterion: Content: Datum (field_datum) */
-  $handler->display->display_options['sorts']['field_datum_value']['id'] = 'field_datum_value';
-  $handler->display->display_options['sorts']['field_datum_value']['table'] = 'field_data_field_datum';
-  $handler->display->display_options['sorts']['field_datum_value']['field'] = 'field_datum_value';
-  $handler->display->display_options['sorts']['field_datum_value']['relationship'] = 'field_tm_game_node';
+  /* Sort criterion: Content: Spieltag neu (field_tm_spieltag_1) */
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['id'] = 'field_tm_spieltag_1_value';
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['field'] = 'field_tm_spieltag_1_value';
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['relationship'] = 'field_tm_game_node';
   /* Contextual filter: Content: Saison (field_tm_saison) */
   $handler->display->display_options['arguments']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
   $handler->display->display_options['arguments']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
@@ -702,11 +706,12 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Heimspiele';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Spieltag */
-  $handler->display->display_options['fields']['field_tm_spieltag']['id'] = 'field_tm_spieltag';
-  $handler->display->display_options['fields']['field_tm_spieltag']['table'] = 'field_data_field_tm_spieltag';
-  $handler->display->display_options['fields']['field_tm_spieltag']['field'] = 'field_tm_spieltag';
-  $handler->display->display_options['fields']['field_tm_spieltag']['relationship'] = 'field_tm_game_node';
+  /* Field: Content: Spieltag neu */
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['field'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['label'] = 'Spieltag';
   /* Field: Content: Datum */
   $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
   $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';

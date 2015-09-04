@@ -486,10 +486,10 @@ function sbl_ligaverwaltung_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
