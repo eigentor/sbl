@@ -1,5 +1,4 @@
 <?php
-  dpm($row);
   // If the player, whose page is displayed, is player 2, display player 1 in the
   // Column "Gegner: Name"
   $player = arg(1);
