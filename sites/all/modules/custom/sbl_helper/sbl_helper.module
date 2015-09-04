@@ -51,13 +51,3 @@ function filter_single_games_player($row) {
       return TRUE;
   }
 }
-
-function copy_spieltag_values() {
-  $type = "team_match";
-  $nodes = node_load_multiple(array(), array('type' => $type));
-  foreach($nodes as $node){
-        $node->field_tm_spieltag_1[LANGUAGE_NONE][0]['value'] = $node->field_tm_spieltag[LANGUAGE_NONE][0]['value'];
-        node_save($node);
-    }
-  //dpm($nodes);
-}
