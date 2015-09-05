@@ -22,6 +22,13 @@
   margin: auto;
 }
 
+/* Menü */
+
+.zone-menu ul.nice-menu li a {
+    padding: 15px 25px;
+}
+
+
 
 /* Newsblöcke Breite und Höhe überschreiben */
 
