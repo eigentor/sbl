@@ -22,10 +22,20 @@
   margin: auto;
 }
 
+/* HR */
+
+hr.dotted {
+border-top:1px dotted #000;
+}
+
+article.node-article .field-name-field-intro, article.node-article .field-name-body {
+margin-left: 10px;
+}
+
 /* Menü */
 
 .zone-menu ul.nice-menu li a {
-    padding: 15px 23px !important;
+    padding: 15px 25px !important;
 }
 
 
