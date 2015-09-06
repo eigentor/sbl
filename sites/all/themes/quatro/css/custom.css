@@ -25,11 +25,34 @@
 /* HR */
 
 hr.dotted {
-border-top:1px dotted #000;
+border-top:1px dotted #f2f2f2;
+margin:15px 0 25px 0;
 }
 
 article.node-article .field-name-field-intro, article.node-article .field-name-body {
 margin-left: 10px !important;
+}
+
+a.webseite:before {
+   font-family: FontAwesome;
+   content: "\f0ac";
+   color:#f18000;
+   margin-right:3px;
+}
+
+
+article.node-article .field-name-field-info:before {
+   font-family: FontAwesome;
+   content: "\f05a";
+   display: inline;
+   color:#f18000;
+   font-size:1.6em;
+}
+
+article.node-article .field-name-field-info {
+border:1px solid #333366;
+padding:5px 0 0 10px;
+background-color:#f2f2f2;
 }
 
 /* Menü */

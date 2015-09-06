@@ -22,6 +22,7 @@ features[views_view][] = latest_news
 features[views_view][] = news_blog
 features[views_view][] = partiedownload
 features[views_view][] = photos
+features[views_view][] = schachgeschichten
 features[views_view][] = textblock_startseite
 features[views_view][] = topic_cuture
 features[views_view][] = topic_trending
