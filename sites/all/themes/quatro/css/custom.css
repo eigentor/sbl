@@ -55,6 +55,11 @@ padding:5px 5px 0 10px;
 background-color:#f2f2f2;
 }
 
+.teams-title {
+    font-size: 101%;
+    font-weight: bold;
+    font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
+
 /* Menü */
 
 .zone-menu ul.nice-menu li a {

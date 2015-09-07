@@ -1209,10 +1209,10 @@ function customFunctionOnPgnTextLoad() {
     if (horizontalLayout === true) {
       if (frameWidth === "") { theObj.style.width = textWidth; }
       else { document.getElementById("outerFrame").style.width = frameWidth - 2 * framePadding + "px"; }
-      theObj.style.height = (frameHeight === "" ? textHeight : (frameHeight - 2 * framePadding) + "px");
+      theObj.style.height = (frameHeight === "" ? 460 : 460 + "px");
     } else {
       theObj.style.width = (frameWidth === "" ? textWidth : (frameWidth - 2 * framePadding) + "px");
-      if (frameHeight === "") { theObj.style.height = textHeight; }
+      if (frameHeight === "") { theObj.style.height = 460; }
       else {
        var boardHeadermovesPaddingHeight = document.getElementById("boardHeadermovesPadding") ? document.getElementById("boardHeadermovesPadding").offsetHeight : 0;
        theObj.style.height = (frameHeight - boardHeight - 2 * framePadding - boardHeadermovesPaddingHeight) + "px";
