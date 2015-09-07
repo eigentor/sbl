@@ -503,6 +503,18 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-article_slider_large-block' => array(
+          'module' => 'views',
+          'delta' => 'article_slider_large-block',
+          'region' => 'submenu',
+          'weight' => '-10',
+        ),
+        'views-article_slider_large-block_1' => array(
+          'module' => 'views',
+          'delta' => 'article_slider_large-block_1',
+          'region' => 'submenu',
+          'weight' => '-9',
+        ),
         'views-topic_trending-block_1' => array(
           'module' => 'views',
           'delta' => 'topic_trending-block_1',
@@ -532,12 +544,6 @@ function sbl_kontext_context_default_contexts() {
           'delta' => '19',
           'region' => 'sidebar_second',
           'weight' => '-9',
-        ),
-        'views-article_slider_large-block' => array(
-          'module' => 'views',
-          'delta' => 'article_slider_large-block',
-          'region' => 'header_first',
-          'weight' => '-10',
         ),
       ),
     ),

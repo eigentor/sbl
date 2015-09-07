@@ -133,12 +133,6 @@ h1.title {
   padding-bottom: 0px;
 }
 
-/* Article Slider - Large */
-.view-article-slider-large .views-field-title {
-  position: absolute;
-  z-index: 10;
-  bottom: 0;
-}
 /* Home topic block */
 .block-topic-news .view-content .views-field-field-image {
   width: 150px;

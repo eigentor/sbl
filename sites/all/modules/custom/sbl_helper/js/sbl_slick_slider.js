@@ -17,6 +17,22 @@ $('.front .view-article-slider-large.view-display-id-block .view-content').slick
     slidesToShow: 1,
     slidesToScroll: 1,
     slide: 'div.views-row',
+    asNavFor: '.front .view-article-slider-large.view-display-id-block_1 .view-content'
+});
+
+$('.front .view-article-slider-large.view-display-id-block_1 .view-content').slick({
+    dots: false,
+    arrows: false,
+    infinite: false,
+    autoplay: false,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    //rows: 4,
+    //SlidesPerRow: 4,
+    vertical: true,
+    slide: 'div.views-row',
+    asNavFor: '.front .view-article-slider-large.view-display-id-block .view-content',
+    focusOnSelect: true
 });
 
 

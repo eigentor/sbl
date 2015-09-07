@@ -1,0 +1,128 @@
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- All Device widths -----------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+/** The front page Header Slideshow **/
+
+.front .view-article-slider-large.view-display-id-block .slick-dots {
+  position: absolute;
+  bottom: 68px;
+  right: 25px;
+}
+
+.slick-dots li {
+  list-style-type: none;
+  float: left;
+  margin: 0 3px;
+}
+.slick-dots li button {
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+  text-indent: -9999px;
+  width: 12px;
+  height: 12px;
+  line-height: 0;
+  border-radius: 6px;
+  moz-border-radius: 6px;
+  webkit-border-radius: 6px;
+  border: 1px solid white;
+  background: #b11711;
+}
+.slick-dots li.slick-active button {
+  background: #e38480;
+}
+
+/* Slideshow Frontpage */
+.front .zone-submenu-wrapper {
+  background: none;
+  display: block;
+}
+.front #block-views-article-slider-large-block .view-article-slider-large .view-display-id-block {
+  position: relative;
+}
+.front #block-views-article-slider-large-block .view-article-slider-large .views-field-title {
+  width: 100%;
+  background: rgba(166, 10, 4, 0.7);
+  zoom: 1;
+}
+.front #block-views-article-slider-large-block .view-article-slider-large .views-field-title:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.front #block-views-article-slider-large-block .view-article-slider-large .views-field-title a {
+  color: #fff;
+  padding: 15px 20px;
+  float: left;
+  font-size: 120%;
+  font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
+  font-weight: bold;
+}
+.front .block-views-article-slider-large-block-1 {
+  background: white;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row:hover  {
+  cursor: pointer;
+  cursor: hand;
+}
+
+
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- Tablet wide --------------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+@media screen and (min-width: 980px) {
+  .front #block-views-article-slider-large-block .view-article-slider-large .views-field-title {
+  position: absolute;
+  bottom: 0;
+  z-index: 20;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
+  width: 25%!important;
+  border: none;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-track,
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-list{
+  height: auto!important;
+}
+
+
+} /* Ende Media Query Desktop narrow */
+
+
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- Desktop ---------------------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+@media screen and (min-width: 1220px) {
+
+.front .zone-submenu-wrapper {
+  margin-top: 40px;
+}
+.front #block-views-article-slider-large-block {
+  float: left;
+  width: 880px;
+}
+.front .block-views-article-slider-large-block-1 {
+  float: left;
+  width: 299px;
+  height: 423px;
+  border: 1px solid #aaa;
+  border-left: none;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
+  width: auto!important;
+}
+
+
+} /* Ende Media Query Desktop */

@@ -257,17 +257,6 @@ article.comment h3 /* Comment title */ {
 .view-article-slideshow .attachment .views-field-title {
   text-align: right;
 }
-.view-article-slider-large .views-field-title {
-  float: right;
-}
-.view-article-slider-large .views-field-title a {
-  float: right;
-}
-.view-article-slider-large .flex-control-nav {
-  float: left;
-  right: auto;
-  left: 10px;
-}
 /* List Articles */
 .view-list-articles .views-field-field-image .field-topic {
   left: auto;
