@@ -38,6 +38,7 @@ $('.front .view-article-slider-large.view-display-id-block_1 .view-content').sli
 
 
 
+
     } // end of attach function
   };
 })(jq111); // This makes sure everything above uses Jquery 1.11

@@ -39,9 +39,16 @@
 .front .zone-submenu-wrapper {
   background: none;
   display: block;
+  position: relative;
+}
+.front #block-views-article-slider-large-block  {
+  z-index: 2;
 }
 .front #block-views-article-slider-large-block .view-article-slider-large .view-display-id-block {
   position: relative;
+}
+.front #block-views-article-slider-large-block .view-article-slider-large .views-row {
+  z-index: 10!important;
 }
 .front #block-views-article-slider-large-block .view-article-slider-large .views-field-title {
   width: 100%;
@@ -66,6 +73,7 @@
 }
 .front .block-views-article-slider-large-block-1 {
   background: white;
+  z-index: 19;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
   float: none;
@@ -156,6 +164,7 @@
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
   float: none;
+  position: relative;
   width: auto!important;
   padding: 7px 0;
   border-bottom: 2px solid #777;
