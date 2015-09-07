@@ -169,6 +169,9 @@
   padding: 7px 0;
   border-bottom: 2px solid #777;
 }
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row.active-thumb {
+  background: #eee;
+}
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .view-footer a {
   display: block;
 }
