@@ -51,3 +51,29 @@ function filter_single_games_player($row) {
       return TRUE;
   }
 }
+
+/*
+ * Load scripts and the matching jquery versions on certain pages
+ */
+
+function sbl_helper_init() {
+
+
+  $module_path = drupal_get_path('module', 'sbl_helper');
+
+// load the slick script and jquery 1.11 on the front page
+
+// load the diplayed path. This is necessary for paths that are just aliases
+// It also works for system paths and thus is more reliable than arg(x)
+  $path = drupal_get_path_alias($_GET['q']);
+  $path_array = explode('/', $path);
+
+  if (drupal_is_front_page()) {
+    drupal_add_js(libraries_get_path('jquery-1.11') . '/jquery-1.11.1.min.js');
+    drupal_add_css(libraries_get_path('slick') . '/slick/slick.css');
+    drupal_add_js(libraries_get_path('slick') . '/slick/slick.min.js');
+    drupal_add_js('var jq111 = jQuery; jQuery.noConflict(true);',
+      array('type' => 'inline', 'scope' => 'header'));
+    drupal_add_js($module_path . '/js/sbl_slick_slider.js');
+  }
+}
