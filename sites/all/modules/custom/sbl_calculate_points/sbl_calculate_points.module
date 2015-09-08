@@ -3,6 +3,9 @@
 function team_list_calculate_team_points($nid) {
   //Get all Team Matches the team has been involved in
 
+  // The season that is viewed
+  $season = arg(1);
+
   // Query for Home matches
   $team_home_match_query = new EntityFieldQuery();
 
@@ -49,7 +52,7 @@ function team_list_calculate_team_points($nid) {
     }
   }
   $team_sum_team_points = 0;
-  $team_sum_team_points = $team_home_team_points + $team_away_team_points;
+  $team_sum_team_points = intval($team_home_team_points + $team_away_team_points);
 
 
   return $team_sum_team_points;
@@ -104,26 +107,27 @@ function team_list_calculate_board_points($nid) {
     }
   }
   $team_sum_board_points = 0;
-  $team_sum_board_points = $team_home_board_points + $team_away_board_points;
+  $team_sum_board_points = intval($team_home_board_points + $team_away_board_points);
 
 
   return $team_sum_board_points;
 }
 
-function team_list_sort_by_team_points($team_points_1, $team_points_2) {
+function team_list_sort_by_team_and_board_points($team_points_1, $team_points_2 ,$board_points_1, $board_points_2) {
   $a = $team_points_1;
   $b = $team_points_2;
-  if ($a == $b) {
-    return 0;
+  $c = $board_points_1;
+  $d = $board_points_2;
+  // Sort by team points, if the team points are different
+  if($a > $b) {
+    return -1;
+  } elseif ($a < $b) {
+    return 1;
   }
-  return ($a > $b) ? -1 : 1;
-}
-
-function team_list_sort_by_board_points($team_points_1, $team_points_2) {
-  $a = $team_points_1;
-  $b = $team_points_2;
-  if ($a == $b) {
-    return 0;
+  // If the team points are the same, additionally sort by board points
+  elseif ($a == $b && $c > $d) {
+    return -1;
+  } elseif ($a == $b && $c < $d) {
+    return 1;
   }
-  return ($a > $b) ? -1 : 1;
 }
