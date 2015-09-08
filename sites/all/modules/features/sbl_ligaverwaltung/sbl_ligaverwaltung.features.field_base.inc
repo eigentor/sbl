@@ -989,8 +989,11 @@ function sbl_ligaverwaltung_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'views-select-list' => array(
+          'test_field_behavior' => array(
             'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 1,
           ),
         ),
         'sort' => array(
@@ -1024,8 +1027,11 @@ function sbl_ligaverwaltung_field_default_field_bases() {
       'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
-          'views-select-list' => array(
+          'test_field_behavior' => array(
             'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 1,
           ),
         ),
         'sort' => array(

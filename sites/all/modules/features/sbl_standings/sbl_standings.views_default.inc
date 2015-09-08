@@ -74,8 +74,10 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Titel';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -143,7 +145,7 @@ function sbl_standings_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Title'),
+    t('Titel'),
     t('Mannschaftspunkte'),
     t('Brettpunkte'),
     t('PHP'),

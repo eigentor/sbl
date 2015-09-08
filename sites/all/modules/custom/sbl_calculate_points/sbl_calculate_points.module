@@ -13,6 +13,7 @@ function team_list_calculate_team_points($nid) {
     ->entityCondition('bundle', 'team_match')
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_1', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -25,6 +26,7 @@ function team_list_calculate_team_points($nid) {
     ->entityCondition('bundle', 'team_match')
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_2', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -34,12 +36,13 @@ function team_list_calculate_team_points($nid) {
   $team_home_team_points = 0;
   $team_away_team_points = 0;
 
+
   // Get the nids for the home matches, extract the home team points
   if(isset($team_home_match['node'])) {
     $team_home_match_nids = array_keys($team_home_match['node']);
     foreach($team_home_match_nids as $key => $home_match) {
      $team_home_match_wrapper = entity_metadata_wrapper('node', $home_match);
-      $team_home_team_points += $team_home_match_wrapper->field_tm_team_points_tm_1->value();
+      $team_home_team_points += $team_home_match_wrapper->field_tm_team_points_tm_1->label();
     }
   }
 
@@ -48,11 +51,11 @@ function team_list_calculate_team_points($nid) {
     $team_away_match_nids = array_keys($team_away_match['node']);
     foreach($team_away_match_nids as $key => $away_match) {
      $team_away_match_wrapper = entity_metadata_wrapper('node', $away_match);
-      $team_away_team_points += $team_away_match_wrapper->field_tm_team_points_tm_2->value();
+      $team_away_team_points += $team_away_match_wrapper->field_tm_team_points_tm_2->label();
     }
   }
   $team_sum_team_points = 0;
-  $team_sum_team_points = intval($team_home_team_points + $team_away_team_points);
+  $team_sum_team_points = floatval($team_home_team_points + $team_away_team_points);
 
 
   return $team_sum_team_points;
@@ -60,6 +63,7 @@ function team_list_calculate_team_points($nid) {
 
 function team_list_calculate_board_points($nid) {
   //Get all Team Matches the team has been involved in
+  $season = arg(1);
 
   // Query for Home matches
   $team_home_match_query = new EntityFieldQuery();
@@ -68,6 +72,7 @@ function team_list_calculate_board_points($nid) {
     ->entityCondition('bundle', 'team_match')
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_1', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -80,6 +85,7 @@ function team_list_calculate_board_points($nid) {
     ->entityCondition('bundle', 'team_match')
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_2', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -94,8 +100,8 @@ function team_list_calculate_board_points($nid) {
     $team_home_match_nids = array_keys($team_home_match['node']);
     foreach($team_home_match_nids as $key => $home_match) {
      $team_home_match_wrapper = entity_metadata_wrapper('node', $home_match);
-      $team_home_board_points += $team_home_match_wrapper->field_tm_board_points_team_1->value();
-    }
+      $team_home_board_points += $team_home_match_wrapper->field_tm_board_points_team_1->label();
+   }
   }
 
    // Get the nids for the away matches, extract the away team points
@@ -103,11 +109,11 @@ function team_list_calculate_board_points($nid) {
     $team_away_match_nids = array_keys($team_away_match['node']);
     foreach($team_away_match_nids as $key => $away_match) {
      $team_away_match_wrapper = entity_metadata_wrapper('node', $away_match);
-      $team_away_board_points += $team_away_match_wrapper->field_tm_board_points_team_2->value();
+      $team_away_board_points +=$team_away_match_wrapper->field_tm_board_points_team_2->label();
     }
   }
   $team_sum_board_points = 0;
-  $team_sum_board_points = intval($team_home_board_points + $team_away_board_points);
+  $team_sum_board_points = floatval($team_home_board_points + $team_away_board_points);
 
 
   return $team_sum_board_points;

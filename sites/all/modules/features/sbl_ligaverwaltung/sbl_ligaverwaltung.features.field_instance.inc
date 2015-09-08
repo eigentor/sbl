@@ -2433,6 +2433,11 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'label' => 'Mannschaft 1',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'test_instance_behavior' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2483,6 +2488,11 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'label' => 'Mannschaft 2',
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'test_instance_behavior' => array(
+          'status' => 0,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
