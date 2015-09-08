@@ -47,9 +47,6 @@
 .front #block-views-article-slider-large-block .view-article-slider-large .view-display-id-block {
   position: relative;
 }
-.front #block-views-article-slider-large-block .view-article-slider-large .views-row {
-  z-index: 10!important;
-}
 .front #block-views-article-slider-large-block .view-article-slider-large .views-field-title {
   width: 100%;
   background: rgba(166, 10, 4, 0.7);
