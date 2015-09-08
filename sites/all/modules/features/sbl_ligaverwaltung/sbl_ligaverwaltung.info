@@ -224,4 +224,3 @@ features[views_view][] = player_data_static
 features[views_view][] = players
 features[views_view][] = single_games_player
 features[views_view][] = team_info
-features[views_view][] = teams_leaderbord
