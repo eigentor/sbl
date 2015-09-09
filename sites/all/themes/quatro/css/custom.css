@@ -479,6 +479,19 @@ z-index:999999;
 	Vereinsseiten
 \*------------------------------------*/
 
+#teamseite {
+width:100% !important;
+}
+
+#teamseite .center-wrapper{
+max-width:100% !important;
+padding:0;
+margin:0;
+border:1px solid #999;
+height:auto !important;
+background-color:#f2f2f2;
+}
+
 .clearboth:before{
 content: ".";
 display: block;
@@ -488,22 +501,33 @@ visibility: hidden;
 }
 
 #teamseite .panel-col-first {
-width:33%;
+display:block;
+width:40%;
 position:relative;
 padding-top:5px;
 margin:0;
-min-width:250px;
-height:100%;
+height:auto !important;
 float:left;
+min-width:320px;
+}
+
+#teamseite .panel-col-first td,#teamseite .panel-col-last td{
+border:none !important;
+}
+
+#teamseite .panel-col-first tr,#teamseite .panel-col-last tr{
+background:none !important;
 }
 
 #teamseite .panel-col-last {
-width:63%;
+width:60%;
 position:relative;
-padding:5px;
-min-width:300px;
-height:100%;
+padding-top:5px;
+min-width:320px;
+height:auto !important;
 margin:0;
+float:left;
+min-width:320px;
 }
 
 #teamseite h2 {
