@@ -92,3 +92,44 @@ function sbl_helper_views_pre_render(&$view) {
     $view->build_info['title'] = 'Aktuelle Tabelle ' . $term->name;
   }
 }
+
+/**
+ * Custom Funktion, um die Ergebnisse pro Spieltag auszugeben
+ *
+ */
+function print_results_matchday(){
+
+$season = '';
+$matchday = '';
+$match_node = '';
+
+// Print the results for a matchday
+// We get the season and the matchday from the URL
+$season = arg(1);
+$matchday = arg(2);
+
+// Now get all Team Match nodes for that specific Match Day
+$matches_match_day = new EntityFieldQuery();
+
+$matches_match_day->entityCondition('entity_type', 'node')
+  ->entityCondition('bundle', 'team_match')
+  ->fieldCondition('field_tm_saison', 'tid', $season)
+  ->fieldCondition('field_tm_spieltag_1', 'value', $matchday)
+  // Bypass node access
+  ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+$matches_match_day_result = $matches_match_day->execute();
+if(isset($matches_match_day_result['node'])) {
+  $matches = array_keys($matches_match_day_result['node']);
+  foreach($matches as $match_node) {
+    // print an instance of the view "Ergebnisse" for each of the team_match nodes
+    print views_embed_view('match_results', 'block', $season, $matchday, $match_node);
+  }
+}
+$season_title_raw = taxonomy_term_load($season);
+$season_title = $season_title_raw->name;
+
+// Set the title to show the season and Spieltag
+drupal_set_title('Ergebnisse ' . $matchday . '. Spieltag ' . $season_title);
+
+}
