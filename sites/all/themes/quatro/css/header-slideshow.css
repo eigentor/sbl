@@ -70,7 +70,7 @@
 }
 .front .block-views-article-slider-large-block-1 {
   background: white;
-  z-index: 19;
+  /*z-index: 19;*/
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
   float: none;
