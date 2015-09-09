@@ -29,6 +29,11 @@ border-top:1px dotted #f2f2f2;
 margin:15px 0 25px 0;
 }
 
+/*------------------------------------*\
+	Schachgeschichten
+\*------------------------------------*/
+
+/*Introfeld*/
 article.node-article .field-name-field-intro, article.node-article .field-name-body {
 margin-left: 10px !important;
 }
@@ -39,7 +44,6 @@ a.webseite:before {
    color:#f18000;
    margin-right:3px;
 }
-
 
 article.node-article .field-name-field-info:before {
    font-family: FontAwesome;
@@ -60,13 +64,16 @@ background-color:#f2f2f2;
     font-weight: bold;
     font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
 	}
+.file-icon {
+margin-right:3px;
+}
 
 /* Menü */
 
 .zone-menu ul.nice-menu li a {
     padding: 15px 25px !important;
+	border-right:1px solid rgba(255, 255,255,0.3);
 }
-
 
 
 /* Newsblöcke Breite und Höhe überschreiben */
@@ -483,7 +490,7 @@ visibility: hidden;
 #teamseite .panel-col-first {
 width:33%;
 position:relative;
-padding:5px;
+padding-top:5px;
 margin:0;
 min-width:250px;
 height:100%;

@@ -6,6 +6,23 @@
 
 /** The front page Header Slideshow **/
 
+.more-news ,.current-standings{
+text-align:center;
+font-size:1.65em;
+font-variant:small-caps;
+height:73px;
+line-height:73px;
+vertical-align:middle;
+}
+
+.more-news {
+border-bottom: 1px solid #777;
+}
+
+.more-news:hover,.current-standings:hover{
+background-color:#eee;
+}
+
 .front .view-article-slider-large.view-display-id-block .slick-dots {
   position: absolute;
   bottom: 68px;
@@ -120,7 +137,7 @@
 /*------------------------------------------- */
 /*------------------------------------------- */
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 980px){
   .front #block-views-article-slider-large-block .view-article-slider-large .views-field-title {
   position: absolute;
   bottom: 0;
@@ -129,7 +146,6 @@
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
   float: left;
   width: 25%!important;
-  border: none;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-track,
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-list{
@@ -139,6 +155,47 @@
 
 } /* Ende Media Query Desktop narrow */
 
+
+@media screen and (min-width: 980px) and (max-width:1220px){
+.more-news ,.current-standings{
+width:50% !important;
+text-align:center;
+font-size:1.5em;
+font-variant:small-caps;
+height:73px;
+line-height:73px;
+vertical-align:middle;
+text-align:center !important;
+}
+
+.more-news {
+border:none;
+float:left;
+}
+.current-standings {
+border:none;
+float:right;
+}
+
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
+  float: left;
+  width: 49.5%!important;
+}
+
+}
+
+@media screen and (max-width: 979px){
+.more-news ,.current-standings{
+width:100% !important;
+text-align:center;
+font-size:1.5em;
+font-variant:small-caps;
+height:auto !important;
+text-align:center !important;
+float:left;
+border:none;
+}
+}
 
 /*------------------------------------------- */
 /*------------------------------------------- */
@@ -167,7 +224,7 @@
   position: relative;
   width: auto!important;
   padding: 7px 0;
-  border-bottom: 2px solid #777;
+  border-bottom: 1px solid #777;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .view-footer a {
   display: block;
