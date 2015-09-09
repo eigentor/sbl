@@ -502,13 +502,12 @@ visibility: hidden;
 
 #teamseite .panel-col-first {
 display:block;
-width:40%;
+width:30%;
 position:relative;
 padding-top:5px;
 margin:0;
 height:auto !important;
 float:left;
-min-width:320px;
 }
 
 #teamseite .panel-col-first td,#teamseite .panel-col-last td{
@@ -520,14 +519,14 @@ background:none !important;
 }
 
 #teamseite .panel-col-last {
-width:60%;
+width:70%;
 position:relative;
 padding-top:5px;
 min-width:320px;
 height:auto !important;
 margin:0;
 float:left;
-min-width:320px;
+
 }
 
 #teamseite h2 {
@@ -650,4 +649,8 @@ display: inline;
   opacity: 1;
 }
 
-
+@media only screen and (max-width: 580px) { 
+#teamseite .panel-col-first,#teamseite .panel-col-last {
+min-width:320px;
+}
+}
