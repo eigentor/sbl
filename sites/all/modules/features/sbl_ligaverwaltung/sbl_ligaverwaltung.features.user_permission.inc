@@ -23,7 +23,17 @@ function sbl_ligaverwaltung_user_default_permissions() {
   $permissions['bypass rh_node'] = array(
     'name' => 'bypass rh_node',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'rabbit_hole',
+  );
+
+  // Exported permission: 'php redirect rh_node'.
+  $permissions['php redirect rh_node'] = array(
+    'name' => 'php redirect rh_node',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'rabbit_hole',
   );
