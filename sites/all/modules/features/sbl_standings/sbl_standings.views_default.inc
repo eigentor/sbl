@@ -290,6 +290,163 @@ function sbl_standings_views_default_views() {
   $export['match_results'] = $view;
 
   $view = new view();
+  $view->name = 'spielplan';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Spielplan';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Spielplan';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_tm_spieltag_1' => 'field_tm_spieltag_1',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_tm_spieltag_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Content: Spieltag */
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['field'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['label'] = 'R';
+  /* Field: Content: Datum */
+  $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
+  $handler->display->display_options['fields']['field_datum']['field'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Mannschaft 1 */
+  $handler->display->display_options['fields']['field_tm_team_1']['id'] = 'field_tm_team_1';
+  $handler->display->display_options['fields']['field_tm_team_1']['table'] = 'field_data_field_tm_team_1';
+  $handler->display->display_options['fields']['field_tm_team_1']['field'] = 'field_tm_team_1';
+  $handler->display->display_options['fields']['field_tm_team_1']['label'] = 'Verein';
+  $handler->display->display_options['fields']['field_tm_team_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'vs';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = ':';
+  /* Field: Content: Mannschaft 2 */
+  $handler->display->display_options['fields']['field_tm_team_2']['id'] = 'field_tm_team_2';
+  $handler->display->display_options['fields']['field_tm_team_2']['table'] = 'field_data_field_tm_team_2';
+  $handler->display->display_options['fields']['field_tm_team_2']['field'] = 'field_tm_team_2';
+  $handler->display->display_options['fields']['field_tm_team_2']['label'] = 'Verein';
+  $handler->display->display_options['fields']['field_tm_team_2']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Brettpunkte Mannschaft 1 */
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['id'] = 'field_tm_board_points_team_1';
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['table'] = 'field_data_field_tm_board_points_team_1';
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['field'] = 'field_tm_board_points_team_1';
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['alter']['text'] = '[field_tm_board_points_team_1] :';
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Brettpunkte Mannschaft 2 */
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['id'] = 'field_tm_board_points_team_2';
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['table'] = 'field_data_field_tm_board_points_team_2';
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['field'] = 'field_tm_board_points_team_2';
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['element_label_colon'] = FALSE;
+  /* Field: Ergebnis zusammengesetzt aus Brettpunkten */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Ergebnis zusammengesetzt aus Brettpunkten';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Ergebnis';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_tm_board_points_team_1] [field_tm_board_points_team_2] ';
+  /* Sort criterion: Content: Spieltag (field_tm_spieltag_1) */
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['id'] = 'field_tm_spieltag_1_value';
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['sorts']['field_tm_spieltag_1_value']['field'] = 'field_tm_spieltag_1_value';
+  /* Contextual filter: Content: Saison (field_tm_saison) */
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['field'] = 'field_tm_saison_tid';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['default_argument_options']['code'] = 'return set_current_season();';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_tm_saison_tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'team_match' => 'team_match',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'spielplan';
+  $translatables['spielplan'] = array(
+    t('Master'),
+    t('Spielplan'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('R'),
+    t('Datum'),
+    t('Verein'),
+    t('vs'),
+    t(':'),
+    t('[field_tm_board_points_team_1] :'),
+    t('Ergebnis'),
+    t('[field_tm_board_points_team_1] [field_tm_board_points_team_2] '),
+    t('Alle'),
+    t('Page'),
+  );
+  $export['spielplan'] = $view;
+
+  $view = new view();
   $view->name = 'teams_leaderbord';
   $view->description = '';
   $view->tag = 'default';

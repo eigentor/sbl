@@ -17,6 +17,16 @@ th {
 .page-spieler h1#page-title {
   display: none;
 }
+.page-spielplan .view-spielplan table th.views-field-field-tm-team-1,
+.page-spielplan .view-spielplan table td.views-field-field-tm-team-1 {
+  text-align: right;
+}
+.page-spielplan .view-spielplan table th.views-field-nothing,
+.page-spielplan .view-spielplan table td.views-field-nothing{
+  width: 20px;
+  padding: 0.3em 0;
+  text-align: center;
+}
 
 
 
