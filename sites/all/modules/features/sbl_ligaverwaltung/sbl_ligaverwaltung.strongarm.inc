@@ -216,8 +216,9 @@ function sbl_ligaverwaltung_strongarm() {
       1 => 3,
     ),
     'view' => array(
-      0 => 2,
-      1 => 3,
+      0 => 1,
+      1 => 2,
+      2 => 3,
     ),
   );
   $export['content_access_mannschaft'] = $strongarm;
@@ -232,8 +233,9 @@ function sbl_ligaverwaltung_strongarm() {
       1 => 3,
     ),
     'view' => array(
-      0 => 2,
-      1 => 3,
+      0 => 1,
+      1 => 2,
+      2 => 3,
     ),
   );
   $export['content_access_spieler'] = $strongarm;
@@ -248,8 +250,9 @@ function sbl_ligaverwaltung_strongarm() {
       1 => 3,
     ),
     'view' => array(
-      0 => 2,
-      1 => 3,
+      0 => 1,
+      1 => 2,
+      2 => 3,
     ),
   );
   $export['content_access_team_match'] = $strongarm;
@@ -507,6 +510,20 @@ function sbl_ligaverwaltung_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_spieler';
+  $strongarm->value = '0';
+  $export['language_content_type_spieler'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_team_match';
+  $strongarm->value = '0';
+  $export['language_content_type_team_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_mannschaft';
   $strongarm->value = array(
     0 => 'main-menu',
@@ -661,6 +678,111 @@ function sbl_ligaverwaltung_strongarm() {
   $strongarm->name = 'node_submitted_team_match';
   $strongarm->value = 1;
   $export['node_submitted_team_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_mannschaft';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_mannschaft'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_spieler';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_spieler'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_team_match';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_team_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_mannschaft';
+  $strongarm->value = '1';
+  $export['rh_node_action_mannschaft'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_spieler';
+  $strongarm->value = '1';
+  $export['rh_node_action_spieler'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_team_match';
+  $strongarm->value = '1';
+  $export['rh_node_action_team_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_mannschaft';
+  $strongarm->value = 0;
+  $export['rh_node_override_mannschaft'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_spieler';
+  $strongarm->value = 0;
+  $export['rh_node_override_spieler'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_team_match';
+  $strongarm->value = 0;
+  $export['rh_node_override_team_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_mannschaft';
+  $strongarm->value = '';
+  $export['rh_node_redirect_mannschaft'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_mannschaft';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_mannschaft'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_spieler';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_spieler'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_team_match';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_team_match'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_spieler';
+  $strongarm->value = '';
+  $export['rh_node_redirect_spieler'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_team_match';
+  $strongarm->value = '';
+  $export['rh_node_redirect_team_match'] = $strongarm;
 
   return $export;
 }
