@@ -143,6 +143,7 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['field'] = 'field_tm_board_points_team_2';
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['relationship'] = 'field_tm_game_node';
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['element_label_colon'] = FALSE;
   /* Field: Content: Mannschaftspunkte Mannschaft 1 */
   $handler->display->display_options['fields']['field_tm_team_points_tm_1']['id'] = 'field_tm_team_points_tm_1';
