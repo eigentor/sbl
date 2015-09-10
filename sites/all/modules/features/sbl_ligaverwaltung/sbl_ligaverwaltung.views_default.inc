@@ -813,8 +813,6 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_logo_team']['field'] = 'field_logo_team';
   $handler->display->display_options['fields']['field_logo_team']['label'] = '';
   $handler->display->display_options['fields']['field_logo_team']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_logo_team']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_logo_team']['element_wrapper_class'] = 'two-fifth';
   $handler->display->display_options['fields']['field_logo_team']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo_team']['settings'] = array(
     'image_style' => 'vereinslogo',
@@ -826,7 +824,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
   $handler->display->display_options['fields']['field_facebook']['label'] = '';
   $handler->display->display_options['fields']['field_facebook']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_facebook']['alter']['text'] = '<a href="[field_facebook-url]" class="tooltip" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_facebook']['alter']['text'] = '<a href="[field_facebook-url]" class="tooltip blue" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_facebook']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_facebook']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_facebook']['element_wrapper_class'] = 'one-fifth';
@@ -838,7 +836,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_twitter_club']['field'] = 'field_twitter_club';
   $handler->display->display_options['fields']['field_twitter_club']['label'] = '';
   $handler->display->display_options['fields']['field_twitter_club']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_twitter_club']['alter']['text'] = '<a href="[field_twitter_club-url]" class="tooltip" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_twitter_club']['alter']['text'] = '<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_twitter_club']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_class'] = 'one-fifth';
@@ -850,7 +848,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
   $handler->display->display_options['fields']['field_website_club']['label'] = '';
   $handler->display->display_options['fields']['field_website_club']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip" title="Website"><i class="fa fa-globe fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip blue" title="Website"><i class="fa fa-globe fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_website_club']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_website_club']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_website_club']['element_wrapper_class'] = 'one-fifth last';
@@ -1022,9 +1020,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Größte Erfolge'),
     t('Alle'),
     t('Content pane Verein Basisdaten 1'),
-    t('<a href="[field_facebook-url]" class="tooltip" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>'),
-    t('<a href="[field_twitter_club-url]" class="tooltip" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>'),
-    t('<a href="[field_website_club-url]" class="tooltip" title="Website"><i class="fa fa-globe fa-2x"></i></a>'),
+    t('<a href="[field_facebook-url]" class="tooltip blue" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>'),
+    t('<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>'),
+    t('<a href="[field_website_club-url]" class="tooltip blue" title="Website"><i class="fa fa-globe fa-2x"></i></a>'),
     t('View panes'),
     t('Content pane Verein Basisdaten 2'),
     t('Spielort'),

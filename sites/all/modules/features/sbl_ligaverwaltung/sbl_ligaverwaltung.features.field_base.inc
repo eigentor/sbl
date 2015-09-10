@@ -394,7 +394,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'test_field_behavior' => array(
@@ -404,10 +404,11 @@ function sbl_ligaverwaltung_field_default_field_bases() {
             'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'filter_player_by_team',
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'spieler' => 'spieler',
         ),
       ),
       'target_type' => 'node',
@@ -431,7 +432,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'test_field_behavior' => array(
@@ -441,10 +442,11 @@ function sbl_ligaverwaltung_field_default_field_bases() {
             'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_2',
-          'view_name' => 'filter_player_by_team',
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'spieler' => 'spieler',
         ),
       ),
       'target_type' => 'node',
@@ -1170,6 +1172,27 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'addressfield',
+  );
+
+  // Exported field_base: 'field_vereinskuerzel'
+  $field_bases['field_vereinskuerzel'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_vereinskuerzel',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 3,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_web_admin_club'
