@@ -186,7 +186,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['code'] = 'return set_current_season();';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_options']['code'] = 'return get_current_season();';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';

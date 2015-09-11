@@ -1,9 +1,5 @@
 <?php
 
-function set_current_season() {
-  return 144;
-}
-
 function filter_single_games_player($row) {
   $player = arg(1);
   $season = arg(2);

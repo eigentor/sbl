@@ -1,0 +1,119 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function sbl_settings_menu() {
+  $items['admin/config/system/sbl_settings'] = array(
+    'title' => 'Schachbundesliga Einstellungen',
+    'description' => 'Example of using the Form API.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sbl_settings_form'),
+    'access callback' => TRUE,
+    'weight' => -20,
+  );
+  return $items;
+}
+
+/**
+ * A simple form.
+ */
+function sbl_settings_form($form, &$form_submit) {
+    // the select for the matchday
+   $form['current_matchday'] = array(
+       '#type' => 'select',
+       '#title' => 'Aktueller Spieltag',
+       '#options' => array(
+          1 => 1,
+          2 => 2,
+          3 => 3,
+          4 => 4,
+          5 => 5,
+          6 => 6,
+          7 => 7,
+          8 => 8,
+          9 => 9,
+          10 => 10,
+          11 => 11,
+          12 => 12,
+          13 => 13,
+          14 => 14,
+          15 => 15,
+       ),
+        '#empty_value' => '',
+        '#description' => 'Setzen Sie den aktuellen Spieltag',
+        '#default_value' => variable_get('current_matchday', ''),
+   );
+
+  // Get the value from the taxonomy vocabulary "Season"
+  $saison_vocabulary = $vocabulary = taxonomy_vocabulary_machine_name_load('saison');
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  $season_values = array();
+  foreach($terms as $term) {
+    $season_values[$term->tid] = $term->name;
+  }
+  $form['current_season'] = array(
+       '#type' => 'select',
+       '#title' => 'Aktuelle Saison',
+       '#options' => $season_values,
+        '#empty_value' => '',
+        '#description' => 'Setzen Sie die aktuelle Saison',
+        '#default_value' => variable_get('current_season', ''),
+   );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Speichern',
+  );
+
+  return $form;
+}
+
+  /**
+ * Submit function for input_simple_form().
+ */
+function sbl_settings_form_submit($form, &$form_state) {
+  // Save our form values into the database
+  variable_set('current_matchday', $form_state['values']['current_matchday']);
+  variable_set('current_season', $form_state['values']['current_season']);
+  $current_matchday = variable_get('current_matchday', '');
+
+  // To set a message which year was saved as current season, first get te taxonomy term label
+  $saison_vocabulary = $vocabulary = taxonomy_vocabulary_machine_name_load('saison');
+  $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  $season_values = array();
+  foreach($terms as $term) {
+    $season_values[$term->tid] = $term->name;
+  }
+  $current_season_value = variable_get('current_season', '');
+  $current_season_label = $season_values[$current_season_value];
+
+  // Set some messages when the form is saved.
+  drupal_set_message($current_matchday . ' wurde als aktueller Spieltag gesetzt');
+  drupal_set_message($current_season_label . ' wurde als aktuelle Saison gesetzt');
+}
+
+/**
+ * Make the current matchday system-wide available
+ */
+function get_current_matchday() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $current_matchday = variable_get('current_matchday', '');
+  return $current_matchday;
+}
+
+/**
+ * Make the current season system-wide available
+ */
+function get_current_season() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $current_season = variable_get('current_season', '');
+  return $current_season;
+}
+function set_current_season() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $current_season = variable_get('current_season', '');
+  return $current_season;
+}

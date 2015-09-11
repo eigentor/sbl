@@ -1,0 +1,6 @@
+name = SBL Settings
+description = Settings for the League Management
+package = Schach-Bundesliga
+core = 7.x
+
+config = admin/config/system/sbl_settings
