@@ -1,5 +1,18 @@
 <?php
 
+
+
+/**
+ * Implements hook_permission().
+ */
+function sbl_settings_permission() {
+  return array(
+    'access sbl settings' => array(
+      'title' => t('Access the Schachbundesliga settings page'),
+    )
+  );
+}
+
 /**
  * Implements hook_menu().
  */
@@ -11,6 +24,8 @@ function sbl_settings_menu() {
     'page arguments' => array('sbl_settings_form'),
     'access callback' => TRUE,
     'weight' => -20,
+    'access callback' => 'user_access',
+    'access arguments' => array('access sbl settings'),
   );
   return $items;
 }
