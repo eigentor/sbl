@@ -111,9 +111,3 @@ function get_current_season() {
   $current_season = variable_get('current_season', '');
   return $current_season;
 }
-function set_current_season() {
-  // Get the current season from the variable table
-  // We set it in the form above
-  $current_season = variable_get('current_season', '');
-  return $current_season;
-}
