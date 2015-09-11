@@ -301,10 +301,18 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Content pane Spielerkarte Daten 1', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['columns'] = '1';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_pl_master_title' => 'field_pl_master_title',
+    'field_pl_elo' => 'field_pl_elo',
+    'field_pl_country' => 'field_pl_country',
+    'field_saison' => 'field_saison',
+  );
+  $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
@@ -315,16 +323,26 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'margin10';
   /* Field: Field collection item: Meistertitel */
   $handler->display->display_options['fields']['field_pl_master_title']['id'] = 'field_pl_master_title';
   $handler->display->display_options['fields']['field_pl_master_title']['table'] = 'field_data_field_pl_master_title';
   $handler->display->display_options['fields']['field_pl_master_title']['field'] = 'field_pl_master_title';
   $handler->display->display_options['fields']['field_pl_master_title']['label'] = 'Titel';
+  $handler->display->display_options['fields']['field_pl_master_title']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_pl_master_title']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_pl_master_title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pl_master_title']['element_wrapper_class'] = 'margin5';
   $handler->display->display_options['fields']['field_pl_master_title']['hide_empty'] = TRUE;
   /* Field: Field collection item: ELO */
   $handler->display->display_options['fields']['field_pl_elo']['id'] = 'field_pl_elo';
   $handler->display->display_options['fields']['field_pl_elo']['table'] = 'field_data_field_pl_elo';
   $handler->display->display_options['fields']['field_pl_elo']['field'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_pl_elo']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_pl_elo']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pl_elo']['element_wrapper_class'] = 'margin5';
   $handler->display->display_options['fields']['field_pl_elo']['settings'] = array(
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
@@ -334,6 +352,10 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_pl_country']['table'] = 'field_data_field_pl_country';
   $handler->display->display_options['fields']['field_pl_country']['field'] = 'field_pl_country';
   $handler->display->display_options['fields']['field_pl_country']['label'] = 'Föderation';
+  $handler->display->display_options['fields']['field_pl_country']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_pl_country']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_pl_country']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pl_country']['element_wrapper_class'] = 'margin5';
   $handler->display->display_options['fields']['field_pl_country']['type'] = 'country_icon';
   $handler->display->display_options['fields']['field_pl_country']['settings'] = array(
     'countryiconset' => 'icon_shiny',
@@ -343,6 +365,10 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_saison']['id'] = 'field_saison';
   $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
   $handler->display->display_options['fields']['field_saison']['field'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_saison']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_saison']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_saison']['element_wrapper_class'] = 'margin5';
   $handler->display->display_options['fields']['field_saison']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */

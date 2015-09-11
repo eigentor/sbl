@@ -31,6 +31,48 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'field_ausrichter'
+  $field_bases['field_ausrichter'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_ausrichter',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'SK Schwäbisch Hall' => 'SK Schwäbisch Hall',
+        'FC Bayern München' => 'FC Bayern München',
+        'OSG Baden-Baden' => 'OSG Baden-Baden',
+        'Erfurter SK' => 'Erfurter SK',
+        'SF Berlin 1903' => 'SF Berlin 1903',
+        'SV 1930 Hockenheim' => 'SV 1930 Hockenheim',
+        'SV Griesheim' => 'SV Griesheim',
+        'SK Norderstedt 1975' => 'SK Norderstedt 1975',
+        'SV Mühlheim Nord' => 'SV Mühlheim Nord',
+        'Hamburger SK' => 'Hamburger SK',
+        'SC Hansa Dortmund' => 'SC Hansa Dortmund',
+        'SG Trier' => 'SG Trier',
+        'SG Solingen' => 'SG Solingen',
+        'SK Turm Emsdetten' => 'SK Turm Emsdetten',
+        'USV TU Dresden' => 'USV TU Dresden',
+        'SV Werder Bremen' => 'SV Werder Bremen',
+        'SC Eppingen' => 'SC Eppingen',
+        'SSC Rostock 07' => 'SSC Rostock 07',
+        'SF Katernberg' => 'SF Katernberg',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_captain_team'
   $field_bases['field_captain_team'] = array(
     'active' => 1,
@@ -742,6 +784,31 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_spiel_laeuft'
+  $field_bases['field_spiel_laeuft'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_spiel_laeuft',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => '',
+        1 => '',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_spieler_2'

@@ -2125,7 +2125,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -2160,7 +2160,52 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-team_match-field_ausrichter'
+  $field_instances['node-team_match-field_ausrichter'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ausrichter',
+    'label' => 'Ausrichter',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
@@ -2181,7 +2226,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'above',
@@ -2226,7 +2271,56 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'year_range' => '-6:+2',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-team_match-field_spiel_laeuft'
+  $field_instances['node-team_match-field_spiel_laeuft'] = array(
+    'bundle' => 'team_match',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_spiel_laeuft',
+    'label' => 'Spiel läuft',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 11,
     ),
   );
 
@@ -2242,7 +2336,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'above',
@@ -2288,7 +2382,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'full' => array(
         'label' => 'above',
@@ -2340,7 +2434,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'above',
@@ -2374,7 +2468,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -2424,7 +2518,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -2440,7 +2534,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'full' => array(
         'label' => 'above',
@@ -2470,7 +2564,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -2488,7 +2582,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 3,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'above',
@@ -2543,7 +2637,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 4,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -2596,7 +2690,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -2642,7 +2736,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'above',
@@ -2682,6 +2776,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Alle Heimspiele des Vereins');
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
   t('Auf Startseite anteasern');
+  t('Ausrichter');
   t('Bild');
   t('Bisherige Erfolge des Vereins (Meisterschaften, Pokalsiege etc.)');
   t('Body');
@@ -2718,6 +2813,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Reisepartner');
   t('Saison');
   t('Saisondaten Spieler');
+  t('Spiel läuft');
   t('Spieler 1');
   t('Spieler 2');
   t('Spielort');

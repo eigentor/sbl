@@ -489,10 +489,13 @@ function sbl_ligaverwaltung_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '9',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '8',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '12',
         ),
       ),
       'display' => array(),
