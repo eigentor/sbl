@@ -559,11 +559,12 @@ margin-bottom:5px;
 
 .one-fourth-border {
     width: 22.5%;
-	margin-top: 25px;
-	margin-right: 2%;
+	display:block;
+	margin:0 2% 25px 0;
+	padding:0;
 	float: left;
-    margin-bottom: 15px;
-    padding: 0px;
+	height:auto !important;
+	min-height:200px;
     position: relative;
 	text-align:center;
 	border:1px solid #666;
@@ -716,6 +717,19 @@ display: inline;
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
 min-width:320px;
+}
+
+.one-fourth-border {
+    width: 44%;
+	display:block;
+	margin:0 2.5% 25px 0;
+	padding:0;
+	float: left;
+	height:auto !important;
+	min-height:230px;
+    position: relative;
+	text-align:center;
+	border:1px solid #666;
 }
 
 }
