@@ -723,6 +723,10 @@ padding:0 !important;
 background:none !important;
 }
 
+.werbung-rechts .block {
+margin-bottom:0px !important;
+}
+
 @media only screen and (max-width: 580px) { 
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
