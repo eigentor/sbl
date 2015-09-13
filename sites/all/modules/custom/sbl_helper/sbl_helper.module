@@ -127,5 +127,14 @@ $season_title = $season_title_raw->name;
 
 // Set the title to show the season and Spieltag
 drupal_set_title('Ergebnisse ' . $matchday . '. Spieltag ' . $season_title);
+}
 
+function check_current_season_matchday($row) {
+  $current_season = get_current_season();
+  $current_matchday = get_current_matchday();
+  if($current_season == $row->field_tm_saison && $current_matchday == $row->field_tm_spieltag_1) {
+    return FALSE;
+  } else {
+    return TRUE;
+  }
 }

@@ -226,6 +226,12 @@ border:none;
   padding: 7px 0;
   border-bottom: 1px solid #777;
 }
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-field-image {
+  padding: 1% 2% 1% 4%;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
+ width: 68%;
+}
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .view-footer a {
   display: block;
 }
