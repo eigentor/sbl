@@ -727,9 +727,6 @@ background:none !important;
 margin-bottom:0px !important;
 }
 
-#adsense_block_rechts {
-max-height:300px;
-}
 
 @media only screen and (max-width: 580px) { 
 #teamseite .panel-col-first,#teamseite .panel-col-last,
