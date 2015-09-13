@@ -1,12 +1,17 @@
 jQuery(document).ready(function(){
   jQuery("#schalter_fb").click(function(){
+	  jQuery("#schalter_fb").css("background-color","#f18000");
+jQuery("#schalter_tw").css("background-color","black");
      jQuery("#container_twitter").hide();
 jQuery("#container_facebook").show();
+
     return false;
   })
 });
 jQuery(document).ready(function(){
   jQuery("#schalter_tw").click(function(){
+	  jQuery("#schalter_fb").css("background-color","black");
+jQuery("#schalter_tw").css("background-color","#f18000");
     jQuery("#container_facebook").hide();
 jQuery("#container_twitter").show();
     return false;

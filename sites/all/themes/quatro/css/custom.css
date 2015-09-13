@@ -713,6 +713,16 @@ display: inline;
   opacity: 1;
 }
 
+/*------------------------------------*\
+	Adsense Blöcke
+\*------------------------------------*/
+
+.werbung-rechts .block-inner {
+margin:0 !important;
+padding:0 !important;
+background:none !important;
+}
+
 @media only screen and (max-width: 580px) { 
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
