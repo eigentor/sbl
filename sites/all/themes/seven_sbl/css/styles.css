@@ -43,3 +43,8 @@ form#team-match-node-form #edit-field-tm-game .player-points {
 #block-masquerade-masquerade {
   clear: both;
 }
+/* The SBL settings form */
+#sbl-settings-form .container-inline-date .date-padding {
+  padding-left: 0;
+  padding-top: 0;
+}

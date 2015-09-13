@@ -130,11 +130,31 @@ drupal_set_title('Ergebnisse ' . $matchday . '. Spieltag ' . $season_title);
 }
 
 function check_current_season_matchday($row) {
+  // Get the current season and the current matchday as
+  // set in the sbl settings module
   $current_season = get_current_season();
   $current_matchday = get_current_matchday();
+  // Show only the elements that have the season and matchday as set in SBL settings
   if($current_season == $row->field_tm_saison && $current_matchday == $row->field_tm_spieltag_1) {
     return FALSE;
   } else {
     return TRUE;
   }
+}
+function check_current_season_date_matchday($row) {
+  // Get the current season and the Date for the matchday as
+  // set in SBL Settings
+  $current_season = get_current_season();
+  $date_matchday = get_date_matchday();
+  $date_row = $row->field_datum;
+  $date_row_object = new DateTime($date_row);
+  $date_row_formatted = date_format($date_row_object, 'Y-m-d');
+
+  // Show only the elements that have the season and date as set in SBL settings
+  if($current_season == $row->field_tm_saison && $date_matchday == $date_row_formatted) {
+    return FALSE;
+  } else {
+    return TRUE;
+  }
+
 }

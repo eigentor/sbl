@@ -60,6 +60,15 @@ function sbl_settings_form($form, &$form_submit) {
         '#default_value' => variable_get('current_matchday', ''),
    );
 
+  $form['date_matchday'] = array(
+    '#type' => 'date_popup',
+    '#title' => 'Datum des Spieltages',
+    '#date_format' => 'd.m.Y',
+    '#date_year_range' => '-1:+1',
+    '#date_label_position' => 'none',
+    '#default_value' => variable_get('date_matchday', ''),
+  );
+
   // Get the value from the taxonomy vocabulary "Season"
   $saison_vocabulary = $vocabulary = taxonomy_vocabulary_machine_name_load('saison');
   $terms = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
@@ -87,8 +96,12 @@ function sbl_settings_form($form, &$form_submit) {
  * Submit function for input_simple_form().
  */
 function sbl_settings_form_submit($form, &$form_state) {
+  $old_matchday = variable_get('current_matchday', '');
+  $old_date_matchday = variable_get('date_matchday', '');
+  $old_season_value = variable_get('current_season', '');
   // Save our form values into the database
   variable_set('current_matchday', $form_state['values']['current_matchday']);
+  variable_set('date_matchday', $form_state['values']['date_matchday']);
   variable_set('current_season', $form_state['values']['current_season']);
   $current_matchday = variable_get('current_matchday', '');
 
@@ -99,12 +112,23 @@ function sbl_settings_form_submit($form, &$form_state) {
   foreach($terms as $term) {
     $season_values[$term->tid] = $term->name;
   }
+  $date_matchday = variable_get('date_matchday', '');
+  dpm($date_matchday);
+  $date_matchday_object = new DateTime($date_matchday);
+  $date_matchday_formatted = date_format($date_matchday_object, 'd.m.Y');
   $current_season_value = variable_get('current_season', '');
   $current_season_label = $season_values[$current_season_value];
 
   // Set some messages when the form is saved.
-  drupal_set_message($current_matchday . ' wurde als aktueller Spieltag gesetzt');
-  drupal_set_message($current_season_label . ' wurde als aktuelle Saison gesetzt');
+  if($current_matchday != $old_matchday) {
+    drupal_set_message($current_matchday . ' wurde als aktueller Spieltag gesetzt');
+  }
+  if($date_matchday != $old_date_matchday) {
+    drupal_set_message($date_matchday_formatted . ' wurde als Datum des Spieltages gesetzt');
+  }
+  if($current_season_value != $old_season_value) {
+    drupal_set_message($current_season_label . ' wurde als aktuelle Saison gesetzt');
+  }
 }
 
 /**
@@ -115,6 +139,16 @@ function get_current_matchday() {
   // We set it in the form above
   $current_matchday = variable_get('current_matchday', '');
   return $current_matchday;
+}
+
+/**
+ * Make the matchday date system-wide available
+ */
+function get_date_matchday() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $date_matchday = variable_get('date_matchday', '');
+  return $date_matchday;
 }
 
 /**
