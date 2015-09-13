@@ -60,6 +60,20 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_tm_spieltag_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_tm_spieltag_1']['alter']['text'] = '[field_tm_spieltag_1-value]';
   $handler->display->display_options['fields']['field_tm_spieltag_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Datum */
+  $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
+  $handler->display->display_options['fields']['field_datum']['field'] = 'field_datum';
+  $handler->display->display_options['fields']['field_datum']['label'] = '';
+  $handler->display->display_options['fields']['field_datum']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_datum']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_datum']['settings'] = array(
+    'format_type' => 'short_no_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Logo Heimmannschaft */
   $handler->display->display_options['fields']['field_logo_icon']['id'] = 'field_logo_icon';
   $handler->display->display_options['fields']['field_logo_icon']['table'] = 'field_data_field_logo_icon';
@@ -141,7 +155,7 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['ui_name'] = 'Filter nach aktueller Saison und Spieltag';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = 'return check_current_season_matchday($row);';
+  $handler->display->display_options['filters']['php']['php_filter'] = 'return check_current_season_date_matchday($row);';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
