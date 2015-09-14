@@ -76,6 +76,14 @@ function sbl_standings_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
+  /* Field: Content: Spiel läuft */
+  $handler->display->display_options['fields']['field_spiel_laeuft']['id'] = 'field_spiel_laeuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['table'] = 'field_data_field_spiel_laeuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['field'] = 'field_spiel_laeuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['label'] = '';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_spiel_laeuft']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_spiel_laeuft']['type'] = 'list_key';
   /* Field: Datum für Anzeige */
   $handler->display->display_options['fields']['field_datum_1']['id'] = 'field_datum_1';
   $handler->display->display_options['fields']['field_datum_1']['table'] = 'field_data_field_datum';
@@ -118,7 +126,10 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_tm_board_points_team_1']['field'] = 'field_tm_board_points_team_1';
   $handler->display->display_options['fields']['field_tm_board_points_team_1']['ui_name'] = 'Brettpunkte Heimmannschaft';
   $handler->display->display_options['fields']['field_tm_board_points_team_1']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['element_class'] = 'match-active-[field_spiel_laeuft]';
   $handler->display->display_options['fields']['field_tm_board_points_team_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_board_points_team_1']['empty'] = '0';
   /* Field: Logo Auswärtsmannschaft */
   $handler->display->display_options['fields']['field_logo_team']['id'] = 'field_logo_team';
   $handler->display->display_options['fields']['field_logo_team']['table'] = 'field_data_field_logo_team';
@@ -146,7 +157,31 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['field'] = 'field_tm_board_points_team_2';
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['ui_name'] = 'Brettpunkte Auswärtsmannschaft';
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['element_class'] = 'match-active-[field_spiel_laeuft]';
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_board_points_team_2']['empty'] = '0';
+  /* Field: Content: Livevideo */
+  $handler->display->display_options['fields']['field_livevideo']['id'] = 'field_livevideo';
+  $handler->display->display_options['fields']['field_livevideo']['table'] = 'field_data_field_livevideo';
+  $handler->display->display_options['fields']['field_livevideo']['field'] = 'field_livevideo';
+  $handler->display->display_options['fields']['field_livevideo']['label'] = '';
+  $handler->display->display_options['fields']['field_livevideo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_livevideo']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_livevideo']['alter']['path'] = '/liveportal?livevideo=[field_livevideo]';
+  $handler->display->display_options['fields']['field_livevideo']['alter']['alt'] = 'Link zum Live-Video';
+  $handler->display->display_options['fields']['field_livevideo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_livevideo']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_livevideo']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_livevideo']['type'] = 'link_plain';
+  /* Field: Content: Video Zusammenfassung */
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['id'] = 'field_video_zusammenfassung';
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['table'] = 'field_data_field_video_zusammenfassung';
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['field'] = 'field_video_zusammenfassung';
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['label'] = '';
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['alter']['path'] = 'liveportal?[field_livevideo] ';
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['empty'] = '[field_livevideo]';
+  $handler->display->display_options['fields']['field_video_zusammenfassung']['click_sort_column'] = 'url';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -188,6 +223,8 @@ function sbl_standings_views_default_views() {
     t('Auswärtsmannschaft referenziert von field_tm_team_2'),
     t('[field_tm_saison-tid]'),
     t('[field_tm_spieltag_1-value]'),
+    t('Link zum Live-Video'),
+    t('[field_livevideo]'),
     t('Block'),
   );
   $export['live_bar'] = $view;
