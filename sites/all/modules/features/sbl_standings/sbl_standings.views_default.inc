@@ -611,7 +611,7 @@ function sbl_standings_views_default_views() {
   );
   $export['spielplan'] = $view;
 
-  $view = new view();
+$view = new view();
 $view->name = 'teams_leaderbord';
 $view->description = '';
 $view->tag = 'default';
@@ -844,7 +844,6 @@ $translatables['teams_leaderbord'] = array(
   t('Block Tabelle'),
 );
   $export['teams_leaderbord'] = $view;
-
 
   return $export;
 }
