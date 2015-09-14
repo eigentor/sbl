@@ -722,8 +722,10 @@ display: inline;
 .randnotizen-image {
 width:80px;
 }
-
-
+.link_zur_aktuellen_tabelle {
+text-align:right;
+margin-top:-5px;
+}
 /*------------------------------------*\
 	Adsense Blöcke
 \*------------------------------------*/
