@@ -26,15 +26,21 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-klubnews-block_1' => array(
+        'block-20' => array(
+          'module' => 'block',
+          'delta' => '20',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-teams_leaderbord-block_1' => array(
           'module' => 'views',
-          'delta' => 'klubnews-block_1',
+          'delta' => 'teams_leaderbord-block_1',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
-        'views-topic_cuture-block_2' => array(
+        'views-comments_recent-block_1' => array(
           'module' => 'views',
-          'delta' => 'topic_cuture-block_2',
+          'delta' => 'comments_recent-block_1',
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
@@ -326,29 +332,35 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-20' => array(
+          'module' => 'block',
+          'delta' => '20',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'views-latest_news-block_2' => array(
           'module' => 'views',
           'delta' => 'latest_news-block_2',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'block-18' => array(
           'module' => 'block',
           'delta' => '18',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-photos-block_1' => array(
           'module' => 'views',
           'delta' => 'photos-block_1',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
         'simplenews-120' => array(
           'module' => 'simplenews',
           'delta' => '120',
           'region' => 'sidebar_second',
-          'weight' => '-7',
+          'weight' => '-6',
         ),
       ),
     ),
@@ -533,17 +545,23 @@ function sbl_kontext_context_default_contexts() {
           'region' => 'content_bottom_first',
           'weight' => '-8',
         ),
+        'block-20' => array(
+          'module' => 'block',
+          'delta' => '20',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
         'block-18' => array(
           'module' => 'block',
           'delta' => '18',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'block-19' => array(
           'module' => 'block',
           'delta' => '19',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),

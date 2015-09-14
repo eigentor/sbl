@@ -27,6 +27,39 @@ th {
   padding: 0.3em 0;
   text-align: center;
 }
+/* Clearfix für die Slider und die Live-Leiste auf der Startseite */
+.front #block-views-article-slider-large-block-1,
+.front #block-views-article-slider-large-block,
+.front #block-views-live-bar-block {
+  zoom: 1;
+}
+.front #block-views-article-slider-large-block-1:after,
+.front #block-views-article-slider-large-block:after,
+.front #block-views-live-bar-block:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.front #block-views-live-bar-block {
+  z-index: -1;
+}
+.front #block-views-live-bar-block .views-row {
+  float: left;
+}
+.front #block-views-live-bar-block .views-row {
+  zoom: 1;
+}
+.front #block-views-live-bar-block .views-row:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
 
 
 
