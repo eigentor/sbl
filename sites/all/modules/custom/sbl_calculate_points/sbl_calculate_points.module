@@ -1,10 +1,18 @@
 <?php
 
 function team_list_calculate_team_points($nid) {
-  //Get all Team Matches the team has been involved in
-  // The season that is viewed
-  $season = arg(1);
+  // Check if we are viewing the page view for the table, and if not, set the season not from the
+  // argument but from the function get_current_season(). This is needed for the block
+  // view of the leaderbord. */
+  $view = views_get_page_view();
+  if(isset($view) && $view->name == 'teams_leaderbord') {
+    $season = arg(1);
+  } else {
+     $season = get_current_season();
+  }
 
+  // Get all Team Matches the team has been involved in
+  // The season that is viewed
   // Query for Home matches
   $team_home_match_query = new EntityFieldQuery();
 
@@ -31,7 +39,6 @@ function team_list_calculate_team_points($nid) {
 
   $team_away_match = $team_away_match_query->execute();
 
-
   // Set the variable for the home team points
   $team_home_team_points = 0;
   $team_away_team_points = 0;
@@ -44,6 +51,7 @@ function team_list_calculate_team_points($nid) {
      $team_home_match_wrapper = entity_metadata_wrapper('node', $home_match);
       if(!is_null($team_home_match_wrapper->field_tm_team_points_tm_1->label())) {
         $team_home_team_points += $team_home_match_wrapper->field_tm_team_points_tm_1->label();
+
       }
     }
   }
@@ -61,14 +69,22 @@ function team_list_calculate_team_points($nid) {
   $team_sum_team_points = 0;
   $team_sum_team_points = floatval($team_home_team_points + $team_away_team_points);
 
-
   return $team_sum_team_points;
 }
 
 function team_list_calculate_board_points($nid) {
-  //Get all Team Matches the team has been involved in
-  $season = arg(1);
 
+  // Check if we are viewing the page view for the table, and if not, set the season not from the
+  // argument but from the function get_current_season(). This is needed for the block
+  // view of the leaderbord. */
+  $view = views_get_page_view();
+  if(isset($view) && $view->name == 'teams_leaderbord') {
+    $season = arg(1);
+  } else {
+     $season = get_current_season();
+  }
+
+  //Get all Team Matches the team has been involved in
   // Query for Home matches
   $team_home_match_query = new EntityFieldQuery();
 
