@@ -22,6 +22,7 @@ regions[branding] = Branding
 regions[menu] = Menu
 regions[submenu] = Sub Menu
 
+regions[above_content] = Above Content
 regions[content_bottom_first] = Content Bottom First
 regions[content_bottom_second] = Content Bottom Second
 

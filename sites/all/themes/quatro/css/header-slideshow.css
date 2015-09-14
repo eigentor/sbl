@@ -53,8 +53,12 @@ background-color:#eee;
 }
 
 /* Slideshow Frontpage */
+.front #section-header {
+  background: white;
+  padding-bottom: 40px;
+}
 .front .zone-submenu-wrapper {
-  background: none;
+  background: white;
   display: block;
   position: relative;
 }
