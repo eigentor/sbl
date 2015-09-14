@@ -116,7 +116,7 @@ function check_current_season_date_matchday($row) {
 //  dpm($date_row_formatted);
 
   // Show only the elements that have the season and date as set in SBL settings
-  if($date_matchday == $date_row_formatted) {
+  if($current_season == $row->field_tm_saison && $date_matchday == $date_row_formatted) {
     return FALSE;
   } else {
     return TRUE;
