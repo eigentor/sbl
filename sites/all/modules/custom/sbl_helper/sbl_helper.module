@@ -6,45 +6,45 @@ function filter_single_games_player($row) {
 
   // Check if the field collection has the player as player 1, whose
   // player's page is displayed
-  $single_game_query_player_1 = new EntityFieldQuery();
+//  $single_game_query_player_1 = new EntityFieldQuery();
+//
+//  $single_game_query_player_1->entityCondition('entity_type', 'field_collection_item')
+//    ->entityCondition('bundle', 'field_tm_game')
+//    ->propertyCondition('item_id', $row->field_mt_player_1_1)
+//    ->fieldCondition('field_mt_player_1', 'target_id', $player)
+//    // Bypass node access
+//    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+//
+//  $single_game_player_1 = $single_game_query_player_1->execute();
+//
+//  $single_game_query_player_2 = new EntityFieldQuery();
+//
+//  $single_game_query_player_2->entityCondition('entity_type', 'field_collection_item')
+//    ->entityCondition('bundle', 'field_tm_game')
+//    ->propertyCondition('item_id', $row->field_mt_player_2_1)
+//    ->fieldCondition('field_mt_player_2', 'target_id', $player)
+//    // Bypass node access
+//    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+//
+//  $single_game_player_2 = $single_game_query_player_2->execute();
+//
+//  // Check also for the season
+//  $season_query = new EntityFieldQuery();
+//
+//  $season_query->entityCondition('entity_type', 'node')
+//    ->entityCondition('bundle', 'team_match')
+//    ->propertyCondition('nid', $row->field_tm_saison_1)
+//    ->fieldCondition('field_tm_saison', 'tid', $season)
+//    // Bypass node access
+//    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+//
+//  $season_result = $season_query->execute();
+  //dpm($row);
 
-  $single_game_query_player_1->entityCondition('entity_type', 'field_collection_item')
-    ->entityCondition('bundle', 'field_tm_game')
-    ->propertyCondition('item_id', $row->field_mt_player_2)
-    ->fieldCondition('field_mt_player_1', 'target_id', $player)
-    // Bypass node access
-    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
-
-  $single_game_player_1 = $single_game_query_player_1->execute();
-
-  $single_game_query_player_2 = new EntityFieldQuery();
-
-  $single_game_query_player_2->entityCondition('entity_type', 'field_collection_item')
-    ->entityCondition('bundle', 'field_tm_game')
-    ->propertyCondition('item_id', $row->field_mt_player_2)
-    ->fieldCondition('field_mt_player_2', 'target_id', $player)
-    // Bypass node access
-    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
-
-  $single_game_player_2 = $single_game_query_player_2->execute();
-
-  // Check also for the season
-  $season_query = new EntityFieldQuery();
-
-  $season_query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'team_match')
-    ->propertyCondition('nid', $row->field_tm_spieltag_1)
-    ->fieldCondition('field_tm_saison', 'tid', $season)
-    // Bypass node access
-    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
-
-  $season_result = $season_query->execute();
-
-
-  if(!isset($single_game_player_1['field_collection_item']) && !isset($single_game_player_2['field_collection_item'])) {
+  if(($row->field_mt_player_1_1 == $player || $row->field_mt_player_1_1 == $player) && $row->field_tm_saison_1 == $season) {
+    return FALSE;
+  } else {
     return TRUE;
-  } elseif (!isset($season_result['node'])) {
-      return TRUE;
   }
 }
 
