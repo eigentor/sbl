@@ -2,7 +2,6 @@
 
 function team_list_calculate_team_points($nid) {
   //Get all Team Matches the team has been involved in
-
   // The season that is viewed
   $season = arg(1);
 
@@ -32,6 +31,7 @@ function team_list_calculate_team_points($nid) {
 
   $team_away_match = $team_away_match_query->execute();
 
+
   // Set the variable for the home team points
   $team_home_team_points = 0;
   $team_away_team_points = 0;
@@ -53,7 +53,7 @@ function team_list_calculate_team_points($nid) {
     $team_away_match_nids = array_keys($team_away_match['node']);
     foreach($team_away_match_nids as $key => $away_match) {
      $team_away_match_wrapper = entity_metadata_wrapper('node', $away_match);
-      if(!is_null($team_home_match_wrapper->field_tm_team_points_tm_2->label())) {
+      if(!is_null($team_away_match_wrapper->field_tm_team_points_tm_2->label())) {
         $team_away_team_points += $team_away_match_wrapper->field_tm_team_points_tm_2->label();
        }
       }
@@ -116,7 +116,7 @@ function team_list_calculate_board_points($nid) {
     $team_away_match_nids = array_keys($team_away_match['node']);
     foreach($team_away_match_nids as $key => $away_match) {
      $team_away_match_wrapper = entity_metadata_wrapper('node', $away_match);
-      if(!is_null($team_home_match_wrapper->field_tm_board_points_team_2->label())) {
+      if(!is_null($team_away_match_wrapper->field_tm_board_points_team_2->label())) {
         $team_away_board_points += $team_away_match_wrapper->field_tm_board_points_team_2->label();
       }
     }
