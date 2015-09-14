@@ -2180,8 +2180,9 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -2224,6 +2225,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 1,
@@ -2237,6 +2239,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 2,
@@ -2275,6 +2278,77 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-team_match-field_livevideo'
+  $field_instances['node-team_match-field_livevideo'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'URL des Livevideos auf Chess24.com<br />
+<strong>Muster:</strong><br />
+https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016#live bei Live-Events der Saison 2015/16<br />
+https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 für beispielsweise der Videostream aus Runde 10 der Saison 2015/16',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 15,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_livevideo',
+    'label' => 'Livevideo',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '',
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 255,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'advanced_link',
+      'settings' => array(
+        'default_titles' => '',
+        'urls_allowed' => 'external',
+        'urls_filter' => 'https://chess24.com/de/watch/live-tournaments/*',
+        'urls_search' => 'start',
+      ),
+      'type' => 'advanced_link',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'node-team_match-field_spiel_laeuft'
   $field_instances['node-team_match-field_spiel_laeuft'] = array(
     'bundle' => 'team_match',
@@ -2284,7 +2358,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Anhaken, wenn das Spiel noch läuft',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2295,8 +2369,9 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'list_default',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -2317,7 +2392,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 11,
@@ -2770,11 +2845,81 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-team_match-field_video_zusammenfassung'
+  $field_instances['node-team_match-field_video_zusammenfassung'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Videozusammenfassung des Spiels, falls vorhanden<br />
+Einfach Name des Videoartikels eingeben und dann den Eintrag aus der Liste auswählen.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 16,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video_zusammenfassung',
+    'label' => 'Video Zusammenfassung',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 0,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => '',
+      ),
+      'enable_tokens' => 0,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 255,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'advanced_link',
+      'settings' => array(
+        'default_titles' => '',
+        'urls_allowed' => 'internal',
+        'urls_filter' => 'video/*',
+        'urls_search' => 'contains',
+      ),
+      'type' => 'advanced_link',
+      'weight' => 15,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Akademischer Titel');
   t('Alle Heimspiele des Vereins');
   t('Alle Spielerdaten, die sich pro Saison ändern können.');
+  t('Anhaken, wenn das Spiel noch läuft');
   t('Auf Startseite anteasern');
   t('Ausrichter');
   t('Bild');
@@ -2798,6 +2943,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('In der Liga seit');
   t('Internet-Verantwortlicher');
   t('Jahres-ID');
+  t('Livevideo');
   t('Logo Club');
   t('Logo Icon');
   t('Mannschaft 1');
@@ -2821,8 +2967,15 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   t('Twitter');
   t('URL der Facebook-Präsenz des Klubs, sofern vorhanden');
   t('URL der Twitterseite des Klubs, sofern vorhanden');
+  t('URL des Livevideos auf Chess24.com<br />
+<strong>Muster:</strong><br />
+https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016#live bei Live-Events der Saison 2015/16<br />
+https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 für beispielsweise der Videostream aus Runde 10 der Saison 2015/16');
   t('Verein');
   t('Vereinskürzel');
+  t('Video Zusammenfassung');
+  t('Videozusammenfassung des Spiels, falls vorhanden<br />
+Einfach Name des Videoartikels eingeben und dann den Eintrag aus der Liste auswählen.');
   t('Vorname');
   t('Vorsitzender');
   t('Website');

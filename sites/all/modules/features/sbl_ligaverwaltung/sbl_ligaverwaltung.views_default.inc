@@ -622,7 +622,59 @@ function sbl_ligaverwaltung_views_default_views() {
   /* Display: Content pane Einzelspiele Heim */
   $handler = $view->new_display('panel_pane', 'Content pane Einzelspiele Heim', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h2 class="view-title">Ergebnisse und Gegner</h2>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field Collection Item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['ui_name'] = 'Field Collection Item ID';
+  $handler->display->display_options['fields']['item_id']['label'] = '';
+  $handler->display->display_options['fields']['item_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['item_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['item_id']['separator'] = '';
+  /* Field: Saison als TID */
+  $handler->display->display_options['fields']['field_tm_saison_1']['id'] = 'field_tm_saison_1';
+  $handler->display->display_options['fields']['field_tm_saison_1']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison_1']['field'] = 'field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison_1']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['fields']['field_tm_saison_1']['ui_name'] = 'Saison als TID';
+  $handler->display->display_options['fields']['field_tm_saison_1']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_saison_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_saison_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_saison_1']['alter']['text'] = '[field_tm_saison_1-tid]';
+  $handler->display->display_options['fields']['field_tm_saison_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_saison_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Spieler 1 als NID */
+  $handler->display->display_options['fields']['field_mt_player_1_1']['id'] = 'field_mt_player_1_1';
+  $handler->display->display_options['fields']['field_mt_player_1_1']['table'] = 'field_data_field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1_1']['field'] = 'field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1_1']['ui_name'] = 'Spieler 1 als NID';
+  $handler->display->display_options['fields']['field_mt_player_1_1']['label'] = '';
+  $handler->display->display_options['fields']['field_mt_player_1_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_mt_player_1_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mt_player_1_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_mt_player_1_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Spieler 2 als NID */
+  $handler->display->display_options['fields']['field_mt_player_2_1']['id'] = 'field_mt_player_2_1';
+  $handler->display->display_options['fields']['field_mt_player_2_1']['table'] = 'field_data_field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2_1']['field'] = 'field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2_1']['ui_name'] = 'Spieler 2 als NID';
+  $handler->display->display_options['fields']['field_mt_player_2_1']['label'] = '';
+  $handler->display->display_options['fields']['field_mt_player_2_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_mt_player_2_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_mt_player_2_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_mt_player_2_1']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Content: Saison */
   $handler->display->display_options['fields']['field_tm_saison']['id'] = 'field_tm_saison';
   $handler->display->display_options['fields']['field_tm_saison']['table'] = 'field_data_field_tm_saison';
@@ -631,6 +683,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_tm_saison']['label'] = '';
   $handler->display->display_options['fields']['field_tm_saison']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tm_saison']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_saison']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Spieltag */
   $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
   $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
@@ -647,6 +700,7 @@ function sbl_ligaverwaltung_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
   );
   /* Field: Field collection item: Spieler 1 */
   $handler->display->display_options['fields']['field_mt_player_1']['id'] = 'field_mt_player_1';
@@ -719,6 +773,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Gegner: Name'),
     t('Alle'),
     t('Content pane Einzelspiele Heim'),
+    t('<h2 class="view-title">Ergebnisse und Gegner</h2>'),
+    t('.'),
+    t('[field_tm_saison_1-tid]'),
     t('Spieltag'),
     t('View panes'),
   );
