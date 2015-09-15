@@ -138,10 +138,12 @@ function soembed_filter_embed($match) {
   }
 
   $output = empty($output) ? $url : $output;
+  
+  $output="<div class='responsive-video'>".$output."</div>";
 
-  if (count($match) > 3) {
-    $output = $match[1] . $output . $match[3]; // Add <p> and </p> back.
-  }
+  #if (count($match) > 3) {
+  #$output = $match[1] . $output . $match[3]; // Add <p> and </p> back.
+  #}
 
   return $output;
 }
