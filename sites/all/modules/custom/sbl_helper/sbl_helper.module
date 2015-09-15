@@ -123,21 +123,49 @@ function check_current_season_date_matchday($row) {
   }
 }
 
-function check_type_of_page() {
+function statistics_check_type_of_page() {
+  // Find out on which page of our statistics area we are.
+  // There are some panels pages
   $page_type = '';
   if (panels_get_current_page_display()) {
-    $page_type = 'panel';
+    $page_type = 'panel_';
     switch(arg(0)) {
       case 'verein':
-        $page_type .= '_verein';
+        $page_type .= 'verein';
         break;
       case 'spieler':
-        $page_type .= '_spieler';
+        $page_type .= 'spieler';
         break;
       case 'ergebnisse':
-        $page_type .= '_ergebnisse';
+        $page_type .= 'ergebnisse';
         break;
     }
   }
-  dpm($page_type);
+  // and some views
+  $views_page = views_get_page_view(); // Does this need a check in order not to throw an error?
+  if (is_object($views_page)) {
+    $page_type = 'view_' . $views_page->name;
+  }
+  // return as a variable where we are.
+  return $page_type;
+}
+
+function statistics_create_navigation() {
+  // Create a navigation block to get to the statistics area we want
+  $season = get_current_season();
+  $matchday = get_current_matchday();
+
+  s
+
+
+  $output = '<ul class="statistics-navigation">';
+  $output .= '<li class="tabelle"><a href="';
+  $output .= '">Tabelle</a></li>';
+  $output .= '<li class="spielplan"><a href="';
+  $output .= '">Spielplan</a></li>';
+  $output .= '<li class="ergebnisse"><a href="';
+  $output .= '">Ergebnisse</a></li>';
+  $output .= '</ul>';
+
+  return $output;
 }
