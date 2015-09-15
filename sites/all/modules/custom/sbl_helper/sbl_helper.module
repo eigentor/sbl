@@ -154,8 +154,8 @@ function statistics_create_navigation() {
   // Create a navigation block to get to the statistics area we want
 
   // Set default values for season and matchday
-  $season = get_current_season();
-  $matchday = get_current_matchday();
+//  $season = get_current_season();
+//  $matchday = get_current_matchday();
 
   // Get the season from the url arguments
   switch(statistics_check_type_of_page()) {
