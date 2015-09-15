@@ -14,7 +14,9 @@ function sbl_standings_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Navigation Statistikbereich';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'navigation_statistics';
-  $fe_block_boxes->body = '&nbsp;';
+  $fe_block_boxes->body = '<?php
+print statistics_create_navigation();
+?>';
 
   $export['navigation_statistics'] = $fe_block_boxes;
 

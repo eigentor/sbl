@@ -2917,8 +2917,11 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
       ),
       'full' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => 1,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 0,
       ),
       'teaser' => array(

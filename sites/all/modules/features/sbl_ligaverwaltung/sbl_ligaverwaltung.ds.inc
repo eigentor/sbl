@@ -337,29 +337,31 @@ function sbl_ligaverwaltung_ds_layout_settings_info() {
   $ds_layout->layout = 'ds_2col_stacked';
   $ds_layout->settings = array(
     'regions' => array(
-      'footer' => array(
-        0 => 'field_ausrichter',
-        1 => 'field_spiel_laeuft',
-        12 => 'field_tm_game',
-      ),
       'header' => array(
-        2 => 'field_tm_saison',
-        3 => 'field_tm_spieltag_1',
-        4 => 'field_datum',
-        5 => 'body',
+        0 => 'field_video_zusammenfas',
+        3 => 'field_tm_saison',
+        4 => 'field_tm_spieltag_1',
+        5 => 'field_datum',
+        6 => 'body',
+      ),
+      'footer' => array(
+        1 => 'field_ausrichter',
+        2 => 'field_spiel_laeuft',
+        13 => 'field_tm_game',
       ),
       'left' => array(
-        6 => 'field_tm_team_1',
-        7 => 'field_tm_team_points_tm_1',
-        8 => 'field_tm_board_points_team_1',
+        7 => 'field_tm_team_1',
+        8 => 'field_tm_team_points_tm_1',
+        9 => 'field_tm_board_points_team_1',
       ),
       'right' => array(
-        9 => 'field_tm_team_2',
-        10 => 'field_tm_team_points_tm_2',
-        11 => 'field_tm_board_points_team_2',
+        10 => 'field_tm_team_2',
+        11 => 'field_tm_team_points_tm_2',
+        12 => 'field_tm_board_points_team_2',
       ),
     ),
     'fields' => array(
+      'field_video_zusammenfas' => 'header',
       'field_ausrichter' => 'footer',
       'field_spiel_laeuft' => 'footer',
       'field_tm_saison' => 'header',

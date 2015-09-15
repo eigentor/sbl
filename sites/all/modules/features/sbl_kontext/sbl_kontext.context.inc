@@ -88,27 +88,21 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-latest_news-block_3' => array(
-          'module' => 'views',
-          'delta' => 'latest_news-block_3',
+        'block-20' => array(
+          'module' => 'block',
+          'delta' => '20',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'block-18' => array(
-          'module' => 'block',
-          'delta' => '18',
+        'views-latest_news-block_3' => array(
+          'module' => 'views',
+          'delta' => 'latest_news-block_3',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
         'views-photos-block_1' => array(
           'module' => 'views',
           'delta' => 'photos-block_1',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
-        'simplenews-120' => array(
-          'module' => 'simplenews',
-          'delta' => '120',
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),
@@ -526,6 +520,12 @@ function sbl_kontext_context_default_contexts() {
           'delta' => 'article_slider_large-block_1',
           'region' => 'submenu',
           'weight' => '-9',
+        ),
+        'views-live_bar-block' => array(
+          'module' => 'views',
+          'delta' => 'live_bar-block',
+          'region' => 'above_content',
+          'weight' => '-10',
         ),
         'views-topic_trending-block_1' => array(
           'module' => 'views',

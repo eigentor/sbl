@@ -19,7 +19,6 @@ function sbl_standings_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'verein/*' => 'verein/*',
         'spieler/*' => 'spieler/*',
         'ergebnisse/*' => 'ergebnisse/*',
         'spielplan/*' => 'spielplan/*',
@@ -34,7 +33,7 @@ function sbl_standings_context_default_contexts() {
           'module' => 'block',
           'delta' => '21',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '2',
         ),
       ),
     ),
