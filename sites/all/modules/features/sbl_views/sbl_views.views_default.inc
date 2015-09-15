@@ -1332,6 +1332,8 @@ function sbl_views_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Ullis Randnotizen - nie Mainstream, aber immer Klartext!';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -1350,6 +1352,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Alternatives Vorschaubild */
   $handler->display->display_options['fields']['field_alternatives_vorschaubild']['id'] = 'field_alternatives_vorschaubild';
@@ -1523,6 +1526,7 @@ function sbl_views_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Page'),
+    t('Ullis Randnotizen - nie Mainstream, aber immer Klartext!'),
     t('<img src="/sites/all/themes/quatro/images/ullis-randnotizen/ulrich-geilmann.jpg" />'),
     t('[field_alternatives_vorschaubild]'),
     t('<i class="fa fa-clock-o"></i> [created]'),
@@ -4598,7 +4602,16 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['filters']['tid']['field'] = 'tid';
-  $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    144 => '144',
+    143 => '143',
+    142 => '142',
+    139 => '139',
+    258 => '258',
+    261 => '261',
+    283 => '283',
+    284 => '284',
+  );
   $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['label'] = 'Saison';
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
@@ -4806,7 +4819,16 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '4';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
@@ -4923,13 +4945,13 @@ function sbl_views_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
     t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('nächste Seite ›'),
+    t('letzte Seite »'),
     t('In dieser Rubrik kommen Menschen zu Wort, die unserem Redaktionsteam irgendwann und irgendwo über den Weg gelaufen sind und die bereit waren, einen Teil ihrer Geschichte mit uns und den Lesern zu teilen.
 <p>Haben Sie auch einen Beitrag für uns? Dann senden Sie uns einfach eine E-Mail mit Ihrer Geschichte und einem Foto an <a href="mailto:schachgeschichten@schachbundesliga.de">schachgeschichten@schachbundesliga.de</a></p>
 <hr class="dotted" />'),
@@ -5748,6 +5770,7 @@ function sbl_views_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['title']['element_class'] = 'teams-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
