@@ -2206,7 +2206,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 5,
     ),
   );
 
@@ -2345,7 +2345,61 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 14,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-team_match-field_match_report'
+  $field_instances['node-team_match-field_match_report'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 17,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_match_report',
+    'label' => 'Spielbericht',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'test_instance_behavior' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 9,
     ),
   );
 
@@ -2395,7 +2449,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => 6,
     ),
   );
 
@@ -2543,7 +2597,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 7,
+      'weight' => 12,
     ),
   );
 
@@ -2845,19 +2899,20 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_video_zusammenfassung'
-  $field_instances['node-team_match-field_video_zusammenfassung'] = array(
+  // Exported field_instance: 'node-team_match-field_video_zusammenfas'
+  $field_instances['node-team_match-field_video_zusammenfas'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Videozusammenfassung des Spiels, falls vorhanden<br />
-Einfach Name des Videoartikels eingeben und dann den Eintrag aus der Liste ausw√§hlen.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_default',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 16,
       ),
       'full' => array(
@@ -2874,43 +2929,27 @@ Einfach Name des Videoartikels eingeben und dann den Eintrag aus der Liste ausw√
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_video_zusammenfassung',
+    'field_name' => 'field_video_zusammenfas',
     'label' => 'Video Zusammenfassung',
     'required' => 0,
     'settings' => array(
-      'absolute_url' => 0,
-      'attributes' => array(
-        'class' => '',
-        'configurable_class' => 0,
-        'configurable_title' => 0,
-        'rel' => '',
-        'target' => 'default',
-        'title' => '',
+      'behaviors' => array(
+        'test_instance_behavior' => array(
+          'status' => 0,
+        ),
       ),
-      'display' => array(
-        'url_cutoff' => '',
-      ),
-      'enable_tokens' => 0,
-      'rel_remove' => 'default',
-      'title' => 'none',
-      'title_label_use_field_label' => 0,
-      'title_maxlength' => 255,
-      'title_value' => '',
-      'url' => 0,
       'user_register_form' => FALSE,
-      'validate_url' => 1,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'advanced_link',
+      'module' => 'entityreference',
       'settings' => array(
-        'default_titles' => '',
-        'urls_allowed' => 'internal',
-        'urls_filter' => 'video/*',
-        'urls_search' => 'contains',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'advanced_link',
-      'weight' => 15,
+      'type' => 'entityreference_autocomplete',
+      'weight' => 8,
     ),
   );
 
@@ -2960,6 +2999,7 @@ Einfach Name des Videoartikels eingeben und dann den Eintrag aus der Liste ausw√
   t('Saison');
   t('Saisondaten Spieler');
   t('Spiel l√§uft');
+  t('Spielbericht');
   t('Spieler 1');
   t('Spieler 2');
   t('Spielort');
@@ -2974,8 +3014,6 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('Verein');
   t('Vereinsk√ºrzel');
   t('Video Zusammenfassung');
-  t('Videozusammenfassung des Spiels, falls vorhanden<br />
-Einfach Name des Videoartikels eingeben und dann den Eintrag aus der Liste ausw√§hlen.');
   t('Vorname');
   t('Vorsitzender');
   t('Website');

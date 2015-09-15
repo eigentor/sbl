@@ -400,6 +400,44 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_match_report'
+  $field_bases['field_match_report'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_match_report',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'test_field_behavior' => array(
+            'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'article' => 'article',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_mt_color_player_1'
   $field_bases['field_mt_color_player_1'] = array(
     'active' => 1,
@@ -1291,33 +1329,42 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_video_zusammenfassung'
-  $field_bases['field_video_zusammenfassung'] = array(
+  // Exported field_base: 'field_video_zusammenfas'
+  $field_bases['field_video_zusammenfas'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_video_zusammenfassung',
-    'indexes' => array(),
+    'field_name' => 'field_video_zusammenfas',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'link',
+    'module' => 'entityreference',
     'settings' => array(
-      'attributes' => array(
-        'class' => '',
-        'rel' => '',
-        'target' => 'default',
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'test_field_behavior' => array(
+            'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'video' => 'video',
+        ),
       ),
-      'display' => array(
-        'url_cutoff' => 80,
-      ),
-      'enable_tokens' => 1,
-      'title' => 'optional',
-      'title_maxlength' => 128,
-      'title_value' => '',
-      'url' => 0,
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'link_field',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_web_admin_club'
