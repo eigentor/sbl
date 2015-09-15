@@ -147,6 +147,7 @@ function statistics_check_type_of_page() {
     $page_type = 'view_' . $views_page->name;
   }
   // return as a variable where we are.
+  dpm($page_type);
   return $page_type;
 }
 
