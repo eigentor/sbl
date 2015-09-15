@@ -160,8 +160,6 @@ function statistics_create_navigation() {
    //Get the season from the url arguments
   switch(statistics_check_type_of_page()) {
     case ('panel_verein'):
-      $season = arg(2);
-      break;
     case ('panel_spieler'):
       $season = arg(2);
       break;
@@ -169,11 +167,7 @@ function statistics_create_navigation() {
       $season = arg(1);
       break;
     case 'panel_ergebnisse':
-      $season = arg(1);
-      break;
     case 'view_spielplan':
-      $season = arg(1);
-      break;
     case 'view_teams_leaderboard':
       $season = arg(1);
       break;
