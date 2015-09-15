@@ -121,5 +121,23 @@ function check_current_season_date_matchday($row) {
   } else {
     return TRUE;
   }
+}
 
+function check_type_of_page() {
+  $page_type = '';
+  if (panels_get_current_page_display()) {
+    $page_type = 'panel';
+    switch(arg(0)) {
+      case 'verein':
+        $page_type .= '_verein';
+        break;
+      case 'spieler':
+        $page_type .= '_spieler';
+        break;
+      case 'ergebnisse':
+        $page_type .= '_ergebnisse';
+        break;
+    }
+  }
+  dpm($page_type);
 }
