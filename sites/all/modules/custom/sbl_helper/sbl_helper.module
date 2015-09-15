@@ -157,6 +157,7 @@ function statistics_create_navigation() {
   switch($page_type) {
     case ('panel_verein'):
       $season = arg(2);
+      dpm($season);
       break;
     case ('panel_spieler'):
       $season = arg(2);
