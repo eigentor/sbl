@@ -123,7 +123,9 @@ function check_current_season_date_matchday($row) {
   }
 }
 
-function statistics_check_type_of_page() {
+function statistics_create_navigation() {
+  // Create a navigation block to get to the statistics area we want
+
   // Find out on which page of our statistics area we are.
   // There are some panels pages
   $page_type = '';
@@ -146,19 +148,13 @@ function statistics_check_type_of_page() {
   if (is_object($views_page)) {
     $page_type = 'view_' . $views_page->name;
   }
-  // return as a variable where we are.
-  return $page_type;
-}
-
-function statistics_create_navigation() {
-  // Create a navigation block to get to the statistics area we want
 
   // Set default values for season and matchday
   $season = get_current_season();
   $matchday = get_current_matchday();
 
-  // Get the season from the url arguments
-  switch(statistics_check_type_of_page()) {
+   //Get the season from the url arguments
+  switch($page_type) {
     case ('panel_verein'):
       $season = arg(2);
       break;
@@ -178,6 +174,7 @@ function statistics_create_navigation() {
       $season = arg(1);
       break;
   }
+
 
   // Set the necessary variables for our theme_list() function
   $title = 'Tabellen';
