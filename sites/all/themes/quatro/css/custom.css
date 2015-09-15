@@ -720,11 +720,11 @@ display: inline;
 \*------------------------------------*/
 
 .randnotizen-image {
-width:80px;
+width:80px; 
 }
 .link_zur_aktuellen_tabelle {
 text-align:right;
-margin-top:-5px;
+margin-top:-10px;
 }
 /*------------------------------------*\
 	Adsense Blöcke
