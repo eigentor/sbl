@@ -173,15 +173,17 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_livevideo']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_livevideo']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_livevideo']['type'] = 'link_plain';
-  /* Field: Content: Video Zusammenfassung */
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['id'] = 'field_video_zusammenfassung';
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['table'] = 'field_data_field_video_zusammenfassung';
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['field'] = 'field_video_zusammenfassung';
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['label'] = '';
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['alter']['path'] = 'liveportal?[field_livevideo] ';
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['empty'] = '[field_livevideo]';
-  $handler->display->display_options['fields']['field_video_zusammenfassung']['click_sort_column'] = 'url';
+  /* Field: Video Zusammenfassung Entity Reference */
+  $handler->display->display_options['fields']['field_video_zusammenfas']['id'] = 'field_video_zusammenfas';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['table'] = 'field_data_field_video_zusammenfas';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['field'] = 'field_video_zusammenfas';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['ui_name'] = 'Video Zusammenfassung Entity Reference';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['label'] = '';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video_zusammenfas']['empty'] = '[field_livevideo]';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['settings'] = array(
+    'link' => 1,
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

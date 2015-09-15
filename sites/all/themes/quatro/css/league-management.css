@@ -27,7 +27,7 @@ th {
   padding: 0.3em 0;
   text-align: center;
 }
-/* Clearfix für die Slider und die Live-Leiste auf der Startseite */
+/* Clearfix fï¿½r die Slider und die Live-Leiste auf der Startseite */
 .front #block-views-article-slider-large-block-1,
 .front #block-views-article-slider-large-block,
 .front #block-views-live-bar-block {
@@ -138,11 +138,11 @@ th {
 #block-views-live-bar-block .views-field-field-tm-board-points-team-2 .match-active-1 {
   color: #f18000;
 }
-#block-views-live-bar-block .views-field-field-video-zusammenfassung {
+#block-views-live-bar-block .views-field-field-video-zusammenfas {
   clear: left;
   float: left;
 }
-#block-views-live-bar-block .views-field-field-video-zusammenfassung a {
+#block-views-live-bar-block .views-field-field-video-zusammenfas a {
   display: block;
   text-align: left;
   text-indent: -9999px;
