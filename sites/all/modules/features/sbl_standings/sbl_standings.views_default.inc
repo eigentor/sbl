@@ -160,6 +160,17 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['element_class'] = 'match-active-[field_spiel_laeuft]';
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tm_board_points_team_2']['empty'] = '0';
+  /* Field: Jetzt live */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Jetzt live';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'jetzt live!';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'liveportal';
+  $handler->display->display_options['fields']['nothing']['element_class'] = 'match-active-[field_spiel_laeuft]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Content: Livevideo */
   $handler->display->display_options['fields']['field_livevideo']['id'] = 'field_livevideo';
   $handler->display->display_options['fields']['field_livevideo']['table'] = 'field_data_field_livevideo';
@@ -168,22 +179,40 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_livevideo']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_livevideo']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_livevideo']['alter']['path'] = '/liveportal?livevideo=[field_livevideo]';
-  $handler->display->display_options['fields']['field_livevideo']['alter']['alt'] = 'Link zum Live-Video';
+  $handler->display->display_options['fields']['field_livevideo']['alter']['alt'] = 'Live-Video';
   $handler->display->display_options['fields']['field_livevideo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_livevideo']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_livevideo']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_livevideo']['type'] = 'link_plain';
-  /* Field: Video Zusammenfassung Entity Reference */
+  /* Field: Content: Video Zusammenfassung */
   $handler->display->display_options['fields']['field_video_zusammenfas']['id'] = 'field_video_zusammenfas';
   $handler->display->display_options['fields']['field_video_zusammenfas']['table'] = 'field_data_field_video_zusammenfas';
   $handler->display->display_options['fields']['field_video_zusammenfas']['field'] = 'field_video_zusammenfas';
-  $handler->display->display_options['fields']['field_video_zusammenfas']['ui_name'] = 'Video Zusammenfassung Entity Reference';
   $handler->display->display_options['fields']['field_video_zusammenfas']['label'] = '';
+  $handler->display->display_options['fields']['field_video_zusammenfas']['alter']['link_class'] = 'fa fa-video-camera';
   $handler->display->display_options['fields']['field_video_zusammenfas']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_video_zusammenfas']['empty'] = '[field_livevideo]';
   $handler->display->display_options['fields']['field_video_zusammenfas']['settings'] = array(
     'link' => 1,
   );
+  /* Field: Content: Spielbericht */
+  $handler->display->display_options['fields']['field_match_report']['id'] = 'field_match_report';
+  $handler->display->display_options['fields']['field_match_report']['table'] = 'field_data_field_match_report';
+  $handler->display->display_options['fields']['field_match_report']['field'] = 'field_match_report';
+  $handler->display->display_options['fields']['field_match_report']['label'] = '';
+  $handler->display->display_options['fields']['field_match_report']['alter']['link_class'] = 'fa fa-file-text';
+  $handler->display->display_options['fields']['field_match_report']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_match_report']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Link zu Spielergebnisse */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Link zu Spielergebnisse';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'match-active-[field_spiel_laeuft]';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -225,7 +254,8 @@ function sbl_standings_views_default_views() {
     t('Auswärtsmannschaft referenziert von field_tm_team_2'),
     t('[field_tm_saison-tid]'),
     t('[field_tm_spieltag_1-value]'),
-    t('Link zum Live-Video'),
+    t('jetzt live!'),
+    t('Live-Video'),
     t('[field_livevideo]'),
     t('Block'),
   );

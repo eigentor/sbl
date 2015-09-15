@@ -64,7 +64,14 @@ background-color:#eee;
 }
 .front #block-views-article-slider-large-block  {
   z-index: 2;
+  position: relative;
 }
+.front #block-views-article-slider-large-block .views-row {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
 .front #block-views-article-slider-large-block .view-article-slider-large .view-display-id-block {
   position: relative;
 }

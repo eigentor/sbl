@@ -23,12 +23,17 @@
  *
  * @ingroup views_templates
  */
-//dpm($row);
+
+// Add a class, if the video icon is there.
+$class_video_icon = '';
+if(!empty($row->field_field_video_zusammenfas) || !empty($row->field_field_livevideo)) {
+  $class_video_icon = 'with-video-icon';
+}
 ?>
 <?php if(!empty($row->field_field_datum_1)) {
   print $row->field_field_datum_1[0]['rendered']['#markup'];
 } ?>
-<div class="row-inner">
+<div class="row-inner <?php print $class_video_icon; ?>">
   <?php foreach ($fields as $id => $field): ?>
     <?php if (!empty($field->separator)): ?>
       <?php print $field->separator; ?>

@@ -64,14 +64,15 @@ th {
   zoom: 1;
   background: white;
   border: 1px solid #333;
-  border-right: none;
-  min-height: 90px;
+  margin-right: -1px;
+  min-height: 70px;
+  width: 96px;
+  padding-bottom: 5px;
 }
 .front #block-views-live-bar-block .views-row .row-inner {
-  display: table-cell;
-  height: 69px;
-  vertical-align: middle;
-  padding-bottom: 5px;
+  /*display: table-cell;*/
+  /*height: 69px;*/
+  /*vertical-align: middle;*/
 }
 .front #block-views-live-bar-block .views-row.views-row-last {
   border-right: 1px solid #333;
@@ -89,7 +90,7 @@ th {
   width: 26px;
   padding-left: 7px;
   text-align: left;
-  height: auto;
+  height: 26px;
   float: left;
 }
 #block-views-live-bar-block span.date-display-single {
@@ -117,6 +118,7 @@ th {
 #block-views-live-bar-block .views-field-field-vereinskuerzel,
 #block-views-live-bar-block .views-field-field-vereinskuerzel-1 {
   width: 32px;
+  height: 26px;
   float: left;
   font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
   font-weight: bold;
@@ -133,25 +135,83 @@ th {
   font-weight: bold;
   text-align: center;
   width: 20px;
+  height: 26px;
 }
 #block-views-live-bar-block .views-field-field-tm-board-points-team-1 .match-active-1,
 #block-views-live-bar-block .views-field-field-tm-board-points-team-2 .match-active-1 {
   color: #f18000;
 }
-#block-views-live-bar-block .views-field-field-video-zusammenfas {
+/* Center the text 'jetzt live" and display it on full width when no video icon is there */
+#block-views-live-bar-block .views-field-nothing {
+  text-align: center;
   clear: left;
+}
+#block-views-live-bar-block .with-video-icon .views-field-nothing {
+  clear: none;
+  float: left;
+}
+#block-views-live-bar-block .views-field-nothing .field-content {
+  display: none;
+  font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
+  font-weight: bold;
+  color: #f18000;
+  padding-top: 4px;
+  line-height: 16px;
+  height: 16px;
+  font-size: 13px;
+}
+#block-views-live-bar-block .with-video-icon .views-field-nothing .field-content {
+  margin-left: 11px;
+}
+#block-views-live-bar-block .views-field-nothing .field-content.match-active-1 {
+  display: block;
+}
+#block-views-live-bar-block .views-field-field-video-zusammenfas {
   float: left;
 }
 #block-views-live-bar-block .views-field-field-video-zusammenfas a {
   display: block;
-  text-align: left;
-  text-indent: -9999px;
-  height: 11px;
+  height: 16px;
   width: 22px;
-  background: #ddd;
+  text-indent: -9999px;
   margin-left: 7px;
-  margin-top: 3px;
+  margin-top: 4px;
+  background: url(../images/video-camera.png) no-repeat center center;
 }
+#block-views-live-bar-block .views-field-field-video-zusammenfas a:hover {
+  background-image: url(../images/video-camera-hover.png);
+}
+#block-views-live-bar-block .views-field-field-match-report {
+  float: left;
+}
+#block-views-live-bar-block .views-field-field-match-report a {
+  display: block;
+  height: 16px;
+  width: 22px;
+  text-indent: -9999px;
+  margin-left: 7px;
+  margin-top: 4px;
+  background: url(../images/document.png) no-repeat center center;
+}
+#block-views-live-bar-block .views-field-field-match-report a:hover {
+  background-image: url(../images/document-hover.png);
+}
+#block-views-live-bar-block .views-field-nothing-1 {
+  float: left;
+}
+#block-views-live-bar-block .views-field-nothing-1 a.link-to-results {
+  display: block;
+  text-indent: -9999px;
+  height: 16px;
+  width: 16px;
+  margin-top: 4px;
+  margin-left: 7px;
+  background: url(../images/statistics.png) no-repeat center center;
+}
+#block-views-live-bar-block .views-field-nothing-1 .match-active-1 a.link-to-results {
+  display: none;
+}
+
 
 
 
