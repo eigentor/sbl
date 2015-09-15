@@ -147,7 +147,6 @@ function statistics_check_type_of_page() {
     $page_type = 'view_' . $views_page->name;
   }
   // return as a variable where we are.
-  dpm($page_type);
   return $page_type;
 }
 
@@ -155,20 +154,26 @@ function statistics_create_navigation() {
   // Create a navigation block to get to the statistics area we want
 
   // Set default values for season and matchday
-//  $season = get_current_season();
-//  $matchday = get_current_matchday();
+  $season = get_current_season();
+  $matchday = get_current_matchday();
 
   // Get the season from the url arguments
   switch(statistics_check_type_of_page()) {
-    case 'panel_verein':
-    case 'panel_spieler':
+    case ('panel_verein'):
+      $season = arg(2);
+      break;
+    case ('panel_spieler'):
       $season = arg(2);
       break;
     case 'panel_ergebnisse':
       $season = arg(1);
       break;
     case 'panel_ergebnisse':
+      $season = arg(1);
+      break;
     case 'view_spielplan':
+      $season = arg(1);
+      break;
     case 'view_teams_leaderboard':
       $season = arg(1);
       break;
