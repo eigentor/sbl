@@ -172,6 +172,11 @@ article.node-article.node-teaser .node-title a:hover,
 .block-video-block .jcarousel-skin-default .jcarousel-next-horizontal:hover {
   background: url(../images/jcarousel-fwd-hover.png) 0 0 no-repeat;
 }
+
+.naechste-spiele a {
+font-size:0.85em !important;
+}
+
 /*------------------------------------*\
 	FORMS CSS
 \*------------------------------------*/
