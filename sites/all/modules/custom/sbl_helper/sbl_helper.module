@@ -255,25 +255,3 @@ function select_season_form_validate($form, &$form_state) {
   // Set the form redirect to the above url
   $form_state['redirect'] = $url;
 }
-
-function set_field_has_result() {
-  // Now get all Team Match nodes for that specific Match Day
-$matches_2014 = new EntityFieldQuery();
-
-$matches_2014->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'team_match')
-  ->fieldCondition('field_tm_saison', 'tid', 143)
-  // Bypass node access
-  ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
-
-$matches_2014_result = $matches_2014->execute();
-  if($matches_2014_result['node']) {
-    $node_ids = array_keys($matches_2014_result['node']);
-    foreach($node_ids as $node_id) {
-    $node_wrapper = entity_metadata_wrapper('node', $node_id);
-    //dpm($node_wrapper->value());
-      $node_wrapper->field_game_has_result->set(1);
-      $node_wrapper->save();
-    }
-  }
-}
