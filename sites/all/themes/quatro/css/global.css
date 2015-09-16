@@ -395,7 +395,7 @@ ul#main-menu li a.active,
 .zone-menu ul.menu li a.active:hover,
 .zone-menu ul.menu li a.active,
 .zone-menu ul.menu li.active-trail a {
-  background: url(../images/submenu-bg.png) 0 0 repeat;
+  background: url(../images/submenu-bg.png) 0 0 repeat; 
 }
 
 .zone-menu .block-nice-menus {
