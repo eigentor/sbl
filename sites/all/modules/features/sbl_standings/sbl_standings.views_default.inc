@@ -849,6 +849,14 @@ function sbl_standings_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Tabelle';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Footer: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['php_output'] = '<div class="link_zur_aktuellen_tabelle"><a href="tabelle/<?php echo get_current_season(); ?>"><i class="fa fa-arrow-circle-o-right"></i>
+Zur aktuellen Tabelle</a></div>
+';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';

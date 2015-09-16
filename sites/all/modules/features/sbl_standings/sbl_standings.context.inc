@@ -35,6 +35,12 @@ function sbl_standings_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '2',
         ),
+        'views-naechste_spiele-block_1' => array(
+          'module' => 'views',
+          'delta' => 'naechste_spiele-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '4',
+        ),
       ),
     ),
   );
