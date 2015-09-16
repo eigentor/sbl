@@ -241,10 +241,48 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_pl_board_nr']['id'] = 'field_pl_board_nr';
   $handler->display->display_options['fields']['field_pl_board_nr']['table'] = 'field_data_field_pl_board_nr';
   $handler->display->display_options['fields']['field_pl_board_nr']['field'] = 'field_pl_board_nr';
+  $handler->display->display_options['fields']['field_pl_board_nr']['label'] = 'Brett';
   $handler->display->display_options['fields']['field_pl_board_nr']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
+  /* Field: Content: Bild */
+  $handler->display->display_options['fields']['field_pl_image']['id'] = 'field_pl_image';
+  $handler->display->display_options['fields']['field_pl_image']['table'] = 'field_data_field_pl_image';
+  $handler->display->display_options['fields']['field_pl_image']['field'] = 'field_pl_image';
+  $handler->display->display_options['fields']['field_pl_image']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['fields']['field_pl_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_pl_image']['alter']['path'] = 'spieler/[nid]/[field_saison]';
+  $handler->display->display_options['fields']['field_pl_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pl_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_pl_image']['settings'] = array(
+    'image_style' => 'spielerbild_klein',
+    'image_link' => '',
+  );
+  /* Field: Field collection item: Nation */
+  $handler->display->display_options['fields']['field_pl_country']['id'] = 'field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['table'] = 'field_data_field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['field'] = 'field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['label'] = 'Nat.';
+  $handler->display->display_options['fields']['field_pl_country']['type'] = 'country_icon';
+  $handler->display->display_options['fields']['field_pl_country']['settings'] = array(
+    'countryiconset' => 'icon_shiny',
+    'property' => '',
+  );
+  /* Field: Field collection item: ELO */
+  $handler->display->display_options['fields']['field_pl_elo']['id'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['table'] = 'field_data_field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['field'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Field collection item: Meistertitel */
+  $handler->display->display_options['fields']['field_pl_master_title']['id'] = 'field_pl_master_title';
+  $handler->display->display_options['fields']['field_pl_master_title']['table'] = 'field_data_field_pl_master_title';
+  $handler->display->display_options['fields']['field_pl_master_title']['field'] = 'field_pl_master_title';
+  $handler->display->display_options['fields']['field_pl_master_title']['label'] = 'Titel';
+  $handler->display->display_options['fields']['field_pl_master_title']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -482,11 +520,13 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Content pane Kader pro Verein'),
     t('<h2 class="view-title">Kader [field_saison_1]</h2>'),
     t('[field_saison-tid]'),
-    t('Brett-Nr.'),
+    t('Brett'),
+    t('Bild'),
+    t('Nat.'),
+    t('ELO'),
+    t('Titel'),
     t('View panes'),
     t('Content pane Spielerkarte Daten 1'),
-    t('Titel'),
-    t('ELO'),
     t('Föderation'),
     t('Saison'),
     t('Content pane Spieler Saisonergebnisse Durchschnitt'),
