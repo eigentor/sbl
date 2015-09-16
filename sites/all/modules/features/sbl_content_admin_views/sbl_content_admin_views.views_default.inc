@@ -189,12 +189,19 @@ function sbl_content_admin_views_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'field_tm_spieltag_1' => 'field_tm_spieltag_1',
     'title' => 'title',
+    'field_datum' => 'field_datum',
     'field_tm_team_1' => 'field_tm_team_1',
     'field_tm_team_2' => 'field_tm_team_2',
     'field_tm_team_points_tm_1' => 'field_tm_team_points_tm_1',
     'field_tm_board_points_team_1' => 'field_tm_board_points_team_1',
     'field_tm_team_points_tm_2' => 'field_tm_team_points_tm_2',
     'field_tm_board_points_team_2' => 'field_tm_board_points_team_2',
+    'field_ausrichter' => 'field_ausrichter',
+    'field_spiel_laeuft' => 'field_spiel_laeuft',
+    'field_game_has_result' => 'field_game_has_result',
+    'edit_node' => 'edit_node',
+    'counter' => 'counter',
+    'nid' => 'nid',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -206,6 +213,13 @@ function sbl_content_admin_views_views_default_views() {
       'empty_column' => 0,
     ),
     'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_datum' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -249,6 +263,44 @@ function sbl_content_admin_views_views_default_views() {
     ),
     'field_tm_board_points_team_2' => array(
       'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_ausrichter' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_spiel_laeuft' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_game_has_result' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'counter' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nid' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -488,11 +540,13 @@ function sbl_content_admin_views_views_default_views() {
   $handler->display->display_options['fields']['field_spiel_laeuft']['table'] = 'field_data_field_spiel_laeuft';
   $handler->display->display_options['fields']['field_spiel_laeuft']['field'] = 'field_spiel_laeuft';
   $handler->display->display_options['fields']['field_spiel_laeuft']['label'] = 'Sp. läuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['type'] = 'list_key';
   /* Field: Content: Spiel in Ergebnissen anzeigen */
   $handler->display->display_options['fields']['field_game_has_result']['id'] = 'field_game_has_result';
   $handler->display->display_options['fields']['field_game_has_result']['table'] = 'field_data_field_game_has_result';
   $handler->display->display_options['fields']['field_game_has_result']['field'] = 'field_game_has_result';
   $handler->display->display_options['fields']['field_game_has_result']['label'] = 'in Erg. anz.';
+  $handler->display->display_options['fields']['field_game_has_result']['type'] = 'list_key';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
