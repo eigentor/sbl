@@ -215,6 +215,16 @@ th {
 form#select-season-form .form-submit{
   display: none;
 }
+.block.navigation-statistics h3 {
+  border-bottom: 2px solid #f18000;
+  color: #999;
+  font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
+  font-size: 160%;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  padding-bottom: 5px;
+}
 
 
 
