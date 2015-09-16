@@ -185,7 +185,22 @@ function statistics_create_navigation() {
 
   // Create an unordered List with the navigation items
   $output = theme_item_list(array('items' => $list_items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
-
-
   return $output;
+}
+
+/**
+ * Create a form that sets the season by changing the URL
+ */
+function select_season_form($form, &$form_state) {
+  $form['set_season'] = array(
+    '#type' => 'select',
+    '#title' => 'Saison',
+    '#options' => array(
+      143 => '2014/15',
+      144 => '2015/16',
+    ),
+    '#description' => 'Wählen Sie die Saison',
+    //'#default_value' => variable_get('current_matchday', ''),
+  );
+  return $form;
 }
