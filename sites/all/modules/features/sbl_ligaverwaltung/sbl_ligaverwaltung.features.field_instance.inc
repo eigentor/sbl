@@ -2287,7 +2287,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
     ),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Auswählen, wenn das Spiel in Ergebnislisten erscheinen soll.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2320,7 +2320,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'display_label' => 0,
+        'display_label' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 7,
@@ -3013,6 +3013,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f�
   t('Anhaken, wenn das Spiel noch läuft');
   t('Auf Startseite anteasern');
   t('Ausrichter');
+  t('Auswählen, wenn das Spiel in Ergebnislisten erscheinen soll.');
   t('Bild');
   t('Bisherige Erfolge des Vereins (Meisterschaften, Pokalsiege etc.)');
   t('Body');
