@@ -77,6 +77,35 @@ function sbl_standings_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-0da06052-e40b-4e3f-892e-00d7951fbe0b';
+    $pane->panel = 'middle';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Ergebnisse Pager',
+      'title' => '',
+      'body' => '<?php
+
+print results_pager()
+
+?>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0da06052-e40b-4e3f-892e-00d7951fbe0b';
+    $display->content['new-0da06052-e40b-4e3f-892e-00d7951fbe0b'] = $pane;
+    $display->panels['middle'][0] = 'new-0da06052-e40b-4e3f-892e-00d7951fbe0b';
+    $pane = new stdClass();
     $pane->pid = 'new-cfeab605-6fdf-47f5-a39f-743c9ae2b499';
     $pane->panel = 'middle';
     $pane->type = 'custom';
@@ -98,11 +127,11 @@ print_results_matchday()
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'cfeab605-6fdf-47f5-a39f-743c9ae2b499';
     $display->content['new-cfeab605-6fdf-47f5-a39f-743c9ae2b499'] = $pane;
-    $display->panels['middle'][0] = 'new-cfeab605-6fdf-47f5-a39f-743c9ae2b499';
+    $display->panels['middle'][1] = 'new-cfeab605-6fdf-47f5-a39f-743c9ae2b499';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-cfeab605-6fdf-47f5-a39f-743c9ae2b499';
   $handler->conf['display'] = $display;
