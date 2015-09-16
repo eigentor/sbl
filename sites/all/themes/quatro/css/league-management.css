@@ -286,6 +286,38 @@ form#select-season-form .description {
 .page-ergebnisse .view-match-results .view-content {
   margin-bottom: 35px;
 }
+.page-ergebnisse .results-pager {
+  text-align: center;
+  zoom: 1;
+  margin-bottom: 20px;
+}
+/* Clearfix for results pager */
+.page-ergebnisse .results-pager:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+.page-ergebnisse .results-pager a {
+  display: inline-block;
+  padding: 3px 1px;
+  margin: 5px 4px;
+  width: 20px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  background: #eee;
+  line-height: 1.2;
+  font-size: 13px;
+  color: #333
+}
+.page-ergebnisse .results-pager a:hover,
+.page-ergebnisse .results-pager a.active {
+  border: 1px solid #666;
+  background: #777;
+  color: white;
+}
 
 /*------------------------------------------- */
 /*------------------------------------------- */

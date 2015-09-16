@@ -257,19 +257,33 @@ function select_season_form_validate($form, &$form_state) {
 }
 
 function results_pager() {
-  print '<div class="results-pager">';
-  $i = 0;
-  while ($i < 15) {
-    $i++;
-    if($i == arg(2)) {
-      $active_class = 'active';
-    } else {
-      $active_class = '';
+  // The pager for the results page
+
+  // Do not print the pager temporarily for the season 2015/16
+  if(arg(1) != 144) {
+    // Print the pager. 
+    print '<div class="results-pager">';
+    $i = 0;
+    while ($i < 15) {
+      $i++;
+      if ($i == arg(2)) {
+        $active_class = 'active';
+      }
+      else {
+        $active_class = '';
+      }
+      // Create links for the numbers 1-15 for each matchday.
+      // We simply keep the first and the second argument and only
+      // change the third.
+      print l($i, '/' . arg(0) . '/' . arg(1) . '/' . $i, array(
+        'attributes' => array(
+          'class' => array(
+            'pager',
+            $active_class
+          )
+        )
+      ));
     }
-    // Create links for the numbers 1-15 for each matchday.
-    // We simply keep the first and the second argument and only
-    // change the third.
-    print l($i, '/' .arg(0) . '/' . arg(1) . '/' . $i, array('attributes' => array('class' => array('pager', $active_class))));
+    print '</div>';
   }
-  print '</div>';
 }
