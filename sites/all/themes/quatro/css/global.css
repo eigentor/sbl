@@ -2134,6 +2134,9 @@ h2.block-title {
 .block-red h2.block-title,.block-red h2.pane-title {
   border-bottom: 2px solid #b70000;
 }
+.block-ergebnisse h2.block-title,.block-spielberichte h2.pane-title { /* Ergebnisse */
+  border-bottom: 2px solid #333366;
+}
 .block-spielberichte h2.block-title,.block-spielberichte h2.pane-title { /* Spielberichte */
   border-bottom: 2px solid #3b9319;
 }

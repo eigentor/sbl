@@ -760,7 +760,21 @@ height: 0;
 overflow: hidden;
 }
 
-@media only screen and (max-width: 580px) { 
+@media only screen and (max-width: 800px) { 
+#block-views-team-info-block-1 {
+   display:none;
+}
+}
+@media only screen and (max-width: 1220px) and (min-width:800px) { 
+.zone-menu ul.nice-menu li a {
+    padding: 10px 10px !important;
+}
+.zone-menu ul.nice-menu {
+text-align:left !important;
+}
+}
+
+@media only screen and (max-width: 640px) { 
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
 min-width:320px;
