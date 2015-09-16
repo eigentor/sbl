@@ -483,6 +483,22 @@ function sbl_content_admin_views_views_default_views() {
   $handler->display->display_options['fields']['field_ausrichter']['id'] = 'field_ausrichter';
   $handler->display->display_options['fields']['field_ausrichter']['table'] = 'field_data_field_ausrichter';
   $handler->display->display_options['fields']['field_ausrichter']['field'] = 'field_ausrichter';
+  /* Field: Content: Spiel läuft */
+  $handler->display->display_options['fields']['field_spiel_laeuft']['id'] = 'field_spiel_laeuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['table'] = 'field_data_field_spiel_laeuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['field'] = 'field_spiel_laeuft';
+  $handler->display->display_options['fields']['field_spiel_laeuft']['label'] = 'Sp. läuft';
+  /* Field: Content: Spiel in Ergebnissen anzeigen */
+  $handler->display->display_options['fields']['field_game_has_result']['id'] = 'field_game_has_result';
+  $handler->display->display_options['fields']['field_game_has_result']['table'] = 'field_data_field_game_has_result';
+  $handler->display->display_options['fields']['field_game_has_result']['field'] = 'field_game_has_result';
+  $handler->display->display_options['fields']['field_game_has_result']['label'] = 'in Erg. anz.';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'admin/mannschafts-matches';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Mannschaftsmatches Übersicht';
@@ -513,6 +529,8 @@ function sbl_content_admin_views_views_default_views() {
     t('Auswärtsmannschaft'),
     t('Page'),
     t('Datum'),
+    t('Sp. läuft'),
+    t('in Erg. anz.'),
   );
   $export['mannchaftsmatches'] = $view;
 

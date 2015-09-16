@@ -2278,6 +2278,55 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-team_match-field_game_has_result'
+  $field_instances['node-team_match-field_game_has_result'] = array(
+    'bundle' => 'team_match',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 18,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_game_has_result',
+    'label' => 'Spiel in Ergebnissen anzeigen',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-team_match-field_livevideo'
   $field_instances['node-team_match-field_livevideo'] = array(
     'bundle' => 'team_match',
@@ -2345,7 +2394,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -2399,7 +2448,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -2597,7 +2646,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -2952,7 +3001,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -3001,6 +3050,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('Reisepartner');
   t('Saison');
   t('Saisondaten Spieler');
+  t('Spiel in Ergebnissen anzeigen');
   t('Spiel l√§uft');
   t('Spielbericht');
   t('Spieler 1');
