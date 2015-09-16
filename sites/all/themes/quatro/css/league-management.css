@@ -212,6 +212,10 @@ th {
   display: none;
 }
 
+form#select-season-form .form-submit{
+  display: none;
+}
+
 
 
 
