@@ -168,7 +168,7 @@ function statistics_create_navigation() {
       break;
     case 'panel_ergebnisse':
     case 'view_spielplan':
-    case 'view_teams_leaderboard':
+    case 'view_teams_leaderbord':
       $season = arg(1);
       break;
   }
@@ -192,6 +192,21 @@ function statistics_create_navigation() {
  * Create a form that sets the season by changing the URL
  */
 function select_season_form($form, &$form_state) {
+  // Get the default value for our Season select
+  $default_season = '';
+  switch(statistics_check_type_of_page()) {
+    case 'panel_ergebnisse':
+      $default_season = arg(1);
+      break;
+    case 'view_spielplan':
+      $default_season = arg(1);
+      break;
+    case 'view_teams_leaderbord':
+      $default_season = arg(1);
+      break;
+  }
+
+
   $form['set_season'] = array(
     '#type' => 'select',
     '#title' => 'Saison',
@@ -199,8 +214,44 @@ function select_season_form($form, &$form_state) {
       143 => '2014/15',
       144 => '2015/16',
     ),
+    '#default_value' => $default_season,
     '#description' => 'Wählen Sie die Saison',
     //'#default_value' => variable_get('current_matchday', ''),
   );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+  );
+
+  // Attach a Javascript file to make the form auto-submit when we change the value of the select element
+  $form['#attached']['js'][] = drupal_get_path('module', 'sbl_helper') . '/js/sbl_helper_form_submit.js';
+
   return $form;
+}
+function select_season_form_validate($form, &$form_state) {
+  // Set where to redirect, when we select the season
+
+  // Get the season from our dropdown
+  $season = $form_state['values']['set_season'];
+  $url = '';
+  //dpm(statistics_check_type_of_page());
+   // Set the url to go to for each page
+  switch(statistics_check_type_of_page()) {
+    case 'panel_ergebnisse':
+      $url = '/' . arg(0);
+      $url .= '/' . $season;
+      $url .= '/' . arg(2);
+      break;
+    case 'view_spielplan':
+      $url = '/' . arg(0);
+      $url .= '/' . $season;
+      break;
+    case 'view_teams_leaderbord':
+      $url = '/' . arg(0);
+      $url .= '/' . $season;
+      break;
+  }
+  // Set the form redirect to the above url
+  $form_state['redirect'] = $url;
 }
