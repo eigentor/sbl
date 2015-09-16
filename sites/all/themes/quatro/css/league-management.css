@@ -260,6 +260,15 @@ form#select-season-form .description {
 }
 .page-ergebnisse .view-match-results .view-header {
   margin-bottom: 10px;
+  zoom: 1;
+}
+.page-ergebnisse .view-match-results .view-header:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
 }
 .page-ergebnisse .view-match-results .view-header h2 {
   margin-bottom: 0;
@@ -294,8 +303,7 @@ form#select-season-form .description {
   float: left;
   line-height: 1.6;
 }
-.page-ergebnisse .view-header .datum,
-.page-ergebnisse .view-match-results .view-content {
+.page-ergebnisse .view-header .datum {
   clear: left;
 }
 
