@@ -516,6 +516,11 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['filters']['field_name']['value'] = array(
     'field_tm_game' => 'field_tm_game',
   );
+  /* Filter criterion: Field collection item: Ergebnis (field_single_match_result) */
+  $handler->display->display_options['filters']['field_single_match_result_value']['id'] = 'field_single_match_result_value';
+  $handler->display->display_options['filters']['field_single_match_result_value']['table'] = 'field_data_field_single_match_result';
+  $handler->display->display_options['filters']['field_single_match_result_value']['field'] = 'field_single_match_result_value';
+  $handler->display->display_options['filters']['field_single_match_result_value']['operator'] = 'not empty';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
