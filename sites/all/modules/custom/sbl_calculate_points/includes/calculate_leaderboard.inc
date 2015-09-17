@@ -25,6 +25,7 @@ function team_list_calculate_team_points($nid) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_1', 'target_id', $nid)
     ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -38,6 +39,7 @@ function team_list_calculate_team_points($nid) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_2', 'target_id', $nid)
     ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -97,6 +99,7 @@ function team_list_calculate_board_points($nid) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_1', 'target_id', $nid)
     ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -110,6 +113,7 @@ function team_list_calculate_board_points($nid) {
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldCondition('field_tm_team_2', 'target_id', $nid)
     ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
