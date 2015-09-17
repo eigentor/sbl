@@ -32,27 +32,27 @@ function sbl_kontext_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'views-latest_news-block_1' => array(
+          'module' => 'views',
+          'delta' => 'latest_news-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
         'views-teams_leaderbord-block_1' => array(
           'module' => 'views',
           'delta' => 'teams_leaderbord-block_1',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-comments_recent-block_1' => array(
           'module' => 'views',
           'delta' => 'comments_recent-block_1',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
         'block-18' => array(
           'module' => 'block',
           'delta' => '18',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
-        ),
-        'views-photos-block_1' => array(
-          'module' => 'views',
-          'delta' => 'photos-block_1',
           'region' => 'sidebar_second',
           'weight' => '-6',
         ),
@@ -82,6 +82,7 @@ function sbl_kontext_context_default_contexts() {
     'path' => array(
       'values' => array(
         'aktuell/bundesliga' => 'aktuell/bundesliga',
+        'bundesliga/*' => 'bundesliga/*',
       ),
     ),
   );
@@ -527,41 +528,59 @@ function sbl_kontext_context_default_contexts() {
           'region' => 'above_content',
           'weight' => '-10',
         ),
-        'views-topic_trending-block_1' => array(
+        'views-aktuell_bundesliga-block_1' => array(
           'module' => 'views',
-          'delta' => 'topic_trending-block_1',
+          'delta' => 'aktuell_bundesliga-block_1',
           'region' => 'content_bottom_first',
-          'weight' => '-10',
+          'weight' => '-46',
         ),
-        'views-klubnews-block_1' => array(
+        'views-aktuell_spielberichte-block_1' => array(
           'module' => 'views',
-          'delta' => 'klubnews-block_1',
+          'delta' => 'aktuell_spielberichte-block_1',
           'region' => 'content_bottom_first',
-          'weight' => '-9',
+          'weight' => '-45',
         ),
         'views-video-block' => array(
           'module' => 'views',
           'delta' => 'video-block',
           'region' => 'content_bottom_first',
-          'weight' => '-8',
+          'weight' => '-44',
+        ),
+        'views-naechste_spiele-block' => array(
+          'module' => 'views',
+          'delta' => 'naechste_spiele-block',
+          'region' => 'content_bottom_first',
+          'weight' => '-43',
+        ),
+        'views-klubnews-block_1' => array(
+          'module' => 'views',
+          'delta' => 'klubnews-block_1',
+          'region' => 'content_bottom_first',
+          'weight' => '-42',
         ),
         'block-20' => array(
           'module' => 'block',
           'delta' => '20',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-47',
+        ),
+        'views-teams_leaderbord-block_1' => array(
+          'module' => 'views',
+          'delta' => 'teams_leaderbord-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-46',
         ),
         'block-18' => array(
           'module' => 'block',
           'delta' => '18',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-45',
         ),
         'block-19' => array(
           'module' => 'block',
           'delta' => '19',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '-44',
         ),
       ),
     ),
@@ -583,18 +602,30 @@ function sbl_kontext_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'partien/*' => 'partien/*',
+        'partien' => 'partien',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-photos-block_1' => array(
-          'module' => 'views',
-          'delta' => 'photos-block_1',
+        'block-20' => array(
+          'module' => 'block',
+          'delta' => '20',
           'region' => 'sidebar_second',
           'weight' => '-10',
+        ),
+        'views-latest_news-block_1' => array(
+          'module' => 'views',
+          'delta' => 'latest_news-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'views-video-block' => array(
+          'module' => 'views',
+          'delta' => 'video-block',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
         ),
       ),
     ),

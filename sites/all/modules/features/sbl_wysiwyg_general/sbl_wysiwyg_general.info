@@ -9,6 +9,7 @@ dependencies[] = file_entity
 dependencies[] = filter
 dependencies[] = image_resize_filter
 dependencies[] = media_wysiwyg
+dependencies[] = soembed
 dependencies[] = strongarm
 dependencies[] = wysiwyg
 dependencies[] = xbbcode

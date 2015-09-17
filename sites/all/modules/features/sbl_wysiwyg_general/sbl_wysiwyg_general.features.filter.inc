@@ -84,6 +84,14 @@ function sbl_wysiwyg_general_filter_default_formats() {
     'status' => 1,
     'weight' => -10,
     'filters' => array(
+      'soembed' => array(
+        'weight' => -50,
+        'status' => 1,
+        'settings' => array(
+          'soembed_maxwidth' => 600,
+          'soembed_replace_inline' => 0,
+        ),
+      ),
       'filter_url' => array(
         'weight' => -49,
         'status' => 1,
@@ -92,12 +100,12 @@ function sbl_wysiwyg_general_filter_default_formats() {
         ),
       ),
       'media_filter' => array(
-        'weight' => -43,
+        'weight' => -48,
         'status' => 1,
         'settings' => array(),
       ),
       'image_resize_filter' => array(
-        'weight' => -41,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(
           'link' => 0,
@@ -110,7 +118,7 @@ function sbl_wysiwyg_general_filter_default_formats() {
         ),
       ),
       'filter_htmlcorrector' => array(
-        'weight' => -40,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(),
       ),

@@ -64,7 +64,6 @@ function sbl_wysiwyg_general_user_default_permissions() {
     'name' => 'use text format xbbcode',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'filter',
   );
