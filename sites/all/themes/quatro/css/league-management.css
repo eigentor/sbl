@@ -319,6 +319,17 @@ form#select-season-form .description {
   color: white;
 }
 
+/* Styling for the pairings if there are no results */
+.page-ergebnisse .view-match-results .view-empty {
+  margin-bottom: 20px;
+}
+.page-ergebnisse .view-match-results .view-empty h2 {
+  margin-bottom: 0;
+}
+.page-ergebnisse .view-match-results .view-empty .datum {
+  line-height: 1.5;
+}
+
 /*------------------------------------------- */
 /*------------------------------------------- */
 /*-------------- Tablet narrow --------------*/
