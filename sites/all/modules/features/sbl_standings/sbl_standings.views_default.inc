@@ -353,6 +353,12 @@ function sbl_standings_views_default_views() {
 <div class="result">[field_tm_board_points_team_1] : [field_tm_board_points_team_2]</div>
 <div class="datum">[field_datum]</div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+  /* No results behavior: Global: PHP */
+  $handler->display->display_options['empty']['php']['id'] = 'php';
+  $handler->display->display_options['empty']['php']['table'] = 'views';
+  $handler->display->display_options['empty']['php']['field'] = 'php';
+  $handler->display->display_options['empty']['php']['empty'] = TRUE;
+  $handler->display->display_options['empty']['php']['php_output'] = '<?php print results_only_pairings($view); ?>';
   /* Relationship: Field collection item: Entity with the Einzelspiel (field_tm_game) */
   $handler->display->display_options['relationships']['field_tm_game_node']['id'] = 'field_tm_game_node';
   $handler->display->display_options['relationships']['field_tm_game_node']['table'] = 'field_collection_item';
@@ -521,6 +527,14 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['filters']['field_single_match_result_value']['table'] = 'field_data_field_single_match_result';
   $handler->display->display_options['filters']['field_single_match_result_value']['field'] = 'field_single_match_result_value';
   $handler->display->display_options['filters']['field_single_match_result_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Spiel in Ergebnissen anzeigen (field_game_has_result) */
+  $handler->display->display_options['filters']['field_game_has_result_value']['id'] = 'field_game_has_result_value';
+  $handler->display->display_options['filters']['field_game_has_result_value']['table'] = 'field_data_field_game_has_result';
+  $handler->display->display_options['filters']['field_game_has_result_value']['field'] = 'field_game_has_result_value';
+  $handler->display->display_options['filters']['field_game_has_result_value']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['filters']['field_game_has_result_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
