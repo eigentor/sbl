@@ -92,16 +92,16 @@ function results_only_pairings($view) {
   $team_2_name = '';
   $match_date = '';
 
-  $field_team_1 = $team_match_wrapper->field_tm_team_1;
-  if(!empty($field_team_1)) {
+  $field_team_1 = $team_match_wrapper->field_tm_team_1->label();
+  if(!is_null($field_team_1)) {
     $team_1_name = $team_match_wrapper->field_tm_team_1->label();
   }
-  $field_team_2 = $team_match_wrapper->field_tm_team_2;
-  if(!empty($field_team_2)) {
+  $field_team_2 = $team_match_wrapper->field_tm_team_2->label();
+  if(!is_null($field_team_2)) {
     $team_2_name = $team_match_wrapper->field_tm_team_2->label();
   }
-  $field_datum = $team_match_wrapper->field_datum;
-  if(!empty($field_datum)) {
+  $field_datum = $team_match_wrapper->field_datum->value();
+  if(!is_null($field_datum)) {
     $match_date_timestamp = $team_match_wrapper->field_datum->value();
     $match_date = format_date($match_date_timestamp, 'long');
   }
