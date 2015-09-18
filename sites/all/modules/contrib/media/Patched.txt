@@ -1,0 +1,16 @@
+Wie hier beschrieben:
+https://www.drupal.org/node/2357993#comment-9477873
+
+in
+/media/modules/media_wysiwyg/includes/media_wysiwyg.filter.inc
+Zeile 219
+
+von:
+if (count(element_children($element['content'])) > 1) {
+Nach:
+if (count(element_children($element['content'])) > 2) {
+
+geändert.
+
+/media/includes/media.filter.inc
+scheint aber gar nicht mehr zu existieren.

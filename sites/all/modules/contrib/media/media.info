@@ -1,5 +1,5 @@
 name = Media
-description = Provides the core Media API <a href="https://www.drupal.org/node/2357993#comment-9477873"><strong>https://www.drupal.org/node/2357993#comment-9477873</strong></a> Remove unwanted divs around media elements
+description = Provides the core Media API <br /> Patched <a href="https://www.drupal.org/node/2357993#comment-9477873"><strong>https://www.drupal.org/node/2357993#comment-9477873</a></strong> <br />Remove unwanted divs around media elements  <br />And another Patch: <strong><a href="https://www.drupal.org/node/2028231#comment-9155669">https://www.drupal.org/node/2028231#comment-9155669</a></strong><br /> Prevent multiple files inserted into Wysiwyg have the same file ID
 package = Media
 core = 7.x
 
