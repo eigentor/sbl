@@ -36,14 +36,14 @@
 margin:auto;
 }
 
-.media-linksbuendig_im_textfluss .field-name-field-caption, .media-zentriertes_bild .field-name-field-caption {
+.media-linksbuendig_im_textfluss .field-name-field-bilduntertitel, .media-zentriertes_bild .field-name-field-bilduntertitel {
   font-size: 12px;
   border:1px solid #ababab;
   background-color:#eeeeee;
   padding:5px;
   box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.media-zentriertes_bild .field-name-field-caption {
+.media-zentriertes_bild .field-name-field-bilduntertitel {
 
 }
 .file-linksbuendig-im-textfluss{
