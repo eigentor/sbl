@@ -25,32 +25,32 @@
 
 /* Media Images */
 
-.media-story_image_left, .media-story_image_center {
+.media-linksbuendig_im_textfluss, .media-zentriertes_bild {
   width: 480px;
   height:auto;
   max-width:100%;
   margin-bottom: 10px;
 }
-.media-story_image_left { float: left; margin-right:15px }
-.media-story_image_center {
+.media-linksbuendig_im_textfluss { float: left; margin-right:15px }
+.media-zentriertes_bild {
 margin:auto;
 }
 
-.media-story_image_left .field-name-field-caption, .media-story_image_center .field-name-field-caption {
+.media-linksbuendig_im_textfluss .field-name-field-caption, .media-zentriertes_bild .field-name-field-caption {
   font-size: 12px;
   border:1px solid #ababab;
   background-color:#eeeeee;
   padding:5px;
   box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.3);
 }
-.media-story_image_center .field-name-field-caption {
+.media-zentriertes_bild .field-name-field-caption {
 
 }
-.file-story-image-left {
+.file-linksbuendig-im-textfluss{
   float: left;
   margin-right: 10px;
 }
-.file-story-image-center {
+.file-zentriertes-bild {
 margin:auto;
 }
 
