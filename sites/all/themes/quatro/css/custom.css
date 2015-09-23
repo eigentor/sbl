@@ -25,7 +25,14 @@
 
 /* Media Images */
 
-.media-linksbuendig_im_textfluss, .media-zentriertes_bild {
+.media-linksbuendig_im_textfluss {
+  width: 300px;
+  height:auto;
+  max-width:100%;
+  margin-bottom: 10px;
+}
+
+.media-zentriertes_bild {
   width: 480px;
   height:auto;
   max-width:100%;
