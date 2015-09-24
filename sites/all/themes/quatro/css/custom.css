@@ -195,8 +195,8 @@ border-left: none;
 margin-top:15px;
 }
 
-a.grey {
-color:#666 !important;
+a.grey,.grey {
+color:#5d5d5d !important;
 }
 
 .blue  {

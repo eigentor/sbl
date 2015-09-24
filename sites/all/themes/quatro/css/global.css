@@ -1310,7 +1310,7 @@ box-shadow: 1px 0px 1px 0px rgba(0,0,0,0.75);
 .view-list-articles .views-field-title a {
   font-size: 150%;
   font-weight: bold;
-  color: #222;
+  color: #5d5d5d;
   font-family: "Segoe UI","Segoe WP","Open Sans Condensed",Helvetica,sans-serif;
 }
 .view-list-articles .views-field-created,
