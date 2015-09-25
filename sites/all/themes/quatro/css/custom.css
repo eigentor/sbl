@@ -243,6 +243,26 @@ box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
 border:1px solid #f18000;
 background-color:#eee;
 }
+
+/*------------------------------------*\
+	Liveportal
+\*------------------------------------*/
+
+#liveportal_container {
+    width: 990px;
+    height: auto;
+    overflow-x: scroll;
+	 overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+#liveportal {
+width:990px;
+height:2220px;
+padding:0;
+margin:0;
+}
+
 /*------------------------------------*\
 	Logos der Bundesligavereine
 \*------------------------------------*/
