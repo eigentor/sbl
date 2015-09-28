@@ -249,18 +249,40 @@ background-color:#eee;
 \*------------------------------------*/
 
 #liveportal_container {
-    width: 990px;
-    height: auto;
-    overflow-x: scroll;
-	 overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
+height:2240px;
+width:1020px;
+ -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  overflow-y:hidden !important;
 }
 
 #liveportal {
-width:990px;
-height:2220px;
-padding:0;
-margin:0;
+ overflow:hidden;
+ width:980px;
+ height:2220px;
+}
+
+.demo-iframe-holder {
+ 
+}
+
+.pgn4web-single {
+min-height:500px !important; 
+}
+
+/*------------------------------------*\
+	Adscale
+\*------------------------------------*/
+
+#block-block-23 {
+position:absolute;
+top:0;
+left:1200px;
+}
+
+#block-block-23 .block-inner {
+padding:0 !important;
+background:none !important;
 }
 
 /*------------------------------------*\

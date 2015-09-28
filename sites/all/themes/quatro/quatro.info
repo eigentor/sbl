@@ -44,6 +44,8 @@ regions[postscript_fourth] = Postscript Fourth
 regions[footer_first] = Footer First
 regions[footer_second] = Footer Second
 
+regions[banner] = Banner
+
 ; ZONES
 
 zones[user] = User
@@ -55,6 +57,7 @@ zones[preface] = Preface
 zones[content] = Content
 zones[postscript] = Postscript
 zones[footer] = Footer
+zones[banner] = Banner rechts
 
 ; OPTIONAL STYLESHEETS
 css[quatro-reset.css][name] = Quatro reset styles
