@@ -92,6 +92,10 @@ libraries[quatro-custom][name] = quatro custom script
 libraries[quatro-custom][description] = Custom script file
 libraries[quatro-custom][js][1][file] = custom.js
 libraries[quatro-custom][js][1][options][weight] = 3
+libraries[canvas][name] = Canvas Chess Script
+libraries[canvas][description] = Canvas Chess Script
+libraries[canvas][js][1][file] = canvaschess-0.1.0.min.js
+libraries[canvas][js][2][file] = pgnviewer-0.1.0.min.js
 
 ; THEME SETTINGS (DEFAULTS)
 
