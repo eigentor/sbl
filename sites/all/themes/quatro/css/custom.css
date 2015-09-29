@@ -271,6 +271,35 @@ min-height:500px !important;
 }
 
 /*------------------------------------*\
+	CanvasChess
+\*------------------------------------*/
+
+.canvaschesspgn {
+border:1px solid #f18000;
+background-color:#f7f7f7;
+font-family:"Segoe UI",Arial,Helvetica,sans-serif !important;
+-webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+}
+
+.mobile .move_list {
+margin:0 !important;
+}
+
+.mobile .game_list {
+position:relative !important;
+left:-5px;
+width:290px !important;
+}
+.pgn_control_box {
+background-color:black;
+}
+
+.board_ctrl_btn {
+color:white !important;
+}
+/*------------------------------------*\
 	Adscale
 \*------------------------------------*/
 
