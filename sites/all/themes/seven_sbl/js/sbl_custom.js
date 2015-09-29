@@ -28,7 +28,7 @@ jQuery(document).ready(
         {
 		var pgn_location2=jQuery('a[href$=".pgn"]:first').attr('href');
 		if(pgn_location2 && pgn_location2.length > 5) {
-		var pgn2='[pgn pgnData=' + pgn_location2 + ']<a href=' + pgn_location2 + '>PGN</a>[/pgn]';
+		var pgn2='[canvas]' + pgn_location + '[/canvas]';
 		jQuery("#edit-field-gesamt-pgn-implementierung-und-0-value").val(pgn2);
 		}
 		else {
