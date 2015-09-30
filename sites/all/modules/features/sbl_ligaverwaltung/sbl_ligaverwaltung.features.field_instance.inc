@@ -2113,6 +2113,120 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-spieler-field_webseite'
+  $field_instances['node-spieler-field_webseite'] = array(
+    'bundle' => 'spieler',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Webseite des Spielers',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_webseite',
+    'label' => 'Webseite',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-spieler-field_wikipedia_eintrag'
+  $field_instances['node-spieler-field_wikipedia_eintrag'] = array(
+    'bundle' => 'spieler',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Deutscher Wikipedia Eintrag',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wikipedia_eintrag',
+    'label' => 'Wikipedia Eintrag',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-team_match-body'
   $field_instances['node-team_match-body'] = array(
     'bundle' => 'team_match',
@@ -2441,13 +2555,11 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'options_select',
       'weight' => 10,
     ),
   );
@@ -2994,13 +3106,11 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'entityreference',
+      'module' => 'options',
       'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
+        'apply_chosen' => 1,
       ),
-      'type' => 'entityreference_autocomplete',
+      'type' => 'options_select',
       'weight' => 9,
     ),
   );
@@ -3025,6 +3135,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('Das Brett, an dem der Spieler in der Mannschaft gesetzt ist.');
   t('Das Logo des Vereins.');
   t('Datum');
+  t('Deutscher Wikipedia Eintrag');
   t('ELO');
   t('Einzelspiel');
   t('Ergebnis');
@@ -3070,7 +3181,10 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('Video Zusammenfassung');
   t('Vorname');
   t('Vorsitzender');
+  t('Webseite');
+  t('Webseite des Spielers');
   t('Website');
+  t('Wikipedia Eintrag');
   t('Wird nur f√ºr Identifikationszwecke der Saison beim Datenimport ben√∂tigt und im Formular nicht angezeigt.');
 
   return $field_instances;

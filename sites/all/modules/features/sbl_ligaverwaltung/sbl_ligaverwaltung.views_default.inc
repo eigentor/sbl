@@ -349,6 +349,7 @@ function sbl_ligaverwaltung_views_default_views() {
     'field_pl_elo' => 'field_pl_elo',
     'field_pl_country' => 'field_pl_country',
     'field_saison' => 'field_saison',
+    'field_webseite' => 'field_webseite',
   );
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -382,7 +383,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_pl_elo']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pl_elo']['element_wrapper_class'] = 'margin5';
   $handler->display->display_options['fields']['field_pl_elo']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
   /* Field: Field collection item: Nation */
@@ -408,6 +409,22 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_saison']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_saison']['element_wrapper_class'] = 'margin5';
   $handler->display->display_options['fields']['field_saison']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Webseite */
+  $handler->display->display_options['fields']['field_webseite']['id'] = 'field_webseite';
+  $handler->display->display_options['fields']['field_webseite']['table'] = 'field_data_field_webseite';
+  $handler->display->display_options['fields']['field_webseite']['field'] = 'field_webseite';
+  $handler->display->display_options['fields']['field_webseite']['relationship'] = 'field_sp_verein_node';
+  $handler->display->display_options['fields']['field_webseite']['label'] = 'Im Web';
+  $handler->display->display_options['fields']['field_webseite']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_webseite']['alter']['text'] = '<a href="[field_webseite-url]" class="tooltip blue" title="Webseite" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_webseite']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_webseite']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_webseite']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_webseite']['element_wrapper_class'] = 'margin5';
+  $handler->display->display_options['fields']['field_webseite']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_webseite']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_webseite']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_webseite']['click_sort_column'] = 'url';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -529,6 +546,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Content pane Spielerkarte Daten 1'),
     t('Föderation'),
     t('Saison'),
+    t('Im Web'),
+    t('<a href="[field_webseite-url]" class="tooltip blue" title="Webseite" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>'),
     t('Content pane Spieler Saisonergebnisse Durchschnitt'),
     t('Verein'),
   );
@@ -756,10 +775,33 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_mt_player_2']['id'] = 'field_mt_player_2';
   $handler->display->display_options['fields']['field_mt_player_2']['table'] = 'field_data_field_mt_player_2';
   $handler->display->display_options['fields']['field_mt_player_2']['field'] = 'field_mt_player_2';
-  $handler->display->display_options['fields']['field_mt_player_2']['label'] = 'Gegner: Name';
+  $handler->display->display_options['fields']['field_mt_player_2']['label'] = 'Gegner';
+  $handler->display->display_options['fields']['field_mt_player_2']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_mt_player_2']['alter']['path'] = 'spieler/[field_mt_player_2_1]/[field_tm_saison_1]';
   $handler->display->display_options['fields']['field_mt_player_2']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Field collection item: Punkte Spieler 1 */
+  $handler->display->display_options['fields']['field_mt_points_player_1']['id'] = 'field_mt_points_player_1';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['table'] = 'field_data_field_mt_points_player_1';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['field'] = 'field_mt_points_player_1';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['label'] = '';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_mt_points_player_1']['element_label_colon'] = FALSE;
+  /* Field: Field collection item: Punkte Spieler 2 */
+  $handler->display->display_options['fields']['field_mt_points_player_2']['id'] = 'field_mt_points_player_2';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['table'] = 'field_data_field_mt_points_player_2';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['field'] = 'field_mt_points_player_2';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['label'] = '';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_mt_points_player_2']['element_label_colon'] = FALSE;
+  /* Field: Ergebnis aus Spielerpunkten zusammengesetzt */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Ergebnis aus Spielerpunkten zusammengesetzt';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Ergebnis';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -817,6 +859,8 @@ function sbl_ligaverwaltung_views_default_views() {
     t('.'),
     t('[field_tm_saison_1-tid]'),
     t('Spieltag'),
+    t('Gegner'),
+    t('Ergebnis'),
     t('View panes'),
   );
   $export['single_games_player'] = $view;
@@ -947,7 +991,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_facebook']['field'] = 'field_facebook';
   $handler->display->display_options['fields']['field_facebook']['label'] = '';
   $handler->display->display_options['fields']['field_facebook']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_facebook']['alter']['text'] = '<a href="[field_facebook-url]" class="tooltip blue" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_facebook']['alter']['text'] = '<a href="[field_facebook-url]" class="tooltip blue" title="Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_facebook']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_facebook']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_facebook']['element_wrapper_class'] = 'one-fifth';
@@ -959,7 +1003,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_twitter_club']['field'] = 'field_twitter_club';
   $handler->display->display_options['fields']['field_twitter_club']['label'] = '';
   $handler->display->display_options['fields']['field_twitter_club']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_twitter_club']['alter']['text'] = '<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_twitter_club']['alter']['text'] = '<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_twitter_club']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_class'] = 'one-fifth';
@@ -971,7 +1015,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
   $handler->display->display_options['fields']['field_website_club']['label'] = '';
   $handler->display->display_options['fields']['field_website_club']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip blue" title="Website"><i class="fa fa-globe fa-2x"></i></a>';
+  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip blue" title="Website" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>';
   $handler->display->display_options['fields']['field_website_club']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_website_club']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_website_club']['element_wrapper_class'] = 'one-fifth last';
@@ -1143,9 +1187,9 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Größte Erfolge'),
     t('Alle'),
     t('Content pane Verein Basisdaten 1'),
-    t('<a href="[field_facebook-url]" class="tooltip blue" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>'),
-    t('<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>'),
-    t('<a href="[field_website_club-url]" class="tooltip blue" title="Website"><i class="fa fa-globe fa-2x"></i></a>'),
+    t('<a href="[field_facebook-url]" class="tooltip blue" title="Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-2x"></i></a>'),
+    t('<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-2x"></i></a>'),
+    t('<a href="[field_website_club-url]" class="tooltip blue" title="Website" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>'),
     t('View panes'),
     t('Content pane Verein Basisdaten 2'),
     t('Spielort'),

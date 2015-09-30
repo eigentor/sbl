@@ -431,6 +431,9 @@ function sbl_ligaverwaltung_strongarm() {
         'path' => array(
           'weight' => '8',
         ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),
