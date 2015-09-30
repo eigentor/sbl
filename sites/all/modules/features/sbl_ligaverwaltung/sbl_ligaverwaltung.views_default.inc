@@ -473,10 +473,22 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Saison als TID */
+  $handler->display->display_options['fields']['field_saison']['id'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['fields']['field_saison']['field'] = 'field_saison';
+  $handler->display->display_options['fields']['field_saison']['ui_name'] = 'Saison als TID';
+  $handler->display->display_options['fields']['field_saison']['label'] = '';
+  $handler->display->display_options['fields']['field_saison']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_saison']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_saison']['alter']['text'] = '[field_saison-tid]';
+  $handler->display->display_options['fields']['field_saison']['element_label_colon'] = FALSE;
   /* Field: Field collection item: Verein */
   $handler->display->display_options['fields']['field_fc_verein']['id'] = 'field_fc_verein';
   $handler->display->display_options['fields']['field_fc_verein']['table'] = 'field_data_field_fc_verein';
   $handler->display->display_options['fields']['field_fc_verein']['field'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_fc_verein']['alter']['path'] = 'verein/[field_fc_verein-target_id]/[field_saison]';
   $handler->display->display_options['fields']['field_fc_verein']['settings'] = array(
     'link' => 0,
   );
