@@ -18,7 +18,7 @@ jQuery(document).ready(
 		pgn_location=pgn_location.replace("http:\/\/schachbundesliga.de\/sites\/default\/files\/pgn","http:\/\/schachbundesliga.de\/sites\/all\/themes\/quatro\/games");
 		var pgn="<script>\nvar viewer = new CHESS.PgnViewer({\npgn_uri: '"+pgn_location+"',\npiece_set: '/sites/all/themes/quatro/js/img/pieces/merida/',\n";
 		pgn+="square_uri_dark: '/sites/all/themes/quatro/js/img/themes/wood/square_dark.jpg',\nsquare_uri_light: '/sites/all/themes/quatro/js/img/themes/wood/square_light.jpg' });\n</script>";
-		jQuery("#edit-field-pgn-implementierung-und-0-value").val(pgn);*/
+		jQuery("#edit-field-pgn-implementierung-und-0-value").val(pgn);
 		}
 		else {
 			jQuery("#edit-field-pgn-implementierung-und-0-value").val("");
