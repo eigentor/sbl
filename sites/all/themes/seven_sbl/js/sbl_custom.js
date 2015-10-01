@@ -6,7 +6,7 @@
 */
 
 
-
+    
 jQuery(document).ready(
     function()
     {
@@ -15,7 +15,8 @@ jQuery(document).ready(
         {
 		var pgn_location=jQuery('a[href$=".pgn"]:first').attr('href');
 		if(pgn_location && pgn_location.length > 5) {
-		var pgn='[canvas]' + pgn_location + '[/canvas]';
+		var pgn="<script> var viewer = new CHESS.PgnViewer({ pgn_uri: '"+pgn_location+"', piece_set: '/sites/all/themes/quatro/js/img/pieces/merida/',";
+		pgn+="square_uri_dark: '/sites/all/themes/quatro/js/img/themes/wood/square_dark.jpg', square_uri_light: '/sites/all/themes/quatro/js/img/themes/wood/square_light.jpg' });</script>";
 		jQuery("#edit-field-pgn-implementierung-und-0-value").val(pgn);
 		}
 		else {
