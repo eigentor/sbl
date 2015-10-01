@@ -31,7 +31,7 @@ jQuery(document).ready(
 		if(pgn_location2 && pgn_location2.length > 5) {
 		var pgn2="<script> var viewer = new CHESS.PgnViewer({ pgn_uri: '"+pgn_location2+"', piece_set: '/sites/all/themes/quatro/js/img/pieces/merida/',";
 		pgn2+="square_uri_dark: '/sites/all/themes/quatro/js/img/themes/wood/square_dark.jpg', square_uri_light: '/sites/all/themes/quatro/js/img/themes/wood/square_light.jpg' });</script>";
-		jQuery("#edit-field-pgn-implementierung-und-0-value").val(pgn2);
+		jQuery("#edit-field-gesamt-pgn-implementierung-und-0-value").val(pgn2);
 		}
 		else {
 		jQuery("#edit-field-gesamt-pgn-implementierung-und-0-value").val("");
