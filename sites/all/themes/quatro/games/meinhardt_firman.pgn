@@ -1,0 +1,166 @@
+[Event "Schachbundesliga 2013/2014"]
+[Site "?"]
+[Date "2013.12.14"]
+[Round "5"]
+[White "Meinhardt, M."]
+[Black "Firman, N."]
+[Result "1-0"]
+[ECO "B46"]
+[WhiteElo "2394"]
+[BlackElo "2533"]
+[Annotator "Maximilian Meinhardt"]
+[PlyCount "55"]
+[EventDate "2013.??.??"]
+[SourceDate "2006.09.07"]
+
+{Bevor ich mit der Analyse meiner Partie beginne, möchte ich mich zunächst
+herzlich bei Georgios Souleidis für die ausgezeichnete Berichterstattung auf
+schachbundesliga.de und die Organisation dieser Wahl bedanken. Außerdem danke
+ich meinem Verein, dem SC Viernheim, der das (kurze) Abenteuer in der
+Schachbundesliga überhaupt ermöglichte. Danke an alle, die für meine Partie
+gegen GM Nazar Firman votierten und an meinen ukrainischen Schachfreund selbst,
+der an dieser Partie genauso beteiligt war wie ich. Ich freue mich sehr über
+diese Auszeichnung und es ehrt mich, dass dieses Duell den Vorzug vor neun
+schönen Partien erhielt, die von deutlich stärkeren Spielern und lebenden
+Legenden auf die Schachbundesligabretter gezaubert wurden. Aber genug der
+rührseligen Worte und zum prosaischen Ablauf dieser Dezemberpartie in
+Griesheim.} 1. e4 c5 2. Nf3 {Die Viernheimer Vorbereitung auf die Wettkämpfe
+gegen Katernberg und Emsdetten fand in einem gemeinsamen Erklimmen des
+Betzenbergs am Freitagabend ihre desillusionierende Krönung. Unterkühlt,
+lethargisch, ideenlos verlor der 1.FCK gegen Außenseiter Paderborn 0:1. Die
+Stimmung war trüb, der Frust saß tief: nur aggressiv geführte Schachpartien
+mit der Hoffnung auf Paderborn-ähnliche Außenseitersiege konnten Linderung
+schaffen. Tatsächlich sollten samstags sieben Partien entschieden enden. Wir
+verloren nach starkem Pressing an allen Brettern allerdings trotzdem 3,5:4,5.
+Der schmähliche Vorabend im Stadion beeinflusste auch meine Eröffnungswahl, da
+ich sonst häufiger den geschlossenen Sizilianer einsetze, der zu einem
+ruhigeren Spielaufbau führt.} e6 3. d4 cxd4 4. Nxd4 Nc6 5. Nc3 d6 6. g3 {
+Mit dieser Fianchetto-Variante gegen viele Abspiele, die nach 2...e6 entstehen,
+spielte ich bereits einige Partien auch gegen Großmeister mit ordentlichen
+Ergebnissen.} a6 7. Bg2 Bd7 8. a4 Rc8 {Hier und in den folgenden Zügen hätte
+mein Gegner mit der normalen Entwicklung seines Springers nach f6 Platz für
+seinen König schaffen können. Eine Beispielvariante könnte wie folgt aussehen:}
+(8... Nf6 9. O-O Be7 10. Nb3 {
+um a5 zu unterstützen und den d7-Läufer nicht so leicht nach c6 kommen zulassen
+} Qc7 11. f4 (11. a5 O-O 12. Be3 $14) 11... O-O {und hier kann Weiß mit g4-g5
+und einem Schwenk auf die h-Linie einen weiteren typischen Plan verfolgen.} 12.
+g4 $5) 9. O-O Be7 10. Re1 Qc7 {Der für seine originelle, kreative und
+risikobereite Spielweise bekannte Großmeister unterlässt es abermals, seine
+Entwicklung am Königsflügel voranzutreiben. Nach dem normalen Zug} (10... Nf6 {
+wäre die Partie in gewöhnlichere Bahnen übergegangen. So ähnelt die Stellung
+nach} 11. Nxc6 Bxc6 12. a5 O-O 13. Be3 {der Position, die sich in der
+beeindruckenden Partie zwischen Peter Leko und Pavel Tregubov aus dem Jahr
+2013 ergab und mit der ich mich in meiner Vorbereitung länger beschäftigt
+hatte. Allerdings sind hier die Züge Te1 und die schwarze Rochade
+eingeschaltet, was dazu führt, dass} Qc7 (13... Nd7 {
+mit einer ausgewogenen Stellung.}) 14. Bb6 Qb8 {mit dem starken Zug} 15. Nd5 $1
+$14 {beantwortet werden könnte.}) 11. Nxc6 Bxc6 12. Qg4 $5 {Versucht auf
+plumpe Weise den Umstand auszunutzen, dass der schwarze Königsflügel noch
+bewegungslos im Dezemberfrost vor sich hin (er)starrt. Als ich diesen Zug
+spielte, hätte ich meinen a-Bauern darauf verwettet, dass mir mein
+angriffslustiger Kontrahent, dessen kompromisslosen Stil ich aus eigener
+Erfahrung und der Beschäftigung mit seinen Partien kannte und bewunderte, hier}
+h5 {entgegenschleudern würde. Die Provokation funktioniert, nur ist h5
+natürlich eine typische Riposte auf Dg4 und keineswegs schlecht. Dennoch war
+mir die Schwächung des Königsflügels diesen Damendoppelschritt wert.} 13. Qe2 (
+{nach} 13. Qxg7 $4 Bf6 $19 {wäre die Partie vermutlich nicht nominiert worden.}
+) 13... h4 {Konsequent! Interessanterweise findet man zu dieser Stellung noch
+vier Partien in der Datenbank und einmal wurde sogar} 14. Bf4 $5 {gespielt. Die
+ser Zug mutet ein wenig sonderlich an. Vielleicht hegte ich unterbewusst die
+irre Hoffnung, meinen Gegenspieler mit diesem Zug zu g5 provozieren zu können.}
+({Man hätte auch} 14. Be3 {spielen können, um schnell mit a5 den schwarzen
+Damenflügel zu paralysieren. Dazu muss der weiße a-Turm jedoch auf seinem
+angestammten Platz im Eck bleiben. Mir schwebte eher ein harmonisches Spiel im
+Zentrum vor, um auf der halboffenen d-Linie den schwachen Bauern d6 zu beäugen.
+} Nf6 15. a5 Nd7 16. Red1 $11 {
+und der schwarze Monarch wankt gegebenenfalls über f8 aus der Schusslinie.})
+14... hxg3 {Während der Partie sorgte ich mich mehr darum, dass Schwarz die
+Spannung auf der h-Linie halten würde, um den Bauernvorstoß nach h3 weiterhin
+in petto zu haben. So ist} (14... Nf6 {auch an dieser Stelle möglich, da} 15.
+e5 $6 {sowohl mit 15...Sh5 als auch mit 15...dxe5 erwidert werden könnte.} (15.
+Rad1 {wäre meine Wahl gewesen, wonach es vielleicht zu einer deutlich anderen
+Bauernkonfiguration am Königsflügel gekommen wäre} Kf8 16. g4 $5 h3 17. Bf3 $13
+) 15... Nh5 (15... dxe5 16. Bxe5 Qb6 {
+und das Öffnen der Stellung kommt komischerweise dem Nachziehenden zugute.})
+16. exd6 Nxf4 17. dxc7 Nxe2+ 18. Rxe2 Rxc7 $15) 15. hxg3 Nf6 {Der Springer
+gelangt endlich ins Spiel, aber dem König fällt es gerade wegen der nun
+geöffneten h-Linie schwer, einen bequemen Rückzugsort aufzuspüren.} 16. Rad1 {
+Nun stehen alle weißen Figuren harmonisch koordiniert und sind bereit für
+rabiate Aktionen in der Mitte des Brettes.} Qb6 {Wahrscheinlich wäre es besser
+gewesen, statt des Damenmanövers doch noch zu rochieren oder Kf8 zu spielen.
+Aus menschlicher Sicht erscheint das in Anbetracht der letzten schwarzen Züge
+jedoch unlogisch. Ideen wie g4-g5, Td3-h3 lägen in der Luft.} (16... O-O 17. b3
+Qa5 18. Rd3 Rfd8 19. Red1 $14) 17. b3 $1 {Das typische Opfermotiv Sd5 war auch
+an dieser Stelle interessant. Nach längerem Nachdenken kam ich aber zu dem
+Schluss, dass es besser sei zu warten und den a4-Bauern prophylaktisch zu
+decken, da Schwarz kaum sinnvolle Züge zur Verfügung hat.} (17. Bxd6 $2 {
+würde schwarzes Gegenspiel bedingen} Bxd6 18. Rxd6 Qxb2 $13) (17. Nd5 $5 Bxd5 (
+17... exd5 $4 18. exd5 $18 {und die schwarze Festung zerbröckelt}) (17... Nxd5
+18. exd5 Bxa4 (18... Bd7 19. dxe6 fxe6 (19... Bxe6 20. Bd5 $18) 20. Bd5 $18 {
+und die Löcher am Königsflügel gewähren Einlass}) 19. dxe6 f5 {auch hier steht
+Weiß deutlich besser, aber mit einem Bauern auf b3 müsste man derartige
+Verwicklungen nicht berechnen.} 20. b3 Bc6 $16) (17... Qxb2 18. Nxe7 Kxe7 19.
+Bxd6+ Ke8 20. Qe3 {
+und die weiße Dominanz auf den schwarzen Feldern entscheidet die Partie.}) 18.
+exd5 e5 19. Bxe5 (19. b3 Qc7 $1 {
+mit Deckung des Läufers auf e7 und gleichzeitigem Angriff auf den c2-Bauern.}
+20. Bd2 Qxc2 21. Rc1 Qf5 22. Rxc8+ Qxc8 {
+und Weiß muss seine Kompensation für den Minusbauern erstmal nachweisen.})
+19... dxe5 20. Qxe5 O-O 21. Qxe7 Rfe8 22. Qa3 Rxc2 {und Weiß muss wegen der
+enormen schwarzen Aktivität aufpassen, dass sich der Trend nicht komplett
+dreht.}) 17... Qc5 (17... Bd7 18. Rd3 $14) 18. Nd5 {nur folgerichtig} Bxd5 $8 (
+18... Nxd5 19. exd5 Bd7 (19... Bxd5 20. Bxd5 $18) 20. dxe6 fxe6 21. Qg4 $18 {
+und dem Nachziehenden droht auf beiden Flügeln, b7 und g7 hängen, Ungemach.})
+19. exd5 e5 ({auf} 19... Qxc2 {
+entscheidet die Kraft des weißen Läuferpaars zügig die Partie.} 20. Rd2 $1 Qxb3
+21. dxe6 $18) 20. c4 {jetzt stützen sich die weißen Bauern auf den weißen
+Feldern am Damenflügel gegenseitig. Allerdings heißt das auch, dass man sich
+besser nicht auf einen Tausch der schwarzfeldrigen Läufer einlassen sollte.
+Dynamisches Spiel ist gefragt!} Bd8 (20... O-O 21. Bd2 Bd8 22. Bh3 Rc7 23. a5
+$16 {und Weiß kann den typischen Vormarsch der Bauern am Damenflügel langsam
+und ungestört vorbereiten.}) 21. Be3 Qb4 {Falls Schwarz nun zu Lb6 käme und es
+ihm gelänge, mit seinem Springer gegen den g2-Läufer zu verbleiben, hätte er
+positionell paradiesische Zustände erreicht. Weiß muss schnell handeln und
+konsequent die unsichere Stellung des schwarzen Königs ausbeuten!} 22. c5 $1 {
+Der ungezogene e8-König erlaubt diesen starken Hebel.} Qxb3 $6 {Bei knapp werde
+nder Zeit forciert mein Gegner die Geschehnisse und hofft auf Verwicklungen.
+Mit dem König auf e8 darf ein solcher Lösungsversuch aber einfach nicht
+erfolgreich verlaufen.} (22... dxc5 $2 23. Bd2 Qg4 24. Qxe5+ Kf8 25. d6 $18) (
+22... Rxc5 $5 {wäre die zäheste Fortsetzung gewesen. Durch das Qualitätsopfer
+halbiert Schwarz nicht nur das weiße Läuferpaar, sondern eliminiert auch den
+wichtigen c5-Bauern, den es ständig nach c6 drängt. Dennoch steht Weiß nach}
+23. Bxc5 Qxc5 24. Rc1 Qb6 25. Qc4 {und der Besetzung der c-Linie deutlich
+besser. Die Verwertung des Vorteils wäre allerdings nicht leicht geworden.})
+23. Rb1 {Das Eindringen auf die siebte Reihe, das mit der Vernichtung des
+wichtigen Bauern auf b7 einhergeht, ist hier mehr als einen Bauern wert.} (23.
+c6 $5 {wäre auch stark gewesen, da das natürliche} bxc6 {mit} 24. Qxa6 $1 {
+nebst bxc6 beantwortet wird.} Rb8 25. dxc6 $18) 23... Qxa4 24. Rxb7 dxc5 $2 {
+Der endgültige Verlustzug. Es is jedoch nachvollziebar, dass Schwarz sich
+nicht auf die qualvolle Verteidigung einer Stellung einlassen wollte, in der
+er gegen das weiße Läuferpaar, einen gedeckten Freibauern auf c6 und herrlich
+koordinierte Figuren ankämpfen müsste.} (24... O-O 25. c6 e4 26. Bh3 Rc7 27.
+Rd1 {und Weiß steht klar besser.}) 25. Bxc5 $18 Nd7 ({auf} 25... Rxc5 {gewinnt}
+26. Qxe5+ Kf8 27. Qd6+ Kg8 28. Qxc5 $18 {simpel die Partie.}) 26. Qxe5+ $1 {
+ein effektvoller Abschluss, der wegen der forcierten Geradlinigkeit der
+Varianten aber zugegebenermaßen nicht allzu schwer zu berechnen war.Damenopfer,
+die funktionieren, führt man trotzdem gerne aus.} Nxe5 27. Rxe5+ Be7 28. Rexe7+
+{und hier gab mein Katernberger Kontrahent auf. Dadurch blieb leider der
+ästhetische Mattschuss hinter den Kulissen.} ({Nämlich} 28. Rexe7+ Kf8 ({auf} 
+28... Kd8 {folgt} 29. Bb6+ Rc7 30. Rexc7 Qd1+ 31. Bf1 Rh1+ 32. Kxh1 Qxf1+ 33.
+Kh2 $18 {und es ist schön zu sehen, dass der b6-Läufer auch ins eigene Lager
+wirkt und den Bauern auf f2 deckt.}) 29. Rxf7+ Ke8 (29... Kg8 30. Rxg7#) 30.
+Rbe7+ Kd8 31. Bb6+ Rc7 32. Bxc7+ Kc8 {
+und jetzt darf auch der zweite Läufer mitmischen} 33. Bh3+ $1 Rxh3 {der Turm zi
+eht zum ersten Mal, kann sich aber nicht lang an seiner Bewegungsfreiheit
+erfreuen. Der schwarze König wird in drei Zügen erlegt.} 34. Rf8+ Kb7 35. Ba5+
+Qd7 36. Rxd7# {Nochmals vielen Dank für die phänomenale Unterstützung und die
+große Wahlbeteiligung. Auch wenn Viernheim diesen Kampf knapp verlor und wir
+als Tabellenletzter abstiegen, hat es viel Spaß gemacht und wertvolle
+Erfahrungen gebracht im deutschen Schachoberhaus als Stammspieler antreten zu
+können. Dass mich diese Partie und diese Ehrung stets an die Bundesligasaison
+2013/14 erinnern wird, wirkt motivierend auf die beginnende Zweitligarunde. In
+dieser (Fußball)-Saison spielt nun Paderborn sensationell in der ersten Liga,
+wohingegen Kaiserslautern und Viernheim immer noch/wieder zweitklassig um
+Punkte kämpfen. Ich würde meinen a-Bauern darauf verwetten, dass sich an
+dieser Verteilung im nächsten Jahr irgendetwas ändern wird :-).}) 1-0
+

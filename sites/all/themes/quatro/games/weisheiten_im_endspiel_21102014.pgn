@@ -1,0 +1,86 @@
+[Event "SBL 2014/15"]
+[Site "?"]
+[Date "2014.10.18"]
+[Round "?"]
+[White "Cuenca Jimenez, Jose Fernando"]
+[Black "Bluebaum, Matthias"]
+[Result "0-1"]
+[WhiteElo "2476"]
+[BlackElo "2530"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "4N3/8/1p2k3/4b1K1/P7/8/8/8 b - - 0 72"]
+[PlyCount "5"]
+[EventDate "2014.??.??"]
+[WhiteTeam "Werder Bremen"]
+[BlackTeam "Hamburger SK"]
+
+{Ein Springer im Abseits  Das weiße Pferd ist eingepfercht und kann nun
+abgeholt werden:} 72... Kd7 $1 {Nur auf diesem Königsweg!} ({Denn} 72... Ke7 $2
+{scheitert an} 73. Kf5 Bb2 74. Nc7 Kd6 75. Nb5+ Kc5 76. Ke4 Kb4 77. Kd3 Kxa4
+78. Kc4 $11) 73. Kg6 (73. Kf5 Bc3 $19) (73. Nf6+ Bxf6+ 74. Kxf6 Kd6 $1 {
+Bodycheck!} 75. Kf5 Kc5 76. Ke4 (76. a5 bxa5 77. Ke4 Kc4 78. Ke3 Kc3 79. Ke2 a4
+80. Kd1 Kb2 $19) 76... Kb4 77. Kd3 Kxa4 $19 {[%csl Ga4,Gb4,Gc4] Der König hat
+ein Schlüsselfeld erreicht und Schwarz gewinnt.}) 73... Kxe8 74. Kf5 Bc3 0-1
+
+[Event "SBL 2014/15"]
+[Site "?"]
+[Date "2014.10.18"]
+[Round "?"]
+[White "Nisipeanu, Liviu-Dieter"]
+[Black "Bartel, Mateusz"]
+[Result "0-1"]
+[WhiteElo "2665"]
+[BlackElo "2652"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "8/2b5/8/2kp4/p6p/4K2P/B7/8 b - - 0 57"]
+[PlyCount "5"]
+[EventDate "2014.??.??"]
+[WhiteTeam "OSG Baden-Baden"]
+[BlackTeam "USV TU Dresden"]
+
+{Königswege  Schwarz kann gewinnen, wenn er den Vorstoß des d-Bauern
+sorgfältig vorbereitet:} 57... Bb6 ({Das sorfortige} 57... d4+ $2 {verstößt
+gegen das Endspielprinzip, dass man nichts übereilen sollte:} 58. Kd3 Bb6 59.
+Bf7 Kd6 60. Ke4 Kc5 61. Kd3 Kb4 62. Bg8 Ka3 63. Kc2 d3+ 64. Kxd3 Kb2 65. Ke2 a3
+66. Kf3 a2 67. Bxa2 Kxa2 68. Kg2 $11) 58. Kf4 (58. Kd3 {hilft auch nicht, weil
+der schwarze König nun langfristig am Königsflügel eindringen kann:} Kd6 (58...
+d4 $2 59. Bf7 Kb4 (59... Kd6 60. Ke4 $11) 60. Be6 Ka3 61. Kc2 d3+ 62. Kxd3 Kb2
+63. Ke4 a3 64. Kf3 a2 65. Bxa2 Kxa2 66. Kg2 $11) 59. Kd2 Ke5 60. Kd3 d4 61. Bc4
+Kf4 62. Bg8 Kg3 63. Be6 a3 64. Ke2 Ba5 (64... a2 $2 65. Bxa2 Kxh3 66. Bd5 Kg3
+67. Bc6 h3 68. Be4 Kh2 69. Kf1 Bc5 70. Bd3 Be7 71. Be4 Bh4 72. Bc6 d3 73. Be4
+d2 74. Bc2 Be7 75. Ke2 Bb4 76. Kf2 Bc5+ 77. Ke2 Kg1 78. Kxd2 h2 79. Be4 $11)
+65. Kd3 Bc3 66. Ke2 Kg2 67. Kd3 Kf2 68. Ba2 Ke1 69. Bb3 Bb2 70. Kc2 Ke2 71.
+Bc4+ Ke3 72. Ba2 d3+ 73. Kd1 Bc3 74. Bb3 Kf2 75. Ba2 Kg3 76. Be6 a2 77. Bxa2
+Kxh3 78. Bb1 d2 79. Ke2 Kg3 80. Bc2 h3 81. Kf1 h2 $19) 58... d4 59. Ke4 Kb4 (
+59... Kb4 60. Kd3 Ka3 61. Be6 Kb2 $19 {[%cal Ga4a2]}) 0-1
+
+[Event "SBL 2014/15"]
+[Site "?"]
+[Date "2014.10.18"]
+[Round "?"]
+[White "Tomczak, Rafal"]
+[Black "Pruijssers, Roeland"]
+[Result "1/2-1/2"]
+[WhiteElo "2374"]
+[BlackElo "2511"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "8/8/1Np3p1/p5Kp/7P/1kP5/8/8 b - - 0 42"]
+[PlyCount "10"]
+[EventDate "2014.??.??"]
+[WhiteTeam "SK Turm Emsdetten"]
+[BlackTeam "SSC Rostock 07"]
+
+{Das Wettrennen  Schwarz ist im Rennen gerade so schnell genug:} 42... Kxc3 ({
+Nicht jedoch das direkte} 42... a4 $2 {denn nach} 43. Nxa4 Kxa4 44. Kxg6 Kb3
+45. Kxh5 Kxc3 46. Kg4 $1 Kd2 (46... c5 47. h5 Kb2 48. h6 c4 49. h7 c3 50. h8=Q
+({Nicht jedoch} 50. Kf3 $2 c2 51. h8=Q+ $11 {[%csl Ga4,Gb4,Gc3,Gc4,Gd3,Ge1,Ge2,
+Ge3] und der weiße König ist außerhalb der Gewinnzone.}) 50... Kb3 51. Qd4 c2
+52. Qa1 $18) 47. h5 c5 48. h6 c4 49. h7 c3 50. h8=Q c2 {[%csl Ga5,Gb5,Gc5,Gd4,
+Gd5,Ge4,Gf4,Gg1,Gg2,Gg3,Gg4] ist der weiße König innerhalb der Gewinnzone, z.B.
+} 51. Qb2 Kd1 52. Kf3 c1=Q 53. Qe2#) 43. Kxg6 Kb4 44. Kxh5 a4 45. Nxa4 (45. Kg6
+$4 a3 46. h5 a2 47. h6 a1=Q $19) 45... Kxa4 46. Kg4 c5 47. h5 (47. h5 c4 48. h6
+c3 49. h7 c2 50. h8=Q c1=Q $11) 1/2-1/2
+

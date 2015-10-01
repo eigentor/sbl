@@ -1,0 +1,131 @@
+﻿[Event "Bundesliga 2015-16"]
+[Site "Schwaebisch Hall GER"]
+[Date "2015.09.20"]
+[Round "?"]
+[White "Braeuer, Franz"]
+[Black "Smeets, Jan"]
+[Result "1/2-1/2"]
+[ECO "C90"]
+[WhiteElo "2413"]
+[BlackElo "2617"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "6r1/8/p1R4k/8/5KpP/6P1/6P1/8 b - - 0 57"]
+[PlyCount "7"]
+[EventDate "2015.09.18"]
+[WhiteTeam "Erfurter SK"]
+[BlackTeam "Solingen"]
+
+{Der Patttrick} 57... Kh5 {Diese Verteidigungsmethode wird in der Praxis oft
+übersehen:} 58. Rxa6 $2 {Nun rettet der tolle Turm den Tag.} ({Nach} 58. Rf6 {
+hat Schwarz dagegen keine Pattverteidigung und verliert:} Rg7 59. Rf8 Rb7 60.
+Rf5+ Kg6 61. Rg5+ Kh6 62. Kxg4 Rb4+ 63. Kh3 Rb5 64. Rg8 Rb3 (64... a5 65. Ra8
+$18) 65. Rc8 Ra3 66. Rc6+ Kh5 67. Rc5+ Kh6 68. h5 $18) 58... Rf8+ 59. Ke3 ({
+Auch auf anderen Wegen gibt es kein Entkommen vor dem aufdringlichen Turm, z.B.
+} 59. Ke5 Rf5+ $1 (59... Re8+ $2 60. Re6 Rf8 61. Ke4 Rf1 62. Re5+ Kh6 63. Rg5
+$18) 60. Ke6 Re5+ (60... Rf6+ $4 61. Kxf6 Kh6 62. Ra7 Kh5 63. Rh7#) 61. Kf7
+Re7+ 62. Kf6 Rf7+ 63. Ke6 Re7+ 64. Kd5 Re5+ $11) 59... Re8+ (59... Rf3+ $4 60.
+gxf3 gxf3 61. Ra4 $18) 60. Kf2 Re2+ 1/2-1/2
+
+[Event "Bundesliga 2015-16"]
+[Site "Schwaebisch Hall GER"]
+[Date "2015.09.18"]
+[Round "?"]
+[White "Mihok, Oliver"]
+[Black "Postny, Evgeny"]
+[Result "0-1"]
+[ECO "C47"]
+[WhiteElo "2515"]
+[BlackElo "2653"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "8/8/8/2B3p1/5n2/5pKP/4k3/8 w - - 0 133"]
+[PlyCount "6"]
+[EventDate "2015.09.18"]
+[WhiteTeam "Erfurter SK"]
+[BlackTeam "SK Schwäbisch Hall"]
+
+{Springerüberraschung} 133. h4 {Die taktischen Fähigkeiten eines Springers
+dürfen nie unterschätzt werden:} Ng2 $1 {[%cal Gg2e3,Gg5h4] Nun passt alles
+zusammen. Alle anderen Springerzüge reichen dagegen nicht zum Gewinn, z.B.} (
+133... Nd5 $2 134. Bg1 gxh4+ 135. Kxh4 Kf1 136. Kg3 Ke2 137. Kg4 $11) (133...
+Ne6 $2 134. Bb6 gxh4+ 135. Kxh4 Nf4 136. Kg3 Nd5 137. Bg1 $11) (133... Nd3 $2
+134. Bg1 Kf1 135. Kxf3 $11) 134. hxg5 ({Auch nach} 134. h5 Ne3 135. Bxe3 (135.
+h6 f2 136. h7 f1=Q 137. h8=Q Qg2#) 135... Kxe3 136. h6 f2 137. h7 f1=Q 138.
+h8=Q {geht die neu entstandene weiße Dame sofort durch einen Spieß verloren:}
+Qg1+ 139. Kh3 Qh1+ $19) (134. Bg1 gxh4+ 135. Kh3 f2 136. Bxf2 Kxf2 137. Kg4 Kg1
+138. Kh3 Kh1 139. Kg4 Kh2 $19) 134... Ne3 135. Bxe3 (135. g6 f2 136. g7 f1=Q
+137. g8=Q Qg2+ $19) 135... Kxe3 (135... Kxe3 136. g6 f2 137. g7 (137. Kg2 Ke2
+138. g7 f1=Q+ $19) 137... f1=Q 138. g8=Q Qg1+ $19) 0-1
+
+[Event "Bundesliga 2015-16"]
+[Site "Schwaebisch Hall GER"]
+[Date "2015.09.20"]
+[Round "?"]
+[White "Li, Chao b"]
+[Black "Erdos, Viktor"]
+[Result "1/2-1/2"]
+[ECO "E01"]
+[WhiteElo "2756"]
+[BlackElo "2616"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "8/8/7p/7P/2k3P1/K3b3/8/8 b - - 0 78"]
+[PlyCount "31"]
+[EventDate "2015.09.18"]
+[WhiteTeam "SK Schwäbisch Hall"]
+[BlackTeam "SG Trier"]
+
+{Rausers Remiszone} 78... Bc1+ {Die folgende verwandte Remis könnte auch
+Diamantzone genannt werden:} 79. Ka4 $1 {[%csl Ga3,Ga4,Ga5,Gb2,Gb3,Gb4,Gb5,Gb6,
+Gc1,Gc2,Gc3,Gc4,Gc5,Gc6,Gc7,Gd1,Gd2,Gd3,Gd4,Gd5,Gd6,Ge1,Ge2,Ge3,Ge4,Ge5,Gf2,
+Gf3,Gf4] Wenn sich der weiße König innerhalb der grün markierten Zone
+befindet oder in sie zurückkehren kann, dann kann Schwarz nicht gewinnen.} ({
+Nach} 79. Ka2 $2 Kc3 {wird das Gefängnis dem weißen König zum Verhängnis,
+z.B.} 80. Kb1 Bb2 81. Ka2 Kc2 82. g5 hxg5 83. h6 g4 84. h7 g3 85. h8=Q Bxh8 $19
+) 79... Bb2 80. Ka5 Bd4 81. Ka4 $1 Bc5 82. Ka5 Ba7 83. Ka4 Bb6 84. Ka3 Bd4 85.
+Ka4 Bb2 86. Ka5 Ba3 87. Kb6 $1 (87. Ka4 $2 Bb4 88. g5 hxg5 89. h6 Bc3 $19)
+87... Bb4 88. Kc6 $1 (88. Ka6 $2 Kc5 89. Kb7 Ba5 90. Ka6 Bd8 91. Kb7 Kd5 92.
+Kc8 Ba5 93. Kd7 Ke5 94. Kc6 Kf4 95. Kd5 Kxg4 96. Ke4 Bb6 $1 97. Kd3 Kxh5 98.
+Ke2 Kg4 99. Kf1 Kf3 $19 {[%cal Gh6h1]}) 88... Bc5 89. Kb7 $1 {[%cal Gb7a6,
+Ga6a4] Nur so kann der weiße König in die Diamantzone zurückkehren.} Kd5 90.
+Ka6 $1 (90. Kc7 $2 Be3 91. Kd7 Ke5 92. Kc6 Kf4 93. Kd5 Kxg4 94. Ke4 Ba7 95. Kd3
+Kxh5 96. Ke2 Kg4 97. Kf1 Kg3 $19 {[%cal Gh6h1]}) 90... Kc4 ({Nach} 90... Ke4
+91. Kb5 Bf2 92. Kc4 Kf4 93. Kd3 Kxg4 $11 {[%csl Ga1,Ga2,Ga3,Gb1,Gb2,Gb3,Gb4,
+Gc1,Gc2,Gc3,Gc4,Gc5,Gd1,Gd2,Gd3,Gd4,Ge1,Ge2,Ge3,Ge4,Ge5,Gf1,Gf2,Gf3,Gf4,Gg1,
+Gg2,Gg3,Gh1,Gh2] befindet sich der weiße König in Rausers Remiszone.}) 91.
+Ka5 Bf2 92. Ka4 Ba7 93. Ka3 Bd4 1/2-1/2
+
+[Event "Bundesliga 2015-16"]
+[Site "Baden-Baden GER"]
+[Date "2015.09.20"]
+[Round "?"]
+[White "Chabanon, Jean-Luc"]
+[Black "Naiditsch, Arkadij"]
+[Result "1-0"]
+[ECO "E43"]
+[WhiteElo "2472"]
+[BlackElo "2684"]
+[Annotator "Karsten Müller"]
+[SetUp "1"]
+[FEN "2r1r1k1/4nppp/4p3/BPp5/4b3/PN6/1b2BPPP/2RR2K1 w - - 0 24"]
+[PlyCount "25"]
+[EventDate "2015.09.18"]
+[WhiteTeam "Griesheim"]
+[BlackTeam "Baden-Baden"]
+
+{Freibauern müssen laufen} 24. Rxc5 {Je weniger Blockadekräfte auf dem Brett
+sind, desto gefährlicher ist oft ein entfernter Freibauer:} Bc2 $2 {Danach
+kann Weiß zu viele Figuren günstig abtauschen.} ({Einzig das direkte} 24...
+Bxa3 $1 {bot Schwarz noch praktische Remischancen, z.B.} 25. Rxc8 Rxc8 26. Nd2
+(26. Rd8+ $6 Rxd8 27. Bxd8 Kf8 $11) 26... Bd5 27. Nc4 Bc5 $14) 25. Rxc8 Rxc8 (
+25... Nxc8 $2 26. Rd2 Bxb3 27. Rxb2 $18) 26. Rd8+ Rxd8 27. Bxd8 Nd5 (27... Bxa3
+28. Na5 Ba4 29. b6 Nd5 30. Bc7 Nxc7 31. bxc7 Bd7 32. Ba6 $18) 28. Na5 Bxa3 29.
+b6 Bd6 30. Bc4 (30. Nc4 $5 {gewinnt ebenfalls, z.B.} Bb8 31. Ne3 Be4 32. Nxd5
+Bxd5 33. Ba6 Bc6 34. Bc7 $18) 30... Kf8 (30... Ne7 31. Bxe7 Bxe7 32. b7 Bd6 33.
+Nc6 $18) 31. Bxd5 exd5 32. Bc7 $1 {Danach kostet der b-Freibauer eine Figur.} (
+{Nach dem übereilten} 32. b7 $2 Ba4 33. Bh4 f5 34. Bg5 Ke8 35. Be3 Bb8 36. g3
+Kd7 {ist der weiße Gewinn noch nicht sicher.}) 32... Ke7 (32... Bxc7 33. bxc7
+Bf5 34. Nc6 Ke8 35. Na7 $18) 33. Nc6+ Kd7 34. Nb8+ Ke6 35. Bxd6 Kxd6 36. Na6 (
+36. Na6 Kc6 37. Nb4+ Kxb6 38. Nxc2 $18) 1-0
+

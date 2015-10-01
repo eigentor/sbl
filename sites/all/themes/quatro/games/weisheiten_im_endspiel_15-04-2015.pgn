@@ -1,0 +1,102 @@
+﻿[Event "SBL 1415 OSG Baden Baden - Hamburger SK"]
+[Site "?"]
+[Date "2015.04.11"]
+[Round "14"]
+[White "Bacrot, Etienne"]
+[Black "Kempinski, Robert"]
+[Result "1-0"]
+[WhiteElo "2706"]
+[BlackElo "2653"]
+[SetUp "1"]
+[FEN "7k/R7/7P/1P4K1/Pr3n2/8/8/8 w - - 0 60"]
+[PlyCount "33"]
+[EventDate "2015.??.??"]
+
+60. a5 {Springerjagd Bei einem Duell auf beiden Flügeln ist der Springer oft
+zu langsam:} Nd3 $2 {Turm und Springer werden mit den weißen Freibauern nicht
+fertig. Die Rettung lag im Übergang ins Turmendspiel mittels} (60... Rxb5+ $1
+{denn nach} 61. Kxf4 Rc5 {[%csl Gh7,Gh8][%cal Gc5a5] ist eine Version der
+Vancura Remisstellung entstanden. Der schwarze Turm verhindert die Aktivierung
+des weißen Turmes, weil der weiße König kein Versteck am Damenflügel
+finden kann, z.B.} 62. Ke4 Rb5 63. Kd4 (63. a6 Rb6 64. Ra8+ Kh7 65. a7 Ra6 $11)
+63... Rf5 64. a6 Rf6 65. Ke5 Rb6 66. Kd5 Rf6 67. Kc5 Rf5+ 68. Kb6 Rf6+ 69. Kb7
+Rf7+ $11) 61. Ra8+ Kh7 62. Ra7+ Kh8 63. b6 Nc5 (63... Rb5+ {hilft angesichts
+von} 64. Kf6 (64. Kg6 $2 Ne5+ 65. Kf6 Nc6 $11) 64... Ne5 65. b7 Nc6 66. Ra8+
+Kh7 67. Rc8 {auch nicht:} Rxb7 68. Rxc6 Kxh6 69. a6 Ra7 70. Ke5+ Kg7 71. Kd6
+Kf8 72. Rc8+ Kf7 73. Rc7+ $18) 64. Ra8+ Kh7 65. Ra7+ Kh8 66. Kg6 Rg4+ 67. Kf5
+Rb4 68. Ke5 Nb3 ({Das trickreiche} 68... Na4 $5 {war einen Versuch wert:} 69.
+Ra6 $3 (69. b7 $2 {scheitert an} Nc5 70. Kd5 Nxb7 71. a6 Nd6 72. Kxd6 Rb6+ 73.
+Kc7 Rf6 $1 $11 {und Schwarz hat eine Version der Vancurastellung eingenommen.})
+69... Rb1 70. Kd6 Rd1+ 71. Kc6 Rc1+ 72. Kb5 Nc3+ 73. Kc4 Na4+ 74. Kb4 Nc5 75.
+Ra7 Nd3+ 76. Kb5 Rb1+ 77. Kc6 Rc1+ 78. Kd6 Rd1 79. b7 Nb4+ 80. Kc5 Nd3+ 81. Kc6
+Ne5+ 82. Kc7 Nd7 83. Ra8+ Kh7 84. Rd8 $18) 69. Kd5 Nxa5 (69... Rd4+ 70. Kc6
+Rc4+ 71. Kb5 Rc1 72. Rc7 Nd4+ 73. Ka6 Rb1 74. b7 $18) 70. Kc5 Rxb6 71. Kxb6
+Nc4+ (71... Nb3 72. Rd7 Nc1 73. Kc6 Ne2 74. Kd6 Ng3 75. Ke5 $18) 72. Kc5 Ne3
+73. Kd6 Nf5+ 74. Ke6 Nxh6 {Normalerweise hält der Springer gegen den Turm
+remis, wenn er zu seinem König gelangen kann. Hier liegt jedoch wegen der
+Eckstellung des Königs eine Ausnahme vor:} 75. Kf6 Ng4+ (75... Kg8 76. Kg6 $18
+{[%cal Ga7a8,Gg6h6]}) 76. Kf5 (76. Kf5 Ne3+ (76... Nh6+ 77. Kg6 Ng8 78. Rh7#)
+77. Kg6 Ng4 78. Ra8#) 1-0
+
+[Event "BL 1415 Schwäbisch Hall - SF Katernberg"]
+[Site "?"]
+[Date "2015.04.11"]
+[Round "14"]
+[White "Trent, Lawrence"]
+[Black "Wirig, Anthony"]
+[Result "0-1"]
+[WhiteElo "2476"]
+[BlackElo "2490"]
+[SetUp "1"]
+[FEN "8/1R3pk1/P3p3/3p4/6p1/5rP1/R1P1KP1r/8 b - - 0 37"]
+[PlyCount "5"]
+[EventDate "2015.??.??"]
+
+37... d4 {Mattüberfall Doppelturmendspiele unterscheiden sich von einfachen
+Turmendspielen in einer Reihe von Faktoren: 1) Mattangriffe sind öfter
+möglich 2) Ein Mehrbauer bietet bessere Gewinnchancen, wenn er den eigenen
+König schützt 3) Sie haben etwas mehr "Mittelspielcharakter" als die meist
+technischen einfachen Turmendspiele 4) Isolierte Bauern sind noch schwächer
+als im einfachen Turmendspiel, weil beide Türme durch Deckungsaufgaben nun
+passiv werden können Im vorliegenden Fall muss Weiß trotz seines weit
+vorgerückten a-Freibauern sehr vorsichtig sein:[#]} 38. a7 $2 {Danach kommt
+der schwarze Angriff zuerst.} (38. Rd7 $1 {verlangsamt den Vorstoß der
+schwarzen Bauern und die schwarzen Kräfte können zwar ein Remis erzwingen,
+aber nicht mehr, z. B.} Rhxf2+ 39. Ke1 Rf1+ 40. Kd2 e5 41. a7 e4 42. Rxd4 (42.
+a8=Q $4 R3f2#) 42... e3+ {Der e-Bauer ist rechtzeitig eingetroffen, um
+ausreichendes Gegenspiel zu sichern:} 43. Kd3 (43. Ke2 R1f2+ 44. Kd1 (44. Kd3
+$2 {ginge wegen} e2+ 45. Kd2 Re3 {sogar ganz nach hinten los:} 46. Rxg4+ Kh6
+47. Ra6+ Kh5 48. Rh4+ Kg5 49. Ra5+ f5 $19) 44... Rf1+ 45. Ke2 R1f2+ $11) 43...
+Rd1+ 44. Kc4 Rxd4+ 45. Kxd4 e2 46. Ra1 Rf1 47. a8=Q Rd1+ 48. Kc4 e1=Q 49. Rxd1
+Qxd1 50. Qe4 $11) 38... d3+ $1 {Der Bauer leiht den Türmen seine helfende
+Hand.} 39. Kd2 (39. cxd3 Rhxf2+ 40. Ke1 Rxa2 $19) (39. Ke1 Rfxf2 40. a8=Q Re2+
+41. Kd1 Rh1#) 39... Rhxf2+ (39... Rhxf2+ 40. Kc3 (40. Kc1 d2+ 41. Kd1 Re3 $19 {
+[%cal Ge3e1]}) (40. Kd1 Rh2 $19 {[%cal Gf3f1]}) 40... dxc2+ 41. Kb2 c1=Q+ 42.
+Kxc1 Rxa2 $19) 0-1
+
+[Event "SBL 1415 SG Solingen - SG Trier"]
+[Site "?"]
+[Date "2015.04.11"]
+[Round "14"]
+[White "Bobras, Piotr"]
+[Black "Ragger, Markus"]
+[Result "0-1"]
+[WhiteElo "2539"]
+[BlackElo "2664"]
+[SetUp "1"]
+[FEN "8/8/k2p2P1/1p6/1Q5K/3q4/p6P/8 w - - 0 45"]
+[PlyCount "14"]
+[EventDate "2015.??.??"]
+
+45. Qb2 {Das Zwischenschach In Damenendspielen ist das eine typische Technik:}
+Qe4+ $1 {Dieses Zwischenschach ist am besten, denn} (45... Qb1 $2 46. Qa3+ Kb7
+47. Qf3+ {und}) (45... Qxg6 $2 46. Qxa2+ {geben Weiß noch praktische
+Remischancen.}) 46. Kh5 (46. Kh3 Qe6+ 47. Kh4 Qe1+ 48. Kh5 a1=Q $19) 46... Qe5+
+$1 {Ragger forciert ein neues Damenendspiel, in dem er allerdings Damentausch
+erneut erzwingen kann.} 47. Qxe5 dxe5 48. g7 a1=Q 49. g8=Q Qd1+ 50. Kh4 (50.
+Kh6 Qd2+ 51. Kg7 Qg5+ 52. Kf8 Qxg8+ 53. Kxg8 e4 $19) 50... Qe1+ 51. Kh3 ({Auf} 
+51. Kh5 {folgt das Zwischenschach} Qe2+ $19 {nebst Damentausch.}) 51... Qf1+ (
+51... Qf1+ 52. Kh4 Qc4+ 53. Qg4 (53. Qxc4 bxc4 $19 {[%cal Gc4f1,Gc4f4,Gf4f1,
+Gc4c1,Gc1f1]}) 53... Qxg4+ 54. Kxg4 b4 $19 {[%cal Gb4e4,Ge4e1,Gb4e1,Gb4b1,
+Gb1e1]}) 0-1
+

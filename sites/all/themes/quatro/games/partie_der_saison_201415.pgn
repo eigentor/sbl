@@ -1,0 +1,208 @@
+﻿[Event "BL 1415 SG Solingen - Bayern München"]
+[Site "?"]
+[Date "2014.10.18"]
+[Round "1.4"]
+[White "Naumann, Alexander"]
+[Black "Jorczik, Julian"]
+[Result "0-1"]
+[ECO "A65"]
+[WhiteElo "2560"]
+[BlackElo "2400"]
+[PlyCount "136"]
+[EventDate "2014.??.??"]
+
+1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Nge2 c5 7. d5 a6 8. a4 e6
+9. Ng3 exd5 10. cxd5 Nbd7 11. Be2 h5 12. O-O h4 13. Nh1 Nh5 14. Be3 f5 15. f4
+fxe4 16. Bxh5 gxh5 17. Qxh5 Nf6 18. Qxh4 Ng4 19. Qxd8 Rxd8 20. Rfe1 Nxe3 21.
+Rxe3 Bd4 22. Rae1 b5 23. Nf2 Bxe3 24. Rxe3 bxa4 25. Nfxe4 Rb8 26. Nxa4 Rb4 27.
+Nac3 Bf5 28. Ng3 Bc2 29. Re2 Rxb2 30. Nf5 Rdb8 31. Nxd6 Bd3 32. Re3 c4 33. h4
+R2b3 34. Ne2 Rd8 35. Ne4 Kf8 36. Nd4 Rb1+ 37. Kh2 Rxd5 38. Ne6+ Kf7 39. Nc3
+Rbb5 40. g4 Rb2+ 41. Kg3 Rd6 42. Nc5 Rc2 43. N3a4 Re2 44. Rxe2 Bxe2 45. Nc3 Bd1
+46. f5 Bc2 47. h5 a5 48. Kf4 Rd4+ 49. Kf3 a4 50. h6 a3 51. h7 Rd8 52. Ne6 Rh8
+53. Kf4 Ke7 54. Ng5 Bb1 55. Nd5+ Kf8 56. Ne6+ Ke8 57. g5 a2 58. g6 a1=Q 59. g7
+Kf7 60. f6 Kxe6 61. gxh8=Q Qe5+ 62. Kg4 Bf5+ 63. Kf3 Qxd5+ 64. Kf2 Qd4+ 65. Kf3
+Be4+ 66. Kg3 Qe3+ 67. Kh4 Qf2+ 68. Kg4 Bf5+ 0-1
+
+[Event "BL 1415 Hansa Dortmund - SV Hockenheim"]
+[Site "?"]
+[Date "2014.10.18"]
+[Round "1.1"]
+[White "Rapport, Richard"]
+[Black "Donchenko, Alexander"]
+[Result "1-0"]
+[ECO "B31"]
+[WhiteElo "2720"]
+[BlackElo "2501"]
+[PlyCount "47"]
+[EventDate "2014.??.??"]
+
+1. e4 c5 2. Na3 g6 3. h4 Bg7 4. h5 Nc6 5. Bb5 d6 6. d3 Rb8 7. Nc4 e6 8. Qf3 e5
+9. Ne2 Be6 10. Bd2 a6 11. Bxc6+ bxc6 12. b3 d5 13. Na5 Rb6 14. c4 Nf6 15. h6
+Bf8 16. Nc3 Bg4 17. Qg3 dxe4 18. Qxe5+ Be7 19. Nxe4 O-O 20. Bg5 Qxd3 21. f3
+Bxf3 22. gxf3 Qxf3 23. Bxf6 Qxh1+ 24. Kf2 1-0
+
+[Event "BL 1415 Hamburger SK - Turm Emsdetten"]
+[Site "?"]
+[Date "2014.10.19"]
+[Round "2.3"]
+[White "Ipatov, Alexander"]
+[Black "Ftacnik, Lubomir"]
+[Result "1-0"]
+[ECO "D00"]
+[WhiteElo "2607"]
+[BlackElo "2557"]
+[PlyCount "93"]
+[EventDate "2014.??.??"]
+
+1. d4 Nf6 2. Bg5 d5 3. Bxf6 gxf6 4. e3 c5 5. dxc5 e6 6. Nc3 Bxc5 7. Qh5 Nd7 8.
+O-O-O f5 9. Nxd5 exd5 10. Rxd5 Qe7 11. Nf3 Nb6 12. Bb5+ Bd7 13. Bxd7+ Nxd7 14.
+Qxf5 O-O-O 15. Re5 Qd6 16. Rd1 Qc7 17. Rxd7 Qxd7 18. Rxc5+ Kb8 19. Qxd7 Rxd7
+20. Rf5 Rhd8 21. Nd4 Rg8 22. g3 Rg6 23. b3 Kc8 24. c4 Kd8 25. Kc2 Ke8 26. Kc3
+Rdd6 27. Re5+ Kd7 28. h4 Rdf6 29. Nf5 Re6 30. Rd5+ Kc7 31. f3 h5 32. e4 a6 33.
+Kd4 Re8 34. Ke3 b6 35. Kf4 f6 36. b4 Re6 37. a4 Re8 38. a5 bxa5 39. Rxa5 Re6
+40. Ne3 Rh6 41. Nd5+ Kb7 42. b5 axb5 43. cxb5 Rh8 44. b6 Kc6 45. Ra7 Rd6 46.
+Rc7+ Kb5 47. Rf7 1-0
+
+[Event "BL 1415 USV TU Dresden - SC Eppingen"]
+[Site "?"]
+[Date "2014.10.19"]
+[Round "2.2"]
+[White "Almasi, Zoltan"]
+[Black "Bogner, Sebastian"]
+[Result "1-0"]
+[ECO "B99"]
+[WhiteElo "2695"]
+[BlackElo "2599"]
+[PlyCount "79"]
+[EventDate "2014.??.??"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 h6 8. Bh4
+Be7 9. Qf3 Qc7 10. O-O-O Nbd7 11. Be2 O-O 12. g4 b5 13. g5 hxg5 14. Bxg5 b4 15.
+Nd5 exd5 16. Nf5 Nc5 17. Nxe7+ Qxe7 18. e5 dxe5 19. fxe5 Qxe5 20. Bxf6 Qxf6 21.
+Qxf6 gxf6 22. Rhg1+ Kh8 23. Rxd5 f5 24. Rxc5 Be6 25. Ra5 Rg8 26. Rf1 Rac8 27.
+b3 Rg2 28. Bd3 Rxh2 29. Rxa6 Rh4 30. Ra5 f4 31. Rb5 Rh3 32. Kb2 f3 33. Rxb4 Rg8
+34. a4 Bd5 35. a5 Kg7 36. Be4 Bxe4 37. Rxe4 Kf6 38. Re3 Rgg3 39. a6 Kg5 40.
+Rfxf3 1-0
+
+[Event "BL 1415 Schwäbisch Hall - OSG Baden Ba"]
+[Site "?"]
+[Date "2014.12.06"]
+[Round "5.2"]
+[White "Li, Chao b"]
+[Black "Shirov, Alexei"]
+[Result "0-1"]
+[ECO "D10"]
+[WhiteElo "2722"]
+[BlackElo "2683"]
+[PlyCount "106"]
+[EventDate "2014.??.??"]
+
+1. d4 d5 2. c4 c6 3. cxd5 cxd5 4. Bf4 Nc6 5. e3 Nf6 6. Nc3 Bf5 7. Qb3 Na5 8.
+Qa4+ Bd7 9. Qd1 Rc8 10. Nf3 Qb6 11. Rb1 Bf5 12. Bb5+ Nc6 13. Rc1 e6 14. O-O Be7
+15. Ne5 O-O 16. Bxc6 bxc6 17. g4 Bg6 18. h4 h6 19. Nxg6 fxg6 20. Qd3 Kf7 21. f3
+Nd7 22. Bg3 c5 23. Ne2 cxd4 24. exd4 Qxb2 25. Rb1 Qc2 26. Qe3 Qc6 27. Rfe1 g5
+28. hxg5 hxg5 29. Nc3 a6 30. Na4 Bf6 31. Kg2 Rfe8 32. Rbc1 Qxa4 33. Rxc8 Rxc8
+34. Qxe6+ Kg6 35. Qf5+ Kf7 36. Qe6+ Kg6 37. Qf5+ Kf7 38. Qxd5+ Kg6 39. Qe4+ Kf7
+40. Qe6+ Kg6 41. Qf5+ Kf7 42. Qd5+ Kg6 43. f4 Rc2+ 44. Kh3 Rc3 45. Qe4+ Kh6 46.
+Qe8 Rxg3+ 47. Kxg3 gxf4+ 48. Kh2 g5 49. Qe2 Bxd4 50. Qe6+ Nf6 51. Kg2 Qc2+ 52.
+Re2 Qd3 53. Kh1 Qd1+ 0-1
+
+[Event "BL 1415 Turm Emsdetten - SV Hockenheim"]
+[Site "?"]
+[Date "2014.12.07"]
+[Round "6.1"]
+[White "Karpov, Anatoly"]
+[Black "Mchedlishvili, Mikheil"]
+[Result "1-0"]
+[ECO "D90"]
+[WhiteElo "2623"]
+[BlackElo "2622"]
+[PlyCount "55"]
+[EventDate "2014.??.??"]
+
+1. Nf3 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5 5. Qb3 Nb6 6. d4 Bg7 7. Bf4 Be6 8.
+Qa3 O-O 9. e3 Nc6 10. Bb5 Nd5 11. Bg3 Ncb4 12. Rc1 Nxc3 13. bxc3 Nd5 14. Be2
+Nf6 15. Be5 b6 16. O-O c5 17. Rfd1 Qc8 18. c4 cxd4 19. Nxd4 Bg4 20. f3 Bd7 21.
+c5 bxc5 22. Rxc5 Qe8 23. Nb5 Rc8 24. Nc7 Qd8 25. Bb5 a6 26. Ba4 h5 27. Bxf6
+Rxc7 28. Bxg7 1-0
+
+[Event "BL 1415 Turm Emsdetten - Werder Bremen"]
+[Site "?"]
+[Date "2015.01.30"]
+[Round "7.3"]
+[White "McShane, Luke J"]
+[Black "Van Foreest, Jorden"]
+[Result "1-0"]
+[ECO "C60"]
+[WhiteElo "2672"]
+[BlackElo "2467"]
+[PlyCount "85"]
+[EventDate "2015.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 g6 4. O-O Bg7 5. c3 d6 6. d4 Bd7 7. Bg5 Nf6 8. Nbd2
+h6 9. Bh4 Qe7 10. Re1 O-O-O 11. Bxf6 Qxf6 12. d5 Nb8 13. Qa4 g5 14. Nc4 g4 15.
+Nfd2 a6 16. Bxd7+ Nxd7 17. Na5 h5 18. Nxb7 Kxb7 19. Qc6+ Kb8 20. Qxa6 Nc5 21.
+Qb5+ Kc8 22. b4 Bh6 23. Nf1 Nd7 24. a4 h4 25. a5 Rdg8 26. a6 Kd8 27. a7 Ke7 28.
+Qb7 Ra8 29. Ra6 Bf4 30. Rc6 Rhc8 31. c4 h3 32. c5 hxg2 33. Kxg2 Qh8 34. Re3
+Bxe3 35. Nxe3 Qh3+ 36. Kg1 Rh8 37. Nf1 Qa3 38. Rxc7 Rad8 39. c6 Kf6 40. Rxd7
+Rxd7 41. Qxd7 Qxb4 42. c7 Qc5 43. Qd8+ 1-0
+
+[Event "BL 1415 Werder Bremen - SC Eppingen"]
+[Site "?"]
+[Date "2015.01.31"]
+[Round "8.5"]
+[White "Ruck, Robert"]
+[Black "Bluebaum, Matthias"]
+[Result "0-1"]
+[ECO "D45"]
+[WhiteElo "2577"]
+[BlackElo "2560"]
+[PlyCount "82"]
+[EventDate "2015.??.??"]
+
+1. Nf3 d5 2. d4 Nf6 3. c4 c6 4. Nc3 e6 5. e3 Nbd7 6. Qc2 Bd6 7. b3 O-O 8. Bb2
+e5 9. Be2 e4 10. Nd2 Nb8 11. h3 Na6 12. a3 Nc7 13. b4 Nfe8 14. g3 f5 15. h4 Nf6
+16. Nb3 dxc4 17. Bxc4+ Be6 18. Be2 Rb8 19. Na5 Ncd5 20. Nc4 Nxc3 21. Bxc3 Bc7
+22. Rb1 Qe8 23. a4 Ng4 24. b5 Qg6 25. Rg1 Kh8 26. bxc6 Bxc4 27. Bxc4 f4 28. h5
+Qxc6 29. Bb5 fxe3 30. f4 Qd5 31. Qe2 Nf2 32. Qxe3 Nd3+ 33. Bxd3 exd3 34. Qxd3
+Rbe8+ 35. Kd2 Ba5 36. h6 gxh6 37. Kd1 Bxc3 38. Qxc3 Rc8 39. Qd2 Rc4 40. Rb5
+Qf3+ 41. Ke1 Rfc8 0-1
+
+[Event "BL 1415 SG Solingen - OSG Baden Baden"]
+[Site "?"]
+[Date "2015.03.15"]
+[Round "13.1"]
+[White "Svidler, Peter"]
+[Black "Ragger, Markus"]
+[Result "1-0"]
+[ECO "C65"]
+[WhiteElo "2729"]
+[BlackElo "2661"]
+[PlyCount "63"]
+[EventDate "2015.??.??"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Bc5 5. c3 O-O 6. O-O d6 7. Nbd2 Ne7 8. d4
+exd4 9. cxd4 Bb6 10. Re1 Bg4 11. h3 Bh5 12. Qb3 d5 13. e5 Nd7 14. a4 a6 15. Bd3
+c5 16. g4 c4 17. Bxc4 dxc4 18. Nxc4 Bg6 19. Bg5 Ba7 20. Qa3 f6 21. exf6 gxf6
+22. Bh6 Nd5 23. Nd6 Qb6 24. a5 Qb4 25. Qxb4 Nxb4 26. Re7 Rad8 27. Nxb7 Nd5 28.
+Rg7+ Kh8 29. Rc1 Rg8 30. Nxd8 Rxg7 31. Bxg7+ Kxg7 32. Nc6 1-0
+
+[Event "BL 1415 Schwäbisch Hall - USV TU Dresd"]
+[Site "?"]
+[Date "2015.03.15"]
+[Round "13.3"]
+[White "Bartel, Mateusz"]
+[Black "Laznicka, Viktor"]
+[Result "1-0"]
+[ECO "B12"]
+[WhiteElo "2627"]
+[BlackElo "2664"]
+[PlyCount "59"]
+[EventDate "2015.??.??"]
+
+1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nf3 e6 5. Be2 c5 6. Be3 cxd4 7. Nxd4 Ne7 8. O-O
+Nbc6 9. Bb5 Bg6 10. c4 a6 11. Ba4 dxc4 12. Na3 Bd3 13. Rc1 Bxf1 14. Qxf1 Rc8
+15. Qxc4 Qc7 16. Qc2 Qxe5 17. Nc4 Qc7 18. Nb6 Rd8 19. Qe4 e5 20. Nxc6 Nxc6 21.
+Rxc6 bxc6 22. Bxc6+ Ke7 23. Bc5+ Kf6 24. Qf3+ Ke6 25. Bd5+ Rxd5 26. Qxd5+ Kf5
+27. Nd7 Kg6 28. Nxe5+ Kf6 29. Nd7+ Kg6 30. g4 1-0
+

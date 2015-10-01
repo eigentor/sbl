@@ -1,0 +1,28 @@
+﻿[Event "57. Festival Scacchistico Imperia"]
+[Site "?"]
+[Date "2015.09.02"]
+[Round "?"]
+[White "Ricciardi, Arcangelo"]
+[Black "Mazur, Stefan"]
+[Result "1-0"]
+[ECO "C68"]
+[WhiteElo "1828"]
+[BlackElo "2378"]
+[PlyCount "61"]
+[SourceDate "2015.06.25"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. O-O Ne7 6. Nxe5 Qd4 7. Qh5 g6 8.
+Nf3 Qxe4 9. Qa5 Qf4 10. d3 Qd6 11. Nbd2 Bf5 12. g4 $1 {Ups? OK, wenn es mal
+auf dem Brett steht, merkt man bald, wie stark der Zug ist. Aber mal eben so
+drauf kommen? Hm....} Nd5 (12... Bxg4 13. Ne4 Qe6 14. Nfg5 Qf5 15. Qc3 {ist
+katastrophal für Schwarz}) 13. Nc4 Qf6 14. Bg5 Qg7 15. gxf5 gxf5 16. Rae1+ Kd7
+17. Re5 b5 18. Kh1 $1 {Die erste Wahl des Rechners und (natürlich) auch der
+stärkste Zug.} f6 19. Rxd5+ cxd5 20. Bf4 Kc6 21. Rg1 Qe7 22. Re1 Qd8 23. Nd4+
+Kb7 24. Re8 Bb4 25. Rxd8 Bxa5 26. Nxa5+ {Der Springer, der 9 Züge lang hing,
+bringt schließlich die Entscheidung} Kb6 27. Rd7 {Ein Mann mit enormem
+Selbstvertrauen. Die Meisten hätten hier wohl einfach das pragmatische 27.
+Txh8/xa8 nebst Sac6 gewählt, mit drei Figuren gegen Turm und völlig
+risikolosem Gewinn.  Ach ja, 27.Td7 ist übrigens auch die erste Wahl von
+Komodo.} Kxa5 28. Bxc7+ Ka4 {"Matt in 11", würde man Alwermann hier wohl
+sagen hören.} 29. Bd6 b4 30. Rb7 a5 31. Nb5 1-0
+

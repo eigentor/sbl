@@ -1,0 +1,66 @@
+﻿[Event "Bundesliga 2011/2012, zentraler Auftakt"]
+[Site "Mülheim an der Ruhr"]
+[Date "2011.10.15"]
+[Round "?"]
+[White "Kortschnoj, Viktor"]
+[Black "Geilmann, Ulrich"]
+[Result "1-0"]
+[ECO "A52"]
+[Annotator "Houdini 1.5a w32 (180s)"]
+[PlyCount "89"]
+[EventDate "2011.10.15"]
+[EventType "simul"]
+[EventCountry "GER"]
+
+{A52: Budapester Gambit (Hauptvariante)} 1. d4 Nf6 2. c4 e5 3. dxe5 Ng4 4. Bf4
+Nc6 5. Nf3 Bb4+ 6. Nc3 Bxc3+ 7. bxc3 Qe7 8. Qd5 Qa3 9. Rc1 f6 10. exf6 Nxf6 11.
+Qd2 d6 12. Nd4 (12. Qe3+ Ne7 13. Nd4 (13. Bg5 Bg4 14. Nd4 Bd7 15. Ne6 Bxe6 16.
+Qxe6 h6 17. Be3 Nd7 18. g3 Nc5 19. Qg4 O-O 20. Bg2 Nf5 21. O-O Nxe3 22. fxe3
+Qxa2 23. Bd5+ Kh8 24. Bf7 Qd2 25. h4 Rxf7 26. Rxf7 Qxc1+ 27. Kh2 Qxc3 {
+Nodirjanova,N (2166)-Davletbayeva,M (2234) Tashkent 2011 0-1 (31)}) 13... Qxa2
+14. c5 Nfd5 15. Qg3 Nxf4 16. Qxf4 Qd5 17. cxd6 Qxd6 18. Qxd6 cxd6 19. e4 Nc6
+20. Kd2 Ke7 21. Ke3 Rd8 22. f4 Bd7 23. Rb1 Rab8 24. Bc4 Rdc8 25. Bd5 Nxd4 26.
+Kxd4 b6 {Gabdrakhmanov,R (2365)-Emelianov,F (2153) Kazan 2009 1-0 (41)}) 12...
+O-O 13. Nb5 Qa5 14. e3 a6 ({In den Datenbanken findet sich die Alternative} 
+14... Be6 15. Nd4 Bf7 16. Nxc6 bxc6 17. Bd3 Qc5 18. Qe2 Nd7 19. Qg4 Nf6 20. Qg5
+Qxg5 21. Bxg5 Nd7 22. Bf4 c5 23. Ke2 Nb6 24. Rb1 Rab8 25. Rb5 Bxc4 26. Bxc4+
+Nxc4 27. Rhb1 Rbe8 28. Kd3 Na3 29. R1b2 {Geller,A (2250)-Glavan,S (2245) Pula
+1990 0-1 (46)}) 15. Nxc7 $5 Qxc7 16. Bxd6 Qf7 17. Bxf8 Qxf8 18. Be2 Be6 19. O-O
+Qc5 (19... Qf7 {war vielleicht einen Tick genauer:} 20. Qc2 Bxc4 21. Bxc4 Qxc4
+22. Rfd1 Rc8 $11) 20. Rfd1 Rf8 $6 ({Spekuliert auf Gegenspiel in der f-Linie,
+was sich aber als Fiktion erweist. Sinnvoller wäre} 20... Rc8 21. Rb1 Rc7 22.
+h3 $11 {gewesen}) (20... Bxc4 $2 {geht hingegen gar nicht:} 21. Qd6 $1 Qxd6 22.
+Bxc4+ Nd5 23. Rxd5 Qf8 24. Rd8+ Kh8 25. Rxf8+ Rxf8 $18) (20... Rd8 {hatte ich
+allerdings relativ schnell abgehakt, weil ich die d-Linie eh nicht halten kann.
+Selbst} 21. Qb2 $11 {wär gegangen, aber man muss sich ja irgendwie entscheiden.
+}) 21. Qd6 $14 Qf5 22. f3 ({Auf} 22. Bf3 {gedachte ich mit} Bxc4 23. Bxc6 bxc6
+24. Qxc6 Bd5 $14 {zu antworten.}) 22... Rd8 ({Houdini schlägt} 22... Ne8 23.
+Qa3 $11 {vor. Hatte ich überhaupt nicht auf dem Schirm!}) 23. Qc7 $14 Rxd1+ ({
+Auch hier meckert der Blechtrottel und empfiehlt} 23... Rb8 24. Rb1 Ne8 25. Qb6
+$14) 24. Rxd1 Qc2 {Die Ausführung des Zuges kommentierte Kortschnoj mit einem
+laut vernehmlichen  "...schöööönnnn..."!} 25. Kf1 Qxc3 ({Hätte ich besser mit} 
+25... Qb2 26. Qd6 Kf7 27. g4 $14 {klammern sollen?}) 26. Qxb7 $16 Bxc4 27. Qc8+
+(27. Bxc4+ Qxc4+ 28. Kg1 Qc5 $16) 27... Kf7 28. Qc7+ Kg6 29. Qf4 Ne5 {Mit den
+Worten "...den kann ich jetzt ja schlagen...", nahm Kortschnoj plötzlich den
+Springer e5 in die Hand. Dann sah er verduzt, was er angerichtet hatte und
+liess die Figur wieder los. Ich kommentierte: "Naja, der Zug wäre theoretisch
+möglich.". Darauf der Großmeister: "Sie können  verlangen, dass ich jetzt
+aufgebe!" Ich erwiderte: "Nein, spielen Sie weiter...", denn was wäre das für
+ein Sieg gewesen?} 30. Qd4 $16 Bxe2+ 31. Kxe2 Qc7 (31... Qc2+ 32. Rd2 Qf5 33.
+Qa4 $16) 32. h3 (32. f4 Ned7 33. g4 Qc6 34. Qd3+ Kf7 $16) 32... a5 ({Bringt
+erstmal den Bauern in Sicherheit. Wenn man nichts tut, könnte der schnell
+verlustig gehen. Zum Beispiel} 32... h6 33. f4 Ned7 34. Qd3+ Kf7 35. Qxa6 $16)
+33. Kf2 (33. f4 $5 Ned7 34. g4 h6 $18) 33... h5 34. h4 (34. Qd6 Qc3 $16) 34...
+Qe7 35. Qf4 (35. Qd6 Qe8 $16) 35... Qe6 36. Kg1 {Der Meister bringt seine
+Majestät iaus der Schusslinie...} Nc4 37. e4 $16 Qb6+ $6 (37... Ne5 $16) 38.
+Kh1 Qb2 39. Qf5+ $6 (39. Qc1 {ist wohl stärker, z.B.:} Qe2 (39... Qxa2 $2 40.
+e5 Nxe5 41. Qg5+) 40. e5 Ng8 41. Rd4 Ne3 42. Rd2 Qf1+ 43. Qxf1 Nxf1 44. Rd5 $18
+{führt zum Verlust des a-Bauern und zum Tod auf leisen Sohlen}) 39... Kh6 (
+39... Kf7 $16) 40. Rd8 $18 Qa1+ 41. Kh2 Qe5+ 42. Kh3 (42. Qxe5 {gibt noch
+größeren Vorteil} Nxe5 43. Rd6 Kh7 $18) 42... Qxf5+ 43. exf5 Kh7 (43... g5 44.
+Ra8 g4+ 45. fxg4 Nxg4 {hätte ich vielleicht noch versuchen können...}) 44. g4
+Ne3 $6 (44... hxg4+ 45. fxg4 a4 $18 {lenkt vielleicht noch ab}) 45. g5 {Danach
+hatte ich genug... Man hätte sicher noch ein paar Züge weiter spielen
+können, aber bei realistischer Betrachtung ist die Partie nicht mehr zu
+halten.} 1-0
+
