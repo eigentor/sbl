@@ -4,8 +4,7 @@
  */
 pre.pgn4web,
 iframe.pgn4web {
-  border: 1px solid #999;
-  border-radius:10px;
+  border: 1px solid #f18000;
   margin: 0;
   padding: 0;
   width: 98%;
@@ -22,4 +21,8 @@ iframe.pgn4web-single {
 /* Frame with multiple games. */
 iframe.pgn4web-multiple {
    height:500px; /* More room for dropdown list. */
+}
+
+#gameButtons tr {
+background-color:black !important;
 }

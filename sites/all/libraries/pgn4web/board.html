@@ -61,9 +61,8 @@ body {
 .buttonControlStop,
 .buttonControl {
 border:1px solid #999 !important;
-border-radius:10px !important;
 background-image:url(images/button.jpg) !important;
-font-family: "Open Sans",Arial !important;
+font-family: "Segoe UI",Arial,sans-serif !important;
 }
 
 .optionSelectControl {
@@ -826,11 +825,11 @@ if ((gup("help") == "true") || (gup("help") == "t")) {
 var newStyleSheet = '<style type="text/css"> \n';
 
 if ((movesDisplay == "figurine") || (movesDisplay == "nosymbols") || (movesDisplay == "puzzle")) {
-  newStyleSheet += 'body, .header, .comment { font-family: \'pgn4web Liberation Sans\', sans-serif; } \n';
-  newStyleSheet += '.move, .variation, .commentMove { font-family: \'pgn4web ChessSansPiratf\', \'pgn4web Liberation Sans\', sans-serif; } \n';
+  newStyleSheet += 'body, .header, .comment { font-family: \'Segoe UI\',\'pgn4web Liberation Sans\', sans-serif; } \n';
+  newStyleSheet += '.move, .variation, .commentMove { font-family: \'Segoe UI\', sans-serif; } \n';
 }
 
-newStyleSheet += 'body { background-color:#939393;background-image:url(images/verlauf.jpg);background-repeat:repeat-x; padding: ' + framePadding + 'px; } \n';
+newStyleSheet += 'body { background-color:#f7f7f7; padding: ' + framePadding + 'px; } \n';
 
 newStyleSheet += '.pieceImage { width: ' + pieceSize + 'px; height: ' + pieceSize + 'px; } \n';
 
