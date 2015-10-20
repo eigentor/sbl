@@ -1,0 +1,4 @@
+name = SBL Views Custom Filter
+description = Custom Filters for Views
+core = 7.x
+package = Schach-Bundesliga
