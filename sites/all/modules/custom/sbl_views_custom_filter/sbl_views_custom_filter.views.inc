@@ -1,14 +1,19 @@
 <?php
 
 /**
- * Implementation of hook_views_plugins().
+ * Implements hook_views_data_alter().
  */
-function sbl_views_custom_filter_views_plugins() {
-  $plugin = array();
-  $plugin['query']['filter_player_opponent'] = array(
-    'title' => t('Find Player and Opponent'),
-    'help' => t('Filters by a player in a single game, he may be player 1 or player 2'),
-    'handler' => 'filter_player_opponent_query',
-  );
-  return $plugin;
+function sbl_views_custom_filter_views_data_alter(&$data) {
+  $data['field_collection_item']['filter_player_opponent']['title'] = 'Filter player and opponent';
+  $data['field_collection_item']['filter_player_opponent']['help'] = 'Find the items in which the player is player 1 or player 2.';
+  $data['field_collection_item']['filter_player_opponent']['filter']['handler'] = 'sbl_views_custom_filter_handler_filterp_player_opponent';
+}
+
+/**
+ * Custom Filter Class
+ *
+ * @ingroup views_filter_handlers
+ */
+class sbl_views_custom_filter_handler_filterp_player_opponent extends views_handler_filter {
+
 }

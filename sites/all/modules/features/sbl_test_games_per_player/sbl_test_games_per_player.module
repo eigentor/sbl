@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SBL Test Filter Einzelspiele pro Spieler feature.
+ */
+
+include_once 'sbl_test_games_per_player.features.inc';

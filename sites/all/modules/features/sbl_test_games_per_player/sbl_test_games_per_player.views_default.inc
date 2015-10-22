@@ -1,0 +1,75 @@
+<?php
+/**
+ * @file
+ * sbl_test_games_per_player.views_default.inc
+ */
+
+/**
+ * Implements hook_views_default_views().
+ */
+function sbl_test_games_per_player_views_default_views() {
+  $export = array();
+
+  $view = new view();
+  $view->name = 'test_games_per_player';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'Test Einzelspiele pro Spieler';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Field collection item: Spieler 1 */
+  $handler->display->display_options['fields']['field_mt_player_1']['id'] = 'field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1']['table'] = 'field_data_field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1']['field'] = 'field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Field collection item: Spieler 2 */
+  $handler->display->display_options['fields']['field_mt_player_2']['id'] = 'field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2']['table'] = 'field_data_field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2']['field'] = 'field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2']['settings'] = array(
+    'link' => 0,
+  );
+  /* Filter criterion: Field collection item: Field name */
+  $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['value'] = array(
+    'field_tm_game' => 'field_tm_game',
+  );
+  $translatables['test_games_per_player'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Spieler 1'),
+    t('Spieler 2'),
+  );
+  $export['test_games_per_player'] = $view;
+
+  return $export;
+}
