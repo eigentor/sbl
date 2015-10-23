@@ -15,5 +15,14 @@ function sbl_views_custom_filter_views_data_alter(&$data) {
  * @ingroup views_filter_handlers
  */
 class sbl_views_custom_filter_handler_filterp_player_opponent extends views_handler_filter {
+  function query() {
+    $this->ensure_my_table();
+    $field = "$this->table_alias.$this->real_field";
+
+    $player_id = arg(1);
+//    $this->query->add_where(
+//    );
+    dpm($this->query);
+  }
 
 }
