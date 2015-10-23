@@ -101,3 +101,19 @@ function check_current_season_date_matchday($row) {
     return TRUE;
   }
 }
+
+function argument_player($view) {
+  dpm($view);
+  $player_nid = arg(1);
+
+  $player_2_query = new EntityFieldQuery();
+
+  $player_2_query->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_tm_game')
+    ->fieldCondition('field_mt_player_2', 'target_id', $player_nid)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $player_2 = $player_2_query->execute();
+  dpm($player_2);
+}
