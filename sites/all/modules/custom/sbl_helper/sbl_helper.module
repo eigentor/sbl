@@ -117,3 +117,16 @@ function argument_player($view) {
   $player_2 = $player_2_query->execute();
   dpm($player_2);
 }
+
+
+function sbl_helper_views_pre_build(&$view) {
+  if($view->name == 'single_games_player') {
+     $player_id = arg(1);
+     $season = arg(2);
+    if($player_id != '' && $season != '') {
+      $view->display_handler->handlers['filter']['field_mt_player_1_target_id']->value['value'] = $player_id;
+      $view->display_handler->handlers['filter']['field_mt_player_2_target_id']->value['value'] = $player_id;
+      $view->display_handler->handlers['filter']['field_tm_saison_tid']->value = $season;
+    }
+  }
+}

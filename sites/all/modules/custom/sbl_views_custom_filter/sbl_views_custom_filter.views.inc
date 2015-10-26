@@ -14,15 +14,31 @@ function sbl_views_custom_filter_views_data_alter(&$data) {
  *
  * @ingroup views_filter_handlers
  */
-class sbl_views_custom_filter_handler_filterp_player_opponent extends views_handler_filter {
+class sbl_views_custom_filter_handler_filter_player_opponent extends views_handler_filter {
   function query() {
     $this->ensure_my_table();
+    dpm($this);
     $field = "$this->table_alias.$this->real_field";
 
     $player_id = arg(1);
-//    $this->query->add_where(
-//    );
+
+
+    $table = $this->table;
+    $left_table = 'field_data_field_mt_player_1';
+    $field = 'item_id';
+    $left_field = 'entity_id';// or wathever column you want to join with
+    $type = 'LEFT';// if you want another join type play with this value
+    $join = new views_join();
+    $join->construct($table, $left_table, $left_field, $field, array(), $type);
+
+    $this->query->add_where(
+        $this->options['group'],
+        db_or()
+          ->condition('field_mt_player_1_target_id', $player_id, '=')
+        );
+
     dpm($this->query);
+    dpm($join);
   }
 
 }
