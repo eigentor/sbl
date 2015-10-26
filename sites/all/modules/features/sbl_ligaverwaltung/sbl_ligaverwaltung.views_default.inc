@@ -815,7 +815,31 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = 'Ergebnis';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Leeres Argument zum Übergeben der Spieler-Node ID */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['ui_name'] = 'Leeres Argument zum Übergeben der Spieler-Node ID';
+  $handler->display->display_options['arguments']['null']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Leeres Argument zum Übergeben der Saison */
+  $handler->display->display_options['arguments']['null_1']['id'] = 'null_1';
+  $handler->display->display_options['arguments']['null_1']['table'] = 'views';
+  $handler->display->display_options['arguments']['null_1']['field'] = 'null';
+  $handler->display->display_options['arguments']['null_1']['ui_name'] = 'Leeres Argument zum Übergeben der Saison';
+  $handler->display->display_options['arguments']['null_1']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['null_1']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['null_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Field collection item: Field name */
   $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
@@ -824,29 +848,43 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['filters']['field_name']['value'] = array(
     'field_tm_game' => 'field_tm_game',
   );
-  /* Filter criterion: Arguments nach Spieler und Saison als Filter */
-  $handler->display->display_options['filters']['php']['id'] = 'php';
-  $handler->display->display_options['filters']['php']['table'] = 'views';
-  $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['ui_name'] = 'Arguments nach Spieler und Saison als Filter';
-  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = 'return filter_single_games_player($row);';
+  $handler->display->display_options['filters']['field_name']['group'] = 1;
+  /* Filter criterion: Field collection item: Spieler 1 (field_mt_player_1) */
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['id'] = 'field_mt_player_1_target_id';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['table'] = 'field_data_field_mt_player_1';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['field'] = 'field_mt_player_1_target_id';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['group'] = 2;
+  /* Filter criterion: Field collection item: Spieler 2 (field_mt_player_2) */
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['id'] = 'field_mt_player_2_target_id';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['table'] = 'field_data_field_mt_player_2';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['field'] = 'field_mt_player_2_target_id';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['group'] = 2;
+  /* Filter criterion: Content: Saison (field_tm_saison) */
+  $handler->display->display_options['filters']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['field'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['value'] = array(
+    144 => '144',
+  );
+  $handler->display->display_options['filters']['field_tm_saison_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['vocabulary'] = 'saison';
   $handler->display->display_options['argument_input'] = array(
-    'field_mt_player_1_target_id' => array(
-      'type' => 'panel',
+    'null' => array(
+      'type' => 'none',
       'context' => 'entity:node.field_addthis',
       'context_optional' => 0,
-      'panel' => '1',
+      'panel' => '0',
       'fixed' => '',
-      'label' => 'Field collection item: Spieler 1 (field_mt_player_1)',
+      'label' => 'Leeres Argument zum Übergeben der Spieler-Node ID',
     ),
-    'field_tm_saison_tid' => array(
-      'type' => 'panel',
+    'null_1' => array(
+      'type' => 'none',
       'context' => 'entity:node.field_addthis',
       'context_optional' => 0,
-      'panel' => '2',
+      'panel' => '0',
       'fixed' => '',
-      'label' => 'Inhalt: Saison (field_tm_saison)',
+      'label' => 'Leeres Argument zum Übergeben der Saison',
     ),
   );
   $translatables['single_games_player'] = array(
@@ -1161,6 +1199,13 @@ function sbl_ligaverwaltung_views_default_views() {
     'image_style' => 'vereinslogo_klein',
     'image_link' => '',
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['granularity'] = 'year';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
