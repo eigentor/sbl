@@ -82,7 +82,7 @@ margin:15px 0 25px 0;
   left: 0;
   top: 0;
   -webkit-overflow-scrolling: touch;
-  overflow-y: scroll;
+  overflow-x: scroll;
 }
 
 .demo-iframe-holder iframe {
