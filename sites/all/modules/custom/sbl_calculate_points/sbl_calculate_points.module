@@ -5,4 +5,3 @@
  */
 include_once('includes/calculate_leaderboard.inc');
 include_once('includes/filter_leaderboard.inc');
-include_once('includes/points_player_matchday.inc');
