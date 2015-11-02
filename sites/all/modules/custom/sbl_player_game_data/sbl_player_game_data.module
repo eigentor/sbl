@@ -1,0 +1,6 @@
+<?php
+
+/**
+ * Load our includes
+ */
+include_once('includes/player_opponent_data.inc');
