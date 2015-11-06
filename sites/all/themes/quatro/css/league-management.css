@@ -7,9 +7,7 @@
 th, td {
   padding: 0.3em 0.7em;
   line-height: 1.1;
-}
-th {
-  text-align: left;
+  text-align: center
 }
 
 /* Hide the h1 on the Verein Panel Page */
@@ -26,6 +24,10 @@ th {
   width: 20px;
   padding: 0.3em 0;
   text-align: center;
+}
+.page-spielplan .view-spielplan table th.views-field-field-tm-team-2,
+.page-spielplan .view-spielplan table td.views-field-field-tm-team-2{
+  text-align: left;
 }
 /* Clearfix f�r die Slider und die Live-Leiste auf der Startseite */
 .front #block-views-article-slider-large-block-1,
@@ -328,6 +330,26 @@ form#select-season-form .description {
 }
 .page-ergebnisse .view-match-results .view-empty .datum {
   line-height: 1.5;
+}
+
+/* The player page */
+.page-spieler .view-single-games-player td.views-field-field-mt-player-2,
+.page-spieler .view-single-games-player th.views-field-field-mt-player-2,
+.page-spieler .view-single-games-player td.views-field-php,
+.page-spieler .view-single-games-player th.views-field-php,
+.page-spieler .view-single-games-player td.views-field-php-1,
+.page-spieler .view-single-games-player th.views-field-php-1,
+.page-spieler .view-single-games-player td.views-field-php-2,
+.page-spieler .view-single-games-player th.views-field-php-2,
+.page-spieler .view-single-games-player td.views-field-php-3,
+.page-spieler .view-single-games-player th.views-field-php-3 {
+  background: #eee!important;
+}
+
+/* Temporarily align left for the upper table */
+.page-spieler .view-players th,
+.page-spieler .view-players td {
+  text-align: left;
 }
 
 /*------------------------------------------- */

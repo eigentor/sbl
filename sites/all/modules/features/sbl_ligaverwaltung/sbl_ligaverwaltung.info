@@ -30,6 +30,7 @@ dependencies[] = rabbit_hole
 dependencies[] = rh_node
 dependencies[] = sbl_helper
 dependencies[] = sbl_inhaltsytpen
+dependencies[] = sbl_player_game_data
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = text

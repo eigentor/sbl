@@ -629,6 +629,11 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['relationships']['field_mt_player_2_target_id']['table'] = 'field_data_field_mt_player_2';
   $handler->display->display_options['relationships']['field_mt_player_2_target_id']['field'] = 'field_mt_player_2_target_id';
   $handler->display->display_options['relationships']['field_mt_player_2_target_id']['label'] = 'Spieler 2 referenziert in field_mt_player_2';
+  /* Relationship: Field collection item: Entity with the Saisondaten Spieler (field_sp_verein) */
+  $handler->display->display_options['relationships']['field_sp_verein_node']['id'] = 'field_sp_verein_node';
+  $handler->display->display_options['relationships']['field_sp_verein_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_sp_verein_node']['field'] = 'field_sp_verein_node';
+  $handler->display->display_options['relationships']['field_sp_verein_node']['label'] = 'Field collection Item field_sp_verein';
   /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_tm_spieltag']['id'] = 'field_tm_spieltag';
   $handler->display->display_options['fields']['field_tm_spieltag']['table'] = 'field_data_field_tm_spieltag';
@@ -783,6 +788,13 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_mt_player_1']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Ergebnis aus Spielerpunkten zusammengesetzt */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Ergebnis aus Spielerpunkten zusammengesetzt';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Ergebnis';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Field collection item: Spieler 2 */
   $handler->display->display_options['fields']['field_mt_player_2']['id'] = 'field_mt_player_2';
   $handler->display->display_options['fields']['field_mt_player_2']['table'] = 'field_data_field_mt_player_2';
@@ -807,13 +819,46 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_mt_points_player_2']['label'] = '';
   $handler->display->display_options['fields']['field_mt_points_player_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_mt_points_player_2']['element_label_colon'] = FALSE;
-  /* Field: Ergebnis aus Spielerpunkten zusammengesetzt */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Ergebnis aus Spielerpunkten zusammengesetzt';
-  $handler->display->display_options['fields']['nothing']['label'] = 'Ergebnis';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Gegner: Verein */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Gegner: Verein';
+  $handler->display->display_options['fields']['php']['label'] = 'Verein';
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print opponent_team($row); ?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Gegner: ELO */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Gegner: ELO';
+  $handler->display->display_options['fields']['php_1']['label'] = 'ELO';
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print opponent_elo($row); ?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Gegner: Nation */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Gegner: Nation';
+  $handler->display->display_options['fields']['php_2']['label'] = 'Nat.';
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print opponent_country($row); ?>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
+  /* Field: Gegner: Meistertitel */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['ui_name'] = 'Gegner: Meistertitel';
+  $handler->display->display_options['fields']['php_3']['label'] = 'Titel';
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php print opponent_master_title($row); ?>';
+  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Leeres Argument zum Übergeben der Spieler-Node ID */
   $handler->display->display_options['arguments']['null']['id'] = 'null';
@@ -900,6 +945,7 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Node that contains the field collection field_tm_game'),
     t('Spieler 1 referenziert in field_mt_player_1'),
     t('Spieler 2 referenziert in field_mt_player_2'),
+    t('Field collection Item field_sp_verein'),
     t('Broken handler field_data_field_tm_spieltag.field_tm_spieltag'),
     t('Datum'),
     t('Gegner: Name'),
@@ -909,8 +955,12 @@ function sbl_ligaverwaltung_views_default_views() {
     t('.'),
     t('[field_tm_saison_1-tid]'),
     t('Spieltag'),
-    t('Gegner'),
     t('Ergebnis'),
+    t('Gegner'),
+    t('Verein'),
+    t('ELO'),
+    t('Nat.'),
+    t('Titel'),
     t('View panes'),
   );
   $export['single_games_player'] = $view;
