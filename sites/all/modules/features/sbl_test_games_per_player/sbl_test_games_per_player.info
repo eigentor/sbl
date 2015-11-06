@@ -1,8 +1,0 @@
-name = SBL Test Filter Einzelspiele pro Spieler
-core = 7.x
-package = Schach-Bundesliga
-dependencies[] = views
-features[ctools][] = views:views_default:3.0
-features[features_api][] = api:2
-features[views_view][] = test_games_per_player
-features_exclude[dependencies][ctools] = ctools

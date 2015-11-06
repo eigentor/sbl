@@ -117,7 +117,10 @@ function argument_player($view) {
   $player_2 = $player_2_query->execute();
 }
 
-
+/**
+ * Pass the argument into the filter on the player page to select the single games
+ * in which the player was either player 1 or player 2
+ */
 function sbl_helper_views_pre_build(&$view) {
   if($view->name == 'single_games_player') {
      $player_id = arg(1);

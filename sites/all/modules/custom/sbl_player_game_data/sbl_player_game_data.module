@@ -4,3 +4,4 @@
  * Load our includes
  */
 include_once('includes/player_opponent_data.inc');
+include_once('includes/player_club_page_data.inc');
