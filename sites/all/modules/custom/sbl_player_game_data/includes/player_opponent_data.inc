@@ -13,7 +13,7 @@ function opponent_team($row) {
   // Get the nid of the opponent
   if(!is_null($row->field_mt_player_1_1) && !is_null($row->field_mt_player_2_1)) {
     if($row->field_mt_player_1_1 == $player) {
-    $opponent = $row->field_mt_player_2_1;
+      $opponent = $row->field_mt_player_2_1;
     } else {
       $opponent = $row->field_mt_player_1_1;
     }
@@ -70,7 +70,7 @@ function opponent_team($row) {
       }
     }
   }
-print $opponent_club_name;
+  print $opponent_club_name;
 
 }
 
