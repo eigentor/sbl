@@ -1,6 +1,6 @@
 <?php
 
-function player_single_result_matchday($row) {
+function player_single_result_matchday($row, $matchday) {
   $player = $row->nid;
   $season = $row->field_saison;
   $team = arg(1);
@@ -16,6 +16,7 @@ function player_single_result_matchday($row) {
     ->entityCondition('bundle', 'team_match')
     ->fieldCondition('field_tm_saison', 'tid', $season)
     ->fieldCondition('field_tm_team_1', 'target_id', $team)
+    ->fieldCondition('field_tm_spieltag_1', 'value', $matchday)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
