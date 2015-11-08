@@ -7,7 +7,8 @@
 th, td {
   padding: 0.3em 0.7em;
   line-height: 1.1;
-  text-align: center
+  text-align: center;
+  vertical-align: middle;
 }
 
 /* Hide the h1 on the Verein Panel Page */
