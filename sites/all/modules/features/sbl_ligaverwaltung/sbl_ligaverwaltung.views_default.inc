@@ -128,12 +128,48 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'title' => 'title',
+    'nid' => 'nid',
+    'field_saison' => 'field_saison',
+    'field_saison_1' => 'field_saison_1',
     'field_pl_board_nr' => 'field_pl_board_nr',
+    'field_pl_image' => 'field_pl_image',
+    'title' => 'title',
+    'field_pl_country' => 'field_pl_country',
+    'field_pl_elo' => 'field_pl_elo',
+    'field_pl_master_title' => 'field_pl_master_title',
+    'php' => 'php',
+    'php_1' => 'php_1',
+    'php_2' => 'php_2',
+    'php_3' => 'php_3',
+    'php_4' => 'php_4',
+    'php_5' => 'php_5',
+    'php_6' => 'php_6',
+    'php_7' => 'php_7',
+    'php_8' => 'php_8',
+    'php_9' => 'php_9',
+    'php_10' => 'php_10',
+    'php_11' => 'php_11',
+    'php_12' => 'php_12',
+    'php_13' => 'php_13',
+    'php_14' => 'php_14',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'title' => array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_saison' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_saison_1' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -146,6 +182,116 @@ function sbl_ligaverwaltung_views_default_views() {
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
+    ),
+    'field_pl_image' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_country' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_elo' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_master_title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_2' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_3' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_4' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_5' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_6' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_7' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_8' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_9' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_10' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_11' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_12' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_13' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_14' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
     ),
   );
   /* Header: Global: Unfiltered text */
@@ -241,7 +387,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_pl_board_nr']['id'] = 'field_pl_board_nr';
   $handler->display->display_options['fields']['field_pl_board_nr']['table'] = 'field_data_field_pl_board_nr';
   $handler->display->display_options['fields']['field_pl_board_nr']['field'] = 'field_pl_board_nr';
-  $handler->display->display_options['fields']['field_pl_board_nr']['label'] = 'Brett';
+  $handler->display->display_options['fields']['field_pl_board_nr']['label'] = 'B';
   $handler->display->display_options['fields']['field_pl_board_nr']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
@@ -293,6 +439,186 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_pl_master_title']['field'] = 'field_pl_master_title';
   $handler->display->display_options['fields']['field_pl_master_title']['label'] = 'Titel';
   $handler->display->display_options['fields']['field_pl_master_title']['element_label_colon'] = FALSE;
+  /* Field: Punkte Spieler 1. Spieltag */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Punkte Spieler 1. Spieltag';
+  $handler->display->display_options['fields']['php']['label'] = '1';
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+print player_single_result_matchday($row, 1);
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 2. Spieltag */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Punkte Spieler 2. Spieltag';
+  $handler->display->display_options['fields']['php_1']['label'] = '2';
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php 
+print player_single_result_matchday($row, 2);
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 3. Spieltag */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte Spieler 3. Spieltag';
+  $handler->display->display_options['fields']['php_2']['label'] = '3';
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php 
+print player_single_result_matchday($row, 3);
+?>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 4. Spieltag */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['ui_name'] = 'Punkte Spieler 4. Spieltag';
+  $handler->display->display_options['fields']['php_3']['label'] = '4';
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php 
+print player_single_result_matchday($row, 2);
+?>';
+  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 5. Spieltag */
+  $handler->display->display_options['fields']['php_4']['id'] = 'php_4';
+  $handler->display->display_options['fields']['php_4']['table'] = 'views';
+  $handler->display->display_options['fields']['php_4']['field'] = 'php';
+  $handler->display->display_options['fields']['php_4']['ui_name'] = 'Punkte Spieler 5. Spieltag';
+  $handler->display->display_options['fields']['php_4']['label'] = '5';
+  $handler->display->display_options['fields']['php_4']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_4']['php_output'] = '<?php 
+print player_single_result_matchday($row, 5);
+?>';
+  $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 6. Spieltag */
+  $handler->display->display_options['fields']['php_5']['id'] = 'php_5';
+  $handler->display->display_options['fields']['php_5']['table'] = 'views';
+  $handler->display->display_options['fields']['php_5']['field'] = 'php';
+  $handler->display->display_options['fields']['php_5']['ui_name'] = 'Punkte Spieler 6. Spieltag';
+  $handler->display->display_options['fields']['php_5']['label'] = '6';
+  $handler->display->display_options['fields']['php_5']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_5']['php_output'] = '<?php 
+print player_single_result_matchday($row, 6);
+?>';
+  $handler->display->display_options['fields']['php_5']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_5']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 7. Spieltag */
+  $handler->display->display_options['fields']['php_6']['id'] = 'php_6';
+  $handler->display->display_options['fields']['php_6']['table'] = 'views';
+  $handler->display->display_options['fields']['php_6']['field'] = 'php';
+  $handler->display->display_options['fields']['php_6']['ui_name'] = 'Punkte Spieler 7. Spieltag';
+  $handler->display->display_options['fields']['php_6']['label'] = '7';
+  $handler->display->display_options['fields']['php_6']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_6']['php_output'] = '<?php 
+print player_single_result_matchday($row, 7);
+?>';
+  $handler->display->display_options['fields']['php_6']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_6']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 8. Spieltag */
+  $handler->display->display_options['fields']['php_7']['id'] = 'php_7';
+  $handler->display->display_options['fields']['php_7']['table'] = 'views';
+  $handler->display->display_options['fields']['php_7']['field'] = 'php';
+  $handler->display->display_options['fields']['php_7']['ui_name'] = 'Punkte Spieler 8. Spieltag';
+  $handler->display->display_options['fields']['php_7']['label'] = '8';
+  $handler->display->display_options['fields']['php_7']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_7']['php_output'] = '<?php 
+print player_single_result_matchday($row, 8);
+?>';
+  $handler->display->display_options['fields']['php_7']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_7']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 9. Spieltag */
+  $handler->display->display_options['fields']['php_8']['id'] = 'php_8';
+  $handler->display->display_options['fields']['php_8']['table'] = 'views';
+  $handler->display->display_options['fields']['php_8']['field'] = 'php';
+  $handler->display->display_options['fields']['php_8']['ui_name'] = 'Punkte Spieler 9. Spieltag';
+  $handler->display->display_options['fields']['php_8']['label'] = '9';
+  $handler->display->display_options['fields']['php_8']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_8']['php_output'] = '<?php 
+print player_single_result_matchday($row, 9);
+?>';
+  $handler->display->display_options['fields']['php_8']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_8']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 10. Spieltag */
+  $handler->display->display_options['fields']['php_9']['id'] = 'php_9';
+  $handler->display->display_options['fields']['php_9']['table'] = 'views';
+  $handler->display->display_options['fields']['php_9']['field'] = 'php';
+  $handler->display->display_options['fields']['php_9']['ui_name'] = 'Punkte Spieler 10. Spieltag';
+  $handler->display->display_options['fields']['php_9']['label'] = '10';
+  $handler->display->display_options['fields']['php_9']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_9']['php_output'] = '<?php 
+print player_single_result_matchday($row, 10);
+?>';
+  $handler->display->display_options['fields']['php_9']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_9']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 11. Spieltag */
+  $handler->display->display_options['fields']['php_10']['id'] = 'php_10';
+  $handler->display->display_options['fields']['php_10']['table'] = 'views';
+  $handler->display->display_options['fields']['php_10']['field'] = 'php';
+  $handler->display->display_options['fields']['php_10']['ui_name'] = 'Punkte Spieler 11. Spieltag';
+  $handler->display->display_options['fields']['php_10']['label'] = '11';
+  $handler->display->display_options['fields']['php_10']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_10']['php_output'] = '<?php 
+print player_single_result_matchday($row, 11);
+?>';
+  $handler->display->display_options['fields']['php_10']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_10']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 12. Spieltag */
+  $handler->display->display_options['fields']['php_11']['id'] = 'php_11';
+  $handler->display->display_options['fields']['php_11']['table'] = 'views';
+  $handler->display->display_options['fields']['php_11']['field'] = 'php';
+  $handler->display->display_options['fields']['php_11']['ui_name'] = 'Punkte Spieler 12. Spieltag';
+  $handler->display->display_options['fields']['php_11']['label'] = '12';
+  $handler->display->display_options['fields']['php_11']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_11']['php_output'] = '<?php 
+print player_single_result_matchday($row, 12);
+?>';
+  $handler->display->display_options['fields']['php_11']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_11']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 13. Spieltag */
+  $handler->display->display_options['fields']['php_12']['id'] = 'php_12';
+  $handler->display->display_options['fields']['php_12']['table'] = 'views';
+  $handler->display->display_options['fields']['php_12']['field'] = 'php';
+  $handler->display->display_options['fields']['php_12']['ui_name'] = 'Punkte Spieler 13. Spieltag';
+  $handler->display->display_options['fields']['php_12']['label'] = '13';
+  $handler->display->display_options['fields']['php_12']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_12']['php_output'] = '<?php 
+print player_single_result_matchday($row, 13);
+?>';
+  $handler->display->display_options['fields']['php_12']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_12']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 14. Spieltag */
+  $handler->display->display_options['fields']['php_13']['id'] = 'php_13';
+  $handler->display->display_options['fields']['php_13']['table'] = 'views';
+  $handler->display->display_options['fields']['php_13']['field'] = 'php';
+  $handler->display->display_options['fields']['php_13']['ui_name'] = 'Punkte Spieler 14. Spieltag';
+  $handler->display->display_options['fields']['php_13']['label'] = '14';
+  $handler->display->display_options['fields']['php_13']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_13']['php_output'] = '<?php 
+print player_single_result_matchday($row, 14);
+?>';
+  $handler->display->display_options['fields']['php_13']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_13']['php_click_sortable'] = '';
+  /* Field: Punkte Spieler 15. Spieltag */
+  $handler->display->display_options['fields']['php_14']['id'] = 'php_14';
+  $handler->display->display_options['fields']['php_14']['table'] = 'views';
+  $handler->display->display_options['fields']['php_14']['field'] = 'php';
+  $handler->display->display_options['fields']['php_14']['ui_name'] = 'Punkte Spieler 15. Spieltag';
+  $handler->display->display_options['fields']['php_14']['label'] = '15';
+  $handler->display->display_options['fields']['php_14']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_14']['php_output'] = '<?php 
+print player_single_result_matchday($row, 15);
+?>';
+  $handler->display->display_options['fields']['php_14']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_14']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field collection item: Verein (field_fc_verein) */
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['id'] = 'field_fc_verein_target_id';
@@ -549,11 +875,26 @@ function sbl_ligaverwaltung_views_default_views() {
     t('Content pane Kader pro Verein'),
     t('<h2 class="view-title">Kader [field_saison_1]</h2>'),
     t('[field_saison-tid]'),
-    t('Brett'),
+    t('B'),
     t('Bild'),
     t('Nat.'),
     t('ELO'),
     t('Titel'),
+    t('1'),
+    t('2'),
+    t('3'),
+    t('4'),
+    t('5'),
+    t('6'),
+    t('7'),
+    t('8'),
+    t('9'),
+    t('10'),
+    t('11'),
+    t('12'),
+    t('13'),
+    t('14'),
+    t('15'),
     t('View panes'),
     t('Content pane Spielerkarte Daten 1'),
     t('Föderation'),

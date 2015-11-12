@@ -11,11 +11,18 @@ th, td {
   vertical-align: middle;
 }
 
+/****** Page Verein ******/
 /* Hide the h1 on the Verein Panel Page */
 .page-verein h1#page-title,
 .page-spieler h1#page-title {
   display: none;
 }
+.page-verein .section-content .block-inner {
+  overflow: visible;
+}
+
+
+
 .page-spielplan .view-spielplan table th.views-field-field-tm-team-1,
 .page-spielplan .view-spielplan table td.views-field-field-tm-team-1 {
   text-align: right;
@@ -385,6 +392,14 @@ form#select-season-form .description {
 .page-verein .view-team-info.view-display-id-panel_pane_2 {
   padding-top: 20px;
 }
+/** Do not float the sidebar on the verein Page **/
+.page-verein #region-sidebar-second {
+  float: none;
+}
+/* Make the #region-content span the full width */
+.page-verein #region-content {
+  width: auto;
+}
 
 
 } /* Ende Media Query Desktop narrow */
@@ -400,6 +415,20 @@ form#select-season-form .description {
 
 .front #block-views-live-bar-block .view-live-bar {
   margin-right: 25%;
+}
+
+/** Float the sidebar on the verein Page **/
+.page-verein #region-sidebar-second {
+  float: left;
+}
+/* Reset the width of the #region-content */
+.page-verein #region-content {
+  width: 880px;
+}
+.page-verein .view-players table th,
+.page-verein .view-players table td {
+  padding-right: 3px;
+  padding-left: 3px
 }
 
 
