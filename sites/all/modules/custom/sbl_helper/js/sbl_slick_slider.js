@@ -47,13 +47,12 @@ $(number_thumb).siblings().find('span.active-arrow').remove();
 
 
 // We need to call it as Slick event
-// On after slide change
+// On before slide change
 $('.front .view-article-slider-large.view-display-id-block .view-content').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
     active_slide = $('.front .view-article-slider-large.view-display-id-block .views-row.slick-active').index();
     if(active_slide == 3) {
         active_slide = 0;
     } else {
-        console.log(active_slide);
         active_slide = active_slide + 1;
     }
 
@@ -65,12 +64,49 @@ $('.front .view-article-slider-large.view-display-id-block .view-content').on('b
 
 });
 
+// Position the slick slider dots for smartphone
+
+var window_width = $(document).width();
+
+if(window_width < 600) {
+    var image_height = $('.front #block-views-article-slider-large-block .views-row .views-field-field-image img').height();
+    var dots_position = image_height -45;
+    $('.front #block-views-article-slider-large-block .slick-dots').css({'bottom' : 'auto', 'top' : dots_position});
+}
+ $(window).resize(function() {
+     var window_width = $(document).width();
+     if(window_width < 600) {
+         image_height = $('.front #block-views-article-slider-large-block .views-row .views-field-field-image img').height();
+         dots_position = image_height - 45;
+         $('.front #block-views-article-slider-large-block .slick-dots').css({'bottom': 'auto', 'top': dots_position});
+     } else {
+         $('.front #block-views-article-slider-large-block .slick-dots').css({'bottom': '', 'top': ''});
+     }
+});
+
+
+
+
+
+
+//$('.front #block-views-article-slider-large-block .slick-dots').css({'bottom' : title_height});
+
+// Set the position of the slick navigation dots again after a slide change
+//$('.front .view-article-slider-large.view-display-id-block .view-content').on('afterChange', function(event, slick, currentSlide, nextSlide) {
+//    // Position the Slick navigation dots for the slideshow on the front page
+//    var title_height = $('.front #block-views-article-slider-large-block .views-row.slick-current .views-field-title').outerHeight(true);
+//    console.log(title_height);
+//    $('.front #block-views-article-slider-large-block .slick-dots').css({'bottom' : title_height});
+//});
+
 $('.front .view-article-slider-large.view-display-id-block_1 .views-row').click(function(){
     $(this).addClass('active-thumb');
     $(this).siblings().removeClass('active-thumb');
     $(this).prepend('<span class="active-arrow"></span>');
     $(this).siblings().find('span.active-arrow').remove();
 });
+
+
 
 
 
