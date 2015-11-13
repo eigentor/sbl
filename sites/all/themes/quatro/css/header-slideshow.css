@@ -188,6 +188,11 @@ background-color:#eee;
 
 @media screen and (min-width: 800px){
 
+.front #block-views-article-slider-large-block .views-field-field-image img {
+  width: 100%;
+  height: auto;
+}
+
 .front .block-views-article-slider-large-block-1 .views-row {
   float: left;
   width: 49.5%!important;
@@ -214,6 +219,7 @@ background-color:#eee;
 }
 
 
+
 } /* Ende Media Query Tablet narrow */
 
 
@@ -232,10 +238,6 @@ background-color:#eee;
 }
 .front #block-views-article-slider-large-block .views-field-field-image a {
   display: block;
-}
-.front #block-views-article-slider-large-block .views-field-field-image img {
-  width: 100%;
-  height: auto;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-track,
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-list{
