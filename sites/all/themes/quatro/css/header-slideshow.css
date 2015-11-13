@@ -6,22 +6,6 @@
 
 /** The front page Header Slideshow **/
 
-.more-news ,.current-standings{
-text-align:center;
-font-size:1.65em;
-height:73px;
-line-height:73px;
-vertical-align:middle;
-}
-
-.more-news {
-border-bottom: 1px solid #777;
-}
-
-.more-news:hover,.current-standings:hover{
-background-color:#eee;
-}
-
 .front .view-article-slider-large.view-display-id-block .slick-dots {
   position: absolute;
   bottom: 68px;
@@ -94,14 +78,15 @@ background-color:#eee;
   font-size: 120%;
   font-family: "Segoe UI","Segoe WP","Open Sans Condensed",Helvetica,sans-serif;
   font-weight: bold;
+  line-height: 1.4
 }
 .front .block-views-article-slider-large-block-1 {
   background: white;
   /*z-index: 19;*/
 }
-.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
-  float: none;
+.front .block-views-article-slider-large-block-1 .views-row {
   zoom: 1;
+  margin-bottom: 0.7em;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row:after {
   content: "\0020";
@@ -123,13 +108,13 @@ background-color:#eee;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-field-image {
   float: left;
-  width: 20%;
+  width: 15%;
   padding: 1% 2%;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
   float: left;
   padding: 0 2%;
-  width: 70%;
+  width: 75%;
   line-height: 1.3;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .view-footer a {
@@ -139,6 +124,97 @@ background-color:#eee;
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row:hover {
   background: #eee;
 }
+
+.more-news ,.current-standings{
+  text-align: center;
+  font-size: 1.5em;
+  height: 73px;
+  line-height: 73px;
+  display: block;
+}
+
+.more-news:hover, .current-standings:hover{
+background-color:#eee;
+}
+.front .block-views-article-slider-large-block-1 .slick-list,
+.front .block-views-article-slider-large-block-1 .slick-track {
+  height: auto!important;
+}
+
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- Smartphone wide -------------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+@media screen and (min-width: 400px){
+
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
+  padding-top: 0.75em;
+}
+
+
+} /* Ende Media Query Tablet narrow */
+
+
+
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- Tablet narrow --------------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+@media screen and (min-width: 600px){
+
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-field-image {
+ width: 12%;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
+  width: 81%;
+  padding-left: 0;
+}
+.front .block-views-article-slider-large-block-1 .views-row {
+  margin-bottom: 0.3em;
+}
+
+
+} /* Ende Media Query Tablet narrow */
+
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- Tablet wide --------------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+@media screen and (min-width: 800px){
+
+.front .block-views-article-slider-large-block-1 .views-row {
+  float: left;
+  width: 49.5%!important;
+  margin-bottom: 0;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-field-image {
+ width: 15%;
+}
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
+  width: 77%;
+  padding-left: 1%;
+}
+
+.front .block-views-article-slider-large-block-1 .more-news ,
+.front .block-views-article-slider-large-block-1 .current-standings {
+  width: 50%;
+  float: left;
+  text-align: center;
+  font-size: 1.5em;
+  height: 73px;
+  line-height: 73px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+} /* Ende Media Query Tablet narrow */
 
 
 
@@ -154,57 +230,23 @@ background-color:#eee;
   bottom: 0;
   z-index: 20;
 }
-.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
-  float: left;
-  width: 25%!important;
-}
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-track,
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .slick-list{
   height: auto!important;
 }
 
 
+
+
+
+.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-field-image {
+ width: 15%;
+}
 } /* Ende Media Query Desktop narrow */
 
 
-@media screen and (min-width: 980px) and (max-width:1220px){
-.more-news ,.current-standings{
-width:50% !important;
-text-align:center;
-font-size:1.5em;
-height:73px;
-line-height:73px;
-vertical-align:middle;
-text-align:center !important;
-}
 
-.more-news {
-border:none;
-float:left;
-}
-.current-standings {
-border:none;
-float:right;
-}
 
-.front .block-views-article-slider-large-block-1 .view-article-slider-large .views-row {
-  float: left;
-  width: 49.5%!important;
-}
-
-}
-
-@media screen and (max-width: 979px){
-.more-news ,.current-standings{
-width:100% !important;
-text-align:center;
-font-size:1.5em;
-height:auto !important;
-text-align:center !important;
-float:left;
-border:none;
-}
-}
 
 /*------------------------------------------- */
 /*------------------------------------------- */
@@ -237,13 +279,23 @@ border:none;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-field-image {
   padding: 1% 2% 1% 4%;
+  width: 20%;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
- width: 68%;
+  width: 68%;
+  padding-top: 0;
+  padding-left: 2%;
 }
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .view-footer a {
   display: block;
 }
-
+.front .block-views-article-slider-large-block-1 .more-news {
+border-bottom: 1px solid #777;
+}
+.front .block-views-article-slider-large-block-1 .more-news ,
+.front .block-views-article-slider-large-block-1 .current-standings {
+  float: none;
+  width: auto;
+}
 
 } /* Ende Media Query Desktop */
