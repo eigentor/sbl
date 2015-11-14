@@ -126,7 +126,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'footable';
   $handler->display->display_options['style_options']['columns'] = array(
     'nid' => 'nid',
     'field_saison' => 'field_saison',
@@ -292,6 +292,109 @@ function sbl_ligaverwaltung_views_default_views() {
       'align' => '',
       'separator' => '',
       'empty_column' => 1,
+    ),
+  );
+  $handler->display->display_options['style_options']['footable'] = array(
+    'expand' => 'field_pl_board_nr',
+    'icon' => '',
+    'icon_size' => '',
+    'hide' => array(
+      'nid' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_saison' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_saison_1' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_board_nr' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_image' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'title' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_country' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_elo' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_master_title' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_1' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_2' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_3' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_4' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_5' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_6' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_7' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_8' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_9' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_10' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_11' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_12' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_13' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_14' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
     ),
   );
   /* Header: Global: Unfiltered text */
