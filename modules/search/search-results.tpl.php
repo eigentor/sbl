@@ -27,9 +27,7 @@
   <h2><?php print t('Search results');?></h2>
   <ol class="search-results <?php print $module; ?>-results">
     <?php print $search_results; ?>
-	 <div id="field--node--160--field-images--fotostrecken" style="display:none !important;"></div>
   </ol>
- 
   <?php print $pager; ?>
 <?php else : ?>
   <h2><?php print t('Your search yielded no results');?></h2>

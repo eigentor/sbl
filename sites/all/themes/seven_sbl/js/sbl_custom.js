@@ -3,9 +3,10 @@
  *
  * custom js code
  * 
+*/
 
 
-    
+
 jQuery(document).ready(
     function()
     {
@@ -14,9 +15,7 @@ jQuery(document).ready(
         {
 		var pgn_location=jQuery('a[href$=".pgn"]:first').attr('href');
 		if(pgn_location && pgn_location.length > 5) {
-		pgn_location=pgn_location.replace("http:\/\/schachbundesliga.de\/sites\/default\/files\/pgn\/","");
-		alert(pgn_location);
-		var pgn="[canvas]"+pgn_location+"[/canvas]";
+		var pgn='[pgn pgnData=' + pgn_location + ']<a href=' + pgn_location + '>PGN</a>[/pgn]';
 		jQuery("#edit-field-pgn-implementierung-und-0-value").val(pgn);
 		}
 		else {
@@ -29,9 +28,7 @@ jQuery(document).ready(
         {
 		var pgn_location2=jQuery('a[href$=".pgn"]:first').attr('href');
 		if(pgn_location2 && pgn_location2.length > 5) {
-		pgn_location2=pgn_location2.replace("http:\/\/schachbundesliga.de\/sites\/default\/files\/pgn","http:\/\/schachbundesliga.de\/sites\/all\/themes\/quatro\/games");
-		var pgn2="<script>\nvar viewer = new CHESS.PgnViewer({\npgn_uri: '"+pgn_location2+"',\npiece_set: '/sites/all/themes/quatro/js/img/pieces/merida/',\n";
-		pgn2+="square_uri_dark: '/sites/all/themes/quatro/js/img/themes/wood/square_dark.jpg',\nsquare_uri_light: '/sites/all/themes/quatro/js/img/themes/wood/square_light.jpg' });\n</script>";
+		var pgn2='[pgn pgnData=' + pgn_location2 + ']<a href=' + pgn_location2 + '>PGN</a>[/pgn]';
 		jQuery("#edit-field-gesamt-pgn-implementierung-und-0-value").val(pgn2);
 		}
 		else {
@@ -41,5 +38,3 @@ jQuery(document).ready(
     }
 
 );
-
-*/
