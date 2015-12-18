@@ -24,6 +24,8 @@
   margin: auto;
 }
 
+
+
 /* Media Images */
 
 .media-linksbuendig_im_textfluss {
@@ -778,6 +780,15 @@ padding-top:10px;
 margin-bottom:0.2em !important;
 }
 
+/*------------------------------------*\
+	Schriftgrößen
+\*------------------------------------*/
+
+@media only screen and (min-width: 850px) { 
+.field-item p {
+font-size:115% !important;
+}
+}
 /*------------------------------------*\
 	Box-Effekt
 \*------------------------------------*/
