@@ -2079,6 +2079,10 @@ article.node-video .field-name-field-media iframe {
 .owl-item{
 	margin-right:10px !important;
 }
+
+.owl-sidebar .owl-item{
+	margin-right:0px !important;
+}
 /*------------------------------------*\
 	BLOCKS CSS
 \*------------------------------------*/
