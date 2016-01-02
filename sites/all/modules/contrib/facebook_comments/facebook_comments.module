@@ -305,7 +305,7 @@ function facebook_comments_display($width, $amount) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  js.src = "//connect.facebook.net/de_DE/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, "script", "facebook-jssdk"));</script>
 <div class="fb-comments" data-href="'. $url .'" data-num-posts="'. $amount .'" data-width="'. $width .'" data-colorscheme="'.$style.'"></div>';
