@@ -3,7 +3,7 @@
   // Funktioniert dann auch bei Ajax Reloads.
   Drupal.behaviors.sbl_helper_form_submit = {
     attach: function (context, settings) {
-      //$('#teamseite .center-wrapper').tabs();
+      $('#teamseite #tabs-0-bottom li.first a').text('Kader');
     } // end of attach function
   };
 })(jQuery);

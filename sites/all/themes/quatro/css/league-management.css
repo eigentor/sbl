@@ -20,6 +20,15 @@ th, td {
 .page-verein .section-content .block-inner {
   overflow: visible;
 }
+.page-verein .ui-tabs .ui-tabs-nav {
+  background: #eee;
+}
+.page-verein .ui-tabs .ui-tabs-nav li {
+  background: #eee;
+}
+.page-verein .ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  background: white;
+}
 
 
 

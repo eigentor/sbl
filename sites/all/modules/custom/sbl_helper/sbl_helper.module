@@ -46,23 +46,10 @@ function sbl_helper_init() {
       array('type' => 'inline', 'scope' => 'header'));
     drupal_add_js($module_path . '/js/sbl_slick_slider.js');
   }
-}
-
-/**
- * implements hook_views_pre_render()
- * Change the titles of some views programmatically
- * based on arguments
- */
-function sbl_helper_views_pre_render(&$view) {
-  // Set the title for the "Aktuelle Tabelle" depending on the season tid
-  // from the URL
-  if ($view->name == 'teams_leaderbord' && $view->current_display == 'page') {
-    $tid = arg(1);
-    $term = taxonomy_term_load($tid);
-    $view->build_info['title'] = 'Aktuelle Tabelle ' . $term->name;
+  if($path_array[0] == 'verein') {
+    drupal_add_js($module_path . '/js/sbl_club_tabs.js');
   }
 }
-
 
 /**
  * Check for season and matchday
@@ -130,5 +117,31 @@ function sbl_helper_views_pre_build(&$view) {
       $view->display_handler->handlers['filter']['field_mt_player_2_target_id']->value['value'] = $player_id;
       $view->display_handler->handlers['filter']['field_tm_saison_tid']->value = $season;
     }
+  }
+  if($view->name == 'spielplan' && $view->current_display == 'block_1') {
+    $club_id = arg(1);
+    foreach($view->display_handler->handlers['filter']['field_tm_team_2_target_id']->value as $key => $value) {
+      unset($view->display_handler->handlers['filter']['field_tm_team_2_target_id']->value[$key]);
+    };
+    foreach($view->display_handler->handlers['filter']['field_tm_team_1_target_id']->value as $key => $value) {
+      unset($view->display_handler->handlers['filter']['field_tm_team_1_target_id']->value[$key]);
+    };
+    $view->display_handler->handlers['filter']['field_tm_team_1_target_id']->value['value'] = $club_id;
+    $view->display_handler->handlers['filter']['field_tm_team_2_target_id']->value['value'] = $club_id;
+  }
+}
+
+/**
+ * implements hook_views_pre_render()
+ * Change the titles of some views programmatically
+ * based on arguments
+ */
+function sbl_helper_views_pre_render(&$view) {
+  // Set the title for the "Aktuelle Tabelle" depending on the season tid
+  // from the URL
+  if ($view->name == 'teams_leaderbord' && $view->current_display == 'page') {
+    $tid = arg(1);
+    $term = taxonomy_term_load($tid);
+    $view->build_info['title'] = 'Aktuelle Tabelle ' . $term->name;
   }
 }
