@@ -90,7 +90,7 @@ function check_current_season_date_matchday($row) {
 }
 
 function argument_player($view) {
-  dpm($view);
+  //dpm($view);
   $player_nid = arg(1);
 
   $player_2_query = new EntityFieldQuery();
