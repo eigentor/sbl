@@ -320,28 +320,20 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     $display->content['new-00b54e44-de01-4886-9998-a7c5c362bd29'] = $pane;
     $display->panels['bottom'][1] = 'new-00b54e44-de01-4886-9998-a7c5c362bd29';
     $pane = new stdClass();
-    $pane->pid = 'new-993fc472-a34b-40e1-a1ad-49691e04a6e5';
+    $pane->pid = 'new-cb5dd0cf-8974-42a4-bfaf-6e018218c9dc';
     $pane->panel = 'bottom';
-    $pane->type = 'views';
-    $pane->subtype = 'match_results';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '',
-      'url' => '',
-      'display' => 'block_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'override_title_heading' => 'h2',
+      'admin_title' => 'Ergebnisse pro Spieltag per PHP',
+      'title' => '',
+      'body' => '<?php
+print print_results_matchday_club();
+?>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -351,9 +343,9 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '993fc472-a34b-40e1-a1ad-49691e04a6e5';
-    $display->content['new-993fc472-a34b-40e1-a1ad-49691e04a6e5'] = $pane;
-    $display->panels['bottom'][2] = 'new-993fc472-a34b-40e1-a1ad-49691e04a6e5';
+    $pane->uuid = 'cb5dd0cf-8974-42a4-bfaf-6e018218c9dc';
+    $display->content['new-cb5dd0cf-8974-42a4-bfaf-6e018218c9dc'] = $pane;
+    $display->panels['bottom'][2] = 'new-cb5dd0cf-8974-42a4-bfaf-6e018218c9dc';
     $pane = new stdClass();
     $pane->pid = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
     $pane->panel = 'left';
