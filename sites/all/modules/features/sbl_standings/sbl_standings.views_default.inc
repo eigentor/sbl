@@ -830,6 +830,13 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['filters']['field_game_has_result_value']['value'] = array(
     1 => '1',
   );
+  /* Filter criterion: Filter the results by the team  */
+  $handler->display->display_options['filters']['php']['id'] = 'php';
+  $handler->display->display_options['filters']['php']['table'] = 'views';
+  $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['ui_name'] = 'Filter the results by the team ';
+  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['filters']['php']['php_filter'] = 'return results_filter_for_team($row);';
   $translatables['match_results'] = array(
     t('Master'),
     t('Ergebnisse'),
