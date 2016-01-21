@@ -586,7 +586,7 @@ print player_single_result_matchday($row, 3);
   $handler->display->display_options['fields']['php_3']['label'] = '4';
   $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_3']['php_output'] = '<?php 
-print player_single_result_matchday($row, 2);
+print player_single_result_matchday($row, 4);
 ?>';
   $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';

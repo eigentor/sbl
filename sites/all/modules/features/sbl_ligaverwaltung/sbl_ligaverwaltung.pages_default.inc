@@ -247,9 +247,17 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
       'middle' => NULL,
       'left_below' => NULL,
       'right_below' => NULL,
-      'bottom' => NULL,
+      'bottom' => array(
+        'region_title' => '',
+        'region_title_tag' => 'h2',
+        'region_class' => '',
+        'panel_tab_id_pattern' => 'region',
+      ),
       'left' => NULL,
       'right' => NULL,
+    ),
+    'bottom' => array(
+      'style' => 'tabs',
     ),
   );
   $display->cache = array();
@@ -276,6 +284,68 @@ function sbl_ligaverwaltung_default_page_manager_pages() {
     $pane->uuid = '7dbe7b94-2212-4f83-acd8-8f1e9ee56c76';
     $display->content['new-7dbe7b94-2212-4f83-acd8-8f1e9ee56c76'] = $pane;
     $display->panels['bottom'][0] = 'new-7dbe7b94-2212-4f83-acd8-8f1e9ee56c76';
+    $pane = new stdClass();
+    $pane->pid = 'new-00b54e44-de01-4886-9998-a7c5c362bd29';
+    $pane->panel = 'bottom';
+    $pane->type = 'views';
+    $pane->subtype = 'spielplan';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'block_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '00b54e44-de01-4886-9998-a7c5c362bd29';
+    $display->content['new-00b54e44-de01-4886-9998-a7c5c362bd29'] = $pane;
+    $display->panels['bottom'][1] = 'new-00b54e44-de01-4886-9998-a7c5c362bd29';
+    $pane = new stdClass();
+    $pane->pid = 'new-cb5dd0cf-8974-42a4-bfaf-6e018218c9dc';
+    $pane->panel = 'bottom';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Ergebnisse pro Spieltag per PHP',
+      'title' => '',
+      'body' => '<?php
+print print_results_matchday_club();
+?>',
+      'format' => 'php_code',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'cb5dd0cf-8974-42a4-bfaf-6e018218c9dc';
+    $display->content['new-cb5dd0cf-8974-42a4-bfaf-6e018218c9dc'] = $pane;
+    $display->panels['bottom'][2] = 'new-cb5dd0cf-8974-42a4-bfaf-6e018218c9dc';
     $pane = new stdClass();
     $pane->pid = 'new-5e9c497f-53fc-4219-a37b-ac42cd4e6ac8';
     $pane->panel = 'left';
