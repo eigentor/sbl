@@ -1,5 +1,7 @@
 name = Panels tabs
-description = Show panel panes in a region as tabs.
+description = Show panel panes in a region as tabs. </ br>
+              <strong>Patched: <a href="https://www.drupal.org/node/821334#comment-10460005">https://www.drupal.org/node/821334#comment-10460005</a></ br>
+              The Patch makes sure the selected tab is kept after a page reload.</strong>
 core = 7.x
 package = Panels
 dependencies[] = panels

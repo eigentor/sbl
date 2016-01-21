@@ -1,0 +1,32 @@
+diff --git a/js/panels_tabs.js b/js/panels_tabs.js
+index 0437f7a..6c91f55 100644
+--- a/js/panels_tabs.js
++++ b/js/panels_tabs.js
+@@ -7,10 +7,26 @@ Drupal.behaviors.panelsTabs = {
+   attach: function (context) {
+     var tabsID = Drupal.settings.panelsTabs.tabsID;
+ 
++    var options = {};
++    try {
++      // If local storage is available, use it to remember the last selected tab.
++      var test = 'test';
++      localStorage.setItem(test, test);
++      localStorage.getItem(test);
++      options = {
++        active: localStorage.getItem("panelsTabsCurrent"),
++        activate: function (event, ui) {
++          localStorage.setItem("panelsTabsCurrent", $(this).tabs('option', 'active'));
++        }
++      };
++    } catch(e) {
++      // Let options remain empty.
++    }
++
+     for (var key in Drupal.settings.panelsTabs.tabsID) {
+       $('#' + tabsID[key] +':not(.tabs-processed)', context)
+         .addClass('tabs-processed')
+-        .tabs();
++        .tabs(options);
+     }
+   }
+ };
