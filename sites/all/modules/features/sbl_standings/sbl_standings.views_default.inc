@@ -563,6 +563,14 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['relationships']['field_tm_game_node']['table'] = 'field_collection_item';
   $handler->display->display_options['relationships']['field_tm_game_node']['field'] = 'field_tm_game_node';
   $handler->display->display_options['relationships']['field_tm_game_node']['label'] = 'Mannschaftsmatch with the field collection field_tm_game';
+  /* Field: Content: Spieltag */
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['id'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['field'] = 'field_tm_spieltag_1';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['element_label_colon'] = FALSE;
   /* Field: Mannschaft 1 als NID */
   $handler->display->display_options['fields']['field_tm_team_1_1']['id'] = 'field_tm_team_1_1';
   $handler->display->display_options['fields']['field_tm_team_1_1']['table'] = 'field_data_field_tm_team_1';
@@ -780,6 +788,17 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<h3>[field_tm_spieltag_1]. Spieltag</h3>
+<h2><a href="/verein/[field_tm_team_1_1]/!1" alt="[field_tm_team_1]">[field_tm_team_1]</a> : 
+<a href="/verein/[field_tm_team_2_1]/!1" alt="[field_tm_team_2]">[field_tm_team_2]</a></h2>
+<div class="result">[field_tm_board_points_team_1] : [field_tm_board_points_team_2]</div>
+<div class="datum">[field_datum]</div>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $translatables['match_results'] = array(
     t('Master'),
     t('Ergebnisse'),
@@ -802,6 +821,11 @@ function sbl_standings_views_default_views() {
     t('Alle'),
     t('Block'),
     t('Block Ergebnisse pro Mannschaft 2'),
+    t('<h3>[field_tm_spieltag_1]. Spieltag</h3>
+<h2><a href="/verein/[field_tm_team_1_1]/!1" alt="[field_tm_team_1]">[field_tm_team_1]</a> : 
+<a href="/verein/[field_tm_team_2_1]/!1" alt="[field_tm_team_2]">[field_tm_team_2]</a></h2>
+<div class="result">[field_tm_board_points_team_1] : [field_tm_board_points_team_2]</div>
+<div class="datum">[field_datum]</div>'),
   );
   $export['match_results'] = $view;
 

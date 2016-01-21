@@ -18,7 +18,29 @@
  *   field id, then row number. This matches the index in $rows.
  * @ingroup views_templates
  */
+
+
+// Get the team names for the team_match that is displayed
+// the second argument is the node id of the team_match we are displaying
+  // Get this team match
+  $nid = $view->args[2];
+  $team_match_wrapper = entity_metadata_wrapper('node', $nid);
+
+  // Extract the data we want to display from the entity_metadata_wrapper
+  $team_1_name = '';
+  $team_2_name = '';
+  $match_date = '';
+
+  $field_team_1 = $team_match_wrapper->field_tm_team_1->label();
+  if(!is_null($field_team_1)) {
+    $team_1_name = $team_match_wrapper->field_tm_team_1->label();
+  }
+  $field_team_2 = $team_match_wrapper->field_tm_team_2->label();
+  if(!is_null($field_team_2)) {
+    $team_2_name = $team_match_wrapper->field_tm_team_2->label();
+  }
 ?>
+
 <table <?php if ($classes) { print 'class="'. $classes . '" '; } ?><?php print $attributes; ?>>
   <?php if (!empty($title) || !empty($caption)) : ?>
     <caption><?php print $caption . $title; ?></caption>
@@ -27,8 +49,17 @@
     <thead>
     <tr>
       <?php foreach ($header as $field => $label): ?>
+        <?php ?>
         <th <?php if ($header_classes[$field]) { print 'class="'. $header_classes[$field] . '" '; } ?>>
-          <?php print $label; ?>
+          <?php
+          // if the fields / columns are the players, print the name of the club of each player as
+          // the table label.
+          if($field == 'field_mt_player_1') {
+            $label = $team_1_name;
+          } elseif ($field == 'field_mt_player_2') {
+            $label = $team_2_name;
+          }
+          print $label; ?>
         </th>
       <?php endforeach; ?>
     </tr>

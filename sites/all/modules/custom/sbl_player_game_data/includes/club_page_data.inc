@@ -79,3 +79,36 @@ function print_results_matchday_club(){
 //  drupal_set_title('Ergebnisse ' . $matchday . '. Spieltag ' . $season_title);
 }
 
+function results_team_pager() {
+  // Do not print the pager temporarily for the season 2015/16
+  // Print the pager.
+  $matchday = '';
+  $matchday = arg(3);
+  $current_matchday = get_current_matchday();
+
+  print '<div class="results-pager">';
+  $i = 0;
+  while ($i < 15) {
+    $i++;
+    if ($i == arg(3)) {
+      $active_class = 'active';
+    } elseif ($matchday == '' && $i == $current_matchday) {
+      $active_class = 'active';
+    } else {
+      $active_class = '';
+    }
+    // Create links for the numbers 1-15 for each matchday.
+    // We simply keep the first and the second argument and only
+    // change the third.
+    print l($i, '/' . arg(0) . '/' . arg(1) . '/' . arg(2) . '/' . $i, array(
+      'attributes' => array(
+        'class' => array(
+          'pager',
+          $active_class
+        )
+      )
+    ));
+  }
+  print '</div>';
+}
+

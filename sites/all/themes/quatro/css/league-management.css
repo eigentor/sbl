@@ -305,13 +305,15 @@ form#select-season-form .description {
 .page-ergebnisse .view-match-results .view-content {
   margin-bottom: 35px;
 }
-.page-ergebnisse .results-pager {
+.page-ergebnisse .results-pager,
+#teamseite .results-pager{
   text-align: center;
   zoom: 1;
   margin-bottom: 20px;
 }
 /* Clearfix for results pager */
-.page-ergebnisse .results-pager:after {
+.page-ergebnisse .results-pager:after,
+#teamseite .results-pager:after {
   content: "\0020";
   display: block;
   height: 0;
@@ -319,7 +321,8 @@ form#select-season-form .description {
   overflow: hidden;
   visibility: hidden;
 }
-.page-ergebnisse .results-pager a {
+.page-ergebnisse .results-pager a,
+#teamseite .results-pager a{
   display: inline-block;
   padding: 3px 1px;
   margin: 5px 4px;
@@ -332,7 +335,9 @@ form#select-season-form .description {
   color: #333
 }
 .page-ergebnisse .results-pager a:hover,
-.page-ergebnisse .results-pager a.active {
+.page-ergebnisse .results-pager a.active,
+#teamseite .results-pager a:hover,
+#teamseite .results-pager a.active{
   border: 1px solid #666;
   background: #777;
   color: white;
