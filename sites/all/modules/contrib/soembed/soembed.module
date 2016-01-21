@@ -120,7 +120,7 @@ function soembed_filter_embed($match) {
     // http://www.php-code.net/2010/05/oembed-transforming-video-links-to-embeds/
     // SEE FOR RESIZING MEDIA: https://gist.github.com/1313517
     if ($regex === 'LOCAL') {
-      $output = somebed_get_contents($provider, $url);
+      $output = soembed_get_contents($provider, $url);
     }
     elseif ($response = drupal_http_request($provider . "?url=$url&format=json&maxwidth=" . variable_get('soembed_maxwidth', 0))) {
       if ($response->code == 200) {
@@ -138,12 +138,10 @@ function soembed_filter_embed($match) {
   }
 
   $output = empty($output) ? $url : $output;
-  
-  $output="<div class='responsive-video'>".$output."</div>";
 
-  #if (count($match) > 3) {
-  #$output = $match[1] . $output . $match[3]; // Add <p> and </p> back.
-  #}
+  if (count($match) > 3) {
+    $output = $match[1] . $output . $match[3]; // Add <p> and </p> back.
+  }
 
   return $output;
 }
@@ -151,7 +149,7 @@ function soembed_filter_embed($match) {
 /**
  * Locally create HTML after pattern study for sites that don't support oEmbed.
  */
-function somebed_get_contents($provider, $url) {
+function soembed_get_contents($provider, $url) {
   $width = variable_get('soembed_maxwidth', 0);
 
   switch ($provider) {

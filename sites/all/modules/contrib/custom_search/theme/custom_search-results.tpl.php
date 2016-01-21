@@ -29,7 +29,6 @@
   <?php endif; ?>
   <ol class="search-results <?php print $module; ?>-results">
     <?php print $search_results; ?>
-	 <div id="field--node--160--field-images--fotostrecken" style="display:none !important;"></div>
   </ol>
   <?php if (isset($filter) && $filter != '' && $filter_position == 'below') : ?>
     <div class="custom-search-filter">
@@ -37,7 +36,6 @@
     </div>
   <?php endif; ?>
   <?php print $pager; ?>
- 
 <?php else : ?>
   <h2><?php print t('Your search yielded no results');?></h2>
   <?php print search_help('search#noresults', drupal_help_arg()); ?>

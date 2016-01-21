@@ -25,8 +25,9 @@ $providers = array(
   'http://wordpress.tv/*'                              => array( 'http://wordpress.tv/oembed/',                       false ),
   '#http://(.+\.)?polldaddy\.com/.*#i'                 => array( 'http://polldaddy.com/oembed/',                      true  ),
   '#http://(www\.)?funnyordie\.com/videos/.*#i'        => array( 'http://www.funnyordie.com/oembed',                  true  ),
-  '#https?://(www\.)?twitter.com/.+?/status(es)?/.*#i' => array( 'http://api.twitter.com/1/statuses/oembed.json',     true  ),
+  '#https?://(www\.)?twitter.com/.+?/status(es)?/.*#i' => array( 'https://api.twitter.com/1/statuses/oembed.json',    true  ),
   '#http://(www\.)?slideshare.net/.*#i'                => array( 'http://www.slideshare.net/api/oembed/2',            true  ),
+  '#https?://(www\.)?instagram.com/p/.*#i'             => array( 'https://api.instagram.com/oembed',                  true  ),
 
   // These do not provide oEmbed, so locally support using recognizable pattern of HTML to embed.
   '#https?://maps.google.com/maps.*#i'                    => array('google-maps', 'LOCAL'),
