@@ -376,3 +376,7 @@ function team_list_calculate_lost_games($nid) {
 
   return $total_lost_games_number;
 }
+
+function crosstable_opponenent($view) {
+  dpm($view);
+}
