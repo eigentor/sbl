@@ -161,6 +161,17 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Sort criterion: Sortieren nach Mannschaftspunkten und Brettpunkten kombiniert */
+  $handler->display->display_options['sorts']['php']['id'] = 'php';
+  $handler->display->display_options['sorts']['php']['table'] = 'views';
+  $handler->display->display_options['sorts']['php']['field'] = 'php';
+  $handler->display->display_options['sorts']['php']['ui_name'] = 'Sortieren nach Mannschaftspunkten und Brettpunkten kombiniert';
+  $handler->display->display_options['sorts']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['sorts']['php']['php_sort'] = 'return team_list_sort_by_team_and_board_points($row1->php, $row2->php, $row1->php_1, $row2->php_1);';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   /* Contextual filter: Content: Saison (field_t_saison) */
   $handler->display->display_options['arguments']['field_t_saison_tid']['id'] = 'field_t_saison_tid';
   $handler->display->display_options['arguments']['field_t_saison_tid']['table'] = 'field_data_field_t_saison';
@@ -349,20 +360,87 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte gegen 1, der Tabelle';
   $handler->display->display_options['fields']['php_2']['label'] = '1';
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_value'] = 'return crosstable_opponenent($view ,1, $row);';
+  $handler->display->display_options['fields']['php_2']['php_value'] = 'return crosstable_opponenent($view, 1);';
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Field: Global: Team points */
-  $handler->display->display_options['fields']['team_points']['id'] = 'team_points';
-  $handler->display->display_options['fields']['team_points']['table'] = 'views';
-  $handler->display->display_options['fields']['team_points']['field'] = 'team_points';
-  $handler->display->display_options['fields']['team_points']['label'] = 'MP';
-  /* Field: Global: Board points */
-  $handler->display->display_options['fields']['board_points']['id'] = 'board_points';
-  $handler->display->display_options['fields']['board_points']['table'] = 'views';
-  $handler->display->display_options['fields']['board_points']['field'] = 'board_points';
-  $handler->display->display_options['fields']['board_points']['label'] = 'BP';
+  /* Field: Punkte gegen 2. der Tabelle */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['ui_name'] = 'Punkte gegen 2. der Tabelle';
+  $handler->display->display_options['fields']['php_3']['label'] = '2';
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_value'] = 'return crosstable_opponenent($view, 2);';
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
+  /* Field: Punkte gegen 3. der Tabelle */
+  $handler->display->display_options['fields']['php_4']['id'] = 'php_4';
+  $handler->display->display_options['fields']['php_4']['table'] = 'views';
+  $handler->display->display_options['fields']['php_4']['field'] = 'php';
+  $handler->display->display_options['fields']['php_4']['ui_name'] = 'Punkte gegen 3. der Tabelle';
+  $handler->display->display_options['fields']['php_4']['label'] = '3';
+  $handler->display->display_options['fields']['php_4']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_4']['php_value'] = 'return crosstable_opponenent($view, 3);';
+  $handler->display->display_options['fields']['php_4']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
+  /* Field: Punkte gegen 4. der Tabelle */
+  $handler->display->display_options['fields']['php_5']['id'] = 'php_5';
+  $handler->display->display_options['fields']['php_5']['table'] = 'views';
+  $handler->display->display_options['fields']['php_5']['field'] = 'php';
+  $handler->display->display_options['fields']['php_5']['ui_name'] = 'Punkte gegen 4. der Tabelle';
+  $handler->display->display_options['fields']['php_5']['label'] = '4';
+  $handler->display->display_options['fields']['php_5']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_5']['php_value'] = 'return crosstable_opponenent($view, 4);';
+  $handler->display->display_options['fields']['php_5']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_5']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_5']['php_click_sortable'] = '';
+  /* Field: Punkte gegen 5. der Tabelle */
+  $handler->display->display_options['fields']['php_6']['id'] = 'php_6';
+  $handler->display->display_options['fields']['php_6']['table'] = 'views';
+  $handler->display->display_options['fields']['php_6']['field'] = 'php';
+  $handler->display->display_options['fields']['php_6']['ui_name'] = 'Punkte gegen 5. der Tabelle';
+  $handler->display->display_options['fields']['php_6']['label'] = '5';
+  $handler->display->display_options['fields']['php_6']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_6']['php_value'] = 'return crosstable_opponenent($view, 5);';
+  $handler->display->display_options['fields']['php_6']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_6']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_6']['php_click_sortable'] = '';
+  /* Field: Punkte gegen 6. der Tabelle */
+  $handler->display->display_options['fields']['php_7']['id'] = 'php_7';
+  $handler->display->display_options['fields']['php_7']['table'] = 'views';
+  $handler->display->display_options['fields']['php_7']['field'] = 'php';
+  $handler->display->display_options['fields']['php_7']['ui_name'] = 'Punkte gegen 6. der Tabelle';
+  $handler->display->display_options['fields']['php_7']['label'] = '6';
+  $handler->display->display_options['fields']['php_7']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_7']['php_value'] = 'return crosstable_opponenent($view, 6);';
+  $handler->display->display_options['fields']['php_7']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_7']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_7']['php_click_sortable'] = '';
+  /* Field: Mannschaftspunkte PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Mannschaftspunkte PHP';
+  $handler->display->display_options['fields']['php']['label'] = 'MP';
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_value'] = 'return crosstable_calculate_team_points($row->nid);';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Brettpunkte PHP */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Brettpunkte PHP';
+  $handler->display->display_options['fields']['php_1']['label'] = 'BP';
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_value'] = 'return crosstable_calculate_board_points($row->nid);';
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   $handler->display->display_options['path'] = 'kreuztabelle';
   $translatables['rangliste_teams_crosstable'] = array(
     t('Master'),
@@ -387,6 +465,11 @@ function sbl_crosstable_views_default_views() {
     t('Tabelle'),
     t('more'),
     t('1'),
+    t('2'),
+    t('3'),
+    t('4'),
+    t('5'),
+    t('6'),
   );
   $export['rangliste_teams_crosstable'] = $view;
 
