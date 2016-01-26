@@ -3,6 +3,7 @@ description = Temporäres Feature nur für die Kreuztabelle
 core = 7.x
 package = Schach-Bundesliga
 dependencies[] = footable
+dependencies[] = sbl_views_custom_fields
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
