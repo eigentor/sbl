@@ -21,7 +21,10 @@ jQuery(document).ready(
 		else {
 			jQuery("#edit-field-pgn-implementierung-und-0-value").val("");
 			}
-        };
+        var introtext=jQuery("#edit-field-intro-und-0-value").val();
+		var introtext_text=jQuery(introtext).text();
+    	jQuery("#edit-opengraph-meta-description" ).val(introtext_text);
+		};
 		
 		jQuery("#partiendownload-node-form").submit(update_field2);
         function update_field2()
