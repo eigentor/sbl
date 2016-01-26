@@ -148,32 +148,42 @@ function crosstable_calculate_board_points($nid) {
  * Get the opponent for each opponent column
  */
 
-function crosstable_opponenent($view) {
+function crosstable_opponenent($view, $team_rank) {
   // Get a list of all teams in the table
   $list_teams = $view->result;
-//  foreach($view->result as $key => $result) {
-//    $list_teams[$key]['nid'] = $result->nid;
-//    $list_teams[$key]['node_title'] = $result->node_title;
-//  }
-  $list_team_team_points = array();
+
+  // We need to subtract 1 from the rank of the team as it is
+  // displayed in the table, as arrays start with 0 and our table starts with 1
+  $team_rank_calculate = $team_rank -1;
+
+  // Create an array with all the needed data for the team:
+  // NID, name, and team and board points
+  $list_team_points = array();
   foreach($list_teams as $key => $value) {
     $team_points = crosstable_calculate_team_points($value->nid);
     $board_points = crosstable_calculate_board_points($value->nid);
-    $list_team_team_points[$key]['team_nid'] = $value->nid;
-    $list_team_team_points[$key]['team_name'] = $value->node_title;
-    $list_team_team_points[$key]['team_points'] = $team_points;
-    $list_team_team_points[$key]['board_points'] = $board_points;
+    $list_team_points[$key]['team_nid'] = $value->nid;
+    $list_team_points[$key]['team_name'] = $value->node_title;
+    $list_team_points[$key]['team_points'] = $team_points;
+    $list_team_points[$key]['board_points'] = $board_points;
   }
+
+  // Create arrays to be able to sort the array
+  // We extract team points, board points and name into single arrays
+  // and use those for the PHP function array_multisort
   $team_points_sort = array();
   $board_points_sort = array();
-  foreach($list_team_team_points as $team) {
+  foreach($list_team_points as $team) {
     $team_points_sort[] = $team['team_points'];
     $board_points_sort[] = $team['board_points'];
+    $name_sort[] = $team['team_name'];
   }
-  //dpm($team_points_sort);
+  // Sort by multiple values: First the team points, then the board points,
+  // and finally alphabetically by team name
   array_multisort($team_points_sort, SORT_DESC, SORT_NUMERIC,
     $board_points_sort, SORT_DESC, SORT_NUMERIC,
-    $list_team_team_points);
+    $name_sort, SORT_ASC,
+    $list_team_points);
 
-  dpm($list_team_team_points);
+ return $list_team_points[$team_rank_calculate]['team_name'];
 }

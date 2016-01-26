@@ -357,40 +357,29 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte gegen 1, der Tabelle';
   $handler->display->display_options['fields']['php_2']['label'] = '1';
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_value'] = 'return crosstable_opponenent($view)';
+  $handler->display->display_options['fields']['php_2']['php_value'] = 'return crosstable_opponenent($view ,1)';
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Field: Siege */
-  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
-  $handler->display->display_options['fields']['php_3']['table'] = 'views';
-  $handler->display->display_options['fields']['php_3']['field'] = 'php';
-  $handler->display->display_options['fields']['php_3']['ui_name'] = 'Siege';
-  $handler->display->display_options['fields']['php_3']['label'] = 'G';
-  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_3']['php_value'] = 'return team_list_calculate_won_games($row->nid)';
-  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php print $value ?>';
-  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
-  /* Field: Unentschieden */
+  /* Field: Punkte gegen 2. der Tabelle */
   $handler->display->display_options['fields']['php_4']['id'] = 'php_4';
   $handler->display->display_options['fields']['php_4']['table'] = 'views';
   $handler->display->display_options['fields']['php_4']['field'] = 'php';
-  $handler->display->display_options['fields']['php_4']['ui_name'] = 'Unentschieden';
-  $handler->display->display_options['fields']['php_4']['label'] = 'U';
+  $handler->display->display_options['fields']['php_4']['ui_name'] = 'Punkte gegen 2. der Tabelle';
+  $handler->display->display_options['fields']['php_4']['label'] = '2';
   $handler->display->display_options['fields']['php_4']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_4']['php_value'] = 'return team_list_calculate_drawn_games($row->nid)';
+  $handler->display->display_options['fields']['php_4']['php_value'] = 'return crosstable_opponenent($view ,2)';
   $handler->display->display_options['fields']['php_4']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
-  /* Field: Niederlagen */
+  /* Field: Punkte gegen 3. der Tabelle */
   $handler->display->display_options['fields']['php_5']['id'] = 'php_5';
   $handler->display->display_options['fields']['php_5']['table'] = 'views';
   $handler->display->display_options['fields']['php_5']['field'] = 'php';
-  $handler->display->display_options['fields']['php_5']['ui_name'] = 'Niederlagen';
-  $handler->display->display_options['fields']['php_5']['label'] = 'V';
+  $handler->display->display_options['fields']['php_5']['ui_name'] = 'Punkte gegen 3. der Tabelle';
+  $handler->display->display_options['fields']['php_5']['label'] = '3';
   $handler->display->display_options['fields']['php_5']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_5']['php_value'] = 'return team_list_calculate_lost_games($row->nid);';
+  $handler->display->display_options['fields']['php_5']['php_value'] = 'return crosstable_opponenent($view ,3)';
   $handler->display->display_options['fields']['php_5']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_5']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_5']['php_click_sortable'] = '';
@@ -442,9 +431,8 @@ function sbl_crosstable_views_default_views() {
     t('Tabelle'),
     t('more'),
     t('1'),
-    t('G'),
-    t('U'),
-    t('V'),
+    t('2'),
+    t('3'),
   );
   $export['rangliste_teams_crosstable'] = $view;
 
