@@ -158,8 +158,9 @@ function crosstable_opponenent($view) {
   foreach($list_teams as $key => $team_nid) {
     $team_points = crosstable_calculate_team_points($team_nid);
     $board_points = crosstable_calculate_board_points($team_nid);
-    $list_team_team_points[$team_nid]['team_points'] = $team_points;
-    $list_team_team_points[$team_nid]['board_points'] = $board_points;
+    $list_team_team_points[$key]['team_nid'] = $team_nid;
+    $list_team_team_points[$key]['team_points'] = $team_points;
+    $list_team_team_points[$key]['board_points'] = $board_points;
   }
   $team_points_sort = array();
   $board_points_sort = array();
