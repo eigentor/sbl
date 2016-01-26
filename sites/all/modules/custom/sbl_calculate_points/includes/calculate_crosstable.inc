@@ -150,15 +150,17 @@ function crosstable_calculate_board_points($nid) {
 
 function crosstable_opponenent($view) {
   // Get a list of all teams in the table
-  $list_teams = array();
-  foreach($view->result as $result) {
-    $list_teams[] = $result->nid;
-  }
+  $list_teams = $view->result;
+//  foreach($view->result as $key => $result) {
+//    $list_teams[$key]['nid'] = $result->nid;
+//    $list_teams[$key]['node_title'] = $result->node_title;
+//  }
   $list_team_team_points = array();
-  foreach($list_teams as $key => $team_nid) {
-    $team_points = crosstable_calculate_team_points($team_nid);
-    $board_points = crosstable_calculate_board_points($team_nid);
-    $list_team_team_points[$key]['team_nid'] = $team_nid;
+  foreach($list_teams as $key => $value) {
+    $team_points = crosstable_calculate_team_points($value->nid);
+    $board_points = crosstable_calculate_board_points($value->nid);
+    $list_team_team_points[$key]['team_nid'] = $value->nid;
+    $list_team_team_points[$key]['team_name'] = $value->node_title;
     $list_team_team_points[$key]['team_points'] = $team_points;
     $list_team_team_points[$key]['board_points'] = $board_points;
   }

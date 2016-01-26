@@ -22,3 +22,32 @@ function team_list_sort_by_team_and_board_points($team_points_1, $team_points_2 
     return 1;
   }
 }
+
+function team_list_sort_by_team_board_points_name($team_points_1, $team_points_2 ,$board_points_1, $board_points_2, $name_1, $name_2) {
+  $a = $team_points_1;
+  $b = $team_points_2;
+  $c = $board_points_1;
+  $d = $board_points_2;
+  $e = $name_1;
+  $f = $name_2;
+  // Sort alphabetically, if all other values are the same
+  $name_compare = strcmp($e, $f);
+  // Sort by team points, if the team points are different
+  if($a > $b) {
+    return -1;
+  } elseif ($a < $b) {
+    return 1;
+  }
+  // If the team points are the same, additionally sort by board points
+  elseif ($a == $b && $c > $d) {
+    return -1;
+  } elseif ($a == $b && $c < $d) {
+    return 1;
+  }
+  elseif ($a == $b && $c == $d && $name_compare > 0) {
+    return -1;
+  } elseif ($a == $b && $c == $d && $name_compare < 0) {
+    return 1;
+  }
+}
+

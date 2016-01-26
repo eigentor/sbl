@@ -1459,6 +1459,10 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['sorts']['php']['expose']['label'] = 'PHP';
   $handler->display->display_options['sorts']['php']['use_php_setup'] = 0;
   $handler->display->display_options['sorts']['php']['php_sort'] = 'return team_list_sort_by_team_and_board_points($row1->php, $row2->php, $row1->php_1, $row2->php_1);';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   /* Contextual filter: Content: Saison (field_t_saison) */
   $handler->display->display_options['arguments']['field_t_saison_tid']['id'] = 'field_t_saison_tid';
   $handler->display->display_options['arguments']['field_t_saison_tid']['table'] = 'field_data_field_t_saison';
