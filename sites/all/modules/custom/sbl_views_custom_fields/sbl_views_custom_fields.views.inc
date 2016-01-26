@@ -11,6 +11,9 @@ function sbl_views_custom_fields_views_data() {
     'field' => array(
       'handler' => 'sbl_views_custom_fields_team_points_handler',
     ),
+    'sort' => array(
+      'handler' => 'sbl_views_custom_fields_team_points_sort',
+    ),
   );
   $data['views']['board_points'] = array(
     'title' => t('Board points'),
@@ -28,6 +31,7 @@ function sbl_views_custom_fields_views_data() {
  * @ingroup views_field_handlers
  */
 class sbl_views_custom_fields_team_points_handler extends views_handler_field {
+
   function query() {
     // do nothing -- to override the parent query.
   }
@@ -99,6 +103,24 @@ class sbl_views_custom_fields_team_points_handler extends views_handler_field {
     $team_sum_team_points = floatval($team_home_team_points + $team_away_team_points);
 
     return $team_sum_team_points;
+  }
+}
+
+/**
+ * Add a sort handler for the team points field
+ *
+ * @ingroup views_sort_handlers
+ */
+class sbl_views_custom_fields_team_points_sort extends views_handler_sort {
+  function query() {
+    // do nothing -- to override the parent query.
+    //dpm($this);
+    //$this->ensure_my_table();
+    // Add the field.
+    $this->ensure_my_table();
+    // Add the field.
+    //$this->query->add_orderby($this->table_alias, $this->real_field, $this->options['order']);
+    //dpm($this->query);
   }
 }
 

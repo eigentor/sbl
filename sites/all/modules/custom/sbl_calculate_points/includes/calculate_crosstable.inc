@@ -186,6 +186,6 @@ function crosstable_opponenent($view, $team_rank, $row) {
 //    $list_team_points);
 //
 // return $list_team_points[$team_rank_calculate]['team_name'];
-  dpm($row);
+  //dpm($row);
   return '2';
 }
