@@ -1,0 +1,50 @@
+<?php
+
+function sbl_team_points_schema() {
+  $schema['sbl_team_points'] = array(
+    'description' => 'Save the teams points per season for faster querying.',
+    'fields' => array(
+      'node_id' => array(
+        'description' => 'Primary Key: Node ID for the team node.',
+        'type' => 'varchar',
+        'length' => 255,
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'description' => 'Team name.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'season' => array(
+        'description' => 'Season the points are stored for.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'team_points' => array(
+        'description' => 'Team points for the season.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'board_points' => array(
+        'description' => 'Board points for the season.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('node_id'),
+    'unique keys' => array(
+      'node_id' => array('node_id'),
+    ),
+    'indexes' => array(
+      'season' => array('season'),
+    ),
+
+  );
+
+  return $schema;
+}

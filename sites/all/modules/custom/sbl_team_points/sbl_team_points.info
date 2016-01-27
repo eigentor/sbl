@@ -1,0 +1,4 @@
+name = SBL Team Points
+description = Save the teams current points into a database table
+core = 7.x
+package = Schach-Bundesliga
