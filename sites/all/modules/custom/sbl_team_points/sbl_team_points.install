@@ -8,7 +8,6 @@ function sbl_team_points_schema() {
         'description' => 'Primary Key: Node ID for the team node.',
         'type' => 'varchar',
         'length' => 255,
-        'unsigned' => TRUE,
         'not null' => TRUE,
       ),
       'name' => array(
@@ -37,9 +36,6 @@ function sbl_team_points_schema() {
       ),
     ),
     'primary key' => array('node_id'),
-    'unique keys' => array(
-      'node_id' => array('node_id'),
-    ),
     'indexes' => array(
       'season' => array('season'),
     ),
