@@ -297,6 +297,16 @@ function sbl_team_points_node_update($node) {
 
 
   dpm($name_team_home . ', ' . $team_home_sum_team_points . ', ' . $team_home_sum_board_points . ', ' . $name_team_away . ', ' .$team_away_sum_team_points  . ', ' . $team_away_sum_board_points);
+
+  $points_home_team = db_insert('sbl_team_points')
+    ->fields(array(
+      'node_id' => $team_home_nid,
+      'name' => $name_team_home,
+      'season' => $season,
+      'team_points' => $team_home_sum_team_points,
+      'board_points' => $team_home_sum_board_points,
+    ))
+    ->execute();
 }
 
 function sbl_team_points_node_insert($node) {
