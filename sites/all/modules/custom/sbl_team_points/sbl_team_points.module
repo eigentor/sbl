@@ -1,2 +1,13 @@
 <?php
 
+/**
+ * Implements hook_node_update()
+ * Save team and board points into the table 'sbl_team_points'
+ * when a Team Match node is updated
+ */
+
+function sbl_team_points_node_update($node) {
+  dpm($node);
+
+}
+

@@ -6,8 +6,8 @@ function sbl_team_points_schema() {
     'fields' => array(
       'node_id' => array(
         'description' => 'Primary Key: Node ID for the team node.',
-        'type' => 'varchar',
-        'length' => 255,
+        'type' => 'int',
+        'unsigned' => TRUE,
         'not null' => TRUE,
       ),
       'name' => array(
@@ -20,7 +20,7 @@ function sbl_team_points_schema() {
         'description' => 'Season the points are stored for.',
         'type' => 'varchar',
         'length' => 255,
-        'not null' => TRUE,
+        'not null' => FALSE,
       ),
       'team_points' => array(
         'description' => 'Team points for the season.',
