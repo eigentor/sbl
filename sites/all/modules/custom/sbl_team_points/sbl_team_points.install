@@ -35,10 +35,7 @@ function sbl_team_points_schema() {
         'not null' => FALSE,
       ),
     ),
-    'primary key' => array('node_id'),
-    'indexes' => array(
-      'season' => array('season'),
-    ),
+    'primary key' => array('node_id', 'season'),
 
   );
 
