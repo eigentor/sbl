@@ -147,8 +147,8 @@ function calculate_board_points($season, $nid) {
  * when a Team Match node is updated
  */
 
-function sbl_team_points_node_update($node) {
-  if($node->type == 'team_match') {
+function sbl_team_points_entity_postupdate($entity, $entity_type) {
+  if($entity_type == 'node' && $entity->type == 'team_match') {
     // Make sure all variables are set
     $season = '';
     $team_home_nid = '';
@@ -161,21 +161,24 @@ function sbl_team_points_node_update($node) {
     $team_home_sum_board_points = '';
     $team_away_sum_board_points = '';
 
-    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $node_wrapper = entity_metadata_wrapper('node', $entity);
     dpm($node_wrapper->value());
 
     // Get the season value from the node
-    if (!empty($node_wrapper->field_tm_saison->value() && $node_wrapper->field_tm_saison->value() != '')) {
+    $field_season_value = $node_wrapper->field_tm_saison->value();
+    if (!empty($field_season_value) && $node_wrapper->field_tm_saison->value() != '') {
       $season = $node_wrapper->field_tm_saison->tid->value();
     }
 
-    if (!empty($node_wrapper->field_tm_team_1->value())) {
+    $field_tm_team_1_value = $node_wrapper->field_tm_team_1->value();
+    if (!empty($field_tm_team_1_value)) {
       $team_home_nid = $node_wrapper->field_tm_team_1->nid->value();
       $name_team_home = $node_wrapper->field_tm_team_1->title->value();
 
     }
 
-    if (!empty($node_wrapper->field_tm_team_2->value())) {
+    $field_tm_team_2_value = $node_wrapper->field_tm_team_2->value();
+    if (!empty($field_tm_team_2_value)) {
       $team_away_nid = $node_wrapper->field_tm_team_2->nid->value();
       $name_team_away = $node_wrapper->field_tm_team_2->title->value();
     }
