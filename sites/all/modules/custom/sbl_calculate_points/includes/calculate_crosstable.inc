@@ -163,7 +163,7 @@ function crosstable_opponent($nid, $team_rank) {
   if($nid != $opponent_nid) {
     return $displayed_match_nid;
   } else {
-    return 9999;
+    return 99999999;
   }
 
 
