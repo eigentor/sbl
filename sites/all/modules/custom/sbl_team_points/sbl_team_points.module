@@ -296,4 +296,3 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
 
 
 
-
