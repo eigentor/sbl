@@ -147,8 +147,11 @@ function calculate_board_points($season, $nid) {
  * when a Team Match node is updated
  */
 
-function sbl_team_points_entity_postupdate($entity, $entity_type) {
-  if($entity_type == 'node' && $entity->type == 'team_match') {
+function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
+  if($entity_type == 'node' && $entity->type == 'team_match' && ($op == 'insert' || $op == 'update' || $op == 'delete')) {
+
+    list($id) = entity_extract_ids($entity_type, $entity);
+    watchdog('hook_post_action_test', "The {$op}d entity {$entity_type} id is {$id} from " . __FUNCTION__);
     // Make sure all variables are set
     $season = '';
     $team_home_nid = '';
@@ -216,46 +219,81 @@ function sbl_team_points_entity_postupdate($entity, $entity_type) {
     }
 
 
-    dpm($name_team_home . ', ' . $team_home_sum_team_points . ', ' . $team_home_sum_board_points . ', ' . $name_team_away . ', ' . $team_away_sum_team_points . ', ' . $team_away_sum_board_points);
 
-    // Check if there is already an entry in the table sbl_team_points for the team and season
+
+    // Check if there is already an entry in the table sbl_team_points for the home team and season
     $exists_home_team = db_query('SELECT node_id, season FROM {sbl_team_points} WHERE node_id = :team_home_nid AND season = :season', array(
       ':team_home_nid' => $team_home_nid,
       ':season' => $season
     ));
 
-    if ($exists_home_team->rowCount() > 0) {
-      $points_home_team_update = db_update('sbl_team_points')
-        ->fields(array(
-          'team_points' => $team_home_sum_team_points,
-          'board_points' => $team_home_sum_board_points,
-        ))
-        ->condition('node_id', $team_home_nid, '=')
-        ->condition('season', $season, '=')
-        ->execute();
+    if ($season != '' && $team_home_nid != '') {
+      // Write the points for the home team into the database table 'sbl_team_points'
+      // If an entry for the team already exists, update it
+      if ($exists_home_team->rowCount() > 0) {
+        $points_home_team_update = db_update('sbl_team_points')
+          ->fields(array(
+            'team_points' => $team_home_sum_team_points,
+            'board_points' => $team_home_sum_board_points,
+          ))
+          ->condition('node_id', $team_home_nid, '=')
+          ->condition('season', $season, '=')
+          ->execute();
+      }
+      // If no entry exists, create one
+      else {
+        // insert a new row, if the row for the team and season does not already exist
+        $points_home_team_insert = db_insert('sbl_team_points')
+          ->fields(array(
+            'node_id' => $team_home_nid,
+            'name' => $name_team_home,
+            'season' => $season,
+            'team_points' => $team_home_sum_team_points,
+            'board_points' => $team_home_sum_board_points,
+          ))
+          ->execute();
+      }
     }
-    else {
-      // insert a new row, if the row for the team and season does not already exist
-      $points_home_team_insert = db_insert('sbl_team_points')
-        ->fields(array(
-          'node_id' => $team_home_nid,
-          'name' => $name_team_home,
-          'season' => $season,
-          'team_points' => $team_home_sum_team_points,
-          'board_points' => $team_home_sum_board_points,
-        ))
-        ->execute();
+
+    // Check if there is already an entry in the table sbl_team_points for the away team and season
+    $exists_away_team = db_query('SELECT node_id, season FROM {sbl_team_points} WHERE node_id = :team_away_nid AND season = :season', array(
+      ':team_away_nid' => $team_away_nid,
+      ':season' => $season
+    ));
+
+    // Only write into database if the season and team nids are set
+    if ($season != '' && $team_away_nid != '') {
+      // Write the points for the home team into the database table 'sbl_team_points'
+      // If an entry for the team already exists, update it
+      if ($exists_away_team->rowCount() > 0) {
+        $points_away_team_update = db_update('sbl_team_points')
+          ->fields(array(
+            'team_points' => $team_away_sum_team_points,
+            'board_points' => $team_away_sum_board_points,
+          ))
+          ->condition('node_id', $team_away_nid, '=')
+          ->condition('season', $season, '=')
+          ->execute();
+      }
+      // If no entry exists, create one
+      else {
+        // insert a new row, if the row for the team and season does not already exist
+        $points_away_team_insert = db_insert('sbl_team_points')
+          ->fields(array(
+            'node_id' => $team_away_nid,
+            'name' => $name_team_away,
+            'season' => $season,
+            'team_points' => $team_away_sum_team_points,
+            'board_points' => $team_away_sum_board_points,
+          ))
+          ->execute();
+      }
     }
+
+//    dpm($name_team_home . ', ' . $team_home_sum_team_points . ', ' . $team_home_sum_board_points . ', ' . $name_team_away . ', ' . $team_away_sum_team_points . ', ' . $team_away_sum_board_points);
   }
 }
 
 
-
-
-function sbl_team_points_node_insert($node) {
-  $node_wrapper = entity_metadata_wrapper('node', $node);
-  dpm($node_wrapper->value());
-
-}
 
 
