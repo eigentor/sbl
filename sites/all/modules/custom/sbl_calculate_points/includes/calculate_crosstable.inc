@@ -46,10 +46,61 @@ function crosstable_calculate_board_points($nid) {
 }
 
 /**
+ * Get all team_match nids for a team and season
+ */
+function get_all_team_matches_team($nid, $season) {
+  //Get all Team Matches the team has been involved in
+  // Query for Home matches
+  $team_home_match_query = new EntityFieldQuery();
+
+  $team_home_match_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'team_match')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_tm_team_1', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $team_home_match = $team_home_match_query->execute();
+
+  // Query for away matches
+  $team_away_match_query = new EntityFieldQuery();
+
+  $team_away_match_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'team_match')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_tm_team_2', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $team_away_match = $team_away_match_query->execute();
+
+  // Join all home and away match nids into one array
+  $team_all_matches_nids = array();
+   if(isset($team_home_match['node'])) {
+     $team_home_match_nids = array_keys($team_home_match['node']);
+     foreach($team_home_match_nids as $key => $home_match) {
+       $team_all_matches_nids[] = $home_match;
+     }
+   }
+  if(isset($team_away_match['node'])) {
+     $team_away_match_nids = array_keys($team_away_match['node']);
+     foreach($team_away_match_nids as $key => $away_match) {
+       $team_all_matches_nids[] = $away_match;
+     }
+   }
+  return $team_all_matches_nids;
+
+}
+
+/**
  * Get the opponent for each opponent column
  */
 
-function crosstable_opponent($team_rank) {
+function crosstable_opponent($nid, $team_rank) {
   $season = arg(1);
 
   // Get a list of the teams and their points from the table sbl_team_points
@@ -96,57 +147,24 @@ function crosstable_opponent($team_rank) {
   // so we need so subtract 1 from the number given
   $team_rank_calculate = $team_rank -1;
 
-  return $list_team_points[$team_rank_calculate]['team_nid'];
-}
+  $opponent_nid = $list_team_points[$team_rank_calculate]['team_nid'];
 
-function crosstable_opponent_2($team_rank) {
+  // Get all matches for the team whose row is the views row
+  $team_matches = get_all_team_matches_team($nid, $season);
 
-  $season = arg(1);
+  // get all matches for the opponent which column is displayed
+  $opponent_matches = get_all_team_matches_team($opponent_nid, $season);
 
-  // Get a list of the teams and their points from the table sbl_team_points
-  $season_teams = db_query('SELECT
-        node_id,
-        name,
-        team_points,
-        board_points
-        FROM {sbl_team_points} WHERE season = :season', array(
-      ':season' => $season
-    ));
-
-  // Create an array with all the needed data for the team:
-  // NID, name, and team and board points
-  $list_team_points = array();
-  $array_key = 0;
-  foreach($season_teams as $team) {
-    $array_key++;
-    $list_team_points[$array_key]['team_nid'] = $team->node_id;
-    $list_team_points[$array_key]['team_name'] = $team->name;
-    $list_team_points[$array_key]['team_points'] = $team->team_points;;
-    $list_team_points[$array_key]['board_points'] = $team->board_points;
+  // the intersection between both arrays of node ids is the match both teams played against each other
+  $displayed_match = array_intersect($team_matches, $opponent_matches);
+  foreach($displayed_match as $match) {
+    $displayed_match_nid = $match;
+  }
+  if($nid != $opponent_nid) {
+    return $displayed_match_nid;
+  } else {
+    return 9999;
   }
 
-   // Create arrays to be able to sort the array
-  // We extract team points, board points and name into single arrays
-  // and use those for the PHP function array_multisort
-  $team_points_sort = array();
-  $board_points_sort = array();
-  $name_sort = array();
-  foreach($list_team_points as $team_item) {
-    $team_points_sort[] = $team_item['team_points'];
-    $board_points_sort[] = $team_item['board_points'];
-    $name_sort[] = $team_item['team_name'];
-  }
-  // Sort by multiple values: First the team points, then the board points,
-  // and finally alphabetically by team name
-  array_multisort($team_points_sort, SORT_DESC, SORT_NUMERIC,
-    $board_points_sort, SORT_DESC, SORT_NUMERIC,
-    $name_sort, SORT_ASC,
-    $list_team_points);
-
-  // The array starts with zero, but we start the positionint with 1,
-  // so we need so subtract 1 from the number given
-  $team_rank_calculate = $team_rank -1;
-
-  return $list_team_points[$team_rank_calculate]['team_nid'];
 
 }
