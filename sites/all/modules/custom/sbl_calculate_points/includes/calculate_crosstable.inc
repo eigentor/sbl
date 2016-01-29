@@ -14,8 +14,8 @@ function crosstable_calculate_team_points($nid) {
   // Get a list of the teams and their points from the table sbl_team_points
   $teams = db_query('SELECT
         team_points FROM {sbl_team_points} WHERE node_id = :nid AND season = :season', array(':nid' => $nid,
-      ':season' => $season
-    ));
+    ':season' => $season
+  ));
 
   foreach($teams as $team) {
     $team_points = $team->team_points;
@@ -30,13 +30,13 @@ function crosstable_calculate_team_points($nid) {
 
 function crosstable_calculate_board_points($nid) {
 
- $season = arg(1);
+  $season = arg(1);
 
   // Get a list of the teams and their points from the table sbl_team_points
   $teams = db_query('SELECT
         board_points FROM {sbl_team_points} WHERE node_id = :nid AND season = :season', array(':nid' => $nid,
-      ':season' => $season
-    ));
+    ':season' => $season
+  ));
 
   foreach($teams as $team) {
     $board_points = $team->board_points;
@@ -80,18 +80,18 @@ function get_all_team_matches_team($nid, $season) {
 
   // Join all home and away match nids into one array
   $team_all_matches_nids = array();
-   if(isset($team_home_match['node'])) {
-     $team_home_match_nids = array_keys($team_home_match['node']);
-     foreach($team_home_match_nids as $key => $home_match) {
-       $team_all_matches_nids[] = $home_match;
-     }
-   }
+  if(isset($team_home_match['node'])) {
+    $team_home_match_nids = array_keys($team_home_match['node']);
+    foreach($team_home_match_nids as $key => $home_match) {
+      $team_all_matches_nids[] = $home_match;
+    }
+  }
   if(isset($team_away_match['node'])) {
-     $team_away_match_nids = array_keys($team_away_match['node']);
-     foreach($team_away_match_nids as $key => $away_match) {
-       $team_all_matches_nids[] = $away_match;
-     }
-   }
+    $team_away_match_nids = array_keys($team_away_match['node']);
+    foreach($team_away_match_nids as $key => $away_match) {
+      $team_all_matches_nids[] = $away_match;
+    }
+  }
   return $team_all_matches_nids;
 
 }
@@ -103,6 +103,9 @@ function get_all_team_matches_team($nid, $season) {
 function crosstable_opponent($nid, $team_rank) {
   $season = arg(1);
 
+  $opponent_nid = '';
+  $selected_match_nid = '';
+
   // Get a list of the teams and their points from the table sbl_team_points
   $season_teams = db_query('SELECT
         node_id,
@@ -110,8 +113,8 @@ function crosstable_opponent($nid, $team_rank) {
         team_points,
         board_points
         FROM {sbl_team_points} WHERE season = :season', array(
-      ':season' => $season
-    ));
+    ':season' => $season
+  ));
 
   // Create an array with all the needed data for the team:
   // NID, name, and team and board points
@@ -125,7 +128,7 @@ function crosstable_opponent($nid, $team_rank) {
     $list_team_points[$array_key]['board_points'] = $team->board_points;
   }
 
-   // Create arrays to be able to sort the array
+  // Create arrays to be able to sort the array
   // We extract team points, board points and name into single arrays
   // and use those for the PHP function array_multisort
   $team_points_sort = array();
@@ -158,12 +161,42 @@ function crosstable_opponent($nid, $team_rank) {
   // the intersection between both arrays of node ids is the match both teams played against each other
   $displayed_match = array_intersect($team_matches, $opponent_matches);
   foreach($displayed_match as $match) {
-    $displayed_match_nid = $match;
+    $selected_match_nid = $match;
   }
+  $team_points = '';
+
+  if(!empty($selected_match_nid)) {
+    // Create an entity metadata wrapper from the match node that was found.
+    $selected_match_wrapper = entity_metadata_wrapper('node', $selected_match_nid);
+
+
+
+    // Check if the team was home team or away team and select the board points
+    // from the correct field
+    $team_home_value = $selected_match_wrapper->field_tm_team_1->value();
+    if(!empty($team_home_value)) {
+      $team_home_nid = $selected_match_wrapper->field_tm_team_1->nid->value();
+    }
+    $team_away_value = $selected_match_wrapper->field_tm_team_2->value();
+    if(!empty($team_away_value)) {
+      $team_away_nid = $selected_match_wrapper->field_tm_team_2->nid->value();
+    }
+    // If the team was the home team, select the home team's board points
+    $team_home_board_points = $selected_match_wrapper->field_tm_board_points_team_1->label();
+    if($nid == $team_home_nid && !empty($team_home_board_points)) {
+      $team_points = floatval($team_home_board_points);
+    }
+    // If the team was the away team, select the home away's board points
+    $team_away_board_points = $selected_match_wrapper->field_tm_board_points_team_2->label();
+    if($nid == $team_away_nid && !empty($team_away_board_points)) {
+      $team_points = floatval($team_away_board_points);
+    }
+  }
+
   if($nid != $opponent_nid) {
-    return $displayed_match_nid;
+    return $team_points;
   } else {
-    return 99999999;
+    return 999;
   }
 
 

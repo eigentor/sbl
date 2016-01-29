@@ -201,7 +201,7 @@ function sbl_crosstable_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Tabelle';
+  $handler->display->display_options['title'] = 'Kreuztabelle';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'footable';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -360,7 +360,7 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte gegen 1, der Tabelle';
   $handler->display->display_options['fields']['php_2']['label'] = '1';
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_value'] = 'return crosstable_opponenent($view, 1);';
+  $handler->display->display_options['fields']['php_2']['php_value'] = 'return crosstable_opponent($row->nid, 1);';
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
@@ -371,7 +371,7 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_3']['ui_name'] = 'Punkte gegen 2. der Tabelle';
   $handler->display->display_options['fields']['php_3']['label'] = '2';
   $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_3']['php_value'] = 'return crosstable_opponenent($view, 2);';
+  $handler->display->display_options['fields']['php_3']['php_value'] = 'return crosstable_opponent($row->nid, 2);';
   $handler->display->display_options['fields']['php_3']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
@@ -382,7 +382,7 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_4']['ui_name'] = 'Punkte gegen 3. der Tabelle';
   $handler->display->display_options['fields']['php_4']['label'] = '3';
   $handler->display->display_options['fields']['php_4']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_4']['php_value'] = 'return crosstable_opponenent($view, 3);';
+  $handler->display->display_options['fields']['php_4']['php_value'] = 'return crosstable_opponent($row->nid, 3);';
   $handler->display->display_options['fields']['php_4']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
@@ -393,7 +393,6 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_5']['ui_name'] = 'Punkte gegen 4. der Tabelle';
   $handler->display->display_options['fields']['php_5']['label'] = '4';
   $handler->display->display_options['fields']['php_5']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_5']['php_value'] = 'return crosstable_opponenent($view, 4);';
   $handler->display->display_options['fields']['php_5']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_5']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_5']['php_click_sortable'] = '';
@@ -404,7 +403,6 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_6']['ui_name'] = 'Punkte gegen 5. der Tabelle';
   $handler->display->display_options['fields']['php_6']['label'] = '5';
   $handler->display->display_options['fields']['php_6']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_6']['php_value'] = 'return crosstable_opponenent($view, 5);';
   $handler->display->display_options['fields']['php_6']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_6']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_6']['php_click_sortable'] = '';
@@ -415,7 +413,6 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_7']['ui_name'] = 'Punkte gegen 6. der Tabelle';
   $handler->display->display_options['fields']['php_7']['label'] = '6';
   $handler->display->display_options['fields']['php_7']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_7']['php_value'] = 'return crosstable_opponenent($view, 6);';
   $handler->display->display_options['fields']['php_7']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_7']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_7']['php_click_sortable'] = '';
@@ -462,7 +459,7 @@ function sbl_crosstable_views_default_views() {
     t('BP'),
     t('Alle'),
     t('Page'),
-    t('Tabelle'),
+    t('Kreuztabelle'),
     t('more'),
     t('1'),
     t('2'),
