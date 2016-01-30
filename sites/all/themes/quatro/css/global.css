@@ -812,7 +812,7 @@ h2.node-title /* Node title */ {
 .node .content /* Node's content wrapper */ {
 }
 body.page-node .node .field-name-field-intro {
-  font-weight: bold;
+  //font-weight: bold;
   margin-top: 20px;
 }
 .node ul.links /* Node links. See also the ul.links declaration in the pages.css. */ {
