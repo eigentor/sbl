@@ -19,7 +19,7 @@ function include(filename, onload) {
 
 include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', function() {
     $(document).ready(function() {
-        $.get("aktuell",{},function(xml){
+        $.get("aktuell.xml",{},function(xml){
   $('item',xml).each(function(i) {
 	  var title = $(this).find("title").text();
 	  var description = $(this).find("description").text();
