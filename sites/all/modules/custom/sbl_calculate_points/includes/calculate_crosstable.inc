@@ -163,19 +163,23 @@ function crosstable_opponent($nid, $team_rank) {
     // so we need so subtract 1 from the number given
     $team_rank_calculate = $team_rank - 1;
 
-    $opponent_nid = $list_team_points[$team_rank_calculate]['team_nid'];
+    if(!empty($list_team_points[$team_rank_calculate]['team_nid'])) {
+      $opponent_nid = $list_team_points[$team_rank_calculate]['team_nid'];
 
-    // Get all matches for the team whose row is the views row
-    $team_matches = get_all_team_matches_team($nid, $season);
+      // Get all matches for the team whose row is the views row
+      $team_matches = get_all_team_matches_team($nid, $season);
 
-    // get all matches for the opponent which column is displayed
-    $opponent_matches = get_all_team_matches_team($opponent_nid, $season);
+      // get all matches for the opponent which column is displayed
+      $opponent_matches = get_all_team_matches_team($opponent_nid, $season);
 
-    // the intersection between both arrays of node ids is the match both teams played against each other
-    $displayed_match = array_intersect($team_matches, $opponent_matches);
-    foreach ($displayed_match as $match) {
-      $selected_match_nid = $match;
+      // the intersection between both arrays of node ids is the match both teams played against each other
+      $displayed_match = array_intersect($team_matches, $opponent_matches);
+      foreach ($displayed_match as $match) {
+        $selected_match_nid = $match;
+      }
     }
+
+
 
 
     if (!empty($selected_match_nid)) {
