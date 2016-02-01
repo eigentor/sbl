@@ -23,6 +23,7 @@ function sbl_standings_context_default_contexts() {
         'ergebnisse/*' => 'ergebnisse/*',
         'spielplan/*' => 'spielplan/*',
         'tabelle/*' => 'tabelle/*',
+        'kreuztabelle/*' => 'kreuztabelle/*',
       ),
     ),
   );
