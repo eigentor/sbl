@@ -45,11 +45,9 @@ function statistics_create_navigation() {
       $season = arg(2);
       break;
     case 'panel_ergebnisse':
-      $season = arg(1);
-      break;
-    case 'panel_ergebnisse':
     case 'view_spielplan':
     case 'view_teams_leaderbord':
+    case 'view_rangliste_teams_crosstable':
       $season = arg(1);
       break;
   }
@@ -83,6 +81,9 @@ function select_season_form($form, &$form_state) {
       $default_season = arg(1);
       break;
     case 'view_teams_leaderbord':
+      $default_season = arg(1);
+      break;
+    case 'view_rangliste_teams_crosstable':
       $default_season = arg(1);
       break;
   }
@@ -125,10 +126,8 @@ function select_season_form_validate($form, &$form_state) {
       $url .= '/' . arg(2);
       break;
     case 'view_spielplan':
-      $url = '/' . arg(0);
-      $url .= '/' . $season;
-      break;
     case 'view_teams_leaderbord':
+    case 'view_rangliste_teams_crosstable':
       $url = '/' . arg(0);
       $url .= '/' . $season;
       break;
