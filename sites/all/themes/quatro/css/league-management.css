@@ -393,6 +393,26 @@ form#select-season-form .description {
   text-align: left;
 }
 
+/* Kreuztabelle (Crosstable) */
+.view-rangliste-teams-crosstable th,
+.view-rangliste-teams-crosstable td {
+  padding-right: 0.3em;
+  padding-left: 0.3em;
+}
+.view-rangliste-teams-crosstable td.text-left {
+  padding-right: 0.7em;
+  padding-left: 0.7em;
+}
+.view-rangliste-teams-crosstable td.selfgame {
+  background: #ddd;
+}
+.view-rangliste-teams-crosstable td.views-field-php-17,
+.view-rangliste-teams-crosstable td.views-field-php,
+.view-rangliste-teams-crosstable td.views-field-php-1 {
+  background: #f5f5f5;
+}
+
+
 /*------------------------------------------- */
 /*------------------------------------------- */
 /*-------------- Tablet narrow --------------*/

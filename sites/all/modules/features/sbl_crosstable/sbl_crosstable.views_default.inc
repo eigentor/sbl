@@ -214,6 +214,17 @@ function sbl_crosstable_views_default_views() {
     'php_5' => 'php_5',
     'php_6' => 'php_6',
     'php_7' => 'php_7',
+    'php_8' => 'php_8',
+    'php_9' => 'php_9',
+    'php_10' => 'php_10',
+    'php_11' => 'php_11',
+    'php_12' => 'php_12',
+    'php_13' => 'php_13',
+    'php_14' => 'php_14',
+    'php_15' => 'php_15',
+    'php_16' => 'php_16',
+    'php_18' => 'php_18',
+    'php_17' => 'php_17',
     'php' => 'php',
     'php_1' => 'php_1',
   );
@@ -268,6 +279,61 @@ function sbl_crosstable_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'php_8' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_9' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_10' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_11' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_12' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_13' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_14' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_15' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_16' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_18' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_17' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'php' => array(
       'align' => '',
       'separator' => '',
@@ -317,6 +383,50 @@ function sbl_crosstable_views_default_views() {
         'tablet' => 0,
       ),
       'php_7' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_8' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_9' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_10' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_11' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_12' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_13' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_14' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_15' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_16' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_18' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_17' => array(
         'phone' => 'phone',
         'tablet' => 0,
       ),
@@ -526,6 +636,17 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_16']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_16']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_16']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 16. der Tabelle */
+  $handler->display->display_options['fields']['php_18']['id'] = 'php_18';
+  $handler->display->display_options['fields']['php_18']['table'] = 'views';
+  $handler->display->display_options['fields']['php_18']['field'] = 'php';
+  $handler->display->display_options['fields']['php_18']['ui_name'] = 'Punkte gegen den 16. der Tabelle';
+  $handler->display->display_options['fields']['php_18']['label'] = '16';
+  $handler->display->display_options['fields']['php_18']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_18']['php_value'] = 'return crosstable_opponent($row->nid, 15);';
+  $handler->display->display_options['fields']['php_18']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_18']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_18']['php_click_sortable'] = '';
   /* Field: Anzahl der absolvierten Spiele */
   $handler->display->display_options['fields']['php_17']['id'] = 'php_17';
   $handler->display->display_options['fields']['php_17']['table'] = 'views';
@@ -597,6 +718,7 @@ function sbl_crosstable_views_default_views() {
     t('13'),
     t('14'),
     t('15'),
+    t('16'),
     t('SP'),
   );
   $export['rangliste_teams_crosstable'] = $view;
