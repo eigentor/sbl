@@ -11,14 +11,17 @@
 function crosstable_calculate_team_points($nid) {
   $season = arg(1);
 
+  $team_points = '';
+
   // Get a list of the teams and their points from the table sbl_team_points
   $teams = db_query('SELECT
         team_points FROM {sbl_team_points} WHERE node_id = :nid AND season = :season', array(':nid' => $nid,
     ':season' => $season
   ));
-
-  foreach($teams as $team) {
-    $team_points = $team->team_points;
+  if($teams->rowCount() > 0) {
+    foreach ($teams as $team) {
+      $team_points = $team->team_points;
+    }
   }
 
   return $team_points;
@@ -32,14 +35,18 @@ function crosstable_calculate_board_points($nid) {
 
   $season = arg(1);
 
+  $board_points = '';
+
   // Get a list of the teams and their points from the table sbl_team_points
   $teams = db_query('SELECT
         board_points FROM {sbl_team_points} WHERE node_id = :nid AND season = :season', array(':nid' => $nid,
     ':season' => $season
   ));
 
-  foreach($teams as $team) {
-    $board_points = $team->board_points;
+  if($teams->rowCount() > 0) {
+    foreach ($teams as $team) {
+      $board_points = $team->board_points;
+    }
   }
 
   return $board_points;
@@ -105,6 +112,7 @@ function crosstable_opponent($nid, $team_rank) {
 
   $opponent_nid = '';
   $selected_match_nid = '';
+  $team_points = '';
 
   // Get a list of the teams and their points from the table sbl_team_points
   $season_teams = db_query('SELECT
@@ -120,76 +128,82 @@ function crosstable_opponent($nid, $team_rank) {
   // NID, name, and team and board points
   $list_team_points = array();
   $array_key = 0;
-  foreach($season_teams as $team) {
-    $array_key++;
-    $list_team_points[$array_key]['team_nid'] = $team->node_id;
-    $list_team_points[$array_key]['team_name'] = $team->name;
-    $list_team_points[$array_key]['team_points'] = $team->team_points;;
-    $list_team_points[$array_key]['board_points'] = $team->board_points;
-  }
 
-  // Create arrays to be able to sort the array
-  // We extract team points, board points and name into single arrays
-  // and use those for the PHP function array_multisort
-  $team_points_sort = array();
-  $board_points_sort = array();
-  $name_sort = array();
-  foreach($list_team_points as $team_item) {
-    $team_points_sort[] = $team_item['team_points'];
-    $board_points_sort[] = $team_item['board_points'];
-    $name_sort[] = $team_item['team_name'];
-  }
-  // Sort by multiple values: First the team points, then the board points,
-  // and finally alphabetically by team name
-  array_multisort($team_points_sort, SORT_DESC, SORT_NUMERIC,
-    $board_points_sort, SORT_DESC, SORT_NUMERIC,
-    $name_sort, SORT_ASC,
-    $list_team_points);
+  if($season_teams->rowCount() > 0) {
+    $team_home_board_points = '';
+    $team_away_board_points = '';
 
-  // The array starts with zero, but we start the positionint with 1,
-  // so we need so subtract 1 from the number given
-  $team_rank_calculate = $team_rank -1;
-
-  $opponent_nid = $list_team_points[$team_rank_calculate]['team_nid'];
-
-  // Get all matches for the team whose row is the views row
-  $team_matches = get_all_team_matches_team($nid, $season);
-
-  // get all matches for the opponent which column is displayed
-  $opponent_matches = get_all_team_matches_team($opponent_nid, $season);
-
-  // the intersection between both arrays of node ids is the match both teams played against each other
-  $displayed_match = array_intersect($team_matches, $opponent_matches);
-  foreach($displayed_match as $match) {
-    $selected_match_nid = $match;
-  }
-  $team_points = '';
-
-  if(!empty($selected_match_nid)) {
-    // Create an entity metadata wrapper from the match node that was found.
-    $selected_match_wrapper = entity_metadata_wrapper('node', $selected_match_nid);
-
-
-
-    // Check if the team was home team or away team and select the board points
-    // from the correct field
-    $team_home_value = $selected_match_wrapper->field_tm_team_1->value();
-    if(!empty($team_home_value)) {
-      $team_home_nid = $selected_match_wrapper->field_tm_team_1->nid->value();
+    foreach ($season_teams as $team) {
+      $array_key++;
+      $list_team_points[$array_key]['team_nid'] = $team->node_id;
+      $list_team_points[$array_key]['team_name'] = $team->name;
+      $list_team_points[$array_key]['team_points'] = $team->team_points;;
+      $list_team_points[$array_key]['board_points'] = $team->board_points;
     }
-    $team_away_value = $selected_match_wrapper->field_tm_team_2->value();
-    if(!empty($team_away_value)) {
-      $team_away_nid = $selected_match_wrapper->field_tm_team_2->nid->value();
+
+    // Create arrays to be able to sort the array
+    // We extract team points, board points and name into single arrays
+    // and use those for the PHP function array_multisort
+    $team_points_sort = array();
+    $board_points_sort = array();
+    $name_sort = array();
+    foreach ($list_team_points as $team_item) {
+      $team_points_sort[] = $team_item['team_points'];
+      $board_points_sort[] = $team_item['board_points'];
+      $name_sort[] = $team_item['team_name'];
     }
-    // If the team was the home team, select the home team's board points
-    $team_home_board_points = $selected_match_wrapper->field_tm_board_points_team_1->label();
-    if($nid == $team_home_nid && !empty($team_home_board_points)) {
-      $team_points = floatval($team_home_board_points);
+    // Sort by multiple values: First the team points, then the board points,
+    // and finally alphabetically by team name
+    array_multisort($team_points_sort, SORT_DESC, SORT_NUMERIC,
+      $board_points_sort, SORT_DESC, SORT_NUMERIC,
+      $name_sort, SORT_ASC,
+      $list_team_points);
+
+    // The array starts with zero, but we start the positionint with 1,
+    // so we need so subtract 1 from the number given
+    $team_rank_calculate = $team_rank - 1;
+
+    $opponent_nid = $list_team_points[$team_rank_calculate]['team_nid'];
+
+    // Get all matches for the team whose row is the views row
+    $team_matches = get_all_team_matches_team($nid, $season);
+
+    // get all matches for the opponent which column is displayed
+    $opponent_matches = get_all_team_matches_team($opponent_nid, $season);
+
+    // the intersection between both arrays of node ids is the match both teams played against each other
+    $displayed_match = array_intersect($team_matches, $opponent_matches);
+    foreach ($displayed_match as $match) {
+      $selected_match_nid = $match;
     }
-    // If the team was the away team, select the home away's board points
-    $team_away_board_points = $selected_match_wrapper->field_tm_board_points_team_2->label();
-    if($nid == $team_away_nid && !empty($team_away_board_points)) {
-      $team_points = floatval($team_away_board_points);
+
+
+    if (!empty($selected_match_nid)) {
+      // Create an entity metadata wrapper from the match node that was found.
+      $selected_match_wrapper = entity_metadata_wrapper('node', $selected_match_nid);
+
+
+      // Check if the team was home team or away team and select the board points
+      // from the correct field
+      $team_home_value = $selected_match_wrapper->field_tm_team_1->value();
+      if (!empty($team_home_value)) {
+        $team_home_nid = $selected_match_wrapper->field_tm_team_1->nid->value();
+      }
+      $team_away_value = $selected_match_wrapper->field_tm_team_2->value();
+      if (!empty($team_away_value)) {
+        $team_away_nid = $selected_match_wrapper->field_tm_team_2->nid->value();
+      }
+      // If the team was the home team, select the home team's board points
+      $team_home_board_points = $selected_match_wrapper->field_tm_board_points_team_1->label();
+      if ($nid == $team_home_nid) {
+        $team_points = $team_home_board_points;
+
+      }
+      // If the team was the away team, select the home away's board points
+      $team_away_board_points = $selected_match_wrapper->field_tm_board_points_team_2->label();
+      if ($nid == $team_away_nid) {
+        $team_points = $team_away_board_points;
+      }
     }
   }
 

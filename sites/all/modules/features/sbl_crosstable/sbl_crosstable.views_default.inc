@@ -208,11 +208,12 @@ function sbl_crosstable_views_default_views() {
     'nid' => 'nid',
     'counter' => 'counter',
     'title' => 'title',
-    'title_1' => 'title_1',
     'php_2' => 'php_2',
     'php_3' => 'php_3',
     'php_4' => 'php_4',
     'php_5' => 'php_5',
+    'php_6' => 'php_6',
+    'php_7' => 'php_7',
     'php' => 'php',
     'php_1' => 'php_1',
   );
@@ -237,13 +238,6 @@ function sbl_crosstable_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'title_1' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'php_2' => array(
       'align' => '',
       'separator' => '',
@@ -260,6 +254,16 @@ function sbl_crosstable_views_default_views() {
       'empty_column' => 0,
     ),
     'php_5' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_6' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_7' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -292,24 +296,28 @@ function sbl_crosstable_views_default_views() {
         'phone' => 0,
         'tablet' => 0,
       ),
-      'title_1' => array(
-        'phone' => 0,
-        'tablet' => 0,
-      ),
       'php_2' => array(
-        'phone' => 0,
+        'phone' => 'phone',
         'tablet' => 0,
       ),
       'php_3' => array(
-        'phone' => 0,
+        'phone' => 'phone',
         'tablet' => 0,
       ),
       'php_4' => array(
-        'phone' => 0,
+        'phone' => 'phone',
         'tablet' => 0,
       ),
       'php_5' => array(
-        'phone' => 0,
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_6' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_7' => array(
+        'phone' => 'phone',
         'tablet' => 0,
       ),
       'php' => array(
@@ -393,6 +401,7 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_5']['ui_name'] = 'Punkte gegen 4. der Tabelle';
   $handler->display->display_options['fields']['php_5']['label'] = '4';
   $handler->display->display_options['fields']['php_5']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_5']['php_value'] = 'return crosstable_opponent($row->nid, 4);';
   $handler->display->display_options['fields']['php_5']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_5']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_5']['php_click_sortable'] = '';
@@ -403,6 +412,7 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_6']['ui_name'] = 'Punkte gegen 5. der Tabelle';
   $handler->display->display_options['fields']['php_6']['label'] = '5';
   $handler->display->display_options['fields']['php_6']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_6']['php_value'] = 'return crosstable_opponent($row->nid, 5);';
   $handler->display->display_options['fields']['php_6']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_6']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_6']['php_click_sortable'] = '';
@@ -413,9 +423,120 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_7']['ui_name'] = 'Punkte gegen 6. der Tabelle';
   $handler->display->display_options['fields']['php_7']['label'] = '6';
   $handler->display->display_options['fields']['php_7']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_7']['php_value'] = 'return crosstable_opponent($row->nid, 6);';
   $handler->display->display_options['fields']['php_7']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_7']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_7']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 7. der Tabelle */
+  $handler->display->display_options['fields']['php_8']['id'] = 'php_8';
+  $handler->display->display_options['fields']['php_8']['table'] = 'views';
+  $handler->display->display_options['fields']['php_8']['field'] = 'php';
+  $handler->display->display_options['fields']['php_8']['ui_name'] = 'Punkte gegen den 7. der Tabelle';
+  $handler->display->display_options['fields']['php_8']['label'] = '7';
+  $handler->display->display_options['fields']['php_8']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_8']['php_value'] = 'return crosstable_opponent($row->nid, 7);';
+  $handler->display->display_options['fields']['php_8']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_8']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_8']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 8. der Tabelle */
+  $handler->display->display_options['fields']['php_9']['id'] = 'php_9';
+  $handler->display->display_options['fields']['php_9']['table'] = 'views';
+  $handler->display->display_options['fields']['php_9']['field'] = 'php';
+  $handler->display->display_options['fields']['php_9']['ui_name'] = 'Punkte gegen den 8. der Tabelle';
+  $handler->display->display_options['fields']['php_9']['label'] = '8';
+  $handler->display->display_options['fields']['php_9']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_9']['php_value'] = 'return crosstable_opponent($row->nid, 8);';
+  $handler->display->display_options['fields']['php_9']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_9']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_9']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 9. der Tabelle */
+  $handler->display->display_options['fields']['php_10']['id'] = 'php_10';
+  $handler->display->display_options['fields']['php_10']['table'] = 'views';
+  $handler->display->display_options['fields']['php_10']['field'] = 'php';
+  $handler->display->display_options['fields']['php_10']['ui_name'] = 'Punkte gegen den 9. der Tabelle';
+  $handler->display->display_options['fields']['php_10']['label'] = '9';
+  $handler->display->display_options['fields']['php_10']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_10']['php_value'] = 'return crosstable_opponent($row->nid, 9);';
+  $handler->display->display_options['fields']['php_10']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_10']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_10']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 10. der Tabelle */
+  $handler->display->display_options['fields']['php_11']['id'] = 'php_11';
+  $handler->display->display_options['fields']['php_11']['table'] = 'views';
+  $handler->display->display_options['fields']['php_11']['field'] = 'php';
+  $handler->display->display_options['fields']['php_11']['ui_name'] = 'Punkte gegen den 10. der Tabelle';
+  $handler->display->display_options['fields']['php_11']['label'] = '10';
+  $handler->display->display_options['fields']['php_11']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_11']['php_value'] = 'return crosstable_opponent($row->nid, 10);';
+  $handler->display->display_options['fields']['php_11']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_11']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_11']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 11. der Tabelle */
+  $handler->display->display_options['fields']['php_12']['id'] = 'php_12';
+  $handler->display->display_options['fields']['php_12']['table'] = 'views';
+  $handler->display->display_options['fields']['php_12']['field'] = 'php';
+  $handler->display->display_options['fields']['php_12']['ui_name'] = 'Punkte gegen den 11. der Tabelle';
+  $handler->display->display_options['fields']['php_12']['label'] = '11';
+  $handler->display->display_options['fields']['php_12']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_12']['php_value'] = 'return crosstable_opponent($row->nid, 11);';
+  $handler->display->display_options['fields']['php_12']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_12']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_12']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 12. der Tabelle */
+  $handler->display->display_options['fields']['php_13']['id'] = 'php_13';
+  $handler->display->display_options['fields']['php_13']['table'] = 'views';
+  $handler->display->display_options['fields']['php_13']['field'] = 'php';
+  $handler->display->display_options['fields']['php_13']['ui_name'] = 'Punkte gegen den 12. der Tabelle';
+  $handler->display->display_options['fields']['php_13']['label'] = '12';
+  $handler->display->display_options['fields']['php_13']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_13']['php_value'] = 'return crosstable_opponent($row->nid, 12);';
+  $handler->display->display_options['fields']['php_13']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_13']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_13']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 13. der Tabelle */
+  $handler->display->display_options['fields']['php_14']['id'] = 'php_14';
+  $handler->display->display_options['fields']['php_14']['table'] = 'views';
+  $handler->display->display_options['fields']['php_14']['field'] = 'php';
+  $handler->display->display_options['fields']['php_14']['ui_name'] = 'Punkte gegen den 13. der Tabelle';
+  $handler->display->display_options['fields']['php_14']['label'] = '13';
+  $handler->display->display_options['fields']['php_14']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_14']['php_value'] = 'return crosstable_opponent($row->nid, 13);';
+  $handler->display->display_options['fields']['php_14']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_14']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_14']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 14. der Tabelle */
+  $handler->display->display_options['fields']['php_15']['id'] = 'php_15';
+  $handler->display->display_options['fields']['php_15']['table'] = 'views';
+  $handler->display->display_options['fields']['php_15']['field'] = 'php';
+  $handler->display->display_options['fields']['php_15']['ui_name'] = 'Punkte gegen den 14. der Tabelle';
+  $handler->display->display_options['fields']['php_15']['label'] = '14';
+  $handler->display->display_options['fields']['php_15']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_15']['php_value'] = 'return crosstable_opponent($row->nid, 14);';
+  $handler->display->display_options['fields']['php_15']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_15']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_15']['php_click_sortable'] = '';
+  /* Field: Punkte gegen den 15. der Tabelle */
+  $handler->display->display_options['fields']['php_16']['id'] = 'php_16';
+  $handler->display->display_options['fields']['php_16']['table'] = 'views';
+  $handler->display->display_options['fields']['php_16']['field'] = 'php';
+  $handler->display->display_options['fields']['php_16']['ui_name'] = 'Punkte gegen den 15. der Tabelle';
+  $handler->display->display_options['fields']['php_16']['label'] = '15';
+  $handler->display->display_options['fields']['php_16']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_16']['php_value'] = 'return crosstable_opponent($row->nid, 15);';
+  $handler->display->display_options['fields']['php_16']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_16']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_16']['php_click_sortable'] = '';
+  /* Field: Anzahl der absolvierten Spiele */
+  $handler->display->display_options['fields']['php_17']['id'] = 'php_17';
+  $handler->display->display_options['fields']['php_17']['table'] = 'views';
+  $handler->display->display_options['fields']['php_17']['field'] = 'php';
+  $handler->display->display_options['fields']['php_17']['ui_name'] = 'Anzahl der absolvierten Spiele';
+  $handler->display->display_options['fields']['php_17']['label'] = 'SP';
+  $handler->display->display_options['fields']['php_17']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_17']['php_value'] = 'return team_list_calculate_played_games($row->nid);';
+  $handler->display->display_options['fields']['php_17']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_17']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_17']['php_click_sortable'] = '';
   /* Field: Mannschaftspunkte PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -467,6 +588,16 @@ function sbl_crosstable_views_default_views() {
     t('4'),
     t('5'),
     t('6'),
+    t('7'),
+    t('8'),
+    t('9'),
+    t('10'),
+    t('11'),
+    t('12'),
+    t('13'),
+    t('14'),
+    t('15'),
+    t('SP'),
   );
   $export['rangliste_teams_crosstable'] = $view;
 

@@ -59,6 +59,7 @@ function statistics_create_navigation() {
   $attributes = array('class' => array('tabelle', 'spielplan', 'ergebnisse'));
   $list_items = array();
   $list_items[] = l('Tabelle', 'tabelle/' . $season);
+  $list_items[] = l('Kreuztabelle', 'kreuztabelle/' . $season);
   $list_items[] = l('Spielplan', 'spielplan/' . $season);
   $list_items[] = l('Ergebnisse', 'ergebnisse/' . $season . '/' . $matchday);
 
