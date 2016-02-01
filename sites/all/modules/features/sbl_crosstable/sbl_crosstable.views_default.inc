@@ -643,7 +643,7 @@ function sbl_crosstable_views_default_views() {
   $handler->display->display_options['fields']['php_18']['ui_name'] = 'Punkte gegen den 16. der Tabelle';
   $handler->display->display_options['fields']['php_18']['label'] = '16';
   $handler->display->display_options['fields']['php_18']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_18']['php_value'] = 'return crosstable_opponent($row->nid, 15);';
+  $handler->display->display_options['fields']['php_18']['php_value'] = 'return crosstable_opponent($row->nid, 16);';
   $handler->display->display_options['fields']['php_18']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_18']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_18']['php_click_sortable'] = '';
