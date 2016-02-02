@@ -891,5 +891,226 @@ function sbl_content_admin_views_views_default_views() {
   );
   $export['players_overview'] = $view;
 
+  $view = new view();
+  $view->name = 'single_games_overview';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'field_collection_item';
+  $view->human_name = 'Einzelspiele Übersicht';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Einzelspiele Übersicht';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'item_id' => 'item_id',
+    'field_mt_player_1' => 'field_mt_player_1',
+    'field_mt_points_player_1' => 'field_mt_points_player_1',
+    'field_mt_player_2' => 'field_mt_player_2',
+    'field_mt_points_player_2' => 'field_mt_points_player_2',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'item_id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_mt_player_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_mt_points_player_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_mt_player_2' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_mt_points_player_2' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Field collection item: Entity with the Einzelspiel (field_tm_game) */
+  $handler->display->display_options['relationships']['field_tm_game_node']['id'] = 'field_tm_game_node';
+  $handler->display->display_options['relationships']['field_tm_game_node']['table'] = 'field_collection_item';
+  $handler->display->display_options['relationships']['field_tm_game_node']['field'] = 'field_tm_game_node';
+  $handler->display->display_options['relationships']['field_tm_game_node']['label'] = 'Mannschaftsmatch mit dem field_tm_game';
+  /* Field: Field collection item: Field collection item ID */
+  $handler->display->display_options['fields']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['fields']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['fields']['item_id']['label'] = 'Field C. item ID';
+  /* Field: Field collection item: Spieler 1 */
+  $handler->display->display_options['fields']['field_mt_player_1']['id'] = 'field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1']['table'] = 'field_data_field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1']['field'] = 'field_mt_player_1';
+  $handler->display->display_options['fields']['field_mt_player_1']['label'] = 'Spieler Heimmannschaft';
+  $handler->display->display_options['fields']['field_mt_player_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Field collection item: Punkte Spieler 1 */
+  $handler->display->display_options['fields']['field_mt_points_player_1']['id'] = 'field_mt_points_player_1';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['table'] = 'field_data_field_mt_points_player_1';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['field'] = 'field_mt_points_player_1';
+  $handler->display->display_options['fields']['field_mt_points_player_1']['label'] = 'Punkte Spieler Heimmannschaft';
+  /* Field: Field collection item: Spieler 2 */
+  $handler->display->display_options['fields']['field_mt_player_2']['id'] = 'field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2']['table'] = 'field_data_field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2']['field'] = 'field_mt_player_2';
+  $handler->display->display_options['fields']['field_mt_player_2']['label'] = 'Spieler Auwärtsmannschaft';
+  $handler->display->display_options['fields']['field_mt_player_2']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Field collection item: Punkte Spieler 2 */
+  $handler->display->display_options['fields']['field_mt_points_player_2']['id'] = 'field_mt_points_player_2';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['table'] = 'field_data_field_mt_points_player_2';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['field'] = 'field_mt_points_player_2';
+  $handler->display->display_options['fields']['field_mt_points_player_2']['label'] = 'Punkte Spieler Auwärtsmannschaft';
+  /* Filter criterion: Content: Saison (field_tm_saison) */
+  $handler->display->display_options['filters']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['field'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['relationship'] = 'field_tm_game_node';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_tm_saison_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['operator_id'] = 'field_tm_saison_tid_op';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['label'] = 'Saison';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['operator'] = 'field_tm_saison_tid_op';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['identifier'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_tm_saison_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['vocabulary'] = 'saison';
+  /* Filter criterion: Field collection item: Field name */
+  $handler->display->display_options['filters']['field_name']['id'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['field_name']['field'] = 'field_name';
+  $handler->display->display_options['filters']['field_name']['value'] = array(
+    'field_tm_game' => 'field_tm_game',
+  );
+  $handler->display->display_options['filters']['field_name']['group'] = 1;
+  /* Filter criterion: Field collection item: Field collection item ID */
+  $handler->display->display_options['filters']['item_id']['id'] = 'item_id';
+  $handler->display->display_options['filters']['item_id']['table'] = 'field_collection_item';
+  $handler->display->display_options['filters']['item_id']['field'] = 'item_id';
+  $handler->display->display_options['filters']['item_id']['group'] = 1;
+  $handler->display->display_options['filters']['item_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['item_id']['expose']['operator_id'] = 'item_id_op';
+  $handler->display->display_options['filters']['item_id']['expose']['label'] = 'Field collection item ID';
+  $handler->display->display_options['filters']['item_id']['expose']['operator'] = 'item_id_op';
+  $handler->display->display_options['filters']['item_id']['expose']['identifier'] = 'item_id';
+  $handler->display->display_options['filters']['item_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field collection item: Spieler 1 (field_mt_player_1) */
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['id'] = 'field_mt_player_1_target_id';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['table'] = 'field_data_field_mt_player_1';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['field'] = 'field_mt_player_1_target_id';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['expose']['operator_id'] = 'field_mt_player_1_target_id_op';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['expose']['label'] = 'Spieler Heimmannschaft Node ID';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['expose']['operator'] = 'field_mt_player_1_target_id_op';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['expose']['identifier'] = 'field_mt_player_1_target_id';
+  $handler->display->display_options['filters']['field_mt_player_1_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Field collection item: Spieler 2 (field_mt_player_2) */
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['id'] = 'field_mt_player_2_target_id';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['table'] = 'field_data_field_mt_player_2';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['field'] = 'field_mt_player_2_target_id';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['expose']['operator_id'] = 'field_mt_player_2_target_id_op';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['expose']['label'] = 'Spieler Auswärtsmannschaft Node ID';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['expose']['operator'] = 'field_mt_player_2_target_id_op';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['expose']['identifier'] = 'field_mt_player_2_target_id';
+  $handler->display->display_options['filters']['field_mt_player_2_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/einzelspiele-uebersicht';
+  $translatables['single_games_overview'] = array(
+    t('Master'),
+    t('Einzelspiele Übersicht'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Mannschaftsmatch mit dem field_tm_game'),
+    t('Field C. item ID'),
+    t('.'),
+    t(','),
+    t('Spieler Heimmannschaft'),
+    t('Punkte Spieler Heimmannschaft'),
+    t('Spieler Auwärtsmannschaft'),
+    t('Punkte Spieler Auwärtsmannschaft'),
+    t('Saison'),
+    t('Field collection item ID'),
+    t('Spieler Heimmannschaft Node ID'),
+    t('Spieler Auswärtsmannschaft Node ID'),
+    t('Page'),
+  );
+  $export['single_games_overview'] = $view;
+
   return $export;
 }
