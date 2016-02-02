@@ -232,7 +232,7 @@ function player_points_sum_season($row) {
     // his team played on the matchday
     if(in_array($player_game->item_id, $single_games_matchday)) {
       $player_game_wrapper = entity_metadata_wrapper('field_collection_item', $player_game->item_id);
-      dpm($player_game_wrapper->value());
+      //dpm($player_game_wrapper->value());
       if($player_game_wrapper->field_mt_player_1->nid->value() == $player) {
         $player_points_sum += $player_game_wrapper->field_mt_points_player_1->label();
       } else {

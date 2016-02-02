@@ -1,17 +1,47 @@
 <?php
 
-/**
-* Count how many games a player has played.
- */
-function player_calculate_played_games($player_nid, $team_nid) {
+function get_team_nid_from_player_nid($season, $player_nid) {
+  // get the team nid from the player node and the season
+  $player_node_wrapper = entity_metadata_wrapper('node', $player_nid);
 
-  $season = arg(1);
+  $player_season_data = array();
+  if(!empty($player_node_wrapper->field_sp_verein->value())) {
+    foreach($player_node_wrapper->field_sp_verein->value() as $season_data) {
+      $player_season_data[] = $season_data->item_id;
+    }
+  }
 
-  $points_home_player = '';
-  $points_away_player = '';
-  $points_player = '';
+  $season_data_item_id = '';
+  foreach($player_season_data as $data) {
+    $players_season_data_query = new EntityFieldQuery();
 
-  // First, get all the team matches for the player's club
+    $players_season_data_query->entityCondition('entity_type', 'field_collection_item')
+      ->entityCondition('bundle', 'field_sp_verein')
+      ->propertyCondition('item_id', $data)
+      ->fieldCondition('field_saison', 'tid', $season)
+      // Bypass node access
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+    $players_season_data = $players_season_data_query->execute();
+    if(isset($players_season_data['field_collection_item'])) {
+      foreach($players_season_data['field_collection_item'] as $season_data) {
+        $season_data_item_id = $season_data->item_id;
+      }
+    }
+  }
+
+  $team_nid = '';
+  if(!empty($season_data_item_id)) {
+    $season_data_wrapper = entity_metadata_wrapper('field_collection_item', $season_data_item_id);
+    $team_nid = $season_data_wrapper->field_fc_verein->nid->value();
+  }
+
+  return $team_nid;
+}
+
+function player_get_games_per_season($player_nid, $team_nid, $season) {
+
+  // Get all the team matches for the player's club
   // Get all home matches for the players team for the current season
   $player_season_home_matches_query = new EntityFieldQuery();
 
@@ -42,17 +72,18 @@ function player_calculate_played_games($player_nid, $team_nid) {
   // Write the home games in to the $season_games_combined array
   if(isset($player_season_home_matches['node'])) {
     foreach($player_season_home_matches['node'] as $season_home_match) {
-      $season_matches_combined[] = $season_home_match;
+      $season_matches_combined[] = $season_home_match->nid;
     }
   }
 
   // Write the away games in to the $season_games_combined array
   if(isset($player_season_away_matches['node'])) {
     foreach($player_season_away_matches['node'] as $season_away_match) {
-      $season_matches_combined[] = $season_away_match;
+      $season_matches_combined[] = $season_away_match->nid;
     }
   }
 
+  // Now get the single games that were played in team matches this season.
 
   // Get all the single games the player was involved in
   // Get the home games for the player
@@ -83,46 +114,124 @@ function player_calculate_played_games($player_nid, $team_nid) {
   if(isset($player_season_home_games['field_collection_item'])) {
     foreach($player_season_home_games['field_collection_item'] as $player_home_game) {
       // Write the home games for the player into the array $player_games_combined
-      $player_games_combined[] = $player_home_game;
-      $player_home_game_wrapper = entity_metadata_wrapper('field_collection_item', $player_home_game->item_id);
-      $points_home_player = $player_home_game_wrapper->field_mt_points_player_1->label();
+      $player_games_combined[] = $player_home_game->item_id;
     }
   }
 
   if(isset($player_season_away_games['field_collection_item'])) {
     foreach($player_season_away_games['field_collection_item'] as $player_away_game) {
-      $player_games_combined[] = $player_away_game;
+      $player_games_combined[] = $player_away_game->item_id;
     }
   }
 
-  dpm($player_games_combined);
+  $single_games_team_season = array();
 
+  // Extract all field_tm_game entity IDs from the team match nodes.
+  // Thus we get a list of all the field collection item ids that were played that season
+  if(!empty($season_matches_combined)) {
+    foreach($season_matches_combined as $season_match) {
+      $season_matches_combined_wrapper = entity_metadata_wrapper('node', $season_match);
+      $single_games = $season_matches_combined_wrapper->field_tm_game->value();
+      foreach($single_games as $game) {
+        // Write the field collection item IDs into the array
+        $single_games_team_season[] = $game->item_id;
+      }
+    }
+  }
 
+  // Now get an intersection between the two queries: the entity_ids of the single games
+  // the player played - which are contained in the array $player_games_combined
+  // and all single games that were played by his team in the season - which are contained
+  // in the array $single_games_team_season. The field collection items that are in both arrays
+  // have been played by the player in the season
 
-//  // Query for away matches
-//  $team_away_match_query = new EntityFieldQuery();
-//
-//  $team_away_match_query->entityCondition('entity_type', 'node')
-//    ->entityCondition('bundle', 'team_match')
-//    ->propertyCondition('status', NODE_PUBLISHED)
-//    ->fieldCondition('field_tm_team_2', 'target_id', $nid)
-//    ->fieldCondition('field_tm_saison', 'tid', $season)
-//    ->fieldCondition('field_game_has_result', 'value', 1)
-//    // Bypass node access
-//    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
-//
-//  $team_away_match = $team_away_match_query->execute();
-//
-//  // Count the home matches
-//  $home_match_number = '';
-//  if (isset($team_home_match['node'])) {
-//    $home_match_number = count($team_home_match['node']);
-//  }
-//  // count the away matches
-//  $away_match_number = '';
-//  if (isset($team_away_match['node'])) {
-//    $away_match_number = count($team_away_match['node']);
-//  }
-//  $total_games_number = $home_match_number + $away_match_number;
+  $single_games_player_season = '';
+  $single_games_player_season = array_intersect($player_games_combined, $single_games_team_season);
+
+  return $single_games_player_season;
 }
+
+/**
+* Count how many games a player has played.
+ */
+function player_calculate_played_games($player_nid) {
+
+  $season = arg(1);
+  // Get the team nid from the season and player nid
+  $team_nid = get_team_nid_from_player_nid($season, $player_nid);
+  $games_player = '';
+  // Get all the games the player has played in the season
+  $games_player = player_get_games_per_season($player_nid, $team_nid, $season);
+
+  $games_player_number = '';
+
+  $games_player_number = count($games_player);
+
+  return $games_player_number;
+}
+
+/**
+ * Add up all the points a player has won in a season.
+ */
+
+function player_calculate_won_points($player_nid) {
+  $season = arg(1);
+  // Get the team nid from the season and player nid
+  $team_nid = get_team_nid_from_player_nid($season, $player_nid);
+  $games_player = '';
+  // Get all the games the player has played in the season
+  $games_player = player_get_games_per_season($player_nid, $team_nid, $season);
+
+  $player_sum_points = '';
+  foreach($games_player as $game) {
+    $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
+    //dpm($game_wrapper->value());
+    if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+      $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
+    } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+      $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
+    }
+  }
+  return $player_sum_points;
+
+}
+
+/**
+ * Add up all the points a player has won in a season.
+ */
+
+function player_percentage($player_nid) {
+  $season = arg(1);
+  // Get the team nid from the season and player nid
+  $team_nid = get_team_nid_from_player_nid($season, $player_nid);
+  $games_player = '';
+  // Get all the games the player has played in the season
+  $games_player = player_get_games_per_season($player_nid, $team_nid, $season);
+
+  $player_sum_points = '';
+  foreach($games_player as $game) {
+    $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
+    //dpm($game_wrapper->value());
+    if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+      $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
+    } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+      $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
+    }
+  }
+  return $player_sum_points;
+
+}
+
+function players_sort_leaderboard($played_games_1, $played_games_2) {
+  $a = $played_games_1;
+  $b = $played_games_2;
+  // Sort by played games
+  if($a > $b) {
+    return -1;
+  } elseif ($a < $b) {
+    return 1;
+  }
+}
+
+
 
