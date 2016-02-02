@@ -995,6 +995,230 @@ function sbl_standings_views_default_views() {
   $export['match_results'] = $view;
 
   $view = new view();
+  $view->name = 'players_leaderboard';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Rangliste Spieler';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Rangliste Spieler';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'footable';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_fc_verein' => 'field_fc_verein',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_fc_verein' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['footable'] = array(
+    'expand' => 'title',
+    'icon' => '',
+    'icon_size' => '',
+    'hide' => array(
+      'title' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_fc_verein' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+    ),
+  );
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['label'] = 'Erklärungstext';
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'Spieler mit weniger als drei gewerteten Partien sind nach unten sortiert, um eine repräsentative Rangfolge erstellen zu können.
+Die anderen Spieler sind nach der ELO-Performance sortiert.';
+  /* Relationship: Content: Saisondaten Spieler (field_sp_verein) */
+  $handler->display->display_options['relationships']['field_sp_verein_value']['id'] = 'field_sp_verein_value';
+  $handler->display->display_options['relationships']['field_sp_verein_value']['table'] = 'field_data_field_sp_verein';
+  $handler->display->display_options['relationships']['field_sp_verein_value']['field'] = 'field_sp_verein_value';
+  $handler->display->display_options['relationships']['field_sp_verein_value']['delta'] = '-1';
+  /* Field: Verein des Spielers: Node ID */
+  $handler->display->display_options['fields']['field_fc_verein_1']['id'] = 'field_fc_verein_1';
+  $handler->display->display_options['fields']['field_fc_verein_1']['table'] = 'field_data_field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein_1']['field'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein_1']['relationship'] = 'field_sp_verein_value';
+  $handler->display->display_options['fields']['field_fc_verein_1']['ui_name'] = 'Verein des Spielers: Node ID';
+  $handler->display->display_options['fields']['field_fc_verein_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_fc_verein_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_fc_verein_1']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Node-ID des Spielers */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['ui_name'] = 'Node-ID des Spielers';
+  $handler->display->display_options['fields']['nid']['label'] = 'Beitrags-ID';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Spieler';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'spieler/[nid]/!1';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field collection item: Nation */
+  $handler->display->display_options['fields']['field_pl_country']['id'] = 'field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['table'] = 'field_data_field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['field'] = 'field_pl_country';
+  $handler->display->display_options['fields']['field_pl_country']['relationship'] = 'field_sp_verein_value';
+  $handler->display->display_options['fields']['field_pl_country']['type'] = 'country_icon';
+  $handler->display->display_options['fields']['field_pl_country']['settings'] = array(
+    'countryiconset' => 'icon_shiny',
+    'property' => '',
+  );
+  /* Field: Field collection item: Verein */
+  $handler->display->display_options['fields']['field_fc_verein']['id'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['table'] = 'field_data_field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['field'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein']['relationship'] = 'field_sp_verein_value';
+  $handler->display->display_options['fields']['field_fc_verein']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_fc_verein']['alter']['path'] = 'verein/[field_fc_verein-target_id]/!1';
+  $handler->display->display_options['fields']['field_fc_verein']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Field collection item: ELO */
+  $handler->display->display_options['fields']['field_pl_elo']['id'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['table'] = 'field_data_field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['field'] = 'field_pl_elo';
+  $handler->display->display_options['fields']['field_pl_elo']['relationship'] = 'field_sp_verein_value';
+  $handler->display->display_options['fields']['field_pl_elo']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Anzahl gespielte Spiele */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Anzahl gespielte Spiele';
+  $handler->display->display_options['fields']['php']['label'] = 'SP';
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_value'] = 'return player_calculate_played_games($row->nid);';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['label'] = 'Punkte';
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_value'] = 'return player_calculate_won_points($row->nid);';
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+  print $value;
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Prozentzahl erreichter Punkte pro Spiel */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Prozentzahl erreichter Punkte pro Spiel';
+  $handler->display->display_options['fields']['php_2']['label'] = '%';
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_value'] = 'return player_percentage($row->nid);';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
+  /* Sort criterion: Global: PHP */
+  $handler->display->display_options['sorts']['php']['id'] = 'php';
+  $handler->display->display_options['sorts']['php']['table'] = 'views';
+  $handler->display->display_options['sorts']['php']['field'] = 'php';
+  $handler->display->display_options['sorts']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['sorts']['php']['php_sort'] = 'return players_sort_leaderboard($row1->php, $row2->php);';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Contextual filter: Field collection item: Saison (field_saison) */
+  $handler->display->display_options['arguments']['field_saison_tid']['id'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['table'] = 'field_data_field_saison';
+  $handler->display->display_options['arguments']['field_saison_tid']['field'] = 'field_saison_tid';
+  $handler->display->display_options['arguments']['field_saison_tid']['relationship'] = 'field_sp_verein_value';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_saison_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_saison_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_saison_tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'spieler' => 'spieler',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'spieler-rangliste';
+  $translatables['players_leaderboard'] = array(
+    t('Master'),
+    t('Rangliste Spieler'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Erklärungstext'),
+    t('Spieler mit weniger als drei gewerteten Partien sind nach unten sortiert, um eine repräsentative Rangfolge erstellen zu können.
+Die anderen Spieler sind nach der ELO-Performance sortiert.'),
+    t('field collection item from field_sp_verein'),
+    t('Verein'),
+    t('Beitrags-ID'),
+    t('Spieler'),
+    t('Nation'),
+    t('ELO'),
+    t('SP'),
+    t('Punkte'),
+    t('%'),
+    t('Alle'),
+    t('Page'),
+  );
+  $export['players_leaderboard'] = $view;
+
+  $view = new view();
   $view->name = 'spielplan';
   $view->description = '';
   $view->tag = 'default';

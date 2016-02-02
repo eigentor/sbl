@@ -23,6 +23,7 @@ features[page_manager_pages][] = ergebnisse_pro_spieltag
 features[variable][] = date_format_sehr_kurz_mit_uhrzeit_und_trennstrich
 features[views_view][] = live_bar
 features[views_view][] = match_results
+features[views_view][] = players_leaderboard
 features[views_view][] = spielplan
 features[views_view][] = teams_leaderbord
 features_exclude[dependencies][sbl_ligaverwaltung] = sbl_ligaverwaltung

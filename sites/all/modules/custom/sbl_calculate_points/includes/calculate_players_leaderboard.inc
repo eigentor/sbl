@@ -218,17 +218,22 @@ function player_percentage($player_nid) {
       $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
     }
   }
-  return $player_sum_points;
-
+  $number_games = '';
+  $number_games = count($games_player);
+  $percentage = '';
+  if($number_games != '' && $player_sum_points != '') {
+    $percentage = round(($player_sum_points / $number_games) * 100);
+  }
+  return $percentage;
 }
 
 function players_sort_leaderboard($played_games_1, $played_games_2) {
   $a = $played_games_1;
   $b = $played_games_2;
   // Sort by played games
-  if($a > $b) {
+  if($a > 3) {
     return -1;
-  } elseif ($a < $b) {
+  } elseif ($a < 3) {
     return 1;
   }
 }
