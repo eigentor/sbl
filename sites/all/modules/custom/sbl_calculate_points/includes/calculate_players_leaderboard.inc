@@ -5,7 +5,9 @@ function get_team_nid_from_player_nid($season, $player_nid) {
   $player_node_wrapper = entity_metadata_wrapper('node', $player_nid);
 
   $player_season_data = array();
-  if(!empty($player_node_wrapper->field_sp_verein->value())) {
+
+  $player_verein_value = $player_node_wrapper->field_sp_verein->value();
+  if(!empty($player_verein_value)) {
     foreach($player_node_wrapper->field_sp_verein->value() as $season_data) {
       $player_season_data[] = $season_data->item_id;
     }
@@ -38,6 +40,7 @@ function get_team_nid_from_player_nid($season, $player_nid) {
 
   return $team_nid;
 }
+
 
 function player_get_games_per_season($player_nid, $team_nid, $season) {
 
@@ -225,6 +228,44 @@ function player_percentage($player_nid) {
     $percentage = round(($player_sum_points / $number_games) * 100);
   }
   return $percentage;
+}
+
+/**
+ * Add up all the points a player has won in a season.
+ */
+
+function player_elo_performance($player_nid) {
+  $season = arg(1);
+  // Get the team nid from the season and player nid
+  $team_nid = get_team_nid_from_player_nid($season, $player_nid);
+  $games_player = '';
+  // Get all the games the player has played in the season
+  $games_player = player_get_games_per_season($player_nid, $team_nid, $season);
+
+  $players_season_elo = array();
+
+  $elo_performance = '';
+  foreach($games_player as $game) {
+    $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
+    //dpm($game_wrapper->value());
+    if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+      $opponent = $game_wrapper->field_mt_player_2->value();
+      if(!empty($opponent)) {
+        $opponent_wrapper = entity_metadata_wrapper('node', $game_wrapper->field_mt_player_2->nid->value());
+        //dpm(get_opponent_season_elo($opponent_wrapper, $season));
+      }
+    } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+      $opponent = $game_wrapper->field_mt_player_1->value();
+      if(!empty($opponent)) {
+        $opponent_wrapper = entity_metadata_wrapper('node', $game_wrapper->field_mt_player_1->nid->value());
+        //dpm($opponent_wrapper->value());
+      }
+    }
+    //dpm($game_wrapper->value());
+  }
+  $players_elo_list = drupal_static('players_elo_list');
+
+
 }
 
 function players_sort_leaderboard($played_games_1, $played_games_2) {
