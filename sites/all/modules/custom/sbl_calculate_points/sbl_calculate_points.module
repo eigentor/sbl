@@ -12,9 +12,9 @@ include_once('includes/calculate_players_leaderboard.inc');
  * Write the elo for all players and the current season into an array.
  * Cache this array in drupal_static
  */
-function get_opponent_season_elo() {
+function get_player_season_elo($season) {
 
-  $season = arg(1);
+  $player_elo = '';
 
   // Get all player nodes
   $players_query = new EntityFieldQuery();
@@ -32,12 +32,10 @@ function get_opponent_season_elo() {
     $player_nids = array_keys($players['node']);
   }
 
-
+$player_elo_values = array();
   foreach($player_nids as $nid) {
     $player_wrapper = entity_metadata_wrapper('node', $nid);
-
     $player_name = $player_wrapper->title->value();
-
 
     $player_season_data_ids = array();
 
@@ -68,17 +66,30 @@ function get_opponent_season_elo() {
     }
     if(!empty($player_season_data_item_id)) {
       $player_season_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_season_data_item_id);
-      dpm($player_season_data_wrapper->value());
+      $player_elo_value = $player_season_data_wrapper->field_pl_elo->value();
+      if(!empty($player_elo_value)) {
+        $player_elo = $player_elo_value;
+      }
     }
+
+    $player_elo_values[$nid]['nid'] = $nid;
+    $player_elo_values[$nid]['name'] = $player_name;
+    $player_elo_values[$nid]['elo'] = $player_elo;
   }
+  return($player_elo_values);
 }
 
 function sbl_calculate_points_views_pre_build(&$view) {
   if($view->name == 'players_leaderboard' && $view->current_display == 'page') {
     $season = arg(1);
-    $elo_list = array('imme', 'jammaduta');
+
+    // Generate the elo list with the function get_player_season_elo
+    // and save it into drupal_static
+    $elo_list = get_player_season_elo($season);
+
     $players_elo_list = &drupal_static('players_elo_list', $elo_list);
 
-    get_opponent_season_elo();
+
+    //$jumma = &drupal_static('ama', 'keinadabei');
   }
 }

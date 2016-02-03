@@ -1055,8 +1055,8 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['label'] = 'Erklärungstext';
-  $handler->display->display_options['header']['area_text_custom']['content'] = 'Spieler mit weniger als drei gewerteten Partien sind nach unten sortiert, um eine repräsentative Rangfolge erstellen zu können.
-Die anderen Spieler sind nach der ELO-Performance sortiert.';
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'Spieler mit weniger als drei gewerteten Partien sind ausgeblendet, um eine repräsentative Rangfolge erstellen zu können.
+Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />';
   /* Relationship: Content: Saisondaten Spieler (field_sp_verein) */
   $handler->display->display_options['relationships']['field_sp_verein_value']['id'] = 'field_sp_verein_value';
   $handler->display->display_options['relationships']['field_sp_verein_value']['table'] = 'field_data_field_sp_verein';
@@ -1095,6 +1095,7 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.';
   $handler->display->display_options['fields']['field_pl_country']['table'] = 'field_data_field_pl_country';
   $handler->display->display_options['fields']['field_pl_country']['field'] = 'field_pl_country';
   $handler->display->display_options['fields']['field_pl_country']['relationship'] = 'field_sp_verein_value';
+  $handler->display->display_options['fields']['field_pl_country']['label'] = 'Nat.';
   $handler->display->display_options['fields']['field_pl_country']['type'] = 'country_icon';
   $handler->display->display_options['fields']['field_pl_country']['settings'] = array(
     'countryiconset' => 'icon_shiny',
@@ -1153,12 +1154,24 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.';
   $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Sort criterion: Global: PHP */
+  /* Field: Elo-Performance */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['ui_name'] = 'Elo-Performance';
+  $handler->display->display_options['fields']['php_3']['label'] = 'Elo-Perf.';
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_value'] = 'return player_elo_performance($row->nid);';
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
+  /* Sort criterion: Sort by ELO Performance */
   $handler->display->display_options['sorts']['php']['id'] = 'php';
   $handler->display->display_options['sorts']['php']['table'] = 'views';
   $handler->display->display_options['sorts']['php']['field'] = 'php';
+  $handler->display->display_options['sorts']['php']['ui_name'] = 'Sort by ELO Performance';
   $handler->display->display_options['sorts']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['sorts']['php']['php_sort'] = 'return players_sort_leaderboard($row1->php, $row2->php);';
+  $handler->display->display_options['sorts']['php']['php_sort'] = 'return players_sort_leaderboard($row1->php_3, $row2->php_3);';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -1188,6 +1201,13 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.';
   $handler->display->display_options['filters']['type']['value'] = array(
     'spieler' => 'spieler',
   );
+  /* Filter criterion: Hide the players with less than three played games */
+  $handler->display->display_options['filters']['php']['id'] = 'php';
+  $handler->display->display_options['filters']['php']['table'] = 'views';
+  $handler->display->display_options['filters']['php']['field'] = 'php';
+  $handler->display->display_options['filters']['php']['ui_name'] = 'Hide the players with less than three played games';
+  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['filters']['php']['php_filter'] = 'return filter_players_leaderboard($row->php);';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1202,17 +1222,18 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.';
     t('Asc'),
     t('Desc'),
     t('Erklärungstext'),
-    t('Spieler mit weniger als drei gewerteten Partien sind nach unten sortiert, um eine repräsentative Rangfolge erstellen zu können.
-Die anderen Spieler sind nach der ELO-Performance sortiert.'),
+    t('Spieler mit weniger als drei gewerteten Partien sind ausgeblendet, um eine repräsentative Rangfolge erstellen zu können.
+Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />'),
     t('field collection item from field_sp_verein'),
     t('Verein'),
     t('Beitrags-ID'),
     t('Spieler'),
-    t('Nation'),
+    t('Nat.'),
     t('ELO'),
     t('SP'),
     t('Punkte'),
     t('%'),
+    t('Elo-Perf.'),
     t('Alle'),
     t('Page'),
   );

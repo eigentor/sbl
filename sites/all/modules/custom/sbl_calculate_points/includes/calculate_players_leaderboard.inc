@@ -244,38 +244,77 @@ function player_elo_performance($player_nid) {
 
   $players_season_elo = array();
 
+  // Get the players elo list for the current season from drupal_static.
+  // We saved it into there in hook_views_pre_build in the sbl_calculate_points.module
+  $players_elo_list = drupal_static('players_elo_list');
+
   $elo_performance = '';
+  $elo_sum = '';
+
   foreach($games_player as $game) {
     $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
     //dpm($game_wrapper->value());
-    if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+    $player_1 = $game_wrapper->field_mt_player_1->value();
+    $player_2 = $game_wrapper->field_mt_player_2->value();
+    if(!empty($player_1) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
       $opponent = $game_wrapper->field_mt_player_2->value();
       if(!empty($opponent)) {
-        $opponent_wrapper = entity_metadata_wrapper('node', $game_wrapper->field_mt_player_2->nid->value());
-        //dpm(get_opponent_season_elo($opponent_wrapper, $season));
+        $elo_game = $players_elo_list[$game_wrapper->field_mt_player_2->nid->value()]['elo'];
+        if($game_wrapper->field_mt_points_player_1->label() == 1) {
+          $elo_sum += $elo_game + 400;
+        } elseif($game_wrapper->field_mt_points_player_1->label() == 0) {
+          $elo_sum += $elo_game - 400;
+        } elseif($game_wrapper->field_mt_points_player_1->label() == 0.5) {
+          $elo_sum += $elo_game;
+        }
       }
-    } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+    } elseif(!empty($player_2) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
       $opponent = $game_wrapper->field_mt_player_1->value();
       if(!empty($opponent)) {
-        $opponent_wrapper = entity_metadata_wrapper('node', $game_wrapper->field_mt_player_1->nid->value());
-        //dpm($opponent_wrapper->value());
+        $elo_game = $players_elo_list[$game_wrapper->field_mt_player_1->nid->value()]['elo'];
+        if($game_wrapper->field_mt_points_player_2->label() == 1) {
+          $elo_sum += $elo_game + 400;
+        } elseif($game_wrapper->field_mt_points_player_2->label() == 0) {
+          $elo_sum += $elo_game - 400;
+        } elseif($game_wrapper->field_mt_points_player_2->label() == 0.5) {
+          $elo_sum += $elo_game;
+        }
       }
     }
-    //dpm($game_wrapper->value());
   }
-  $players_elo_list = drupal_static('players_elo_list');
 
-
+  if(!empty($games_player)) {
+    $count_games = count($games_player);
+    $elo_performance = round($elo_sum / $count_games);
+  }
+  return $elo_performance;
 }
 
-function players_sort_leaderboard($played_games_1, $played_games_2) {
-  $a = $played_games_1;
-  $b = $played_games_2;
+/**
+ * Sort function for the players leaderboard.
+ * Sort by Elo Performance
+ */
+
+function players_sort_leaderboard($elo_1, $elo_2) {
+  $a = $elo_1;
+  $b = $elo_2;
   // Sort by played games
-  if($a > 3) {
+  if($a > $b) {
     return -1;
-  } elseif ($a < 3) {
+  } elseif ($a < $b) {
     return 1;
+  }
+}
+
+/**
+ * Filter function for the players leaderboard.
+ * Hide players with less than 3 played games
+ */
+function filter_players_leaderboard($number_games) {
+  if($number_games < 3) {
+    return TRUE;
+  } else {
+    return FALSE;
   }
 }
 
