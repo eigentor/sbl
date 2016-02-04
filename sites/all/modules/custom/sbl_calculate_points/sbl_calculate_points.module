@@ -15,6 +15,7 @@ include_once('includes/calculate_players_leaderboard.inc');
 function get_player_season_elo($season) {
 
   $player_elo = '';
+  $player_team = '';
 
   // Get all player nodes
   $players_query = new EntityFieldQuery();
@@ -67,16 +68,22 @@ $player_elo_values = array();
     if(!empty($player_season_data_item_id)) {
       $player_season_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_season_data_item_id);
       $player_elo_value = $player_season_data_wrapper->field_pl_elo->value();
+      //dpm($player_season_data_wrapper->value());
       if(!empty($player_elo_value)) {
         $player_elo = $player_elo_value;
+      }
+      $player_team_value = $player_season_data_wrapper->field_fc_verein->value();
+      if(!empty($player_team_value)) {
+        $player_team = $player_team_value = $player_season_data_wrapper->field_fc_verein->nid->value();
       }
     }
 
     $player_elo_values[$nid]['nid'] = $nid;
     $player_elo_values[$nid]['name'] = $player_name;
+    $player_elo_values[$nid]['team'] = $player_team;
     $player_elo_values[$nid]['elo'] = $player_elo;
   }
-  return($player_elo_values);
+  return $player_elo_values;
 }
 
 function sbl_calculate_points_views_pre_build(&$view) {
@@ -86,6 +93,7 @@ function sbl_calculate_points_views_pre_build(&$view) {
     // Generate the elo list with the function get_player_season_elo
     // and save it into drupal_static
     $elo_list = get_player_season_elo($season);
+    dpm($elo_list);
 
     $players_elo_list = &drupal_static('players_elo_list', $elo_list);
 

@@ -1,41 +1,10 @@
 <?php
 
 function get_team_nid_from_player_nid($season, $player_nid) {
-  // get the team nid from the player node and the season
-  $player_node_wrapper = entity_metadata_wrapper('node', $player_nid);
-
-  $player_season_data = array();
-
-  $player_verein_value = $player_node_wrapper->field_sp_verein->value();
-  if(!empty($player_verein_value)) {
-    foreach($player_node_wrapper->field_sp_verein->value() as $season_data) {
-      $player_season_data[] = $season_data->item_id;
-    }
-  }
-
-  $season_data_item_id = '';
-  foreach($player_season_data as $data) {
-    $players_season_data_query = new EntityFieldQuery();
-
-    $players_season_data_query->entityCondition('entity_type', 'field_collection_item')
-      ->entityCondition('bundle', 'field_sp_verein')
-      ->propertyCondition('item_id', $data)
-      ->fieldCondition('field_saison', 'tid', $season)
-      // Bypass node access
-      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
-
-    $players_season_data = $players_season_data_query->execute();
-    if(isset($players_season_data['field_collection_item'])) {
-      foreach($players_season_data['field_collection_item'] as $season_data) {
-        $season_data_item_id = $season_data->item_id;
-      }
-    }
-  }
-
+  $players_season_data = drupal_static('players_elo_list');
   $team_nid = '';
-  if(!empty($season_data_item_id)) {
-    $season_data_wrapper = entity_metadata_wrapper('field_collection_item', $season_data_item_id);
-    $team_nid = $season_data_wrapper->field_fc_verein->nid->value();
+  if(!empty($players_season_data[$player_nid])) {
+    $team_nid = $players_season_data[$player_nid]['team'];
   }
 
   return $team_nid;
