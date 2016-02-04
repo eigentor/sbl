@@ -1,5 +1,5 @@
 name = Page Title
-description = "Enhanced control over the page title (in the &lt;head> tag)."
+description = "Enhanced control over the page title (in the &lt;head> tag)." <strong>Patched: <a href="https://www.drupal.org/node/2516726#comment-10577012">https://www.drupal.org/node/2516726#comment-10577012</a></strong>
 core = 7.x
 package = SEO
 dependencies[] = token

@@ -1,0 +1,13 @@
+diff --git a/page_title.module b/page_title/page_title.module
+index 321a57c..bb3b782 100644
+--- a/sites/all/modules/patched/page_title/page_title.module
++++ b/sites/all/modules/patched/page_title/page_title.module
+@@ -648,7 +648,7 @@ function page_title_init() {
+  */
+ function page_title_include_api_files() {
+   // Using $runonce, we can ensure the include code below only gets run once.
+-  $runonce = &drupal_static(__FUNCTION__, FALSE);
++  static $runonce = FAlSE;
+   if ($runonce) return;
+
+   // Include relevant page_title.inc's. We cannot use drupal_load() here due to the folder structure.
