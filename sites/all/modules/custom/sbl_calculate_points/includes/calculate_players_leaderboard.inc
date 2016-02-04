@@ -1,7 +1,7 @@
 <?php
 
 function get_team_nid_from_player_nid($season, $player_nid) {
-  $players_season_data = drupal_static('players_elo_list');
+  $players_season_data = drupal_static('players_data_list');
   $team_nid = '';
   if(!empty($players_season_data[$player_nid])) {
     $team_nid = $players_season_data[$player_nid]['team'];
@@ -157,7 +157,6 @@ function player_calculate_won_points($player_nid) {
   $player_sum_points = '';
   foreach($games_player as $game) {
     $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
-    //dpm($game_wrapper->value());
     if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
       $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
     } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
@@ -183,7 +182,6 @@ function player_percentage($player_nid) {
   $player_sum_points = '';
   foreach($games_player as $game) {
     $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
-    //dpm($game_wrapper->value());
     if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
       $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
     } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
@@ -222,7 +220,6 @@ function player_elo_performance($player_nid) {
 
   foreach($games_player as $game) {
     $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
-    //dpm($game_wrapper->value());
     $player_1 = $game_wrapper->field_mt_player_1->value();
     $player_2 = $game_wrapper->field_mt_player_2->value();
     if(!empty($player_1) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {

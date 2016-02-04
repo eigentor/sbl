@@ -69,7 +69,6 @@ $player_elo_values = array();
     if(!empty($player_season_data_item_id)) {
       $player_season_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_season_data_item_id);
       $player_elo_value = $player_season_data_wrapper->field_pl_elo->value();
-      //dpm($player_season_data_wrapper->value());
       if(!empty($player_elo_value)) {
         $player_elo = $player_elo_value;
       }
@@ -206,9 +205,9 @@ function sbl_calculate_points_views_pre_build(&$view) {
     // Generate the elo list with the function get_player_season_elo
     // and save it into drupal_static
     $data_list = get_player_season_data($season);
-    //dpm($data_list);
 
-    $players_data_list = &drupal_static('players_data_list', $elo_list);
+
+    $players_data_list = &drupal_static('players_data_list', $data_list);
 
 
   }
