@@ -215,7 +215,7 @@ function player_elo_performance($player_nid) {
 
   // Get the players elo list for the current season from drupal_static.
   // We saved it into there in hook_views_pre_build in the sbl_calculate_points.module
-  $players_elo_list = drupal_static('players_elo_list');
+  $players_data_list = drupal_static('players_data_list');
 
   $elo_performance = '';
   $elo_sum = '';
@@ -228,7 +228,7 @@ function player_elo_performance($player_nid) {
     if(!empty($player_1) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
       $opponent = $game_wrapper->field_mt_player_2->value();
       if(!empty($opponent)) {
-        $elo_game = $players_elo_list[$game_wrapper->field_mt_player_2->nid->value()]['elo'];
+        $elo_game = $players_data_list[$game_wrapper->field_mt_player_2->nid->value()]['elo'];
         if($game_wrapper->field_mt_points_player_1->label() == 1) {
           $elo_sum += $elo_game + 400;
         } elseif($game_wrapper->field_mt_points_player_1->label() == 0) {
@@ -240,7 +240,7 @@ function player_elo_performance($player_nid) {
     } elseif(!empty($player_2) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
       $opponent = $game_wrapper->field_mt_player_1->value();
       if(!empty($opponent)) {
-        $elo_game = $players_elo_list[$game_wrapper->field_mt_player_1->nid->value()]['elo'];
+        $elo_game = $players_data_list[$game_wrapper->field_mt_player_1->nid->value()]['elo'];
         if($game_wrapper->field_mt_points_player_2->label() == 1) {
           $elo_sum += $elo_game + 400;
         } elseif($game_wrapper->field_mt_points_player_2->label() == 0) {

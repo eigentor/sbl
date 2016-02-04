@@ -8,11 +8,12 @@ include_once('includes/filter_leaderboard.inc');
 include_once('includes/calculate_crosstable.inc');
 include_once('includes/calculate_players_leaderboard.inc');
 
+
 /**
  * Write the elo for all players and the current season into an array.
  * Cache this array in drupal_static
  */
-function get_player_season_elo($season) {
+function get_player_season_data($season) {
 
   $player_elo = '';
   $player_team = '';
@@ -78,13 +79,125 @@ $player_elo_values = array();
       }
     }
 
+    // Get all Field Collection Item Ids for the games the player was involved in
+    // Get all the team matches for the player's club
+    // Get all home matches for the players team for the current season
+    $player_season_home_matches_query = new EntityFieldQuery();
+
+    $player_season_home_matches_query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'team_match')
+      ->fieldCondition('field_tm_saison', 'tid', $season)
+      ->fieldCondition('field_tm_team_1', 'target_id', $player_team)
+      // Bypass node access
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+    $player_season_home_matches = $player_season_home_matches_query->execute();
+
+    // Get all away matches for the players team for the current season
+    $player_season_away_matches_query = new EntityFieldQuery();
+
+    $player_season_away_matches_query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'team_match')
+      ->fieldCondition('field_tm_saison', 'tid', $season)
+      ->fieldCondition('field_tm_team_2', 'target_id', $player_team)
+      // Bypass node access
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+    $player_season_away_matches = $player_season_away_matches_query->execute();
+
+    // Write home and away games into one array
+    $season_matches_combined = array();
+
+    // Write the home games in to the $season_games_combined array
+    if (isset($player_season_home_matches['node'])) {
+      foreach ($player_season_home_matches['node'] as $season_home_match) {
+        $season_matches_combined[] = $season_home_match->nid;
+      }
+    }
+
+    // Write the away games in to the $season_games_combined array
+    if (isset($player_season_away_matches['node'])) {
+      foreach ($player_season_away_matches['node'] as $season_away_match) {
+        $season_matches_combined[] = $season_away_match->nid;
+      }
+    }
+
+    // Now get the single games that were played in team matches this season.
+
+    // Get all the single games the player was involved in
+    // Get the home games for the player
+    $player_season_home_games_query = new EntityFieldQuery();
+
+    $player_season_home_games_query->entityCondition('entity_type', 'field_collection_item')
+      ->entityCondition('bundle', 'field_tm_game')
+      ->fieldCondition('field_mt_player_1', 'target_id', $nid)
+      // Bypass node access
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+    $player_season_home_games = $player_season_home_games_query->execute();
+
+    // Get the home games for the player
+    $player_season_away_games_query = new EntityFieldQuery();
+
+    $player_season_away_games_query->entityCondition('entity_type', 'field_collection_item')
+      ->entityCondition('bundle', 'field_tm_game')
+      ->fieldCondition('field_mt_player_2', 'target_id', $nid)
+      // Bypass node access
+      ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+    $player_season_away_games = $player_season_away_games_query->execute();
+
+    // Write home and away games into one array
+    $player_games_combined = array();
+
+    if (isset($player_season_home_games['field_collection_item'])) {
+      foreach ($player_season_home_games['field_collection_item'] as $player_home_game) {
+        // Write the home games for the player into the array $player_games_combined
+        $player_games_combined[] = $player_home_game->item_id;
+      }
+    }
+
+    if (isset($player_season_away_games['field_collection_item'])) {
+      foreach ($player_season_away_games['field_collection_item'] as $player_away_game) {
+        $player_games_combined[] = $player_away_game->item_id;
+      }
+    }
+
+    $single_games_team_season = array();
+
+    // Extract all field_tm_game entity IDs from the team match nodes.
+    // Thus we get a list of all the field collection item ids that were played that season
+    if (!empty($season_matches_combined)) {
+      foreach ($season_matches_combined as $season_match) {
+        $season_matches_combined_wrapper = entity_metadata_wrapper('node', $season_match);
+        $single_games = $season_matches_combined_wrapper->field_tm_game->value();
+        foreach ($single_games as $game) {
+          // Write the field collection item IDs into the array
+          $single_games_team_season[] = $game->item_id;
+        }
+      }
+    }
+
+    // Now get an intersection between the two queries: the entity_ids of the single games
+    // the player played - which are contained in the array $player_games_combined
+    // and all single games that were played by his team in the season - which are contained
+    // in the array $single_games_team_season. The field collection items that are in both arrays
+    // have been played by the player in the season
+
+    $single_games_player_season = '';
+    $single_games_player_season = array_intersect($player_games_combined, $single_games_team_season);
+
+
+
     $player_elo_values[$nid]['nid'] = $nid;
     $player_elo_values[$nid]['name'] = $player_name;
     $player_elo_values[$nid]['team'] = $player_team;
     $player_elo_values[$nid]['elo'] = $player_elo;
+    $player_elo_values[$nid]['games'] = $single_games_player_season;
   }
   return $player_elo_values;
 }
+
 
 function sbl_calculate_points_views_pre_build(&$view) {
   if($view->name == 'players_leaderboard' && $view->current_display == 'page') {
@@ -92,12 +205,11 @@ function sbl_calculate_points_views_pre_build(&$view) {
 
     // Generate the elo list with the function get_player_season_elo
     // and save it into drupal_static
-    $elo_list = get_player_season_elo($season);
-    dpm($elo_list);
+    $data_list = get_player_season_data($season);
+    //dpm($data_list);
 
-    $players_elo_list = &drupal_static('players_elo_list', $elo_list);
+    $players_data_list = &drupal_static('players_data_list', $elo_list);
 
 
-    //$jumma = &drupal_static('ama', 'keinadabei');
   }
 }
