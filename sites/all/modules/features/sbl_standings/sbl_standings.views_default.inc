@@ -1009,18 +1009,51 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['title'] = 'Rangliste Spieler';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'footable';
   $handler->display->display_options['style_options']['columns'] = array(
+    'field_fc_verein_1' => 'field_fc_verein_1',
+    'nid' => 'nid',
     'title' => 'title',
+    'field_pl_country' => 'field_pl_country',
     'field_fc_verein' => 'field_fc_verein',
+    'field_pl_elo' => 'field_pl_elo',
+    'php' => 'php',
+    'php_1' => 'php_1',
+    'php_2' => 'php_2',
+    'php_3' => 'php_3',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'field_fc_verein_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_country' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -1034,17 +1067,76 @@ function sbl_standings_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_pl_elo' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_2' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php_3' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   $handler->display->display_options['style_options']['footable'] = array(
     'expand' => 'title',
     'icon' => '',
     'icon_size' => '',
     'hide' => array(
+      'field_fc_verein_1' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'nid' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
       'title' => array(
         'phone' => 0,
         'tablet' => 0,
       ),
+      'field_pl_country' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
       'field_fc_verein' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'field_pl_elo' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'php' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_1' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_2' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'php_3' => array(
         'phone' => 0,
         'tablet' => 0,
       ),
