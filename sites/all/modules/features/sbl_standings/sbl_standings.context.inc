@@ -24,6 +24,7 @@ function sbl_standings_context_default_contexts() {
         'spielplan/*' => 'spielplan/*',
         'tabelle/*' => 'tabelle/*',
         'kreuztabelle/*' => 'kreuztabelle/*',
+        'spieler-rangliste/*' => 'spieler-rangliste/*',
       ),
     ),
   );
