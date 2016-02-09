@@ -49,6 +49,10 @@ function sbl_helper_init() {
   if($path_array[0] == 'verein') {
     drupal_add_js($module_path . '/js/sbl_club_tabs.js');
   }
+  if($path_array[0] == 'spieler-rangliste') {
+    drupal_add_js(libraries_get_path('stupidtable') . '/stupidtable.min.js');
+    drupal_add_js($module_path . '/js/sbl_stupidtable.js');
+  }
 }
 
 /**
