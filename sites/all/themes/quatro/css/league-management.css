@@ -401,9 +401,11 @@ form#select-season-form .description {
   padding-right: 0.3em;
   padding-left: 0.3em;
 }
-.view-rangliste-teams-crosstable td.text-left
 .view-players-leaderboard td.views-align-left,
 .view-players-leaderboard th.views-align-left {
+  text-align: center;
+}
+.view-rangliste-teams-crosstable td.text-left {
   padding-right: 0.7em;
   padding-left: 0.7em;
 }
