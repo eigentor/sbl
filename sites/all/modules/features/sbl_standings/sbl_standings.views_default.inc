@@ -1009,11 +1009,7 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['title'] = 'Rangliste Spieler';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -1049,7 +1045,7 @@ function sbl_standings_views_default_views() {
     'title' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
-      'align' => '',
+      'align' => 'views-align-left',
       'separator' => '',
       'empty_column' => 0,
     ),
@@ -1351,6 +1347,13 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />'),
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'footable';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_tm_spieltag_1',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
   $handler->display->display_options['style_options']['columns'] = array(
     'field_tm_spieltag_1' => 'field_tm_spieltag_1',
     'field_datum' => 'field_datum',
@@ -1472,6 +1475,7 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />'),
   $handler->display->display_options['fields']['field_tm_spieltag_1']['table'] = 'field_data_field_tm_spieltag_1';
   $handler->display->display_options['fields']['field_tm_spieltag_1']['field'] = 'field_tm_spieltag_1';
   $handler->display->display_options['fields']['field_tm_spieltag_1']['label'] = 'R';
+  $handler->display->display_options['fields']['field_tm_spieltag_1']['element_label_colon'] = FALSE;
   /* Field: Content: Datum */
   $handler->display->display_options['fields']['field_datum']['id'] = 'field_datum';
   $handler->display->display_options['fields']['field_datum']['table'] = 'field_data_field_datum';
@@ -2047,7 +2051,7 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />'),
   $handler->display->display_options['footer']['php']['id'] = 'php';
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
-  $handler->display->display_options['footer']['php']['php_output'] = '<div class="link_zur_aktuellen_tabelle"><a href="tabelle/<?php echo get_current_season(); ?>"><i class="fa fa-arrow-circle-o-right"></i>
+  $handler->display->display_options['footer']['php']['php_output'] = '<div class="link_zur_aktuellen_tabelle"><a href="/tabelle/<?php echo get_current_season(); ?>"><i class="fa fa-arrow-circle-o-right"></i>
 Zur ausführlichen Tabelle</a></div>
 ';
   $handler->display->display_options['defaults']['fields'] = FALSE;
