@@ -85,6 +85,9 @@ function player_percentage($player_nid) {
   if($number_games != '' && $player_sum_points != '') {
     $percentage = round(($player_sum_points / $number_games) * 100);
   }
+  if($player_sum_points == 0) {
+      $percentage = 0;
+    }
   return $percentage;
 }
 

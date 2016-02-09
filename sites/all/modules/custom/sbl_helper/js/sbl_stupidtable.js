@@ -9,7 +9,7 @@
         .add('th.views-field-php-1')
         .add('th.views-field-php-2')
         .add('th.views-field-php-3')
-        .attr('data-sort', 'int');
+        .attr('data-sort', 'int').attr('data-sort-default', 'desc');
 
        $(".view-players-leaderboard table").stupidtable()
 
