@@ -401,7 +401,9 @@ form#select-season-form .description {
   padding-right: 0.3em;
   padding-left: 0.3em;
 }
-.view-rangliste-teams-crosstable td.text-left {
+.view-rangliste-teams-crosstable td.text-left
+.view-players-leaderboard td.views-align-left,
+.view-players-leaderboard th.views-align-left {
   padding-right: 0.7em;
   padding-left: 0.7em;
 }
@@ -415,10 +417,12 @@ form#select-season-form .description {
 }
 
 /* Players leaderboard */
-.view-players-leaderboard th[data-sort=int] {
+.view-players-leaderboard th[data-sort=int],
+.view-players-leaderboard th[data-sort=string]{
   color: #f18000;
 }
-.view-players-leaderboard th[data-sort=int]:hover {
+.view-players-leaderboard th[data-sort=int]:hover,
+.view-players-leaderboard th[data-sort=string]:hover {
   cursor: pointer;
   cursor: hand;
 }
@@ -499,7 +503,8 @@ form#select-season-form .description {
 }
 
 /* Players leaderboard */
-.view-players-leaderboard th[data-sort=int] {
+.view-players-leaderboard th[data-sort=int],
+.view-players-leaderboard th[data-sort=string]{
   background: url(../images/bg.gif) no-repeat right 8px;
   padding-right: 12px;
   color: #333;

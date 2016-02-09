@@ -11,6 +11,9 @@
         .add('th.views-field-php-3')
         .attr('data-sort', 'int').attr('data-sort-default', 'desc');
 
+      $('th.views-field-title')
+        .attr('data-sort', 'string');
+
        $(".view-players-leaderboard table").stupidtable()
 
     } // end of attach function
