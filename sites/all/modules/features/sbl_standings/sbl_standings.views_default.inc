@@ -1168,6 +1168,11 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />';
   $handler->display->display_options['fields']['nid']['ui_name'] = 'Node-ID des Spielers';
   $handler->display->display_options['fields']['nid']['label'] = 'Beitrags-ID';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'RNG';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1219,6 +1224,17 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />';
   $handler->display->display_options['fields']['php']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Elo-Schnitt */
+  $handler->display->display_options['fields']['php_4']['id'] = 'php_4';
+  $handler->display->display_options['fields']['php_4']['table'] = 'views';
+  $handler->display->display_options['fields']['php_4']['field'] = 'php';
+  $handler->display->display_options['fields']['php_4']['ui_name'] = 'Elo-Schnitt';
+  $handler->display->display_options['fields']['php_4']['label'] = 'Elo-Ø';
+  $handler->display->display_options['fields']['php_4']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_4']['php_value'] = 'return player_elo_average($row->nid);';
+  $handler->display->display_options['fields']['php_4']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
   /* Field: Global: PHP */
   $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
   $handler->display->display_options['fields']['php_1']['table'] = 'views';
@@ -1315,10 +1331,12 @@ Die anderen Spieler sind nach der ELO-Performance sortiert.<br /><br />'),
     t('field collection item from field_sp_verein'),
     t('Verein'),
     t('Beitrags-ID'),
+    t('RNG'),
     t('Spieler'),
     t('Nat.'),
     t('ELO'),
     t('SP'),
+    t('Elo-Ø'),
     t('Punkte'),
     t('%'),
     t('Elo-Perf.'),

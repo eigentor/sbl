@@ -152,6 +152,55 @@ function player_elo_performance($player_nid) {
 }
 
 /**
+ * Add up all the points a player has won in a season.
+ */
+
+function player_elo_average($player_nid) {
+  $season = arg(1);
+  // Get the team nid from the season and player nid
+  $players_season_data = drupal_static('players_data_list');
+  $games_player = '';
+  // Get all the games the player has played in the season
+
+  $games_player = $players_season_data[$player_nid]['games'];
+
+  $players_season_elo = array();
+
+  // Get the players elo list for the current season from drupal_static.
+  // We saved it into there in hook_views_pre_build in the sbl_calculate_points.module
+  $players_data_list = drupal_static('players_data_list');
+
+  $elo_performance = '';
+  $elo_sum = '';
+
+  foreach($games_player as $game) {
+    $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
+    $player_1 = $game_wrapper->field_mt_player_1->value();
+    $player_2 = $game_wrapper->field_mt_player_2->value();
+    if(!empty($player_1) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+      $opponent = $game_wrapper->field_mt_player_2->value();
+      if(!empty($opponent)) {
+        $elo_game = $players_data_list[$game_wrapper->field_mt_player_2->nid->value()]['elo'];
+        $elo_sum += $elo_game;
+      }
+    } elseif(!empty($player_2) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+      $opponent = $game_wrapper->field_mt_player_1->value();
+      if(!empty($opponent)) {
+        $elo_game = $players_data_list[$game_wrapper->field_mt_player_1->nid->value()]['elo'];
+        $elo_sum += $elo_game;
+        }
+      }
+  }
+  $elo_total = '';
+
+  if(!empty($games_player)) {
+    $count_games = count($games_player);
+    $elo_total = round($elo_sum / $count_games);
+  }
+  return $elo_total;
+}
+
+/**
  * Sort function for the players leaderboard.
  * Sort by Elo Performance
  */

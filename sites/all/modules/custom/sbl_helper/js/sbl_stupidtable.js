@@ -13,8 +13,17 @@
 
       $('th.views-field-title')
         .attr('data-sort', 'string');
+      $(".view-players-leaderboard table td.views-field-nothing").each(function(index) {
+        $(this).html(index + 1);
+      });
 
-       $(".view-players-leaderboard table").stupidtable()
+       $(".view-players-leaderboard table").stupidtable(function(){
+         $(".view-players-leaderboard table td.views-field-nothing").each(function(index) {
+           $(this).html(index + 1);
+         });
+       });
+
+
 
     } // end of attach function
   };
