@@ -7,7 +7,7 @@ include_once('includes/calculate_leaderboard.inc');
 include_once('includes/sort_leaderboard.inc');
 include_once('includes/calculate_crosstable.inc');
 include_once('includes/calculate_players_leaderboard.inc');
-include_once('includes/calculate_player_data.inc');
+//include_once('includes/calculate_player_data.inc');
 
 
 /**
