@@ -232,9 +232,9 @@ th, td {
 }
 
 form#select-season-form {
-  margin-top: 30px;
+  margin-top: 20px;
   border: 1px solid #f1f1f1;
-  background: #f9f9f9;
+  background: #f2f2f2;
   padding: 4px 8px;
 }
 form#select-season-form .form-item {
