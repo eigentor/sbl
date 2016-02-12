@@ -18,11 +18,17 @@
         $(this).html(index + 1);
       });
 
-       $(".view-players-leaderboard table").stupidtable(function(){
-         $(".view-players-leaderboard table td.views-field-nothing").each(function(index) {
-           $(this).html(index + 1);
-         });
-       });
+       $(".view-players-leaderboard table").stupidtable();
+
+      $('.view-players-leaderboard table th').click(function(){
+        setTimeout(function(){
+          $('.view-players-leaderboard table td.views-field-nothing').each(function(index) {
+            $(this).html(index + 1);
+          });
+        }, 300);
+      });
+
+
 
 
 
