@@ -9,6 +9,7 @@
         .add('th.views-field-php-1')
         .add('th.views-field-php-2')
         .add('th.views-field-php-3')
+        .add('th.views-field-php-4')
         .attr('data-sort', 'int').attr('data-sort-default', 'desc');
 
       $('th.views-field-title')
