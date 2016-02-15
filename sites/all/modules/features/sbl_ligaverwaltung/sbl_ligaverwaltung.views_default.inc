@@ -931,6 +931,19 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['field_fc_verein']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Elo-Schnitt */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Elo-Schnitt';
+  $handler->display->display_options['fields']['php_1']['label'] = 'Elo-Ø Gegner';
+  $handler->display->display_options['fields']['php_1']['empty'] = '0';
+  $handler->display->display_options['fields']['php_1']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_value'] = 'return player_elo_opponents();';
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Anzahl gespielte Spiele */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -944,19 +957,6 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['php']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Field: Elo-Schnitt */
-  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
-  $handler->display->display_options['fields']['php_1']['table'] = 'views';
-  $handler->display->display_options['fields']['php_1']['field'] = 'php';
-  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Elo-Schnitt';
-  $handler->display->display_options['fields']['php_1']['label'] = 'Elo-Ø';
-  $handler->display->display_options['fields']['php_1']['empty'] = '0';
-  $handler->display->display_options['fields']['php_1']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_1']['php_value'] = 'return player_elo_opponents();';
-  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print $value; ?>';
-  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Punkte */
   $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
   $handler->display->display_options['fields']['php_2']['table'] = 'views';
@@ -1075,8 +1075,8 @@ print player_single_result_matchday($row, 15);
     t('<a href="[field_webseite-url]" class="tooltip blue" title="Webseite" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>'),
     t('Content pane Spieler Saisonergebnisse Durchschnitt'),
     t('Verein'),
+    t('Elo-Ø Gegner'),
     t('Spiele'),
-    t('Elo-Ø'),
     t('Punkte'),
     t('%'),
     t('Elo-Perf.'),
