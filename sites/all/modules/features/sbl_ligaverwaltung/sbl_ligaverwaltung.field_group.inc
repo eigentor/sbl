@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function sbl_ligaverwaltung_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -41,7 +41,7 @@ function sbl_ligaverwaltung_field_group_info() {
       ),
     ),
   );
-  $export['group_players|node|match|form'] = $field_group;
+  $field_groups['group_players|node|match|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -75,7 +75,7 @@ function sbl_ligaverwaltung_field_group_info() {
       ),
     ),
   );
-  $export['group_team_away|node|team_match|form'] = $field_group;
+  $field_groups['group_team_away|node|team_match|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -109,7 +109,7 @@ function sbl_ligaverwaltung_field_group_info() {
       ),
     ),
   );
-  $export['group_team_home|node|team_match|form'] = $field_group;
+  $field_groups['group_team_home|node|team_match|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -143,7 +143,14 @@ function sbl_ligaverwaltung_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $export['group_teams|node|match|form'] = $field_group;
+  $field_groups['group_teams|node|match|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Gastmannschaft');
+  t('Heimmannschaft');
+  t('Mannschaften');
+  t('Spieler');
+
+  return $field_groups;
 }

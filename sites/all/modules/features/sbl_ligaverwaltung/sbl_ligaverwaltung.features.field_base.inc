@@ -10,7 +10,7 @@
 function sbl_ligaverwaltung_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_ausrichter'
+  // Exported field_base: 'field_ausrichter'.
   $field_bases['field_ausrichter'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -73,7 +73,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_captain_team'
+  // Exported field_base: 'field_captain_team'.
   $field_bases['field_captain_team'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -92,7 +92,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_chairman_club'
+  // Exported field_base: 'field_chairman_club'.
   $field_bases['field_chairman_club'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -111,7 +111,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_datum'
+  // Exported field_base: 'field_datum'.
   $field_bases['field_datum'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -140,7 +140,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_der_bundesliga_seit'
+  // Exported field_base: 'field_der_bundesliga_seit'.
   $field_bases['field_der_bundesliga_seit'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -204,7 +204,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_facebook'
+  // Exported field_base: 'field_facebook'.
   $field_bases['field_facebook'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -233,7 +233,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_fc_verein'
+  // Exported field_base: 'field_fc_verein'.
   $field_bases['field_fc_verein'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -268,7 +268,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_fide_id'
+  // Exported field_base: 'field_fide_id'.
   $field_bases['field_fide_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -289,7 +289,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_game_has_result'
+  // Exported field_base: 'field_game_has_result'.
   $field_bases['field_game_has_result'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -314,7 +314,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_groesste_erfolge'
+  // Exported field_base: 'field_groesste_erfolge'.
   $field_bases['field_groesste_erfolge'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -333,7 +333,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_heimspiele'
+  // Exported field_base: 'field_heimspiele'.
   $field_bases['field_heimspiele'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -352,7 +352,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_livevideo'
+  // Exported field_base: 'field_livevideo'.
   $field_bases['field_livevideo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -381,7 +381,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_logo_icon'
+  // Exported field_base: 'field_logo_icon'.
   $field_bases['field_logo_icon'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -403,7 +403,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_logo_team'
+  // Exported field_base: 'field_logo_team'.
   $field_bases['field_logo_team'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -425,7 +425,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_match_report'
+  // Exported field_base: 'field_match_report'.
   $field_bases['field_match_report'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -463,7 +463,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_mt_color_player_1'
+  // Exported field_base: 'field_mt_color_player_1'.
   $field_bases['field_mt_color_player_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -488,7 +488,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_mt_color_player_2'
+  // Exported field_base: 'field_mt_color_player_2'.
   $field_bases['field_mt_color_player_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -513,7 +513,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_mt_player_1'
+  // Exported field_base: 'field_mt_player_1'.
   $field_bases['field_mt_player_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -551,7 +551,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_mt_player_2'
+  // Exported field_base: 'field_mt_player_2'.
   $field_bases['field_mt_player_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -589,7 +589,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_mt_points_player_1'
+  // Exported field_base: 'field_mt_points_player_1'.
   $field_bases['field_mt_points_player_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -615,7 +615,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_mt_points_player_2'
+  // Exported field_base: 'field_mt_points_player_2'.
   $field_bases['field_mt_points_player_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -641,7 +641,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_pl_acad_title'
+  // Exported field_base: 'field_pl_acad_title'.
   $field_bases['field_pl_acad_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -662,7 +662,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pl_board_nr'
+  // Exported field_base: 'field_pl_board_nr'.
   $field_bases['field_pl_board_nr'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -677,7 +677,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_pl_country'
+  // Exported field_base: 'field_pl_country'.
   $field_bases['field_pl_country'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -701,7 +701,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'country',
   );
 
-  // Exported field_base: 'field_pl_elo'
+  // Exported field_base: 'field_pl_elo'.
   $field_bases['field_pl_elo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -716,7 +716,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_pl_first_name'
+  // Exported field_base: 'field_pl_first_name'.
   $field_bases['field_pl_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -737,7 +737,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pl_image'
+  // Exported field_base: 'field_pl_image'.
   $field_bases['field_pl_image'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -759,7 +759,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_pl_last_name'
+  // Exported field_base: 'field_pl_last_name'.
   $field_bases['field_pl_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -780,7 +780,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pl_master_title'
+  // Exported field_base: 'field_pl_master_title'.
   $field_bases['field_pl_master_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -801,7 +801,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_saison'
+  // Exported field_base: 'field_saison'.
   $field_bases['field_saison'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -827,7 +827,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_single_match_result'
+  // Exported field_base: 'field_single_match_result'.
   $field_bases['field_single_match_result'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -856,7 +856,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_sp_verein'
+  // Exported field_base: 'field_sp_verein'.
   $field_bases['field_sp_verein'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -878,7 +878,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_spiel_laeuft'
+  // Exported field_base: 'field_spiel_laeuft'.
   $field_bases['field_spiel_laeuft'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -903,7 +903,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_spieler_2'
+  // Exported field_base: 'field_spieler_2'.
   $field_bases['field_spieler_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -938,7 +938,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_t_saison'
+  // Exported field_base: 'field_t_saison'.
   $field_bases['field_t_saison'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -964,7 +964,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_tm_board_points_team_1'
+  // Exported field_base: 'field_tm_board_points_team_1'.
   $field_bases['field_tm_board_points_team_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1004,7 +1004,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_tm_board_points_team_2'
+  // Exported field_base: 'field_tm_board_points_team_2'.
   $field_bases['field_tm_board_points_team_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1044,7 +1044,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_tm_game'
+  // Exported field_base: 'field_tm_game'.
   $field_bases['field_tm_game'] = array(
     'active' => 1,
     'cardinality' => 8,
@@ -1066,7 +1066,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_tm_saison'
+  // Exported field_base: 'field_tm_saison'.
   $field_bases['field_tm_saison'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1092,7 +1092,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_tm_spieltag_1'
+  // Exported field_base: 'field_tm_spieltag_1'.
   $field_bases['field_tm_spieltag_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1132,7 +1132,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_tm_team_1'
+  // Exported field_base: 'field_tm_team_1'.
   $field_bases['field_tm_team_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1170,7 +1170,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_tm_team_2'
+  // Exported field_base: 'field_tm_team_2'.
   $field_bases['field_tm_team_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1208,7 +1208,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_tm_team_points_tm_1'
+  // Exported field_base: 'field_tm_team_points_tm_1'.
   $field_bases['field_tm_team_points_tm_1'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1234,7 +1234,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_tm_team_points_tm_2'
+  // Exported field_base: 'field_tm_team_points_tm_2'.
   $field_bases['field_tm_team_points_tm_2'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1260,7 +1260,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_travel_partner_club'
+  // Exported field_base: 'field_travel_partner_club'.
   $field_bases['field_travel_partner_club'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1289,7 +1289,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_twitter_club'
+  // Exported field_base: 'field_twitter_club'.
   $field_bases['field_twitter_club'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1318,7 +1318,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_venue_club'
+  // Exported field_base: 'field_venue_club'.
   $field_bases['field_venue_club'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1333,7 +1333,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_vereinskuerzel'
+  // Exported field_base: 'field_vereinskuerzel'.
   $field_bases['field_vereinskuerzel'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1354,7 +1354,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_video_zusammenfas'
+  // Exported field_base: 'field_video_zusammenfas'.
   $field_bases['field_video_zusammenfas'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1392,7 +1392,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_web_admin_club'
+  // Exported field_base: 'field_web_admin_club'.
   $field_bases['field_web_admin_club'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1411,7 +1411,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_webseite'
+  // Exported field_base: 'field_webseite'.
   $field_bases['field_webseite'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1440,7 +1440,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_website_club'
+  // Exported field_base: 'field_website_club'.
   $field_bases['field_website_club'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1469,7 +1469,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_wikipedia_eintrag'
+  // Exported field_base: 'field_wikipedia_eintrag'.
   $field_bases['field_wikipedia_eintrag'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -1498,7 +1498,7 @@ function sbl_ligaverwaltung_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_year_id'
+  // Exported field_base: 'field_year_id'.
   $field_bases['field_year_id'] = array(
     'active' => 1,
     'cardinality' => 1,

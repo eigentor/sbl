@@ -688,6 +688,34 @@ function sbl_ligaverwaltung_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_mannschaft_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_mannschaft_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_spieler_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_spieler_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_team_match_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_team_match_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_saison_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_saison_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rh_module_mannschaft';
   $strongarm->value = 'rh_node';
   $export['rh_module_mannschaft'] = $strongarm;

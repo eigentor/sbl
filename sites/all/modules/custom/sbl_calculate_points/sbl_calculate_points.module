@@ -7,7 +7,7 @@ include_once('includes/calculate_leaderboard.inc');
 include_once('includes/sort_leaderboard.inc');
 include_once('includes/calculate_crosstable.inc');
 include_once('includes/calculate_players_leaderboard.inc');
-//include_once('includes/calculate_player_data.inc');
+include_once('includes/calculate_player_data.inc');
 
 
 /**
@@ -35,7 +35,7 @@ function get_player_season_data($season) {
     $player_nids = array_keys($players['node']);
   }
 
-$player_elo_values = array();
+  $player_elo_values = array();
   foreach($player_nids as $nid) {
     $player_wrapper = entity_metadata_wrapper('node', $nid);
     $player_name = $player_wrapper->title->value();
@@ -207,9 +207,38 @@ function sbl_calculate_points_views_pre_build(&$view) {
     // and save it into drupal_static
     $data_list = get_player_season_data($season);
 
-
     $players_data_list = &drupal_static('players_data_list', $data_list);
 
+  }
+  if($view->name == 'players' && $view->current_display == 'panel_pane_3') {
+    $player_nid = arg(1);
+    $season = arg(2);
 
+    $team_player_nid = '';
+    $player_games = array();
+
+    // Get the node id of the team of the player for the saeason
+    // first create an entity_metadata_wrapper for the players node
+    $player_wrapper = entity_metadata_wrapper('node', $player_nid);
+    // Now iterate through the field collections field_sp_verein and find the one
+    // for the current season
+    $player_verein_data = $player_wrapper->field_sp_verein->value();
+    if (!empty($player_verein_data)) {
+      foreach ($player_wrapper->field_sp_verein->value() as $season_data) {
+        //dpm($season_data);
+        if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
+          if(!empty($season_data->field_fc_verein)) {
+            // if there is a field_fc_verein in the field_sp_verein for the current season,
+            // the node id of the referenced nod is the players team for the current season
+            $team_player_nid = $season_data->field_fc_verein[LANGUAGE_NONE][0]['target_id'];
+          }
+        }
+      }
+    }
+    if($team_player_nid != '') {
+      $player_games = player_get_games($team_player_nid);
+    }
+
+    $player_data = &drupal_static('player_games', $player_games);
   }
 }

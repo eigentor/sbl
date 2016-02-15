@@ -85,7 +85,7 @@ function player_get_games($player_team) {
       $player_games_combined[] = $player_away_game->item_id;
     }
   }
-}
+
 
 $single_games_team_season = array();
 
@@ -108,7 +108,98 @@ if (!empty($season_matches_combined)) {
 // in the array $single_games_team_season. The field collection items that are in both arrays
 // have been played by the player in the season
 
-$single_games_player_season = '';
+$single_games_player_season = array();
 $single_games_player_season = array_intersect($player_games_combined, $single_games_team_season);
 
-//dpm($single_games_player_season);
+  $games_data = array();
+
+foreach($single_games_player_season as $key => $game_id) {
+  $game_wrapper = entity_metadata_wrapper('field_collection_item', $game_id);
+
+  // Get the opponent's elo
+  $opponent_elo = '';
+  $opponent_name = '';
+  $points_player = '';
+
+  $player_1 = $game_wrapper->field_mt_player_1->value();
+  $player_2 = $game_wrapper->field_mt_player_2->value();
+  if(!empty($player_1) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+    // The points are the points for player 1
+    $points_player = $game_wrapper->field_mt_points_player_1->label();
+    // The opponent is player 2
+    $opponent = $game_wrapper->field_mt_player_2->value();
+    if(!empty($opponent)) {
+      $opponent_name = $opponent->title;
+      // Now iterate through the field collections field_sp_verein of the opponent and find the one
+      // for the current season
+      $season_data = $game_wrapper->field_mt_player_2->field_sp_verein->value();
+      if (!empty($season_data)) {
+        foreach ($game_wrapper->field_mt_player_2->field_sp_verein->value() as $season_data) {
+          if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
+            // The opponent elo is the one inside the field collection item for the current season
+            $opponent_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
+          }
+        }
+      }
+    }
+  } elseif(!empty($player_2) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+    // The points are the points for player 2
+    $points_player = $game_wrapper->field_mt_points_player_2->label();
+    $opponent = $game_wrapper->field_mt_player_1->value();
+    if(!empty($opponent)) {
+      $opponent_name = $opponent->title;
+      // Now iterate through the field collections field_sp_verein and find the one
+      // for the current season
+      $season_data = $game_wrapper->field_mt_player_1->field_sp_verein->value();
+      if (!empty($season_data)) {
+        foreach ($game_wrapper->field_mt_player_1->field_sp_verein->value() as $season_data) {
+          //dpm($season_data);
+          if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
+            $opponent_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
+          }
+        }
+      }
+    }
+  }
+  $games_data[$key]['game_id'] = $game_id;
+  $games_data[$key]['points_player'] = $points_player;
+  $games_data[$key]['opponent_name'] = $opponent_name;
+  $games_data[$key]['opponent_elo'] = $opponent_elo;
+}
+
+return $games_data;
+
+}
+
+function player_number_played_games() {
+  $number_played_games = 0;
+  $player_games = drupal_static('player_games');
+  if(!empty($player_games)) {
+    $number_played_games = count($player_games);
+  }
+
+  return $number_played_games;
+
+}
+
+function player_elo_opponents() {
+
+  $player_nid = arg(1);
+  $games_player = drupal_static('player_games');
+
+  $elo_sum = '';
+
+  foreach($games_player as $game) {
+    $elo_sum += $game['opponent_elo'];
+  }
+  $elo_total = '';
+
+  if(!empty($games_player)) {
+    $count_games = count($games_player);
+    $elo_total = round($elo_sum / $count_games);
+  }
+
+  //dpm($elo_total);
+
+  return $elo_total;
+}

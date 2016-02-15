@@ -11,7 +11,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_fc_verein'
+  // 'field_collection_item-field_sp_verein-field_fc_verein'.
   $field_instances['field_collection_item-field_sp_verein-field_fc_verein'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_pl_board_nr'
+  // 'field_collection_item-field_sp_verein-field_pl_board_nr'.
   $field_instances['field_collection_item-field_sp_verein-field_pl_board_nr'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -88,7 +88,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_pl_country'
+  // 'field_collection_item-field_sp_verein-field_pl_country'.
   $field_instances['field_collection_item-field_sp_verein-field_pl_country'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -125,7 +125,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_pl_elo'
+  // 'field_collection_item-field_sp_verein-field_pl_elo'.
   $field_instances['field_collection_item-field_sp_verein-field_pl_elo'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -166,7 +166,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_pl_master_title'
+  // 'field_collection_item-field_sp_verein-field_pl_master_title'.
   $field_instances['field_collection_item-field_sp_verein-field_pl_master_title'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -235,7 +235,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_saison'
+  // 'field_collection_item-field_sp_verein-field_saison'.
   $field_instances['field_collection_item-field_sp_verein-field_saison'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -269,7 +269,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_sp_verein-field_year_id'
+  // 'field_collection_item-field_sp_verein-field_year_id'.
   $field_instances['field_collection_item-field_sp_verein-field_year_id'] = array(
     'bundle' => 'field_sp_verein',
     'default_value' => NULL,
@@ -342,7 +342,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_mt_color_player_1'
+  // 'field_collection_item-field_tm_game-field_mt_color_player_1'.
   $field_instances['field_collection_item-field_tm_game-field_mt_color_player_1'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -376,7 +376,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_mt_color_player_2'
+  // 'field_collection_item-field_tm_game-field_mt_color_player_2'.
   $field_instances['field_collection_item-field_tm_game-field_mt_color_player_2'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -410,7 +410,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_mt_player_1'
+  // 'field_collection_item-field_tm_game-field_mt_player_1'.
   $field_instances['field_collection_item-field_tm_game-field_mt_player_1'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -451,7 +451,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_mt_player_2'
+  // 'field_collection_item-field_tm_game-field_mt_player_2'.
   $field_instances['field_collection_item-field_tm_game-field_mt_player_2'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -492,7 +492,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_mt_points_player_1'
+  // 'field_collection_item-field_tm_game-field_mt_points_player_1'.
   $field_instances['field_collection_item-field_tm_game-field_mt_points_player_1'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -526,7 +526,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_mt_points_player_2'
+  // 'field_collection_item-field_tm_game-field_mt_points_player_2'.
   $field_instances['field_collection_item-field_tm_game-field_mt_points_player_2'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -560,7 +560,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_tm_game-field_single_match_result'
+  // 'field_collection_item-field_tm_game-field_single_match_result'.
   $field_instances['field_collection_item-field_tm_game-field_single_match_result'] = array(
     'bundle' => 'field_tm_game',
     'default_value' => NULL,
@@ -593,7 +593,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_auf_startseite_anteasern'
+  // Exported field_instance: 'node-mannschaft-field_auf_startseite_anteasern'.
   $field_instances['node-mannschaft-field_auf_startseite_anteasern'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -637,7 +637,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_captain_team'
+  // Exported field_instance: 'node-mannschaft-field_captain_team'.
   $field_instances['node-mannschaft-field_captain_team'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -722,7 +722,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_chairman_club'
+  // Exported field_instance: 'node-mannschaft-field_chairman_club'.
   $field_instances['node-mannschaft-field_chairman_club'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -807,7 +807,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_der_bundesliga_seit'
+  // Exported field_instance: 'node-mannschaft-field_der_bundesliga_seit'.
   $field_instances['node-mannschaft-field_der_bundesliga_seit'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -847,7 +847,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_facebook'
+  // Exported field_instance: 'node-mannschaft-field_facebook'.
   $field_instances['node-mannschaft-field_facebook'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -905,7 +905,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_groesste_erfolge'
+  // Exported field_instance: 'node-mannschaft-field_groesste_erfolge'.
   $field_instances['node-mannschaft-field_groesste_erfolge'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -984,7 +984,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_heimspiele'
+  // Exported field_instance: 'node-mannschaft-field_heimspiele'.
   $field_instances['node-mannschaft-field_heimspiele'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1063,7 +1063,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_logo_icon'
+  // Exported field_instance: 'node-mannschaft-field_logo_icon'.
   $field_instances['node-mannschaft-field_logo_icon'] = array(
     'bundle' => 'mannschaft',
     'deleted' => 0,
@@ -1126,7 +1126,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_logo_team'
+  // Exported field_instance: 'node-mannschaft-field_logo_team'.
   $field_instances['node-mannschaft-field_logo_team'] = array(
     'bundle' => 'mannschaft',
     'deleted' => 0,
@@ -1203,7 +1203,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_t_saison'
+  // Exported field_instance: 'node-mannschaft-field_t_saison'.
   $field_instances['node-mannschaft-field_t_saison'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1245,7 +1245,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_travel_partner_club'
+  // Exported field_instance: 'node-mannschaft-field_travel_partner_club'.
   $field_instances['node-mannschaft-field_travel_partner_club'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1309,7 +1309,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_twitter_club'
+  // Exported field_instance: 'node-mannschaft-field_twitter_club'.
   $field_instances['node-mannschaft-field_twitter_club'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1367,7 +1367,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_venue_club'
+  // Exported field_instance: 'node-mannschaft-field_venue_club'.
   $field_instances['node-mannschaft-field_venue_club'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1436,7 +1436,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_vereinskuerzel'
+  // Exported field_instance: 'node-mannschaft-field_vereinskuerzel'.
   $field_instances['node-mannschaft-field_vereinskuerzel'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1514,7 +1514,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_web_admin_club'
+  // Exported field_instance: 'node-mannschaft-field_web_admin_club'.
   $field_instances['node-mannschaft-field_web_admin_club'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1599,7 +1599,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-mannschaft-field_website_club'
+  // Exported field_instance: 'node-mannschaft-field_website_club'.
   $field_instances['node-mannschaft-field_website_club'] = array(
     'bundle' => 'mannschaft',
     'default_value' => NULL,
@@ -1663,7 +1663,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-body'
+  // Exported field_instance: 'node-spieler-body'.
   $field_instances['node-spieler-body'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -1707,7 +1707,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_fide_id'
+  // Exported field_instance: 'node-spieler-field_fide_id'.
   $field_instances['node-spieler-field_fide_id'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -1781,7 +1781,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_pl_acad_title'
+  // Exported field_instance: 'node-spieler-field_pl_acad_title'.
   $field_instances['node-spieler-field_pl_acad_title'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -1855,7 +1855,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_pl_first_name'
+  // Exported field_instance: 'node-spieler-field_pl_first_name'.
   $field_instances['node-spieler-field_pl_first_name'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -1929,7 +1929,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_pl_image'
+  // Exported field_instance: 'node-spieler-field_pl_image'.
   $field_instances['node-spieler-field_pl_image'] = array(
     'bundle' => 'spieler',
     'deleted' => 0,
@@ -1996,7 +1996,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_pl_last_name'
+  // Exported field_instance: 'node-spieler-field_pl_last_name'.
   $field_instances['node-spieler-field_pl_last_name'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -2070,7 +2070,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_sp_verein'
+  // Exported field_instance: 'node-spieler-field_sp_verein'.
   $field_instances['node-spieler-field_sp_verein'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -2113,7 +2113,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_webseite'
+  // Exported field_instance: 'node-spieler-field_webseite'.
   $field_instances['node-spieler-field_webseite'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -2170,7 +2170,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-spieler-field_wikipedia_eintrag'
+  // Exported field_instance: 'node-spieler-field_wikipedia_eintrag'.
   $field_instances['node-spieler-field_wikipedia_eintrag'] = array(
     'bundle' => 'spieler',
     'default_value' => NULL,
@@ -2227,7 +2227,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_match-body'
+  // Exported field_instance: 'node-team_match-body'.
   $field_instances['node-team_match-body'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2278,7 +2278,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_ausrichter'
+  // Exported field_instance: 'node-team_match-field_ausrichter'.
   $field_instances['node-team_match-field_ausrichter'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2324,7 +2324,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_datum'
+  // Exported field_instance: 'node-team_match-field_datum'.
   $field_instances['node-team_match-field_datum'] = array(
     'bundle' => 'team_match',
     'deleted' => 0,
@@ -2392,7 +2392,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_game_has_result'
+  // Exported field_instance: 'node-team_match-field_game_has_result'.
   $field_instances['node-team_match-field_game_has_result'] = array(
     'bundle' => 'team_match',
     'default_value' => array(
@@ -2441,7 +2441,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_livevideo'
+  // Exported field_instance: 'node-team_match-field_livevideo'.
   $field_instances['node-team_match-field_livevideo'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2512,7 +2512,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_match_report'
+  // Exported field_instance: 'node-team_match-field_match_report'.
   $field_instances['node-team_match-field_match_report'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2564,7 +2564,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_spiel_laeuft'
+  // Exported field_instance: 'node-team_match-field_spiel_laeuft'.
   $field_instances['node-team_match-field_spiel_laeuft'] = array(
     'bundle' => 'team_match',
     'default_value' => array(
@@ -2614,7 +2614,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_board_points_team_1'
+  // Exported field_instance: 'node-team_match-field_tm_board_points_team_1'.
   $field_instances['node-team_match-field_tm_board_points_team_1'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2660,7 +2660,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_board_points_team_2'
+  // Exported field_instance: 'node-team_match-field_tm_board_points_team_2'.
   $field_instances['node-team_match-field_tm_board_points_team_2'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2706,7 +2706,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_game'
+  // Exported field_instance: 'node-team_match-field_tm_game'.
   $field_instances['node-team_match-field_tm_game'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2762,7 +2762,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_saison'
+  // Exported field_instance: 'node-team_match-field_tm_saison'.
   $field_instances['node-team_match-field_tm_saison'] = array(
     'bundle' => 'team_match',
     'default_value' => array(
@@ -2812,7 +2812,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_spieltag_1'
+  // Exported field_instance: 'node-team_match-field_tm_spieltag_1'.
   $field_instances['node-team_match-field_tm_spieltag_1'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2858,7 +2858,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_team_1'
+  // Exported field_instance: 'node-team_match-field_tm_team_1'.
   $field_instances['node-team_match-field_tm_team_1'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2913,7 +2913,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_team_2'
+  // Exported field_instance: 'node-team_match-field_tm_team_2'.
   $field_instances['node-team_match-field_tm_team_2'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -2968,7 +2968,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_team_points_tm_1'
+  // Exported field_instance: 'node-team_match-field_tm_team_points_tm_1'.
   $field_instances['node-team_match-field_tm_team_points_tm_1'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -3014,7 +3014,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_tm_team_points_tm_2'
+  // Exported field_instance: 'node-team_match-field_tm_team_points_tm_2'.
   $field_instances['node-team_match-field_tm_team_points_tm_2'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,
@@ -3060,7 +3060,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
     ),
   );
 
-  // Exported field_instance: 'node-team_match-field_video_zusammenfas'
+  // Exported field_instance: 'node-team_match-field_video_zusammenfas'.
   $field_instances['node-team_match-field_video_zusammenfas'] = array(
     'bundle' => 'team_match',
     'default_value' => NULL,

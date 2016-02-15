@@ -902,6 +902,16 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Verein NID */
+  $handler->display->display_options['fields']['field_fc_verein_1']['id'] = 'field_fc_verein_1';
+  $handler->display->display_options['fields']['field_fc_verein_1']['table'] = 'field_data_field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein_1']['field'] = 'field_fc_verein';
+  $handler->display->display_options['fields']['field_fc_verein_1']['ui_name'] = 'Verein NID';
+  $handler->display->display_options['fields']['field_fc_verein_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_fc_verein_1']['type'] = 'entityreference_entity_id';
+  $handler->display->display_options['fields']['field_fc_verein_1']['settings'] = array(
+    'link' => 0,
+  );
   /* Field: Saison als TID */
   $handler->display->display_options['fields']['field_saison']['id'] = 'field_saison';
   $handler->display->display_options['fields']['field_saison']['table'] = 'field_data_field_saison';
@@ -921,6 +931,60 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['field_fc_verein']['settings'] = array(
     'link' => 0,
   );
+  /* Field: Anzahl gespielte Spiele */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Anzahl gespielte Spiele';
+  $handler->display->display_options['fields']['php']['label'] = 'Spiele';
+  $handler->display->display_options['fields']['php']['empty'] = '0';
+  $handler->display->display_options['fields']['php']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_value'] = 'return player_number_played_games();';
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Elo-Schnitt */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Elo-Schnitt';
+  $handler->display->display_options['fields']['php_1']['label'] = 'Elo-Ø';
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_value'] = 'return player_elo_opponents();';
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Punkte */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte';
+  $handler->display->display_options['fields']['php_2']['label'] = 'Punkte';
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
+  /* Field: Prozentzahl erreichter Punkte pro Spiel */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['ui_name'] = 'Prozentzahl erreichter Punkte pro Spiel';
+  $handler->display->display_options['fields']['php_3']['label'] = '%';
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
+  /* Field: Elo-Performance */
+  $handler->display->display_options['fields']['php_4']['id'] = 'php_4';
+  $handler->display->display_options['fields']['php_4']['table'] = 'views';
+  $handler->display->display_options['fields']['php_4']['field'] = 'php';
+  $handler->display->display_options['fields']['php_4']['ui_name'] = 'Elo-Performance';
+  $handler->display->display_options['fields']['php_4']['label'] = 'Elo-Perf.';
+  $handler->display->display_options['fields']['php_4']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_4']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1006,6 +1070,11 @@ print player_single_result_matchday($row, 15);
     t('<a href="[field_webseite-url]" class="tooltip blue" title="Webseite" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>'),
     t('Content pane Spieler Saisonergebnisse Durchschnitt'),
     t('Verein'),
+    t('Spiele'),
+    t('Elo-Ø'),
+    t('Punkte'),
+    t('%'),
+    t('Elo-Perf.'),
   );
   $export['players'] = $view;
 
