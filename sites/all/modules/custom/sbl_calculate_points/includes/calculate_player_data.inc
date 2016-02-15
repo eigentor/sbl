@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Get all single games for a player for the current season.
+ * Get some more values like the points won and the opponent's ELO.
+ */
+
 function player_get_games($player_team) {
 
   $player_nid = arg(1);
@@ -171,8 +176,12 @@ return $games_data;
 
 }
 
+/*
+ * Get the number of games a player has played in the current season
+ */
+
 function player_number_played_games() {
-  $number_played_games = 0;
+  $number_played_games = 'O';
   $player_games = drupal_static('player_games');
   if(!empty($player_games)) {
     $number_played_games = count($player_games);
@@ -182,11 +191,13 @@ function player_number_played_games() {
 
 }
 
+/*
+ * Get the average ELO of the opponents of the player
+ */
+
 function player_elo_opponents() {
 
-  $player_nid = arg(1);
   $games_player = drupal_static('player_games');
-
   $elo_sum = '';
 
   foreach($games_player as $game) {
@@ -202,4 +213,72 @@ function player_elo_opponents() {
   //dpm($elo_total);
 
   return $elo_total;
+}
+
+/*
+ * Get the points a player has won in the current season
+ */
+function player_single_points() {
+
+  $games_player = drupal_static('player_games');
+  $points_sum = 0;
+
+  foreach($games_player as $game) {
+    $points_sum += $game['points_player'];
+  }
+  if(empty($points_sum)) {
+    $points_sum = 'O';
+  }
+
+  return $points_sum;
+}
+
+/*
+ * Calculate the percentage of wins for the player for the current season
+ */
+function player_single_percentage() {
+  $percentage = 'O';
+
+  $games_player = drupal_static('player_games');
+
+  $points_sum = '';
+
+  foreach($games_player as $game) {
+    $points_sum += $game['points_player'];
+  }
+
+  $number_games = '';
+  $number_games = count($games_player);
+  if($number_games != '' && $points_sum != '') {
+    $percentage = round(($points_sum / $number_games) * 100);
+  }
+  return $percentage;
+}
+
+/*
+ * Calculate the Elo Performance (simplified formular) for the player for
+ * the current season.
+ */
+function player_single_elo_performance() {
+  $games_player = drupal_static('player_games');
+  $elo_performance = '';
+  $elo_sum = '';
+  $elo_game = '';
+
+  foreach($games_player as $game) {
+    $elo_game = $game['opponent_elo'];
+    if($game['points_player'] == 1) {
+      $elo_sum += $elo_game + 400;
+    } elseif($game['points_player'] == 0) {
+      $elo_sum += $elo_game - 400;
+    } elseif($game['points_player'] == 0.5) {
+      $elo_sum += $elo_game;
+    }
+  }
+  if(!empty($games_player)) {
+    $count_games = count($games_player);
+    $elo_performance = round($elo_sum / $count_games);
+  }
+
+  return $elo_performance;
 }
