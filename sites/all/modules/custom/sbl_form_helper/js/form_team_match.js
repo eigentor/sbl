@@ -118,6 +118,9 @@ set_single_game_board_color('form#team-match-node-form .field-name-field-mt-colo
 set_single_game_board_color('form#team-match-node-form .field-name-field-mt-color-player-2 select.form-select',
 '.field-name-field-mt-color-player-1 select.form-select', match_board_color);
 
+//function reload_chosen {
+//
+//}
 
 
 

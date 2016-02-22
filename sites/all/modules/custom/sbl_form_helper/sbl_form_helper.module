@@ -1,24 +1,19 @@
 <?php
 
-function sbl_form_helper_init() {
-
-
-$module_path = drupal_get_path('module', 'sbl_form_helper');
-
-$path = drupal_get_path_alias($_GET['q']);
-$path_array = explode('/', $path);
-
-// Add a JS file to set several field values depending on other field values.
-// Conditional fields did not work.
-drupal_add_js($module_path . '/js/form_team_match.js');
-
-}
-
 /**
  * Implementaion of hook_form_FORM_ID_alter
  * Alter the node form for team matches
  */
 function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $form_id) {
+
+  $module_path = drupal_get_path('module', 'sbl_form_helper');
+
+  // Add a JS file to set several field values depending on other field values.
+  // Conditional fields did not work.
+  drupal_add_js($module_path . '/js/form_team_match.js');
+
+
+
   // Add board numbering for single games in the team-match node form
   foreach ($form['field_tm_game'][LANGUAGE_NONE] as $delta => $field) {
     if (is_numeric($delta)) {
@@ -27,31 +22,211 @@ function sbl_form_helper_form_team_match_node_form_alter(&$form, &$form_state, $
     }
   }
 
+  if(property_exists($form_state['node'], 'nid')) {
+    if (empty($form_state['values']['field_tm_saison']) && empty($form_state['values']['field_tm_team_2']) && empty($form_state['values']['field_tm_team_2'])) {
+      $season = '';
+      $team_1_nid = '';
+      $team_2_nid = '';
+      $node_wrapper = entity_metadata_wrapper('node', $form_state['node']);
+      $season_value = $node_wrapper->field_tm_saison->value();
+      if (!empty($season_value)) {
+        $season = $node_wrapper->field_tm_saison->tid->value();
+      }
+      $team_1 = $node_wrapper->field_tm_team_1->value();
+      if (!empty($team_1)) {
+        $team_1_nid = $node_wrapper->field_tm_team_1->nid->value();
+      }
+      $team_2 = $node_wrapper->field_tm_team_2->value();
+      if (!empty($team_2)) {
+        $team_2_nid = $node_wrapper->field_tm_team_2->nid->value();
+      }
+
+      if (!empty($season) && !empty($team_1_nid)) {
+        $numbers = array('0', '1', '2', '3', '4', '5', '6', '7');
+
+        // The function get_players_team_season() gives us all player node nids for the season and team
+        $players_filtered = get_players_team_season($season, $team_1_nid);
+
+        foreach ($numbers as $delta) {
+          //$all_players = $form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options']
+          foreach ($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options'] as $key => $option) {
+            if (!in_array($key, $players_filtered)) {
+              unset($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options'][$key]);
+            }
+          }
+        }
+      }
+
+      if (!empty($season) && !empty($team_2_nid)) {
+        $numbers = array('0', '1', '2', '3', '4', '5', '6', '7');
+
+        // The function get_players_team_season() gives us all player node nids for the season and team
+        $players_filtered = get_players_team_season($season, $team_2_nid);
+
+        foreach ($numbers as $delta) {
+          //$all_players = $form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options']
+          foreach ($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_2'][LANGUAGE_NONE]['#options'] as $key => $option) {
+            if (!in_array($key, $players_filtered)) {
+              unset($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_2'][LANGUAGE_NONE]['#options'][$key]);
+            }
+          }
+        }
+      }
+    }
+  }
 
 
+  //Filter the players by team with ajax
+  $form['field_tm_game'][LANGUAGE_NONE]['#prefix'] = '<div id="my-ajax-container">';
+  $form['field_tm_game'][LANGUAGE_NONE]['#suffix'] = '</div>';
 
-   //Filter the players by team with ajax
-//  $form['field_tm_team_1'][LANGUAGE_NONE]['#ajax'] = array (
-//    'callback' => 'filter_players_team_1',
-//    // Wrapper: reload the entire field collection form when executing the ajax call
-//    'wrapper' => 'edit-field-tm-game',
-//  );
+
+  $form['field_tm_team_1'][LANGUAGE_NONE]['#ajax'] = array (
+    'callback' => 'filter_players_both_teams',
+    // Wrapper: reload the entire field collection form when executing the ajax call
+    'wrapper' => 'my-ajax-container',
+  );
+
+  $form['field_tm_team_2'][LANGUAGE_NONE]['#ajax'] = array (
+    'callback' => 'filter_players_both_teams',
+    // Wrapper: reload the entire field collection form when executing the ajax call
+    'wrapper' => 'my-ajax-container',
+  );
+
+  $form['field_tm_saison'][LANGUAGE_NONE]['#ajax'] = array (
+    'callback' => 'filter_players_both_teams',
+    // Wrapper: reload the entire field collection form when executing the ajax call
+    'wrapper' => 'my-ajax-container',
+  );
+
+  //dpm($form);
+
 }
 
-function filter_players_team_1(&$form, &$form_state) {
-//    $numbers = array('0', '1', '2', '3', '4', '5', '6', '7');
-//  foreach($numbers as $delta) {
-//    $players_enable = array('_none', '299', '301', '303');
-//    foreach($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options'] as $key => $option) {
-//      if(!in_array($key, $players_enable)) {
-//        unset($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options'][$key]);
-//      }
-//    }
-//  }
-//
-//  return $form['field_tm_game'];
+
+/**
+ * Ajax callback function for the season field
+ */
+function filter_players_both_teams ($form, &$form_state) {
+  //$form_state['rebuild'] = TRUE;
+  $numbers = array('0', '1', '2', '3', '4', '5', '6', '7');
+
+  // Get the values for season and team_1 from the form
+
+  if(!empty($form_state['values']['field_tm_saison']) && !empty($form_state['values']['field_tm_team_1'])) {
+    $season = $form_state['values']['field_tm_saison'][LANGUAGE_NONE][0]['tid'];
+    $team = $form_state['values']['field_tm_team_1'][LANGUAGE_NONE][0]['target_id'];
+
+    // The function get_players_team_season() gives us all player node nids for the season and team
+    $players_filtered = get_players_team_season($season, $team);
+
+
+    foreach($numbers as $delta) {
+      //$all_players = $form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options']
+      foreach($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options'] as $key => $option) {
+        if(!in_array($key, $players_filtered)) {
+          unset($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options'][$key]);
+        }
+      }
+    }
+  }
+
+  if(!empty($form_state['values']['field_tm_saison']) && !empty($form_state['values']['field_tm_team_2'])) {
+    $season = $form_state['values']['field_tm_saison'][LANGUAGE_NONE][0]['tid'];
+    $team = $form_state['values']['field_tm_team_2'][LANGUAGE_NONE][0]['target_id'];
+
+    // The function get_players_team_season() gives us all player node nids for the season and team
+    $players_filtered = get_players_team_season($season, $team);
+
+
+    foreach($numbers as $delta) {
+      //$all_players = $form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_1'][LANGUAGE_NONE]['#options']
+      foreach($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_2'][LANGUAGE_NONE]['#options'] as $key => $option) {
+        if(!in_array($key, $players_filtered)) {
+          unset($form['field_tm_game'][LANGUAGE_NONE][$delta]['field_mt_player_2'][LANGUAGE_NONE]['#options'][$key]);
+        }
+      }
+    }
+  }
+
+//  $commands[] = ajax_command_invoke(NULL, "reload_chosen");
+
+  return $form['field_tm_game'];
+
 }
 
+
+
+//function sbl_form_helper_submit($form, &$form_state) {
+//  $form_state['rebuild'] = TRUE;
+//  dpm($form_state);
+//  return($form);
+//}
+
+function get_players_team_season($season, $team) {
+  // Knowing the season and Node ID for the team, we find
+  // all players that played for that team in that season.
+  // We will store the Node IDs of the player nodes in the
+  // array $players_filtered
+
+  // Get all season data for the players
+  $player_season_data_query = new EntityFieldQuery();
+
+  $player_season_data_query->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_sp_verein')
+    ->fieldCondition('field_saison', 'tid', $season)
+    ->fieldCondition('field_fc_verein', 'target_id', $team)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $player_season_data = $player_season_data_query->execute();
+  $player_data_array = array();
+  if (isset($player_season_data['field_collection_item'])) {
+    $player_data_array = array_keys($player_season_data['field_collection_item']);
+    foreach($player_data_array as $player_data) {
+      $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data);
+      //dpm($player_data_wrapper->value());
+    }
+  }
+
+  // get all player nodes
+  // Get all player nodes
+  $players_query = new EntityFieldQuery();
+
+  $players_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'spieler')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $players = $players_query->execute();
+
+  // Write all nids of player nodes into an array
+  if (isset($players['node'])) {
+    $player_nids = array_keys($players['node']);
+  }
+  $players_filtered = array();
+  foreach($player_nids as $nid) {
+    $player_wrapper = entity_metadata_wrapper('node', $nid);
+
+    $player_season_data_ids = array();
+
+    $player_verein_value = $player_wrapper->field_sp_verein->value();
+    if (!empty($player_verein_value)) {
+      foreach ($player_wrapper->field_sp_verein->value() as $season_data) {
+        $player_season_data_ids[] = $season_data->item_id;
+      }
+    }
+    $player_plays_team = array_intersect($player_data_array, $player_season_data_ids);
+    if(!empty($player_plays_team)) {
+      $players_filtered[] = $nid;
+    }
+  }
+  if(!empty($players_filtered)) {
+    array_unshift($players_filtered, '_none');
+  }
+  return $players_filtered;
+}
 
 
 
