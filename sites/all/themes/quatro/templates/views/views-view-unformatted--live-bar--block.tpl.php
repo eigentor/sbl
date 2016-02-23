@@ -7,7 +7,6 @@
  * @ingroup views_templates
  */
 $current_matchday = get_current_matchday();
-$current_matchday = 7;
 $spieltage = array();
 $i = 1;
 while($i <= 15) {
