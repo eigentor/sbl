@@ -149,8 +149,6 @@ function filter_players_both_teams ($form, &$form_state) {
     }
   }
 
-//  $commands[] = ajax_command_invoke(NULL, "reload_chosen");
-
   return $form['field_tm_game'];
 
 }
