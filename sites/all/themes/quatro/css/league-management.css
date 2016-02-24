@@ -556,6 +556,9 @@ form#select-season-form .description {
 
 @media screen and (min-width: 1220px) {
 
+.front #block-views-live-bar-block .view-live-bar .view-content {
+  margin-left: 10px;
+}
 .front #block-views-live-bar-block .view-live-bar {
   margin-right: 25%;
 }
@@ -563,7 +566,7 @@ form#select-season-form .description {
   margin-bottom: 65px;
 }
 .front #block-views-live-bar-block .slick-next {
-  right: -5px;
+  right: -16px;
 }
 
 /** Float the sidebar on the verein Page **/
