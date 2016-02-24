@@ -2,7 +2,15 @@
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf->version . $rdf->namespaces; ?>>
 <head<?php print $rdf->profile; ?>>
   <?php print $head; ?>
-  <title><?php print $head_title; ?></title>  
+   <title><?php
+     $site_name = variable_get('site_name');
+      $site_slogan = variable_get('site_slogan');
+     if(drupal_is_front_page()) {
+       print $site_slogan . ' | ' . $site_name;
+     } else {
+       print $head_title;
+     }
+     ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
   
