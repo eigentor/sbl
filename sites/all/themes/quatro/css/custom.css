@@ -64,6 +64,12 @@ cursor: default;
   max-width:100%;
   margin-bottom: 10px;
 }
+
+.media-zentriert_ohne_untertitel {
+width: 100%;
+text-align: center; 
+}
+
 .media-linksbuendig_im_textfluss { float: left; margin-right:15px }
 .media-zentriertes_bild {
 margin:auto;
@@ -693,6 +699,10 @@ padding-top:5px;
 margin:0;
 height:auto !important;
 float:left;
+}
+
+.view-id-team_info td {
+	text-align:left;
 }
 
 #teamseite .panel-col-first td,#teamseite .panel-col-last td{
