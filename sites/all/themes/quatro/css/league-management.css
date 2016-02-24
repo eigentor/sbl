@@ -52,6 +52,9 @@ th, td {
 .front #block-views-live-bar-block {
   zoom: 1;
 }
+.front #block-views-article-slider-large-block-1 {
+  margin-bottom: 45px;
+}
 .front #block-views-article-slider-large-block-1:after,
 .front #block-views-article-slider-large-block:after,
 .front #block-views-live-bar-block:after {
@@ -69,18 +72,58 @@ th, td {
 }
 .front .zone-header {
   padding-top: 0;
-  margin-top: 35px;
 }
 .front #block-views-live-bar-block {
   margin-bottom: 0;
+  margin-top: -22px;
 }
-.front #block-views-live-bar-block .view-content {
-  /*display: table;*/
-  /*margin: auto;*/
+/* Live-Leiste */
+.front #block-views-live-bar-block .view-live-bar {
+  margin-left: 40px;
+  margin-right: 40px;
 }
-/*.front #block-views-live-bar-block .row-wrapper {*/
-  /*float: left;*/
-/*}*/
+.front #block-views-live-bar-block .spieltag-nummer {
+  height: 22px;
+
+}
+.front #block-views-live-bar-block .spieltag-nummer .nummer-inner {
+  float: left;
+  background: #919191;
+  padding: 0 13px 0 12px;
+  /*width: 77px;*/
+  color: white;
+  height: 22px;
+  line-height: 20px;
+}
+button.slick-prev, button.slick-next {
+  background: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+.front #block-views-live-bar-block .slick-prev,
+.front #block-views-live-bar-block .slick-next {
+  width: 27px;
+  height: 27px;
+  margin-top: 11px;
+}
+.front #block-views-live-bar-block .slick-prev {
+  left: -35px;
+}
+.front #block-views-live-bar-block .slick-prev:before,
+.front #block-views-live-bar-block .slick-next:before {
+  font-size: 27px;
+  font-weight: normal;
+
+}
+.slick-prev:before,
+.slick-next:before {
+   opacity: 0.65;
+}
+
+.front #block-views-live-bar-block .slick-slider {
+  margin-bottom: 0;
+}
 .front #block-views-live-bar-block .views-row {
   float: left;
   zoom: 1;
@@ -88,8 +131,9 @@ th, td {
   border: 1px solid #333;
   margin-right: -1px;
   min-height: 100px;
-  width: 106px;
+  width: 99px;
   padding-bottom: 5px;
+  padding-left: 7px;
 }
 .front #block-views-live-bar-block .views-row .row-inner {
   /*display: table-cell;*/
@@ -111,16 +155,18 @@ th, td {
 #block-views-live-bar-block .views-field-field-logo-team {
   width: 26px;
   padding-left: 7px;
+  padding-top: 3px;
   text-align: left;
-  height: 26px;
+  height: 23px;
   float: left;
 }
 #block-views-live-bar-block span.date-display-single {
   display: block;
+  margin-left: -7px;
   background: #eee;
   border-bottom: 1px solid #ccc;
   padding: 2px 5px 0px;
-  margin-bottom: 1px;
+  margin-bottom: 4px;
   font-size: 14px;
   font-family: "Open Sans Condensed",Arial,Helvetica,Verdana,sans-serif;
   font-weight: bold;
@@ -133,6 +179,7 @@ th, td {
 #block-views-live-bar-block .views-field-field-logo-icon img,
 #block-views-live-bar-block .views-field-field-logo-team img {
   width: 20px;
+  height: auto;
 }
 #block-views-live-bar-block .views-field-field-logo-team {
   clear: left;
@@ -432,6 +479,18 @@ form#select-season-form .description {
   cursor: hand;
 }
 
+/*------------------------------------------- */
+/*------------------------------------------- */
+/*-------------- Smartphone wide -------------*/
+/*------------------------------------------- */
+/*------------------------------------------- */
+
+@media screen and (min-width: 400px){
+
+
+
+} /* Ende Media Query Smartphone wide */
+
 
 /*------------------------------------------- */
 /*------------------------------------------- */
@@ -456,6 +515,7 @@ form#select-season-form .description {
   clear: left;
 }
 
+
 } /* Ende Media Query Tablet narrow */
 
 /*------------------------------------------- */
@@ -476,6 +536,13 @@ form#select-season-form .description {
 .page-verein #region-content {
   width: auto;
 }
+.front #block-views-live-bar-block .view-live-bar {
+  margin-left: 0;
+  margin-right: 0;
+}
+.front #block-views-live-bar-block .slick-next {
+  right: 48px;
+}
 
 
 } /* Ende Media Query Desktop narrow */
@@ -491,6 +558,12 @@ form#select-season-form .description {
 
 .front #block-views-live-bar-block .view-live-bar {
   margin-right: 25%;
+}
+.front #block-views-article-slider-large-block-1 {
+  margin-bottom: 65px;
+}
+.front #block-views-live-bar-block .slick-next {
+  right: -5px;
 }
 
 /** Float the sidebar on the verein Page **/

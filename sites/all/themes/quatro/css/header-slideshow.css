@@ -8,8 +8,16 @@
 
 .front .view-article-slider-large.view-display-id-block .slick-dots {
   position: absolute;
-  bottom: 68px;
+  bottom: 68px!important;
   right: 25px;
+  width: auto;
+  text-align: left;
+}
+.front .view-article-slider-large .slick-slider {
+  margin-bottom: 0;
+}
+.front #block-views-article-slider-large-block .slick-slider {
+  margin-bottom: 10px;
 }
 
 .slick-dots li {
@@ -151,6 +159,10 @@ background-color:#eee;
 
 .front .block-views-article-slider-large-block-1 .view-article-slider-large .views-field-title {
   padding-top: 0.75em;
+}
+
+.front #block-views-article-slider-large-block .slick-slider {
+  margin-bottom: 0;
 }
 
 

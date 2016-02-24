@@ -41,6 +41,7 @@ function sbl_helper_init() {
   if (drupal_is_front_page()) {
     drupal_add_js(libraries_get_path('jquery-1.11') . '/jquery-1.11.1.min.js');
     drupal_add_css(libraries_get_path('slick') . '/slick/slick.css');
+    drupal_add_css(libraries_get_path('slick') . '/slick/slick-theme.css');
     drupal_add_js(libraries_get_path('slick') . '/slick/slick.min.js');
     drupal_add_js('var jq111 = jQuery; jQuery.noConflict(true);',
       array('type' => 'inline', 'scope' => 'header'));

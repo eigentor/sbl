@@ -48,7 +48,7 @@ foreach($spieltage_sorted as $spieltag) {
 <?php endif; ?>
 <?php foreach($grouped_results as $grouped_key => $result): ?>
     <div class = "row-wrapper spieltag-<?php print $grouped_key; ?>">
-      <div class="spieltag-nummer"><?php print $grouped_key; ?>. Spieltag</div>
+      <div class="spieltag-nummer"><div class="nummer-inner"><?php print $grouped_key; ?>. Spieltag</div></div>
   <?php foreach ($rows as $id => $row): ?>
     <?php if(in_array($id, $result)): ?>
       <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
