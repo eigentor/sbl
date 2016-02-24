@@ -106,6 +106,17 @@ $('.front .view-article-slider-large.view-display-id-block_1 .views-row').click(
     $(this).siblings().find('span.active-arrow').remove();
 });
 
+//Die Live-Leiste
+$('.front .view-live-bar .view-content').slick({
+    dots: false,
+    arrows: true,
+    fade: true,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    slide: 'div.row-wrapper',
+});
+
 
 
 

@@ -242,13 +242,15 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'team_match' => 'team_match',
   );
-  /* Filter criterion: Filter nach aktueller Saison und Datum des Spieltages */
-  $handler->display->display_options['filters']['php']['id'] = 'php';
-  $handler->display->display_options['filters']['php']['table'] = 'views';
-  $handler->display->display_options['filters']['php']['field'] = 'php';
-  $handler->display->display_options['filters']['php']['ui_name'] = 'Filter nach aktueller Saison und Datum des Spieltages';
-  $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = 'return check_current_season_date_matchday($row);';
+  /* Filter criterion: Content: Saison (field_tm_saison) */
+  $handler->display->display_options['filters']['field_tm_saison_tid']['id'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['field'] = 'field_tm_saison_tid';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['value'] = array(
+    144 => '144',
+  );
+  $handler->display->display_options['filters']['field_tm_saison_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_tm_saison_tid']['vocabulary'] = 'saison';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
