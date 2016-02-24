@@ -255,6 +255,52 @@ function sbl_standings_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Saison als TID */
+  $handler->display->display_options['fields']['field_tm_saison_1']['id'] = 'field_tm_saison_1';
+  $handler->display->display_options['fields']['field_tm_saison_1']['table'] = 'field_data_field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison_1']['field'] = 'field_tm_saison';
+  $handler->display->display_options['fields']['field_tm_saison_1']['ui_name'] = 'Saison als TID';
+  $handler->display->display_options['fields']['field_tm_saison_1']['label'] = '';
+  $handler->display->display_options['fields']['field_tm_saison_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_saison_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tm_saison_1']['alter']['text'] = '[field_tm_saison_1-tid]';
+  $handler->display->display_options['fields']['field_tm_saison_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tm_saison_1']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_tm_team_1_target_id';
+  $handler->display->display_options['fields']['title']['label'] = 'Titel';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_tm_team_2_target_id';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  /* Field: Node-ID Heimmannschaft */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['relationship'] = 'field_tm_team_1_target_id';
+  $handler->display->display_options['fields']['nid']['ui_name'] = 'Node-ID Heimmannschaft';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Node-ID Auswärtsmannschaft */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_tm_team_2_target_id';
+  $handler->display->display_options['fields']['nid_1']['ui_name'] = 'Node-ID Auswärtsmannschaft';
+  $handler->display->display_options['fields']['nid_1']['label'] = '';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid_1']['element_label_colon'] = FALSE;
   /* Field: Content: Mannschaft 1 */
   $handler->display->display_options['fields']['field_tm_team_1']['id'] = 'field_tm_team_1';
   $handler->display->display_options['fields']['field_tm_team_1']['table'] = 'field_data_field_tm_team_1';
@@ -330,6 +376,10 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_logo_icon']['relationship'] = 'field_tm_team_1_target_id';
   $handler->display->display_options['fields']['field_logo_icon']['ui_name'] = 'Logo Heimmannschaft';
   $handler->display->display_options['fields']['field_logo_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['path'] = 'verein/[nid]/[field_tm_saison_1] ';
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['alt'] = '[title]';
+  $handler->display->display_options['fields']['field_logo_icon']['alter']['link_class'] = 'tooltip';
   $handler->display->display_options['fields']['field_logo_icon']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo_icon']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo_icon']['settings'] = array(
@@ -363,6 +413,10 @@ function sbl_standings_views_default_views() {
   $handler->display->display_options['fields']['field_logo_team']['relationship'] = 'field_tm_team_2_target_id';
   $handler->display->display_options['fields']['field_logo_team']['ui_name'] = 'Logo Auswärtsmannschaft';
   $handler->display->display_options['fields']['field_logo_team']['label'] = '';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_team']['alter']['path'] = 'verein/[nid]/[field_tm_saison_1]';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['alt'] = '[title_1]';
+  $handler->display->display_options['fields']['field_logo_team']['alter']['link_class'] = 'tooltip';
   $handler->display->display_options['fields']['field_logo_team']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo_team']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo_team']['settings'] = array(
@@ -457,7 +511,11 @@ function sbl_standings_views_default_views() {
     t('Live-Video'),
     t('[field_livevideo]'),
     t('Block'),
+    t('[field_tm_saison_1-tid]'),
+    t('Titel'),
+    t('[title]'),
     t('[field_tm_team_1]'),
+    t('[title_1]'),
     t('Video'),
   );
   $export['live_bar'] = $view;
