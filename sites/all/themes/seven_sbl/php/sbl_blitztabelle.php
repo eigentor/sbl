@@ -50,20 +50,27 @@ border-bottom: 1px dotted #555;
 
 </tr>
 <?php
+/*
 $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
 print_r($xml);
 for($i=0;$i<=15;$i++) {
 $platz=$xml->platz[$i]->rng;
 $team=$xml->platz[$i]->team;
+*/
+$xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml");
+echo $xml->getName() . "<br>";
+
+foreach($xml->children() as $child)
+  {
+  echo $child->getName() . ": " . $child . "<br>";
+  }
 ?>
 <tr>
 <td><?=$platz?>.</td>
 <td><?=$team?></td>
 </tr>
 
-<?php
-}
-?>
+
 
 </table>
 </div>
