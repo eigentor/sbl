@@ -53,10 +53,10 @@ border-bottom: 1px dotted #555;
 <?php
 $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
 for($i=0;$i<=15;$i++) {
-$platz=$xml->tabelle->item[$i]->RNG;
-$team=$xml->tabelle->item[$i]->team;
-$mp=$xml->tabelle->item[$i]->MP;
-$bp=$xml->tabelle->item[$i]->BP;
+$platz=$xml->tabelle->platz[$i]->RNG;
+$team=$xml->tabelle->platz[$i]->Team;
+$mp=$xml->tabelle->platz[$i]->MP;
+$bp=$xml->tabelle->platz[$i]->BP;
 ?>
 <tr>
 <td><?=$platz?>.</td>
