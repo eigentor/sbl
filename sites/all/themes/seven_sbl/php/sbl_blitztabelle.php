@@ -39,7 +39,7 @@ border-bottom: 1px dotted #555;
 <body>
 
 <div class="panel panel-default">
-<div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>Schachbundesliga News</b></div>
+<div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>Schachbundesliga Tabelle</b></div>
 <div class="panel-body">
 <div class="row">
 <div class="col-xs-12">
@@ -51,15 +51,14 @@ border-bottom: 1px dotted #555;
 </tr>
 <?php
 $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
+print_r($xml);
 for($i=0;$i<=15;$i++) {
 $platz=$xml->tabelle->platz[$i]->rng;
 $team=$xml->tabelle->platz[$i]->team;
-
 ?>
 <tr>
 <td><?=$platz?>.</td>
 <td><?=$team?></td>
-
 </tr>
 
 <?php
