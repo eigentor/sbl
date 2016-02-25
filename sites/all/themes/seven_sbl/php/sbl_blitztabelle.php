@@ -60,8 +60,8 @@ $mapu=$xml->platz[$i]->MP;
 $brepu=$xml->platz[$i]->BP;
 ?>
 <tr>
-<td><?=$rang?>.</td>
-<td><?=$manschaft?></td>
+<td><?=$rang?></td>
+<td><?=$mannschaft?></td>
 <td><?=$mapu?></td>
 <td><?=$brepu?></td>
 </tr>
