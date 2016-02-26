@@ -11,12 +11,12 @@ document.write('<div class="panel panel-default"><div class="panel-heading"> <sp
 <?php
 $xml=simplexml_load_file("http://schachbundesliga.de/aktuell.xml") or die("Fehler: Feed konnte nicht geladen werden");
 for($i=0;$i<=5;$i++) {
-$title=substr($xml->channel->item[$i]->title,30). "[...]";
+$title=$xml->channel->item[$i]->title;
 $link=$xml->channel->item[$i]->link;
 $description=$xml->channel->item[$i]->description;
 $bild=find_image($description);
 ?>
-document.write('<li class="news-item"><table cellpadding="4"><tr><td><img src="<?=$bild?>" width="60" style="margin:0px 5px 0;" /></td><td><a href="<?=$link?>"><?=$title?></a></td></tr></table></li>');
+document.write('<li class="news-item"><table cellpadding="4"><tr><td><img src="<?=$bild?>" width="120" style="margin:0px 5px 0;" /></td></tr><tr><td><a href="<?=$link?>"><?=$title?></a></td></tr></table></li>');
 <?php
 }
 ?>
