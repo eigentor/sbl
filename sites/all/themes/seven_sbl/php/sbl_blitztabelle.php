@@ -54,19 +54,26 @@ border-bottom: 1px dotted #555;
 </tr>
 </thead>
 <?php
+
+function transform_link($linktext,$saison) {
+	$linktext=str_replace("schachbundesliga.de/","schachbundesliga.de/verein/");
+	$linktext.="/".$saison;
+	echo $linktext;
+}
 $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
 $saisonstring=explode("/",$xml->channel->link[0]);
 $aktuelle_saison=$saisonstring[4];
-echo $aktuelle_saison;
+#echo $aktuelle_saison;
 for($i=0;$i<=15;$i++) {
 $rang=$xml->channel->item[$i]->title;
+$linktext=$xml->channel->item[$i]->link;
 $mannschaft=$xml->channel->item[$i]->description;
 $mapu=$xml->channel->item[$i]->guid;
 $brepu=$xml->$xml->channel->item[$i]->pubDate;
 ?>
 <tr<?php echo bcmod($i,2)==0?" class='odd'":"class='even'";?>>
 <td class="views-field views-field-counter"><?=$rang?></td>
-<td class="text-left"><?=$mannschaft?></td>
+<td class="text-left"><a href="<?php transform_link($linktext,$aktuelle_saison); ?>"><?=$mannschaft?></a></td>
 <td class="views-field views-field-php-2"><?=$mapu?></td>
 <td class="views-field views-field-php-3"><?=$brepu?></td>
 </tr>
