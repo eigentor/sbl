@@ -16,7 +16,7 @@ $link=$xml->channel->item[$i]->link;
 $description=$xml->channel->item[$i]->description;
 $bild=find_image($description);
 ?>
-document.write('<li class="news-item"><table cellpadding="4"><tr><td><img src="<?=$bild?>" width="120" style="margin:0px 5px 0;" /></td></tr><tr><td><a href="<?=$link?>"><?=$title?></a></td></tr></table></li>');
+document.write('<li class="news-item"><table cellpadding="4"><tr><td style="text-align:center;"><a href="<?=$link?>"><img src="<?=$bild?>" width="120" /></a></td></tr><tr><td><a href="<?=$link?>"><?=$title?></a></td></tr></table></li>');
 <?php
 }
 ?>
