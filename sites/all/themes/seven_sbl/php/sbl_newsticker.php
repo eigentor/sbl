@@ -8,6 +8,7 @@ return $matches[1];
 
 function find_description($var) {
 $pattern = '/field-item even\">/';
+preg_match($pattern, $var, $matches);
 return $matches[1];
 }
 if(!isset($_GET["anzahl_beitrage"]) || $_GET["anzahl_beitraege"] < 1 || $_GET["anzahl_beitraege"] > 5) $_GET["anzahl_beitrage"]=1;
