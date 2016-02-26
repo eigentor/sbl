@@ -29,7 +29,7 @@ document.write('<tr><td style="text-align:center;"><a href="<?=$link?>"><img src
 }
 else {
 ?>
-document.write('<tr><td><a href="<?=$link?>"><img src="<?=$bild?>" width="60" /></a></td><td style="background-color:<?=$_GET["headlinecolor"]?>"><a href="<?=$link?>"><?=$title?></a></td></tr><tr><td colspan="2" style="background-color:<?=$_GET["background-color"]?>"><?=$description?></td></tr></table></li>');
+document.write('<tr><td><a href="<?=$link?>"><img src="<?=$bild?>" width="60" /></a></td><td style="background-color:<?=$_GET["headlinecolor"]?>"><a href="<?=$link?>"><?=$title?></a></td></tr><tr><td colspan="2" style="background-color:<?=$_GET["background-color"]?>"><?=substr($description,30)?></td></tr></table></li>');
 <?php
 }
 }
