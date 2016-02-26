@@ -11,7 +11,7 @@ document.write('<div class="panel panel-default"><div class="panel-heading"> <sp
 <?php
 $xml=simplexml_load_file("http://schachbundesliga.de/aktuell.xml") or die("Fehler: Feed konnte nicht geladen werden");
 for($i=0;$i<=5;$i++) {
-$title=substr($xml->channel->item[$i]->title,50). "[...]";
+$title=substr($xml->channel->item[$i]->title,30). "[...]";
 $link=$xml->channel->item[$i]->link;
 $description=$xml->channel->item[$i]->description;
 $bild=find_image($description);
