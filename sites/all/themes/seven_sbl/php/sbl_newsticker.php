@@ -20,7 +20,7 @@ document.write('<li class="news-item"><table cellpadding="4"><tr><td><img src="<
 <?php
 }
 ?>
-document.write('</ul></div></div></div><div class="panel-footer"><img src="images/logo.png" style="margin-left:5px;" /></div>');
+document.write('</ul></div></div></div><div class="panel-footer"><img src="images/logo.png" style="margin-left:5px;" /></div></div>');
 
 $(function () {
 $(".demo").bootstrapNews({
