@@ -56,7 +56,7 @@ border-bottom: 1px dotted #555;
 <?php
 
 function transform_link($linktext,$saison) {
-	$linktext=str_replace("schachbundesliga.de/","schachbundesliga.de/verein/");
+	$linktext=str_replace("schachbundesliga.de/","schachbundesliga.de/verein/",$linktext);
 	$linktext.="/".$saison;
 	echo $linktext;
 }
