@@ -7,7 +7,7 @@ return $matches[1];
 }
 
 function find_description($var) {
-$pattern = '/field-item even\">/';
+$pattern = '/field-item even\"\>/';
 preg_match($pattern, $var, $matches);
 return $matches[1];
 }
