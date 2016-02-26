@@ -6,9 +6,9 @@ preg_match($pattern, $var, $matches);
 return $matches[1];
 }
 if(!isset($_GET["anzahl_beitrage"]) || $_GET["anzahl_beitraege"] < 1 || $_GET["anzahl_beitraege"] > 5) $_GET["anzahl_beitrage"]=1;
-if(strlen($_GET["headlinecolor"]) > 0)) $_GET["headlinecolor"]="#".$_GET["headlinecolor"];
+if(strlen($_GET["headlinecolor"]) > 0) $_GET["headlinecolor"]="#".$_GET["headlinecolor"];
 else $_GET["headlinecolor"]="#CCCCCC";
-if(strlen($_GET["backgroundcolor"]) > 0)) $_GET["backgroundcolor"]="#".$_GET["backgroundcolor"];
+if(strlen($_GET["backgroundcolor"]) > 0) $_GET["backgroundcolor"]="#".$_GET["backgroundcolor"];
 else $_GET["backgroundcolor"]="#f5f5f5";
 if(!isset($_GET["design"])) $_GET["design"]="schmal";
 ?>
