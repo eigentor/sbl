@@ -56,7 +56,8 @@ $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("F
 for($i=0;$i<=15;$i++) {
 $rang=$xml->channel->item[$i]->title;
 $mannschaft=$xml->channel->item[$i]->description;
-$mapu=$xml->channel->item[$i]->dc:creator;
+$dc = $entry->children($namespaces['dc']);
+$mapu=$dc->creator;
 $brepu=$xml->$xml->channel->item[$i]-pubDate;
 ?>
 <tr>
