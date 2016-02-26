@@ -71,7 +71,7 @@ $mannschaft=$xml->channel->item[$i]->description;
 $mapu=$xml->channel->item[$i]->guid;
 $brepu=$xml->$xml->channel->item[$i]->pubDate;
 ?>
-<tr<?php echo bcmod($i,2)==0?" class='odd'":"class='even'";?>>
+<tr<?php echo bcmod($i,2)==0?" class='odd'":" class='even'";?>>
 <td class="views-field views-field-counter"><?=$rang?></td>
 <td class="text-left"><a href="<?php transform_link($linktext,$aktuelle_saison); ?>"><?=$mannschaft?></a></td>
 <td class="views-field views-field-php-2"><?=$mapu?></td>

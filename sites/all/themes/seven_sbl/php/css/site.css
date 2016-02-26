@@ -61,6 +61,7 @@
 	line-height: 1.1;
 	text-align: center;
 	vertical-align: middle;
+	border: 1px solid #ccc;
 }
 .footable th,tr.even {
 	background-color: #f7f7f7 !important;
