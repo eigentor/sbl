@@ -55,6 +55,9 @@ border-bottom: 1px dotted #555;
 </thead>
 <?php
 $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
+$saisonstring=explode("/",$xml->channel->link[0]);
+$aktuelle_saison=$saisonstring[4];
+echo $aktuelle_saison;
 for($i=0;$i<=15;$i++) {
 $rang=$xml->channel->item[$i]->title;
 $mannschaft=$xml->channel->item[$i]->description;

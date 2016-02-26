@@ -65,3 +65,7 @@
 .footable th,tr.even {
 	background-color: #f7f7f7 !important;
 }
+
+.text-left {
+	text-align:left;
+}
