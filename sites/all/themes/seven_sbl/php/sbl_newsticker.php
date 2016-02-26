@@ -9,7 +9,7 @@ return $matches[1];
 
 document.write('<div class="panel panel-default"><div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>Schachbundesliga News</b></div><div class="panel-body"><div class="row"><div class="col-xs-12"><ul class="demo">');
 <?php
-$xml=simplexml_load_file("aktuell.xml") or die("Fehler: Feed konnte nicht geladen werden");
+$xml=simplexml_load_file("http://schachbundesliga.de/aktuell.xml") or die("Fehler: Feed konnte nicht geladen werden");
 for($i=0;$i<=5;$i++) {
 $title=$xml->channel->item[$i]->title;
 $link=$xml->channel->item[$i]->link;
