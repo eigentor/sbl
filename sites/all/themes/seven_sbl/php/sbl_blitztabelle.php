@@ -85,8 +85,7 @@ $brepu=$xml->channel->item[$i]->pubDate;
 <?php
 }
 ?>
-<tr><td colspan="4" class="panel-footer">
-<tr><td colspan="4" class="panel-footer"><img src="images/logo.png" style="margin-left:5px;" /></td></tr>
+<tr><td colspan="4" class="panel-footer-table"><img src="images/logo.png" style="margin-left:5px;" /></td></tr>
 </table>
 </div>
 </div>
