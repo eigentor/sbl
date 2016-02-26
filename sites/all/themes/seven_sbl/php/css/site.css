@@ -52,7 +52,7 @@
 }
 
 .footable {
-	max-width:100%;
+	max-width:300px;
 	border-collapse: collapse;
 	border-spacing: 0;
 }
