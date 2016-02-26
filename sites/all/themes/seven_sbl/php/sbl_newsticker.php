@@ -5,6 +5,11 @@ $pattern = '/resource=\"(.*?)\?/';
 preg_match($pattern, $var, $matches);
 return $matches[1];
 }
+
+function find_description($var) {
+$pattern = '/field-item even\">/';
+return $matches[1];
+}
 if(!isset($_GET["anzahl_beitrage"]) || $_GET["anzahl_beitraege"] < 1 || $_GET["anzahl_beitraege"] > 5) $_GET["anzahl_beitrage"]=1;
 if(strlen($_GET["headlinecolor"]) > 0) $_GET["headlinecolor"]="#".$_GET["headlinecolor"];
 else $_GET["headlinecolor"]="#CCCCCC";
@@ -21,6 +26,7 @@ $title=$xml->channel->item[$i]->title;
 $link=$xml->channel->item[$i]->link;
 $description=$xml->channel->item[$i]->description;
 $bild=find_image($description);
+$beschreibung=str_replace($bild,"",$description);
 ?>
 document.write('<li class="news-item"><table cellpadding="4">');
 <?php if($_GET["design"]=="schmal") { ?>
@@ -29,7 +35,7 @@ document.write('<tr><td style="text-align:center;"><a href="<?=$link?>"><img src
 }
 else {
 ?>
-document.write('<tr><td><a href="<?=$link?>"><img src="<?=$bild?>" width="60" /></a></td><td style="background-color:<?=$_GET["headlinecolor"]?>"><a href="<?=$link?>"><?=$title?></a></td></tr><tr><td colspan="2" style="background-color:<?=$_GET["background-color"]?>"><?=substr($description,30)?></td></tr></table></li>');
+document.write('<tr><td><a href="<?=$link?>"><img src="<?=$bild?>" width="60" /></a></td><td style="background-color:<?=$_GET["headlinecolor"]?>"><a href="<?=$link?>"><?=$title?></a></td></tr><tr><td colspan="2" style="background-color:<?=$_GET["background-color"]?>"><?=substr($beschreibung,30)?></td></tr></table></li>');
 <?php
 }
 }
