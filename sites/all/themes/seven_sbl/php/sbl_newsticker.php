@@ -55,7 +55,7 @@ return $matches[1];
 <ul class="demo">
 
 <?php
-$xml=simplexml_load_file("aktuell.xml") or die("Fehler: Feed konnte nicht geladen werden");
+$xml=simplexml_load_file("http://www.schachbundesliga.de/aktuell.xml") or die("Fehler: Feed konnte nicht geladen werden");
 for($i=0;$i<=5;$i++) {
 $title=$xml->channel->item[$i]->title;
 $link=$xml->channel->item[$i]->link;
