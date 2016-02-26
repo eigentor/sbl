@@ -5,6 +5,7 @@ $pattern = '/resource=\"(.*?)\?/';
 preg_match($pattern, $var, $matches);
 return $matches[1];
 }
+if(!isset($_GET["anzahl_beitrage"]) || $_GET["anzahl_beitraege"] < 1 || $_GET["anzahl_beitraege"] > 5) $_GET["anzahl_beitrage"]=1;
 ?>
 
 document.write('<div class="panel panel-default"><div class="panel-heading"> <span class="glyphicon glyphicon-list-alt"></span><b>Schachbundesliga News</b></div><div class="panel-body"><div class="row"><div class="col-xs-12"><ul class="demo">');
@@ -24,7 +25,7 @@ document.write('</ul></div></div></div><div class="panel-footer"><img src="image
 
 $(function () {
 $(".demo").bootstrapNews({
-newsPerPage: 3,
+newsPerPage: <?=$_GET["anzahl_beitraege"]?>,
 navigation: true,
 autoplay: true,
 direction:'up', // up or down
