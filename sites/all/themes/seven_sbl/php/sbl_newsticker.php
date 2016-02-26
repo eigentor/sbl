@@ -26,7 +26,7 @@ $title=$xml->channel->item[$i]->title;
 $link=$xml->channel->item[$i]->link;
 $description=$xml->channel->item[$i]->description;
 $bild=find_image($description);
-$beschreibung=str_replace($bild,"",$description);
+$beschreibung=find_description($description);
 ?>
 document.write('<li class="news-item"><table cellpadding="4">');
 <?php if($_GET["design"]=="schmal") { ?>
