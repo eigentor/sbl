@@ -43,27 +43,29 @@ border-bottom: 1px dotted #555;
 <div class="panel-body">
 <div class="row">
 <div class="col-xs-12">
-<table cellpadding="4">
+<table class="views-table cols-4 footable">
+<thead>
 <tr>
-<th>RNG</th>
-<th>Team</th>
-<th>MP</th>
-<th>BP</th>
+<th class="views-field views-field-counter">Pl.</th>
+<th class="views-field views-field-php-2">Team</th>
+<th class="views-field views-field-php-3">MP</th>
+<th class="views-field views-field-php-4">BP</th>
 
 </tr>
+</thead>
 <?php
 $xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
 for($i=0;$i<=15;$i++) {
 $rang=$xml->channel->item[$i]->title;
 $mannschaft=$xml->channel->item[$i]->description;
 $mapu=$xml->channel->item[$i]->guid;
-$brepu=$xml->$xml->channel->item[$i]-pubDate;
+$brepu=$xml->$xml->channel->item[$i]->pubDate;
 ?>
-<tr>
-<td><?=$rang?></td>
-<td><?=$mannschaft?></td>
-<td><?=$mapu?></td>
-<td><?=$brepu?></td>
+<tr<?php echo bcmod($i,2)==0?" class='odd'":"class='even'";?>>
+<td class="views-field views-field-counter"><?=$rang?></td>
+<td class="text-left"><?=$mannschaft?></td>
+<td class="views-field views-field-php-2"><?=$mapu?></td>
+<td class="views-field views-field-php-3"><?=$brepu?></td>
 </tr>
 <?php
 }
