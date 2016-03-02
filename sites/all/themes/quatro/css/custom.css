@@ -369,6 +369,16 @@ color:white !important;
     width: 100%;
     height: 100%;
 }
+
+#chessFrame {
+        -ms-zoom: 0.5;
+        -moz-transform: scale(0.5);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.5);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+}
 /*------------------------------------*\
 	Adscale
 \*------------------------------------*/
@@ -382,6 +392,52 @@ left:1200px;
 #block-block-23 .block-inner {
 padding:0 !important;
 background:none !important;
+}
+
+/*------------------------------------*\
+	ELO-Rechner
+\*------------------------------------*/
+
+.rating-container {
+	padding:5px;
+}
+
+input.elo {
+	width:100px !important;
+}
+
+input.punkte {
+	width:50px !important;
+}
+
+.auswertung {
+	overflow:auto;
+	background-color:#f7f7f7;
+	padding:5px !important;
+	box-shadow: inset 0 0 0 2px #f18000;
+	-moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box;
+	 margin-bottom:10px;
+}
+
+.rating-container .partien {
+	overflow:auto;
+	background-color:#f7f7f7;
+	padding:5px !important;
+	box-shadow: inset 0 0 0 1px #c7c7c7;
+	-moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}
+
+.rating-container div.one-half{
+	background-color:#f7f7f7;
+	padding:5px !important;
+	box-shadow: inset 0 0 0 1px #c7c7c7;
+	-moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
 }
 
 /*------------------------------------*\
