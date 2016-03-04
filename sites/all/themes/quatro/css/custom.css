@@ -394,6 +394,13 @@ padding:0 !important;
 background:none !important;
 }
 
+#edit-write-in {
+	margin-top:15px;
+	width:280px;
+	border:1px solid #f18000;
+	background-color:#f7f7f7;
+}
+
 /*------------------------------------*\
 	ELO-Rechner
 \*------------------------------------*/
