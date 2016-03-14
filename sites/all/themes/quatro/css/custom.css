@@ -71,7 +71,7 @@ text-align: center;
 }
 
 .media-zentriert_ohne_untertitel .field-name-field-file-image-alt-text .even {
-width: 400px;
+width: inherit;
 text-align: center;
 margin-left: auto;
 margin-right: auto;
