@@ -76,6 +76,7 @@ text-align: center;
 margin-left: auto;
 margin-right: auto;
 border: 1px solid rgb(153, 153, 153);
+margin-bottom:10px;
 }
 
 .media-linksbuendig_im_textfluss { float: left; margin-right:15px }
