@@ -1,0 +1,13 @@
+body,html {
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+input.elo {
+	width:80px;
+	border:1px solid #f18000;
+}
+
+label {
+	width:150px;
+}
