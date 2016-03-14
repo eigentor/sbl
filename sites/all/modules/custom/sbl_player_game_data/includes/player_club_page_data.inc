@@ -112,10 +112,14 @@ function player_single_result_matchday($row, $matchday) {
     // his team played on the matchday
     if(in_array($player_game->item_id, $single_games_matchday)) {
       $player_game_wrapper = entity_metadata_wrapper('field_collection_item', $player_game->item_id);
-      if($player_game_wrapper->field_mt_player_1->nid->value() == $player) {
-        $player_points = $player_game_wrapper->field_mt_points_player_1->label();
-      } else {
-        $player_points = $player_game_wrapper->field_mt_points_player_2->label();
+      $player_game_wrapper_player_1 = $player_game_wrapper->field_mt_player_1->value();
+      $player_game_wrapper_player_2 = $player_game_wrapper->field_mt_player_2->value();
+      if(!empty($player_game_wrapper_player_1) && !empty($player_game_wrapper_player_2)) {
+        if($player_game_wrapper->field_mt_player_1->nid->value() == $player) {
+          $player_points = $player_game_wrapper->field_mt_points_player_1->label();
+        } else {
+          $player_points = $player_game_wrapper->field_mt_points_player_2->label();
+        }
       }
     }
   }
