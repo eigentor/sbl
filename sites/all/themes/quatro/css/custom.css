@@ -70,6 +70,14 @@ width: 100%;
 text-align: center; 
 }
 
+.media-zentriert_ohne_untertitel .field-name-field-file-image-alt-text .even {
+width: 400px;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+border: 1px solid rgb(153, 153, 153);
+}
+
 .media-linksbuendig_im_textfluss { float: left; margin-right:15px }
 .media-zentriertes_bild {
 margin:auto;
