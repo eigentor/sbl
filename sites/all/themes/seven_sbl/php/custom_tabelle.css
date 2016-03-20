@@ -1,9 +1,7 @@
 .panel-heading-table {
-  background-image: linear-gradient(to bottom, #f99728 0px, #f18000 100%) !important;
   color:white !important;
   height:40px !important;
 }
-
 
 .panel-footer-table {
     background-color: #f18000 !important;
@@ -23,11 +21,15 @@
 	max-width:260px;
 }
 
-td > a.link_to_team,a.orange
+td > a.link_to_team,a.link_to_team
 {
-    color:#f18000 !important;
 	text-decoration:none !important;
 	font-weight:normal !important;
+}
+
+a.link_to_team:hover
+{
+	text-decoration:underline;
 }
 
 .footable {
@@ -47,7 +49,7 @@ td > a.link_to_team,a.orange
 .footable td {
 	font-size:12px !important;
 }
-.footable th,tr.even {
+.footable tr.even {
 	background-color: #f7f7f7 !important;
 }
 
