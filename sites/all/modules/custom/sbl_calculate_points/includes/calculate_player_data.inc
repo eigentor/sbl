@@ -128,7 +128,7 @@ foreach($single_games_player_season as $key => $game_id) {
 
   $player_1 = $game_wrapper->field_mt_player_1->value();
   $player_2 = $game_wrapper->field_mt_player_2->value();
-  if(!empty($player_1) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
+  if(!empty($player_1) && !empty($player_2) && $game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
     // The points are the points for player 1
     $points_player = $game_wrapper->field_mt_points_player_1->label();
     // The opponent is player 2
@@ -147,7 +147,7 @@ foreach($single_games_player_season as $key => $game_id) {
         }
       }
     }
-  } elseif(!empty($player_2) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
+  } elseif(!empty($player_2) && !empty($player_1) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
     // The points are the points for player 2
     $points_player = $game_wrapper->field_mt_points_player_2->label();
     $opponent = $game_wrapper->field_mt_player_1->value();
