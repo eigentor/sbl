@@ -48,10 +48,15 @@ function player_calculate_won_points($player_nid) {
   $player_sum_points = '';
   foreach($games_player as $game) {
     $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
-    if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
-      $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
-    } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
-      $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
+    $player_game_wrapper_player_1 = $game_wrapper->field_mt_player_1->value();
+    $player_game_wrapper_player_2 = $game_wrapper->field_mt_player_2->value();
+    if (!empty($player_game_wrapper_player_1) && !empty($player_game_wrapper_player_2)) {
+      if ($game_wrapper->field_mt_player_1->nid->value() == $player_nid) {
+        $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
+      }
+      elseif ($game_wrapper->field_mt_player_2->nid->value() == $player_nid) {
+        $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
+      }
     }
   }
   return $player_sum_points;
@@ -73,10 +78,15 @@ function player_percentage($player_nid) {
   $player_sum_points = '';
   foreach($games_player as $game) {
     $game_wrapper = entity_metadata_wrapper('field_collection_item', $game);
-    if($game_wrapper->field_mt_player_1->nid->value() == $player_nid)  {
-      $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
-    } elseif($game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
-      $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
+    $player_game_wrapper_player_1 = $game_wrapper->field_mt_player_1->value();
+    $player_game_wrapper_player_2 = $game_wrapper->field_mt_player_2->value();
+    if(!empty($player_game_wrapper_player_1) && !empty($player_game_wrapper_player_2)) {
+      if ($game_wrapper->field_mt_player_1->nid->value() == $player_nid) {
+        $player_sum_points += $game_wrapper->field_mt_points_player_1->label();
+      }
+      elseif ($game_wrapper->field_mt_player_2->nid->value() == $player_nid) {
+        $player_sum_points += $game_wrapper->field_mt_points_player_2->label();
+      }
     }
   }
   $number_games = '';
@@ -92,7 +102,7 @@ function player_percentage($player_nid) {
 }
 
 /**
- * Add up all the points a player has won in a season.
+ * Calculate the elo performance of a player.
  */
 
 function player_elo_performance($player_nid) {
