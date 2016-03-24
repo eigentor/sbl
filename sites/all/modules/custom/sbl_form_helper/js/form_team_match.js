@@ -118,6 +118,24 @@ set_single_game_board_color('form#team-match-node-form .field-name-field-mt-colo
 set_single_game_board_color('form#team-match-node-form .field-name-field-mt-color-player-2 select.form-select',
 '.field-name-field-mt-color-player-1 select.form-select', match_board_color);
 
+
+// Alle Farben automatisch setzen, wenn Match aufgerufen wird.
+	   var firstColor=$( "#edit-field-tm-game-und-0-field-mt-color-player-1-und" ).val();
+	   if(firstColor=="_none") {
+	for(var i=0;i<=7;i++) {
+		if(i % 2 === 0) {
+			$("#edit-field-tm-game-und-"+i+"-field-mt-color-player-1-und").val("black");
+			$("#edit-field-tm-game-und-"+i+"-field-mt-color-player-2-und").val("white");
+		}
+		else {
+			$("#edit-field-tm-game-und-"+i+"-field-mt-color-player-1-und").val("white");
+			$("#edit-field-tm-game-und-"+i+"-field-mt-color-player-2-und").val("black");
+		}
+		}	
+	   }
+  
+
+
 //function reload_chosen {
 //
 //}
