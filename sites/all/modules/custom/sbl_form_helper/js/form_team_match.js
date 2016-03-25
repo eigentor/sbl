@@ -30,6 +30,7 @@ function set_single_game_player_points(single_game_result_select, player_points_
     $(this).change(function(){
       // get the value from the result select
       var single_match_result = $(this).val();
+	  change_total_standing();
       // set the player points to the matching value
       for(var key in points_matching_array) {
         if (single_match_result === key) {
@@ -45,6 +46,62 @@ function set_single_game_player_points(single_game_result_select, player_points_
     });
   });
 }
+
+//Aktualisiert die gesamten Brett- und Mannschaftspunkte, wenn Einzelergebnisse geändert werden
+function change_total_standing() {
+	var bp_heim=1;
+	var bp_gast=1;
+	var mp_heim=0;
+	var mp_gast=0;
+	for(var i=0;i<=7;i++) {
+		switch($("#edit-field-tm-game-und-"+i+"-field-single-match-result-und").val()) {
+			case "1":
+			bp_heim+=2;
+			break;
+			case "2":
+			bp_gast+=2;
+			break;
+			case "3":
+			bp_heim+=1;
+			bp_gast+=1;
+			break;
+			case "4":
+			bp_heim+=2;
+			break;
+			case "5":
+			bp_gast+=2;
+			break;
+		}
+	}
+	switch(true) {
+		case bp_heim > 9:
+		mp_heim=2;
+		break;
+		case bp_heim == 9:
+		mp_heim=1;
+		break;
+		case bp_heim < 9:
+		mp_heim=0;
+		break;
+	}
+	
+	switch(true) {
+		case bp_gast > 9:
+		mp_gast=2;
+		break;
+		case bp_gast == 9:
+		mp_gast=1;
+		break;
+		case bp_gast < 9:
+		mp_gast=0;
+		break;
+	}
+	$("#edit-field-tm-team-points-tm-1-und").val(mp_heim);
+	$("#edit-field-tm-team-points-tm-2-und").val(mp_gast);
+	$("#edit-field-tm-board-points-team-1-und").val(bp_heim);
+	$("#edit-field-tm-board-points-team-2-und").val(bp_gast);
+}
+
 //console.log($('.field-name-field-mt-points-player-1 select.form-select option:selected').text());
 
 // Create arrays to match the game results to the points for each player
