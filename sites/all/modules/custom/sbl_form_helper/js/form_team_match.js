@@ -54,7 +54,8 @@ function change_total_standing() {
 	var mp_heim=0;
 	var mp_gast=0;
 	for(var i=0;i<=7;i++) {
-		switch($("#edit-field-tm-game-und-"+i+"-field-single-match-result-und").val()) {
+		jQuery.globalEval("var punkte=jQuery(\"[id^=edit-field-tm-game-und-"+i+"-field-mt-points-player-1-und]\").val();");
+		switch(punkte) {
 			case "1":
 			bp_heim+=2;
 			break;
