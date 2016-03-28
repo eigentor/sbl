@@ -28,12 +28,12 @@
 {
     padding:4px 4px;
     margin:0px;
-    border-bottom:1px dotted #555; 
+    border-bottom:1px dotted #555;
 }
 
 .panel-heading {
-  background-image: linear-gradient(to bottom, #f99728 0px, #f18000 100%) !important;
-  color:white !important;
+  background-color:#f18000;
+  color:white;
 }
 
 .headline-cell {
@@ -43,7 +43,6 @@
 
 .panel-footer {
     padding: 5px 10px;
-    background-color: #f18000 !important;
     border-top: 1px solid #DDD;
     border-bottom-right-radius: 3px;
     border-bottom-left-radius: 3px;
