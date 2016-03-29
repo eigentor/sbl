@@ -10,6 +10,16 @@ function get_team_nid_from_player_nid($season, $player_nid) {
   return $team_nid;
 }
 
+function get_elo_from_player_nid($season, $player_nid) {
+  $players_season_data = drupal_static('players_data_list');
+  $elo_player = 0;
+  if(!empty($players_season_data[$player_nid])) {
+    $elo_player = $players_season_data[$player_nid]['elo'];
+  }
+
+  return $elo_player;
+}
+
 /**
 * Count how many games a player has played.
  */
@@ -61,6 +71,35 @@ function player_calculate_won_points($player_nid) {
   }
   return $player_sum_points;
 
+}
+
+function calculate_elo_change($player_nid) {
+ $season = arg(1);
+  // Get the team nid from the season and player nid
+   $players_season_data = drupal_static('players_data_list');
+  $elo_player = '';
+  // Get all the games the player has played in the season
+
+  $elo_player = $players_season_data[$player_nid]['elo'];
+if($elo_player > 0 && !empty ($elo_player)) {
+  $kfaktor=$elo_player >=2400?10:20;
+  $games_played=player_calculate_played_games($player_nid);
+  $eloschnitt=player_elo_average($player_nid);
+  $elo_summe=$games_played * $eloschnitt;
+  $points_scored=player_calculate_won_points($player_nid);
+  $exponent=($eloschnitt - $elo_player) / 400;
+  $we=1/(1+(pow(10,$exponent)));
+ 
+  $summe_gewinnerwartungen=round(($we * $games_played),3);
+  $elo_new=$elo_player + ($kfaktor *($points_scored-$summe_gewinnerwartungen));
+  $difference=number_format(round($elo_new-$elo_player, 0), 0);
+  if($difference !=0) $change=$difference > 0?"<span style='color:green'>+".$difference."</span>":"<span style='color:red'>".$difference."</span>";
+	else $change=$difference;
+  }
+  else $change=0;
+  
+  return $change;
+  
 }
 
 /**
