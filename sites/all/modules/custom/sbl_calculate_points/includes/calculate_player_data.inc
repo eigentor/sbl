@@ -125,6 +125,7 @@ foreach($single_games_player_season as $key => $game_id) {
   $opponent_elo = '';
   $opponent_name = '';
   $points_player = '';
+  $player_elo = '';
 
   $player_1 = $game_wrapper->field_mt_player_1->value();
   $player_2 = $game_wrapper->field_mt_player_2->value();
@@ -145,6 +146,12 @@ foreach($single_games_player_season as $key => $game_id) {
             $opponent_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
           }
         }
+		foreach ($game_wrapper->field_mt_player_1->field_sp_verein->value() as $season_data) {
+          if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
+            // The player's elo is the one inside the field collection item for the current season
+            $player_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
+          }
+        }
       }
     }
   } elseif(!empty($player_2) && !empty($player_1) && $game_wrapper->field_mt_player_2->nid->value() == $player_nid)  {
@@ -163,6 +170,12 @@ foreach($single_games_player_season as $key => $game_id) {
             $opponent_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
           }
         }
+		foreach ($game_wrapper->field_mt_player_2->field_sp_verein->value() as $season_data) {
+          if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
+            // The player's elo is the one inside the field collection item for the current season
+            $player_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
+          }
+        }
       }
     }
   }
@@ -170,6 +183,7 @@ foreach($single_games_player_season as $key => $game_id) {
   $games_data[$key]['points_player'] = $points_player;
   $games_data[$key]['opponent_name'] = $opponent_name;
   $games_data[$key]['opponent_elo'] = $opponent_elo;
+  $games_data[$key]['player_elo'] = $player_elo;
 }
 
 return $games_data;
@@ -231,6 +245,31 @@ function player_single_points() {
   }
 
   return $points_sum;
+}
+
+function player_elo_change() {
+$games_player = drupal_static('player_games');
+  foreach($games_player as $game) {
+    $elo_player = $game['player_elo'];
+  }
+  
+  if($elo_player > 0 && !empty ($elo_player)) {
+  $kfaktor=$elo_player >=2400?10:20;
+  $games_played=player_number_played_games();
+  $eloschnitt=player_elo_opponents();
+  $elo_summe=$games_played * $eloschnitt;
+  $points_scored=player_single_points();
+  $exponent=($eloschnitt - $elo_player) / 400;
+  $we=1/(1+(pow(10,$exponent)));
+ 
+  $summe_gewinnerwartungen=round(($we * $games_played),3);
+  $elo_new=$elo_player + ($kfaktor *($points_scored-$summe_gewinnerwartungen));
+  $difference=round($elo_new-$elo_player,1);
+  $change=$difference > 0?"<span style='color:green'>+".$difference."</span>":"<span style='color:red'>".$difference."</span>";
+  }
+  else $change=0;
+
+  return $change;
 }
 
 /*
