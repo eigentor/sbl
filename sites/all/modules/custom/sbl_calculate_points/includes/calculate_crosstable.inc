@@ -113,6 +113,8 @@ function crosstable_opponent($nid, $team_rank) {
   $opponent_nid = '';
   $selected_match_nid = '';
   $team_points = '';
+  $home=0;
+  $away=0;
 
   // Get a list of the teams and their points from the table sbl_team_points
   $season_teams = db_query('SELECT
@@ -201,12 +203,15 @@ function crosstable_opponent($nid, $team_rank) {
       $team_home_board_points = $selected_match_wrapper->field_tm_board_points_team_1->label();
       if ($nid == $team_home_nid) {
         $team_points = $team_home_board_points;
-
+		$home=1;
+		$away=0;
       }
       // If the team was the away team, select the home away's board points
       $team_away_board_points = $selected_match_wrapper->field_tm_board_points_team_2->label();
       if ($nid == $team_away_nid) {
         $team_points = $team_away_board_points;
+		$home=0;
+		$away=1;
       }
     }
   }
@@ -216,8 +221,26 @@ function crosstable_opponent($nid, $team_rank) {
 	$result = db_query($sql);
 	$round = $result->fetchField(7);
 
+	// Get concrete match with home and away team for tooltip
+	$sql = "SELECT field_tm_team_1_target_id FROM {field_revision_field_tm_team_1} WHERE entity_id=".intval($selected_match_nid);
+	$result = db_query($sql);
+	$team1 = $result->fetchField();
+	$sql = "SELECT name FROM {sbl_team_points} WHERE node_id=".intval($team1);
+	$result = db_query($sql);
+	$team1_name = $result->fetchField();
+	
+	$sql = "SELECT field_tm_team_2_target_id FROM {field_revision_field_tm_team_2} WHERE entity_id=".intval($selected_match_nid);
+	$result = db_query($sql);
+	$team2 = $result->fetchField();
+	$sql = "SELECT name FROM {sbl_team_points} WHERE node_id=".intval($team2);
+	$result = db_query($sql);
+	$team2_name = $result->fetchField();
+	
+	$final_result=$home==1?$team_points.":".(8-$team_points):(8-$team_points).":".$team_points;
+	
+
   if($nid != $opponent_nid) {
-    return "<a href='/ergebnisse/".$season."/".$round."'>".$team_points."</a>";
+    return "<a href='/ergebnisse/".$season."/".$round."' class='tooltip' title='".$round.". Spieltag: ".$team1_name." - ".$team2_name." ".$final_result."'>".$team_points."</a>";
   } else {
     return 999;
   }
