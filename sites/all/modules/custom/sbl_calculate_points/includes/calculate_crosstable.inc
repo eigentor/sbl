@@ -210,9 +210,14 @@ function crosstable_opponent($nid, $team_rank) {
       }
     }
   }
+  
+   // Get round of match played and link it to round
+	$sql = "SELECT * FROM {field_revision_field_tm_spieltag_1} WHERE entity_id=".intval($selected_match_nid);
+	$result = db_query($sql);
+	$round = $result->fetchField(7);
 
   if($nid != $opponent_nid) {
-    return $team_points;
+    return "<a href='/ergebnisse/".$season."/".$round."'>".$team_points."</a>";
   } else {
     return 999;
   }
