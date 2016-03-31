@@ -248,6 +248,7 @@ function player_single_points() {
 }
 
 function player_elo_change() {
+$elo_player=0;
 $games_player = drupal_static('player_games');
   foreach($games_player as $game) {
     $elo_player = $game['player_elo'];
