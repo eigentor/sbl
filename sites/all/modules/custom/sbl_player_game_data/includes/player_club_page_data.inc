@@ -2,7 +2,7 @@
 
 function player_single_result_matchday($row, $matchday) {
   $player = $row->nid;
-  $season = $row->field_saison;
+  $season = arg(2);
   $team = arg(1);
   $points_home_player = '';
   $points_away_player = '';
@@ -125,6 +125,20 @@ function player_single_result_matchday($row, $matchday) {
   }
 
   return($player_points);
+}
+
+function player_points_sum($row) {
+$points_total=0;
+$points_per_round='';
+$games_total=0;
+	for($i=1;$i<=15;$i++) {
+	$points_per_round=player_single_result_matchday($row,$i);
+		if(strlen($points_per_round) > 0) {
+		$points_total+=player_single_result_matchday($row,$i);
+		$games_total++;
+		}
+	}
+	return "<strong>".number_format($points_total, 1, '.', ',')."/".$games_total."</strong>";
 }
 
 function player_points_sum_season($row) {
