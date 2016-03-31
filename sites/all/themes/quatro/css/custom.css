@@ -54,7 +54,7 @@ cursor: default;
 tr.table-1 {
 	background-color:#dcf1c2 !important; /* Meister */
 	color:black !important;
-	font-weight:bold !important;
+	font-weight:600 !important;
 }
 
 .meister {
@@ -69,7 +69,7 @@ tr.table-1 {
 tr.table-16,tr.table-15,tr.table-14,tr.table-13 { /* Absteiger */
 	background-color:#faeeed !important;
 	color:black !important;
-	font-weight:bold !important;
+	font-weight:600 !important;
 }
 
 .table-13 td {
