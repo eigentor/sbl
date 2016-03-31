@@ -92,6 +92,7 @@ function select_season_form($form, &$form_state) {
     '#type' => 'select',
     '#title' => 'Saison',
     '#options' => array(
+	258 => '2011/12',
 	139 => '2012/13',
 	 142 => '2013/14',
       143 => '2014/15',
