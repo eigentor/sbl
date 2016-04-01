@@ -195,8 +195,15 @@ function opponent_country($row) {
         if(in_array($player_data->item_id, $opponent_season_items)) {
           // Now we have the correct season data for the opponent and can extract the name of his club
           $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
-          $opponent_country_code = $player_data_wrapper->field_pl_country->iso2->value();
-         $opponent_country = theme('countryicons_icon', array('code' =>  $opponent_country_code, 'iconset' =>  'shiny'));
+          $opponent_country = '';
+          $country_field_value = $player_data_wrapper->field_pl_country->value();
+          if(!empty($country_field_value)) {
+            $opponent_country_code = $player_data_wrapper->field_pl_country->iso2->value();
+            $opponent_country = theme('countryicons_icon', array(
+              'code' => $opponent_country_code,
+              'iconset' => 'shiny'
+            ));
+          }
         }
       }
     }
