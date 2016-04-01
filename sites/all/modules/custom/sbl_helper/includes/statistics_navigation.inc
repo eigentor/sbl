@@ -63,7 +63,7 @@ function statistics_create_navigation() {
   $list_items[] = l('Kreuztabelle', 'kreuztabelle/' . $season);
   $list_items[] = l('Spielplan', 'spielplan/' . $season);
   $list_items[] = l('Ergebnisse', 'ergebnisse/' . $season . '/' . $matchday);
-  $list_items[] = l('Top Scorer', 'spieler-rangliste/' . $season);
+  $list_items[] = l('Topscorer', 'spieler-rangliste/' . $season);
 
   // Create an unordered List with the navigation items
   $output = theme_item_list(array('items' => $list_items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
