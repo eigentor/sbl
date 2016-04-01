@@ -123,14 +123,16 @@ function opponent_elo($row) {
       // Create an entity metadata wrapper from the opponent node
       $opponent_player_node_wrapper = entity_metadata_wrapper('node', $opponent_player->nid);
       $player_season_data = $opponent_player_node_wrapper->field_sp_verein->value();
-      foreach($player_season_data as $player_data) {
-        // Cross-reference the field collection items of the type field_sp_verein against
-        // the array of player season data we created earlier.
-        // This way, we select the data for the current season.
-        if(in_array($player_data->item_id, $opponent_season_items)) {
-          // Now we have the correct season data for the opponent and can extract the name of his club
-          $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
-          $opponent_elo = $player_data_wrapper->field_pl_elo->value();
+      if (!empty($player_season_data)) {
+        foreach ($player_season_data as $player_data) {
+          // Cross-reference the field collection items of the type field_sp_verein against
+          // the array of player season data we created earlier.
+          // This way, we select the data for the current season.
+          if (in_array($player_data->item_id, $opponent_season_items)) {
+            // Now we have the correct season data for the opponent and can extract the name of his club
+            $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
+            $opponent_elo = $player_data_wrapper->field_pl_elo->value();
+          }
         }
       }
     }
@@ -188,21 +190,22 @@ function opponent_country($row) {
       // Create an entity metadata wrapper from the opponent node
       $opponent_player_node_wrapper = entity_metadata_wrapper('node', $opponent_player->nid);
       $player_season_data = $opponent_player_node_wrapper->field_sp_verein->value();
-      foreach($player_season_data as $player_data) {
-        // Cross-reference the field collection items of the type field_sp_verein against
-        // the array of player season data we created earlier.
-        // This way, we select the data for the current season.
-        if(in_array($player_data->item_id, $opponent_season_items)) {
-          // Now we have the correct season data for the opponent and can extract the name of his club
-          $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
-          $opponent_country = '';
-          $country_field_value = $player_data_wrapper->field_pl_country->value();
-          if(!empty($country_field_value)) {
-            $opponent_country_code = $player_data_wrapper->field_pl_country->iso2->value();
-            $opponent_country = theme('countryicons_icon', array(
-              'code' => $opponent_country_code,
-              'iconset' => 'shiny'
-            ));
+      if (!empty($player_season_data)) {
+        foreach ($player_season_data as $player_data) {
+          // Cross-reference the field collection items of the type field_sp_verein against
+          // the array of player season data we created earlier.
+          // This way, we select the data for the current season.
+          if (in_array($player_data->item_id, $opponent_season_items)) {
+            // Now we have the correct season data for the opponent and can extract the name of his club
+            $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
+            $country_field_value = $player_data_wrapper->field_pl_country->value();
+            if (!empty($country_field_value)) {
+              $opponent_country_code = $player_data_wrapper->field_pl_country->iso2->value();
+              $opponent_country = theme('countryicons_icon', array(
+                'code' => $opponent_country_code,
+                'iconset' => 'shiny'
+              ));
+            }
           }
         }
       }
@@ -261,14 +264,16 @@ function opponent_master_title($row) {
       // Create an entity metadata wrapper from the opponent node
       $opponent_player_node_wrapper = entity_metadata_wrapper('node', $opponent_player->nid);
       $player_season_data = $opponent_player_node_wrapper->field_sp_verein->value();
-      foreach($player_season_data as $player_data) {
-        // Cross-reference the field collection items of the type field_sp_verein against
-        // the array of player season data we created earlier.
-        // This way, we select the data for the current season.
-        if(in_array($player_data->item_id, $opponent_season_items)) {
-          // Now we have the correct season data for the opponent and can extract the name of his club
-          $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
-          $opponent_master_title = $player_data_wrapper->field_pl_master_title->value();
+      if (!empty($player_season_data)) {
+        foreach ($player_season_data as $player_data) {
+          // Cross-reference the field collection items of the type field_sp_verein against
+          // the array of player season data we created earlier.
+          // This way, we select the data for the current season.
+          if (in_array($player_data->item_id, $opponent_season_items)) {
+            // Now we have the correct season data for the opponent and can extract the name of his club
+            $player_data_wrapper = entity_metadata_wrapper('field_collection_item', $player_data->item_id);
+            $opponent_master_title = $player_data_wrapper->field_pl_master_title->value();
+          }
         }
       }
     }
