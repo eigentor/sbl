@@ -11,6 +11,7 @@
         .add('th.views-field-php-3')
         .add('th.views-field-php-4')
 		.add('th.views-field-php-5')
+		.add('th.views-field-field-pl-country')
         .attr('data-sort', 'int').attr('data-sort-default', 'desc');
 
       $('th.views-field-title')
