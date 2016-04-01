@@ -2397,7 +2397,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'bundle' => 'team_match',
     'default_value' => array(
       0 => array(
-        'value' => 0,
+        'value' => 1,
       ),
     ),
     'deleted' => 0,
@@ -2653,7 +2653,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 0,
       ),
       'type' => 'options_select',
       'weight' => 13,
@@ -2699,7 +2699,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 fÃ
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 0,
       ),
       'type' => 'options_select',
       'weight' => 9,

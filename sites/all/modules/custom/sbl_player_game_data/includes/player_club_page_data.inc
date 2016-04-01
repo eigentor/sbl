@@ -57,10 +57,12 @@ function player_single_result_matchday($row, $matchday) {
   if(!empty($season_matches_combined)) {
     foreach($season_matches_combined as $season_match) {
       $season_matches_combined_wrapper = entity_metadata_wrapper('node', $season_match->nid);
-      $single_games = $season_matches_combined_wrapper->field_tm_game->value();
-      foreach($single_games as $game) {
-        // Write the field collection item IDs into the array
-        $single_games_matchday[] = $game->item_id;
+      if($season_matches_combined_wrapper->__isset('field_tm_game')) {
+        $single_games = $season_matches_combined_wrapper->field_tm_game->value();
+          foreach ($single_games as $game) {
+            // Write the field collection item IDs into the array
+            $single_games_matchday[] = $game->item_id;
+          }
       }
     }
   }
@@ -197,9 +199,11 @@ function player_points_sum_season($row) {
     foreach($season_matches_combined as $season_match) {
       $season_matches_combined_wrapper = entity_metadata_wrapper('node', $season_match->nid);
       $single_games = $season_matches_combined_wrapper->field_tm_game->value();
-      foreach($single_games as $game) {
-        // Write the field collection item IDs into the array
-        $single_games_matchday[] = $game->item_id;
+      if (!empty($single_games)) {
+        foreach ($single_games as $game) {
+          // Write the field collection item IDs into the array
+          $single_games_matchday[] = $game->item_id;
+        }
       }
     }
   }

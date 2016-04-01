@@ -37,6 +37,7 @@ function sbl_ligaverwaltung_views_default_views() {
   $handler->display->display_options['fields']['field_pl_image']['field'] = 'field_pl_image';
   $handler->display->display_options['fields']['field_pl_image']['label'] = '';
   $handler->display->display_options['fields']['field_pl_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pl_image']['empty'] = '<img src="/sites/default/files/styles/spielerbild/public/dummy_2.jpg" />';
   $handler->display->display_options['fields']['field_pl_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pl_image']['settings'] = array(
     'image_style' => 'spielerbild',
@@ -100,6 +101,7 @@ function sbl_ligaverwaltung_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('<img src="/sites/default/files/styles/spielerbild/public/dummy_2.jpg" />'),
     t('Alle'),
     t('Content pane'),
     t('View panes'),
@@ -450,6 +452,291 @@ function sbl_ligaverwaltung_views_default_views() {
   /* Display: Content pane Kader pro Verein */
   $handler = $view->new_display('panel_pane', 'Content pane Kader pro Verein', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'footable';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'nid' => 'nid',
+    'field_saison' => 'field_saison',
+    'field_saison_1' => 'field_saison_1',
+    'field_pl_board_nr' => 'field_pl_board_nr',
+    'field_pl_image' => 'field_pl_image',
+    'title' => 'title',
+    'field_pl_country' => 'field_pl_country',
+    'field_pl_elo' => 'field_pl_elo',
+    'field_pl_master_title' => 'field_pl_master_title',
+    'php' => 'php',
+    'php_1' => 'php_1',
+    'php_2' => 'php_2',
+    'php_3' => 'php_3',
+    'php_4' => 'php_4',
+    'php_5' => 'php_5',
+    'php_6' => 'php_6',
+    'php_7' => 'php_7',
+    'php_8' => 'php_8',
+    'php_9' => 'php_9',
+    'php_10' => 'php_10',
+    'php_11' => 'php_11',
+    'php_12' => 'php_12',
+    'php_13' => 'php_13',
+    'php_14' => 'php_14',
+    'php_15' => 'php_15',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'nid' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_saison' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_saison_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_board_nr' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_image' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_country' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_elo' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pl_master_title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_2' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_3' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_4' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_5' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_6' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_7' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_8' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_9' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_10' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_11' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_12' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_13' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_14' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'php_15' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+  );
+  $handler->display->display_options['style_options']['footable'] = array(
+    'expand' => 'field_pl_board_nr',
+    'icon' => '',
+    'icon_size' => '',
+    'hide' => array(
+      'nid' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_saison' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_saison_1' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_board_nr' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_image' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'title' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_country' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_elo' => array(
+        'phone' => 0,
+        'tablet' => 0,
+      ),
+      'field_pl_master_title' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_1' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_2' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_3' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_4' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_5' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_6' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_7' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_8' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_9' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_10' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_11' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_12' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_13' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_14' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+      'php_15' => array(
+        'phone' => 'phone',
+        'tablet' => 0,
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
@@ -722,6 +1009,17 @@ print player_single_result_matchday($row, 15);
 ?>';
   $handler->display->display_options['fields']['php_14']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_14']['php_click_sortable'] = '';
+  /* Field: Gesamtpunktzahl */
+  $handler->display->display_options['fields']['php_15']['id'] = 'php_15';
+  $handler->display->display_options['fields']['php_15']['table'] = 'views';
+  $handler->display->display_options['fields']['php_15']['field'] = 'php';
+  $handler->display->display_options['fields']['php_15']['ui_name'] = 'Gesamtpunktzahl';
+  $handler->display->display_options['fields']['php_15']['label'] = 'Ges.';
+  $handler->display->display_options['fields']['php_15']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_15']['php_value'] = 'return player_points_sum($row)';
+  $handler->display->display_options['fields']['php_15']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_15']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_15']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field collection item: Verein (field_fc_verein) */
   $handler->display->display_options['arguments']['field_fc_verein_target_id']['id'] = 'field_fc_verein_target_id';
@@ -944,6 +1242,17 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Punkte */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte';
+  $handler->display->display_options['fields']['php_2']['label'] = 'Punkte';
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_value'] = 'return player_single_points();';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Anzahl gespielte Spiele */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -957,17 +1266,6 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['php']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Field: Punkte */
-  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
-  $handler->display->display_options['fields']['php_2']['table'] = 'views';
-  $handler->display->display_options['fields']['php_2']['field'] = 'php';
-  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Punkte';
-  $handler->display->display_options['fields']['php_2']['label'] = 'Punkte';
-  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_value'] = 'return player_single_points();';
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php print $value; ?>';
-  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Prozentzahl erreichter Punkte pro Spiel */
   $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
   $handler->display->display_options['fields']['php_3']['table'] = 'views';
@@ -990,6 +1288,17 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['php_4']['php_output'] = '<?php print $value; ?>';
   $handler->display->display_options['fields']['php_4']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_4']['php_click_sortable'] = '';
+  /* Field: ELO Veränderung */
+  $handler->display->display_options['fields']['php_5']['id'] = 'php_5';
+  $handler->display->display_options['fields']['php_5']['table'] = 'views';
+  $handler->display->display_options['fields']['php_5']['field'] = 'php';
+  $handler->display->display_options['fields']['php_5']['ui_name'] = 'ELO Veränderung';
+  $handler->display->display_options['fields']['php_5']['label'] = 'ELO +/-';
+  $handler->display->display_options['fields']['php_5']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_5']['php_value'] = 'return player_elo_change();';
+  $handler->display->display_options['fields']['php_5']['php_output'] = '<?php print $value; ?>';
+  $handler->display->display_options['fields']['php_5']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_5']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -1067,6 +1376,7 @@ print player_single_result_matchday($row, 15);
     t('13'),
     t('14'),
     t('15'),
+    t('Ges.'),
     t('View panes'),
     t('Content pane Spielerkarte Daten 1'),
     t('Föderation'),
@@ -1076,10 +1386,11 @@ print player_single_result_matchday($row, 15);
     t('Content pane Spieler Saisonergebnisse Durchschnitt'),
     t('Verein'),
     t('Elo-Ø Gegner'),
-    t('Spiele'),
     t('Punkte'),
+    t('Spiele'),
     t('%'),
     t('Elo-Perf.'),
+    t('ELO +/-'),
   );
   $export['players'] = $view;
 
@@ -1576,8 +1887,6 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['row_options']['inline'] = array(
     'field_facebook' => 'field_facebook',
     'field_twitter_club' => 'field_twitter_club',
-    'field_website_club' => 'field_website_club',
-    'field_der_bundesliga_seit' => 'field_der_bundesliga_seit',
   );
   $handler->display->display_options['row_options']['separator'] = '&nbsp;&nbsp;';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1603,6 +1912,34 @@ print player_single_result_matchday($row, 15);
     'image_style' => 'vereinslogo',
     'image_link' => '',
   );
+  /* Field: Content: In der Liga seit */
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['id'] = 'field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['table'] = 'field_data_field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['field'] = 'field_der_bundesliga_seit';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_wrapper_class'] = 'margin10';
+  $handler->display->display_options['fields']['field_der_bundesliga_seit']['hide_empty'] = TRUE;
+  /* Field: Content: Größte Erfolge */
+  $handler->display->display_options['fields']['field_groesste_erfolge']['id'] = 'field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['table'] = 'field_data_field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['field'] = 'field_groesste_erfolge';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['element_label_type'] = 'strong';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['element_label_class'] = 'clearboth';
+  $handler->display->display_options['fields']['field_groesste_erfolge']['hide_empty'] = TRUE;
+  /* Field: Content: Website */
+  $handler->display->display_options['fields']['field_website_club']['id'] = 'field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['table'] = 'field_data_field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
+  $handler->display->display_options['fields']['field_website_club']['label'] = '';
+  $handler->display->display_options['fields']['field_website_club']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip blue" title="Website" rel="nofollow"><i class="fa fa-globe fa-2x"></i> [field_website_club-url]</a>';
+  $handler->display->display_options['fields']['field_website_club']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_website_club']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_website_club']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_website_club']['click_sort_column'] = 'url';
   /* Field: Content: Facebook */
   $handler->display->display_options['fields']['field_facebook']['id'] = 'field_facebook';
   $handler->display->display_options['fields']['field_facebook']['table'] = 'field_data_field_facebook';
@@ -1627,34 +1964,6 @@ print player_single_result_matchday($row, 15);
   $handler->display->display_options['fields']['field_twitter_club']['element_wrapper_class'] = 'one-fifth';
   $handler->display->display_options['fields']['field_twitter_club']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_twitter_club']['click_sort_column'] = 'url';
-  /* Field: Content: Website */
-  $handler->display->display_options['fields']['field_website_club']['id'] = 'field_website_club';
-  $handler->display->display_options['fields']['field_website_club']['table'] = 'field_data_field_website_club';
-  $handler->display->display_options['fields']['field_website_club']['field'] = 'field_website_club';
-  $handler->display->display_options['fields']['field_website_club']['label'] = '';
-  $handler->display->display_options['fields']['field_website_club']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_website_club']['alter']['text'] = '<a href="[field_website_club-url]" class="tooltip blue" title="Website" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>';
-  $handler->display->display_options['fields']['field_website_club']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_website_club']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_website_club']['element_wrapper_class'] = 'one-fifth last';
-  $handler->display->display_options['fields']['field_website_club']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_website_club']['click_sort_column'] = 'url';
-  /* Field: Content: In der Liga seit */
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['id'] = 'field_der_bundesliga_seit';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['table'] = 'field_data_field_der_bundesliga_seit';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['field'] = 'field_der_bundesliga_seit';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_label_class'] = 'clearboth';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['element_wrapper_class'] = 'margin10';
-  $handler->display->display_options['fields']['field_der_bundesliga_seit']['hide_empty'] = TRUE;
-  /* Field: Content: Größte Erfolge */
-  $handler->display->display_options['fields']['field_groesste_erfolge']['id'] = 'field_groesste_erfolge';
-  $handler->display->display_options['fields']['field_groesste_erfolge']['table'] = 'field_data_field_groesste_erfolge';
-  $handler->display->display_options['fields']['field_groesste_erfolge']['field'] = 'field_groesste_erfolge';
-  $handler->display->display_options['fields']['field_groesste_erfolge']['element_label_type'] = 'strong';
-  $handler->display->display_options['fields']['field_groesste_erfolge']['element_label_class'] = 'clearboth';
-  $handler->display->display_options['fields']['field_groesste_erfolge']['hide_empty'] = TRUE;
   $handler->display->display_options['argument_input'] = array(
     'nid' => array(
       'type' => 'panel',
@@ -1812,9 +2121,9 @@ print player_single_result_matchday($row, 15);
     t('Größte Erfolge'),
     t('Alle'),
     t('Content pane Verein Basisdaten 1'),
+    t('<a href="[field_website_club-url]" class="tooltip blue" title="Website" rel="nofollow"><i class="fa fa-globe fa-2x"></i> [field_website_club-url]</a>'),
     t('<a href="[field_facebook-url]" class="tooltip blue" title="Facebook" rel="nofollow"><i class="fa fa-facebook-square fa-2x"></i></a>'),
     t('<a href="[field_twitter_club-url]" class="tooltip blue" title="Twitter" rel="nofollow"><i class="fa fa-twitter-square fa-2x"></i></a>'),
-    t('<a href="[field_website_club-url]" class="tooltip blue" title="Website" rel="nofollow"><i class="fa fa-globe fa-2x"></i></a>'),
     t('View panes'),
     t('Content pane Verein Basisdaten 2'),
     t('Spielort'),
