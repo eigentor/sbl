@@ -8,12 +8,10 @@ function team_list_calculate_team_points($nid) {
   // Check if we are viewing the page view for the table, and if not, set the season not from the
   // argument but from the function get_current_season(). This is needed for the block
   // view of the leaderbord. */
-  $view = views_get_page_view();
-  if(isset($view) && $view->name == 'teams_leaderbord') {
-    $season = arg(1);
-  } else {
-    $season = get_current_season();
-  }
+ 
+  if(arg(0)=="tabelle") $season=arg(1);
+	else $season=get_current_season();
+ 
 
   // Get all Team Matches the team has been involved in
   // The season that is viewed
@@ -83,12 +81,9 @@ function team_list_calculate_board_points($nid) {
   // Check if we are viewing the page view for the table, and if not, set the season not from the
   // argument but from the function get_current_season(). This is needed for the block
   // view of the leaderbord. */
-  $view = views_get_page_view();
-  if(isset($view) && $view->name == 'teams_leaderbord') {
-    $season = arg(1);
-  } else {
-    $season = get_current_season();
-  }
+ if(arg(0)=="tabelle") $season=arg(1);
+ else $season=get_current_season();
+ 
 
   //Get all Team Matches the team has been involved in
   // Query for Home matches
@@ -382,12 +377,16 @@ function team_list_calculate_board_points_half($nid,$kategorie,$result='') {
   // Check if we are viewing the page view for the table, and if not, set the season not from the
   // argument but from the function get_current_season(). This is needed for the block
   // view of the leaderbord. */
+  /*
   $view = views_get_page_view();
   if(isset($view) && $view->name == 'teams_leaderbord') {
     $season = arg(1);
   } else {
     $season = get_current_season();
-  }
+  } */
+  
+  $season=arg(1);
+  
 
   //Get all Team Matches the team has been involved in
   // Query for Home matches
