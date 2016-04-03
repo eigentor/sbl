@@ -376,3 +376,129 @@ function team_list_calculate_lost_games($nid) {
 
   return $total_lost_games_number;
 }
+
+function team_list_calculate_board_points_half($nid,$kategorie,$result='') {
+
+  // Check if we are viewing the page view for the table, and if not, set the season not from the
+  // argument but from the function get_current_season(). This is needed for the block
+  // view of the leaderbord. */
+  $view = views_get_page_view();
+  if(isset($view) && $view->name == 'teams_leaderbord') {
+    $season = arg(1);
+  } else {
+    $season = get_current_season();
+  }
+
+  //Get all Team Matches the team has been involved in
+  // Query for Home matches
+  $team_home_match_query = new EntityFieldQuery();
+
+  $team_home_match_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'team_match')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_tm_team_1', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $team_home_match = $team_home_match_query->execute();
+
+  // Query for away matches
+  $team_away_match_query = new EntityFieldQuery();
+
+  $team_away_match_query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'team_match')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_tm_team_2', 'target_id', $nid)
+    ->fieldCondition('field_tm_saison', 'tid', $season)
+    ->fieldCondition('field_game_has_result', 'value', 1)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+  $team_away_match = $team_away_match_query->execute();
+
+  // Set the variable for the home team points
+  $team_home_board_points = 0;
+  $team_away_board_points = 0;
+  
+  $team_home_board_points_old=0;
+  $team_away_board_points_old = 0;
+  $team_home_wins = 0;
+  $team_away_wins = 0;
+  $team_home_draws = 0;
+  $team_away_draws = 0;
+  $team_home_losses = 0;
+  $team_away_losses = 0;
+
+  // Get the nids for the home matches, extract the home team points
+  if(isset($team_home_match['node'])) {
+    $team_home_match_nids = array_keys($team_home_match['node']);
+    foreach($team_home_match_nids as $key => $home_match) {
+      $team_home_match_wrapper = entity_metadata_wrapper('node', $home_match);
+	  if($kategorie=="top") {
+      if(!is_null($team_home_match_wrapper->field_tm_board_points_team_1_top->label())) {
+        $team_home_board_points += $team_home_match_wrapper->field_tm_board_points_team_1_top->label();
+      }
+	  }
+	  else {
+	  if(!is_null($team_home_match_wrapper->field_tm_board_points_team_1_low->label())) {
+        $team_home_board_points += $team_home_match_wrapper->field_tm_board_points_team_1_low->label();
+      }
+	  }
+	$team_home_wins+=($team_home_board_points-$team_home_board_points_old) > 2?1:0;
+	$team_home_draws+=($team_home_board_points-$team_home_board_points_old) == 2?1:0;
+	$team_home_losses+=($team_home_board_points-$team_home_board_points_old) < 2?1:0;
+	$team_home_board_points_old=$team_home_board_points;
+    }
+  }
+
+  // Get the nids for the away matches, extract the away team points
+  if(isset($team_away_match['node'])) {
+    $team_away_match_nids = array_keys($team_away_match['node']);
+    foreach($team_away_match_nids as $key => $away_match) {
+      $team_away_match_wrapper = entity_metadata_wrapper('node', $away_match);
+	 if($kategorie=="top") {
+      if(!is_null($team_away_match_wrapper->field_tm_board_points_team_2_top->label())) {
+        $team_away_board_points += $team_away_match_wrapper->field_tm_board_points_team_2_top->label();
+      }
+	  }
+	 else {
+	 if(!is_null($team_away_match_wrapper->field_tm_board_points_team_2_low->label())) {
+        $team_away_board_points += $team_away_match_wrapper->field_tm_board_points_team_2_low->label();
+      }
+	 }
+	$team_away_wins+=($team_away_board_points-$team_away_board_points_old) > 2?1:0;
+	$team_away_draws+=($team_away_board_points-$team_away_board_points_old) == 2?1:0;
+	$team_away_losses+=($team_away_board_points-$team_away_board_points_old) < 2?1:0;
+	$team_away_board_points_old=$team_away_board_points;
+    }
+  }
+  $team_sum_board_points = 0;
+  $team_sum_board_points = floatval($team_home_board_points + $team_away_board_points);
+  
+  $team_sum_wins_count = 0;
+  $team_sum_wins_count = intval($team_home_wins + $team_away_wins);
+
+  $team_sum_draws_count = 0;
+  $team_sum_draws_count = intval($team_home_draws + $team_away_draws);
+  
+  $team_sum_losses_count = 0;
+  $team_sum_losses_count = intval($team_home_losses + $team_away_losses);
+ 
+$team_sum_mp_count=(2*$team_sum_wins_count) + $team_sum_draws_count;
+
+	switch($result) {
+	case "wins":
+	return $team_sum_wins_count;
+	case "draws":
+	return $team_sum_draws_count;
+	case "losses":
+	return $team_sum_losses_count;
+	case "mp":
+	return $team_sum_mp_count;
+	default:
+	return $team_sum_board_points;
+	}
+
+}

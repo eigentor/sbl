@@ -51,6 +51,10 @@ function set_single_game_player_points(single_game_result_select, player_points_
 function change_total_standing() {
 	var bp_heim=1;
 	var bp_gast=1;
+	var bp_heim_top=1;
+	var bp_heim_low=1;
+	var bp_gast_top=1;
+	var bp_gast_low=1;
 	var mp_heim=0;
 	var mp_gast=0;
 	for(var i=0;i<=7;i++) {
@@ -58,19 +62,35 @@ function change_total_standing() {
 		switch(punkte) {
 			case "1":
 			bp_heim+=2;
+			if(i<=3) bp_heim_top+=2;
+			else bp_heim_low+=2;
 			break;
 			case "2":
 			bp_gast+=2;
+			if(i<=3) bp_gast_top+=2;
+			else bp_gast_low+=2;
 			break;
 			case "3":
 			bp_heim+=1;
 			bp_gast+=1;
+			if(i<=3) {
+			bp_heim_top+=1;
+			bp_gast_top+=1;
+			}
+			else {
+			bp_heim_low+=1;
+			bp_gast_low+=1;
+			}
 			break;
 			case "4":
 			bp_heim+=2;
+			if(i<=3) bp_heim_top+=2;
+			else bp_heim_low+=2;
 			break;
 			case "5":
 			bp_gast+=2;
+			if(i<=3) bp_gast_top+=2;
+			else bp_gast_low+=2;
 			break;
 		}
 	}
@@ -101,6 +121,10 @@ function change_total_standing() {
 	$("#edit-field-tm-team-points-tm-2-und").val(mp_gast);
 	$("#edit-field-tm-board-points-team-1-und").val(bp_heim);
 	$("#edit-field-tm-board-points-team-2-und").val(bp_gast);
+	$("#edit-field-tm-board-points-team-1-top-und").val(bp_heim_top);
+	$("#edit-field-tm-board-points-team-2-top-und").val(bp_gast_top);
+	$("#edit-field-tm-board-points-team-1-low-und").val(bp_heim_low);
+	$("#edit-field-tm-board-points-team-2-low-und").val(bp_gast_low);
 }
 
 //console.log($('.field-name-field-mt-points-player-1 select.form-select option:selected').text());
