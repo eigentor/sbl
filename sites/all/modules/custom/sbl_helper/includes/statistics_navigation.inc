@@ -20,6 +20,9 @@ function statistics_check_type_of_page() {
       case 'ergebnisse':
         $page_type .= 'ergebnisse';
         break;
+	 case 'tabelle':
+        $page_type .= 'tabelle';
+        break;
     }
   }
   // and some views
@@ -46,7 +49,7 @@ function statistics_create_navigation() {
       break;
     case 'panel_ergebnisse':
     case 'view_spielplan':
-    case 'view_teams_leaderbord':
+    case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
       $season = arg(1);
@@ -79,7 +82,7 @@ function select_season_form($form, &$form_state) {
   switch(statistics_check_type_of_page()) {
     case 'panel_ergebnisse':
     case 'view_spielplan':
-    case 'view_teams_leaderbord':
+    case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
       $default_season = arg(1);
@@ -128,7 +131,7 @@ function select_season_form_validate($form, &$form_state) {
       $url .= '/' . arg(2);
       break;
     case 'view_spielplan':
-    case 'view_teams_leaderbord':
+    case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
       $url = '/' . arg(0);
