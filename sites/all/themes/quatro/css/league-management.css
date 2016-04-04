@@ -152,7 +152,8 @@ button.slick-prev, button.slick-next {
   visibility: hidden;
 }
 #block-views-live-bar-block .views-field-field-logo-icon,
-#block-views-live-bar-block .views-field-field-logo-team {
+#block-views-live-bar-block .views-field-field-logo-team,
+#block-views-live-bar-block .views-field-field-logo-icon-1 {
   width: 26px;
   padding-left: 7px;
   padding-top: 3px;
@@ -177,7 +178,8 @@ button.slick-prev, button.slick-next {
   display: none;
 }
 #block-views-live-bar-block .views-field-field-logo-icon img,
-#block-views-live-bar-block .views-field-field-logo-team img {
+#block-views-live-bar-block .views-field-field-logo-team img,
+#block-views-live-bar-block .views-field-field-logo-icon-1 img {
   width: 20px;
   height: auto;
 }
