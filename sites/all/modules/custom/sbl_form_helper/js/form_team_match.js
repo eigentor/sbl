@@ -215,6 +215,10 @@ set_single_game_board_color('form#team-match-node-form .field-name-field-mt-colo
 		}
 		}	
 	   }
+	   
+for(var i=0;i<=7;i++) {
+	$("#edit-field-tm-game-und-"+i+"-field-brettnummer-und-0-value").val(i+1);
+}
   
 
 

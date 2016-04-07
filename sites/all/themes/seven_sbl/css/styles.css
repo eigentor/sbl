@@ -48,3 +48,7 @@ form#team-match-node-form #edit-field-tm-game .player-points {
   padding-left: 0;
   padding-top: 0;
 }
+
+.field-name-field-brettnummer {
+	display:none;
+}
