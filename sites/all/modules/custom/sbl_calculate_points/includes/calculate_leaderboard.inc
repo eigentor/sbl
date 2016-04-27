@@ -1,5 +1,21 @@
 <?php
 
+
+/**
+ * Calculate total ELO win/loss for a team
+ */
+ 
+function get_team_elo_win_total($nid) {
+
+$season=arg(1);
+if(empty($season)) $season=get_current_season();
+
+$elo_gain_total = db_query("SELECT SUM(elo_change) as 'summe' FROM sbl_elo_gain_per_team WHERE season=".$season." AND team=".$nid." LIMIT 1")->fetchField();
+if(empty($elo_gain_total)) $elo_gain_total=0;
+
+return $elo_gain_total > 0?"<span style='color:green'>+".$elo_gain_total."</span>":"<span style='color:red'>".$elo_gain_total."</span>";
+}
+
 /**
  * Calculation functions for the main leaderboard (View leaderbord)
  */

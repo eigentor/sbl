@@ -247,7 +247,6 @@ function player_single_points() {
   return $points_sum;
 }
 
-
 function player_elo_change() {
 
 $elo_player=0;
