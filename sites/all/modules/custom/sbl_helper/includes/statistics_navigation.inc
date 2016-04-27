@@ -52,6 +52,7 @@ function statistics_create_navigation() {
     case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
+	case 'view_teams_leaderboard':
       $season = arg(1);
       break;
   }
@@ -60,12 +61,13 @@ function statistics_create_navigation() {
   // Set the necessary variables for our theme_list() function
   $title = 'Tabellen';
   $type = 'ul';
-  $attributes = array('class' => array('tabelle', 'spielplan', 'ergebnisse'));
+  $attributes = array('class' => array('tabelle', 'spielplan', 'ergebnisse','setzliste'));
   $list_items = array();
   $list_items[] = l('Tabelle', 'tabelle/' . $season);
   $list_items[] = l('Kreuztabelle', 'kreuztabelle/' . $season);
   $list_items[] = l('Spielplan', 'spielplan/' . $season);
   $list_items[] = l('Rundenergebnisse', 'ergebnisse/' . $season . '/' . $matchday);
+  $list_items[] = l('Setzliste', 'setzliste/' . $season);
   $list_items[] = l('Topscorer', 'spieler-rangliste/' . $season);
 
   // Create an unordered List with the navigation items
@@ -85,9 +87,10 @@ function select_season_form($form, &$form_state) {
     case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
+	case 'view_teams_leaderboard':
       $default_season = arg(1);
       break;
-      break;
+
   }
 
 
@@ -135,6 +138,7 @@ function select_season_form_validate($form, &$form_state) {
     case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
+	case 'view_teams_leaderbord':
       $url = '/' . arg(0);
       $url .= '/' . $season;
       break;
