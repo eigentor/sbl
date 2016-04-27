@@ -3,6 +3,77 @@
 /**
  * Calculation functions for the main leaderboard (View leaderbord)
  */
+ 
+function get_players_per_club($nid) {
+// Get Player IDs per Team
+$season=arg(1);
+if(empty($season)) $season=get_current_season();
+
+$team_players_query = new EntityFieldQuery();
+$team_players_query->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_sp_verein')
+    ->fieldCondition('field_fc_verein', 'target_id', $nid)
+	->fieldCondition('field_saison', 'tid', $season)
+    // Bypass node access
+    ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
+
+$team_players = $team_players_query->execute();
+
+$player_ids=array();
+
+ if (isset($team_players['field_collection_item'])) {
+    foreach ($team_players['field_collection_item'] as $players) {
+      // Write the home games for the player into the array $player_games_combined
+      $player_ids[] = $players->item_id;
+    }
+  }
+return $player_ids;
+}
+
+function get_titles_per_team($nid,$players_title='GM') {
+$title_player=array();
+$player_ids=get_players_per_club($nid);
+for($i=0;$i<count($player_ids);$i++) {
+$title_player[$i] = @db_query("SELECT field_pl_master_title_value FROM field_data_field_pl_master_title WHERE entity_id='".$player_ids[$i]."' LIMIT 1")->fetchField();
+if(empty($title_player[$i])) $title_player[$i]="_none";	
+}
+$titles=array_count_values($title_player);
+if(empty($titles[$players_title])) $anzahl_titeltraeger=0;
+else $anzahl_titeltraeger=$titles[$players_title];
+return $anzahl_titeltraeger;
+}
+
+function get_elo_average_per_team($nid) {
+$elo_player=array();
+$count_rated_players=0;
+$elo_gesamt=0;
+$player_ids=get_players_per_club($nid);
+//dpm($player_ids);
+for($i=0;$i<count($player_ids);$i++) {
+$elo_player[$i] = db_query("SELECT field_pl_elo_value FROM field_data_field_pl_elo WHERE entity_id='".$player_ids[$i]."' LIMIT 1")->fetchField();
+if(empty($elo_player[$i])) $elo_player[$i]="0";
+else $count_rated_players++;
+$elo_gesamt+=intval($elo_player[$i]);
+}
+$elo_average=round($elo_gesamt/$count_rated_players,1);
+return $elo_average;
+}
+
+function get_elo_average_per_team_first_eight($nid) {
+$elo_player=array();
+$count_rated_players=0;
+$elo_gesamt=0;
+$player_ids=get_players_per_club($nid);
+for($i=0;$i<8;$i++) {
+$elo_player[$i] = db_query("SELECT field_pl_elo_value FROM field_data_field_pl_elo WHERE entity_id='".$player_ids[$i]."' LIMIT 1")->fetchField();
+if(empty($elo_player[$i])) $elo_player[$i]="0";
+else $count_rated_players++;
+$elo_gesamt+=intval($elo_player[$i]);
+}
+$elo_average=round($elo_gesamt/$count_rated_players,1);
+return $elo_average;
+}
+
 
 function team_list_calculate_team_points($nid) {
   // Check if we are viewing the page view for the table, and if not, set the season not from the
@@ -501,3 +572,4 @@ $team_sum_mp_count=(2*$team_sum_wins_count) + $team_sum_draws_count;
 	}
 
 }
+

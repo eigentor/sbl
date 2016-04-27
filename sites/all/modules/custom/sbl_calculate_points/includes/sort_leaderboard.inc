@@ -23,3 +23,15 @@ function team_list_sort_by_team_and_board_points($team_points_1, $team_points_2 
   }
 }
 
+function team_list_sort_by_elo($elo_1, $elo_2) {
+  $a = $elo_1;
+  $b = $elo_2;
+
+  // Sort by team points, if the team points are different
+  if($a > $b) {
+    return -1;
+  } elseif ($a < $b) {
+    return 1;
+  }
+}
+
