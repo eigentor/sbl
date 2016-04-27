@@ -282,7 +282,7 @@ $elo_change=str_replace("green'>","",$elo_change);
 $elo_change=str_replace("red'>","",$elo_change);
 $elo_change=str_replace("+","",$elo_change);
 $elo_change=floatval($elo_change);
-dpm($elo_change);
+//dpm($elo_change);
 $player=intval(arg(1));
 $season=intval(arg(2));
 $club=intval($club);
