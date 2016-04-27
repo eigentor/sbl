@@ -247,7 +247,9 @@ function player_single_points() {
   return $points_sum;
 }
 
+
 function player_elo_change() {
+
 $elo_player=0;
 $games_player = drupal_static('player_games');
   foreach($games_player as $game) {
@@ -271,6 +273,23 @@ $games_player = drupal_static('player_games');
   else $change=0;
 
   return $change;
+}
+
+function update_elo($club,$elo_change) {
+$elo_change=str_replace("<span style='color:","",$elo_change);
+$elo_change=str_replace("</span>","",$elo_change);
+$elo_change=str_replace("green'>","",$elo_change);
+$elo_change=str_replace("red'>","",$elo_change);
+$elo_change=str_replace("+","",$elo_change);
+$elo_change=floatval($elo_change);
+dpm($elo_change);
+$player=intval(arg(1));
+$season=intval(arg(2));
+$club=intval($club);
+$elo_change=doubleval($elo_change);
+$checkquery = db_query("SELECT * FROM sbl_elo_gain_per_team WHERE season=".$season." AND team=".$club." AND player=".$player." LIMIT 1")->fetchField();
+if(empty($checkquery)) $insertquery=db_query("INSERT INTO sbl_elo_gain_per_team(season,team,player,elo_change) values($season,$club,$player,$elo_change)");
+else $updatequery=db_query("UPDATE sbl_elo_gain_per_team SET elo_change=$elo_change WHERE season=".$season." AND team=".$club." AND player=".$player);
 }
 
 /*
