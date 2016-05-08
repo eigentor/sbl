@@ -6,13 +6,19 @@
 
       $('th.views-field-field-pl-elo')
         .add('th.views-field-php')
-        .add('th.views-field-php-1')
         .add('th.views-field-php-2')
         .add('th.views-field-php-3')
         .add('th.views-field-php-4')
 		.add('th.views-field-php-5')
-		.add('th.views-field-field-pl-country')
         .attr('data-sort', 'int').attr('data-sort-default', 'desc');
+		
+	 $('th.views-field-field-pl-country')
+	 .add('th.views-field-field-fc-verein')
+        .attr('data-sort', 'string');
+
+		
+	$('th.views-field-php-1')
+        .attr('data-sort', 'float').attr('data-sort-default', 'desc');;
 
       $('th.views-field-title')
         .attr('data-sort', 'string');
