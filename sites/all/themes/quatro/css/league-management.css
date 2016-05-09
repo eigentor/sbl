@@ -472,11 +472,13 @@ form#select-season-form .description {
 
 /* Players leaderboard */
 .view-players-leaderboard th[data-sort=int],
-.view-players-leaderboard th[data-sort=string]{
+.view-players-leaderboard th[data-sort=string],
+.view-players-leaderboard th[data-sort=float]{
   color: #f18000;
 }
 .view-players-leaderboard th[data-sort=int]:hover,
-.view-players-leaderboard th[data-sort=string]:hover {
+.view-players-leaderboard th[data-sort=string]:hover,
+.view-players-leaderboard th[data-sort=float]:hover{
   cursor: pointer;
   cursor: hand;
 }
@@ -587,9 +589,10 @@ form#select-season-form .description {
 
 /* Players leaderboard */
 .view-players-leaderboard th[data-sort=int],
-.view-players-leaderboard th[data-sort=string]{
-  background: url(../images/bg.gif) no-repeat right 8px;
-  padding-right: 12px;
+.view-players-leaderboard th[data-sort=string],
+.view-players-leaderboard th[data-sort=float]{
+  background: url(../images/bg.png) no-repeat right 8px;
+  padding-right: 14px;
   color: #333;
 }
 .view-players-leaderboard th[data-sort=int].views-field-php,
