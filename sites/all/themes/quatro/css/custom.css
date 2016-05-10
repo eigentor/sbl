@@ -6,6 +6,10 @@
 
 /* Neue Defs */ 
 
+body {
+hyphens:auto;
+}
+
 /* Ausrichtungsklassen für Bilder */
 .image-left {
   float: left;
