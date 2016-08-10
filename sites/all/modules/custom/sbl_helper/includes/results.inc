@@ -14,11 +14,14 @@ function print_results_matchday(){
   $season = '';
   $matchday = '';
   $match_node = '';
-
+ 	
 // Print the results for a matchday
 // We get the season and the matchday from the URL
   $season = arg(1);
   $matchday = arg(2);
+  if(!arg(3)) $league=517;
+  else $league=arg(3); //Liga hinzufügen
+  
 
 // Now get all Team Match nodes for that specific Match Day
   $matches_match_day = new EntityFieldQuery();
@@ -27,6 +30,7 @@ function print_results_matchday(){
     ->entityCondition('bundle', 'team_match')
     ->fieldCondition('field_tm_saison', 'tid', $season)
     ->fieldCondition('field_tm_spieltag_1', 'value', $matchday)
+	->fieldCondition('field_liga', 'tid', $league)
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -52,9 +56,15 @@ function print_results_matchday(){
 function results_pager() {
   // Do not print the pager temporarily for the season 2015/16
    // Print the pager.
+   
+   if(!arg(3)) $league=517;
+	else $league=arg(3); //Liga hinzufügen
+
+	$rounds_max=$league==517?15:9;
     print '<div class="results-pager">';
+	
     $i = 0;
-    while ($i < 15) {
+    while ($i < $rounds_max) {
       $i++;
       if ($i == arg(2)) {
         $active_class = 'active';
@@ -65,7 +75,7 @@ function results_pager() {
       // Create links for the numbers 1-15 for each matchday.
       // We simply keep the first and the second argument and only
       // change the third.
-      print l($i, '/' . arg(0) . '/' . arg(1) . '/' . $i, array(
+      print l($i, '/' . arg(0) . '/' . arg(1) . '/' . $i . '/' . $league, array(
         'attributes' => array(
           'class' => array(
             'pager',
