@@ -8,7 +8,7 @@
 /**
  * Custom Funktion, um die Ergebnisse pro Spieltag auszugeben
  *
- */
+ */ 
 function print_results_matchday(){
 
   $season = '';
