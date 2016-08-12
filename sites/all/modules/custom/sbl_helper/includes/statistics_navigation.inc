@@ -50,6 +50,7 @@ function statistics_create_navigation() {
     case ('panel_verein'):
     case ('panel_spieler'):
       $season = arg(2);
+	  $league = 517;
       break;
     case 'panel_ergebnisse':
     case 'view_spielplan':
