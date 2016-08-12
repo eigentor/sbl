@@ -275,7 +275,6 @@ $games_player = drupal_static('player_games');
 }
 
 function update_elo($club,$elo_change) {
-/*
 $elo_change=str_replace("<span style='color:","",$elo_change);
 $elo_change=str_replace("</span>","",$elo_change);
 $elo_change=str_replace("green'>","",$elo_change);
@@ -290,7 +289,6 @@ $elo_change=doubleval($elo_change);
 $checkquery = db_query("SELECT * FROM sbl_elo_gain_per_team WHERE season=".$season." AND team=".$club." AND player=".$player." LIMIT 1")->fetchField();
 if(empty($checkquery)) $insertquery=db_query("INSERT INTO sbl_elo_gain_per_team(season,team,player,elo_change) values($season,$club,$player,$elo_change)");
 else $updatequery=db_query("UPDATE sbl_elo_gain_per_team SET elo_change=$elo_change WHERE season=".$season." AND team=".$club." AND player=".$player);
-*/
 }
 
 /*

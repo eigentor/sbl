@@ -2,6 +2,7 @@
 
 function get_team_nid_from_player_nid($season, $player_nid) {
   $players_season_data = drupal_static('players_data_list');
+
   $team_nid = '';
   if(!empty($players_season_data[$player_nid])) {
     $team_nid = $players_season_data[$player_nid]['team'];
@@ -270,7 +271,9 @@ function players_sort_leaderboard($elo_1, $elo_2) {
  * Hide players with less than 3 played games
  */
 function filter_players_leaderboard($number_games) {
-  if($number_games < 3) {
+if(arg(2)==517 || !(arg(2))) $min=3;
+else $min=1;
+  if($number_games < $min) {
     return TRUE;
   } else {
     return FALSE;

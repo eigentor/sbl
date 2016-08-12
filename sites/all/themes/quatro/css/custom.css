@@ -59,7 +59,7 @@ cursor: default;
 
 /* Ergebnistabellen */
 
-tr.table-1 {
+tr.table-1,tr.table-2bl-1 {
 	background-color:#dcf1c2 !important; /* Meister */
 	color:black !important;
 	font-weight:600 !important;
@@ -74,7 +74,7 @@ tr.table-1 {
 	margin:0 5px 0 0;
 }
 
-tr.table-16,tr.table-15,tr.table-14,tr.table-13 { /* Absteiger */
+tr.table-16,tr.table-15,tr.table-14,tr.table-13,tr.table-2bl-8,tr.table-2bl-9,tr.table-2bl-10 { /* Absteiger */
 	background-color:#faeeed !important;
 	color:black !important;
 	font-weight:600 !important;
@@ -150,6 +150,18 @@ margin:auto;
 
 .statistics_counter span {
 display:none !important;
+}
+
+/* 2. Ligen Übersicht */
+.view-uebersicht-2-ligen .one-fourth
+{
+background-color:#f7f7f7;
+padding-top:5px;
+}
+
+.view-uebersicht-2-ligen .one-fourth h4
+{
+margin-bottom:5px !important;
 }
 
 /* HR */
@@ -665,6 +677,22 @@ background-color:#FC0 !important;
 
 .topic-131,.topic-252,.topic-251{ /*Kolumnen */
 background-color:#1DB6B6 !important;
+}
+
+.topic-525 { /*2. Liga Nord */
+background-color:#5487c5 !important;
+}
+
+.topic-526 { /*2. Liga West */
+background-color:#8a92a6 !important;
+}
+
+.topic-527 { /*2. Liga Ost */
+background-color:#239d23 !important;
+}
+
+.topic-528 { /*2. Liga Süd */
+background-color:#dbb91e !important;
 }
 
 /*------------------------------------*\

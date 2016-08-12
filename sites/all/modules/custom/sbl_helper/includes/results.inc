@@ -18,9 +18,33 @@ function print_results_matchday(){
 // Print the results for a matchday
 // We get the season and the matchday from the URL
   $season = arg(1);
+  if(strlen(arg(2)) < 3) {
   $matchday = arg(2);
-  if(!arg(3)) $league=517;
-  else $league=arg(3); //Liga hinzufügen
+  $league=517;
+  }
+  else {
+   $league=arg(2);
+   $matchday = arg(3);
+  }
+  
+  
+  switch($league) {
+  case 517:
+  $league_text="Bundesliga";
+  break;
+  case 518:
+  $league_text="2. Liga Nord";
+  break;
+  case 519:
+  $league_text="2. Liga West";
+  break;
+  case 520:
+  $league_text="2. Liga Ost";
+  break;
+  case 521:
+  $league_text="2. Liga Süd";
+  break;
+  }
   
 
 // Now get all Team Match nodes for that specific Match Day
@@ -46,7 +70,7 @@ function print_results_matchday(){
   $season_title = $season_title_raw->name;
 
 // Set the title to show the season and Spieltag
-  drupal_set_title('Ergebnisse ' . $matchday . '. Spieltag ' . $season_title);
+  drupal_set_title('Ergebnisse der ' . $league_text . ', ' . $matchday . '. Spieltag ' . $season_title);
 }
 
 /**
@@ -57,16 +81,27 @@ function results_pager() {
   // Do not print the pager temporarily for the season 2015/16
    // Print the pager.
    
-   if(!arg(3)) $league=517;
-	else $league=arg(3); //Liga hinzufügen
+   if(strlen(arg(2)) < 3) $league=517;
+	else $league=arg(2); //Liga hinzufügen
 
-	$rounds_max=$league==517?15:9;
+	switch($league) {
+	case 517:
+	$rounds_max=15;
+	break;
+	case 520:
+	$rounds_max=10;
+	break;
+	default:
+	$rounds_max=9;
+	break;
+	}
+
     print '<div class="results-pager">';
 	
     $i = 0;
     while ($i < $rounds_max) {
       $i++;
-      if ($i == arg(2)) {
+      if ($i == arg(3)) {
         $active_class = 'active';
       }
       else {
@@ -75,7 +110,7 @@ function results_pager() {
       // Create links for the numbers 1-15 for each matchday.
       // We simply keep the first and the second argument and only
       // change the third.
-      print l($i, '/' . arg(0) . '/' . arg(1) . '/' . $i . '/' . $league, array(
+      print l($i, '/' . arg(0) . '/' . arg(1) . '/' . $league . '/' . $i, array(
         'attributes' => array(
           'class' => array(
             'pager',

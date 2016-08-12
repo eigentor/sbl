@@ -14,7 +14,7 @@ include_once('includes/calculate_player_data.inc');
  * Write the elo for all players and the current season into an array.
  * Cache this array in drupal_static
  */
-function get_player_season_data($season) {
+function get_player_season_data($season,$league) {
 
   $player_elo = '';
   $player_team = '';
@@ -57,6 +57,9 @@ function get_player_season_data($season) {
         ->entityCondition('bundle', 'field_sp_verein')
         ->propertyCondition('item_id', $data)
         ->fieldCondition('field_saison', 'tid', $season)
+		->fieldCondition('field_pl_league', 'tid', $league)
+		
+		//hier ist das Problem. Das muss die Zugehörigkeit pro Saison bedeuten.
         // Bypass node access
         ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
@@ -201,11 +204,14 @@ function get_player_season_data($season) {
 
 function sbl_calculate_points_views_pre_build(&$view) {
   if($view->name == 'players_leaderboard' && $view->current_display == 'page') {
+	
     $season = arg(1);
+	if(arg(2)) $league=arg(2);
+	else $league=517;
 
     // Generate the elo list with the function get_player_season_elo
     // and save it into drupal_static
-    $data_list = get_player_season_data($season);
+    $data_list = get_player_season_data($season,$league);
 
     $players_data_list = &drupal_static('players_data_list', $data_list);
 

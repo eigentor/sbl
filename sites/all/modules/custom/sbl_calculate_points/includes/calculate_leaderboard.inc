@@ -241,6 +241,7 @@ function team_list_calculate_played_games($nid) {
 
   $season = arg(1);
 
+
   //Get all Team Matches the team has been involved in
   // Query for Home matches
   $team_home_match_query = new EntityFieldQuery();
@@ -269,12 +270,14 @@ function team_list_calculate_played_games($nid) {
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
   $team_away_match = $team_away_match_query->execute();
+  
 
   // Count the home matches
   $home_match_number = '';
   if(isset($team_home_match['node'])) {
     $home_match_number = count($team_home_match['node']);
   }
+   //dpm($home_match_number);
   // count the away matches
   $away_match_number = '';
   if(isset($team_away_match['node'])) {
