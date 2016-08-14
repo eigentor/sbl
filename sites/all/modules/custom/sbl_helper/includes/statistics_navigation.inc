@@ -3,8 +3,81 @@
 /**
  * Functions for the statistics navigation block
  */
+ 
+ function check_current_league_of_player() {
+ $player=arg(1);
+ $season=arg(2);
+ 
+$result = db_select('field_data_field_sp_verein', 'f')
+    ->fields('f')
+    ->condition('entity_id', $player,'=')
+    ->execute()
+    ->fetchAll();
+	
+	for($i=0;$i<count($result);$i++) {
+	$values[$i]=$result[$i]->field_sp_verein_value;
+}
 
-function statistics_check_type_of_page() {
+
+$result = db_select('field_data_field_saison', 'f')
+    ->fields('f')
+    ->condition('field_saison_tid', $season,'=')
+	->condition('entity_id', $values,'IN')
+    ->execute()
+    ->fetchAll();
+
+	$league_field_id=$result[0]->entity_id;
+
+
+$result = db_select('field_data_field_pl_league', 'f')
+    ->fields('f')
+    ->condition('entity_id', $league_field_id,'=')
+    ->execute()
+    ->fetchAll();
+
+$league_id=$result[0]->field_pl_league_tid;
+
+return $league_id;
+}
+
+ 
+ function check_current_league_of_club() {
+ $club=arg(1);
+ $season=arg(2);
+ 
+$result = db_select('field_data_field_ligenzuordnung', 'f')
+    ->fields('f')
+    ->condition('entity_id', $club,'=')
+    ->execute()
+    ->fetchAll();
+	
+	for($i=0;$i<count($result);$i++) {
+	$values[$i]=$result[$i]->field_ligenzuordnung_value;
+}
+
+$result = db_select('field_data_field_liga_saison', 'f')
+    ->fields('f')
+    ->condition('field_liga_saison_tid', $season,'=')
+	->condition('entity_id', $values,'IN')
+    ->execute()
+    ->fetchAll();
+
+	$league_field_id=$result[0]->entity_id;
+	
+$result = db_select('field_data_field_liga_verein', 'f')
+    ->fields('f')
+    ->condition('entity_id', $league_field_id,'=')
+    ->execute()
+    ->fetchAll();
+
+$league_id=$result[0]->field_liga_verein_tid;
+
+return $league_id;
+}
+ 
+ function statistics_check_type_of_page() {
+	 
+
   // Find out on which page of our statistics area we are.
   // There are some panels pages
   $page_type = '';
@@ -48,9 +121,12 @@ function statistics_create_navigation() {
   //Get the season from the url arguments
   switch(statistics_check_type_of_page()) {
     case ('panel_verein'):
+	$season=arg(2);
+	$league=check_current_league_of_club();
+	break;
     case ('panel_spieler'):
       $season = arg(2);
-	  $league = 517;
+	  $league = check_current_league_of_player();
       break;
     case 'panel_ergebnisse':
     case 'view_spielplan':
