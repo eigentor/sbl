@@ -144,7 +144,28 @@ function statistics_create_navigation() {
   if($league && $league != 517) $path_addon="-liga-2";
   else $path_addon="";
   
-  switch($league) {
+  $league_name=set_league_name($league);
+  
+
+  // Set the necessary variables for our theme_list() function
+  $title = 'Tabellen ' . $league_name;
+  $type = 'ul';
+  $attributes = array('class' => array('tabelle', 'spielplan', 'ergebnisse','setzliste'));
+  $list_items = array();
+  $list_items[] = l('Tabelle', 'tabelle' . $path_addon . '/' . $season . '/' . $league);
+  $list_items[] = l('Kreuztabelle', 'kreuztabelle' . $path_addon . '/' . $season . '/' . $league);
+  $list_items[] = l('Spielplan', 'spielplan' . $path_addon . '/' . $season . '/' . $league);
+  $list_items[] = l('Rundenergebnisse', 'ergebnisse/' . $season . '/' . $league . '/' . $matchday);
+  $list_items[] = l('Teamstatistik', 'setzliste' . $path_addon . '/' . $season . '/' . $league);
+  $list_items[] = l('Topscorer', 'spieler-rangliste/' . $season . '/' . $league);
+
+  // Create an unordered List with the navigation items
+  $output = theme_item_list(array('items' => $list_items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
+  return $output;
+}
+
+function set_league_name($league) {
+ switch($league) {
   case 517:
   $league_name="1. Bundesliga";
   break;
@@ -163,22 +184,23 @@ function statistics_create_navigation() {
   default:
    $league_name="1. Bundesliga";
   }
+  return $league_name;
+}
 
-  // Set the necessary variables for our theme_list() function
-  $title = 'Tabellen ' . $league_name;
-  $type = 'ul';
-  $attributes = array('class' => array('tabelle', 'spielplan', 'ergebnisse','setzliste'));
-  $list_items = array();
-  $list_items[] = l('Tabelle', 'tabelle' . $path_addon . '/' . $season . '/' . $league);
-  $list_items[] = l('Kreuztabelle', 'kreuztabelle' . $path_addon . '/' . $season . '/' . $league);
-  $list_items[] = l('Spielplan', 'spielplan' . $path_addon . '/' . $season . '/' . $league);
-  $list_items[] = l('Rundenergebnisse', 'ergebnisse/' . $season . '/' . $league . '/' . $matchday);
-  $list_items[] = l('Teamstatistik', 'setzliste' . $path_addon . '/' . $season . '/' . $league);
-  $list_items[] = l('Topscorer', 'spieler-rangliste/' . $season . '/' . $league);
+function set_link_to_league_table($league) {
+$season=arg(2);
 
-  // Create an unordered List with the navigation items
-  $output = theme_item_list(array('items' => $list_items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
-  return $output;
+ switch($league) {
+  case 518:
+  case 519:
+  case 520:
+  case 521:
+	$link="tabelle-liga-2/" . $season . "/" . $league;
+  break;
+   default:
+   $link="tabelle/" . $season . "/" . $league;
+  }
+  return $link;
 }
 
 /**
