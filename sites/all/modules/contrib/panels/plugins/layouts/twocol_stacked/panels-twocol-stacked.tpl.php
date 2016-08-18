@@ -30,7 +30,6 @@
     <div class="panel-col-last panel-panel">
       <div class="inside"><?php print $content['right']; ?></div>
     </div>
-	<div class="clearboth"></div>
   </div>
 
   <?php if ($content['bottom']): ?>
