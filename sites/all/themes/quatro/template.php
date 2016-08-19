@@ -42,7 +42,7 @@ function quatro_preprocess_page(&$vars) {
     //dpm($vars);
     $nid = arg(1);
 
-    // Search for the ticket matching the Rabattcode
+    // Search for the "Mannschaft" Node matching the argument
     $query = new EntityFieldQuery();
 
     $query->entityCondition('entity_type', 'node')
@@ -55,7 +55,7 @@ function quatro_preprocess_page(&$vars) {
 
     $result = $query->execute();
 
-    // If a ticket was found, set the price field to the ticket price
+    // Set the page title to the Node Title of the "Mannschaft" Node
     if (isset($result['node'])) {
       $node_ids = array_keys($result['node']);
       $node_id = $node_ids[0];
