@@ -4,7 +4,7 @@
 $season = arg(1);
 $path = 'verein/' . $row->nid . '/' . $season;
 //dpm($row);
-$output = l($row->node_title, $path);
+$output = l($row->node_title, $path) . ' ' . $row->field_field_ligastatus[0]['rendered']['#markup'];
 ?>
 
 <?php print $output; ?>
