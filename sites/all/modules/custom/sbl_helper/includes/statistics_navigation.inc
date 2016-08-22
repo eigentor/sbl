@@ -236,6 +236,7 @@ function select_season_form($form, &$form_state) {
 	 139 => '2012/13',
 	258 => '2011/12',
 	261 => '2010/11',
+	283 => '2009/10',
 	),
     '#default_value' => $default_season,
     '#description' => 'Wählen Sie die Saison',
