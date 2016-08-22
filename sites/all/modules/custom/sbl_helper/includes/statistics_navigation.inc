@@ -223,7 +223,7 @@ function select_season_form($form, &$form_state) {
 
   if(arg(2) && strlen(arg(2)) > 2) $league=arg(2);
   else $league=517;
- 
+  
   if($league==517) {
   $form['set_season'] = array(
     '#type' => 'select',
