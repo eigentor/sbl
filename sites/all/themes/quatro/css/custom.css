@@ -42,7 +42,7 @@ hyphens:auto;
 }
 
 .werbung-top {
-	margin:-30px 0 10px 0;
+	margin:-30px 0 10px 0; 
 }
 
 /* Umfragen */
@@ -1136,6 +1136,10 @@ text-align:left !important;
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
 min-width:320px;
+}
+
+.werbung-top {
+	margin:-10px 0 10px 0; 
 }
 
 .one-fourth-border {
