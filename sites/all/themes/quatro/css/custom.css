@@ -35,10 +35,10 @@ hyphens:auto;
 /* Adsense */
 
 #floatblock_article {
-	float:left;
-	margin:0 10px 10px 0;
+	float:right;
+	margin:0 0 0 20px;
 	overflow:hidden;
-	width:336px;
+	width:280px;
 }
 
 .werbung-top {
@@ -1139,7 +1139,7 @@ min-width:320px;
 }
 
 .werbung-top {
-	margin:-10px 0 10px 0; 
+	margin:0 0 10px 0; 
 }
 
 .one-fourth-border {
