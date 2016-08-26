@@ -118,8 +118,8 @@ blockquote {
 
 /* Zone header */
 .zone-header-wrapper {
-  border-bottom: 1px solid #ddd;
-  background: #fff; /* url(../images/zone-header-bg.png) #fff bottom left repeat-x; */
+  //border-bottom: 1px solid #ddd;
+  //background: #fff; /* url(../images/zone-header-bg.png) #fff bottom left repeat-x; */
 }
 .zone-header {
   padding-top: 40px;
@@ -128,6 +128,11 @@ blockquote {
 /* Zone content */
 .section-content {
   padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.page-aktuell .section-content, .page-node .section-content {
+  padding-top: 0px !important;
   padding-bottom: 20px;
 }
 
