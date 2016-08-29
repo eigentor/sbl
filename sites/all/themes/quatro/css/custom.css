@@ -1138,6 +1138,10 @@ text-align:left !important;
 min-width:320px;
 }
 
+.hidden-mobile {
+	display:none;
+}
+
 .werbung-top {
 	margin:0 0 10px 0; 
 }
