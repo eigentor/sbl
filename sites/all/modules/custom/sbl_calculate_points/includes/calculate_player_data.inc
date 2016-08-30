@@ -266,7 +266,7 @@ function player_elo_opponents_all_seasons($season) {
   }
   $elo_total = '';
 
-  if(!empty($games_player)) {
+  if(!empty($games_player[$season])) {
     $count_games = count($games_player[$season]);
     $elo_total = round($elo_sum / $count_games);
   }
@@ -485,7 +485,7 @@ function player_single_elo_performance_all_seasons($season) {
       $elo_sum += $elo_game;
     }
   }
-  if(!empty($games_player)) {
+  if(!empty($games_player[$season])) {
     $count_games = count($games_player[$season]);
     $elo_performance = round($elo_sum / $count_games);
   }
