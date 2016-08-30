@@ -223,6 +223,7 @@ function sbl_calculate_points_views_pre_build(&$view) {
     $team_player_nid = '';
     $player_games = array();
 
+
     // Get the node id of the team of the player for the saeason
     // first create an entity_metadata_wrapper for the players node
     $player_wrapper = entity_metadata_wrapper('node', $player_nid);
@@ -246,5 +247,40 @@ function sbl_calculate_points_views_pre_build(&$view) {
     }
 
     $player_data = &drupal_static('player_games', $player_games);
+  }
+  
+  if($view->name == 'players' && $view->current_display == 'panel_pane_4') {
+    $player_nid = arg(1);
+
+    $team_player_nid = '';
+    $player_games = array();
+
+
+    // Get the node id of the team of the player for the saeason
+    // first create an entity_metadata_wrapper for the players node
+    $player_wrapper = entity_metadata_wrapper('node', $player_nid);
+    // Now iterate through the field collections field_sp_verein and find the one
+    // for the current season
+    $player_verein_data = $player_wrapper->field_sp_verein->value();
+    if (!empty($player_verein_data)) {
+		$i=0;
+      foreach ($player_wrapper->field_sp_verein->value() as $season_data) {
+		  
+        //dpm($season_data->field_saison[LANGUAGE_NONE][0]['tid']);
+        if (!empty($season_data->field_saison)) {
+          if(!empty($season_data->field_fc_verein)) {
+            // if there is a field_fc_verein in the field_sp_verein for the current season,
+            // the node id of the referenced nod is the players team for the current season
+            $team_player_nid = $season_data->field_fc_verein[LANGUAGE_NONE][0]['target_id'];
+          }
+		if($team_player_nid != '') {
+			$player_games[$season_data->field_saison[LANGUAGE_NONE][0]['tid']] = player_get_games($team_player_nid,$season_data->field_saison[LANGUAGE_NONE][0]['tid']);
+			$i++;
+			}
+        }
+      }
+    }
+	$player_data_all_seasons = &drupal_static('player_games_all_seasons', $player_games);
+    //dpm($player_data_all_seasons);
   }
 }
