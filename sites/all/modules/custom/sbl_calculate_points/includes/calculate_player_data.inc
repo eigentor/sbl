@@ -101,10 +101,12 @@ $single_games_team_season = array();
 if (!empty($season_matches_combined)) {
   foreach ($season_matches_combined as $season_match) {
     $season_matches_combined_wrapper = entity_metadata_wrapper('node', $season_match);
-    $single_games = $season_matches_combined_wrapper->field_tm_game->value();
-    foreach ($single_games as $game) {
-      // Write the field collection item IDs into the array
-      $single_games_team_season[] = $game->item_id;
+    if($season_matches_combined_wrapper->__isset('field_tm_game')) {
+      $single_games = $season_matches_combined_wrapper->field_tm_game->value();
+      foreach ($single_games as $game) {
+        // Write the field collection item IDs into the array
+        $single_games_team_season[] = $game->item_id;
+      }
     }
   }
 }
