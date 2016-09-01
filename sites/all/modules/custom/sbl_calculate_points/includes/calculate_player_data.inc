@@ -590,3 +590,14 @@ function player_single_elo_performance_all_seasons($season) {
   return $elo_performance;
 }
 
+function get_view_rowcount(){
+
+$view = views_get_current_view();
+$page_total = count($view->result);
+if(isset($view->total_rows)){
+return $view->total_rows;
+} else {
+return $page_total;
+}
+}
+
