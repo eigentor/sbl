@@ -131,7 +131,7 @@ blockquote {
   padding-bottom: 20px;
 }
 
-.page-aktuell .section-content, .page-node .section-content, .page-tabelle .section-content, .page-spieler .section-content {
+.page-aktuell .section-content, .page-node .section-content, .page-tabelle .section-content, .page-spieler .section-content, .page-setzliste .section-content {
   padding-top: 0px !important;
   padding-bottom: 20px;
 }
