@@ -24,6 +24,7 @@ function calculate_team_points($season, $nid) {
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
   $team_home_match = $team_home_match_query->execute();
+  
 
   // Query for away matches
   $team_away_match_query = new EntityFieldQuery();
@@ -172,6 +173,13 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
     if (!empty($field_season_value) && $node_wrapper->field_tm_saison->value() != '') {
       $season = $node_wrapper->field_tm_saison->tid->value();
     }
+	
+	 // Get the league value from the node
+    $field_league_value = $node_wrapper->field_liga->value();
+    if (!empty($field_league_value) && $node_wrapper->field_liga->value() != '') {
+      $league = $node_wrapper->field_liga->tid->value();
+    }
+	
 
     $field_tm_team_1_value = $node_wrapper->field_tm_team_1->value();
     if (!empty($field_tm_team_1_value)) {
@@ -233,6 +241,7 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
       if ($exists_home_team->rowCount() > 0) {
         $points_home_team_update = db_update('sbl_team_points')
           ->fields(array(
+			'league' => $league,
             'team_points' => $team_home_sum_team_points,
             'board_points' => $team_home_sum_board_points,
           ))
@@ -248,6 +257,7 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
             'node_id' => $team_home_nid,
             'name' => $name_team_home,
             'season' => $season,
+			'league' => $league,
             'team_points' => $team_home_sum_team_points,
             'board_points' => $team_home_sum_board_points,
           ))
@@ -268,6 +278,7 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
       if ($exists_away_team->rowCount() > 0) {
         $points_away_team_update = db_update('sbl_team_points')
           ->fields(array(
+			'league' => $league,
             'team_points' => $team_away_sum_team_points,
             'board_points' => $team_away_sum_board_points,
           ))
@@ -283,6 +294,7 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
             'node_id' => $team_away_nid,
             'name' => $name_team_away,
             'season' => $season,
+			'league' => $league,
             'team_points' => $team_away_sum_team_points,
             'board_points' => $team_away_sum_board_points,
           ))
@@ -290,7 +302,7 @@ function sbl_team_points_entity_postsave($entity, $entity_type, $op) {
       }
     }
 
-//    dpm($name_team_home . ', ' . $team_home_sum_team_points . ', ' . $team_home_sum_board_points . ', ' . $name_team_away . ', ' . $team_away_sum_team_points . ', ' . $team_away_sum_board_points);
+  // dpm($league . ', ' .$name_team_home . ', ' . $team_home_sum_team_points . ', ' . $team_home_sum_board_points . ', ' . $name_team_away . ', ' . $team_away_sum_team_points . ', ' . $team_away_sum_board_points);
   }
 }
 
