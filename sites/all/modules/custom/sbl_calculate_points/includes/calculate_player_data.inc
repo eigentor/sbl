@@ -590,6 +590,8 @@ function player_single_elo_performance_all_seasons($season) {
   return $elo_performance;
 }
 
+/* Gets row number for historic player's result */
+
 function get_view_rowcount(){
 
 $view = views_get_current_view();
@@ -598,6 +600,29 @@ if(isset($view->total_rows)){
 return $view->total_rows;
 } else {
 return $page_total;
+}
+}
+
+function get_board_points($season) {
+$team=arg(1);
+$board_points = db_query("SELECT board_points FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
+return $board_points . ":".number_format((120-$board_points),1,'.','');
+}
+
+function get_team_points($season) {
+$team=arg(1);
+$team_points = db_query("SELECT team_points FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
+return $team_points . ":".(30-$team_points);
+}
+
+function get_team_ranking($season) {
+$team=arg(1);
+$league = db_query("SELECT league FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
+$all_teams_per_league = db_query("SELECT * FROM sbl_team_points WHERE season=".$season." AND league=".$league." ORDER BY team_points DESC, board_points DESC")->fetchAll();
+$count=1;
+foreach ($all_teams_per_league as $record) {
+	if($record->node_id==$team) return $count . ".";
+	else $count++;
 }
 }
 

@@ -4,7 +4,8 @@
   Drupal.behaviors.sbl_helper_form_submit = {
     attach: function (context, settings) {
       $('#teamseite #tabs-0-bottom li.first a').text('Kader');
-      $('#teamseite #tabs-0-bottom li.last a').text('Ergebnisse');
+	  $('#teamseite #tabs-0-bottom li:nth-Child(3) a').text('Ergebnisse');
+      $('#teamseite #tabs-0-bottom li:nth-Child(4) a').text('Historische Platzierungen');
 
       // Die Scrollposition beibehalten, wenn man auf den Pager klickt
       var elementToTest = $("body.page-verein");
