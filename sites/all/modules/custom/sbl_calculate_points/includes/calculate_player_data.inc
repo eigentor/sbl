@@ -603,17 +603,23 @@ return $page_total;
 }
 }
 
+/* Board points gained by a team in a particular season */
+
 function get_board_points($season) {
 $team=arg(1);
 $board_points = db_query("SELECT board_points FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
 return $board_points . ":".number_format((120-$board_points),1,'.','');
 }
 
+/* Teamn points gained by a team in a particular season */
+
 function get_team_points($season) {
 $team=arg(1);
 $team_points = db_query("SELECT team_points FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
 return $team_points . ":".(30-$team_points);
 }
+
+/* Returns the ranking position in a particular season */
 
 function get_team_ranking($season) {
 $team=arg(1);
