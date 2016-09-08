@@ -74,12 +74,10 @@ css[league-management.css][name] = Styling for league management
 css[league-management.css][options][weight] = 11
 css[header-slideshow.css][name] = Header slideshow on the front page
 css[header-slideshow.css][options][weight] = 11
-css[pgn.min.css][name] = Canvas
-css[pgn.min.css][description] = CSS für Canvas Chess
-css[pgn.min.css][options][weight] = 11
 css[custom.css][name] = Your custom stylesheet
 css[custom.css][description] = This is the custom stylesheet for the website.
 css[custom.css][options][weight] = 12
+
 
 
 ; OPTIONAL LIBRARIES
@@ -92,10 +90,7 @@ libraries[quatro-custom][name] = quatro custom script
 libraries[quatro-custom][description] = Custom script file
 libraries[quatro-custom][js][1][file] = custom.js
 libraries[quatro-custom][js][1][options][weight] = 3
-libraries[canvas][name] = Canvas Chess Script
-libraries[canvas][description] = Canvas Chess Script
-libraries[canvas][js][1][file] = canvaschess-0.1.0.min.js
-libraries[canvas][js][2][file] = pgnviewer-0.1.0.min.js
+
 
 ; THEME SETTINGS (DEFAULTS)
 
