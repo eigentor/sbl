@@ -10,7 +10,7 @@ function player_get_games($player_team,$earlier_season='') {
   $player_nid = arg(1);
   if(strlen($earlier_season) > 0) $season=$earlier_season;
   else $season = arg(2);
- 
+
 
   // Get all the team matches for the player's club
   // Get all home matches for the players team for the current season
@@ -130,6 +130,7 @@ foreach($single_games_player_season as $key => $game_id) {
   $opponent_name = '';
   $points_player = '';
   $player_elo = '';
+  $league="";
 
   $player_1 = $game_wrapper->field_mt_player_1->value();
   $player_2 = $game_wrapper->field_mt_player_2->value();
@@ -148,6 +149,7 @@ foreach($single_games_player_season as $key => $game_id) {
           if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
             // The opponent elo is the one inside the field collection item for the current season
             $opponent_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
+			$league = $season_data->field_pl_league[LANGUAGE_NONE][0]['tid'];
           }
         }
 		foreach ($game_wrapper->field_mt_player_1->field_sp_verein->value() as $season_data) {
@@ -172,6 +174,7 @@ foreach($single_games_player_season as $key => $game_id) {
           //dpm($season_data);
           if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
             $opponent_elo = $season_data->field_pl_elo[LANGUAGE_NONE][0]['value'];
+			$league = $season_data->field_pl_league[LANGUAGE_NONE][0]['tid'];
           }
         }
 		foreach ($game_wrapper->field_mt_player_2->field_sp_verein->value() as $season_data) {
@@ -191,7 +194,6 @@ foreach($single_games_player_season as $key => $game_id) {
   $games_data[$key]['season'] = $season;
 }
 
-
 return $games_data;
 
 }
@@ -200,12 +202,12 @@ return $games_data;
  * Get the number of games a player has played in the current season
  */
 
-function player_number_played_games() {
+function player_number_played_games($league) {
   $number_played_games = 'O';
   $player_games = drupal_static('player_games');
 
-  if(!empty($player_games)) {
-    $number_played_games = count($player_games);
+  if(!empty($player_games[$league])) {
+    $number_played_games = count($player_games[$league]);
   }
 
   return $number_played_games;
@@ -243,18 +245,19 @@ function player_number_played_games_per_season($saison) {
  * Get the average ELO of the opponents of the player
  */
 
-function player_elo_opponents() {
+function player_elo_opponents($league) {
 
   $games_player = drupal_static('player_games');
   $elo_sum = '';
 
-  foreach($games_player as $game) {
+  foreach($games_player[$league] as $game) {
     $elo_sum += $game['opponent_elo'];
-  }
+	}
+
   $elo_total = '';
 
-  if(!empty($games_player)) {
-    $count_games = count($games_player);
+  if(!empty($games_player[$league])) {
+    $count_games = count($games_player[$league]);
     $elo_total = round($elo_sum / $count_games);
   }
 
@@ -275,6 +278,7 @@ function player_elo_opponents_all_seasons($season) {
   $elo_total = '';
   $count_games = '';
   $spielzeiten=array_keys($games_player);
+
  
 if($season !=0) {
   foreach($games_player[$season] as $game) {
@@ -301,8 +305,6 @@ else {
 	$elo_total = round($elo_sum / $count_games);
 }
 
-  //dpm($elo_total);
-
   return $elo_total;
 }
 
@@ -311,12 +313,12 @@ else {
 /*
  * Get the points a player has won in the current season
  */
-function player_single_points() {
+function player_single_points($league) {
 
   $games_player = drupal_static('player_games');
   $points_sum = 0;
 
-  foreach($games_player as $game) {
+  foreach($games_player[$league] as $game) {
     $points_sum += $game['points_player'];
   }
   if(empty($points_sum)) {
@@ -360,20 +362,20 @@ function player_single_points_all_seasons($season) {
 
 /* ELO-Change for Player in current season */
 
-function player_elo_change() {
+function player_elo_change($league) {
 
 $elo_player=0;
 $games_player = drupal_static('player_games');
-  foreach($games_player as $game) {
+  foreach($games_player[$league] as $game) {
     $elo_player = $game['player_elo'];
   }
   
   if($elo_player > 0 && !empty ($elo_player)) {
   $kfaktor=$elo_player >=2400?10:20;
-  $games_played=player_number_played_games();
-  $eloschnitt=player_elo_opponents();
+  $games_played=player_number_played_games($league);
+  $eloschnitt=player_elo_opponents($league);
   $elo_summe=$games_played * $eloschnitt;
-  $points_scored=player_single_points();
+  $points_scored=player_single_points($league);
   $exponent=($eloschnitt - $elo_player) / 400;
   $we=1/(1+(pow(10,$exponent)));
  
@@ -466,19 +468,19 @@ else $updatequery=db_query("UPDATE sbl_elo_gain_per_team SET elo_change=$elo_cha
 /*
  * Calculate the percentage of wins for the player for the current season
  */
-function player_single_percentage() {
+function player_single_percentage($league) {
   $percentage = 'O';
 
   $games_player = drupal_static('player_games');
 
   $points_sum = '';
 
-  foreach($games_player as $game) {
+  foreach($games_player[$league] as $game) {
     $points_sum += $game['points_player'];
   }
 
   $number_games = '';
-  $number_games = count($games_player);
+  $number_games = count($games_player[$league]);
   if($number_games != '' && $points_sum != '') {
     $percentage = round(($points_sum / $number_games) * 100);
   }
@@ -514,13 +516,13 @@ function player_single_percentage_all_seasons($season) {
  * Calculate the Elo Performance (simplified formula) for the player for
  * the current season.
  */
-function player_single_elo_performance() {
+function player_single_elo_performance($league) {
   $games_player = drupal_static('player_games');
   $elo_performance = '';
   $elo_sum = '';
   $elo_game = '';
 
-  foreach($games_player as $game) {
+  foreach($games_player[$league] as $game) {
     $elo_game = $game['opponent_elo'];
     if($game['points_player'] == 1) {
       $elo_sum += $elo_game + 400;
@@ -530,8 +532,8 @@ function player_single_elo_performance() {
       $elo_sum += $elo_game;
     }
   }
-  if(!empty($games_player)) {
-    $count_games = count($games_player);
+  if(!empty($games_player[$league])) {
+    $count_games = count($games_player[$league]);
     $elo_performance = round($elo_sum / $count_games);
   }
 

@@ -233,6 +233,7 @@ function sbl_calculate_points_views_pre_build(&$view) {
     // for the current season
     $player_verein_data = $player_wrapper->field_sp_verein->value();
     if (!empty($player_verein_data)) {
+	
       foreach ($player_wrapper->field_sp_verein->value() as $season_data) {
         //dpm($season_data);
         if (!empty($season_data->field_saison) && $season_data->field_saison[LANGUAGE_NONE][0]['tid'] == $season) {
@@ -240,14 +241,14 @@ function sbl_calculate_points_views_pre_build(&$view) {
             // if there is a field_fc_verein in the field_sp_verein for the current season,
             // the node id of the referenced nod is the players team for the current season
             $team_player_nid = $season_data->field_fc_verein[LANGUAGE_NONE][0]['target_id'];
+			$league=$season_data->field_pl_league[LANGUAGE_NONE][0]['tid'];
           }
         }
+		if($team_player_nid != '' && $league !='') {
+		$player_games[$league] = player_get_games($team_player_nid);
+		}
       }
     }
-    if($team_player_nid != '') {
-      $player_games = player_get_games($team_player_nid);
-    }
-
     $player_data = &drupal_static('player_games', $player_games);
   }
   

@@ -157,7 +157,7 @@ function statistics_create_navigation() {
   $list_items[] = l('Spielplan', 'spielplan' . $path_addon . '/' . $season . '/' . $league);
   $list_items[] = l('Rundenergebnisse', 'ergebnisse/' . $season . '/' . $league . '/' . $matchday);
   $list_items[] = l('Teamstatistik', 'setzliste' . $path_addon . '/' . $season . '/' . $league);
-  $list_items[] = l('Topscorer', 'spieler-rangliste/' . $season . '/' . $league);
+  #$list_items[] = l('Topscorer', 'spieler-rangliste/' . $season . '/' . $league);
 
   // Create an unordered List with the navigation items
   $output = theme_item_list(array('items' => $list_items, 'title' => $title, 'type' => $type, 'attributes' => $attributes));
