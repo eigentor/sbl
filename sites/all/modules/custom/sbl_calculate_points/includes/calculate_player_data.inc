@@ -634,3 +634,25 @@ foreach ($all_teams_per_league as $record) {
 }
 }
 
+/* Returns the status of each team in a particular season */
+function get_team_status($season,$team,$league) {
+$all_teams_per_league = db_query("SELECT * FROM sbl_team_points WHERE season=".$season." AND league=".$league." ORDER BY team_points DESC, board_points DESC")->fetchAll();
+$platz="";
+$count=1;
+foreach ($all_teams_per_league as $record) {
+	if($record->node_id==$team) $platz=$count;
+	else $count++;
+}
+switch($platz) {
+	case 1:
+	$title="<strong>Amtierender Meister</strong>";
+	break;
+	case "":
+	$title="<span style='color:green;font-weight:bold'>Aufsteiger</span>";
+	break;
+	default:
+	$title="Vorsaison: ".$platz.". Platz";
+	break;
+}
+return $title;
+}
