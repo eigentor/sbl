@@ -22,15 +22,31 @@ function sbl_standings_context_default_contexts() {
         'spieler/*' => 'spieler/*',
         'ergebnisse/*' => 'ergebnisse/*',
         'spielplan/*' => 'spielplan/*',
+        'spielplan-liga-2/*' => 'spielplan-liga-2/*',
         'tabelle/*' => 'tabelle/*',
+        'tabelle-liga-2/*' => 'tabelle-liga-2/*',
         'kreuztabelle/*' => 'kreuztabelle/*',
+        'kreuztabelle-liga-2/*' => 'kreuztabelle-liga-2/*',
         'spieler-rangliste/*' => 'spieler-rangliste/*',
+        'hall-fame' => 'hall-fame',
+        'setzliste/*' => 'setzliste/*',
+        'setzliste-liga-2/*' => 'setzliste-liga-2/*',
+        'vereine-der-2-bundesliga-nord' => 'vereine-der-2-bundesliga-nord',
+        'vereine-der-2-bundesliga-west' => 'vereine-der-2-bundesliga-west',
+        'vereine-der-2-bundesliga-sued' => 'vereine-der-2-bundesliga-sued',
+        'vereine-der-2-bundesliga-ost' => 'vereine-der-2-bundesliga-ost',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-26' => array(
+          'module' => 'block',
+          'delta' => '26',
+          'region' => 'above_content',
+          'weight' => '-10',
+        ),
         'block-21' => array(
           'module' => 'block',
           'delta' => '21',
@@ -42,12 +58,6 @@ function sbl_standings_context_default_contexts() {
           'delta' => '20',
           'region' => 'sidebar_second',
           'weight' => '-9',
-        ),
-        'views-naechste_spiele-block_1' => array(
-          'module' => 'views',
-          'delta' => 'naechste_spiele-block_1',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
         ),
         'block-19' => array(
           'module' => 'block',
