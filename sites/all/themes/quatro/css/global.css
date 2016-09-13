@@ -134,7 +134,8 @@ blockquote {
 .page-aktuell .section-content, .page-node .section-content, .page-tabelle .section-content,
 .page-spieler .section-content, .page-setzliste .section-content,
 .page-tabelle-liga-2 .section-content, .page-kreuztabelle .section-content,
-.page-spielplan .section-content, .page-ergebnisse .section-content {
+.page-spielplan .section-content, .page-ergebnisse .section-content, .page-vereine-der-2-bundesliga-nord .section-content,
+.page-vereine-der-2-bundesliga-west .section-content, .page-vereine-der-2-bundesliga-ost .section-content, .page-vereine-der-2-bundesliga-sued .section-content {
   padding-top: 0px !important;
   padding-bottom: 20px;
 }

@@ -141,7 +141,7 @@ function statistics_create_navigation() {
       break;
   }
   
-  switch(arg(1)) {
+  switch(arg(0)) {
   case "vereine-der-2-bundesliga-nord":
   $league=518;
   break;
@@ -156,6 +156,29 @@ function statistics_create_navigation() {
   break;
   case "vereine-der-bundesliga":
   $league=517;
+  break;
+  }
+  
+  switch($league) {
+  case 517:
+  $path_addon="";
+  $league_addon="bundesliga";
+  break;
+  case 518:
+  $path_addon="-liga-2";
+  $league_addon="2-bundesliga-nord";
+  break;
+  case 519:
+  $path_addon="-liga-2";
+  $league_addon="2-bundesliga-west";
+  break;
+  case 520:
+  $path_addon="-liga-2";
+  $league_addon="2-bundesliga-ost";
+  break;
+  case 521:
+  $path_addon="-liga-2";
+  $league_addon="2-bundesliga-sued";
   break;
   }
 
@@ -176,6 +199,7 @@ function statistics_create_navigation() {
   $list_items[] = l('Spielplan', 'spielplan' . $path_addon . '/' . $season . '/' . $league);
   $list_items[] = l('Rundenergebnisse', 'ergebnisse/' . $season . '/' . $league . '/' . $matchday);
   $list_items[] = l('Teamstatistik', 'setzliste' . $path_addon . '/' . $season . '/' . $league);
+  $list_items[] = l('Vereine & Adressen', 'vereine-der-' . $league_addon);
   #$list_items[] = l('Topscorer', 'spieler-rangliste/' . $season . '/' . $league);
 
   // Create an unordered List with the navigation items
