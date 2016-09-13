@@ -26,10 +26,11 @@ function sbl_feeds_importer_ds_layout_settings_info() {
         3 => 'field_pl_elo',
         4 => 'field_pl_master_title',
         5 => 'field_pl_country',
+        6 => 'field_pl_league',
       ),
       'hidden' => array(
-        6 => 'field_year_id',
-        7 => '_add_existing_field',
+        7 => 'field_year_id',
+        8 => '_add_existing_field',
       ),
     ),
     'fields' => array(
@@ -39,6 +40,7 @@ function sbl_feeds_importer_ds_layout_settings_info() {
       'field_pl_elo' => 'ds_content',
       'field_pl_master_title' => 'ds_content',
       'field_pl_country' => 'ds_content',
+      'field_pl_league' => 'ds_content',
       'field_year_id' => 'hidden',
       '_add_existing_field' => 'hidden',
     ),
@@ -51,6 +53,7 @@ function sbl_feeds_importer_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['field_collection_item|field_sp_verein|form'] = $ds_layout;
 

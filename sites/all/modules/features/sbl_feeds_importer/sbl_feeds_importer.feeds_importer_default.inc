@@ -166,6 +166,12 @@ function sbl_feeds_importer_feeds_importer_default() {
             'target' => 'field_pl_board_nr',
             'unique' => FALSE,
           ),
+          9 => array(
+            'source' => 'LIGA',
+            'target' => 'field_pl_league',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
         ),
         'update_existing' => '2',
         'update_non_existent' => 'skip',

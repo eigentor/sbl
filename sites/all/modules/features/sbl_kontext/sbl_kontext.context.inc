@@ -26,6 +26,12 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-26' => array(
+          'module' => 'block',
+          'delta' => '26',
+          'region' => 'above_content',
+          'weight' => '-10',
+        ),
         'block-20' => array(
           'module' => 'block',
           'delta' => '20',
@@ -43,12 +49,6 @@ function sbl_kontext_context_default_contexts() {
           'delta' => 'teams_leaderbord-block_1',
           'region' => 'sidebar_second',
           'weight' => '-8',
-        ),
-        'views-comments_recent-block_1' => array(
-          'module' => 'views',
-          'delta' => 'comments_recent-block_1',
-          'region' => 'sidebar_second',
-          'weight' => '-7',
         ),
         'block-18' => array(
           'module' => 'block',
@@ -510,17 +510,23 @@ function sbl_kontext_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-26' => array(
+          'module' => 'block',
+          'delta' => '26',
+          'region' => 'submenu',
+          'weight' => '-10',
+        ),
         'views-article_slider_large-block' => array(
           'module' => 'views',
           'delta' => 'article_slider_large-block',
           'region' => 'submenu',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-article_slider_large-block_1' => array(
           'module' => 'views',
           'delta' => 'article_slider_large-block_1',
           'region' => 'submenu',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-live_bar-block' => array(
           'module' => 'views',
@@ -532,55 +538,55 @@ function sbl_kontext_context_default_contexts() {
           'module' => 'views',
           'delta' => 'aktuell_bundesliga-block_1',
           'region' => 'content_bottom_first',
-          'weight' => '-46',
+          'weight' => '-9',
         ),
         'views-aktuell_spielberichte-block_1' => array(
           'module' => 'views',
           'delta' => 'aktuell_spielberichte-block_1',
           'region' => 'content_bottom_first',
-          'weight' => '-45',
+          'weight' => '-8',
         ),
         'views-video-block' => array(
           'module' => 'views',
           'delta' => 'video-block',
           'region' => 'content_bottom_first',
-          'weight' => '-44',
-        ),
-        'views-naechste_spiele-block' => array(
-          'module' => 'views',
-          'delta' => 'naechste_spiele-block',
-          'region' => 'content_bottom_first',
-          'weight' => '-43',
+          'weight' => '-7',
         ),
         'views-klubnews-block_1' => array(
           'module' => 'views',
           'delta' => 'klubnews-block_1',
           'region' => 'content_bottom_first',
-          'weight' => '-42',
+          'weight' => '-5',
         ),
         'block-20' => array(
           'module' => 'block',
           'delta' => '20',
           'region' => 'sidebar_second',
-          'weight' => '-47',
+          'weight' => '-10',
         ),
         'views-teams_leaderbord-block_1' => array(
           'module' => 'views',
           'delta' => 'teams_leaderbord-block_1',
           'region' => 'sidebar_second',
-          'weight' => '-46',
+          'weight' => '-8',
+        ),
+        'block-24' => array(
+          'module' => 'block',
+          'delta' => '24',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
         ),
         'block-18' => array(
           'module' => 'block',
           'delta' => '18',
           'region' => 'sidebar_second',
-          'weight' => '-45',
+          'weight' => '-6',
         ),
         'block-19' => array(
           'module' => 'block',
           'delta' => '19',
           'region' => 'sidebar_second',
-          'weight' => '-44',
+          'weight' => '-5',
         ),
       ),
     ),
@@ -603,6 +609,7 @@ function sbl_kontext_context_default_contexts() {
     'path' => array(
       'values' => array(
         'partien' => 'partien',
+        'saison-*' => 'saison-*',
       ),
     ),
   );
