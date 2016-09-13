@@ -140,9 +140,28 @@ function statistics_create_navigation() {
 	  else $league=arg(2);
       break;
   }
+  
+  switch(arg(1)) {
+  case "vereine-der-2-bundesliga-nord":
+  $league=518;
+  break;
+  case "vereine-der-2-bundesliga-west":
+  $league=519;
+  break;
+  case "vereine-der-2-bundesliga-ost":
+  $league=520;
+  break;
+  case "vereine-der-2-bundesliga-sued":
+  $league=521;
+  break;
+  case "vereine-der-bundesliga":
+  $league=517;
+  break;
+  }
 
   if($league && $league != 517) $path_addon="-liga-2";
   else $path_addon="";
+  
   
   $league_name=set_league_name($league);
   
