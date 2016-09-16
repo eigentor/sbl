@@ -302,7 +302,8 @@ else {
     $count_games+= count($games_player[$spielzeiten[$i]]);
   }
 	}
-	$elo_total = round($elo_sum / $count_games);
+	if($count_games > 0) $elo_total = round($elo_sum / $count_games);
+	else $elo_total=0;
 }
 
   return $elo_total;
@@ -585,7 +586,8 @@ function player_single_elo_performance_all_seasons($season) {
 	}	
 			  
   }
-  $elo_performance = round($elo_sum / $count_games);
+  if($count_games > 0) $elo_performance = round($elo_sum / $count_games);
+  else $elo_performance=0;
   }
   
 
