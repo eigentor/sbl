@@ -117,7 +117,6 @@ function statistics_create_navigation() {
   // Set default values for season and matchday
   $season = get_current_season();
   $matchday = get_current_matchday();
-
   //Get the season from the url arguments
   switch(statistics_check_type_of_page()) {
     case ('panel_verein'):
@@ -134,12 +133,13 @@ function statistics_create_navigation() {
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
 	case 'view_rangliste_mannschaften_liga_2':
-	case 'view_teams_leaderboard':
+	case 'view_teams_leaderbord':
       $season = arg(1);
 	  if(!arg(2)) $league = 517;
 	  else $league=arg(2);
       break;
   }
+ 
   
   switch(arg(0)) {
   case "vereine-der-2-bundesliga-nord":
@@ -258,7 +258,7 @@ function select_season_form($form, &$form_state) {
     case 'panel_tabelle':
     case 'view_rangliste_teams_crosstable':
     case 'view_players_leaderboard':
-	case 'view_teams_leaderboard':
+	case 'view_teams_leaderbord':
       $default_season = arg(1);
       break;
 
