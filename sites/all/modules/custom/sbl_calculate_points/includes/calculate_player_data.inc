@@ -382,7 +382,7 @@ $games_player = drupal_static('player_games');
   $summe_gewinnerwartungen=round(($we * $games_played),3);
   $elo_new=$elo_player + ($kfaktor *($points_scored-$summe_gewinnerwartungen));
   $difference=round($elo_new-$elo_player,1);
-  $change=$difference > 0?"<span style='color:green'>+".$difference."</span>":"<span style='color:red'>".$difference."</span>";
+  $change=$difference;
   }
   else $change=0;
 
