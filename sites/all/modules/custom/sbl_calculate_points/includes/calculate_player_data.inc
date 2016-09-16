@@ -249,15 +249,17 @@ function player_elo_opponents($league) {
 
   $games_player = drupal_static('player_games');
   $elo_sum = '';
+  $unrated_players=0;
 
   foreach($games_player[$league] as $game) {
-    $elo_sum += $game['opponent_elo'];
+    if($game['opponent_elo'] > 0) $elo_sum += $game['opponent_elo'];
+	else $unrated_players++;
 	}
 
   $elo_total = '';
 
   if(!empty($games_player[$league])) {
-    $count_games = count($games_player[$league]);
+    $count_games = count($games_player[$league]) - $unrated_players;
     $elo_total = round($elo_sum / $count_games);
   }
 
@@ -278,28 +280,31 @@ function player_elo_opponents_all_seasons($season) {
   $elo_total = '';
   $count_games = '';
   $spielzeiten=array_keys($games_player);
-
+  $unrated_players=0;
  
 if($season !=0) {
   foreach($games_player[$season] as $game) {
-    $elo_sum += $game['opponent_elo'];
+     if($game['opponent_elo'] > 0) $elo_sum += $game['opponent_elo'];
+	 else $unrated_players++;
   }
   
 
   if(!empty($games_player[$season])) {
-    $count_games = count($games_player[$season]);
+    $count_games = count($games_player[$season]) - $unrated_players;
     $elo_total = round($elo_sum / $count_games);
   }
 }
 else {
 	for($i=0;$i<count($spielzeiten);$i++) {
+	$unrated_players=0;
 	foreach($games_player[$spielzeiten[$i]] as $game) {
-    $elo_sum += $game['opponent_elo'];
+    if($game['opponent_elo'] > 0) $elo_sum += $game['opponent_elo'];
+	 else $unrated_players++;
   }
  
 
   if(!empty($games_player[$spielzeiten[$i]])) {
-    $count_games+= count($games_player[$spielzeiten[$i]]);
+    $count_games+= count($games_player[$spielzeiten[$i]]) - $unrated_players;
   }
 	}
 	if($count_games > 0) $elo_total = round($elo_sum / $count_games);
@@ -522,9 +527,11 @@ function player_single_elo_performance($league) {
   $elo_performance = '';
   $elo_sum = '';
   $elo_game = '';
+  $unrated_players=0;
 
   foreach($games_player[$league] as $game) {
     $elo_game = $game['opponent_elo'];
+	if($elo_game > 0) {
     if($game['points_player'] == 1) {
       $elo_sum += $elo_game + 400;
     } elseif($game['points_player'] == 0) {
@@ -532,12 +539,13 @@ function player_single_elo_performance($league) {
     } elseif($game['points_player'] == 0.5) {
       $elo_sum += $elo_game;
     }
+	}
+	else $unrated_players++;
   }
   if(!empty($games_player[$league])) {
-    $count_games = count($games_player[$league]);
+    $count_games = count($games_player[$league]) - $unrated_players;
     $elo_performance = round($elo_sum / $count_games);
   }
-
   return $elo_performance;
 }
 
@@ -551,28 +559,13 @@ function player_single_elo_performance_all_seasons($season) {
   $elo_sum = '';
   $elo_game = '';
   $count_games = '';
+  $unrated_players=0;
   $spielzeiten=array_keys($games_player);
 
   if($season !=0) {
   foreach($games_player[$season] as $game) {
     $elo_game = $game['opponent_elo'];
-    if($game['points_player'] == 1) {
-      $elo_sum += $elo_game + 400;
-    } elseif($game['points_player'] == 0) {
-      $elo_sum += $elo_game - 400;
-    } elseif($game['points_player'] == 0.5) {
-      $elo_sum += $elo_game;
-    }
-  }
-  if(!empty($games_player[$season])) {
-    $count_games = count($games_player[$season]);
-    $elo_performance = round($elo_sum / $count_games);
-  }
-  }
-  else {
-	for($i=0;$i<count($spielzeiten);$i++) {
-	foreach($games_player[$spielzeiten[$i]] as $game) {
-    $elo_game = $game['opponent_elo'];
+	if($elo_game > 0) {
     if($game['points_player'] == 1) {
       $elo_sum += $elo_game + 400;
     } elseif($game['points_player'] == 0) {
@@ -581,8 +574,31 @@ function player_single_elo_performance_all_seasons($season) {
       $elo_sum += $elo_game;
     }
 	}
+	else $unrated_players++;
+  }
+  if(!empty($games_player[$season])) {
+    $count_games = count($games_player[$season]) - $unrated_players;
+    $elo_performance = round($elo_sum / $count_games);
+  }
+  }
+  else {
+	for($i=0;$i<count($spielzeiten);$i++) {
+	$unrated_players=0;
+	foreach($games_player[$spielzeiten[$i]] as $game) {
+    $elo_game = $game['opponent_elo'];
+	if($elo_game > 0) {
+    if($game['points_player'] == 1) {
+      $elo_sum += $elo_game + 400;
+    } elseif($game['points_player'] == 0) {
+      $elo_sum += $elo_game - 400;
+    } elseif($game['points_player'] == 0.5) {
+      $elo_sum += $elo_game;
+    }
+	}
+	else $unrated_players++;
+	}
 	 if(!empty($games_player[$spielzeiten[$i]])) {
-    $count_games += count($games_player[$spielzeiten[$i]]);
+    $count_games += count($games_player[$spielzeiten[$i]]) - $unrated_players;
 	}	
 			  
   }
