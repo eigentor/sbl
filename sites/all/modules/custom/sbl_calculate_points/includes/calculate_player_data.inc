@@ -366,6 +366,73 @@ function player_single_points_all_seasons($season) {
   return $points_sum;
 }
 
+/* Gets the number of unrated opponents in current season */
+
+function player_unrated_opponents($league) {
+$unrated_players=0;
+$games_player = drupal_static('player_games');
+	foreach($games_player[$league] as $game) {
+		if($game['opponent_elo'] == 0) $unrated_players++;
+	}
+return $unrated_players;
+}
+
+/* Gets the number of points scored against unrated opponents in current season */
+
+function player_points_versus_unrated_opponents($league) {
+$scored_points=0;
+$games_player = drupal_static('player_games');
+	foreach($games_player[$league] as $game) {
+		if($game['opponent_elo'] == 0) $scored_points+=$game['points_player'];
+	}
+return $scored_points;
+}
+
+
+
+/* Gets the number of unrated opponents in all seasons */
+
+function player_unrated_opponents_all_seasons($season) {
+$unrated_players=0;
+$games_player = drupal_static('player_games_all_seasons');
+$spielzeiten=array_keys($games_player);
+	 if($season !=0) {
+		foreach($games_player[$season] as $game) {
+			if($game['opponent_elo'] == 0) $unrated_players++;
+			}
+		}
+	else {
+		for($i=0;$i<count($spielzeiten);$i++) {
+			foreach($games_player[$spielzeiten[$i]] as $game) {
+				if($game['opponent_elo'] == 0) $unrated_players++;
+			}
+		}
+	}
+return $unrated_players;
+}
+
+/* Gets the number of points scored against unrated opponents in all seasons */
+
+function player_points_versus_unrated_opponents_all_seasons($season) {
+$scored_points=0;
+$games_player = drupal_static('player_games_all_seasons');
+$spielzeiten=array_keys($games_player);
+	if($season !=0) {
+		foreach($games_player[$season] as $game) {
+			if($game['opponent_elo'] == 0) $scored_points+=$game['points_player'];
+		}
+	}
+	else {
+		for($i=0;$i<count($spielzeiten);$i++) {
+			foreach($games_player[$spielzeiten[$i]] as $game) {
+				if($game['opponent_elo'] == 0) $scored_points+=$game['points_player'];
+			}
+		}
+	}
+return $scored_points;
+}
+
+
 /* ELO-Change for Player in current season */
 
 function player_elo_change($league) {
@@ -378,10 +445,10 @@ $games_player = drupal_static('player_games');
   
   if($elo_player > 0 && !empty ($elo_player)) {
   $kfaktor=$elo_player >=2400?10:20;
-  $games_played=player_number_played_games($league);
+  $games_played=player_number_played_games($league) - player_unrated_opponents($league);
   $eloschnitt=player_elo_opponents($league);
   $elo_summe=$games_played * $eloschnitt;
-  $points_scored=player_single_points($league);
+  $points_scored=player_single_points($league) - player_points_versus_unrated_opponents($league);
   $exponent=($eloschnitt - $elo_player) / 400;
   $we=1/(1+(pow(10,$exponent)));
  
@@ -410,10 +477,10 @@ if($season !=0) {
   
   if($elo_player > 0 && !empty ($elo_player)) {
   $kfaktor=$elo_player >=2400?10:20;
-  $games_played=player_number_played_games_per_season($season);
+  $games_played=player_number_played_games_per_season($season) - player_unrated_opponents_all_seasons($season);
   $eloschnitt=player_elo_opponents_all_seasons($season);
   $elo_summe=$games_played * $eloschnitt;
-  $points_scored=player_single_points_all_seasons($season);
+  $points_scored=player_single_points_all_seasons($season) - player_points_versus_unrated_opponents_all_seasons($season);
   $exponent=($eloschnitt - $elo_player) / 400;
   $we=1/(1+(pow(10,$exponent)));
  
@@ -433,10 +500,10 @@ for($i=0;$i<count($spielzeiten);$i++) {
 	}
 	if($elo_player > 0 && !empty ($elo_player)) {
 	$kfaktor[$i]=$elo_player >=2400?10:20;
-	$games_played[$i]=player_number_played_games_per_season($spielzeiten[$i]);
+	$games_played[$i]=player_number_played_games_per_season($spielzeiten[$i]) - player_unrated_opponents_all_seasons($spielzeiten[$i]);
 	$eloschnitt[$i]=player_elo_opponents_all_seasons($spielzeiten[$i]);
 	$elo_summe[$i]=$games_played[$i] * $eloschnitt[$i];
-	$points_scored[$i]=player_single_points_all_seasons($spielzeiten[$i]);
+	$points_scored[$i]=player_single_points_all_seasons($spielzeiten[$i]) - player_points_versus_unrated_opponents_all_seasons($spielzeiten[$i]);
 	$exponent[$i]=($eloschnitt[$i] - $elo_player) / 400;
 	$we[$i]=1/(1+(pow(10,$exponent[$i])));
  
