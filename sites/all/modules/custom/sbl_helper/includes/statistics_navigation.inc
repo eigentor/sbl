@@ -199,7 +199,7 @@ function statistics_create_navigation() {
   $list_items[] = l('Spielplan', 'spielplan' . $path_addon . '/' . $season . '/' . $league);
   $list_items[] = l('Rundenergebnisse', 'ergebnisse/' . $season . '/' . $league . '/' . $matchday);
   $list_items[] = l('Teamstatistik', 'setzliste' . $path_addon . '/' . $season . '/' . $league);
-  $list_items[] = l('Vereine & Adressen', 'vereine-der-' . $league_addon);
+  if($season==get_current_season()) $list_items[] = l('Vereine & Adressen', 'vereine-der-' . $league_addon);
   #$list_items[] = l('Topscorer', 'spieler-rangliste/' . $season . '/' . $league);
 
   // Create an unordered List with the navigation items
@@ -285,6 +285,8 @@ function select_season_form($form, &$form_state) {
 	553 => '2006/07',
 	554 => '2005/06',
 	555 => '2004/05',
+	556 => '2003/04',
+	557 => '2002/03',
 	),
     '#default_value' => $default_season,
     '#description' => 'Wählen Sie die Saison',
