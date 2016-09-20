@@ -71,7 +71,9 @@ function get_elo_average_per_team($nid) {
     else $count_rated_players++;
     $elo_gesamt+=intval($elo_player[$i]);
   }
-  $elo_average=round($elo_gesamt/$count_rated_players,1);
+  if($count_rated_players > 0) $elo_average=round($elo_gesamt/$count_rated_players,1);
+  else $elo_average=0;
+  
   return $elo_average;
 }
 
@@ -86,7 +88,9 @@ function get_elo_average_per_team_first_eight($nid) {
     else $count_rated_players++;
     $elo_gesamt+=intval($elo_player[$i]);
   }
-  $elo_average=round($elo_gesamt/$count_rated_players,1);
+  if($count_rated_players > 0) $elo_average=round($elo_gesamt/$count_rated_players,1);
+  else $elo_average=0;
+  
   return $elo_average;
 }
 
