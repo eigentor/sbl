@@ -1,0 +1,4 @@
+name = SBL PGN
+description = PGN Testmodul
+package = Schach-Bundesliga
+core = 7.x
