@@ -287,6 +287,7 @@ function select_season_form($form, &$form_state) {
 	555 => '2004/05',
 	556 => '2003/04',
 	557 => '2002/03',
+	558 => '2001/02',
 	),
     '#default_value' => $default_season,
     '#description' => 'Wählen Sie die Saison',
