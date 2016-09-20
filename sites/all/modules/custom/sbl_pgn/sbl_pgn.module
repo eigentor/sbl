@@ -1,6 +1,5 @@
 <?php
 
-/*
 function sbl_pgn_init() {
 	
 $path = drupal_get_path_alias($_GET['q']);
@@ -12,8 +11,6 @@ $path_array = explode('/', $path);
 		drupal_add_css('https://pgn.chessbase.com/CBReplay.css', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
 	}
 }
-*/
-
 /**
  * Formatter Info.
  */
@@ -21,7 +18,7 @@ function sbl_pgn_field_formatter_info() {
   return array(
     'sbl_pgn' => array( 
       'label' => t('PGN Formatter'),
-      'field types' => array('text_long'), //Only available to Text Long Fields
+      'field types' => array('text_long'), //This will only be available to text long fields
       'description' => t("PGN-Formatter im Chessbase-Stil"),
       ),
   );
@@ -34,21 +31,8 @@ function sbl_pgn_field_formatter_info() {
 function sbl_pgn_field_formatter_view($entity_type,$entity, $field,$instance,$langcode, $items,$display) {
 	foreach($items as $delta => $item) {
 		$element[$delta] = array(
+	
 		'#markup' => '<div class="cbreplay">' . $item['value'] . '</div>',
-		'#attached' => array(
-		'js' => array(
-		'type' => 'external',
-		'data' => 'https://pgn.chessbase.com/jquery-3.0.0.min.js',
-		),
-		'js' => array(
-		'type' => 'external',
-		'data' => 'https://pgn.chessbase.com/cbreplay.js',
-		),
-		'css' => array(
-		'type' => 'external',
-		'data' => 'https://pgn.chessbase.com/CBReplay.css',
-		),
-		),
 	);
 	}
 	return $element;
