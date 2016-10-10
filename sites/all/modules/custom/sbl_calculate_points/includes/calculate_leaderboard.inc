@@ -30,6 +30,8 @@ function get_players_per_club($nid) {
     ->entityCondition('bundle', 'field_sp_verein')
     ->fieldCondition('field_fc_verein', 'target_id', $nid)
     ->fieldCondition('field_saison', 'tid', $season)
+	->fieldCondition('field_pl_board_nr', 'value', 'NULL','!=')
+	->fieldOrderBy('field_pl_board_nr', 'value', 'ASC')
     // Bypass node access
     ->addTag('DANGEROUS_ACCESS_CHECK_OPT_OUT');
 
