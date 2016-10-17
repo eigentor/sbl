@@ -240,7 +240,7 @@ $league=arg(2);
 	
 
   if($nid != $opponent_nid) {
-    return "<a href='/ergebnisse/".$season."/".$round."' class='tooltip' title='".$round.". Spieltag: ".$team1_name." - ".$team2_name." ".$final_result."'>".$team_points."</a>";
+    return "<a href='/ergebnisse/".$season."/".$league."/".$round."' class='tooltip' title='".$round.". Spieltag: ".$team1_name." - ".$team2_name." ".$final_result."'>".$team_points."</a>";
   } else {
     return 999;
   }
