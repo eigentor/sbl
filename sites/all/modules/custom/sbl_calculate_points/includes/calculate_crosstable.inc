@@ -109,7 +109,7 @@ function get_all_team_matches_team($nid, $season) {
 
 function crosstable_opponent($nid, $team_rank) {
   $season = arg(1);
-
+$league=arg(2);
   $opponent_nid = '';
   $selected_match_nid = '';
   $team_points = '';
@@ -122,8 +122,8 @@ function crosstable_opponent($nid, $team_rank) {
         name,
         team_points,
         board_points
-        FROM {sbl_team_points} WHERE season = :season', array(
-    ':season' => $season
+        FROM {sbl_team_points} WHERE season = :season AND league=:league', array(
+    ':season' => $season,':league'=>$league
   ));
 
   // Create an array with all the needed data for the team:
