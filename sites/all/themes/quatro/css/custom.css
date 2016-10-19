@@ -45,6 +45,16 @@ hyphens:auto;
 	margin:-30px 0 10px 0; 
 }
 
+/* guts.com Werbebanner */
+#block-block-29 {
+	margin-bottom:0px !important;
+	margin-top:8px;
+}
+
+#block-block-29 p {
+	margin-bottom:5px !important;
+}
+
 /* Umfragen */
 
 
@@ -1122,6 +1132,12 @@ overflow: hidden;
    display:none;
 }
 }
+
+@media only screen and (min-width:1221px) {
+#block-block-29 {
+margin-left:10px;
+}
+}
 @media only screen and (max-width: 1220px) and (min-width:800px) { 
 .zone-menu ul.nice-menu li a {
     padding: 10px 8px !important;
@@ -1131,7 +1147,13 @@ overflow: hidden;
 text-align:left !important;
 }
 }
+@media only screen and (max-width: 500px) { 
+#block-block-29 {
+display:none;
+}
+}
 
+#block-block-29 {
 @media only screen and (max-width: 640px) { 
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
