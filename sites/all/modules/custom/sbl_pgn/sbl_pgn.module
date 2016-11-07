@@ -9,6 +9,8 @@ $path_array = explode('/', $path);
 		drupal_add_js('https://pgn.chessbase.com/jquery-3.0.0.min.js', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
 		drupal_add_js('https://pgn.chessbase.com/cbreplay.js', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
 		drupal_add_css('https://pgn.chessbase.com/CBReplay.css', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
+		 drupal_add_js('var jq300 = jQuery; jQuery.noConflict(true);',
+      array('type' => 'inline', 'scope' => 'header'));
 	}
 }
 /**
