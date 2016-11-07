@@ -10,6 +10,12 @@ body {
 hyphens:auto;
 }
 
+.block-spielberichte {
+-webkit-box-shadow: 3px 3px 3px 0px rgba(153,153,153,0.73);
+-moz-box-shadow: 3px 3px 3px 0px rgba(153,153,153,0.73);
+box-shadow: 3px 3px 3px 0px rgba(153,153,153,0.73);
+}
+
 /* Ausrichtungsklassen für Bilder */
 .image-left {
   float: left;
@@ -88,7 +94,7 @@ tr.table-1,tr.table-2bl-1,tr.table-fbl-1 {
 	margin:0 5px 0 0;
 }
 
-tr.table-16,tr.table-15,tr.table-14,tr.table-13,tr.table-2bl-8,tr.table-2bl-9,tr.table-2bl-10,tr.table-fbl-11,tr.table-fbl-12 { /* Absteiger */
+tr.table-16,tr.table-15,tr.table-14,tr.table-13,tr.table-2bl-8,tr.table-2bl-9,tr.table-2bl-10,tr.table-fbl-10,tr.table-fbl-11,tr.table-fbl-12 { /* Absteiger */
 	background-color:#faeeed !important;
 	color:black !important;
 	font-weight:600 !important;

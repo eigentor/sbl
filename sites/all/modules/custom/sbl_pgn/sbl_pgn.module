@@ -1,5 +1,4 @@
 <?php
-
 function sbl_pgn_init() {
 	
 $path = drupal_get_path_alias($_GET['q']);
@@ -39,6 +38,4 @@ function sbl_pgn_field_formatter_view($entity_type,$entity, $field,$instance,$la
 	}
 	return $element;
 }
-
 ?>
-
