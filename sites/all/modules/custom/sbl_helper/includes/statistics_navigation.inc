@@ -180,10 +180,12 @@ function statistics_create_navigation() {
   $path_addon="-liga-2";
   $league_addon="2-bundesliga-sued";
   break;
+  case 560:
+  $path_addon="-frauen-bundesliga";
+  $league_addon="frauen-bundesliga";
+  break;
   }
 
-  if($league && $league != 517) $path_addon="-liga-2";
-  else $path_addon="";
   
   
   $league_name=set_league_name($league);
@@ -224,13 +226,16 @@ function set_league_name($league) {
   case 521:
   $league_name="2. Liga Süd";
   break;
+  case 560:
+  $league_name="Frauen-Bundesliga";
+  break;
   default:
    $league_name="1. Bundesliga";
   }
   return $league_name;
 }
 
-function set_link_to_league_table($league) {
+function set_link_to_league_table($league) { // Legt Links für Seiten-Navi für Tabellenübersicht fest
 $season=arg(2);
 
  switch($league) {
@@ -240,6 +245,9 @@ $season=arg(2);
   case 521:
 	$link="tabelle-liga-2/" . $season . "/" . $league;
   break;
+  case 560:
+	$link="tabelle-frauen-bundesliga/" . $season . "/" . $league;
+	break;
    default:
    $link="tabelle/" . $season . "/" . $league;
   }
