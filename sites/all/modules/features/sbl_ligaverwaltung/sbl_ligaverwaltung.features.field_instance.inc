@@ -11,6 +11,108 @@ function sbl_ligaverwaltung_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'field_collection_item-field_ligenzuordnung-field_liga_saison'.
+  $field_instances['field_collection_item-field_ligenzuordnung-field_liga_saison'] = array(
+    'bundle' => 'field_ligenzuordnung',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_liga_saison',
+    'label' => 'Saison',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_ligenzuordnung-field_liga_verein'.
+  $field_instances['field_collection_item-field_ligenzuordnung-field_liga_verein'] = array(
+    'bundle' => 'field_ligenzuordnung',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_liga_verein',
+    'label' => 'Liga',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_ligenzuordnung-field_ligastatus'.
+  $field_instances['field_collection_item-field_ligenzuordnung-field_ligastatus'] = array(
+    'bundle' => 'field_ligenzuordnung',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Status des Vereins. (M) = Meister des Vorjahres, (N) = Liganeuling, (A) = Absteiger aus der h√∂heren Liga',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_ligastatus',
+    'label' => 'Ligastatus',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_sp_verein-field_fc_verein'.
   $field_instances['field_collection_item-field_sp_verein-field_fc_verein'] = array(
     'bundle' => 'field_sp_verein',
@@ -117,7 +219,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 5,
@@ -162,6 +264,40 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'settings' => array(),
       'type' => 'number',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_sp_verein-field_pl_league'.
+  $field_instances['field_collection_item-field_sp_verein-field_pl_league'] = array(
+    'bundle' => 'field_sp_verein',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_pl_league',
+    'label' => 'Liga',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 6,
     ),
   );
 
@@ -337,7 +473,48 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_tm_game-field_brettnummer'.
+  $field_instances['field_collection_item-field_tm_game-field_brettnummer'] = array(
+    'bundle' => 'field_tm_game',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_brettnummer',
+    'label' => 'Brettnummer',
+    'required' => 0,
+    'settings' => array(
+      'max' => 8,
+      'min' => 1,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 1,
     ),
   );
 
@@ -371,7 +548,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -405,7 +582,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -443,10 +620,10 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -484,10 +661,10 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -521,7 +698,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -555,7 +732,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -611,7 +788,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 28,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -633,7 +810,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'display_label' => 0,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 18,
     ),
   );
 
@@ -672,93 +849,8 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'pgn_converter' => 'pgn_converter',
-          'php_code' => 'php_code',
-          'plain_text' => 'plain_text',
-          'xbbcode' => 'xbbcode',
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 1,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => -45,
-            ),
-            'filtered_html' => array(
-              'weight' => -50,
-            ),
-            'full_html' => array(
-              'weight' => -49,
-            ),
-            'pgn_converter' => array(
-              'weight' => -48,
-            ),
-            'php_code' => array(
-              'weight' => -44,
-            ),
-            'plain_text' => array(
-              'weight' => -46,
-            ),
-            'xbbcode' => array(
-              'weight' => -47,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-mannschaft-field_chairman_club'.
-  $field_instances['node-mannschaft-field_chairman_club'] = array(
-    'bundle' => 'mannschaft',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_chairman_club',
-    'label' => 'Vorsitzender',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
           'ds_code' => 0,
-          'filtered_html' => 'filtered_html',
+          'filtered_html' => 0,
           'full_html' => 'full_html',
           'pgn_converter' => 0,
           'php_code' => 0,
@@ -803,7 +895,92 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_chairman_club'.
+  $field_instances['node-mannschaft-field_chairman_club'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_chairman_club',
+    'label' => 'Vorsitzender',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'filtered_html' => 0,
+          'full_html' => 'full_html',
+          'pgn_converter' => 0,
+          'php_code' => 0,
+          'plain_text' => 0,
+          'xbbcode' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 1,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -45,
+            ),
+            'filtered_html' => array(
+              'weight' => -49,
+            ),
+            'full_html' => array(
+              'weight' => -50,
+            ),
+            'pgn_converter' => array(
+              'weight' => -48,
+            ),
+            'php_code' => array(
+              'weight' => -44,
+            ),
+            'plain_text' => array(
+              'weight' => -46,
+            ),
+            'xbbcode' => array(
+              'weight' => -47,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
     ),
   );
 
@@ -843,7 +1020,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 19,
     ),
   );
 
@@ -901,7 +1078,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
@@ -980,7 +1157,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 10,
     ),
   );
 
@@ -1059,7 +1236,50 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 20,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_ligenzuordnung'.
+  $field_instances['node-mannschaft-field_ligenzuordnung'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Hinzuf√ºgen',
+          'delete' => 'L√∂schen',
+          'description' => TRUE,
+          'edit' => 'Bearbeiten',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 14,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ligenzuordnung',
+    'label' => 'Ligenzuordnung',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 5,
     ),
   );
 
@@ -1073,13 +1293,13 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 17,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
     ),
     'entity_type' => 'node',
@@ -1122,7 +1342,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 6,
     ),
   );
 
@@ -1199,7 +1419,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         ),
       ),
       'type' => 'media_generic',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -1214,13 +1434,13 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 16,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1241,7 +1461,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -1305,7 +1525,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 15,
     ),
   );
 
@@ -1363,7 +1583,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 9,
     ),
   );
 
@@ -1424,15 +1644,15 @@ function sbl_ligaverwaltung_field_default_field_instances() {
           'address' => 'address',
           'address-hide-country' => 'address-hide-country',
           'organisation' => 'organisation',
+          'name-oneline' => 'name-oneline',
+          'address-optional' => 'address-optional',
           'address-hide-postal-code' => 0,
           'address-hide-street' => 0,
-          'name-oneline' => 0,
           'name-full' => 0,
-          'address-optional' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 7,
+      'weight' => 11,
     ),
   );
 
@@ -1448,13 +1668,13 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 15,
+        'weight' => 13,
       ),
       'full' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
     ),
     'entity_type' => 'node',
@@ -1510,7 +1730,84 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'size' => 10,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-mannschaft-field_vereinsname_kurz'.
+  $field_instances['node-mannschaft-field_vereinsname_kurz'] = array(
+    'bundle' => 'mannschaft',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_vereinsname_kurz',
+    'label' => 'Vereinsname kurz',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'pgn_converter' => 'pgn_converter',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'xbbcode' => 'xbbcode',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => -5,
+            ),
+            'filtered_html' => array(
+              'weight' => -9,
+            ),
+            'full_html' => array(
+              'weight' => -10,
+            ),
+            'pgn_converter' => array(
+              'weight' => -8,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => -6,
+            ),
+            'xbbcode' => array(
+              'weight' => -7,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
     ),
   );
 
@@ -1550,7 +1847,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'ds_code' => 0,
-          'filtered_html' => 'filtered_html',
+          'filtered_html' => 0,
           'full_html' => 'full_html',
           'pgn_converter' => 0,
           'php_code' => 0,
@@ -1595,7 +1892,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -1659,7 +1956,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 3,
+      'weight' => 7,
     ),
   );
 
@@ -1852,6 +2149,63 @@ function sbl_ligaverwaltung_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-spieler-field_pl_facebook'.
+  $field_instances['node-spieler-field_pl_facebook'] = array(
+    'bundle' => 'spieler',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pl_facebook',
+    'label' => 'Facebook',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 13,
     ),
   );
 
@@ -2070,6 +2424,63 @@ function sbl_ligaverwaltung_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-spieler-field_pl_twitter'.
+  $field_instances['node-spieler-field_pl_twitter'] = array(
+    'bundle' => 'spieler',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pl_twitter',
+    'label' => 'Twitter',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => 'nofollow',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'rel_remove' => 'default',
+      'title' => 'none',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-spieler-field_sp_verein'.
   $field_instances['node-spieler-field_sp_verein'] = array(
     'bundle' => 'spieler',
@@ -2274,7 +2685,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -2320,7 +2731,7 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -2384,11 +2795,12 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'input_format' => 'd.m.Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
-        'year_range' => '-6:+2',
+        'year_range' => '1980:+2',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -2437,7 +2849,56 @@ function sbl_ligaverwaltung_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-team_match-field_liga'.
+  $field_instances['node-team_match-field_liga'] = array(
+    'bundle' => 'team_match',
+    'default_value' => array(
+      0 => array(
+        'tid' => 517,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 24,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liga',
+    'label' => 'Liga',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -2508,7 +2969,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'urls_search' => 'start',
       ),
       'type' => 'advanced_link',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -2560,7 +3021,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -2610,7 +3071,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -2660,6 +3121,98 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
     ),
   );
 
+  // Exported field_instance:
+  // 'node-team_match-field_tm_board_points_team_1_low'.
+  $field_instances['node-team_match-field_tm_board_points_team_1_low'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 20,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tm_board_points_team_1_low',
+    'label' => 'Brettpunkte Mannschaft 1 Brett 5-8',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-team_match-field_tm_board_points_team_1_top'.
+  $field_instances['node-team_match-field_tm_board_points_team_1_top'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tm_board_points_team_1_top',
+    'label' => 'Brettpunkte Mannschaft 1 Brett 1-4',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'node-team_match-field_tm_board_points_team_2'.
   $field_instances['node-team_match-field_tm_board_points_team_2'] = array(
     'bundle' => 'team_match',
@@ -2703,6 +3256,98 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       ),
       'type' => 'options_select',
       'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-team_match-field_tm_board_points_team_2_low'.
+  $field_instances['node-team_match-field_tm_board_points_team_2_low'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 22,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tm_board_points_team_2_low',
+    'label' => 'Brettpunkte Mannschaft 2 Brett 5-8',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-team_match-field_tm_board_points_team_2_top'.
+  $field_instances['node-team_match-field_tm_board_points_team_2_top'] = array(
+    'bundle' => 'team_match',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 21,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_tm_board_points_team_2_top',
+    'label' => 'Brettpunkte Mannschaft 2 Brett 1-4',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
@@ -2758,7 +3403,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -2767,7 +3412,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
     'bundle' => 'team_match',
     'default_value' => array(
       0 => array(
-        'tid' => 144,
+        'tid' => 522,
       ),
     ),
     'deleted' => 0,
@@ -2805,7 +3450,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 2,
@@ -2851,7 +3496,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 1,
@@ -2906,7 +3551,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 11,
@@ -2961,7 +3606,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => '',
+        'apply_chosen' => 1,
       ),
       'type' => 'options_select',
       'weight' => 7,
@@ -3111,7 +3756,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -3130,8 +3775,13 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('Brett-Nr.');
   t('Brettfarbe Spieler 1');
   t('Brettfarbe Spieler 2');
+  t('Brettnummer');
   t('Brettpunkte Mannschaft 1');
+  t('Brettpunkte Mannschaft 1 Brett 1-4');
+  t('Brettpunkte Mannschaft 1 Brett 5-8');
   t('Brettpunkte Mannschaft 2');
+  t('Brettpunkte Mannschaft 2 Brett 1-4');
+  t('Brettpunkte Mannschaft 2 Brett 5-8');
   t('Das Brett, an dem der Spieler in der Mannschaft gesetzt ist.');
   t('Das Logo des Vereins.');
   t('Datum');
@@ -3146,6 +3796,9 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('In der Liga seit');
   t('Internet-Verantwortlicher');
   t('Jahres-ID');
+  t('Liga');
+  t('Ligastatus');
+  t('Ligenzuordnung');
   t('Livevideo');
   t('Logo Club');
   t('Logo Icon');
@@ -3169,6 +3822,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√
   t('Spieler 2');
   t('Spielort');
   t('Spieltag');
+  t('Status des Vereins. (M) = Meister des Vorjahres, (N) = Liganeuling, (A) = Absteiger aus der h√∂heren Liga');
   t('Twitter');
   t('URL der Facebook-Pr√§senz des Klubs, sofern vorhanden');
   t('URL der Twitterseite des Klubs, sofern vorhanden');
@@ -3178,6 +3832,7 @@ https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016#live bei 
 https://chess24.com/de/watch/live-tournaments/schachbundesliga20152016/10/1/1 f√ºr beispielsweise der Videostream aus Runde 10 der Saison 2015/16');
   t('Verein');
   t('Vereinsk√ºrzel');
+  t('Vereinsname kurz');
   t('Video Zusammenfassung');
   t('Vorname');
   t('Vorsitzender');

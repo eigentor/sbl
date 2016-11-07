@@ -54,11 +54,13 @@ function sbl_ligaverwaltung_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Gastmannschaft',
-    'weight' => '12',
+    'weight' => '13',
     'children' => array(
       0 => 'field_tm_board_points_team_2',
       1 => 'field_tm_team_2',
       2 => 'field_tm_team_points_tm_2',
+      3 => 'field_tm_board_points_team_2_top',
+      4 => 'field_tm_board_points_team_2_low',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -88,11 +90,13 @@ function sbl_ligaverwaltung_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Heimmannschaft',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_tm_board_points_team_1',
       1 => 'field_tm_team_1',
       2 => 'field_tm_team_points_tm_1',
+      3 => 'field_tm_board_points_team_1_top',
+      4 => 'field_tm_board_points_team_1_low',
     ),
     'format_type' => 'div',
     'format_settings' => array(

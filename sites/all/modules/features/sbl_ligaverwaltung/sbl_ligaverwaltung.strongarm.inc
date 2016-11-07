@@ -383,13 +383,16 @@ function sbl_ligaverwaltung_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '13',
+          'weight' => '17',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '16',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -492,13 +495,13 @@ function sbl_ligaverwaltung_strongarm() {
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '15',
+          'weight' => '16',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
         'rabbit_hole' => array(
-          'weight' => '16',
+          'weight' => '17',
         ),
       ),
       'display' => array(),
