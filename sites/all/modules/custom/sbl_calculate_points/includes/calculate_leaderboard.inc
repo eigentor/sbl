@@ -96,6 +96,23 @@ function get_elo_average_per_team_first_eight($nid) {
   return $elo_average;
 }
 
+function get_elo_average_per_team_first_six($nid) { //Frauen-Bundesliga
+  $elo_player=array();
+  $count_rated_players=0;
+  $elo_gesamt=0;
+  $player_ids=get_players_per_club($nid);
+  for($i=0;$i<6;$i++) {
+    $elo_player[$i] = db_query("SELECT field_pl_elo_value FROM field_data_field_pl_elo WHERE entity_id='".$player_ids[$i]."' LIMIT 1")->fetchField();
+    if(empty($elo_player[$i])) $elo_player[$i]="0";
+    else $count_rated_players++;
+    $elo_gesamt+=intval($elo_player[$i]);
+  }
+  if($count_rated_players > 0) $elo_average=round($elo_gesamt/$count_rated_players,1);
+  else $elo_average=0;
+  
+  return $elo_average;
+}
+
 
 function team_list_calculate_team_points($nid) {
   // Check if we are viewing the page view for the table, and if not, set the season not from the
