@@ -5,9 +5,9 @@ $path = drupal_get_path_alias($_GET['q']);
 $path_array = explode('/', $path);
 
 	if(!drupal_is_front_page() && ($path_array[0]=="spielberichte" || $path_array[0]=="aktuell" || $path_array[0]=="bundesliga" || $path_array[0]=="klubnews")) {
-		drupal_add_js('https://pgn.chessbase.com/jquery-3.0.0.min.js', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
-		drupal_add_js('https://pgn.chessbase.com/cbreplay.js', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
-		drupal_add_css('https://pgn.chessbase.com/CBReplay.css', array('type' => 'external', 'scope' => 'header', 'weight' => 10));
+		drupal_add_js('https://pgn.chessbase.com/jquery-3.0.0.min.js', array('type' => 'external', 'scope' => 'header'));
+		drupal_add_js('https://pgn.chessbase.com/cbreplay.js', array('type' => 'external', 'scope' => 'header'));
+		drupal_add_css('https://pgn.chessbase.com/CBReplay.css', array('type' => 'external', 'scope' => 'header'));
 		 drupal_add_js('var jq300 = jQuery; jQuery.noConflict(true);',
       array('type' => 'inline', 'scope' => 'header'));
 	}
