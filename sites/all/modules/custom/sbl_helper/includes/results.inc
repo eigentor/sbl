@@ -44,6 +44,9 @@ function print_results_matchday(){
   case 521:
   $league_text="2. Liga Süd";
   break;
+  case 560:
+  $league_text="Frauen-Bundesliga";
+  break;
   }
   
 

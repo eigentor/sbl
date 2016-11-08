@@ -10,11 +10,22 @@ body {
 hyphens:auto;
 }
 
-.block-spielberichte {
--webkit-box-shadow: 3px 3px 3px 0px rgba(153,153,153,0.73);
--moz-box-shadow: 3px 3px 3px 0px rgba(153,153,153,0.73);
-box-shadow: 3px 3px 3px 0px rgba(153,153,153,0.73);
+.region-inner section {
+-webkit-box-shadow: 0px 0px 5px #888;
+-moz-box-shadow: 0px 0px 5px #888;
+box-shadow: 0px 0px 5px #888;
 }
+
+/*
+#block-system-main {
+	display:none;
+}
+
+#block-views-klubnews-block-1 .block-inner{
+	height:280px;
+	overflow-y:scroll;
+}
+*/
 
 /* Ausrichtungsklassen für Bilder */
 .image-left {
