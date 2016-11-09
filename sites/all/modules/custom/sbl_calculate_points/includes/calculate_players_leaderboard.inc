@@ -271,7 +271,7 @@ function players_sort_leaderboard($elo_1, $elo_2) {
  * Hide players with less than 3 played games
  */
 function filter_players_leaderboard($number_games) {
-if(arg(2)==517 || !(arg(2))) $min=3;
+if(arg(2)==517 || !(arg(2))) $min=2;
 else $min=1;
   if($number_games < $min) {
     return TRUE;
