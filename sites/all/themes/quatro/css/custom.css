@@ -20,6 +20,10 @@ box-shadow: 0px 0px 5px #888;
 	display:none;
 }
 
+#block-views-author-block,#block-views-news-blog-block-1 {
+	padding:10px;
+}
+
 /*
 #block-views-klubnews-block-1 .block-inner{
 	height:280px;
