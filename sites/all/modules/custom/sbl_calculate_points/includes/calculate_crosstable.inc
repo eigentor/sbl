@@ -236,7 +236,8 @@ $league=arg(2);
 	$result = db_query($sql);
 	$team2_name = $result->fetchField();
 	
-	$final_result=$home==1?$team_points.":".(8-$team_points):(8-$team_points).":".$team_points;
+	if($league !=560) $final_result=$home==1?$team_points.":".(8-$team_points):(8-$team_points).":".$team_points; // Wenn keine Frauen-Bundesliga
+	else $final_result=$home==1?$team_points.":".(6-$team_points):(6-$team_points).":".$team_points;
 	
 
   if($nid != $opponent_nid) {

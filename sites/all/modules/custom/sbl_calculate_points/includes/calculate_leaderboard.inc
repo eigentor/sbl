@@ -300,7 +300,7 @@ function team_list_calculate_played_games($nid) {
   if(isset($team_home_match['node'])) {
     $home_match_number = count($team_home_match['node']);
   }
-   //dpm($home_match_number);
+  // dpm($home_match_number);
   // count the away matches
   $away_match_number = '';
   if(isset($team_away_match['node'])) {
