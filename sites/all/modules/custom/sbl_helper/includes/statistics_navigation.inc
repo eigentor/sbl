@@ -157,6 +157,10 @@ function statistics_create_navigation() {
   case "vereine-der-bundesliga":
   $league=517;
   break;
+  case "frauen-bundesliga":
+  case "vereine-der-frauen-bundesliga":
+  $league=560;
+  break;
   }
   
   switch($league) {
