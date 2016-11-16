@@ -159,6 +159,7 @@ function statistics_create_navigation() {
   break;
   case "frauen-bundesliga":
   case "vereine-der-frauen-bundesliga":
+  case "setzliste-der-frauen-bundesliga":
   $league=560;
   break;
   }
