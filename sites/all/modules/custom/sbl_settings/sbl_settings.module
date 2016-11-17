@@ -37,7 +37,7 @@ function sbl_settings_form($form, &$form_submit) {
     // the select for the matchday
    $form['current_matchday'] = array(
        '#type' => 'select',
-       '#title' => 'Aktueller Spieltag',
+       '#title' => 'Aktueller Spieltag 1. Liga',
        '#options' => array(
           1 => 1,
           2 => 2,
@@ -58,6 +58,66 @@ function sbl_settings_form($form, &$form_submit) {
         '#empty_value' => '',
         '#description' => 'Setzen Sie den aktuellen Spieltag',
         '#default_value' => variable_get('current_matchday', ''),
+   );
+   
+    $form['current_matchday_fbl'] = array(
+       '#type' => 'select',
+       '#title' => 'Aktueller Spieltag FBL',
+       '#options' => array(
+          1 => 1,
+          2 => 2,
+          3 => 3,
+          4 => 4,
+          5 => 5,
+          6 => 6,
+          7 => 7,
+          8 => 8,
+          9 => 9,
+          10 => 10,
+          11 => 11,
+       ),
+        '#empty_value' => '',
+        '#description' => 'Setzen Sie den aktuellen Spieltag',
+        '#default_value' => variable_get('current_matchday_fbl', ''),
+   );
+   
+   $form['current_matchday_2bl'] = array(
+       '#type' => 'select',
+       '#title' => 'Aktueller Spieltag der 2. Liga Nord/Süd/West',
+       '#options' => array(
+          1 => 1,
+          2 => 2,
+          3 => 3,
+          4 => 4,
+          5 => 5,
+          6 => 6,
+          7 => 7,
+          8 => 8,
+          9 => 9,
+       ),
+        '#empty_value' => '',
+        '#description' => 'Setzen Sie den aktuellen Spieltag',
+        '#default_value' => variable_get('current_matchday_2bl', ''),
+   );
+   
+   $form['current_matchday_2bl_ost'] = array(
+       '#type' => 'select',
+       '#title' => 'Aktueller Spieltag der 2. Liga Ost',
+       '#options' => array(
+          1 => 1,
+          2 => 2,
+          3 => 3,
+          4 => 4,
+          5 => 5,
+          6 => 6,
+          7 => 7,
+          8 => 8,
+          9 => 9,
+		  10 => 10,
+       ),
+        '#empty_value' => '',
+        '#description' => 'Setzen Sie den aktuellen Spieltag',
+        '#default_value' => variable_get('current_matchday_2bl_ost', ''),
    );
 
   $form['date_matchday'] = array(
@@ -97,13 +157,22 @@ function sbl_settings_form($form, &$form_submit) {
  */
 function sbl_settings_form_submit($form, &$form_state) {
   $old_matchday = variable_get('current_matchday', '');
+  $old_matchday_fbl = variable_get('current_matchday_fbl', '');
+  $old_matchday_2bl = variable_get('current_matchday_2bl', '');
+  $old_matchday_2bl_ost = variable_get('current_matchday_2bl_ost', '');
   $old_date_matchday = variable_get('date_matchday', '');
   $old_season_value = variable_get('current_season', '');
   // Save our form values into the database
   variable_set('current_matchday', $form_state['values']['current_matchday']);
+  variable_set('current_matchday_fbl', $form_state['values']['current_matchday_fbl']);
+  variable_set('current_matchday_2bl', $form_state['values']['current_matchday_2bl']);
+  variable_set('current_matchday_2bl_ost', $form_state['values']['current_matchday_2bl_ost']);
   variable_set('date_matchday', $form_state['values']['date_matchday']);
   variable_set('current_season', $form_state['values']['current_season']);
   $current_matchday = variable_get('current_matchday', '');
+  $current_matchday_fbl = variable_get('current_matchday_fbl', '');
+  $current_matchday_2bl = variable_get('current_matchday_2bl', '');
+  $current_matchday_2bl_ost = variable_get('current_matchday_2bl_ost', '');
 
   // To set a message which year was saved as current season, first get te taxonomy term label
   $saison_vocabulary = $vocabulary = taxonomy_vocabulary_machine_name_load('saison');
@@ -120,7 +189,16 @@ function sbl_settings_form_submit($form, &$form_state) {
 
   // Set some messages when the form is saved.
   if($current_matchday != $old_matchday) {
-    drupal_set_message($current_matchday . ' wurde als aktueller Spieltag gesetzt');
+    drupal_set_message($current_matchday . ' wurde als aktueller Spieltag der SBL gesetzt');
+  }
+  if($current_matchday_fbl != $old_matchday_fbl) {
+    drupal_set_message($current_matchday_fbl . ' wurde als aktueller Spieltag der FBL gesetzt');
+  }
+  if($current_matchday_2bl != $old_matchday_2bl) {
+    drupal_set_message($current_matchday_2bl . ' wurde als aktueller Spieltag der 2. Liga Nord/Süd/West gesetzt');
+  }
+  if($current_matchday_2bl_ost != $old_matchday_2bl_ost) {
+    drupal_set_message($current_matchday_2bl_ost . ' wurde als aktueller Spieltag der 2. Liga Ost gesetzt');
   }
   if($date_matchday != $old_date_matchday) {
     drupal_set_message($date_matchday_formatted . ' wurde als Datum des Spieltages gesetzt');
@@ -138,6 +216,27 @@ function get_current_matchday() {
   // We set it in the form above
   $current_matchday = variable_get('current_matchday', '');
   return $current_matchday;
+}
+
+function get_current_matchday_fbl() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $current_matchday_fbl = variable_get('current_matchday_fbl', '');
+  return $current_matchday_fbl;
+}
+
+function get_current_matchday_2bl() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $current_matchday_2bl = variable_get('current_matchday_2bl', '');
+  return $current_matchday_2bl;
+}
+
+function get_current_matchday_2bl_ost() {
+  // Get the current season from the variable table
+  // We set it in the form above
+  $current_matchday_2bl_ost = variable_get('current_matchday_2bl_ost', '');
+  return $current_matchday_2bl_ost;
 }
 
 /**
