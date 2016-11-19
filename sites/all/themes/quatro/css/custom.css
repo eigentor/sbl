@@ -25,7 +25,7 @@ box-shadow: 0px 0px 5px #888;
 }
 
 
-#block-views-klubnews-block-1 .block-inner{
+#block-views-klubnews-block-1{
 	height:590px;
 	overflow-y:scroll;
 }
