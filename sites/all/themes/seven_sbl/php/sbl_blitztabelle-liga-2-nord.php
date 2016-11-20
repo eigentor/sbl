@@ -4,6 +4,7 @@ $bgcolor=strlen($_GET["bgcolor"])>=3?str_replace("#","",$_GET["bgcolor"]):"f1800
 $linkcolor=strlen($_GET["linkcolor"])>=3?str_replace("#","",$_GET["linkcolor"]):"f18000";
 $headingcolor=strlen($_GET["headingcolor"])>=3?str_replace("#","",$_GET["headingcolor"]):"ffffff";
 $bordercolor=strlen($_GET["bordercolor"])>=3?str_replace("#","",$_GET["bordercolor"]):"f18000";
+$target=strlen($_GET["target"])>=3?$_GET["target"]:"_self";
 ?>
 document.write('<meta charset="utf-8" />');
 <?php
@@ -41,10 +42,10 @@ $mannschaft=$xml->channel->item[$i]->description;
 $mapu=$xml->channel->item[$i]->guid;
 #$brepu=$xml->channel->item[$i]->pubDate;
 ?>
-document.write('<tr<?php echo bcmod($i,2)==0?" class=\"odd\"":" class=\"even\"";?>><td class="views-field views-field-counter"><?=$rang?></td><td class="team_text_left"><a href="<?php transform_link($linktext,$aktuelle_saison); ?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;"><?=$mannschaft?></a></td>');
+document.write('<tr<?php echo bcmod($i,2)==0?" class=\"odd\"":" class=\"even\"";?>><td class="views-field views-field-counter"><?=$rang?></td><td class="team_text_left"><a href="<?php transform_link($linktext,$aktuelle_saison); ?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;" target="<?=$target?>"><?=$mannschaft?></a></td>');
 document.write('<td class="views-field views-field-php-2"><?=$mapu?></td>');
 
 <?php
 }
 ?>
-document.write('<tr><td colspan="3" class="panel-footer-table" style="background-color:#<?=$bgcolor?> !important;"><a href="http://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>"><img src="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/images/logo.png" style="margin-left:5px;" /></a></td></tr></table><br /><div style="text-align:right"><a href="http://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;font-size:12px;">>> Zur ausführlichen Tabelle</a></div></div></div>');
+document.write('<tr><td colspan="3" class="panel-footer-table" style="background-color:#<?=$bgcolor?> !important;"><a href="http://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" target="<?=$target?>"><img src="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/images/logo.png" style="margin-left:5px;" /></a></td></tr></table><br /><div style="text-align:right"><a href="http://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;font-size:12px;" target="<?=$target?>">>> Zur ausführlichen Tabelle</a></div></div></div>');
