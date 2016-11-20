@@ -4,7 +4,7 @@ function sbl_pgn_init() {
 $path = drupal_get_path_alias($_GET['q']);
 $path_array = explode('/', $path);
 
-	if(!drupal_is_front_page() && ($path_array[0]=="spielberichte" || $path_array[0]=="aktuell" || $path_array[0]=="frauen-bundesliga" || $path_array[0]=="bundesliga" || $path_array[0]=="klubnews" || substr($path_array[0],0,7)=="saison-")) {
+	if(!drupal_is_front_page() && ($path_array[0]=="spielberichte" || $path_array[0]=="aktuell" || $path_array[0]=="frauen-bundesliga" || $path_array[0]=="bundesliga" || $path_array[0]=="klubnews" || $path_array[0]=="saison-201617")) {
     drupal_add_js('https://pgn.chessbase.com/jquery-3.0.0.min.js', array('type' => 'external', 'scope' => 'footer', 'weight' => 10));
     drupal_add_js('https://pgn.chessbase.com/cbreplay.js', array('type' => 'external', 'scope' => 'footer', 'weight' => 10));
     drupal_add_css('https://pgn.chessbase.com/CBReplay.css', array('type' => 'external', 'scope' => 'footer', 'weight' => 10));
