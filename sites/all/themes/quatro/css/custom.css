@@ -62,8 +62,8 @@ box-shadow: 0px 0px 5px #888;
 	width:280px;
 }
 
-.werbung-top {
-	margin:-30px 0 10px 0; 
+#block-block-28 {
+	margin:-25px 0 30px 0; 
 }
 
 /* guts.com Werbebanner */
@@ -1152,6 +1152,9 @@ overflow: hidden;
 #block-views-team-info-block-1 {
    display:none;
 }
+#block-block-28 {
+	margin:10px 0 15px 0;
+}
 }
 
 @media only screen and (min-width:1221px) {
@@ -1167,6 +1170,11 @@ margin-left:10px;
 .zone-menu ul.nice-menu {
 text-align:left !important;
 }
+
+#block-block-28 {
+	margin:10px 0 15px 0;
+}
+
 }
 @media only screen and (max-width: 500px) { 
 #block-block-29 {
