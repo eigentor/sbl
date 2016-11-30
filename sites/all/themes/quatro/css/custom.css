@@ -128,6 +128,10 @@ tr.table-16,tr.table-15,tr.table-14,tr.table-13,tr.table-2bl-8,tr.table-2bl-9,tr
 	margin:0 5px 0 0;
 }
 
+/* Abstände Block Related Articles */
+.related-articles {
+	padding:5px;
+}
 
 /* Media Images */
 
