@@ -1,5 +1,5 @@
 name = Media
-description = Provides the core Media API <br /> Patched <a href="https://www.drupal.org/node/2357993#comment-9477873"><strong>https://www.drupal.org/node/2357993#comment-9477873</a></strong> <br />Remove unwanted divs around media elements  <br />And another Patch: <strong><a href="https://www.drupal.org/node/2028231#comment-9155669">https://www.drupal.org/node/2028231#comment-9155669</a></strong><br /> Prevent multiple files inserted into Wysiwyg have the same file ID
+description = Provides the core Media API
 package = Media
 core = 7.x
 
@@ -24,9 +24,9 @@ configure = admin/config/media/browser
 ; We have to add a fake version so Git checkouts do not fail Media dependencies
 version = 7.x-2.x-dev
 
-; Information added by Drupal.org packaging script on 2015-07-14
-version = "7.x-2.0-beta1"
+; Information added by Drupal.org packaging script on 2016-12-06
+version = "7.x-2.0-beta12"
 core = "7.x"
 project = "media"
-datestamp = "1436895542"
+datestamp = "1481043504"
 
