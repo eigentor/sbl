@@ -80,15 +80,25 @@ box-shadow: 0px 0px 5px #888;
 
 .tb-megamenu-nav li {
 	list-style:none !important;
+	text-transform:none;
 }
 
-.tb-megamenu .nav > .active > a, .tb-megamenu .nav > .active > a:hover, .tb-megamenu .nav > .active > a:focus {
-    background-color: #f18000 !important;
+.level-1 {
+	text-transform:uppercase !important;
 }
+
+
 
 .tb-megamenu .nav > li > a:focus, .tb-megamenu .nav > li > a:hover {
     color: #f18000 !important;
 }
+
+.tb-megamenu .nav > .active > a, .tb-megamenu .nav > .active > a:hover, .tb-megamenu .nav > .active > a:focus {
+    background-color: #f18000 !important;
+	color:white !important;
+}
+
+
 
 /* Umfragen */
 
