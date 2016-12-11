@@ -102,7 +102,19 @@ box-shadow: 0px 0px 5px #888;
 	color:white !important;
 }
 
+.tb-megamenu ul li:nth-child(8) > .tb-megamenu-submenu {
+  margin-left:-300px;
+}
+.tb-megamenu.style-black {
+	background-color:black !important;
+}
+.tb-megamenu.style-black .nav > li > a {
+	color:white;
+}
 
+.tb-megamenu.style-black .dropdown-menu li > a:hover, .tb-megamenu.style-black .dropdown-menu li > a:focus, .tb-megamenu.style-black .dropdown-submenu:hover > a {
+    color: #f18000;
+}
 
 /* Umfragen */
 
@@ -1198,6 +1210,18 @@ overflow: hidden;
 @media only screen and (min-width:1221px) {
 #block-block-29 {
 margin-left:10px;
+}
+}
+
+@media only screen and (max-width: 979px) { 
+.tb-megamenu.style-black {
+	background-color:transparent !important;
+}
+}
+
+@media only screen and (max-width: 1220px) and (min-width:980px) { 
+.tb-megamenu .nav > li > a {
+	padding:15px 11px;
 }
 }
 @media only screen and (max-width: 1220px) and (min-width:800px) { 
