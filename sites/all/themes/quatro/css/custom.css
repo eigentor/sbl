@@ -1172,6 +1172,7 @@ margin-top:-10px;
 margin:0 !important;
 padding:0 !important;
 background:none !important;
+text-align:center !important;
 }
 
 #block-block-20{
@@ -1204,6 +1205,15 @@ overflow: hidden;
 }
 #block-block-28 {
 	margin:10px 0 15px 0;
+}
+.nodisplay-mobile {
+	display:none !important;
+}
+}
+
+@media only screen and (min-width: 801px) { 
+.nodisplay-desktop {
+	display:none !important;
 }
 }
 
