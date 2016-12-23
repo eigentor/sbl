@@ -34,7 +34,7 @@ document.write('</thead>');
 $xml=simplexml_load_file("http://www.schachbundesliga.de/rss/522/560/tabelle-frauen-bundesliga.xml") or die("Fehler: Feed konnte nicht geladen werden");
 $aktuelle_saison=$xml->channel->item[0]->pubDate;
 #echo $aktuelle_saison;
-for($i=0;$i<=9;$i++) {
+for($i=0;$i<=11;$i++) {
 $rang=$xml->channel->item[$i]->title;
 $linktext=$xml->channel->item[$i]->link;
 $mannschaft=$xml->channel->item[$i]->description;
