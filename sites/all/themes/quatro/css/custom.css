@@ -1254,11 +1254,11 @@ display:none;
 }
 }
 
-#block-block-29 {
 @media only screen and (max-width: 640px) { 
 #teamseite .panel-col-first,#teamseite .panel-col-last,
 #spielerseite .panel-col-first,#spielerseite .panel-col-last {
 min-width:320px;
+}
 }
 
 .hidden-mobile {
@@ -1266,7 +1266,8 @@ min-width:320px;
 }
 
 .werbung-top {
-	margin:0 0 10px 0; 
+	margin-top:-10px !important;
+		margin-bottom:10px !important;
 }
 
 .one-fourth-border {
