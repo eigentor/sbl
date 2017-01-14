@@ -4,7 +4,7 @@ function sbl_pgn_init() {
 $path = drupal_get_path_alias($_GET['q']);
 $path_array = explode('/', $path);
 
-	if(!drupal_is_front_page() && ($path_array[0]=="spielberichte" || $path_array[0]=="aktuell" || $path_array[0]=="schachnews" || $path_array[0]=="der-leser-ist-am-zug"|| $path_array[0]=="weisheiten-im-endspiel" || $path_array[0]=="frauen-bundesliga" || $path_array[0]=="bundesliga" || $path_array[0]=="2-liga-ost" || $path_array[0]=="klubnews" || preg_match("/saison/i",$path_array[0]))) {
+	if(!drupal_is_front_page() && ($path_array[0]=="spielberichte" || $path_array[0]=="aktuell" || $path_array[0]=="schachnews" || $path_array[0]=="der-leser-ist-am-zug"|| $path_array[0]=="weisheiten-im-endspiel" || $path_array[0]=="frauen-bundesliga" || $path_array[0]=="bundesliga" || $path_array[0]=="weihnachtsraetsel" || $path_array[0]=="2-liga-ost" || $path_array[0]=="klubnews" || preg_match("/saison/i",$path_array[0]))) {
     drupal_add_js('https://pgn.chessbase.com/jquery-3.0.0.min.js', array('type' => 'external', 'scope' => 'footer', 'weight' => 10));
     drupal_add_js('https://pgn.chessbase.com/cbreplay.js', array('type' => 'external', 'scope' => 'footer', 'weight' => 10));
     drupal_add_css('https://pgn.chessbase.com/CBReplay.css', array('type' => 'external', 'scope' => 'footer', 'weight' => 10));
