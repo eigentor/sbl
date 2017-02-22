@@ -1,9 +1,9 @@
 <?php
 header('content-type:application/x-javascript;charset=utf-8');
-$bgcolor=strlen($_GET["bgcolor"])>=3?str_replace("#","",$_GET["bgcolor"]):"f18000";
+$bgcolor=strlen($_GET["bgcolor"])>=3?str_replace("#","",$_GET["bgcolor"]):"be020d";
 $linkcolor=strlen($_GET["linkcolor"])>=3?str_replace("#","",$_GET["linkcolor"]):"f18000";
 $headingcolor=strlen($_GET["headingcolor"])>=3?str_replace("#","",$_GET["headingcolor"]):"ffffff";
-$bordercolor=strlen($_GET["bordercolor"])>=3?str_replace("#","",$_GET["bordercolor"]):"f18000";
+$bordercolor=strlen($_GET["bordercolor"])>=3?str_replace("#","",$_GET["bordercolor"]):"be020d";
 $target=strlen($_GET["target"])>=3?$_GET["target"]:"_self";
 ?>
 document.write('<meta charset="utf-8" />');
@@ -26,7 +26,7 @@ function transform_link($linktext,$saison) {
 document.writeln('<link rel="stylesheet" href="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/css/custom_tabelle.css"/>');
 
 document.write('<div class="panel panel-default" style="border:1px solid #<?=$bordercolor?> !important;"><div class="panel-body-table"><table class="views-table cols-3 footable">');
-document.write('<thead><tr><th colspan="3" class="panel-heading-table" style="background-color:#<?=$bgcolor?>;color:#<?=$headingcolor?>">Tabelle <?=$liga_name?></th></tr>');
+document.write('<thead><tr><th colspan="3" class="panel-heading-table" style="background-color:#<?=$bgcolor?>;color:#<?=$headingcolor?>">Tabelle</th></tr>');
 document.write('<tr><th class="views-field views-field-counter">Pl.</th><th class="views-field views-field-php-2">Team</th><th class="views-field views-field-php-3">MP</th></tr>');
 document.write('</thead>');
 
@@ -42,9 +42,9 @@ $mapu=$xml->channel->item[$i]->guid;
 #$brepu=$xml->channel->item[$i]->pubDate;
 ?>
 document.write('<tr<?php echo bcmod($i,2)==0?" class=\"odd\"":" class=\"even\"";?>><td class="views-field views-field-counter"><?=$rang?></td><td class="team_text_left"><a href="<?php transform_link($linktext,$aktuelle_saison); ?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;" target="<?=$target?>"><?=$mannschaft?></a></td>');
-document.write('<td class="views-field views-field-php-2"><?=$mapu?></td>');
+document.write('<td class="views-field views-field-php-2"><?=$mapu?></td></tr>');
 
 <?php
 }
 ?>
-document.write('<tr><td colspan="3" class="panel-footer-table" style="background-color:#<?=$bgcolor?> !important;"><a href="http://www.schachbundesliga.de/tabelle-frauen-bundesliga/<?=$aktuelle_saison?>/<?=$liga?>" target="<?=$target?>"><img src="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/images/logo.png" style="margin-left:5px;" /></a></td></tr></table><br /><div style="text-align:right"><a href="http://www.schachbundesliga.de/tabelle-frauen-bundesliga/<?=$aktuelle_saison?>/<?=$liga?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;font-size:12px;" target="<?=$target?>">>> Zur ausführlichen Tabelle</a></div></div></div>');
+document.write('</table></div></div>');
