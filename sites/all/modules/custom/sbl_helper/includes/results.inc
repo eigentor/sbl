@@ -94,6 +94,9 @@ function results_pager() {
 	case 520:
 	$rounds_max=10;
 	break;
+	case 560:
+	$rounds_max=12;
+	break;
 	default:
 	$rounds_max=9;
 	break;
