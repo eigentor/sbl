@@ -285,6 +285,7 @@ function select_season_form($form, &$form_state) {
     '#type' => 'select',
     '#title' => 'Saison',
     '#options' => array(
+	564 => '2018/19',
 	562 => '2017/18',
 	522 => '2016/17',
 	144 => '2015/16',
@@ -313,6 +314,7 @@ function select_season_form($form, &$form_state) {
     '#type' => 'select',
     '#title' => 'Saison',
     '#options' => array(
+	564 => '2018/19',
 	562 => '2017/18',
 	),
     '#default_value' => $default_season,

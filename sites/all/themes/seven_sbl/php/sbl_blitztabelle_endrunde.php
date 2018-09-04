@@ -20,7 +20,7 @@ function transform_link($linktext,$saison) {
 	echo $linktext;
 }
 ?>
-document.writeln('<link rel="stylesheet" href="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/css/custom_tabelle.css"/>');
+document.writeln('<link rel="stylesheet" href="https://schachbundesliga.de/sites/all/themes/seven_sbl/php/css/custom_tabelle.css"/>');
 
 document.write('<div class="panel panel-default" style="border:1px solid #<?=$bordercolor?> !important;"><div class="panel-body-table"><table class="views-table cols-3 footable">');
 document.write('<thead><tr><th colspan="3" class="panel-heading-table" style="background-color:#<?=$bgcolor?>;color:#<?=$headingcolor?>">Tabelle</th></tr>');
@@ -28,7 +28,7 @@ document.write('<tr><th class="views-field views-field-counter">Pl.</th><th clas
 document.write('</thead>');
 
 <?php
-$xml=simplexml_load_file("http://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
+$xml=simplexml_load_file("https://www.schachbundesliga.de/tabelle.xml") or die("Fehler: Feed konnte nicht geladen werden");
 $saisonstring=explode("/",$xml->channel->link[0]);
 $aktuelle_saison=$saisonstring[4];
 #echo $aktuelle_saison;

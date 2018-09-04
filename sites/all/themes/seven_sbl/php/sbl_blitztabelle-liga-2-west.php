@@ -23,7 +23,7 @@ function transform_link($linktext,$saison) {
 	echo $linktext;
 }
 ?>
-document.writeln('<link rel="stylesheet" href="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/css/custom_tabelle.css"/>');
+document.writeln('<link rel="stylesheet" href="https://schachbundesliga.de/sites/all/themes/seven_sbl/php/css/custom_tabelle.css"/>');
 
 document.write('<div class="panel panel-default" style="border:1px solid #<?=$bordercolor?> !important;"><div class="panel-body-table"><table class="views-table cols-3 footable">');
 document.write('<thead><tr><th colspan="3" class="panel-heading-table" style="background-color:#<?=$bgcolor?>;color:#<?=$headingcolor?>">Tabelle <?=$liga_name?></th></tr>');
@@ -31,7 +31,7 @@ document.write('<tr><th class="views-field views-field-counter">Pl.</th><th clas
 document.write('</thead>');
 
 <?php
-$xml=simplexml_load_file("http://www.schachbundesliga.de/rss/522/519/tabelle-liga-2.xml") or die("Fehler: Feed konnte nicht geladen werden");
+$xml=simplexml_load_file("https://www.schachbundesliga.de/rss/562/519/tabelle-liga-2.xml") or die("Fehler: Feed konnte nicht geladen werden");
 $aktuelle_saison=$xml->channel->item[0]->pubDate;
 #echo $aktuelle_saison;
 for($i=0;$i<=9;$i++) {
@@ -47,4 +47,4 @@ document.write('<td class="views-field views-field-php-2"><?=$mapu?></td>');
 <?php
 }
 ?>
-document.write('<tr><td colspan="3" class="panel-footer-table" style="background-color:#<?=$bgcolor?> !important;"><a href="http://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" target="<?=$target?>"><img src="http://schachbundesliga.de/sites/all/themes/seven_sbl/php/images/logo.png" style="margin-left:5px;" /></a></td></tr></table><br /><div style="text-align:right"><a href="http://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;font-size:12px;" target="<?=$target?>">>> Zur ausführlichen Tabelle</a></div></div></div>');
+document.write('<tr><td colspan="3" class="panel-footer-table" style="background-color:#<?=$bgcolor?> !important;"><a href="https://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" target="<?=$target?>"><img src="https://schachbundesliga.de/sites/all/themes/seven_sbl/php/images/logo.png" style="margin-left:5px;" /></a></td></tr></table><br /><div style="text-align:right"><a href="https://www.schachbundesliga.de/tabelle-liga-2/<?=$aktuelle_saison?>/<?=$liga?>" class="link_to_team" style="color:#<?=$linkcolor?> !important;font-size:12px;" target="<?=$target?>">>> Zur ausführlichen Tabelle</a></div></div></div>');

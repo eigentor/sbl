@@ -1,0 +1,55 @@
+.panel-heading-table {
+  color:white !important;
+  height:40px !important;
+}
+
+.panel-footer-table {
+    background-color: #f18000 !important;
+	color:white;
+	font-weight: 700;
+}
+
+
+.panel-body-table {
+	padding:2px !important;
+	background-color:white;
+}
+
+.panel-default {
+	padding:2px !important;
+	max-width:260px;
+}
+
+td > a.link_to_team,a.link_to_team
+{
+	text-decoration:underline;
+	font-weight:normal !important;
+}
+
+
+.footable {
+	width:100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin:0 !important;
+}
+.footable th, .footable td {
+	padding: 0.3em 0.7em;
+	line-height: 1.1;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid #ccc;
+}
+
+.footable td {
+	font-size:12px !important;
+}
+.footable tr.even {
+	background-color: #f7f7f7 !important;
+}
+
+.team_text_left {
+	text-align:left !important;
+	font-size:11px !important;
+	font-weight:normal !important;
+}

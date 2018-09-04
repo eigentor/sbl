@@ -91,7 +91,13 @@ function results_pager() {
 	case 517:
 	$rounds_max=15;
 	break;
+	case 518:
+	$rounds_max=10;
+	break;
 	case 520:
+	$rounds_max=10;
+	break;
+	case 521:
 	$rounds_max=10;
 	break;
 	case 560:

@@ -1,0 +1,121 @@
+.glyphicon
+{
+    margin-right:4px !important; /*override*/
+}
+
+.pagination .glyphicon
+{
+    margin-right:0px !important; /*override*/
+}
+
+.pagination a
+{
+    color:#555;
+}
+
+.panel ul
+{
+    padding:0px;
+    margin:0px;
+    list-style:none;
+}
+
+.newstable {
+	width:100%;
+}
+
+.news-item
+{
+    padding:4px 4px;
+    margin:0px;
+    border-bottom:1px dotted #555; 
+}
+
+.panel-heading {
+  background-image: linear-gradient(to bottom, #f99728 0px, #f18000 100%) !important;
+  color:white !important;
+}
+
+.headline-cell {
+	font-size:12px !important;
+	padding:5px;
+}
+
+.panel-footer {
+    padding: 5px 10px;
+    background-color: #f18000 !important;
+    border-top: 1px solid #DDD;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+	color:white;
+	font-weight: 700;
+}
+
+.panel-body {
+	padding:5px !important;
+}
+
+.panel-default {
+	border:1px solid #f18000;
+	padding:2px !important;
+	max-width:300px;
+}
+
+td > a
+{
+    color:#505050 !important;
+	text-decoration:underline !important;
+	font-weight:bold;
+}
+
+#preview_image {
+	-webkit-box-shadow: 6px 7px 5px -6px rgba(0,0,0,0.75) !important;
+-moz-box-shadow: 6px 7px 5px -6px rgba(0,0,0,0.75) !important;
+box-shadow: 6px 7px 5px -6px rgba(0,0,0,0.75) !important;
+}
+
+
+/*jQuery*/
+
+#jquery-script-menu {
+position: fixed;
+height: 90px;
+width: 100%;
+top: 0;
+left: 0;
+border-top: 5px solid #316594;
+background: #fff;
+-moz-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+-webkit-box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.16);
+z-index: 999999;
+padding: 10px 0;
+-webkit-box-sizing:content-box;
+-moz-box-sizing:content-box;
+box-sizing:content-box;
+}
+
+.jquery-script-center {
+width: 960px;
+margin: 0 auto;
+}
+.jquery-script-center ul {
+width: 212px;
+float:left;
+line-height:45px;
+margin:0;
+padding:0;
+list-style:none;
+}
+.jquery-script-center a {
+	text-decoration:none;
+}
+.jquery-script-ads {
+width: 728px;
+height:90px;
+float:right;
+}
+.jquery-script-clear {
+clear:both;
+height:0;
+}

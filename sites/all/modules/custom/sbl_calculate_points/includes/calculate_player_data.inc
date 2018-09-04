@@ -694,16 +694,40 @@ return $page_total;
 
 function get_board_points($season) {
 $team=arg(1);
+$league = db_query("SELECT league FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
 $board_points = db_query("SELECT board_points FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
+
+switch($league) {
+case 517: 
 return $board_points . ":".number_format((120-$board_points),1,'.','');
+break;
+case 560: 
+return $board_points . ":".number_format((66-$board_points),1,'.','');
+break;
+default:
+return $board_points . ":".number_format((72-$board_points),1,'.','');
+break;
+}
+
 }
 
 /* Teamn points gained by a team in a particular season */
 
 function get_team_points($season) {
 $team=arg(1);
+$league = db_query("SELECT league FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
 $team_points = db_query("SELECT team_points FROM sbl_team_points WHERE node_id=".$team." AND season=".$season)->fetchField();
+switch($league) {
+case 517: 
 return $team_points . ":".(30-$team_points);
+break;
+case 560: 
+return $team_points . ":".(22-$team_points);
+break;
+default:
+return $team_points . ":".(18-$team_points);
+break;
+}
 }
 
 /* Returns the ranking position in a particular season */
